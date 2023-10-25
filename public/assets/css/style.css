@@ -1,0 +1,46 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* section navbar */
+/* permet de retirer la bordure dégueulasse de bootstrap au clic */
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.btnNav {
+    background-color: #FA5E5E;
+}
+
+.btnNav:hover {
+    background-color: #FA5E5E;
+}
+
+.colCarousel {
+    height: 10vh !important;
+}
+
+/* section article  */
+.articleBg {
+    background-color: #FA5E5E;
+    height: 65vh;
+    color: white;
+}
+
+.articleTitle {
+    color: black;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.articleUn {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.titleArticleUn {
+    margin-top: 30px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./public/assets/css/style.css">
+    <title>Site perso</title>
+</head>
+<body>
+    <header>
+        <!-- début barre de navigation  -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center gap-5" id="navbarNavAltMarkup">
+                    <div class="navbar-nav text-center">
+                        <a class="nav-link" href="#">Les News</a>
+                        <a class="nav-link" href="#">Les Articles</a>
+                        <a class="nav-link" href="#">Les Sondages</a>
+                        <a class="nav-link" href="#">Les Guides</a>
+                        <a class="nav-link" href="#">Le Quiz</a>
+                        <a class="nav-link" href="#">Les Bons Plans</a>
+                        <a class="nav-link" href="#">Calendrier des Events</a>
+                        <a class="nav-link" href="#">Les Produits</a>
+                        <a class="nav-link" href="#">Nous Contacter</a>
+                    </div>
+                    <div class="justify-content-center d-flex my-2">
+                        <button type="button" class="btn btnNav">Mon Compte</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- fint barre de navigation  -->
+    </header>
+    <main>
+        <section>
+            <div class="container-fluid p-0">
+                <div class="row m-0">
+                    <div class="col-12 p-0">
+                        <!-- début du carousel  -->
+                        <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./public/assets/img/mike-dorner-sf_1ZDA1YFw-unsplash.jpg" class="d-block img-fluid" alt="...">
+                                    <div class="carousel-caption d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./public/assets/img/mike-dorner-sf_1ZDA1YFw-unsplash.jpg" class="d-block img-fluid" alt="...">
+                                    <div class="carousel-caption d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./public/assets/img/mike-dorner-sf_1ZDA1YFw-unsplash.jpg" class="d-block img-fluid" alt="...">
+                                    <div class="carousel-caption d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </section>
+        <!-- fin carousel  -->
+            <section class="articleBg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="articleTitle">Les articles</h1>
+                        </div>
+                        <div class="col-6">
+                            <img src="./public/assets/img/mike-dorner-sf_1ZDA1YFw-unsplash.jpg" alt="" class="img-fluid articleUn">
+                        </div>
+                        <div class="col-6">
+                            <h3 class="text-start titleArticleUn">Lorem</h3>
+                            <p class="text-start lh-sm textArticleUn">Loremosam ent obcaecati assumenda delectus sapiente quia quo quisquam necessitatibus dignissimos.</p>
+                        </div>
+                        <div class="col-6">
+                            <img src="./public/assets/img/mike-dorner-sf_1ZDA1YFw-unsplash.jpg" alt="" class="img-fluid articleUn">
+                        </div>
+                        <div class="col-6">
+                            <h3 class="text-start titleArticleUn">Lorem</h3>
+                            <p class="text-start lh-sm textArticleUn">Loremosam ent obcaecati assumenda delectus sapiente quia quo quisquam necessitatibus dignissimos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    <footer>
+        
+    </footer>
+    <script src="./public/assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
