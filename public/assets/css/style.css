@@ -8,39 +8,37 @@ body {
     box-shadow: none;
 }
 
-.btnNav {
-    background-color: #FA5E5E;
+.navbar {
+    background: rgba( 255, 255, 255, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.btnNav:hover {
-    background-color: #FA5E5E;
-}
 
-.colCarousel {
-    height: 10vh !important;
-}
-
-/* section article  */
-.articleBg {
-    background-color: #FA5E5E;
-    height: 65vh;
-    color: white;
-}
-
-.articleTitle {
-    color: black;
-    margin-top: 20px;
-    margin-left: 10px;
-    font-weight: 600;
-}
-
-.articleUn {
-    margin-top: 20px;
-    margin-left: 10px;
-    height: 200px;
+/* hero page  */
+.heroPage {
+    background-image: url(../img/tADH4D4vRD9Dmh5xb54ck3.jpg);
+    background-position: center center;
     object-fit: cover;
+    height: 105vh;
 }
 
-.titleArticleUn {
-    margin-top: 30px;
+.bg-opacity {
+    background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* articles  */
+.articlesBG {
+    background-color: #061A40;
+}
+
+/* media query  */
+
+/* @media all and (min-width: 400px) {
+    .heroPage {
+        height: 105vh;
+    }
+} */
