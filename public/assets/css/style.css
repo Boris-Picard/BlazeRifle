@@ -24,6 +24,7 @@ body {
     background-position: center center;
     object-fit: cover;
     height: 105vh;
+    background-repeat: no-repeat;
 }
 
 .bg-opacity {
@@ -31,8 +32,32 @@ body {
 }
 
 /* articles  */
-.articlesBG {
+/* .articlesBG {
     background-color: #061A40;
+} */
+
+
+.imgPost {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* les guides  */
+.opacityGuide {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bgGuide {
+    background-color: #061A40;
+}
+
+/* calendar section  */
+.bgCalendarImg {
+    background-image: url(../img/LeagueofLegends_Worlds2022_ChaseCenter_California_Stage.jpg);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center center;
 }
 
 /* media query  */
