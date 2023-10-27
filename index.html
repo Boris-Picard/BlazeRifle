@@ -21,19 +21,24 @@
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
-                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end text-small shadow">
-                        <li><a class="dropdown-item" href="#">Mon compte</a></li>
+                        <li><a class="dropdown-item" href="formulaire">Mon compte</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Sign out</a></li>
                     </ul>
                 </div> 
-                <div class="collapse navbar-collapse justify-content-center gap-5 fw-bold order-md-2" id="navbarNavAltMarkup">
-                    <div class="navbar-nav text-center">
+                <div class="collapse navbar-collapse justify-content-center gap-5 fw-bold order-md-2 offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header align-self-end">
+                        <!-- <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5> -->
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="navbar-nav text-center offcanvas-body">
+                        <a href="index.html"><i class="bi bi-house fs-4 text-dark"></i></a>
                         <a class="nav-link" href="#">Les News</a>
                         <a class="nav-link" href="#">Les Articles</a>
                         <a class="nav-link" href="#">Les Sondages</a>
@@ -69,9 +74,9 @@
         </section>
         <!-- fin hero page  -->
         <!-- début des articles  -->
-            <section class="articlesBG">
+            <section class="articlesBG sectionContainer">
                 <div class="container">
-                    <div class="row g-3">
+                    <div class="row g-5">
                         <div class="col-12">
                             <h1 class="text-dark text-uppercase my-4 articleTitle fw-bold">Les articles</h1>
                         </div>
@@ -85,7 +90,7 @@
                                     </div>
                                     <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                                     <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading
-                                        <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+                                        <i class="bi bi-chevron-compact-right mb-1"></i>
                                     </a>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
@@ -103,7 +108,43 @@
                                     </div>
                                     <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
                                     <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading
-                                        <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+                                        <i class="bi bi-chevron-compact-right mb-1"></i>
+                                    </a>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="img-fluid bd-placeholder-img imgPost" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
+                                    <h3 class="mb-0">Featured post</h3>
+                                    <div class="mb-1 text-body-secondary">
+                                        Nov 12
+                                    </div>
+                                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading
+                                        <i class="bi bi-chevron-compact-right mb-1"></i>
+                                    </a>
+                                </div>
+                                <div class="col-auto d-none d-lg-block">
+                                    <img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="img-fluid bd-placeholder-img imgPost" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
+                                    <h3 class="mb-0">Featured post</h3>
+                                    <div class="mb-1 text-body-secondary">
+                                        Nov 12
+                                    </div>
+                                    <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading
+                                        <i class="bi bi-chevron-compact-right mb-1"></i>
                                     </a>
                                 </div>
                                 <div class="col-auto d-none d-lg-block">
@@ -112,17 +153,16 @@
                             </div>
                         </div>
                         <div class="col-12 d-flex flex-row-reverse mb-4">
-                            <a href="#" class="text-dark fs-4">Voir plus</a>
-                            <i class="bi bi-arrow-right mx-1 text-dark fs-4"></i>
+                            <a href="#" class="text-dark text-decoration-none fs-4 icon-link icon-link-hover"></i>Voir plus<i class="bi bi-arrow-right mx-1 text-dark fs-4 mb-2"></i></a>
                         </div>
                     </div>
                 </div>
             </section>
             <!-- fin des articles  -->
             <!-- début des guides  -->
-            <section class="bgGuide">
+            <section class="bgGuide sectionContainer">
                 <div class="container">
-                    <div class="row g-3">
+                    <div class="row g-5">
                         <div class="col-12">
                             <h1 class="text-light text-uppercase my-4 fw-bold">Les guides</h1>
                         </div>
@@ -146,18 +186,37 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card text-bg-dark">
+                                <img src="/public/assets/img/1329760.jpeg" class="card-img" alt="...">
+                                <div class="card-img-overlay opacityGuide d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card text-bg-dark">
+                                <img src="/public/assets/img/1329760.jpeg" class="card-img" alt="...">
+                                <div class="card-img-overlay opacityGuide d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-12 d-flex flex-row-reverse mb-3">
-                            <a href="#" class="text-light fs-4">Voir plus</a>
-                            <i class="bi bi-arrow-right mx-1 text-light fs-4"></i>
+                            <a href="#" class="text-light text-decoration-none fs-4 icon-link icon-link-hover"></i>Voir plus<i class="bi bi-arrow-right mx-1 text-light fs-4 mb-2"></i></a>
                         </div>
                     </div> 
                 </div>
             </section>
             <!-- fin des guides  -->
             <!-- début des Calendriers -->
-            <section class="articleBgCalendar">
+            <section class="articleBgCalendar sectionContainer">
                 <div class="container">
-                    <div class="row g-3">
+                    <div class="row g-5">
                         <div class="col-12">
                             <h1 class="articleTitle my-4 text-uppercase fw-bold">Calendrier des events</h1>
                         </div>
@@ -195,9 +254,42 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bgCalendarImg">
+                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 opacityGuide">
+                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+                                    <ul class="d-flex list-unstyled mt-auto justify-content-end">
+                                        <li class="d-flex align-items-center me-3">
+                                            <i class="bi bi-geo-alt mx-2"></i>
+                                            <small>Seoul</small>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            <i class="bi bi-calendar mx-2"></i>
+                                            <small>3d</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bgCalendarImg">
+                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 opacityGuide">
+                                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+                                    <ul class="d-flex list-unstyled mt-auto justify-content-end">
+                                        <li class="d-flex align-items-center me-3">
+                                            <i class="bi bi-geo-alt mx-2"></i>
+                                            <small>Seoul</small>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            <i class="bi bi-calendar mx-2"></i>
+                                            <small>3d</small>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-12 col-md-12 d-flex flex-row-reverse align-items-center arrowGuide mb-3">
-                            <a href="#" class="text-dark fs-4">Voir Plus</a>
-                            <i class="bi bi-arrow-right text-dark mx-1 fs-4"></i>
+                            <a href="#" class="text-dark text-decoration-none fs-4 icon-link icon-link-hover"></i>Voir plus<i class="bi bi-arrow-right mx-1 text-dark fs-4 mb-2"></i></a>
                         </div>
                     </div>
                 </div>

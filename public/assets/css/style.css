@@ -2,10 +2,16 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+
 /* section navbar */
 /* permet de retirer la bordure dégueulasse de bootstrap au clic */
 .navbar-toggler:focus {
     box-shadow: none;
+}
+
+.offcanvas-end {
+    height: 100vh;
+    width: 70vw !important;
 }
 
 .navbar {
@@ -13,8 +19,11 @@ body {
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.navbar-nav {
+    text-transform: uppercase;
 }
 
 
@@ -60,10 +69,35 @@ body {
     background-position: center center;
 }
 
+/* formulaire  */
+.formSection {
+    height: 100vh;
+}
+
+.formRow {
+    height: 80vh;
+}
+
+.imgForm {
+    background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.form-control {
+    background-color: transparent;
+    border: none;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    border: none;
+}
+
 /* media query  */
 
-/* @media all and (min-width: 400px) {
-    .heroPage {
-        height: 105vh;
+@media all and (min-width: 720px) {
+    .sectionContainer {
+        padding: 10vh 0;
     }
-} */
+}
