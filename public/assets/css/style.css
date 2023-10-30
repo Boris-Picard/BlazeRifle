@@ -2,6 +2,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* section navbar */
 /* permet de retirer la bordure dégueulasse de bootstrap au clic */
 .navbar-toggler:focus {
@@ -13,14 +17,14 @@ body {
     width: 70vw !important;
 }
 
-.navbarStyle {
+/* .navbarStyle {
     background: rgba( 255, 255, 255, 0.5 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     z-index: 999;
-}
+} */
 
 .navbarScroll {
     background: rgba( 255, 255, 255, 0.8 );
@@ -38,10 +42,10 @@ body {
 
 /* hero page  */
 .heroPage {
-    background-image: url(../img/tADH4D4vRD9Dmh5xb54ck3.jpg);
-    background-position: center center;
-    object-fit: cover;
-    height: 105vh;
+    background-image: url(../img/168402.jpg);
+    background-position: 35% 45%;
+    background-size: cover;
+    height: 100vh;
     background-repeat: no-repeat;
 }
 
