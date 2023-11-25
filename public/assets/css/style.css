@@ -6,25 +6,37 @@ html{
     scroll-behavior: smooth;
 }
 
+
 /* section navbar */
 /* permet de retirer la bordure dégueulasse de bootstrap au clic */
 .navbar-toggler:focus {
     box-shadow: none;
 }
 
+.active {
+    color: rgb(22, 136, 243) !important;
+}
+
+.logoNav {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    margin-top: -6px;
+}
+
+.nameLogoNav {
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .offcanvas-end {
     height: 100vh;
     width: 70vw !important;
 }
-
-/* .navbarStyle {
-    background: rgba( 255, 255, 255, 0.5 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    z-index: 999;
-} */
 
 .navbarScroll {
     background: rgba( 255, 255, 255, 0.8 );
@@ -39,10 +51,14 @@ html{
     text-transform: uppercase;
 }
 
+.navlinkHover:hover {
+    color: rgb(22, 136, 243) !important;
+}
+
 
 /* hero page  */
 .heroPage {
-    background-image: url(../img/168402.jpg);
+    background-image: url(../img/tADH4D4vRD9Dmh5xb54ck3.jpg);
     background-position: 35% 45%;
     background-size: cover;
     height: 100vh;
@@ -71,7 +87,7 @@ html{
 }
 
 .bgGuide {
-    background-color: #061A40;
+    background-color: rgb(16, 31, 51);
 }
 
 /* calendar section  */
@@ -132,13 +148,13 @@ html{
 
 .form-control:focus-visible {
     transition: border 0.5s ease-in-out;
-    border-bottom: 3px solid #d90429;
+    border-bottom: 3px solid rgb(22, 136, 243);
     outline: none;
 }
 
 .form-check-input:checked {
-    background-color: #d90429;
-    border-color: #d90429;
+    background-color: rgb(22, 136, 243);
+    border-color: rgb(22, 136, 243);
 }
 
 .form-check-input:focus {
@@ -166,7 +182,7 @@ html{
 }
 
 .connectLink:hover {
-    color: #d90429;
+    color: rgb(22, 136, 243);
     transition: 0.3s ease-in-out;
 }
 
@@ -174,7 +190,7 @@ html{
     border: 2px solid black;
     display: inline-block;
     cursor: pointer;
-    box-shadow: inset 0 0 0 0 #d90429;
+    box-shadow: inset 0 0 0 0 rgb(22, 136, 243);
     transition: ease-in-out 0.6s;
     width: 45%;
 }
@@ -182,7 +198,7 @@ html{
 .signInButton:hover {
     color: white;
     border: 2px solid black;
-    box-shadow: inset 400px 0 0 0 #d90429;
+    box-shadow: inset 400px 0 0 0 rgb(22, 136, 243);
 }
 
 .bi-facebook:hover {
