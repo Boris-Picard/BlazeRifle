@@ -47,8 +47,24 @@ html{
     z-index: 999;
 }
 
-.navbar-nav {
+.navlinkHover {
+    position: relative;
     text-transform: uppercase;
+}
+
+.navlinkHover:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(22, 136, 243);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navlinkHover:hover::after {
+    width: 100%;
 }
 
 .navlinkHover:hover {
@@ -70,10 +86,6 @@ html{
 }
 
 /* articles  */
-/* .articlesBG {
-    background-color: #061A40;
-} */
-
 
 .imgPost {
     width: 200px;
@@ -91,6 +103,7 @@ html{
 }
 
 /* calendar section  */
+
 .bgCalendarImg {
     background-image: url(../img/LeagueofLegends_Worlds2022_ChaseCenter_California_Stage.jpg);
     background-repeat: no-repeat;
@@ -99,12 +112,9 @@ html{
 }
 
 /* formulaire  */
+
 .formSection {
     height: 100vh;
-}
-
-.formRow {
-    height: 95vh;
 }
 
 .formSignIn {
@@ -117,7 +127,6 @@ html{
     border-bottom-right-radius: 10px;
 }
 
-
 .imgForm {
     background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
     background-position: right 57% bottom 45%;
@@ -125,14 +134,6 @@ html{
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-}
-
-.imgForm .active {
-    position: absolute;
-    height: 90vh;
-    z-index: 2;
-    left: 50%;
-    width: 40vw;
 }
 
 .form-control {
@@ -202,22 +203,41 @@ html{
 }
 
 .bi-facebook:hover {
-    color: #46629e;
+    color: #46629e !important;
 }
 
 .bi-google:hover {
-    color: #f9bb06;
+    color: transparent !important;
+    background: -webkit-radial-gradient(30% 107%, circle, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
+    background: -o-radial-gradient(30% 107%, circle, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
+    background: radial-gradient(circle at 30% 107%, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
+    background: -webkit-radial-gradient(circle at 30% 107%, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
 }
 
-@keyframes slidein {
-    0% {
-        left:0px;
-        top:0px;
-    }
-    100% {
-        left:100px;
-        top: 0px;
-    }
+/* BANDEAU RESEAUX SOCIAUX */
+
+.blockBottomFollow {
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    padding: 5px;
+}
+
+.followUs {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+}
+
+.bi-instagram:hover {
+    color: transparent !important;
+    background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+    background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
 }
 
 
@@ -225,6 +245,18 @@ html{
 @media all and (max-width: 720px) {
     .imgForm {
         display: none;
+    }
+    .formSection {
+        height: 100%;
+    }
+    .blockBottomFollow {
+        padding: 0px;
+    }
+    .followUs {
+        display: none;
+    }
+    .navlinkHover:after {
+        bottom: 0px;
     }
 }
 

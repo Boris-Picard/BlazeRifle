@@ -16,7 +16,7 @@
         <!-- début barre de navigation  -->
         <nav class="navbar navbar-expand-md navbarStyle">
             <div class="container-fluid">
-                <a class="navbar-brand nameLogoNav" href="#"><img src="./public/assets/img/logo512.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a> 
+                <a class="navbar-brand nameLogoNav" href="index.html"><img src="./public/assets/img/logo512.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a> 
                 <div class="flex-shrink-0 d-flex dropdown order-md-3">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -55,53 +55,53 @@
         <!-- fin barre de navigation  -->
     </header>
     <main>
-        <section class="formSection d-flex my-5">
+        <section class="formSection d-flex align-items-center justify-content-center">
             <div class="container">
                 <div class="row formRow">
-                    <div class="col-12 col-md-6 imgForm">
-                    </div>
-                    <div class="col-12 col-md-6 formSignIn">
+                    <div class="col-12">
                         <form action="">
-                            <div class="row g-5 m-0">
-                                <div class="col-12 text-center">
+                            <div class="row">
+                                <div class="col-12 col-md-6 imgForm">
+                                </div>
+                                <div class="col-12 col-md-6 text-center formSignIn p-5">
                                     <p class="fw-semibold">Vous avez déja un compte ?</p>
                                     <h1 class="fw-bold"><a href="logIn.html" class="text-decoration-none connectLink">Se Connecter</a></h1>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <p class="mt-3 fw-semibold">Ou</p>
-                                    <p class="fw-semibold">S'inscrire avec :</p>
-                                    <a href="" class="text-light mx-1"><i class="bi bi-twitter-x fs-1"></i></a>
-                                    <a href="" class="text-light mx-1"><i class="bi bi-facebook fs-1"></i></a>
-                                    <a href="" class="text-light mx-1"><i class="bi bi-google fs-1"></i></a>
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" class="form-control rounded-0" placeholder="Prénom" aria-label="firstname">
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" class="form-control rounded-0" placeholder="Nom" aria-label="lastname">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control rounded-0" placeholder="Pseudo" aria-label="pseudo">
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" class="form-control rounded-0" placeholder="Email" aria-label="email">
-                                </div>
-                                <div class="col-12">
-                                    <input type="password" class="form-control rounded-0" placeholder="Mot de passe" aria-label="password">
-                                </div>
-                                <div class="col-12">
-                                    <input type="password" class="form-control rounded-0" placeholder="Confimer le Mot de passe" aria-label="password">
-                                </div>
-                                <div class="col-12 d-flex justify-content-center align-items-center">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                                        <label class="form-check-label" for="gridCheck">
-                                            Check me out
-                                        </label>
+                                    <div class="text-center">
+                                        <p class="mt-3 fw-semibold">Ou</p>
+                                        <p class="fw-semibold">S'inscrire avec :</p>
+                                        <a href="" class="text-light mx-1"><i class="bi bi-twitter-x fs-1"></i></a>
+                                        <a href="" class="text-light mx-1"><i class="bi bi-facebook fs-1"></i></a>
+                                        <a href="" class="text-light mx-1"><i class="bi bi-google fs-1"></i></a>
                                     </div>
-                                </div>
-                                <div class="col-12 justify-content-center d-flex">
-                                    <button type="submit" class="btn signInButton fw-semibold text-uppercase">Sign in</button>
+                                    <div class="mb-5 mt-5">
+                                        <input type="text" class="form-control rounded-0" placeholder="Prénom *">
+                                    </div>
+                                    <div class="mb-5">
+                                        <input type="text" class="form-control rounded-0" placeholder="Nom *">
+                                    </div>
+                                    <div class="mb-5">
+                                        <input type="text" class="form-control rounded-0" placeholder="Pseudo *">
+                                    </div>
+                                    <div class="mb-5">
+                                        <input type="email" class="form-control rounded-0" placeholder="Email *">
+                                    </div>
+                                    <div class="mb-5">
+                                        <input type="password" class="form-control rounded-0" placeholder="Mot de passe *">
+                                    </div>
+                                    <div class="mb-5">
+                                        <input type="password" class="form-control rounded-0" placeholder="Confimer le Mot de passe *">
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <label class="form-check-label" for="gridCheck">
+                                                Check me out
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class=" justify-content-center d-flex">
+                                        <button type="submit" class="btn signInButton fw-semibold text-uppercase">Sign in</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -109,6 +109,18 @@
                 </div>
             </div>
         </section>
+        <!-- DEBUT BANDEAU DES RESEAUX SOCIAUX -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center blockBottomFollow">
+                    <span class="followUs mx-3">suivez-nous :</span>
+                    <a class="link-body-emphasis" href="#"><i class="bi text-light bi-twitter-x mx-3 fs-4"></i></a></li>
+                    <a class="link-body-emphasis" href="#"><i class="bi text-light bi-instagram mx-3 fs-4"></i></a></li>
+                    <a class="link-body-emphasis" href="#"><i class="bi text-light bi-facebook mx-3 fs-4"></i></a></li>
+                </div>
+            </div>
+        </div>
+        <!-- FIN BANDEAU DES RESEAUX SOCIAUX -->
     </main>
     <footer class="py-5 text-bg-dark">
         <div class="container">
@@ -134,12 +146,7 @@
                     </ul>
                 </div>
                 <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top text-center">
-                        <p>&copy; 2023 Company, Inc. All rights reserved.</p>
-                    <ul class="list-unstyled d-flex justify-content-center">
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi text-light bi-twitter-x"></i></a></li>
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi text-light bi-instagram"></i></a></li>
-                        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi text-light bi-facebook"></i></a></li>
-                    </ul>
+                    <p>&copy; 2023 Company, Inc. All rights reserved.</p>
                 </div>
             </div>
         </div>
