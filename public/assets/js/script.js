@@ -13,3 +13,4 @@ const scrollNavbar = () => {
 }
 
 window.addEventListener("scroll", scrollNavbar)
+
