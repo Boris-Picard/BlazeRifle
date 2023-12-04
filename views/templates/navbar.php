@@ -1,6 +1,6 @@
 <nav class="navbar navbarStyle navbar-expand-md fixed-top">
             <div class="container-fluid">
-                    <a class="navbar-brand nameLogoNav" href="#"><img src="../../public/assets/img/logo512.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a> 
+                    <a class="navbar-brand nameLogoNav" href="/../controllers/home-ctrl.php"><img src="../../public/assets/img/logo512.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a> 
                 <div class="flex-shrink-0 d-flex dropdown order-md-3">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">

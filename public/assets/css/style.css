@@ -121,12 +121,10 @@ html{
     background-position: center center;
 }
 
+/* CONTACT US */
+
 
 /* FORMULAIRE  */
-.signInPage {
-    margin-top: 80px;
-}
-
 .formSection {
     height: 100vh;
 }
@@ -171,6 +169,10 @@ html{
     border-color: rgb(22, 136, 243);
 }
 
+#checkboxForm {
+    border: solid 2px black;
+}
+
 .form-check-input:focus {
     box-shadow: 0 0 0;
 }
@@ -202,6 +204,7 @@ html{
 
 .signInButton {
     border: 2px solid black;
+    border-radius: 20px;
     display: inline-block;
     cursor: pointer;
     box-shadow: inset 0 0 0 0 rgb(22, 136, 243);
