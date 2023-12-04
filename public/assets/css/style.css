@@ -78,7 +78,7 @@ html{
 }
 
 
-/* hero page  */
+/* HERO PAGE */
 .heroPage {
     background-image: url(../img/bgmw3.jpg);
     background-position: center;
@@ -95,7 +95,7 @@ html{
 
 
 
-/* articles  */
+/* ARTICLES  */
 
 .imgPost {
     width: 200px;
@@ -103,7 +103,7 @@ html{
     object-fit: cover;
 }
 
-/* les guides  */
+/* LES GUIDES  */
 .opacityGuide {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -112,7 +112,7 @@ html{
     background-color: rgb(16, 31, 51);
 }
 
-/* calendar section  */
+/* CALENDAR SECTION  */
 
 .bgCalendarImg {
     background-image: url(../img/LeagueofLegends_Worlds2022_ChaseCenter_California_Stage.jpg);
@@ -122,7 +122,10 @@ html{
 }
 
 
-/* formulaire  */
+/* FORMULAIRE  */
+.signInPage {
+    margin-top: 80px;
+}
 
 .formSection {
     height: 100vh;
