@@ -1,5 +1,5 @@
 <?php
-include(dirname(__FILE__) . '/../config/config.php');
+include(dirname(__FILE__) . '/../../config/config.php');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     //===================== Firstname : Nettoyage et validation =======================
@@ -61,7 +61,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!$testEmail) {
             $error["email"] = "L'adresse email n'est pas au bon format";
         }
-    }                       
+    }      
+    //===================== MOT DE PASSE =====================
+    $password = filter_input(INPUT_POST, 'password');
+    $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
+    if(empty($password)) {
+        $error['password'] = 'Veuillez entrer un mot de passe';
+    } elseif(empty($confirmPassword)) {
+        $error['confirmPassword'] = 'Veuillez entrer un mot de passe';
+    } else {
+        $isOk = filter_var($password, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/' . REGEX_PASSWORD . '/')));
+        $isConfirmOk = filter_var($confirmPassword, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/' . REGEX_PASSWORD . '/')));
+        if(!$isOk && !$isConfirmOk) {
+            $error['password'] = "Veuillez entrer un mot de passe valide";
+        } elseif($isOk != $isConfirmOk) {
+            $error['confirmPassword'] = "Veuillez entrer le même mot de passe";
+        } else {
+            $hash = password_hash($isOk, PASSWORD_DEFAULT);
+        }
+    }               
+    // CHECKBOX
+    $checkbox = filter_input(INPUT_POST,'checkboxForm', FILTER_SANITIZE_SPECIAL_CHARS);
+    if(empty($checkbox)) {
+        $error['checkboxForm'] = "Veuillez cocher la case";
+    } 
 }
 
 
@@ -73,7 +96,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-include __DIR__ . '/../views/templates/header.php';
-include __DIR__ . '/../views/signIn.php';
-include __DIR__ . '/../views/templates/socials.php';
-include __DIR__ . '/../views/templates/footer.php';
+include __DIR__ . '/../../views/templates/header.php';
+include __DIR__ . '/../../views/login/signin.php';
