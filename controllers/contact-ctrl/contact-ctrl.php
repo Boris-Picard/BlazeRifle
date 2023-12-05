@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $error["email"] = "L'adresse email n'est pas au bon format";
         }
     }    
-
+    // TEXTAREA
     $textArea = filter_input(INPUT_POST, 'textArea', FILTER_SANITIZE_SPECIAL_CHARS);
     if(empty($textArea)) {
         $error['textArea'] = 'Veuillez mettre un commentaire';

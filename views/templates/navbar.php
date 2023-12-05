@@ -10,7 +10,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end text-small shadow">
-                        <li><a class="dropdown-item" href="signIn-ctrl.php">Mon compte</a></li>
+                        <li><a class="dropdown-item" href="/controllers/login-ctrl/sign-up-ctrl.php">Mon compte</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>

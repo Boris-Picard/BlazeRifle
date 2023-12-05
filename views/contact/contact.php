@@ -58,7 +58,6 @@
                                     <label for="email">Email *</label>
                                 </div>
                                 <div class="form-floating">
-                                    <small class="fw-bold text-danger"><?= $error['textArea'] ?? '' ?></small>
                                     <textarea class="form-control rounded-0" 
                                     placeholder="Comments" 
                                     id="floatingTextarea" 
@@ -67,6 +66,7 @@
                                     style="height: 200px;"
                                     required><?= $textArea ?? '' ?></textarea>
                                     <label for="floatingTextarea">Comments *</label>
+                                    <small class="fw-bold text-danger"><?= $error['textArea'] ?? '' ?></small>
                                 </div>
                                 <div class= "mt-5 buttonContact justify-content-center d-flex">
                                     <button type="submit" class="btn signInButton fw-semibold text-uppercase">Envoyer</button>

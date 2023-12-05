@@ -1,7 +1,23 @@
 <?php
 $error = [];
 
-$todayDate = date('d m Y');
+$todayDate = date('d/m/Y');
+$consolesArray = ['PS5', 'XBOX', 'SWITCH', 'PC'];
+$gamesArray = [
+    'GTA6', 
+    'Call of Duty : MW3', 
+    'Overwatch 2', 
+    'Counter-Strike 2', 
+    'Apex Legends', 
+    'Battlefield 2042',
+    'Far Cry 6',
+    'Quake',
+    'Call of Duty: Warzone 2.0',
+    'Valorant',
+    'Borderlands 4',
+    'Halo Infinite',
+    'DOOM',
+];
 
 define('REGEX_FIRSTNAME',"^[A-Za-z-éèêëàâäôöûüç' ]+$");
 define('REGEX_PSEUDO','^[a-zA-Z0-9.-_]{3,20}$');
