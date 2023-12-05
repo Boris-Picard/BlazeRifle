@@ -1,4 +1,5 @@
-<nav class="navbar navbarStyle navbar-expand-md fixed-top">
+<header>
+    <nav class="navbar navbarStyle navbar-expand-md fixed-top">
             <div class="container-fluid">
                     <a class="navbar-brand nameLogoNav" href="/../controllers/home-ctrl.php"><img src="../../public/assets/img/logo512.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a> 
                 <div class="flex-shrink-0 d-flex dropdown order-md-3">
@@ -21,7 +22,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="navbar-nav text-center offcanvas-body">
-                        <a class="nav-link navlinkHover active" href="home-ctrl.php">Accueil</a>
+                        <a class="nav-link navlinkHover" href="/controllers/home-ctrl.php">Accueil</a>
                         <a class="nav-link navlinkHover" href="#">Les News</a>
                         <a class="nav-link navlinkHover" href="#">Les Articles</a>
                         <a class="nav-link navlinkHover" href="#">Les Sondages</a>
@@ -30,7 +31,7 @@
                         <a class="nav-link navlinkHover" href="#">Les Bons Plans</a>
                         <a class="nav-link navlinkHover" href="#">Calendrier des Events</a>
                         <a class="nav-link navlinkHover" href="#">Les Produits</a>
-                        <a class="nav-link navlinkHover" href="#">Nous Contacter</a>
+                        <a class="nav-link navlinkHover" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
                     </div>
                 </div>
             </div>

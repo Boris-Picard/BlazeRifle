@@ -1,16 +1,16 @@
-<body>
-</header>
+
+
     <main>
         <section class="formSection">
             <div class="container-fluid">
-                <form action="" method="POST" novalidate>
+                <?php if($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
+                <form action="" method="POST">
                     <div class="row">
                         <div class="col-12 col-md-6 imgSignIn">
-
                         </div>
                         <div class="col-12 col-md-6 colInputSignIn">
                             <p class="fw-semibold text-center">Vous avez déja un compte ?</p>
-                            <h1 class="fw-bold text-center"><a href="logIn-ctrl.php" class="text-decoration-none connectLink">Se Connecter</a></h1>
+                            <h1 class="fw-bold text-center"><a href="/controllers/login-ctrl/sign-in-ctrl.php" class="text-decoration-none connectLink">Se Connecter</a></h1>
                             <div class="text-center">
                                 <p class="mt-3 fw-semibold">Ou</p>
                                 <p class="fw-semibold">S'inscrire avec :</p>
@@ -95,6 +95,8 @@
                                     placeholder="Mot de passe *"
                                     pattern="<?= REGEX_PASSWORD ?>" 
                                     required>
+                                    <small class="fw-bold" id="passwordStrength"></small>
+                                    <small class="fw-bold" id="passwordMin"></small>
                                     <small id="passwordHelp" class="form-text fw-bold text-danger"><?= $error['password'] ?? '' ?></small>
                                     <label for="password">Mot de passe *</label>
                                 </div>
@@ -137,6 +139,9 @@
                         </div>
                     </div>
                 </form>
+                <?php } else { ?>
+                        
+                <?php } ?>
             </div>
         </section>
         <script src="/public/assets/js/password.js"></script>

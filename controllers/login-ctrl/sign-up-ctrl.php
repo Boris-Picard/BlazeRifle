@@ -97,4 +97,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 include __DIR__ . '/../../views/templates/header.php';
-include __DIR__ . '/../../views/login/signin.php';
+include __DIR__ . '/../../views/login/sign-up.php';

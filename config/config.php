@@ -1,6 +1,8 @@
 <?php
 $error = [];
 
+$todayDate = date('d m Y');
+
 define('REGEX_FIRSTNAME',"^[A-Za-z-éèêëàâäôöûüç' ]+$");
 define('REGEX_PSEUDO','^[a-zA-Z0-9.-_]{3,20}$');
 define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}$');
