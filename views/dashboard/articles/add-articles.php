@@ -2,7 +2,8 @@
         <main>
             <section>
                 <div class="container-fluid">
-                    <form action="" method="POST" enctype="multipart/form-data" novalidate>
+                    <?php if($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="articlesBanner p-0">
                                 <div class="col-12 opacityBanner d-flex align-items-center justify-content-center">
@@ -124,6 +125,9 @@
                             </div>
                         </div>
                     </form>
+                    <?php } else { ?>
+
+                    <?php } ?>
                 </div>
             </section>
         </main>
