@@ -1,40 +1,45 @@
 <section class="myAccount">
     <main class="d-flex flex-nowrap h-100">
-        <nav class="d-flex flex-column align-items-center px-0 py-3 px-3 py-lg-0 bg-light sidebar">
-            <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Brand -->
-            <a class="navbar-brand nameLogoAccount" href="/../controllers/home-ctrl.php"><img src="../../public/assets/img/logo512.png" class="img-fluid brandLogoAccount" alt="logoBrand">blaze rifle</a> 
-            <!-- Sidebar -->
-            <ul class="navbar-nav py-5">
-                <li class="nav-item py-2">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-house"></i> Dashboard
-                    </a>
-                </li>
-                <li class="nav-item py-2">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-bar-chart"></i> Analitycs
-                    </a>
-                </li>
-                <li class="nav-item py-2">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-chat"></i> Messages
-                        <span class="badge bg-opacity-30 bg-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">6</span>
-                    </a>
-                </li>
-                <li class="nav-item py-2">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-bookmarks"></i> Collections
-                    </a>
-                </li>
-                <li class="nav-item py-2">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-people"></i> Users
-                    </a>
-                </li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light align-items-start">
+            <div class="container-fluid flex-lg-column align-items-stretch sidebar p-0">
+                <!-- Toggler for small screens -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Brand Logo -->
+                <a class="navbar-brand" href="#" class="nameLogoAccount"><img src="/public/assets/img/logo512.png" class="brandLogoAccount" alt="logo"> blaze rifle</a>
+                <!-- Sidebar Menu -->
+                <div class="collapse navbar-collapse align-items-start py-5" id="sidebarMenu">
+                    <ul class="navbar-nav flex-column w-100 h-100">
+                        <li class="nav-item mb-2">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="bi bi-house p-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-bar-chart p-2"></i> Analitycs
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-chat p-2"></i> Messages
+                                <span class="badge bg-primary rounded-pill">6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-bookmarks p-2"></i> Collections
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-people p-2"></i> Users
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
         <div class="h-screen flex-grow-1 overflow-y-lg-auto">
             <!-- Main -->
@@ -78,7 +83,7 @@
                                 </div>
                             </div>
                             <div class="row gy-5">
-                            <div class="col-md-12 form-floating">
+                                <div class="col-md-12 form-floating">
                                     <input type="text" class="form-control rounded-0" id="pseudo" placeholder="Votre Pseudo">
                                     <label for="pseudo">Pseudo</label>
                                 </div>

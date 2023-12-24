@@ -363,6 +363,20 @@ footer {
     -webkit-text-fill-color: transparent;
 }
 
+.sidebar {
+    min-height: 100vh; 
+    width: 250px; 
+}
+
+.navbar-toggler {
+    display: none; /* Hide toggler by default */
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #007bff;
+    background-color: #eee;
+}
+
 /* media query  */
 @media all and (max-width: 720px) {
     .imgForm {
@@ -405,3 +419,18 @@ footer {
     }
 }
     
+@media (max-width: 992px) {
+    .navbar-toggler {
+        display: block; 
+    }
+    .sidebar {
+        width: 100%;
+        min-height: auto; 
+    }
+    .sidebar .collapse {
+        display: none; 
+    }
+    .sidebar .collapse.show {
+        display: block; 
+    }
+}
