@@ -13,28 +13,28 @@
                     <ul class="navbar-nav flex-column w-100 h-100">
                         <li class="nav-item mb-2">
                             <a class="nav-link active" aria-current="page" href="#">
-                                <i class="bi bi-house p-2"></i> Dashboard
+                                <span><i class="bi bi-house p-2"></i> Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item mb-2">
                             <a class="nav-link" href="#">
-                                <i class="bi bi-bar-chart p-2"></i> Analitycs
+                                <span><i class="bi bi-bar-chart p-2"></i> Analitycs</span>
                             </a>
                         </li>
                         <li class="nav-item mb-2">
                             <a class="nav-link" href="#">
-                                <i class="bi bi-chat p-2"></i> Messages
+                                <span><i class="bi bi-chat p-2"></i> Messages</span>
                                 <span class="badge bg-primary rounded-pill">6</span>
                             </a>
                         </li>
                         <li class="nav-item mb-2">
                             <a class="nav-link" href="#">
-                                <i class="bi bi-bookmarks p-2"></i> Collections
+                                <span><i class="bi bi-bookmarks p-2"></i> Collections</span>
                             </a>
                         </li>
                         <li class="nav-item mb-2">
                             <a class="nav-link" href="#">
-                                <i class="bi bi-people p-2"></i> Users
+                                <span><i class="bi bi-people p-2"></i> Users</span>
                             </a>
                         </li>
                     </ul>
