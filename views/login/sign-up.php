@@ -1,10 +1,14 @@
 <main>
-    <section class="formSection d-flex justify-content-center">
+    <section class="formSection d-flex justify-content-center align-items-center h-100">
         <div class="container-fluid">
             <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
                 <form action="" method="POST">
                     <div class="row">
-                        <div class="col-12 col-md-6 imgSignIn">
+                        <div class="col-12 col-md-6 imgSignIn p-0">
+                            <div class="opacityForm h-100 d-flex align-items-center justify-content-center flex-column ">
+                                <h1 class="text-light fw-bold text-uppercase">inscrivez vous</h1>
+                                <img src="../../public/assets/img/logo512.png" class="img-fluid logoForm" alt="logoBrand">
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 colInputSignIn">
                             <p class="fw-semibold text-center">Vous avez déja un compte ?</p>
@@ -75,8 +79,8 @@
                     </div>
                 </form>
             <?php } else { ?>
-                <div class="container validContainer h-100">
-                    <div class="row m-0 w-100 h-100">
+                <div class="container validContainer">
+                    <div class="row m-0">
                         <div class="col-md-12 justify-content-center d-flex align-items-center h-100">
                             <div class="card shadow border-0 p-5">
                                 <div class="card-body d-flex align-items-center flex-column">

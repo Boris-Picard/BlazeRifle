@@ -134,7 +134,7 @@ html{
 }
 
 .colInputContact, .colInputSignIn, .colInputLogIn {
-    padding: 50px;
+    padding: 80px;
 }
 
 .h1Contact {
@@ -146,11 +146,15 @@ html{
 }
 
 /* FORMULAIRE  */
+.btnSocialsForm:hover {
+    background-color: #DFE0E1;
+}
+
 .formSection {
     height: 100vh;
 }
 
-.formSignIn {
+/* .formSignIn {
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -230,7 +234,7 @@ html{
     cursor: pointer;
     box-shadow: inset 0 0 0 0 rgb(22, 136, 243);
     transition: ease-in-out 0.3s;
-    padding: 20px;
+    padding: 10px;
     width: 50%;
 }
 
@@ -252,7 +256,7 @@ html{
     background: -webkit-radial-gradient(circle at 30% 107%, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
     background-clip: text !important;
     -webkit-background-clip: text !important;
-}
+}  */
 
 .validContainer {
     animation: slideFromDepth 1s ease-in-out forwards;
@@ -339,6 +343,15 @@ html{
     100% {
         height: 35px;
     }
+}
+
+.opacityForm {
+    background-color: rgba( 255, 255, 255, 0.3 );
+}
+
+.logoForm {
+    width: 150px;
+    height: 150px;
 }
 
 /* FOOTER */
@@ -501,6 +514,9 @@ footer {
     }
     .blockBottomFollow {
         padding: 0px;
+    }
+    .colInputContact, .colInputSignIn, .colInputLogIn {
+        padding: 16px;
     }
     .followUs {
         display: none;
