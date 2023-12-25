@@ -84,7 +84,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row w-50 py-5 justify-content-center align-items-center">
+                        <div class="row w-50 py-4 justify-content-center align-items-center">
                             <div class="col-5">
                                 <hr>
                             </div>
@@ -133,7 +133,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row py-5">
+                        <div class="row pt-5">
                             <div class="col-md-12">
                                 <small>Vous avez déjà un compte ?</small>
                                 <a href="/controllers/login-ctrl/sign-in-ctrl.php" class="text-warning text-sm fw-semibold text-decoration-none">Se connecter</a>

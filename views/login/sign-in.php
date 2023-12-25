@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row w-50 py-5 justify-content-center align-items-center">
+                        <div class="row w-50 py-4 justify-content-center align-items-center">
                             <div class="col-5">
                                 <hr>
                             </div>
