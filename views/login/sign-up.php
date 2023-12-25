@@ -1,5 +1,5 @@
 <main>
-    <section class="formSection">
+    <section class="formSection d-flex justify-content-center">
         <div class="container-fluid">
             <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
                 <form action="" method="POST">
@@ -75,9 +75,27 @@
                     </div>
                 </form>
             <?php } else { ?>
-
+                <div class="container validContainer h-100">
+                    <div class="row m-0 w-100 h-100">
+                        <div class="col-md-12 justify-content-center d-flex align-items-center h-100">
+                            <div class="card shadow border-0 p-5">
+                                <div class="card-body d-flex align-items-center flex-column">
+                                    <h5 class="mb-2 py-5 text-uppercase fw-bold">Vous êtes bien enregistré !</h5>
+                                    <p class="text-sm text-muted mb-6 p-5">
+                                        Vous serez redirigé dans quelques secondes
+                                    </p>
+                                    <div class="checkmark-container">
+                                        <div class="checkmark-background"></div>
+                                        <div class="checkmark-stem"></div>
+                                        <div class="checkmark-kick"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="/public/assets/js/redirect.js"></script>
             <?php } ?>
         </div>
+        <script src="/public/assets/js/password.js"></script>
     </section>
-    <script src="/public/assets/js/password.js"></script>
-    </body>
