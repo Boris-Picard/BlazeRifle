@@ -12,16 +12,21 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 py-5">
-                                <h1 class="fw-bold h2">
-                                    Welcome back!
+                            <div class="col-12">
+                                <a class="navbar-brand nameLogoForm" href="/../controllers/home-ctrl.php">blaze rifle</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 py-4">
+                                <h1 class="fw-bold h2 text-uppercase">
+                                    Se connecter
                                 </h1>
                             </div>
                         </div>
                         <div class="row w-50">
                             <div class="col-12 ">
                                 <div class="mb-4">
-                                    <label class="form-label fw-semibold " for="email">Email *</label>
+                                    <label class="form-label fw-semibold" for="email">Email *</label>
                                     <input type="email" id="email" class="form-control" placeholder="Votre email" autocomplete="email">
                                 </div>
                                 <div class="mb-4">
@@ -48,7 +53,7 @@
                                 <hr>
                             </div>
                             <div class="col-2 text-center text-uppercase">
-                                or
+                                ou
                             </div>
                             <div class="col-5">
                                 <hr>
@@ -56,7 +61,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12 d-flex justify-content-center align-items-center">
-                                <button class="btn btnSocialsForm mx-1 px-3 shadow">
+                                <button class="btn btnSocialsForm mx-1 shadow">
                                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
                                         <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
                                             <g fill-rule="nonzero" fill="#000000" transform="translate(7.000000, 0.564551)">
@@ -66,7 +71,7 @@
                                     </svg>
                                     <span class="mx-3">Apple</span>
                                 </button>
-                                <button class="btn btnSocialsForm mx-1 px-3 shadow">
+                                <button class="btn btnSocialsForm mx-1 shadow">
                                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
                                         <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
                                             <g fill-rule="nonzero" transform="translate(3.000000, 2.000000)">
@@ -79,7 +84,7 @@
                                     </svg>
                                     <span class="mx-3">Google</span>
                                 </button>
-                                <button class="btn btnSocialsForm mx-1 px-3 shadow">
+                                <button class="btn btnSocialsForm mx-1 shadow">
                                     <svg xmlns:xlink="http://www.w3.org/1999/xlink32" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
                                         <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
                                             <g fill-rule="nonzero" transform="translate(3.000000, 3.000000)">
@@ -102,7 +107,7 @@
                 </div>
             </form>
         <?php } else { ?>
-            <div class="container validContainer h-100">
+            <div class="container-fluid validContainer bg-light h-100">
                 <div class="row m-0 w-100 h-100">
                     <div class="col-md-12 justify-content-center d-flex align-items-center h-100">
                         <div class="card shadow border-0 p-5">
@@ -121,7 +126,8 @@
                     </div>
                 </div>
             </div>
+            <?php header("Refresh:7;url=/controllers/home-ctrl.php") ?>
         <?php } ?>
     </div>
-    <!-- <script src="/public/assets/js/redirect.js"></script> -->
 </section>
+</body>

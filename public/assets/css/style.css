@@ -33,7 +33,6 @@ html{
     -webkit-text-fill-color: transparent;
 }
 
-
 .offcanvas-end {
     height: 100vh;
     width: 70vw !important;
@@ -152,6 +151,16 @@ html{
 
 .formSection {
     height: 100vh;
+}
+
+.nameLogoForm {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 26px;
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* .formSignIn {
