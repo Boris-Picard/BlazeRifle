@@ -128,10 +128,6 @@ html{
     background-size: cover;
 }
 
-.mtfirstnameLastname {
-    margin-top: 25%;
-}
-
 .colInputContact, .colInputSignIn, .colInputLogIn {
     padding: 80px;
 }
@@ -162,110 +158,6 @@ html{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
-/* .formSignIn {
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.formFirstCol {
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-}
-
-.imgForm {
-    background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
-    background-position: right 57% bottom 45%;
-    background-size: cover;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.form-control {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid black;
-}
-
-.form-control:focus {
-    box-shadow: 0 0 0;
-    background-color: transparent;
-}
-
-.form-control:focus-visible {
-    transition: border 0.5s ease-in-out;
-    border-bottom: 2px solid rgb(22, 136, 243);
-    outline: none;
-}
-
-.form-check-input:checked {
-    background-color: rgb(22, 136, 243);
-    border-color: rgb(22, 136, 243);
-}
-
-#checkboxForm {
-    border: solid 2px black;
-}
-
-.form-check-input:focus {
-    box-shadow: 0 0 0;
-}
-
-.bi-twitter-x{
-    color: black;
-}
-
-.bi-facebook{
-    color: black;
-}
-
-.bi-google {
-    color: black;
-}
-
-.bi:hover {
-    transition: 0.7s ease-in-out;
-}
-
-.connectLink {
-    color: black;
-}
-
-.connectLink:hover {
-    color: rgb(22, 136, 243);
-    transition: 0.3s ease-in-out;
-}
-
-.signInButton {
-    border: 2px solid black;
-    border-radius: 30px;
-    display: inline-block;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 0 rgb(22, 136, 243);
-    transition: ease-in-out 0.3s;
-    padding: 10px;
-    width: 50%;
-}
-
-.signInButton:hover {
-    color: white;
-    border: 2px solid black;
-    box-shadow: inset 1000px 0 0 0 rgb(22, 136, 243);
-}
-
-.bi-facebook:hover {
-    color: #46629e !important;
-}
-
-.bi-google:hover {
-    color: transparent !important;
-    background: -webkit-radial-gradient(30% 107%, circle, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
-    background: -o-radial-gradient(30% 107%, circle, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
-    background: radial-gradient(circle at 30% 107%, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
-    background: -webkit-radial-gradient(circle at 30% 107%, #4285f4 0%, #4285f4 5%, #34a853 45%, #fbbc05 60%, #ea4335 90%) !important;
-    background-clip: text !important;
-    -webkit-background-clip: text !important;
-}  */
 
 .validContainer {
     animation: slideFromDepth 1s ease-in-out forwards;
@@ -363,6 +255,10 @@ html{
     height: 150px;
 }
 
+textarea {
+    resize: vertical;
+}
+
 /* FOOTER */
 footer {
     background-color: rgb(209, 209, 209, 0.6);
@@ -434,7 +330,6 @@ footer {
 }
 
 .opacityBanner {
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -535,9 +430,6 @@ footer {
     }
     .imgContact, .imgSignIn, .imgLogIn {
         display: none;
-    }
-    .mtfirstnameLastname {
-        margin-top: 0;
     }
     .colInputContact {
         padding: 20px 10px 10px 20px;

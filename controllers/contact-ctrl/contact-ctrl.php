@@ -55,6 +55,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $error['textArea'] = 'Veuillez ne pas dépasser les 2000 caractères';
         } 
     }
+    // CHECKBOX
+    $checkbox = filter_input(INPUT_POST,'checkboxForm', FILTER_SANITIZE_SPECIAL_CHARS);
+    if(empty($checkbox)) {
+        $error['checkboxForm'] = "Veuillez accepter";
+    } 
 }
 
 

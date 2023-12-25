@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // TITLE INPUT
 $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
     if(empty($title)) {
-        $error['title'] = "Veuillez mettre un titre";
+        $error['title'] = "Veuillez Renseigner un titre";
     } else {
         if (strlen($title) < 10 || strlen($title) > 200) {
             $error["title"] = "La longueur du titre n'est pas bon";
@@ -78,37 +78,7 @@ try {
 } catch (\Throwable $th) {
     $error['media'] = $th->getMessage();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 include __DIR__ . '/../../../views/templates/header.php';

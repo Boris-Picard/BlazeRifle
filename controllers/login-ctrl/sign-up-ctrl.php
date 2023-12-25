@@ -83,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     // CHECKBOX
     $checkbox = filter_input(INPUT_POST,'checkboxForm', FILTER_SANITIZE_SPECIAL_CHARS);
     if(empty($checkbox)) {
-        $error['checkboxForm'] = "Veuillez cocher la case";
+        $error['checkboxForm'] = "Veuillez accepter";
     } 
 }
 

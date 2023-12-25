@@ -25,10 +25,12 @@
                         </div>
                         <div class="row w-50">
                             <div class="col-12 ">
+                                <!-- EMAIL -->
                                 <div class="mb-4">
                                     <label class="form-label fw-semibold" for="email">Email *</label>
                                     <input type="email" id="email" class="form-control" placeholder="Votre email" autocomplete="email">
                                 </div>
+                                <!-- PASSWORD -->
                                 <div class="mb-4">
                                     <label class="form-label fw-semibold" for="password">Mot de passe *</label>
                                     <input type="password" id="password" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password">

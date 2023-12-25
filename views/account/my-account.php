@@ -1,4 +1,4 @@
-<section class="myAccount">
+<section class="myAccount bg-light">
     <main class="d-flex flex-nowrap h-100">
         <nav class="navbar navbar-expand-lg navbar-light bg-light align-items-start">
             <div class="container-fluid flex-lg-column align-items-stretch sidebar p-0">
@@ -45,7 +45,7 @@
             <!-- Main -->
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xl-7 mx-auto">
+                    <div class="col-xl-7 mx-auto py-5">
                         <!-- Profile picture -->
                         <div class="card shadow border-0 mt-4 profilCard">
                             <div class="card-body">
@@ -62,59 +62,73 @@
                                         </div>
                                     </div>
                                     <div class="ms-auto">
-                                        <button type="button" class="btn btn-sm btn-light p-2 rounded-5 ">Upload</button>
+                                        <button type="submit" class="btn btn-secondary rounded-3 p-2">
+                                            Upload
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Form -->
-                        <div class="mb-5">
-                            <h5 class="mb-0 mt-3">Contact Information</h5>
+                        <div class="mb-5 mt-5">
+                            <h5 class="mb-0 mt-3 h2">Mes informations</h5>
                         </div>
                         <form class="mb-6">
-                            <div class="row mb-5">
-                                <div class="col-md-6 form-floating">
-                                    <input type="text" class="form-control rounded-0" id="firstname" placeholder="Votre prénom">
-                                    <label for="firstname">Prénom</label>
+                            <div class="row">
+                                <!-- FIRSTNAME -->
+                                <div class="mb-4 col-md-6 col-12">
+                                    <label for="firstname" class="form-label fw-semibold">Prénom</label>
+                                    <input type="text" class="form-control" id="firstname" placeholder="Votre prénom">
                                 </div>
-                                <div class="col-md-6 form-floating">
-                                    <input type="text" class="form-control rounded-0" id="lastname" placeholder="Votre nom">
-                                    <label for="lastname">Nom</label>
+                                <!-- LASTNAME -->
+                                <div class="mb-4 col-md-6 col-12">
+                                    <label for="lastname" class="form-label fw-semibold">Nom</label>
+                                    <input type="text" class="form-control" id="lastname" placeholder="Votre nom">
                                 </div>
                             </div>
-                            <div class="row gy-5">
-                                <div class="col-md-12 form-floating">
-                                    <input type="text" class="form-control rounded-0" id="pseudo" placeholder="Votre Pseudo">
-                                    <label for="pseudo">Pseudo</label>
+                            <div class="row">
+                                <!-- PSEUDO -->
+                                <div class="mb-4 col-md-12 col-12">
+                                    <label for="pseudo" class="form-label fw-semibold">Pseudo</label>
+                                    <input type="text" class="form-control" id="pseudo" placeholder="Votre Pseudo">
                                 </div>
-                                <div class="col-md-12 form-floating">
-                                    <input type="email" class="form-control rounded-0" id="email" placeholder="Votre email">
-                                    <label for="email">Email</label>
+                                <!-- EMAIL -->
+                                <div class="mb-4 col-md-12 col-12">
+                                    <label for="email" class="form-label fw-semibold">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Votre email">
                                 </div>
-                                <div class="col-12 form-floating">
-                                    <input type="text" class="form-control rounded-0" id="address" placeholder="Votre adresse">
-                                    <label for="address">Addresse</label>
+                                <!-- ADRESSE -->
+                                <div class="mb-4 col-md-12 col-12">
+                                    <label for="address" class="form-label fw-semibold">Addresse</label>
+                                    <input type="text" class="form-control" id="address" placeholder="Votre adresse">
                                 </div>
-                                <div class="col-md-6 form-floating">
-                                    <input type="text" class="form-control rounded-0" id="city" placeholder="Votre ville">
-                                    <label for="city">Ville</label>
+                                <!-- CITY -->
+                                <div class="mb-4 col-md-6 col-12">
+                                    <label for="city" class="form-label fw-semibold">Ville</label>
+                                    <input type="text" class="form-control" id="city" placeholder="Votre ville">
                                 </div>
-                                <div class="col-md-6 form-floating">
-                                    <input type="number" class="form-control rounded-0" id="zip" placeholder="Votre code postal">
-                                    <label for="zip">Code Postal</label>
+                                <!-- ZIP -->
+                                <div class="mb-4 col-md-6 col-12">
+                                    <label for="zip" class="form-label fw-semibold">Code Postal</label>
+                                    <input type="number" class="form-control" id="zip" placeholder="Votre code postal">
                                 </div>
-                                <div class="col-12 form-floating">
+                                <!-- CHECKBOX -->
+                                <div class="mb-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="check_primary_address" id="check_primary_address">
-                                        <label class="form-check-label" for="check_primary_address">
-                                            Cocher pour en faire votre addresse par défaut
+                                        <input class="form-check-input" id="checkboxForm" name="checkboxForm" type="checkbox" value="checkbox" <?= (isset($checkbox)) ? 'checked' : '' ?> required>
+                                        <label class="form-check-label" for="checkboxForm">
+                                            Cocher pour en faire mon adresse par défaut.
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-end">
-                                <button type="button" class="btn btn-sm btn-light rounded-5 me-2 p-2 text-uppercase">Cancel</button>
-                                <button type="submit" class="btn btn-sm btn-primary rounded-5 p-2 text-uppercase">Sauvegarder</button>
+                            <div class="d-flex flex-row-reverse">
+                                <button type="submit" class="btn btn-primary rounded-3 p-2">
+                                    Accepter
+                                </button>
+                                <button type="submit" class="btn btn-danger rounded-3 p-2 mx-3">
+                                    Annuler
+                                </button>
                             </div>
                         </form>
                         <hr class="my-10" />
@@ -156,7 +170,9 @@
                                             </p>
                                         </div>
                                         <div class="ms-auto">
-                                            <button type="button" class="btn btn-sm btn-danger p-2 rounded-5 text-uppercase">Désactiver</button>
+                                            <button type="submit" class="btn btn-danger rounded-3 p-2">
+                                                Désactiver
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
