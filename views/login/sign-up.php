@@ -107,9 +107,9 @@
                                     </svg>
                                     <span class="mx-3">Apple</span>
                                 </button>
-                                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                                <!-- <button class="btn btnSocialsForm mx-1 shadow g-signin2" data-onsuccess="onSignIn"> -->
-                                    <!-- <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
+                                <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+                                <button class="btn btnSocialsForm mx-1 shadow g-signin2" data-onsuccess="onSignIn">
+                                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
                                         <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
                                             <g fill-rule="nonzero" transform="translate(3.000000, 2.000000)">
                                                 <path fill="#4285F4" d="M57.8123233,30.1515267 C57.8123233,27.7263183 57.6155321,25.9565533 57.1896408,24.1212666 L29.4960833,24.1212666 L29.4960833,35.0674653 L45.7515771,35.0674653 C45.4239683,37.7877475 43.6542033,41.8844383 39.7213169,44.6372555 L39.6661883,45.0037254 L48.4223791,51.7870338 L49.0290201,51.8475849 C54.6004021,46.7020943 57.8123233,39.1313952 57.8123233,30.1515267"></path>
@@ -118,9 +118,9 @@
                                                 <path fill="#EB4335" d="M29.4960833,11.4050769 C35.0347044,11.4050769 38.7707997,13.7975244 40.9011602,15.7968415 L49.2255853,7.66898166 C44.1130815,2.91684746 37.4599129,0 29.4960833,0 C17.959737,0 7.9965904,6.62018183 3.14617358,16.2554937 L12.6832029,23.6623884 C15.0758763,16.5505675 21.6960582,11.4050769 29.4960833,11.4050769"></path>
                                             </g>
                                         </g>
-                                    </svg> -->
-                                    <!-- <span class="mx-3">Google</span> -->
-                                <!-- </button> -->
+                                    </svg>
+                                    <span class="mx-3">Google</span>
+                                </button> 
                                 <button class="btn btnSocialsForm mx-1 shadow">
                                     <svg xmlns:xlink="http://www.w3.org/1999/xlink32" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
                                         <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">

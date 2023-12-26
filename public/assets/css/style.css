@@ -6,9 +6,8 @@ html{
     scroll-behavior: smooth;
 }
 
-
 /* section navbar */
-/* permet de retirer la bordure dégueulasse de bootstrap au clic */
+/* permet de retirer la bordure de bootstrap au clic */
 .navbar-toggler:focus {
     box-shadow: none;
 }
@@ -16,6 +15,11 @@ html{
 /* .active {
     color: rgb(22, 136, 243) !important;
 } */
+
+.dropdownAccount {
+    width: 25rem;
+    height: 25rem;
+}
 
 .logoNav {
     width: 60px;
@@ -342,13 +346,9 @@ footer {
     height: 100%;
 }
 
-.sidebar {
-    width: 468px;
-}
-
 .brandLogoAccount {
-    height: 100px;
-    width: 100px;
+    height: 5rem;
+    width: 5rem;
 }
 
 .accountProfilPicture {
@@ -356,10 +356,11 @@ footer {
     width: 65px;
 }
 
+/* SIDEBAR */
 .nameLogoAccount {
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 20px;
     background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
     background-clip: text;
     -webkit-background-clip: text;
@@ -367,44 +368,33 @@ footer {
 }
 
 .sidebar {
-    min-height: 100vh; 
     width: 250px; 
+    display: flex;
+    height: 90vh;
 }
 
-.navbar-toggler {
-    display: none; 
+.colSidebar {
+    height: 78vh;
 }
 
 .nav-link:hover, .nav-link:focus {
-    background-color: rgba( 0, 0, 0, 0.1 );
+    background-color: rgba(200, 200, 200, 0.5 );
 }
 
-#sidebarMenu ul li a.active::before  {
-    content: "";
-    width: 6px;
-    height: 100%;
-    background-color: red;
+.sidebarLink.active {
+    background-color: rgba(200, 200, 200, 0.5 );
 }
 
-#sidebarMenu ul li a.active {
-    background-color: rgba( 0, 0, 0, 0.1 );
-    padding-left: 0;
-}
-
-#sidebarMenu ul li a.active span {
+.sidebarLink.active span {
     color: rgb(22, 136, 243) ;
-    margin-left: calc(1rem - 3px);
 }
 
-#sidebarMenu ul li a:hover {
+.sidebarLink:hover {
     color: rgb(22, 136, 243);
 }
 
-#sidebarMenu ul li a:hover span {
+.sidebarLink:hover span {
     transition: all 300ms ease;
-}
-
-#sidebarMenu ul li a:hover span {
     margin-left: 1rem;
 }
 

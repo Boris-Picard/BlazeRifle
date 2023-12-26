@@ -9,9 +9,9 @@
                     <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end text-small shadow">
-                        <li><a class="dropdown-item" href="/controllers/login-ctrl/sign-up-ctrl.php">Mon compte</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end shadow dropdownAccount">
+                        <li><a class="dropdown-item d-flex" href="/controllers/login-ctrl/sign-up-ctrl.php">Mon compte</a></li>
+                        <li><a class="dropdown-item" href="/controllers/account/my-account-ctrl.php">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Sign out</a></li>
