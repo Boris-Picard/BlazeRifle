@@ -149,6 +149,34 @@ html{
     margin: 75px 0 0 0;
 }
 
+.cardActu {
+    height: 500px;
+    width: 310px;
+}
+
+.cardActUnder {
+    width: 310px;
+}
+
+.stretchLinkHover:hover {
+    color: red !important;
+}
+
+.cardNewsTop {
+    width: 800px;
+    height: 260px;
+}
+
+.cardNewsUnder {
+    width: 395px;
+    height: 82px;
+}
+
+.imgNewsUnder {
+    height: 82px;
+    width: 82px;
+}
+
 /* FORMULAIRE  */
 .btnSocialsForm:hover {
     background-color: #DFE0E1;
