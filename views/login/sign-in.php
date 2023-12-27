@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-primary w-100 rounded-3 p-2">
+                                    <button type="submit" class="btn btn-primary w-100 rounded-5 p-3 fw-bold text-uppercase">
                                         Se connecter
                                     </button>
                                 </div>

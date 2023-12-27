@@ -23,7 +23,7 @@
                     </div>
                     <div class="navbar-nav text-center offcanvas-body">
                         <a class="nav-link navlinkHover" href="/controllers/home-ctrl.php">Accueil</a>
-                        <a class="nav-link navlinkHover" href="#">Les Articles</a>
+                        <a class="nav-link navlinkHover" href="/controllers/templates/les-articles-ctrl.php">Les Articles</a>
                         <a class="nav-link navlinkHover" href="#">Les Sondages</a>
                         <a class="nav-link navlinkHover" href="#">Les Guides</a>
                         <a class="nav-link navlinkHover" href="#">Le Quiz</a>

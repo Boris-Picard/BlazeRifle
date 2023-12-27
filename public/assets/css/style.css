@@ -144,6 +144,11 @@ html{
     margin: 75px 0 0 0;
 }
 
+/* LES ARTICLES SECTION */
+.articlesSection {
+    margin: 75px 0 0 0;
+}
+
 /* FORMULAIRE  */
 .btnSocialsForm:hover {
     background-color: #DFE0E1;

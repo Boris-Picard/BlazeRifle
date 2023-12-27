@@ -57,7 +57,7 @@
                                     <small class="" id="passwordMin"></small>
                                 </div>
                                 <label for="password" class="form-label fw-semibold">Mot de passe *</label>
-                                <input type="password" name="password" id="password" value="<?= htmlentities($password ?? '') ?>" class="form-control passwordSignIn" placeholder="Mot de passe" pattern="<?= REGEX_PASSWORD ?>" required>
+                                <input type="password" name="password" id="password" value="<?= htmlentities($password ?? '') ?>" class="form-control passwordSignIn " placeholder="Mot de passe" pattern="<?= REGEX_PASSWORD ?>" required>
                                 <div><small class="form-text text-danger" id="passwordStrength"></small></div>
                             </div>
                             <!-- PASSWORD CONFIRM -->
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-primary w-100 rounded-3 p-2">
+                                <button type="submit" class="btn btn-primary w-100 rounded-5 p-3 text-uppercase fw-bold">
                                     S'inscrire
                                 </button>
                             </div>

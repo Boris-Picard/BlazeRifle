@@ -1,5 +1,5 @@
 <main>
-    <section class="formSection d-flex justify-content-center">
+    <section>
         <div class="container-fluid">
             <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
                 <form action="" method="POST" enctype="multipart/form-data" novalidate>
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="py-5">
-                                <button type="submit" class="btn btn-primary w-100 rounded-3 p-2">
+                                <button type="submit" class="btn btn-primary w-100 rounded-5 p-3 text-uppercase fw-bold">
                                     Envoyer
                                 </button>
                             </div>
@@ -80,7 +80,7 @@
                     </div>
                 </form>
             <?php } else { ?>
-                <div class="container-fluid validContainer bg-light h-100">
+                <div class="container-fluid validContainer bg-light formSection d-flex justify-content-center">
                     <div class="row m-0 w-100 h-100">
                         <div class="col-md-12 justify-content-center d-flex align-items-center h-100">
                             <div class="card shadow border-0 p-5">
@@ -104,6 +104,3 @@
         </div>
     </section>
 </main>
-</body>
-
-</html>

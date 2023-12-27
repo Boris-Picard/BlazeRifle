@@ -1,9 +1,9 @@
 <section class="myAccount bg-light">
     <main class="d-flex flex-nowrap">
         <!-- SIDEBAR -->
-        <div class="container sidebar position-relative rounded py-5 mt-4">
+        <div class="container sidebar position-relative rounded-5 py-5 mt-4">
             <div class="row">
-                <div class="col-12 p-0 rounded shadow bg-white">
+                <div class="col-12 p-0 rounded-5 shadow bg-white">
                     <div class="row m-0 p-0">
                         <a class="navbar-brand nameLogoAccount" href="/controllers/home-ctrl.php"><img src="/public/assets/img/logo512.png" class="brandLogoAccount" alt="logo"> blaze rifle</a>
                         <div class="col-12 d-flex flex-column p-0 sidebar rounded colSidebar g-5">
@@ -21,9 +21,9 @@
         <!-- Main -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-7 mx-auto py-5">
+                <div class="col-xl-7 mx-auto py-4">
                     <!-- Profile picture -->
-                    <div class="card shadow border-0 mt-4 profilCard">
+                    <div class="card shadow border-0 mt-5 profilCard rounded-5">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                                 <div class="ms-auto">
-                                    <button type="submit" class="btn btn-secondary rounded-3 p-2">
+                                    <button type="submit" class="btn btn-light shadow-sm rounded-5 p-3 text-uppercase fw-semibold">
                                         Upload
                                     </button>
                                 </div>
@@ -99,10 +99,10 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row-reverse">
-                            <button type="submit" class="btn btn-primary rounded-3 p-2">
+                            <button type="submit" class="btn btn-primary rounded-5 p-3 text-uppercase fw-bold">
                                 Accepter
                             </button>
-                            <button type="submit" class="btn btn-danger rounded-3 p-2 mx-3">
+                            <button type="submit" class="btn btn-danger rounded-5 p-3 mx-3 text-uppercase fw-bold">
                                 Annuler
                             </button>
                         </div>
@@ -111,9 +111,9 @@
                     <!-- Individual switch cards -->
                     <div class="row g-6">
                         <div class="col-md-6 py-3">
-                            <div class="card shadow border-0">
+                            <div class="card shadow border-0 rounded-5">
                                 <div class="card-body">
-                                    <h5 class="mb-2">Rendre public mon profil</h5>
+                                    <h5 class="mb-2 fw-semibold">Rendre public mon profil</h5>
                                     <p class="text-sm text-muted mb-6">
                                         Rendre votre profil public signifie que n'importe qui sur le réseau pourra vous trouver.
                                     </p>
@@ -124,9 +124,9 @@
                             </div>
                         </div>
                         <div class="col-md-6 py-3">
-                            <div class="card shadow border-0">
+                            <div class="card shadow border-0 rounded-5">
                                 <div class="card-body">
-                                    <h5 class="mb-2">Afficher mon adresse mail</h5>
+                                    <h5 class="mb-2 fw-semibold">Afficher mon adresse mail</h5>
                                     <p class="text-sm text-muted mb-6">
                                         Afficher vos adresses e-mail signifie que n'importe qui sur le réseau pourra vous trouver.
                                     </p>
@@ -137,16 +137,16 @@
                             </div>
                         </div>
                         <div class="col-md-12 py-3 mb-2">
-                            <div class="card shadow border-0">
+                            <div class="card shadow border-0 rounded-5">
                                 <div class="card-body d-flex align-items-center">
                                     <div>
-                                        <h5 class="text-danger mb-2">Désactiver votre compte</h5>
+                                        <h5 class="text-danger mb-2 fw-semibold">Désactiver votre compte</h5>
                                         <p class="text-sm text-muted">
                                             Une fois votre compte supprimé, vous ne pourrez plus revenir en arrière. Soyez-en sûr, s'il vous plaît.
                                         </p>
                                     </div>
                                     <div class="ms-auto">
-                                        <button type="submit" class="btn btn-danger rounded-3 p-2">
+                                        <button type="submit" class="btn btn-danger rounded-5 p-3 text-uppercase fw-bold">
                                             Désactiver
                                         </button>
                                     </div>
