@@ -146,16 +146,16 @@ html{
 
 /* LES ARTICLES SECTION */
 .articlesSection {
-    margin: 75px 0 0 0;
+    margin: 4.688rem 0 0 0;
 }
 
 .cardActu {
-    height: 500px;
-    width: 310px;
+    height: 31.25rem;
+    width: 19.375rem;
 }
 
 .cardActUnder {
-    width: 310px;
+    width: 19.375rem;
 }
 
 .stretchLinkHover:hover {
@@ -163,18 +163,41 @@ html{
 }
 
 .cardNewsTop {
-    width: 800px;
-    height: 260px;
+    width: 50rem;
+    height: 16.25rem;
+}
+
+@media all and (max-width: 468px)  {
+    .cardNewsTop {
+        width: 23rem;
+        height: 15rem;
+    }
 }
 
 .cardNewsUnder {
-    width: 395px;
-    height: 82px;
+    width: 24.688rem;
+    height: 5.5rem;
 }
 
 .imgNewsUnder {
-    height: 82px;
-    width: 82px;
+    height: 5.5rem;
+    width: 5.5rem;
+}
+
+.bodyCardNewsUnder {
+    font-size: 0.825rem;
+}
+
+.titleCardNewsUnder {
+    font-size: 0.750rem;
+}
+
+small {
+    font-size: 0.8rem;
+}
+
+.cardVideoPlayer {
+    height: 22.813rem;
 }
 
 /* FORMULAIRE  */

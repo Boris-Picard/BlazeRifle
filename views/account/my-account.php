@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                                 <div class="ms-auto">
-                                    <button type="submit" class="btn btn-light shadow-sm rounded-5 p-3 text-uppercase fw-semibold">
+                                    <button type="submit" class="btn btn-light shadow-sm rounded-5 p-2 text-uppercase fw-semibold">
                                         Upload
                                     </button>
                                 </div>
@@ -99,10 +99,10 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row-reverse">
-                            <button type="submit" class="btn btn-primary rounded-5 p-3 text-uppercase fw-bold">
+                            <button type="submit" class="btn btn-primary rounded-5 p-2 text-uppercase fw-bold">
                                 Accepter
                             </button>
-                            <button type="submit" class="btn btn-danger rounded-5 p-3 mx-3 text-uppercase fw-bold">
+                            <button type="submit" class="btn btn-danger rounded-5 p-2 mx-3 text-uppercase fw-bold">
                                 Annuler
                             </button>
                         </div>
@@ -146,7 +146,7 @@
                                         </p>
                                     </div>
                                     <div class="ms-auto">
-                                        <button type="submit" class="btn btn-danger rounded-5 p-3 text-uppercase fw-bold">
+                                        <button type="submit" class="btn btn-danger rounded-5 p-2 text-uppercase fw-bold">
                                             Désactiver
                                         </button>
                                     </div>
