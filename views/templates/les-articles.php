@@ -166,12 +166,12 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-8 cardNewsTop">
                                 <div class="card bg-dark text-white p-0 cardNewsTop border-0 cardShadow">
-                                    <img src="/public/assets/img/infinitebg.jpg" class="card-img object-fit-cover h-100 w-100" alt="Stony Beach" />
+                                    <img src="/public/assets/img/infinitebg.jpg" class="card-img object-fit-cover h-100" alt="Stony Beach" />
                                     <div class="card-img-overlay d-flex flex-column justify-content-end">
                                         <div>
-                                            <p class="p-0 m-0"><span class="badge rounded-pill text-bg-dark p-2 px-4 mb-2 ">HALO</span></p>
+                                            <p class="p-0 m-0"><span class="badge rounded-pill text-bg-dark p-2 px-4 mb-2">HALO</span></p>
                                             <a href="#" class="card-text text-wrap fw-bold stretched-link aCard w-50 text-decoration-none text-light ">
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad optio, at numquam perferendis velit molestias natus dolore sunt voluptatem debitis soluta porro pariatur id dolores. Cum eos rem laudantium harum.
                                             </a>
@@ -300,7 +300,7 @@
                                                 <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Les leaks de GTA 5 révèlent pas mal de choses...
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum porro, tenetur, consequatur doloribus mollitia inventore ratione ducimus accusamus, dolores iste recusandae. Quas, sed fugiat sit ratione dolorum vero minima architecto.
                                                     </a>
                                                 </div>
                                                 <p class="card-text">
