@@ -732,7 +732,7 @@
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <div class="card p-0 border-0 bg-transparent=">
+                                <div class="card p-0 border-0 bg-transparent">
                                     <div class="ratio ratio-1x1">
                                         <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-3 " alt="Sunset Over the Sea" />
                                     </div>
