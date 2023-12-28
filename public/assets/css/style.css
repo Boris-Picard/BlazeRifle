@@ -159,7 +159,7 @@ html{
 }
 
 .stretchLinkHover:hover {
-    color: red !important;
+    color: #007BFF !important;
 }
 
 .cardNewsTop {
@@ -198,6 +198,73 @@ small {
 
 .cardVideoPlayer {
     height: 22.813rem;
+}
+
+.cardGuideLeft {
+    width: 40.625rem;
+    height: 24rem;
+}
+
+.cardGuideRight {
+    width: 19.063rem;
+    height: 5.25rem;
+}
+
+.imgGuideRight {
+    width: 5.25rem;
+    height: 5.25rem;
+}
+
+.imgCarousel {
+    height: 14rem;
+    width: 10rem;
+}
+
+.bodycardGuideRight {
+    font-size: 0.825rem;
+}
+
+.titlecardGuideRight {
+    font-size: 0.750rem;
+}
+
+.cardGameDiscover {
+    width: 26.25rem;
+    height: 23.75rem;
+}
+
+.pillsGamesDiscover {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+.cardGameDiscoverUnder {
+    width: 10.500rem;
+    height: 16rem;
+}
+
+a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.cardShadow::before {
+    background: #000;
+    background: linear-gradient(90deg,#000,transparent 50%,transparent);
+    background: -webkit-linear-gradient(90deg,#000,transparent 50%,transparent);
+    background: -moz-linear-gradient(90deg,#000 0,transparent 50%,transparent 100%);
+    content: "";
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
 }
 
 /* FORMULAIRE  */
