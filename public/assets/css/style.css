@@ -327,6 +327,15 @@ small {
     color: #285AEB !important;
 }
 
+.imgProfilComment {
+    width: 6.25rem;
+    height: 6.25rem;
+}
+
+.btnAddComment {
+    font-size: 0.825rem;
+}
+
 /* FORMULAIRE  */
 .btnSocialsForm:hover {
     background-color: #DFE0E1;

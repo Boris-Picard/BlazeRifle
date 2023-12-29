@@ -99,7 +99,24 @@
                                         <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover img-fluid rounded-4" alt="call of duty">
                                     </div>
                                     <div class="col-md-10">
-                                        <div class="card-body p-2 ">
+                                        <div class="card-body p-2 mx-2">
+                                            <a href="" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum sapiente quis eligendi quia omnis laudantium temporibus explicabo quisquam exercitationem recusandae. Quia odio corporis iure iusto enim cupiditate libero, id architecto.
+                                            </a>
+                                            <p class="text-card aCard m-0 mt-2">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-3 rounded-4 bg-transparent border-0 shadow-lg p-3">
+                                <div class="row g-0">
+                                    <div class="col-md-2 d-flex">
+                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover img-fluid rounded-4" alt="call of duty">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="card-body p-2 mx-2">
                                             <a href="" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
                                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum sapiente quis eligendi quia omnis laudantium temporibus explicabo quisquam exercitationem recusandae. Quia odio corporis iure iusto enim cupiditate libero, id architecto.
                                             </a>
@@ -118,6 +135,81 @@
                             <h4 class="text-capitalize text-primary fw-bold">
                                 commentaires
                             </h4>
+                            <!-- AJOUTER UN COMMENTAIRE -->
+                            <div class="d-flex">
+                                <button type="button" class="btn btn-warning rounded-5 btnAddComment btn-sm p-2 fw-bold text-uppercase mt-2 letComment">
+                                    Laisser un commentaire
+                                </button>
+                            </div>
+                            <!-- FORMULAIRE D'AJOUT D'UN COMMENTAIRE -->
+                            <form action="" method="POST" id="commentForm" class="d-none">
+                                <div class="card mt-3 rounded-4 bg-transparent border-0 shadow-lg p-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-2 d-flex">
+                                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="card-body p-0 ">
+                                                <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
+                                                    Boris
+                                                </p>
+                                                <textarea class="form-control" id="textAreaExample" rows="5"></textarea>
+                                                <div class="float-end mt-3">
+                                                    <button type="button" class="btn btn-primary btn-sm fw-bold rounded-5 text-uppercase p-2">Poster</button>
+                                                    <button type="button" class="btn btn-outline-danger fw-bold btn-sm rounded-5 p-2 text-uppercase">Annuler</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- FIN DU FORMULAIRE -->
+                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment">
+                                <div class="row g-0">
+                                    <div class="col-md-2 d-flex">
+                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="card-title p-0 d-flex flex-wrap align-items-center">
+                                            <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
+                                                Boris
+                                            </p>
+                                            <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <p class="text-card aCardBig">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
+                                            </p>
+                                            <div class="d-flex">
+                                                <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment">
+                                <div class="row g-0">
+                                    <div class="col-md-2 d-flex">
+                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="card-title p-0 d-flex flex-wrap align-items-center">
+                                            <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
+                                                Boris
+                                            </p>
+                                            <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <p class="text-card aCardBig">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
+                                            </p>
+                                            <div class="d-flex">
+                                                <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,3 +217,4 @@
         </section>
     </div>
 </section>
+<script src="/public/assets/js/comments.js"></script>
