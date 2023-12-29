@@ -284,9 +284,37 @@ small {
     width: auto;
 }
 
+@media all and (max-width : 766px) {
+    .cardsActus {
+        width: auto;
+        height: auto;
+    }
+}
+
 .widthColRightActu {
     width: 22.813rem;
-    height: 68rem;
+    height: 66rem;
+}
+
+.widthColRightVideo {
+    width: 22.813rem;
+    height: 67rem;
+}
+
+
+.imgActuGuideRight {
+    width: 8.55rem;
+    height: 4.688rem;
+}
+
+.cardActuGuideRight {
+    width: auto;
+    height: 5.625rem;
+}
+
+.activePagination {
+    background-color: #DC3545 !important;
+    color: #fff !important;
 }
 
 /* FORMULAIRE  */
