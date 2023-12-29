@@ -15,7 +15,7 @@ const createReplyForm = (replyButton) => {
     form.setAttribute("action", ""); // URL de votre endpoint
 
     let columnDiv = document.createElement("div");
-    columnDiv.classList.add("col-md-12");
+    columnDiv.classList.add("col-md-12", "mt-4");
     form.appendChild(columnDiv);
 
     // Créer un champ de texte pour la réponse
@@ -28,7 +28,7 @@ const createReplyForm = (replyButton) => {
 
     // Créer une div pour les boutons
     let buttonDiv = document.createElement("div");
-    buttonDiv.classList.add("d-flex", "mt-2");
+    buttonDiv.classList.add("d-flex", "mt-3");
     form.appendChild(buttonDiv);
 
     // Créer un bouton de soumission
@@ -78,18 +78,62 @@ const createReplyForm = (replyButton) => {
 // Fonction pour créer la div de réponse avec un bouton "Répondre"
 const createReplyDiv = (replyText) => {
     const replyDiv = document.createElement("div");
-    replyDiv.classList.add("reply-message"); // Vos classes CSS
+    replyDiv.classList.add("col-md-12");
 
-    const replyContent = document.createElement("p");
+    const replyCard = document.createElement("div")
+    replyCard.classList.add("card","reply-message","card", "mt-4", "rounded-4", "bg-light", "border-0", "shadow-lg", "p-3")
+    replyDiv.appendChild(replyCard)
+
+    const cardRow = document.createElement("div")
+    cardRow.classList.add("row", "g-0")
+    replyCard.appendChild(cardRow)
+
+    const colmd2 = document.createElement("div")
+    colmd2.classList.add("col-md-2", "d-flex")
+    cardRow.appendChild(colmd2)
+
+    const imgCard = document.createElement("img")
+    imgCard.src = "/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg"
+    imgCard.classList.add("imgProfilComment", "rounded-circle", "object-fit-cover", "img-fluid")
+    colmd2.appendChild(imgCard)
+
+    const colmd10 = document.createElement("div")
+    colmd10.classList.add("col-md-10")
+    cardRow.appendChild(colmd10)
+
+    const cardTitle = document.createElement("div")
+    cardTitle.classList.add("card-title", "p-0", "d-flex", "flex-wrap", "align-items-center")
+    colmd10.appendChild(cardTitle)
+    
+    const titleName = document.createElement("p");
+    titleName.classList.add("text-card", "aCard", "m-0", "text-capitalize", "fw-bold", "mb-1")
+    titleName.textContent = "Boris";
+    cardTitle.appendChild(titleName);
+
+    const smallDate = document.createElement("small")
+    smallDate.classList.add("text-muted", "mb-1", "mx-2")
+    smallDate.textContent = "le 29 déc, à 13h50"
+    cardTitle.appendChild(smallDate)
+
+    const cardBody = document.createElement("div")
+    cardBody.classList.add("card-body","p-0")
+    colmd10.appendChild(cardBody)
+
+    const replyContent = document.createElement("p")
+    replyContent.classList.add("text-card")
+    cardBody.appendChild(replyContent)
     replyContent.textContent = replyText;
-    replyDiv.appendChild(replyContent);
+
+    const buttonDiv = document.createElement("div")
+    buttonDiv.classList.add("d-flex")
+    cardBody.appendChild(buttonDiv)
 
     // Créer un bouton "Répondre" pour la réponse
     const replyButton = document.createElement("button");
     replyButton.textContent = "Répondre";
     replyButton.classList.add("replyButton", "btn", "btn-outline-secondary", "btn-sm", "fw-bold", "rounded-5", "text-uppercase", "p-2");
     replyButton.onclick = () => createReplyForm(replyButton);
-    replyDiv.appendChild(replyButton);
+    cardBody.appendChild(replyButton);
 
     return replyDiv;
 };
@@ -107,3 +151,12 @@ document.querySelector('.letComment').addEventListener('click', () => {
     let form = document.getElementById('commentForm');
     form.classList.toggle('d-none');
 });
+
+// Gestion affichage des commentaires suivant
+document.querySelector('.showMoreComments').addEventListener('click', () => {
+    let comments = document.querySelectorAll('.commentNotShow')
+    comments.forEach(comment => {
+        comment.classList.toggle('d-none')
+    });
+    
+})
