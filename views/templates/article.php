@@ -155,7 +155,7 @@
                                                 </p>
                                                 <textarea class="form-control" id="textAreaExample" rows="5"></textarea>
                                                 <div class="float-end mt-3">
-                                                    <button type="button" class="btn btn-primary btn-sm fw-bold rounded-5 text-uppercase p-2">Poster</button>
+                                                    <button type="submit" class="btn btn-primary btn-sm fw-bold rounded-5 text-uppercase p-2">Poster</button>
                                                     <button type="button" class="btn btn-outline-danger fw-bold btn-sm rounded-5 p-2 text-uppercase">Annuler</button>
                                                 </div>
                                             </div>
