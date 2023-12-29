@@ -317,6 +317,16 @@ small {
     color: #fff !important;
 }
 
+/* ARTICLE */
+.nextArticleUnder {
+    height: 5.625rem;
+    width: auto;
+}
+
+.stetchedLinkArticleUnder:hover {
+    color: #285AEB !important;
+}
+
 /* FORMULAIRE  */
 .btnSocialsForm:hover {
     background-color: #DFE0E1;
