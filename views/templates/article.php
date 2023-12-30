@@ -130,139 +130,161 @@
                         </div>
                     </div>
                     <!-- COMMENTAIRES -->
-                    <div class="row">
-                        <div class="col-12 mt-5">
-                            <h4 class="text-capitalize text-primary fw-bold">
-                                commentaires
-                            </h4>
-                            <!-- AJOUTER UN COMMENTAIRE -->
-                            <div class="d-flex">
-                                <button type="button" class="btn btn-warning rounded-5 btnAddComment btn-sm p-2 fw-bold text-uppercase mt-2 letComment">
-                                    Laisser un commentaire
-                                </button>
-                            </div>
-                            <!-- FORMULAIRE D'AJOUT D'UN COMMENTAIRE -->
-                            <form action="" method="POST" id="commentForm" class="d-none">
-                                <div class="card mt-3 rounded-4 bg-transparent border-0 shadow-lg p-3">
+                    <section>
+                        <div class="row">
+                            <div class="col-12 mt-5 commentSection">
+                                <h4 class="text-capitalize text-primary fw-bold">
+                                    commentaires
+                                </h4>
+                                <!-- AJOUTER UN COMMENTAIRE -->
+                                <div class="d-flex">
+                                    <button type="button" class="btn btn-warning rounded-5 btnAddComment btn-sm p-2 fw-bold text-uppercase mt-2 letComment">
+                                        Laisser un commentaire
+                                    </button>
+                                </div>
+                                <!-- FORMULAIRE D'AJOUT D'UN COMMENTAIRE -->
+                                <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
+                                    <form action="#commentForm" method="POST" id="commentForm">
+                                        <div class="card mt-3 rounded-4 bg-transparent border-0 shadow-lg p-3">
+                                            <div class="row g-0">
+                                                <div class="col-md-2 d-flex">
+                                                    <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="card-body p-0 ">
+                                                        <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
+                                                            Boris
+                                                        </p>
+                                                        <small class="form-text text-danger"><?= $error['textAreaComment'] ?? '' ?></small>
+                                                        <textarea class="form-control" name="textAreaComment" id="textAreaComment" rows="5" maxlength="1500" required><?= $textAreaComment ?? '' ?></textarea>
+                                                        <div class="float-end mt-3">
+                                                            <button type="submit" class="btn btn-primary btn-sm fw-bold rounded-5 text-uppercase p-2 commentButton">Poster</button>
+                                                            <button type="button" class="btn btn-outline-danger fw-bold btn-sm rounded-5 p-2 text-uppercase">Annuler</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                            <?php } else { ?>
+                                    <div class="card shadow-lg border-0 p-5 mt-4" id="commentForm">
+                                        <div class="card-body d-flex align-items-center flex-column rounded-4">
+                                            <h5 class="mb-2 py-3 text-uppercase fw-bold">Commentaire envoyé !</h5>
+                                            <div class="alert alert-warning d-flex p-4 align-items-center" role="alert">
+                                                <div>
+                                                    Votre commentaire va être traité par un administrateur avant d'être affiché
+                                                </div>
+                                            </div>
+                                            <div class="checkmark-container mt-5">
+                                                <div class="checkmark-background"></div>
+                                                <div class="checkmark-stem"></div>
+                                                <div class="checkmark-kick"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <meta http-equiv="refresh" content="7;url=/controllers/templates/article-ctrl.php">
+                                <?php } ?>
+                                <!-- FIN DU FORMULAIRE -->
+                                <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment">
                                     <div class="row g-0">
                                         <div class="col-md-2 d-flex">
                                             <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
                                         </div>
                                         <div class="col-md-10">
-                                            <div class="card-body p-0 ">
+                                            <div class="card-title p-0 d-flex flex-wrap align-items-center">
                                                 <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
                                                     Boris
                                                 </p>
-                                                <textarea class="form-control" id="textAreaExample" rows="5"></textarea>
-                                                <div class="float-end mt-3">
-                                                    <button type="submit" class="btn btn-primary btn-sm fw-bold rounded-5 text-uppercase p-2">Poster</button>
-                                                    <button type="button" class="btn btn-outline-danger fw-bold btn-sm rounded-5 p-2 text-uppercase">Annuler</button>
+                                                <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <p class="text-card">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
+                                                </p>
+                                                <div class="d-flex">
+                                                    <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <!-- FIN DU FORMULAIRE -->
-                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment">
-                                <div class="row g-0">
-                                    <div class="col-md-2 d-flex">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="card-title p-0 d-flex flex-wrap align-items-center">
-                                            <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
-                                                Boris
-                                            </p>
-                                            <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment">
+                                    <div class="row g-0">
+                                        <div class="col-md-2 d-flex">
+                                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
                                         </div>
-                                        <div class="card-body p-0">
-                                            <p class="text-card">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
-                                            </p>
-                                            <div class="d-flex">
-                                                <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                        <div class="col-md-10">
+                                            <div class="card-title p-0 d-flex flex-wrap align-items-center">
+                                                <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
+                                                    Boris
+                                                </p>
+                                                <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <p class="text-card">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
+                                                </p>
+                                                <div class="d-flex">
+                                                    <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment">
-                                <div class="row g-0">
-                                    <div class="col-md-2 d-flex">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="card-title p-0 d-flex flex-wrap align-items-center">
-                                            <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
-                                                Boris
-                                            </p>
-                                            <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment commentNotShow d-none">
+                                    <div class="row g-0">
+                                        <div class="col-md-2 d-flex">
+                                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
                                         </div>
-                                        <div class="card-body p-0">
-                                            <p class="text-card">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
-                                            </p>
-                                            <div class="d-flex">
-                                                <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                        <div class="col-md-10">
+                                            <div class="card-title p-0 d-flex flex-wrap align-items-center">
+                                                <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
+                                                    Boris
+                                                </p>
+                                                <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                            </div>
+                                            <div class="card-body p-0">
+                                                <p class="text-card">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
+                                                </p>
+                                                <div class="d-flex">
+                                                    <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment commentNotShow d-none">
-                                <div class="row g-0">
-                                    <div class="col-md-2 d-flex">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="card-title p-0 d-flex flex-wrap align-items-center">
-                                            <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
-                                                Boris
-                                            </p>
-                                            <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment commentNotShow d-none">
+                                    <div class="row g-0">
+                                        <div class="col-md-2 d-flex">
+                                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
                                         </div>
-                                        <div class="card-body p-0">
-                                            <p class="text-card">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
-                                            </p>
-                                            <div class="d-flex">
-                                                <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                        <div class="col-md-10">
+                                            <div class="card-title p-0 d-flex flex-wrap align-items-center">
+                                                <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
+                                                    Boris
+                                                </p>
+                                                <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment commentNotShow d-none">
-                                <div class="row g-0">
-                                    <div class="col-md-2 d-flex">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="card-title p-0 d-flex flex-wrap align-items-center">
-                                            <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
-                                                Boris
-                                            </p>
-                                            <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
-                                        </div>
-                                        <div class="card-body p-0">
-                                            <p class="text-card">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
-                                            </p>
-                                            <div class="d-flex">
-                                                <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                            <div class="card-body p-0">
+                                                <p class="text-card">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
+                                                </p>
+                                                <div class="d-flex">
+                                                    <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 d-flex justify-content-center mt-5">
-                            <button type="button" class="btn btn-primary w-50 fw-bold p-2 rounded-5 text-uppercase p-2 showMoreComments">plus de commentaires</button>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center mt-5">
+                                <button type="button" class="btn btn-primary w-50 fw-bold p-2 rounded-5 text-uppercase p-2 showMoreComments">plus de commentaires</button>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
                 <!-- SIDEBAR -->
                 <div class="col-md-4 col-12">
@@ -428,4 +450,4 @@
         </section>
     </div>
 </section>
-<script src="/public/assets/js/comments.js"></script>
+<!-- <script src="/public/assets/js/comments.js"></script> -->

@@ -336,6 +336,21 @@ small {
     font-size: 0.825rem;
 }
 
+/* CALENDAR */
+
+.imgBannerCalendar {
+    background-image: url(../img/LeagueofLegends_Worlds2022_ChaseCenter_California_Stage.jpg);
+    height: 15rem;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.selectBgCalendar {
+    height: 10rem;
+}
+
 /* FORMULAIRE  */
 .btnSocialsForm:hover {
     background-color: #DFE0E1;
