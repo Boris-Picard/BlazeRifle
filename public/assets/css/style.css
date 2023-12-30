@@ -351,6 +351,33 @@ small {
     height: 10rem;
 }
 
+/* QUIZ */
+.nameLogoQuiz {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 2.125rem;
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logoQuiz {
+    width: 10rem;
+    height: 10rem;
+}
+
+/* .quizMain {
+    width: 100%;
+    height: 38.25rem;
+} */
+
+.imgLeftQuiz {
+    background-image: url(../img/MWII-S06-ANNOUNCEMENT-TOUT.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* FORMULAIRE  */
 .btnSocialsForm:hover {
     background-color: #DFE0E1;
