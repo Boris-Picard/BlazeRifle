@@ -355,7 +355,7 @@ small {
 .nameLogoQuiz {
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 2.125rem;
+    font-size: 2rem;
     background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
     background-clip: text;
     -webkit-background-clip: text;
@@ -363,20 +363,18 @@ small {
 }
 
 .logoQuiz {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
 }
 
-/* .quizMain {
-    width: 100%;
-    height: 38.25rem;
-} */
-
-.imgLeftQuiz {
+.quizBg {
     background-image: url(../img/MWII-S06-ANNOUNCEMENT-TOUT.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-color: rgba( 255, 255, 255, 0.8 );
 }
+
 
 /* FORMULAIRE  */
 .btnSocialsForm:hover {
