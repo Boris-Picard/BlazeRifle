@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row">
             <!-- QUIZ START -->
-            <div class="col-md-8 shadow-lg rounded-4 quizStartWindow mt-4 active position-absolute">
+            <div class="col-md-8 shadow-lg rounded-4 quizStartWindow mt-4 position-absolute">
                 <div class="row justify-content-center p-4 rounded-4">
                     <div class="col-md-12 justify-content-center d-flex flex-column align-items-center">
                         <h1 class="text-danger fw-bold display-4">Règle du quiz</h1>
@@ -66,27 +66,35 @@
                         <h1 class="text-danger fw-bold display-4">Préparez-vous le quiz va démarrer dans :</h1>
                     </div>
                     <div class="col-md-12 text-center mt-5">
-                        <h5 class="fw-semibold text-dark counter py-4">
-                            10 secondes
+                        <h5 class="fw-semibold text-dark">
+                            <span class="counter text-danger mx-2">10</span>secondes
                         </h5>
-                        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress mb-4" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                             <div class="progress-bar progress-bar-striped progress-bar-animated w-0 bg-danger"></div>
                         </div>
+                    </div>
+                    <div class="col-md-12 d-flex flex-column justify-content-center text-center">
+                        <hr class="hr border-3 text-danger mt-5">
+                        <h5 class="fw-bold display-5 mt-3">Thème de la semaine : </h5>
+                        <span class="text-danger fw-bold text-capitalize mt-5 display-5 ">Call of duty</span>
+                    </div>
+                    <div class="col-md-12 mt-5">
+                    <hr class="hr border-3 text-danger mt-5">
                     </div>
                 </div>
             </div>
             <!-- QUIZ QUESTIONS -->
-            <div class="col-md-8 shadow-lg rounded-4 quizBg mt-4 position-absolute quizQuestion">
+            <div class="col-md-8 shadow-lg rounded-4 quizBg mt-4 active position-absolute quizQuestion">
                 <div class="row justify-content-center opacityBanner p-4 rounded-4">
                     <div class="col-md-12 justify-content-center d-flex flex-column align-items-center">
                         <h1 class="text-danger display-3 fw-bold">1/15</h1>
                     </div>
                     <div class="col-md-12 text-center">
                         <h5 class="fw-semibold text-light py-4">
-                            15 secondes
+                            <span class="counter text-light mx-2">10</span>secondes
                         </h5>
-                        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar w-75 bg-danger"></div>
+                        <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated w-0 bg-danger"></div>
                         </div>
                     </div>
                     <div class="col-md-12 shadow-lg p-5 rounded-4 bg-white mt-4">

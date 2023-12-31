@@ -26,14 +26,14 @@ selectedResponse.forEach(response => {
     })
 })
 
-// fonction progressbar
+// fonction progressbar avant de start
 const progress = (totalTime) => {
         startQuizBtn.addEventListener('click', () => {
             progressBar.style.width = '100%'
             let count = totalTime
             let loop = setInterval(() => {
                 count--
-                counter.innerHTML = `${count} secondes`
+                counter.innerHTML = `${count}`
                 progressBar.style.width = `${(count / totalTime) * 100}%`
             if (count === 0) {
                 clearInterval(loop);
@@ -45,3 +45,10 @@ const progress = (totalTime) => {
 }
 
 progress(10);
+
+// fonction progressbar pour les questions
+const progressQuestion = (totalTime) => {
+    if (quizQuestion.classList.contains(".active")) {
+        console.log(adad);
+    }
+}
