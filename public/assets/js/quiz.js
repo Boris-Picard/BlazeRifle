@@ -7,6 +7,7 @@ const counter = document.querySelector(".counter");
 const counterQuestion = document.querySelector(".counterQuestion")
 const quizQuestion = document.querySelector(".quizQuestion");
 const selectedResponse = document.querySelectorAll(".response")
+const quizResult = document.querySelector(".quizResult")
 const classBgAdd = ['bg-secondary', 'text-light'];
 const classBgRemove = ['bg-white', 'text-dark'];
 let clickedResponse = [];
@@ -84,6 +85,8 @@ let progressQuestions = (totalTimeQuestion) => {
                 progressQuestion.style.width = `${(countQuestion / totalTimeQuestion) * 100}%`
                 if (countQuestion === 0 ) {
                     clearTimeout(loop)
+                    quizQuestion.classList.toggle("active")
+                    quizResult.classList.toggle("active")
                 }
             }, 1000);
         }
@@ -97,5 +100,23 @@ progressQuestions(10)
 
 // Fonction résultat quiz
 let showResult = () => {
-    const scoreText = 
+    const scoreText = document.querySelector('.scoreText');
+    scoreText.textContent = `Votre pourcentage de bonnes réponses est de ${userScore} sur ${questions.length}`
+    
+    const circularProgress = document.querySelector(".circularProgress")
+    const progressValue = document.querySelector(".progressValue")
+    let progressStartValue = -1
+    let progressEndValue = (userScore / questions.length) * 100
+    let speed = 20
+    
+    let progress = setInterval(() => {
+        progressStartValue++
+
+        progressValue.textContent = `${progressStartValue}%`
+        circularProgress.style.background = `conic-gradient(#DC3545 ${progressStartValue * 3.6}deg, rgba(255,255,255,1) 0deg)`
+
+        if (progressStartValue == progressEndValue) {
+            clearInterval(progress)
+        }
+    }, speed);
 }

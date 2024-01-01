@@ -352,6 +352,10 @@ small {
 }
 
 /* QUIZ */
+.quizSection {
+    height: 100vh;
+}
+
 .nameLogoQuiz {
     font-weight: 800;
     text-transform: uppercase;
@@ -363,8 +367,8 @@ small {
 }
 
 .logoQuiz {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
 }
 
 .quizBg {
@@ -424,9 +428,11 @@ small {
 }
 
 .quizResult {
+    opacity: 0;
     transition: 1s ease;
     width: 55rem;
-    height: 61.024rem;
+    height: 46.074rem;
+    pointer-events: none;
 }
 
 .quizResult.active {
@@ -448,7 +454,6 @@ small {
     position: absolute;
     width: 13.125rem;
     height: 13.125rem;
-    background: yellow;
     border-radius: 50%;
 }
 
@@ -478,6 +483,15 @@ small {
     font-size: 1.625rem;
     font-weight: 600;
     margin-top: 1.25rem;
+}
+
+.bronzeTrophy {
+    color: #CD7F32;
+}
+
+.widthColClassement {
+    width: 22.813rem;
+    height: 60rem;
 }
 
 /* DOT SPINNER */

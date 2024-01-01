@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex align-items-center">
-                <div class="d-flex align-items-center w-100 flex-column">
+                <div class="d-flex align-items-center w-100 flex-wrap justify-content-center ">
                     <img src="../../public/assets/img/logo512.png" class="img-fluid logoQuiz" alt="logoBrand">
                     <a class="navbar-brand nameLogoQuiz" href="#">blaze rifle</a>
                 </div>
@@ -23,11 +23,11 @@
     </div>
 </section>
 <!-- QUIZ -->
-<section class="bg-light">
+<section class="bg-light quizSection d-flex align-items-center ">
     <div class="container">
         <div class="row">
             <!-- QUIZ START -->
-            <div class="col-md-8 shadow-lg rounded-4 quizStartWindow mt-4  position-absolute">
+            <div class="col-md-8 shadow-lg rounded-4 quizStartWindow active position-absolute">
                 <div class="row justify-content-center p-4 rounded-4">
                     <div class="col-md-12 justify-content-center d-flex flex-column align-items-center">
                         <h1 class="text-danger fw-bold display-4">Règle du quiz</h1>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <!-- QUIZ TIMER -->
-            <div class="col-md-8 shadow-lg rounded-4 quizTimerWindow mt-4 position-relative">
+            <div class="col-md-8 shadow-lg rounded-4 quizTimerWindow position-relative">
                 <div class="row justify-content-center p-4 rounded-4">
                     <div class="col-md-12 justify-content-center d-flex flex-column align-items-center text-center">
                         <h1 class="text-danger fw-bold display-4">Préparez-vous le quiz va démarrer dans :</h1>
@@ -79,12 +79,12 @@
                         <span class="text-danger fw-bold text-capitalize mt-5 display-5 ">Call of duty</span>
                     </div>
                     <div class="col-md-12 mt-5">
-                    <hr class="hr border-3 text-danger mt-5">
+                        <hr class="hr border-3 text-danger mt-5">
                     </div>
                 </div>
             </div>
             <!-- QUIZ QUESTIONS -->
-            <div class="col-md-8 shadow-lg rounded-4 quizBg mt-4 position-absolute quizQuestion">
+            <div class="col-md-8 shadow-lg rounded-4 quizBg position-absolute quizQuestion">
                 <div class="row justify-content-center opacityBannerQuiz p-4 rounded-4">
                     <div class="col-md-12 justify-content-center d-flex flex-column align-items-center">
                         <h1 class="text-danger display-3 fw-bold">1/15</h1>
@@ -103,16 +103,16 @@
                         </h5>
                     </div>
                     <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
-                            Call of Duty: World at War
+                        Call of Duty: World at War
                     </div>
                     <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
-                            Call of Duty: 2
+                        Call of Duty: 2
                     </div>
                     <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
-                            Call of Duty: 3
+                        Call of Duty: 3
                     </div>
                     <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
-                            Call of Duty: 4
+                        Call of Duty: 4
                     </div>
                     <div class="py-5 col-md-12 w-75">
                         <button type="submit" class="btn btn-danger w-100 rounded-5 p-3 text-uppercase fw-bold">
@@ -122,26 +122,117 @@
                 </div>
             </div>
             <!-- QUIZ RESULT -->
-            <div class="col-md-8 shadow-lg rounded-4 quizResult mt-4 position-absolute">
+            <div class="col-md-8 shadow-lg rounded-4 quizResult position-absolute">
                 <div class="row justify-content-center p-4 rounded-4">
                     <div class="col-md-12 justify-content-center d-flex flex-column align-items-center text-center">
                         <h1 class="text-danger fw-bold display-4">Quiz terminé</h1>
                         <div class="percentageContainer">
                             <div class="circularProgress">
                                 <span class="progressValue">
-                                    0%
+
                                 </span>
                             </div>
                         </div>
                         <div class="scoreText">
-                            Vous avez un poucentages de 10% de bonnes réponses !
+
                         </div>
                     </div>
                     <div class="py-5 col-md-12 w-75">
+                    </div>
+                    <a href='' class="btn btn-danger w-100 rounded-5 p-3 text-uppercase fw-bold">
+                        Revenir a l'accueil
+                    </a>
+                </div>
+            </div>
+            <!-- SIDEBAR -->
+            <div class="col-md-4 col-12 ">
+                <div class="row mx-4 rounded-4">
+                    <div class="col-12 widthColClassement shadow-lg rounded-4">
+                        <div class="row">
+                            <div class="col-12 d-flex flex-row text-center justify-content-center p-3">
+                                <h5 class="text-uppercase fs-3 fw-bold text-danger">Classement Hebdo</h5>
+                            </div>
+                            <!-- PREMIER -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill text-warning fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- DEUXIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill text-secondary fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- TROISIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill bronzeTrophy fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- QUATRIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- CINQUIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- SIXIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- SEPTIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- HUITIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- NEUVIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <!-- DIXIEME -->
+                            <div class="col-md-2 ">
+                                <i class="bi bi-trophy-fill fs-1"></i>
+                            </div>
+                            <div class="col-md-10 w-75 justify-content-center align-items-center d-flex text-center">
+                                <p class="fw-bold fs-3 m-0">Boris</p>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center mt-3">
+                                <a href="#" class="btn btn-outline-secondary  rounded-5 p-2 fw-bold text-uppercase">
+                                    Reste du classement
+                                </a>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center mt-5 flex-column ">
+                                <h5 class="fw-bold fs-5 text-center">Temps restant avant le prochain quiz :</h5>
+                                <small class="text-center fw-bold mt-3">12 heures 18 minutes 56 secondes</small>
+                            </div>
                         </div>
-                        <a href='' class="btn btn-danger w-100 rounded-5 p-3 text-uppercase fw-bold">
-                            Revenir a l'accueil
-                        </a>
+                    </div>
                 </div>
             </div>
         </div>
