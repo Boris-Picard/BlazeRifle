@@ -12,9 +12,25 @@ html{
     box-shadow: none;
 }
 
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
 /* .active {
     color: rgb(22, 136, 243) !important;
 } */
+
+.roundedImgNav {
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+.dropdownGames {
+    width: 15rem;
+    height: 15rem;
+}
 
 .dropdownAccount {
     width: 25rem;
@@ -350,6 +366,7 @@ small {
 .selectBgCalendar {
     height: 10rem;
 }
+
 
 /* QUIZ */
 .quizSection {
@@ -833,7 +850,7 @@ footer {
     height: 78vh;
 }
 
-.nav-link:hover, .nav-link:focus {
+.navLink:hover, .navLink:focus {
     background-color: rgba(200, 200, 200, 0.5 );
 }
 
