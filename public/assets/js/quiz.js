@@ -20,14 +20,27 @@ startQuizBtn.addEventListener('click', () => {
 
 // Permet d'ajouter une bordure rouge si l'element est cliqué et récuperer ce qui est contenu dans l'element
 selectedResponse.forEach(response => {
-    response.addEventListener("click", (event) => {
-        clickedResponse.push(event.target.innerText);
-        console.log(clickedResponse);
+    response.addEventListener("click", () => {
         for (let index = 0; index < classBorder.length; index++) {
-            response.classList.toggle(classBorder[index])
+            response.classList.toggle(classBorder[index]);
         }
-    })
-})
+        const isActive = response.classList.contains(classBorder[0]); 
+        clickedResponse.push(response.innerText)
+        console.log(clickedResponse);
+        selectedResponse.forEach(otherResponse => {
+            if (otherResponse !== response) {
+                if (isActive) {
+                    otherResponse.style.pointerEvents = "none";
+                } else {
+                    otherResponse.style.pointerEvents = "auto";
+                    clickedResponse.pop(response.innerText)
+                }
+            }
+        });
+    });
+});
+
+
 
 // fonction progressbar avant de start
 let progress = (totalTime) => {

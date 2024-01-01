@@ -102,25 +102,17 @@
                             Dans quel jeu Call of Duty la carte multijoueur "Nuketown" a-t-elle été introduite pour la première fois ?
                         </h5>
                     </div>
-                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4">
-                        <p class="fw-bold fs-5 text-center m-0 text-dark">
+                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
                             Call of Duty: World at War
-                        </p>
                     </div>
-                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4">
-                        <p class="fw-bold fs-5 text-center m-0 text-dark">
+                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
                             Call of Duty: 2
-                        </p>
                     </div>
-                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4">
-                        <p class="fw-bold fs-5 text-center m-0 text-dark">
+                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
                             Call of Duty: 3
-                        </p>
                     </div>
-                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4">
-                        <p class="fw-bold fs-5 text-center m-0 text-dark">
+                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
                             Call of Duty: 4
-                        </p>
                     </div>
                     <div class="py-5 col-md-12 w-75">
                         <button type="submit" class="btn btn-danger w-100 rounded-5 p-3 text-uppercase fw-bold">

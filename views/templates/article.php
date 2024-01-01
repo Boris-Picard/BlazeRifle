@@ -166,9 +166,19 @@
                                             </div>
                                         </div>
                                     </form>
-                            <?php } else { ?>
+                                <?php } else { ?>
                                     <div class="card shadow-lg border-0 p-5 mt-4" id="commentForm">
                                         <div class="card-body d-flex align-items-center flex-column rounded-4">
+                                            <div class="dot-spinner">
+                                                <div class="dot-spinner__dot"></div>
+                                                <div class="dot-spinner__dot"></div>
+                                                <div class="dot-spinner__dot"></div>
+                                                <div class="dot-spinner__dot"></div>
+                                                <div class="dot-spinner__dot"></div>
+                                                <div class="dot-spinner__dot"></div>
+                                                <div class="dot-spinner__dot"></div>
+                                                <div class="dot-spinner__dot"></div>
+                                            </div>
                                             <h5 class="mb-2 py-3 text-uppercase fw-bold">Commentaire envoyé !</h5>
                                             <div class="alert alert-warning d-flex p-4 align-items-center" role="alert">
                                                 <div>
