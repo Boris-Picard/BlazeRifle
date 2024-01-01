@@ -7,7 +7,8 @@ const counter = document.querySelector(".counter");
 const counterQuestion = document.querySelector(".counterQuestion")
 const quizQuestion = document.querySelector(".quizQuestion");
 const selectedResponse = document.querySelectorAll(".response")
-const classBorder = ['border', 'border-4', 'border-success'];
+const classBgAdd = ['bg-secondary', 'text-light'];
+const classBgRemove = ['bg-white', 'text-dark'];
 let clickedResponse = [];
 let result = [];
 
@@ -18,28 +19,37 @@ startQuizBtn.addEventListener('click', () => {
 })
 
 
-// Permet d'ajouter une bordure rouge si l'element est cliqué et récuperer ce qui est contenu dans l'element
-selectedResponse.forEach(response => {
-    response.addEventListener("click", () => {
-        for (let index = 0; index < classBorder.length; index++) {
-            response.classList.toggle(classBorder[index]);
-        }
-        const isActive = response.classList.contains(classBorder[0]); 
-        clickedResponse.push(response.innerText)
-        console.log(clickedResponse);
-        selectedResponse.forEach(otherResponse => {
-            if (otherResponse !== response) {
-                if (isActive) {
-                    otherResponse.style.pointerEvents = "none";
-                } else {
-                    otherResponse.style.pointerEvents = "auto";
-                    clickedResponse.pop(response.innerText)
-                }
+// Permet d'ajouter une bordure verte si l'element est cliqué et récuperer ce qui est contenu dans l'element
+let selectresponse = (questions) => {
+    selectedResponse.forEach(response => {
+        let count = 0
+        response.addEventListener("click", () => {
+            for (let index = 0; index < classBgAdd.length; index++) {
+                response.classList.toggle(classBgAdd[index]);
+                response.classList.toggle(classBgRemove[index])
             }
+            count++
+            const isActive = response.classList.contains(classBgAdd[0]); 
+            if (count%2 !== 0) {
+                clickedResponse.push(response.innerText)
+            } else {
+                clickedResponse.pop(response.innerText)
+            }
+            selectedResponse.forEach(otherResponse => {
+                if (otherResponse !== response) {
+                    if (isActive) {
+                        otherResponse.style.pointerEvents = "none";
+                    } else {
+                        otherResponse.style.pointerEvents = "auto";
+                    }
+                }
+            });
         });
+        return clickedResponse;
     });
-});
+}
 
+selectresponse()
 
 
 // fonction progressbar avant de start
