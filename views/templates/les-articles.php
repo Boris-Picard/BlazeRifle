@@ -13,7 +13,7 @@
                         <div class="row ">
                             <div class="col-12 d-flex flex-wrap justify-content-between">
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
-                                    <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover h-100 w-100" alt="GTA 6" />
+                                        <img src="/public/assets/img/gta6.avif" class="card-img rounded-0 object-fit-cover h-100 w-100" alt="GTA 6" />
                                     <div class="card-img-overlay">
                                         <span class="badge rounded-pill text-bg-danger p-2">GTA 6</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 <div class="card bg-transparent text-white p-0 cardActu  border-0 cardShadow">
-                                    <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover h-100 w-100" alt="GTA 6" />
+                                    <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover rounded-0  h-100 w-100" alt="GTA 6" />
                                     <div class="card-img-overlay">
                                         <span class="badge rounded-pill text-bg-danger p-2">GTA 6</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover h-100 w-100" alt="GTA 6" />
+                                    <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover rounded-0  h-100 w-100" alt="GTA 6" />
                                     <div class="card-img-overlay">
                                         <span class="badge rounded-pill text-bg-danger p-2">GTA 6</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover h-100 w-100" alt="GTA 6" />
+                                    <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover rounded-0  h-100 w-100" alt="GTA 6" />
                                     <div class="card-img-overlay">
                                         <span class="badge rounded-pill text-bg-danger p-2">GTA 6</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -168,7 +168,7 @@
                         <div class="row">
                             <div class="col-8 cardNewsTop">
                                 <div class="card bg-dark text-white p-0 cardNewsTop border-0 cardShadow">
-                                    <img src="/public/assets/img/infinitebg.jpg" class="card-img object-fit-cover h-100" alt="Stony Beach" />
+                                    <img src="/public/assets/img/infinitebg.jpg" class="card-img rounded-0  object-fit-cover h-100" alt="Stony Beach" />
                                     <div class="card-img-overlay d-flex flex-column justify-content-end">
                                         <div>
                                             <p class="p-0 m-0"><span class="badge rounded-pill text-bg-dark p-2 px-4 mb-2">HALO</span></p>
@@ -195,7 +195,7 @@
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardNewsUnder p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
+                                                <small class="card-text text-danger titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit beatae autem adipisci eaque, voluptates temporibus iste, illo, quis possimus saepe nemo et officia ea quas velit sint? Omnis, explicabo impedit!
@@ -220,7 +220,7 @@
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardNewsUnder p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
+                                                <small class="card-text text-danger titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Les leaks de GTA 5 révèlent pas mal de choses...
@@ -245,7 +245,7 @@
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardNewsUnder p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
+                                                <small class="card-text text-danger titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Les leaks de GTA 5 révèlent pas mal de choses...
@@ -270,7 +270,7 @@
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardNewsUnder p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
+                                                <small class="card-text text-danger titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Les leaks de GTA 5 révèlent pas mal de choses...
@@ -297,7 +297,7 @@
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardNewsUnder p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
+                                                <small class="card-text text-danger titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum porro, tenetur, consequatur doloribus mollitia inventore ratione ducimus accusamus, dolores iste recusandae. Quas, sed fugiat sit ratione dolorum vero minima architecto.
@@ -322,7 +322,7 @@
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardNewsUnder p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
+                                                <small class="card-text text-danger titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Les leaks de GTA 5 révèlent pas mal de choses...
@@ -347,7 +347,7 @@
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardNewsUnder p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
+                                                <small class="card-text text-danger titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Les leaks de GTA 5 révèlent pas mal de choses...
@@ -372,7 +372,7 @@
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardNewsUnder p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
+                                                <small class="card-text text-danger titleCardNewsUnder fw-semibold m-0 p-0">News jeu</small>
                                                 <div>
                                                     <a href="#" class="card-text bodyCardNewsUnder stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Les leaks de GTA 5 révèlent pas mal de choses...
@@ -507,7 +507,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="card bg-dark text-white p-0 cardGuideLeft border-0 cardShadow">
-                                    <img src="/public/assets/img/infinitebg.jpg" class="card-img object-fit-cover w-100 h-100" alt="Stony Beach" />
+                                    <img src="/public/assets/img/infinitebg.jpg" class="card-img object-fit-cover rounded-0 w-100 h-100" alt="Stony Beach" />
                                     <div class="card-img-overlay d-flex flex-column justify-content-end">
                                         <p class="p-0 m-0">
                                             <span class="badge rounded-pill text-bg-dark p-2 px-4 mb-2">HALO</span>
@@ -731,7 +731,7 @@
                             <div class="col-4">
                                 <div class="card p-0 border-0 bg-transparent">
                                     <div class="ratio ratio-1x1 ">
-                                        <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4 " alt="Sunset Over the Sea" />
+                                        <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover " alt="Sunset Over the Sea" />
                                     </div>
                                     <div class="card-img-overlay ">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">1</span>
@@ -744,7 +744,7 @@
                             <div class="col-4">
                                 <div class="card p-0 border-0 bg-transparent">
                                     <div class="ratio ratio-1x1">
-                                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover" alt="Sunset Over the Sea" />
                                     </div>
                                     <div class="card-img-overlay">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">2</span>
@@ -757,7 +757,7 @@
                             <div class="col-4">
                                 <div class="card p-0 border-0 bg-transparent">
                                     <div class="ratio ratio-1x1">
-                                        <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                        <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover" alt="Sunset Over the Sea" />
                                     </div>
                                     <div class="card-img-overlay">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">3</span>

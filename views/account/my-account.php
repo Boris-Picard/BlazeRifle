@@ -1,15 +1,15 @@
 <section class="myAccount bg-light">
     <main class="d-flex flex-nowrap">
         <!-- SIDEBAR -->
-        <div class="container sidebar position-relative rounded-3 py-5 mt-4">
+        <div class="container sidebar position-relative rounded-4 py-5 mt-4">
             <div class="row">
-                <div class="col-12 p-0 rounded-3 shadow bg-white">
+                <div class="col-12 p-0 rounded-4 shadow-lg bg-white">
                     <div class="row m-0 p-0">
-                        <a class="navbar-brand nameLogoAccount" href="/controllers/home-ctrl.php"><img src="/public/assets/img/logo512.png" class="brandLogoAccount" alt="logo"> blaze rifle</a>
+                        <a class="navbar-brand nameLogoAccount" href="/controllers/home-ctrl.php"><img src="/public/assets/img/redlogo.png" class="brandLogoAccount" alt="logo"> blaze rifle</a>
                         <div class="col-12 d-flex flex-column p-0 sidebar rounded colSidebar g-5">
-                            <a href="" class="py-3 nav-link navLink active sidebarLink"><span><i class="bi bi-house px-3"></i> Dashboard</span></a>
+                            <a href="" class="py-3 nav-link navLink active sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i> Dashboard</span></a>
                             <a href="" class="py-3 nav-link navLink sidebarLink"><span><i class="bi bi-bar-chart px-3"></i> Analitycs</span></a>
-                            <a href="" class="py-3 nav-link navLink sidebarLink"><span><i class="bi bi-chat px-3"></i> Messages</span><span class="badge bg-primary rounded-pill mx-4 justify-content-end">6</span></a>
+                            <a href="" class="py-3 nav-link navLink sidebarLink"><span><i class="bi bi-chat px-3"></i> Messages</span><span class="badge bg-danger rounded-pill mx-4 justify-content-end">6</span></a>
                             <a href="" class="py-3 nav-link navLink sidebarLink"><span><i class="bi bi-bookmarks px-3"></i> Collections</span></a>
                             <a href="" class="py-3 nav-link navLink sidebarLink"><span><i class="bi bi-people px-3"></i> Users</span></a>
                             <a href="" class="mb-3 py-3 navLink position-absolute sidebarLink w-100 bottom-0 nav-link"><span><i class="bi bi-box-arrow-right px-3"></i>Logout</span></a>
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-xl-7 mx-auto py-4">
                     <!-- Profile picture -->
-                    <div class="card shadow border-0 mt-5 profilCard rounded-3">
+                    <div class="card shadow border-0 mt-5 profilCard rounded-4">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
@@ -111,7 +111,7 @@
                     <!-- Individual switch cards -->
                     <div class="row g-6">
                         <div class="col-md-6 py-3">
-                            <div class="card shadow border-0 rounded-3">
+                            <div class="card shadow border-0 rounded-4">
                                 <div class="card-body">
                                     <h5 class="mb-2 fw-semibold">Rendre public mon profil</h5>
                                     <p class="text-sm text-muted mb-6">
@@ -124,7 +124,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 py-3">
-                            <div class="card shadow border-0 rounded-3">
+                            <div class="card shadow border-0 rounded-4">
                                 <div class="card-body">
                                     <h5 class="mb-2 fw-semibold">Afficher mon adresse mail</h5>
                                     <p class="text-sm text-muted mb-6">
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 py-3 mb-2">
-                            <div class="card shadow border-0 rounded-3">
+                            <div class="card shadow border-0 rounded-4">
                                 <div class="card-body d-flex align-items-center">
                                     <div>
                                         <h5 class="text-danger mb-2 fw-semibold">Désactiver votre compte</h5>

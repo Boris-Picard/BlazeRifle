@@ -8,7 +8,7 @@
                     <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
                         <div class="row">
                             <div class="col-12">
-                                <img src="../../public/assets/img/logo512.png" class="img-fluid logoForm" alt="logoBrand">
+                                <img src="../../public/assets/img/redlogo.png" class="img-fluid logoForm" alt="logoBrand">
                             </div>
                         </div>
                         <div class="row">
@@ -35,16 +35,17 @@
                                     <label class="form-label fw-semibold" for="password">Mot de passe *</label>
                                     <input type="password" id="password" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password">
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-4 d-flex flex-wrap justify-content-between ">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="check_example" id="check_example">
                                         <label class="form-check-label" for="check_example">
                                             Restez connecté
                                         </label>
                                     </div>
+                                    <a href="" class="text-decoration-none text-primary">Mot de passe oublié ?</a>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-primary w-100 rounded-5 p-3 fw-bold text-uppercase">
+                                    <button type="submit" class="btn btn-danger w-100 rounded-5 p-3 fw-bold text-uppercase">
                                         Se connecter
                                     </button>
                                 </div>
@@ -102,7 +103,7 @@
                         <div class="row py-5">
                             <div class="col-md-12">
                                 <small>Vous n'avez pas de compte ?</small>
-                                <a href="/controllers/login-ctrl/sign-up-ctrl.php" class="text-warning text-sm fw-semibold text-decoration-none">S'inscrire</a>
+                                <a href="/controllers/login-ctrl/sign-up-ctrl.php" class="text-danger text-sm fw-semibold text-decoration-none">S'inscrire</a>
                             </div>
                         </div>
                     </div>

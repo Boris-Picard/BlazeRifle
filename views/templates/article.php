@@ -90,7 +90,7 @@
                     <!-- ARTICLE SUIVANT -->
                     <div class="row">
                         <div class="col-12 my-2">
-                            <h4 class="text-capitalize text-primary fw-bold">
+                            <h4 class="text-capitalize text-danger fw-bold">
                                 Article suivant
                             </h4>
                             <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
@@ -133,7 +133,7 @@
                     <section>
                         <div class="row">
                             <div class="col-12 mt-5 commentSection">
-                                <h4 class="text-capitalize text-primary fw-bold">
+                                <h4 class="text-capitalize text-danger fw-bold">
                                     commentaires
                                 </h4>
                                 <!-- AJOUTER UN COMMENTAIRE -->
@@ -291,7 +291,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 d-flex justify-content-center mt-5">
-                                <button type="button" class="btn btn-primary w-50 fw-bold p-2 rounded-5 text-uppercase p-2 showMoreComments">plus de commentaires</button>
+                                <button type="button" class="btn btn-danger w-50 fw-bold p-2 rounded-5 text-uppercase p-2 showMoreComments">plus de commentaires</button>
                             </div>
                         </div>
                     </section>

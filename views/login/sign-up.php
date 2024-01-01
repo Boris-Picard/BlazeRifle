@@ -8,7 +8,7 @@
                     <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
                         <div class="row">
                             <div class="col-12">
-                                <img src="../../public/assets/img/logo512.png" class="img-fluid logoForm" alt="logoBrand">
+                                <img src="../../public/assets/img/redlogo.png" class="img-fluid logoForm" alt="logoBrand">
                             </div>
                         </div>
                         <div class="row">
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-primary w-100 rounded-5 p-3 text-uppercase fw-bold">
+                                <button type="submit" class="btn btn-danger w-100 rounded-5 p-3 text-uppercase fw-bold">
                                     S'inscrire
                                 </button>
                             </div>
@@ -137,7 +137,7 @@
                         <div class="row pt-5">
                             <div class="col-md-12">
                                 <small>Vous avez déjà un compte ?</small>
-                                <a href="/controllers/login-ctrl/sign-in-ctrl.php" class="text-warning text-sm fw-semibold text-decoration-none">Se connecter</a>
+                                <a href="/controllers/login-ctrl/sign-in-ctrl.php" class="text-danger text-sm fw-semibold text-decoration-none">Se connecter</a>
                             </div>
                         </div>
                     </div>

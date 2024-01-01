@@ -2,7 +2,7 @@
         <div class="container-fluid">
             <div class="row justify-content-center rowFooter">
                 <div class="col-6 col-md-2 mb-3 text-center">
-                <a class="navbar-brand nameLogoFooter" href="/../controllers/home-ctrl.php"><img src="/public/assets/img/logo512.png" class="img-fluid logoFooter" alt="logoBrand">blaze rifle</a> 
+                <a class="navbar-brand nameLogoFooter" href="/../controllers/home-ctrl.php"><img src="/public/assets/img/redlogo.png" class="img-fluid logoFooter" alt="logoBrand">blaze rifle</a> 
                 </div>
                 <div class="col-6 col-md-2 mb-3 text-center">
                 </div>

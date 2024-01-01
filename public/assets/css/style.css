@@ -19,7 +19,7 @@ html{
 }
 
 /* .active {
-    color: rgb(22, 136, 243) !important;
+    color: rgb(216, 0, 36) !important;
 } */
 
 .roundedImgNav {
@@ -27,9 +27,17 @@ html{
     height: 1.875rem;
 }
 
-.dropdownGames {
-    width: 15rem;
-    height: 15rem;
+.dropdownMenu {
+    width: 18rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.navGamesHover:hover span {
+    color: rgb(216, 0, 36);
+    font-weight: bold;
+    transition: all 300ms ease;
+    margin-left: 1rem;
 }
 
 .dropdownAccount {
@@ -47,15 +55,10 @@ html{
 .nameLogoNav {
     font-weight: 800;
     text-transform: uppercase;
-    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(216, 0, 36), rgb(216, 0, 36));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.offcanvas-end {
-    height: 100vh;
-    width: 70vw !important;
 }
 
 .navbarScroll {
@@ -80,7 +83,7 @@ html{
 .navlinkHover:after {
     content: "";
     position: absolute;
-    background-color: rgb(22, 136, 243);
+    background-color: rgb(216, 0, 36);
     height: 3px;
     width: 0;
     left: 0;
@@ -93,7 +96,7 @@ html{
 }
 
 .navlinkHover:hover {
-    color: rgb(22, 136, 243) !important;
+    color: rgb(216, 0, 36) !important;
 }
 
 
@@ -175,7 +178,7 @@ html{
 }
 
 .stretchLinkHover:hover {
-    color: #007BFF !important;
+    color: rgb(216, 0, 36) !important;
 }
 
 .cardNewsTop {
@@ -340,7 +343,7 @@ small {
 }
 
 .stetchedLinkArticleUnder:hover {
-    color: #285AEB !important;
+    color: rgb(216, 0, 36) !important;
 }
 
 .imgProfilComment {
@@ -377,7 +380,7 @@ small {
     font-weight: 800;
     text-transform: uppercase;
     font-size: 2rem;
-    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(216, 0, 36), rgb(216, 0, 36));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -630,7 +633,7 @@ small {
     font-weight: 800;
     text-transform: uppercase;
     font-size: 26px;
-    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(216, 0, 36), rgb(216, 0, 36));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -748,7 +751,7 @@ footer {
 }
 
 .footerLink:hover {
-    color: rgb(22, 136, 243);
+    color: rgb(216, 0, 36);
     transition: 0.3s ease-in-out;
 }
 
@@ -761,7 +764,7 @@ footer {
     font-size: 24px !important;
     font-weight: 800;
     text-transform: uppercase;
-    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(216, 0, 36), rgb(216, 0, 36));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -776,7 +779,7 @@ footer {
 }
 
 .border-bottom {
-    border-color: rgb(22, 136, 243) !important;
+    border-color: rgb(216, 0, 36) !important;
 }
 
 .followUs {
@@ -834,7 +837,7 @@ footer {
     font-weight: 800;
     text-transform: uppercase;
     font-size: 20px;
-    background: linear-gradient(to left, rgb(16, 31, 51), rgb(22, 136, 243), rgb(47, 229, 242));
+    background: linear-gradient(to left, rgb(16, 31, 51), rgb(216, 0, 36), rgb(216, 0, 36));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -859,11 +862,13 @@ footer {
 }
 
 .sidebarLink.active span {
-    color: rgb(22, 136, 243) ;
+    color: rgb(216, 0, 36) ;
+    font-weight: bold;
 }
 
 .sidebarLink:hover {
-    color: rgb(22, 136, 243);
+    color: rgb(216, 0, 36);
+    font-weight: bold;
 }
 
 .sidebarLink:hover span {
