@@ -417,6 +417,12 @@ small {
     cursor: pointer;
 }
 
+.opacityBannerQuiz {
+    background-color: rgba( 0, 0, 0, 0.6);
+    width: 55rem;
+    height: 61.024rem;
+}
+
 /* FORMULAIRE  */
 .btnSocialsForm:hover {
     background-color: #DFE0E1;
