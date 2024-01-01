@@ -94,3 +94,8 @@ let progressQuestions = (totalTimeQuestion) => {
 }
 
 progressQuestions(10)
+
+// Fonction résultat quiz
+let showResult = () => {
+    const scoreText = 
+}

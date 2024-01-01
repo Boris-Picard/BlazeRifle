@@ -423,6 +423,63 @@ small {
     height: 61.024rem;
 }
 
+.quizResult {
+    transition: 1s ease;
+    width: 55rem;
+    height: 61.024rem;
+}
+
+.quizResult.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.percentageContainer {
+    width: 18.75rem;
+    background: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.25rem 0 2.5rem;
+}
+
+.percentageContainer .circularProgress::before {
+    content: '';
+    position: absolute;
+    width: 13.125rem;
+    height: 13.125rem;
+    background: yellow;
+    border-radius: 50%;
+}
+
+.circularProgress .progressValue {
+    position: relative;
+    font-style: 2.813rem;
+    font-weight: 600;
+}
+
+.percentageContainer .circularProgress {
+    position: relative;
+    width: 15.625rem;
+    height: 15.625rem;
+    background: conic-gradient(#DC3545 3.6deg, rgba(255,255,255,1) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressValue {
+    font-size: 2.813rem;
+    font-weight: 600;
+}
+
+.scoreText {
+    font-size: 1.625rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+}
+
 /* DOT SPINNER */
 .dot-spinner {
     --uib-size: 2.8rem;

@@ -84,7 +84,7 @@
                 </div>
             </div>
             <!-- QUIZ QUESTIONS -->
-            <div class="col-md-8 shadow-lg rounded-4 quizBg mt-4 position-absolute active quizQuestion">
+            <div class="col-md-8 shadow-lg rounded-4 quizBg mt-4 position-absolute quizQuestion">
                 <div class="row justify-content-center opacityBannerQuiz p-4 rounded-4">
                     <div class="col-md-12 justify-content-center d-flex flex-column align-items-center">
                         <h1 class="text-danger display-3 fw-bold">1/15</h1>
@@ -119,6 +119,29 @@
                             Valider
                         </button>
                     </div>
+                </div>
+            </div>
+            <!-- QUIZ RESULT -->
+            <div class="col-md-8 shadow-lg rounded-4 quizResult mt-4 position-absolute">
+                <div class="row justify-content-center p-4 rounded-4">
+                    <div class="col-md-12 justify-content-center d-flex flex-column align-items-center text-center">
+                        <h1 class="text-danger fw-bold display-4">Quiz terminé</h1>
+                        <div class="percentageContainer">
+                            <div class="circularProgress">
+                                <span class="progressValue">
+                                    0%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="scoreText">
+                            Vous avez un poucentages de 10% de bonnes réponses !
+                        </div>
+                    </div>
+                    <div class="py-5 col-md-12 w-75">
+                        </div>
+                        <a href='' class="btn btn-danger w-100 rounded-5 p-3 text-uppercase fw-bold">
+                            Revenir a l'accueil
+                        </a>
                 </div>
             </div>
         </div>
