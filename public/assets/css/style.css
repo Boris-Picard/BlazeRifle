@@ -157,11 +157,19 @@ html{
 
 /* SELECTION 3 JEUX */
 .cardSelection {
-    height: 14.638rem;
+    height: 13.125rem;
 }
 
 .linkArticleSelectionGame {
     font-size: 0.875rem;
+}
+
+.buttonArticleSelectionGame {
+    font-size: 0.875rem;
+}
+
+.linkArticleSelectionGame:hover {
+    color: #DC3545 !important;
 }
 
 /* LES ARTICLES SECTION */
@@ -762,6 +770,39 @@ footer {
     -webkit-text-fill-color: transparent;
 }
 
+/* CALENDAR */
+.imgBannerCalendar {
+    background-image: url(../img/LeagueofLegends_Worlds2022_ChaseCenter_California_Stage.jpg);
+    height: 15rem;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.selectBgCalendar {
+    height: 10rem;
+}
+
+/* CONTACT US IMGFORM */
+.imgContact, .imgSignIn, .imgLogIn {
+    height: 100vh;
+    background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
+    background-position: right 57% bottom 45%;
+    background-size: cover;
+}
+
+.colInputContact, .colInputSignIn, .colInputLogIn {
+    padding: 80px;
+}
+
+.h1Contact {
+    font-size: 60px;
+}
+
+.contactContainer {
+    margin: 75px 0 0 0;
+}
 
 /* BANDEAU RESEAUX SOCIAUX */
 

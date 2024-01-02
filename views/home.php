@@ -24,8 +24,14 @@
     <section class="sectionContainer bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-10">
                     <h1 class="text-dark text-uppercase my-4 articleTitle fw-bold">Les derniers articles</h1>
+                </div>
+                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                        Tous les articles
+                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <!-- MAIN CARD ARTICLE -->
                 <div class="col-md-6">
@@ -303,8 +309,14 @@
     <section class="sectionContainer bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-12 px-2">
+                <div class="col-10 px-2">
                     <h1 class="text-dark text-uppercase my-4 fw-bold">Les derniers guides</h1>
+                </div>
+                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                        Tous les guides
+                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <!-- MAIN CARD GUIDE -->
                 <div class="col-md-6 col-12 px-2">
@@ -460,8 +472,14 @@
     <section class="sectionContainer">
         <div class="container">
             <div class="row ">
-                <div class="col-12">
+                <div class="col-10">
                     <h1 class="articleTitle my-4 text-uppercase fw-bold">Les jeux du moment</h1>
+                </div>
+                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                        Tous les jeux
+                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <!-- CARD N1 -->
                 <div class="col-md-4 col-12">
@@ -600,8 +618,14 @@
     <section class="sectionContainer">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-10">
                     <h1 class="articleTitle my-4 text-uppercase fw-bold">Les bons plans</h1>
+                </div>
+                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                        les bons plans
+                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <!-- MAIN CARD LEFT -->
                 <div class="col-6">
@@ -820,24 +844,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
+                    <h2 class="fw-bold text-uppercase py-2 aCardMin">grand theft auto vi</h2>
                     <div class="card rounded-4 border-0 shadow ">
                         <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
                         <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
                             <p class="p-0 m-0 z-3">
-                                <a href="" class="text-uppercase text-decoration-none fw-bold text-light z-3 icon-link icon-link-hover">
+                                <a href="" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
                                     Grand Theft auto vi
                                     <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
                                         <use xlink:href="#arrow-right"></use>
                                     </i>
                                 </a>
                             </p>
-                            <div class="w-100 mt-1 z-3">
-                                <div class="card-title">
-                                    <h5 class="aCardMin text-light fw-bold">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis accusamus dolor totam officiis, beatae obcaecati quas animi facilis necessitatibus magnam eos non minus explicabo iure, dignissimos est ad sed laborum.
-                                    </h5>
-                                </div>
-                            </div>
                             <div class="card-text z-3">
                                 <small class="text-light">il y a 47 minutes
                                     <span class="badge rounded-pill mx-1 border bg-transparent text-light fw-semibold "><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
@@ -916,8 +934,204 @@
                                 </a>
                             </p>
                             <!-- BUTTON ARTICLE -->
-                            <a href="#" class="btn btn-danger text-light w-100 rounded-4 linkArticleSelectionGame p-1 fw-bold text-uppercase mt-3 mb-1">
+                            <a href="#" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase mt-3 mb-1">
                                 Tous les articles sur : Grand Theft Auto VI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- DEUXIEME COL ARTICLE -->
+                <div class="col-md-4 ">
+                    <h2 class="fw-bold text-uppercase py-2 aCardMin">Call of duty : mw 3</h2>
+                    <div class="card rounded-4 border-0 shadow ">
+                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
+                        <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
+                            <p class="p-0 m-0 z-3">
+                                <a href="" class="text-uppercase text-decoration-none fw-bold stretched-link text-light z-3 icon-link icon-link-hover">
+                                    call of duty : modern warfare 3
+                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
+                                        <use xlink:href="#arrow-right"></use>
+                                    </i>
+                                </a>
+                            </p>
+                            <div class="card-text z-3">
+                                <small class="text-light">il y a 47 minutes
+                                    <span class="badge rounded-pill mx-1 border bg-transparent text-light fw-semibold "><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <!-- ARTICLE 1 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 2 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 3 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 4 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 5 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 6 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 7 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 8 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 9 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 10 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- BUTTON ARTICLE -->
+                            <a href="#" class="btn btn-danger text-light w-100 aCardMin rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase mt-3 mb-1">
+                                Tous les articles sur : call of duty : modern warfare 3
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TROISIEME COL ARTICLE -->
+                <div class="col-md-4">
+                    <h2 class="fw-bold text-uppercase py-2 aCardMin">Counter strike 2</h2>
+                    <div class="card rounded-4 border-0 shadow ">
+                        <img src="/public/assets/img/1329760.jpeg" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
+                        <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
+                            <p class="p-0 m-0 z-3">
+                                <a href="" class="text-uppercase text-decoration-none fw-bold stretched-link text-light z-3 icon-link icon-link-hover">
+                                    Counter strike 2
+                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
+                                        <use xlink:href="#arrow-right"></use>
+                                    </i>
+                                </a>
+                            </p>
+                            <div class="card-text z-3">
+                                <small class="text-light">il y a 47 minutes
+                                    <span class="badge rounded-pill mx-1 border bg-transparent text-light fw-semibold "><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <!-- ARTICLE 1 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 2 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 3 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 4 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 5 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 6 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 7 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 8 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 9 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 10 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- BUTTON ARTICLE -->
+                            <a href="#" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase mt-3 mb-1">
+                                Tous les articles sur : counter strike 2
                             </a>
                         </div>
                     </div>
@@ -925,3 +1139,125 @@
             </div>
         </div>
     </section>
+    <!-- FIN TOP JEUX SELECTION -->
+    <!-- DEBUT SECTION EVENTS -->
+    <section class="sectionContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <h1 class="articleTitle my-4 text-uppercase fw-bold">les événements à venir</h1>
+                </div>
+                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                        les événements
+                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <!-- CARD EVENT 1 -->
+                <div class="col-md-6">
+                    <div class="card text-bg-dark border-0 rounded-4">
+                        <div class="ratio ratio-16x9 ">
+                            <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4 " alt="GTA 6">
+                        </div>
+                        <div class="cardShadow">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <p class="p-0 m-0">
+                                    <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase">GTA 6</span>
+                                </p>
+                                <div class="w-75">
+                                    <a href="#" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                        La date de sortie du jeu est prévue pour le 4 avril 2025. Une date plausible, dans la mesure où Rockstar Games vient de confirmer qu'il faudrait attendre 2025 pour mettre la main sur GTA 6...
+                                    </a>
+                                </div>
+                                <div class="card-text">
+                                    <small>
+                                        04-04-2025
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD EVENT 2 -->
+                <div class="col-md-6">
+                    <div class="card text-bg-dark border-0 rounded-4">
+                        <div class="ratio ratio-16x9 ">
+                            <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img object-fit-cover rounded-4 " alt="CALL OF DUTY">
+                        </div>
+                        <div class="cardShadow">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <p class="p-0 m-0">
+                                    <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase">cod</span>
+                                </p>
+                                <div class="w-75">
+                                    <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                        Notes de correctif de la saison 6 de Call Of Duty : Modern Warfare II et de Warzone
+                                    </a>
+                                </div>
+                                <div class="card-text">
+                                    <small>
+                                        27-09-2023
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD EVENT 3 -->
+                <div class="col-md-6 py-4">
+                    <div class="card text-bg-dark border-0 rounded-4">
+                        <div class="ratio ratio-16x9 ">
+                            <img src="/public/assets/img/valorant.jpg" class="card-img object-fit-cover rounded-4" alt="VALORANT">
+                        </div>
+                        <div class="cardShadow">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <p class="p-0 m-0">
+                                    <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                    <span class="badge rounded-pill text-bg-warning p-2 px-4 mb-2 text-uppercase">valorant</span>
+                                </p>
+                                <div class="w-75">
+                                    <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                        Valorant : Le prochain VCT Masters 2024 aura lieu à Shangaï !
+                                    </a>
+                                </div>
+                                <div class="card-text">
+                                    <small>
+                                        2024
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD EVENT 4 -->
+                <div class="col-md-6 py-4">
+                    <div class="card text-bg-dark border-0 rounded-4">
+                        <div class="ratio ratio-16x9 ">
+                            <img src="/public/assets/img/maugaow2.jpeg" class="card-img object-fit-cover rounded-4" alt="MAUGA OVERWATCH 2">
+                        </div>
+                        <div class="cardShadow">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <p class="p-0 m-0">
+                                    <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                    <span class="badge rounded-pill text-bg-info p-2 px-4 mb-2 text-uppercase">overwatch 2</span>
+                                </p>
+                                <div class="w-75">
+                                    <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                        Overwatch 2 : le Héros Mauga présenté en détails, déjà du teasing pour 2024 !
+                                    </a>
+                                </div>
+                                <div class="card-text">
+                                    <small>
+                                        2024
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN SECTION EVENTS -->

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12 d-flex align-items-center">
                 <div class="d-flex align-items-center w-100 flex-wrap justify-content-center ">
-                    <img src="../../public/assets/img/logo512.png" class="img-fluid logoQuiz" alt="logoBrand">
+                    <img src="../../public/assets/img/redlogo.png" class="img-fluid logoQuiz" alt="logoBrand">
                     <a class="navbar-brand nameLogoQuiz" href="#">blaze rifle</a>
                 </div>
                 <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

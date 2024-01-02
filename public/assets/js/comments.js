@@ -143,17 +143,6 @@
 //             textarea.value = '';
 //         }
 //     });
-
-//     // Gestionnaire d'événements pour le bouton d'annulation dans le formulaire principal de commentaire
-//     const cancelButton = document.querySelector('#commentForm .btn-outline-danger');
-//     if (cancelButton) {
-//         cancelButton.addEventListener('click', () => {
-//             const form = document.getElementById('commentForm');
-//             if (form) {
-//                 form.classList.add('d-none'); // Cache le formulaire
-//             }
-//         });
-//     }
 // });
 
 // // Fonction pour créer la div de réponse avec un bouton "Répondre"
@@ -227,20 +216,31 @@
 //     });
 // });
 
-// // Gestion du formulaire de commentaire principal
-// document.querySelector('.letComment').addEventListener('click', () => {
-//     let form = document.getElementById('commentForm');
-//     form.classList.toggle('d-none');
-// });
+// Gestion du formulaire de commentaire principal
+document.querySelector('.letComment').addEventListener('click', () => {
+    let form = document.getElementById('commentForm');
+    form.classList.toggle('d-none');
+});
 
-// // Gestion affichage des commentaires suivant
-// document.querySelector('.showMoreComments').addEventListener('click', () => {
-//     let comments = document.querySelectorAll('.commentNotShow')
-//     comments.forEach(comment => {
-//         comment.classList.toggle('d-none')
-//     });
+// Gestion affichage des commentaires suivant
+document.querySelector('.showMoreComments').addEventListener('click', () => {
+    let comments = document.querySelectorAll('.commentNotShow')
+    comments.forEach(comment => {
+        comment.classList.toggle('d-none')
+    });
     
-// })
+})
+
+// Gestionnaire d'événements pour le bouton d'annulation dans le formulaire principal de commentaire
+    const cancelButton = document.querySelector('#commentForm .btn-outline-danger');
+    if (cancelButton) {
+        cancelButton.addEventListener('click', () => {
+            const form = document.getElementById('commentForm');
+            if (form) {
+                form.classList.add('d-none'); 
+            }
+        });
+    }
 
 // const addReplyButtonEventListeners = () => {
 //     const replyButtons = document.querySelectorAll(".replyButton");
