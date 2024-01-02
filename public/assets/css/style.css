@@ -122,6 +122,17 @@ html{
     height: 8.25rem;
 }
 
+@media all and (max-width: 438px) {
+    .cardArticleHomeMin {
+        height: auto;
+        width: auto;
+    }
+    .cardGuideBig {
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
 .cardArticleHomeMin a:hover {
     color: #285AEB !important;
 }
@@ -335,18 +346,7 @@ small {
 
 /* CALENDAR */
 
-.imgBannerCalendar {
-    background-image: url(../img/LeagueofLegends_Worlds2022_ChaseCenter_California_Stage.jpg);
-    height: 15rem;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.selectBgCalendar {
-    height: 10rem;
-}
 
 
 /* QUIZ */

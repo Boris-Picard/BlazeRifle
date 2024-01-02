@@ -300,17 +300,17 @@
     </section>
     <!-- FIN DES ARTICLES -->
     <!-- LES DERNIERS GUIDES  -->
-    <section class="bgGuide sectionContainer bg-light">
+    <section class="sectionContainer bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-12 px-2">
                     <h1 class="text-dark text-uppercase my-4 fw-bold">Les derniers guides</h1>
                 </div>
                 <!-- MAIN CARD GUIDE -->
-                <div class="col-md-6 px-2">
-                    <div class="card text-bg-dark border-0 rounded-4 cardGuideBig">
+                <div class="col-md-6 col-12 px-2">
+                    <div class="card text-bg-dark border-0 rounded-4 bg-white cardGuideBig">
                         <div class="ratio ratio-16x9 ">
-                            <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4 " alt="GTA 6">
+                            <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover cardGuideBig rounded-4 " alt="GTA 6">
                         </div>
                         <div class="cardShadow">
                             <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -457,14 +457,14 @@
     </section>
     <!-- FIN DES GUIDES  -->
     <!-- DEBUT DES JEUX DU MOMENT -->
-    <section class="articleBgCalendar sectionContainer">
+    <section class="sectionContainer">
         <div class="container">
             <div class="row ">
                 <div class="col-12">
                     <h1 class="articleTitle my-4 text-uppercase fw-bold">Les jeux du moment</h1>
                 </div>
                 <!-- CARD N1 -->
-                <div class="col-4">
+                <div class="col-md-4 col-12">
                     <div class="card p-0 border-0 bg-transparent rounded-4">
                         <div class="ratio ratio-1x1 ">
                             <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
@@ -478,7 +478,7 @@
                     </div>
                 </div>
                 <!-- CARD N2 -->
-                <div class="col-4">
+                <div class="col-md-4 col-12">
                     <div class="card p-0 border-0 bg-transparent rounded-4">
                         <div class="ratio ratio-1x1">
                             <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
@@ -492,7 +492,7 @@
                     </div>
                 </div>
                 <!-- CARD N3 -->
-                <div class="col-4">
+                <div class="col-md-4 col-12">
                     <div class="card p-0 border-0 bg-transparent rounded-4">
                         <div class="ratio ratio-1x1">
                             <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
@@ -596,3 +596,221 @@
             </div>
     </section>
     <!-- FIN DES JEUX DU MOMENT  -->
+    <!-- DEBUT LES BONS PLANS -->
+    <section class="sectionContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="articleTitle my-4 text-uppercase fw-bold">Les bons plans</h1>
+                </div>
+                <!-- MAIN CARD LEFT -->
+                <div class="col-6">
+                    <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
+                        <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach" />
+                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <p class="p-0 m-0">
+                                <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">Les bons plans</span>
+                            </p>
+                            <div class="w-75">
+                                <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                </a>
+                            </div>
+                            <div class="card-text mt-2">
+                                <small>il y a 47 minutes
+                                    <span class="badge rounded-pill mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 justify-content-between d-flex flex-column">
+                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                        <div class="row g-0 cardGuideRight">
+                            <div class="col-auto">
+                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                            </div>
+                            <div class="col-md-8 p-0 ">
+                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <div class="mt-1">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam hic molestias, consequuntur provident necessitatibus culpa laudantium asperiores, nemo similique quas saepe repudiandae voluptatem, perspiciatis earum animi. Obcaecati, voluptates itaque.
+                                        </a>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-muted">Il y a 5 heures
+                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                        <div class="row g-0 cardGuideRight">
+                            <div class="col-auto">
+                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                            </div>
+                            <div class="col-md-8 p-0 ">
+                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <div class="mt-1">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                            Les leaks de GTA 5 révèlent pas mal de choses...
+                                        </a>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-muted">Il y a 5 heures
+                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                        <div class="row g-0 cardGuideRight">
+                            <div class="col-auto">
+                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                            </div>
+                            <div class="col-md-8 p-0 ">
+                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <div class="mt-1">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                            Les leaks de GTA 5 révèlent pas mal de choses...
+                                        </a>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-muted">Il y a 5 heures
+                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                        <div class="row g-0 cardGuideRight">
+                            <div class="col-auto">
+                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                            </div>
+                            <div class="col-md-8 p-0 ">
+                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <div class="mt-1">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                            Les leaks de GTA 5 révèlent pas mal de choses...
+                                        </a>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-muted">Il y a 5 heures
+                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 d-flex justify-content-between flex-column">
+                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                        <div class="row g-0 cardGuideRight">
+                            <div class="col-auto">
+                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                            </div>
+                            <div class="col-md-8 p-0 ">
+                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <div class="mt-1">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                            Les leaks de GTA 5 révèlent pas mal de choses...
+                                        </a>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-muted">Il y a 5 heures
+                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                        <div class="row g-0 cardGuideRight">
+                            <div class="col-auto">
+                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                            </div>
+                            <div class="col-md-8 p-0 ">
+                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <div class="mt-1">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                            Les leaks de GTA 5 révèlent pas mal de choses...
+                                        </a>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-muted">Il y a 5 heures
+                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                        <div class="row g-0 cardGuideRight">
+                            <div class="col-auto">
+                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                            </div>
+                            <div class="col-md-8 p-0 ">
+                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <div class="mt-1">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                            Les leaks de GTA 5 révèlent pas mal de choses...
+                                        </a>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-muted">Il y a 5 heures
+                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                        <div class="row g-0 cardGuideRight">
+                            <div class="col-auto">
+                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                            </div>
+                            <div class="col-md-8 p-0 ">
+                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <div class="mt-1">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                            Les leaks de GTA 5 révèlent pas mal de choses...
+                                        </a>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-muted">Il y a 5 heures
+                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
