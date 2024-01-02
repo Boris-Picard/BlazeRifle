@@ -59,7 +59,7 @@
                     <a class="nav-link navlinkHover" href="#">Les Guides</a>
                     <a class="nav-link navlinkHover" href="/controllers/quiz/quiz-ctrl.php">Le Quiz</a>
                     <a class="nav-link navlinkHover" href="#">Les Bons Plans</a>
-                    <a class="nav-link navlinkHover" href="#">Calendrier des Events</a>
+                    <a class="nav-link navlinkHover" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
                     <a class="nav-link navlinkHover" href="#">Les Produits</a>
                     <a class="nav-link navlinkHover" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
                 </div>

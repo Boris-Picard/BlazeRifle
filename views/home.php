@@ -16,229 +16,114 @@
                         <button class="btn btn-outline-light">Débloquez Votre Accès Exclusif !</button>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
     </section>
     <!-- fin hero page  -->
-    <!-- début des articles  -->
-        <section class="sectionContainer">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-12">
-                        <h1 class="text-dark text-uppercase my-4 articleTitle fw-bold">Les articles</h1>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
-                            <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-                                <h3 class="mb-0">Featured post</h3>
-                                <div class="mb-1 text-body-secondary">
-                                    Nov 12
+    <!-- DEBUT DES DERNIERS ARTICLES  -->
+    <section class="sectionContainer bg-light">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-12">
+                    <h1 class="text-dark text-uppercase my-4 articleTitle fw-bold">Les derniers articles</h1>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-bg-dark border-0 rounded-4">
+                        <div class="ratio ratio-16x9 ">
+                            <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4 " alt="GTA 6">
+                        </div>
+                        <div class="cardShadow">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <p class="p-0 m-0">
+                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
+                                </p>
+                                <div class="w-50">
+                                    <a href="#" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                    </a>
                                 </div>
-                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading
-                                    <i class="bi bi-chevron-compact-right mb-1"></i>
-                                </a>
-                            </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="img-fluid bd-placeholder-img imgPost" alt="">
+                                <div class="card-text mt-2">
+                                    <small>il y a 47 minutes
+                                        <span class="badge rounded-pill mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                        <span class="badge rounded-pill mb-1 border bg-transparent text-light fw-semibold">GTA 6</span>
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
-                            <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-                                <h3 class="mb-0">Featured post</h3>
-                                <div class="mb-1 text-body-secondary">
-                                    Nov 12
-                                </div>
-                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading
-                                    <i class="bi bi-chevron-compact-right mb-1"></i>
-                                </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3 border-0">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid rounded-start object-fit-cover h-100" alt="CALL OF DUTY MODERN WARFARE 3">
                             </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="img-fluid bd-placeholder-img imgPost" alt="">
+                            <div class="col-md-8">
+                                <div class="card-body py-2">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
+                                    </p>
+                                    <a href="#" class="card-text mt-2 fw-bold stretched-link  aCard text-wrap text-decoration-none text-dark">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                    </a>
+                                    <div class="mt-2">
+                                        <small class="text-muted">il y a 47 minutes
+                                            <span class="badge rounded-pill mb-1 mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill mb-1 border bg-transparent text-dark fw-semibold">GTA 6</span>
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
-                            <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-                                <h3 class="mb-0">Featured post</h3>
-                                <div class="mb-1 text-body-secondary">
-                                    Nov 12
-                                </div>
-                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading
-                                    <i class="bi bi-chevron-compact-right mb-1"></i>
-                                </a>
+                    <div class="card mb-3 border-0">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid rounded-start object-fit-cover h-100" alt="CALL OF DUTY MODERN WARFARE 3">
                             </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="img-fluid bd-placeholder-img imgPost" alt="">
+                            <div class="col-md-8">
+                                <div class="card-body py-2">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
+                                    </p>
+                                    <a href="#" class="card-text mt-2 fw-bold stretched-link  aCard text-wrap text-decoration-none text-dark">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                    </a>
+                                    <div class="mt-2">
+                                        <small class="text-muted">il y a 47 minutes
+                                            <span class="badge rounded-pill mb-1 mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill mb-1 border bg-transparent text-dark fw-semibold">GTA 6</span>
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 position-relative">
-                            <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-                                <h3 class="mb-0">Featured post</h3>
-                                <div class="mb-1 text-body-secondary">
-                                    Nov 12
-                                </div>
-                                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading
-                                    <i class="bi bi-chevron-compact-right mb-1"></i>
-                                </a>
-                            </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="img-fluid bd-placeholder-img imgPost" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex flex-row-reverse mb-4">
-                        <a href="#" class="text-dark text-decoration-none fs-4 icon-link icon-link-hover"></i>Voir plus<i class="bi bi-arrow-right mx-1 text-dark fs-4 mb-2"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- fin des articles  -->
-        <!-- début des guides  -->
-        <section class="bgGuide sectionContainer">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-12">
-                        <h1 class="text-light text-uppercase my-4 fw-bold">Les guides</h1>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card text-bg-dark">
-                            <img src="/public/assets/img/1329760.jpeg" class="card-img" alt="...">
-                            <div class="card-img-overlay opacityGuide d-flex flex-column justify-content-end">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card text-bg-dark">
-                            <img src="/public/assets/img/1329760.jpeg" class="card-img" alt="...">
-                            <div class="card-img-overlay opacityGuide d-flex flex-column justify-content-end">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card text-bg-dark">
-                            <img src="/public/assets/img/1329760.jpeg" class="card-img" alt="...">
-                            <div class="card-img-overlay opacityGuide d-flex flex-column justify-content-end">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card text-bg-dark">
-                            <img src="/public/assets/img/1329760.jpeg" class="card-img" alt="...">
-                            <div class="card-img-overlay opacityGuide d-flex flex-column justify-content-end">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small>Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 d-flex flex-row-reverse mb-3">
-                        <a href="#" class="text-light text-decoration-none fs-4 icon-link icon-link-hover"></i>Voir plus<i class="bi bi-arrow-right mx-1 text-light fs-4 mb-2"></i></a>
-                    </div>
-                </div> 
+        </div>
+    </section>
+    <!-- fin des articles  -->
+    <!-- début des guides  -->
+    <section class="bgGuide sectionContainer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-12">
+                    <h1 class="text-light text-uppercase my-4 fw-bold">Les guides</h1>
+                </div>
+
             </div>
-        </section>
-        <!-- fin des guides  -->
-        <!-- début des Calendriers -->
-        <section class="articleBgCalendar sectionContainer">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-12">
-                        <h1 class="articleTitle my-4 text-uppercase fw-bold">Calendrier des events</h1>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bgCalendarImg">
-                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 opacityGuide">
-                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
-                                <ul class="d-flex list-unstyled mt-auto justify-content-end">
-                                    <li class="d-flex align-items-center me-3">
-                                        <i class="bi bi-geo-alt mx-2"></i>
-                                        <small>Seoul</small>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <i class="bi bi-calendar mx-2"></i>
-                                        <small>3d</small>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bgCalendarImg">
-                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 opacityGuide">
-                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
-                                <ul class="d-flex list-unstyled mt-auto justify-content-end">
-                                    <li class="d-flex align-items-center me-3">
-                                        <i class="bi bi-geo-alt mx-2"></i>
-                                        <small>Seoul</small>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <i class="bi bi-calendar mx-2"></i>
-                                        <small>3d</small>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bgCalendarImg">
-                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 opacityGuide">
-                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
-                                <ul class="d-flex list-unstyled mt-auto justify-content-end">
-                                    <li class="d-flex align-items-center me-3">
-                                        <i class="bi bi-geo-alt mx-2"></i>
-                                        <small>Seoul</small>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <i class="bi bi-calendar mx-2"></i>
-                                        <small>3d</small>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg bgCalendarImg">
-                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 opacityGuide">
-                                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
-                                <ul class="d-flex list-unstyled mt-auto justify-content-end">
-                                    <li class="d-flex align-items-center me-3">
-                                        <i class="bi bi-geo-alt mx-2"></i>
-                                        <small>Seoul</small>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <i class="bi bi-calendar mx-2"></i>
-                                        <small>3d</small>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 d-flex flex-row-reverse align-items-center arrowGuide mb-3">
-                        <a href="#" class="text-dark text-decoration-none fs-4 icon-link icon-link-hover"></i>Voir plus<i class="bi bi-arrow-right mx-1 text-dark fs-4 mb-2"></i></a>
-                    </div>
+        </div>
+    </section>
+    <!-- fin des guides  -->
+    <!-- début des Calendriers -->
+    <section class="articleBgCalendar sectionContainer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-12">
+                    <h1 class="articleTitle my-4 text-uppercase fw-bold">Calendrier des events</h1>
                 </div>
             </div>
-        </section>
-        <!-- fin des calendriers  -->
+        </div>
+    </section>
+    <!-- fin des calendriers  -->

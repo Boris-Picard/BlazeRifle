@@ -119,49 +119,6 @@ html{
 
 /* ARTICLES  */
 
-.imgPost {
-    width: 200px;
-    height: 250px;
-    object-fit: cover;
-}
-
-/* LES GUIDES  */
-.opacityGuide {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.bgGuide {
-    background-color: rgb(16, 31, 51);
-}
-
-/* CALENDAR SECTION  */
-
-.bgCalendarImg {
-    background-image: url(../img/LeagueofLegends_Worlds2022_ChaseCenter_California_Stage.jpg);
-    background-repeat: no-repeat;
-    object-fit: cover;
-    background-position: center center;
-}
-
-/* CONTACT US */
-.imgContact, .imgSignIn, .imgLogIn {
-    height: 100vh;
-    background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
-    background-position: right 57% bottom 45%;
-    background-size: cover;
-}
-
-.colInputContact, .colInputSignIn, .colInputLogIn {
-    padding: 80px;
-}
-
-.h1Contact {
-    font-size: 60px;
-}
-
-.contactContainer {
-    margin: 75px 0 0 0;
-}
 
 /* LES ARTICLES SECTION */
 .articlesSection {
@@ -293,8 +250,10 @@ small {
     left: 0;
     width: 100%;
     height: 100%;
+    top: 0;
     z-index: 0;
     position: absolute;
+    border-radius: 1rem;
 }
 
 /* LES ACTUS */
