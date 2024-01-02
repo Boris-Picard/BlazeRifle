@@ -113,12 +113,31 @@ html{
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* LES NEWS */
-
-
-
 /* ARTICLES  */
+.cardArticleHome {
+    height: 17.5rem;
+}
 
+.cardArticleHomeMin {
+    height: 8.25rem;
+}
+
+.cardArticleHomeMin a:hover {
+    color: #285AEB !important;
+}
+
+/* LES DERNIERS GUIDES */
+.cardGuideMin {
+    height: 24rem;
+}
+
+.cardGuideMin a:hover {
+    color: #285AEB !important;
+}
+
+.cardGuideBig {
+    height: 24rem;
+}
 
 /* LES ARTICLES SECTION */
 .articlesSection {
