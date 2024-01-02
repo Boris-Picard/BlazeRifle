@@ -609,7 +609,7 @@
                         <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach" />
                         <div class="card-img-overlay d-flex flex-column justify-content-end">
                             <p class="p-0 m-0">
-                                <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">Les bons plans</span>
+                                <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">bon plan</span>
                             </p>
                             <div class="w-75">
                                 <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
@@ -618,13 +618,14 @@
                             </div>
                             <div class="card-text mt-2">
                                 <small>il y a 47 minutes
-                                    <span class="badge rounded-pill mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold mx-1">PC</span>
                                 </small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-3 justify-content-between d-flex flex-column">
+                    <!-- CARD 1 PREMIERE COL -->
                     <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                         <div class="row g-0 cardGuideRight">
                             <div class="col-auto">
@@ -632,15 +633,14 @@
                             </div>
                             <div class="col-md-8 p-0 ">
                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
                                     <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam hic molestias, consequuntur provident necessitatibus culpa laudantium asperiores, nemo similique quas saepe repudiandae voluptatem, perspiciatis earum animi. Obcaecati, voluptates itaque.
                                         </a>
                                     </div>
                                     <p class="card-text">
                                         <small class="text-muted">Il y a 5 heures
-                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                             <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
                                         </small>
                                     </p>
@@ -648,6 +648,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- CARD 2 -->
                     <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                         <div class="row g-0 cardGuideRight">
                             <div class="col-auto">
@@ -655,15 +656,14 @@
                             </div>
                             <div class="col-md-8 p-0 ">
                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
                                     <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                             Les leaks de GTA 5 révèlent pas mal de choses...
                                         </a>
                                     </div>
                                     <p class="card-text">
                                         <small class="text-muted">Il y a 5 heures
-                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                             <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
                                         </small>
                                     </p>
@@ -671,6 +671,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- CARD 3 -->
                     <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                         <div class="row g-0 cardGuideRight">
                             <div class="col-auto">
@@ -678,15 +679,14 @@
                             </div>
                             <div class="col-md-8 p-0 ">
                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
                                     <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                             Les leaks de GTA 5 révèlent pas mal de choses...
                                         </a>
                                     </div>
                                     <p class="card-text">
                                         <small class="text-muted">Il y a 5 heures
-                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                             <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
                                         </small>
                                     </p>
@@ -694,6 +694,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- CARD 4 -->
                     <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                         <div class="row g-0 cardGuideRight">
                             <div class="col-auto">
@@ -701,15 +702,14 @@
                             </div>
                             <div class="col-md-8 p-0 ">
                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
                                     <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                             Les leaks de GTA 5 révèlent pas mal de choses...
                                         </a>
                                     </div>
                                     <p class="card-text">
                                         <small class="text-muted">Il y a 5 heures
-                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                             <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
                                         </small>
                                     </p>
@@ -718,6 +718,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- CARD 5 DEUXIEME COL -->
                 <div class="col-3 d-flex justify-content-between flex-column">
                     <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                         <div class="row g-0 cardGuideRight">
@@ -726,15 +727,14 @@
                             </div>
                             <div class="col-md-8 p-0 ">
                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
                                     <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                             Les leaks de GTA 5 révèlent pas mal de choses...
                                         </a>
                                     </div>
                                     <p class="card-text">
                                         <small class="text-muted">Il y a 5 heures
-                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                             <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
                                         </small>
                                     </p>
@@ -742,6 +742,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- CARD 6 -->
                     <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                         <div class="row g-0 cardGuideRight">
                             <div class="col-auto">
@@ -749,15 +750,14 @@
                             </div>
                             <div class="col-md-8 p-0 ">
                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
                                     <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                             Les leaks de GTA 5 révèlent pas mal de choses...
                                         </a>
                                     </div>
                                     <p class="card-text">
                                         <small class="text-muted">Il y a 5 heures
-                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                             <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
                                         </small>
                                     </p>
@@ -765,6 +765,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- CARD 7 -->
                     <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                         <div class="row g-0 cardGuideRight">
                             <div class="col-auto">
@@ -772,15 +773,14 @@
                             </div>
                             <div class="col-md-8 p-0 ">
                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
                                     <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                             Les leaks de GTA 5 révèlent pas mal de choses...
                                         </a>
                                     </div>
                                     <p class="card-text">
                                         <small class="text-muted">Il y a 5 heures
-                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                             <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
                                         </small>
                                     </p>
@@ -788,6 +788,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- CARD 8 -->
                     <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                         <div class="row g-0 cardGuideRight">
                             <div class="col-auto">
@@ -795,15 +796,14 @@
                             </div>
                             <div class="col-md-8 p-0 ">
                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-danger titlecardGuideRight fw-semibold m-0 p-0">Guide GTA 6</small>
+                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
                                     <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                             Les leaks de GTA 5 révèlent pas mal de choses...
                                         </a>
                                     </div>
                                     <p class="card-text">
                                         <small class="text-muted">Il y a 5 heures
-                                            <span class="badge badge-sm rounded-pill mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                             <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
                                         </small>
                                     </p>
@@ -813,4 +813,115 @@
                     </div>
                 </div>
             </div>
+    </section>
+    <!-- FIN LES BONS PLANS -->
+    <!-- DEBUT TOP JEUX SELECTION -->
+    <section class="sectionContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card rounded-4 border-0 shadow ">
+                        <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
+                        <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
+                            <p class="p-0 m-0 z-3">
+                                <a href="" class="text-uppercase text-decoration-none fw-bold text-light z-3 icon-link icon-link-hover">
+                                    Grand Theft auto vi
+                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
+                                        <use xlink:href="#arrow-right"></use>
+                                    </i>
+                                </a>
+                            </p>
+                            <div class="w-100 mt-1 z-3">
+                                <div class="card-title">
+                                    <h5 class="aCardMin text-light fw-bold">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis accusamus dolor totam officiis, beatae obcaecati quas animi facilis necessitatibus magnam eos non minus explicabo iure, dignissimos est ad sed laborum.
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="card-text z-3">
+                                <small class="text-light">il y a 47 minutes
+                                    <span class="badge rounded-pill mx-1 border bg-transparent text-light fw-semibold "><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <!-- ARTICLE 1 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 2 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 3 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 4 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 5 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 6 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 7 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 8 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 9 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- ARTICLE 10 -->
+                            <p class="card-text d-flex align-items-center my-0">
+                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
+                                </a>
+                            </p>
+                            <!-- BUTTON ARTICLE -->
+                            <a href="#" class="btn btn-danger text-light w-100 rounded-4 linkArticleSelectionGame p-1 fw-bold text-uppercase mt-3 mb-1">
+                                Tous les articles sur : Grand Theft Auto VI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>

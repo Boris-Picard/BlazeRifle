@@ -113,7 +113,7 @@ html{
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* ARTICLES  */
+/* LES DERNIERS ARTICLES  HOME*/
 .cardArticleHome {
     height: 17.5rem;
 }
@@ -137,7 +137,7 @@ html{
     color: #285AEB !important;
 }
 
-/* LES DERNIERS GUIDES */
+/* LES DERNIERS GUIDES HOME */
 .cardGuideMin {
     height: 24rem;
 }
@@ -148,6 +148,20 @@ html{
 
 .cardGuideBig {
     height: 24rem;
+}
+
+/* LES BONS PLANS HOME */
+.stretchLinkHoverHome:hover {
+    color: #285AEB !important;
+}
+
+/* SELECTION 3 JEUX */
+.cardSelection {
+    height: 14.638rem;
+}
+
+.linkArticleSelectionGame {
+    font-size: 0.875rem;
 }
 
 /* LES ARTICLES SECTION */
