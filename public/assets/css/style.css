@@ -99,18 +99,24 @@ html{
     color: rgb(216, 0, 36) !important;
 }
 
+.nav-item.dropdown .dropdown-item:active {
+    background-color: rgba( 0, 0, 0, 0.1);
+}
+
 
 /* HERO PAGE */
 .heroPage {
-    background-image: url(../img/gta6.avif);
-    background-position: center;
-    background-size: cover;
     height: 100vh;
-    background-repeat: no-repeat;
+}
+
+.bgHero {
+    height: 100vh;
 }
 
 .bg-opacity {
     background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
 }
 
 /* LES DERNIERS ARTICLES  HOME*/
@@ -130,6 +136,9 @@ html{
     .cardGuideBig {
         height: auto;
         margin-bottom: 10px;
+    }
+    .bgHero {
+        height: 100%;
     }
 }
 

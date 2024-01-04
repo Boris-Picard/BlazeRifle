@@ -1,19 +1,24 @@
 <main>
     <!-- début hero page  -->
-    <section class="heroPage">
-        <div class="bg-opacity h-100 d-flex align-items-center text-light">
-            <div class="container p-0">
-                <div class="row m-0 my-5">
-                    <div class="col-12 col-md-6 p-0">
-                        <h1 class="text-center">
-                            Plongez au cœur de l'action avec les dernières actualités FPS!
-                            Découvrez, jouez, et dominez dans l'univers des jeux de tir. Votre aventure commence ici !
-                        </h1>
-                    </div>
-                </div>
-                <div class="row m-0 my-5">
-                    <div class="col-12 col-md-6 p-0 justify-content-center d-flex">
-                        <button class="btn btn-outline-light">Débloquez Votre Accès Exclusif !</button>
+    <section class="heroPage bg-light">
+        <div class="h-100 d-flex align-items-center text-light">
+            <div class="container-fluid p-0">
+                <div class="row m-0 py-5">
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-6 p-5">
+                                <h1 class="text-center text-dark fw-bold">
+                                    Plongez au cœur de l'action avec les dernières actualités FPS!
+                                    Découvrez, jouez, et dominez dans l'univers des jeux de tir. Votre aventure commence ici !
+                                </h1>
+                                <div class="justify-content-center d-flex py-5">
+                                    <button class="btn btn-danger rounded-5 fw-bold text-uppercase p-3">Débloquez Votre Accès Exclusif !</button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 p-0 bgHero">
+                                <img src="/public/assets/img/gta6hero.avif" class="h-100 object-fit-cover img-fluid" alt="GTA 6 Hero page">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
