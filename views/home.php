@@ -7,12 +7,12 @@
                     <div class="col-12">
                         <div class="row align-items-center">
                             <div class="col-12 col-md-6 p-5">
-                                <h1 class="text-center text-dark fw-bold">
+                                <h1 class="text-center text-dark fw-bold lh-base">
                                     Plongez au cœur de l'action avec les dernières actualités FPS!
                                     Découvrez, jouez, et dominez dans l'univers des jeux de tir. Votre aventure commence ici !
                                 </h1>
                                 <div class="justify-content-center d-flex py-5">
-                                    <button class="btn btn-danger rounded-5 fw-bold text-uppercase p-3">Débloquez Votre Accès Exclusif !</button>
+                                    <button class="btn btn-danger rounded-5 fw-bold text-uppercase p-3">Rejoignez-nous !</button>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 p-0 bgHero">
@@ -28,11 +28,11 @@
     <!-- DEBUT DES DERNIERS ARTICLES  -->
     <section class="sectionContainer bg-light">
         <div class="container">
-            <div class="row">
+            <div class="row g-3 mt-3">
                 <div class="col-md-10">
-                    <h1 class="text-dark text-uppercase my-4 articleTitle fw-bold">Les derniers articles</h1>
+                    <h1 class="text-dark text-uppercase articleTitle fw-bold">Les derniers articles</h1>
                 </div>
-                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                <div class="col-md-2 d-flex  align-items-center justify-content-end">
                     <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les articles
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
@@ -313,158 +313,162 @@
     <!-- LES DERNIERS GUIDES  -->
     <section class="sectionContainer bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-10 px-2">
-                    <h1 class="text-dark text-uppercase my-4 fw-bold">Les derniers guides</h1>
+            <div class="row g-3 mt-3">
+                <div class="col-10">
+                    <h1 class="text-dark text-uppercase fw-bold">Les derniers guides</h1>
                 </div>
-                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
                     <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les guides
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
                 </div>
-                <!-- MAIN CARD GUIDE -->
-                <div class="col-md-6 col-12 px-2">
-                    <div class="card text-bg-dark border-0 rounded-4 bg-white cardGuideBig">
-                        <div class="ratio ratio-16x9 ">
-                            <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover cardGuideBig rounded-4 " alt="GTA 6">
+                <div class="col-12">
+                    <div class="row g-3">
+                        <!-- MAIN CARD GUIDE -->
+                        <div class="col-md-6 col-12 px-2">
+                            <div class="card text-bg-dark border-0 rounded-4 bg-white cardGuideBig">
+                                <div class="ratio ratio-16x9 ">
+                                    <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover cardGuideBig rounded-4 " alt="GTA 6">
+                                </div>
+                                <div class="cardShadow">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
+                                        </p>
+                                        <div class="w-75">
+                                            <a href="#" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                            </a>
+                                        </div>
+                                        <div class="card-text mt-2">
+                                            <small>il y a 47 minutes
+                                                <span class="badge rounded-pill mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                <span class="badge rounded-pill mb-1 border bg-transparent text-light fw-semibold">GTA 6</span>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cardShadow">
-                            <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                <p class="p-0 m-0">
-                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
-                                </p>
-                                <div class="w-75">
-                                    <a href="#" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                        <!-- SIDECARD 1 -->
+                        <div class="col-md-3 px-2">
+                            <div class="card rounded-4 border-0 cardGuideMin shadow">
+                                <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
+                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
+                                    </p>
+                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
                                     </a>
+                                    <div class="mt-1">
+                                        <small class="text-muted">il y a 47 minutes
+                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
+                                        </small>
+                                    </div>
                                 </div>
-                                <div class="card-text mt-2">
-                                    <small>il y a 47 minutes
-                                        <span class="badge rounded-pill mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                        <span class="badge rounded-pill mb-1 border bg-transparent text-light fw-semibold">GTA 6</span>
-                                    </small>
+                            </div>
+                        </div>
+                        <!-- SIDECARD 2 -->
+                        <div class="col-md-3 px-2">
+                            <div class="card rounded-4 border-0 cardGuideMin shadow">
+                                <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
+                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
+                                    </p>
+                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                    </a>
+                                    <div class="mt-1">
+                                        <small class="text-muted">il y a 47 minutes
+                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
+                                        </small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- SIDECARD 1 -->
-                <div class="col-md-3 px-2">
-                    <div class="card rounded-4 border-0 cardGuideMin shadow">
-                        <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
-                        <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                            <p class="p-0 m-0">
-                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
-                            </p>
-                            <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                            </a>
-                            <div class="mt-1">
-                                <small class="text-muted">il y a 47 minutes
-                                    <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                    <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                </small>
+                        <!-- UNDECARD 1 -->
+                        <div class="col-md-3 px-2 mt-3">
+                            <div class="card rounded-4 border-0 cardGuideMin shadow">
+                                <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
+                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
+                                    </p>
+                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                    </a>
+                                    <div class="mt-1">
+                                        <small class="text-muted">il y a 47 minutes
+                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- SIDECARD 2 -->
-                <div class="col-md-3 px-2">
-                    <div class="card rounded-4 border-0 cardGuideMin shadow">
-                        <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
-                        <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                            <p class="p-0 m-0">
-                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
-                            </p>
-                            <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                            </a>
-                            <div class="mt-1">
-                                <small class="text-muted">il y a 47 minutes
-                                    <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                    <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                </small>
+                        <!-- UNDECARD 2 -->
+                        <div class="col-md-3 px-2 mt-3">
+                            <div class="card rounded-4 border-0 cardGuideMin shadow">
+                                <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
+                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
+                                    </p>
+                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                    </a>
+                                    <div class="mt-1">
+                                        <small class="text-muted">il y a 47 minutes
+                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- UNDECARD 1 -->
-                <div class="col-md-3 px-2 mt-3">
-                    <div class="card rounded-4 border-0 cardGuideMin shadow">
-                        <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
-                        <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                            <p class="p-0 m-0">
-                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
-                            </p>
-                            <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                            </a>
-                            <div class="mt-1">
-                                <small class="text-muted">il y a 47 minutes
-                                    <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                    <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                </small>
+                        <!-- UNDECARD 3 -->
+                        <div class="col-md-3 px-2 mt-3">
+                            <div class="card rounded-4 border-0 cardGuideMin shadow">
+                                <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
+                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
+                                    </p>
+                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                    </a>
+                                    <div class="mt-1">
+                                        <small class="text-muted">il y a 47 minutes
+                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- UNDECARD 2 -->
-                <div class="col-md-3 px-2 mt-3">
-                    <div class="card rounded-4 border-0 cardGuideMin shadow">
-                        <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
-                        <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                            <p class="p-0 m-0">
-                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
-                            </p>
-                            <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                            </a>
-                            <div class="mt-1">
-                                <small class="text-muted">il y a 47 minutes
-                                    <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                    <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- UNDECARD 3 -->
-                <div class="col-md-3 px-2 mt-3">
-                    <div class="card rounded-4 border-0 cardGuideMin shadow">
-                        <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
-                        <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                            <p class="p-0 m-0">
-                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
-                            </p>
-                            <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                            </a>
-                            <div class="mt-1">
-                                <small class="text-muted">il y a 47 minutes
-                                    <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                    <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- UNDECARD 3-->
-                <div class="col-md-3 px-2 mt-3">
-                    <div class="card rounded-4 border-0 cardGuideMin shadow">
-                        <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
-                        <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                            <p class="p-0 m-0">
-                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
-                            </p>
-                            <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                            </a>
-                            <div class="mt-1">
-                                <small class="text-muted">il y a 47 minutes
-                                    <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                    <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                </small>
+                        <!-- UNDECARD 3-->
+                        <div class="col-md-3 px-2 mt-3">
+                            <div class="card rounded-4 border-0 cardGuideMin shadow">
+                                <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="CALL OF DUTY SAISON 6">
+                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">COD MW 3</span>
+                                    </p>
+                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                    </a>
+                                    <div class="mt-1">
+                                        <small class="text-muted">il y a 47 minutes
+                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -476,143 +480,147 @@
     <!-- DEBUT DES JEUX DU MOMENT -->
     <section class="sectionContainer">
         <div class="container">
-            <div class="row ">
+            <div class="row g-3 mt-3">
                 <div class="col-10">
-                    <h1 class="articleTitle my-4 text-uppercase fw-bold">Les jeux du moment</h1>
+                    <h1 class="articleTitle text-uppercase fw-bold">Les jeux du moment</h1>
                 </div>
-                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
                     <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les jeux
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
                 </div>
-                <!-- CARD N1 -->
-                <div class="col-md-4 col-12">
-                    <div class="card p-0 border-0 bg-transparent rounded-4">
-                        <div class="ratio ratio-1x1 ">
-                            <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                <div class="col-12">
+                    <div class="row g-3">
+                        <!-- CARD N1 -->
+                        <div class="col-md-4 col-12">
+                            <div class="card p-0 border-0 bg-transparent rounded-4">
+                                <div class="ratio ratio-1x1 ">
+                                    <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                </div>
+                                <div class="card-img-overlay ">
+                                    <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">1</span>
+                                    <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
+                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Grand Theft Auto VI</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-img-overlay ">
-                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">1</span>
-                            <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
-                                <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Grand Theft Auto VI</a>
+                        <!-- CARD N2 -->
+                        <div class="col-md-4 col-12">
+                            <div class="card p-0 border-0 bg-transparent rounded-4">
+                                <div class="ratio ratio-1x1">
+                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                </div>
+                                <div class="card-img-overlay">
+                                    <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">2</span>
+                                    <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
+                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Call of Duty : MW 3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CARD N3 -->
+                        <div class="col-md-4 col-12">
+                            <div class="card p-0 border-0 bg-transparent rounded-4">
+                                <div class="ratio ratio-1x1">
+                                    <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                </div>
+                                <div class="card-img-overlay">
+                                    <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">3</span>
+                                    <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
+                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Counter Strike 2</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- CARD N2 -->
-                <div class="col-md-4 col-12">
-                    <div class="card p-0 border-0 bg-transparent rounded-4">
-                        <div class="ratio ratio-1x1">
-                            <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                        </div>
-                        <div class="card-img-overlay">
-                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">2</span>
-                            <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
-                                <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Call of Duty : MW 3</a>
+                    <div class="row">
+                        <!-- CARD UNDER N4 -->
+                        <div class="col-12 flex-wrap d-flex justify-content-between">
+                            <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
+                                <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
+                                    <img src="/public/assets/img/apex.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                    <div class="p-3">
+                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">4</span>
+                                    </div>
+                                </div>
+                                <div class="card-text p-0 mt-1">
+                                    <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Apex Legends</a>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- CARD N3 -->
-                <div class="col-md-4 col-12">
-                    <div class="card p-0 border-0 bg-transparent rounded-4">
-                        <div class="ratio ratio-1x1">
-                            <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                        </div>
-                        <div class="card-img-overlay">
-                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">3</span>
-                            <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
-                                <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Counter Strike 2</a>
+                            <!-- CARD UNDER N5 -->
+                            <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent overflow-hidden">
+                                <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
+                                    <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                    <div class="p-3">
+                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">5</span>
+                                    </div>
+                                </div>
+                                <div class="card-text p-0 mt-1">
+                                    <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCardMin text-capitalize">Call of duty : Warzone 2.0</a>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- CARD UNDER N4 -->
-                <div class="col-12 flex-wrap d-flex justify-content-between">
-                    <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                        <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                            <img src="/public/assets/img/apex.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                            <div class="p-3">
-                                <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">4</span>
+                            <!-- CARD UNDER N6 -->
+                            <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
+                                <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
+                                    <img src="/public/assets/img/valorant.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                    <div class="p-3">
+                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">6</span>
+                                    </div>
+                                </div>
+                                <div class="card-text p-0 mt-1">
+                                    <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Valorant</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-text p-0 mt-1">
-                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Apex Legends</a>
-                        </div>
-                    </div>
-                    <!-- CARD UNDER N5 -->
-                    <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent overflow-hidden">
-                        <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                            <div class="p-3">
-                                <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">5</span>
+                            <!-- CARD UNDER N7 -->
+                            <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
+                                <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
+                                    <img src="/public/assets/img/infinitebg.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                    <div class="p-3">
+                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">7</span>
+                                    </div>
+                                </div>
+                                <div class="card-text p-0 mt-1">
+                                    <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Halo Infinite</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-text p-0 mt-1">
-                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCardMin text-capitalize">Call of duty : Warzone 2.0</a>
-                        </div>
-                    </div>
-                    <!-- CARD UNDER N6 -->
-                    <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                        <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                            <img src="/public/assets/img/valorant.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                            <div class="p-3">
-                                <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">6</span>
+                            <!-- CARD UNDER N8 -->
+                            <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
+                                <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
+                                    <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                    <div class="p-3">
+                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">8</span>
+                                    </div>
+                                </div>
+                                <div class="card-text p-0 mt-1">
+                                    <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Overwatch 2</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-text p-0 mt-1">
-                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Valorant</a>
-                        </div>
-                    </div>
-                    <!-- CARD UNDER N7 -->
-                    <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                        <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                            <img src="/public/assets/img/infinitebg.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                            <div class="p-3">
-                                <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">7</span>
+                            <!-- CARD UNDER N9 -->
+                            <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
+                                <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
+                                    <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                    <div class="p-3">
+                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">9</span>
+                                    </div>
+                                </div>
+                                <div class="card-text p-0 mt-1">
+                                    <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Battlefield 2042</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-text p-0 mt-1">
-                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Halo Infinite</a>
-                        </div>
-                    </div>
-                    <!-- CARD UNDER N8 -->
-                    <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                        <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                            <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                            <div class="p-3">
-                                <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">8</span>
+                            <!-- CARD UNDER N10 -->
+                            <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
+                                <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
+                                    <img src="/public/assets/img/borderlands-4-pc-jeu-cover.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
+                                    <div class="p-3">
+                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">10</span>
+                                    </div>
+                                </div>
+                                <div class="card-text p-0 mt-1">
+                                    <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Borderlands 4</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-text p-0 mt-1">
-                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Overwatch 2</a>
-                        </div>
-                    </div>
-                    <!-- CARD UNDER N9 -->
-                    <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                        <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                            <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                            <div class="p-3">
-                                <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">9</span>
-                            </div>
-                        </div>
-                        <div class="card-text p-0 mt-1">
-                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Battlefield 2042</a>
-                        </div>
-                    </div>
-                    <!-- CARD UNDER N10 -->
-                    <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                        <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                            <img src="/public/assets/img/borderlands-4-pc-jeu-cover.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
-                            <div class="p-3">
-                                <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">10</span>
-                            </div>
-                        </div>
-                        <div class="card-text p-0 mt-1">
-                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Borderlands 4</a>
                         </div>
                     </div>
                 </div>
@@ -622,220 +630,224 @@
     <!-- DEBUT LES BONS PLANS -->
     <section class="sectionContainer">
         <div class="container">
-            <div class="row">
-                <div class="col-10">
-                    <h1 class="articleTitle my-4 text-uppercase fw-bold">Les bons plans</h1>
+            <div class="row g-3 mt-3">
+                <div class="col-md-10 col-12">
+                    <h1 class="articleTitle text-uppercase fw-bold">Les bons plans</h1>
                 </div>
-                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
                     <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         les bons plans
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
                 </div>
-                <!-- MAIN CARD LEFT -->
-                <div class="col-6">
-                    <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
-                        <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach" />
-                        <div class="card-img-overlay d-flex flex-column justify-content-end">
-                            <p class="p-0 m-0">
-                                <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">bon plan</span>
-                            </p>
-                            <div class="w-75">
-                                <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                </a>
-                            </div>
-                            <div class="card-text mt-2">
-                                <small>il y a 47 minutes
-                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold mx-1">PC</span>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 justify-content-between d-flex flex-column">
-                    <!-- CARD 1 PREMIERE COL -->
-                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                        <div class="row g-0 cardGuideRight">
-                            <div class="col-auto">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
-                            </div>
-                            <div class="col-md-8 p-0 ">
-                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
-                                    <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam hic molestias, consequuntur provident necessitatibus culpa laudantium asperiores, nemo similique quas saepe repudiandae voluptatem, perspiciatis earum animi. Obcaecati, voluptates itaque.
+                <div class="col-12">
+                    <div class="row g-3">
+                        <!-- MAIN CARD LEFT -->
+                        <div class="col-12 col-md-6">
+                            <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
+                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach" />
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">bon plan</span>
+                                    </p>
+                                    <div class="w-75">
+                                        <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
                                         </a>
                                     </div>
-                                    <p class="card-text">
-                                        <small class="text-muted">Il y a 5 heures
-                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                    <div class="card-text mt-2">
+                                        <small>il y a 47 minutes
+                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold mx-1">PC</span>
                                         </small>
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- CARD 2 -->
-                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                        <div class="row g-0 cardGuideRight">
-                            <div class="col-auto">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
-                            </div>
-                            <div class="col-md-8 p-0 ">
-                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
-                                    <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                            Les leaks de GTA 5 révèlent pas mal de choses...
-                                        </a>
+                        <div class="col-12 col-md-3 justify-content-between d-flex flex-column">
+                            <!-- CARD 1 PREMIERE COL -->
+                            <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                                <div class="row g-0 cardGuideRight">
+                                    <div class="col-auto">
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
                                     </div>
-                                    <p class="card-text">
-                                        <small class="text-muted">Il y a 5 heures
-                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
-                                        </small>
-                                    </p>
+                                    <div class="col-md-8 p-0 ">
+                                        <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                            <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
+                                            <div class="mt-1">
+                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam hic molestias, consequuntur provident necessitatibus culpa laudantium asperiores, nemo similique quas saepe repudiandae voluptatem, perspiciatis earum animi. Obcaecati, voluptates itaque.
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                <small class="text-muted">Il y a 5 heures
+                                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD 2 -->
+                            <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                                <div class="row g-0 cardGuideRight">
+                                    <div class="col-auto">
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                    </div>
+                                    <div class="col-md-8 col-12 p-0 ">
+                                        <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                            <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
+                                            <div class="mt-1">
+                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    Les leaks de GTA 5 révèlent pas mal de choses...
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                <small class="text-muted">Il y a 5 heures
+                                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD 3 -->
+                            <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                                <div class="row g-0 cardGuideRight">
+                                    <div class="col-auto">
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                    </div>
+                                    <div class="col-md-8 col-12 p-0 ">
+                                        <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                            <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
+                                            <div class="mt-1">
+                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    Les leaks de GTA 5 révèlent pas mal de choses...
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                <small class="text-muted">Il y a 5 heures
+                                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CARD 4 -->
+                            <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                                <div class="row g-0 cardGuideRight">
+                                    <div class="col-auto">
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                    </div>
+                                    <div class="col-md-8 col-12 p-0 ">
+                                        <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                            <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
+                                            <div class="mt-1">
+                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    Les leaks de GTA 5 révèlent pas mal de choses...
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                <small class="text-muted">Il y a 5 heures
+                                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- CARD 3 -->
-                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                        <div class="row g-0 cardGuideRight">
-                            <div class="col-auto">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
-                            </div>
-                            <div class="col-md-8 p-0 ">
-                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
-                                    <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                            Les leaks de GTA 5 révèlent pas mal de choses...
-                                        </a>
+                        <!-- CARD 5 DEUXIEME COL -->
+                        <div class="col-3 d-flex justify-content-between flex-column">
+                            <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                                <div class="row g-0 cardGuideRight">
+                                    <div class="col-auto">
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
                                     </div>
-                                    <p class="card-text">
-                                        <small class="text-muted">Il y a 5 heures
-                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
-                                        </small>
-                                    </p>
+                                    <div class="col-md-8 col-12 p-0 ">
+                                        <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                            <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
+                                            <div class="mt-1">
+                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    Les leaks de GTA 5 révèlent pas mal de choses...
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                <small class="text-muted">Il y a 5 heures
+                                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- CARD 4 -->
-                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                        <div class="row g-0 cardGuideRight">
-                            <div class="col-auto">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
-                            </div>
-                            <div class="col-md-8 p-0 ">
-                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
-                                    <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                            Les leaks de GTA 5 révèlent pas mal de choses...
-                                        </a>
+                            <!-- CARD 6 -->
+                            <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                                <div class="row g-0 cardGuideRight">
+                                    <div class="col-auto">
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
                                     </div>
-                                    <p class="card-text">
-                                        <small class="text-muted">Il y a 5 heures
-                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
-                                        </small>
-                                    </p>
+                                    <div class="col-md-8 col-12 p-0 ">
+                                        <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                            <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
+                                            <div class="mt-1">
+                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    Les leaks de GTA 5 révèlent pas mal de choses...
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                <small class="text-muted">Il y a 5 heures
+                                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- CARD 5 DEUXIEME COL -->
-                <div class="col-3 d-flex justify-content-between flex-column">
-                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                        <div class="row g-0 cardGuideRight">
-                            <div class="col-auto">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
-                            </div>
-                            <div class="col-md-8 p-0 ">
-                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
-                                    <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                            Les leaks de GTA 5 révèlent pas mal de choses...
-                                        </a>
+                            <!-- CARD 7 -->
+                            <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                                <div class="row g-0 cardGuideRight">
+                                    <div class="col-auto">
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
                                     </div>
-                                    <p class="card-text">
-                                        <small class="text-muted">Il y a 5 heures
-                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
-                                        </small>
-                                    </p>
+                                    <div class="col-md-8 col-12 p-0 ">
+                                        <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                            <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
+                                            <div class="mt-1">
+                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    Les leaks de GTA 5 révèlent pas mal de choses...
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                <small class="text-muted">Il y a 5 heures
+                                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                                </small>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- CARD 6 -->
-                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                        <div class="row g-0 cardGuideRight">
-                            <div class="col-auto">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
-                            </div>
-                            <div class="col-md-8 p-0 ">
-                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
-                                    <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                            Les leaks de GTA 5 révèlent pas mal de choses...
-                                        </a>
+                            <!-- CARD 8 -->
+                            <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                                <div class="row g-0 cardGuideRight">
+                                    <div class="col-auto">
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
                                     </div>
-                                    <p class="card-text">
-                                        <small class="text-muted">Il y a 5 heures
-                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
-                                        </small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CARD 7 -->
-                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                        <div class="row g-0 cardGuideRight">
-                            <div class="col-auto">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
-                            </div>
-                            <div class="col-md-8 p-0 ">
-                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
-                                    <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                            Les leaks de GTA 5 révèlent pas mal de choses...
-                                        </a>
+                                    <div class="col-md-8 col-12 p-0 ">
+                                        <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                            <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
+                                            <div class="mt-1">
+                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    Les leaks de GTA 5 révèlent pas mal de choses...
+                                                </a>
+                                            </div>
+                                            <p class="card-text">
+                                                <small class="text-muted">Il y a 5 heures
+                                                    <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
+                                                </small>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <p class="card-text">
-                                        <small class="text-muted">Il y a 5 heures
-                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
-                                        </small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CARD 8 -->
-                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                        <div class="row g-0 cardGuideRight">
-                            <div class="col-auto">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
-                            </div>
-                            <div class="col-md-8 p-0 ">
-                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase">bon plan</small>
-                                    <div class="mt-1">
-                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                            Les leaks de GTA 5 révèlent pas mal de choses...
-                                        </a>
-                                    </div>
-                                    <p class="card-text">
-                                        <small class="text-muted">Il y a 5 heures
-                                            <span class="badge rounded-pill border bg-dark text-light fw-semibold">PC</span>
-                                        </small>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -847,7 +859,7 @@
     <!-- DEBUT TOP JEUX SELECTION -->
     <section class="sectionContainer">
         <div class="container">
-            <div class="row">
+            <div class="row g-3 mt-3">
                 <div class="col-md-4">
                     <h2 class="fw-bold text-uppercase py-2 aCardMin">grand theft auto vi</h2>
                     <div class="card rounded-4 border-0 shadow ">
@@ -939,7 +951,7 @@
                                 </a>
                             </p>
                             <!-- BUTTON ARTICLE -->
-                            <a href="#" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase mt-3 mb-1">
+                            <a href="#" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase aCardMin mt-3 mb-1">
                                 Tous les articles sur : Grand Theft Auto VI
                             </a>
                         </div>
@@ -1148,115 +1160,119 @@
     <!-- DEBUT SECTION EVENTS -->
     <section class="sectionContainer">
         <div class="container">
-            <div class="row">
-                <div class="col-10">
-                    <h1 class="articleTitle my-4 text-uppercase fw-bold">les événements à venir</h1>
+            <div class="row g-3 mt-3">
+                <div class="col-12 col-md-10">
+                    <h1 class="articleTitle text-uppercase fw-bold">les événements à venir</h1>
                 </div>
-                <div class="col-md-2 d-flex my-4 align-items-center justify-content-end">
+                <div class="col-md-2 d-flex align-items-center justify-content-end">
                     <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         les événements
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
                 </div>
                 <!-- CARD EVENT 1 -->
-                <div class="col-md-6">
-                    <div class="card text-bg-dark border-0 rounded-4">
-                        <div class="ratio ratio-16x9 ">
-                            <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4 " alt="GTA 6">
-                        </div>
-                        <div class="cardShadow">
-                            <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                <p class="p-0 m-0">
-                                    <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
-                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase">GTA 6</span>
-                                </p>
-                                <div class="w-75">
-                                    <a href="#" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
-                                        La date de sortie du jeu est prévue pour le 4 avril 2025. Une date plausible, dans la mesure où Rockstar Games vient de confirmer qu'il faudrait attendre 2025 pour mettre la main sur GTA 6...
-                                    </a>
+                <div class="col-12">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card text-bg-dark border-0 rounded-4">
+                                <div class="ratio ratio-16x9 ">
+                                    <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4 " alt="GTA 6">
                                 </div>
-                                <div class="card-text">
-                                    <small>
-                                        04-04-2025
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- CARD EVENT 2 -->
-                <div class="col-md-6">
-                    <div class="card text-bg-dark border-0 rounded-4">
-                        <div class="ratio ratio-16x9 ">
-                            <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img object-fit-cover rounded-4 " alt="CALL OF DUTY">
-                        </div>
-                        <div class="cardShadow">
-                            <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                <p class="p-0 m-0">
-                                    <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
-                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase">cod</span>
-                                </p>
-                                <div class="w-75">
-                                    <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
-                                        Notes de correctif de la saison 6 de Call Of Duty : Modern Warfare II et de Warzone
-                                    </a>
-                                </div>
-                                <div class="card-text">
-                                    <small>
-                                        27-09-2023
-                                    </small>
+                                <div class="cardShadow">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase">GTA 6</span>
+                                        </p>
+                                        <div class="w-75">
+                                            <a href="#" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                                La date de sortie du jeu est prévue pour le 4 avril 2025. Une date plausible, dans la mesure où Rockstar Games vient de confirmer qu'il faudrait attendre 2025 pour mettre la main sur GTA 6...
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <small>
+                                                04-04-2025
+                                            </small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- CARD EVENT 3 -->
-                <div class="col-md-6 py-4">
-                    <div class="card text-bg-dark border-0 rounded-4">
-                        <div class="ratio ratio-16x9 ">
-                            <img src="/public/assets/img/valorant.jpg" class="card-img object-fit-cover rounded-4" alt="VALORANT">
-                        </div>
-                        <div class="cardShadow">
-                            <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                <p class="p-0 m-0">
-                                    <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
-                                    <span class="badge rounded-pill text-bg-warning p-2 px-4 mb-2 text-uppercase">valorant</span>
-                                </p>
-                                <div class="w-75">
-                                    <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
-                                        Valorant : Le prochain VCT Masters 2024 aura lieu à Shangaï !
-                                    </a>
+                        <!-- CARD EVENT 2 -->
+                        <div class="col-md-6">
+                            <div class="card text-bg-dark border-0 rounded-4">
+                                <div class="ratio ratio-16x9 ">
+                                    <img src="/public/assets/img/MWII-S06-ANNOUNCEMENT-TOUT.jpg" class="card-img object-fit-cover rounded-4 " alt="CALL OF DUTY">
                                 </div>
-                                <div class="card-text">
-                                    <small>
-                                        2024
-                                    </small>
+                                <div class="cardShadow">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase">cod</span>
+                                        </p>
+                                        <div class="w-75">
+                                            <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                                Notes de correctif de la saison 6 de Call Of Duty : Modern Warfare II et de Warzone
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <small>
+                                                27-09-2023
+                                            </small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- CARD EVENT 4 -->
-                <div class="col-md-6 py-4">
-                    <div class="card text-bg-dark border-0 rounded-4">
-                        <div class="ratio ratio-16x9 ">
-                            <img src="/public/assets/img/maugaow2.jpeg" class="card-img object-fit-cover rounded-4" alt="MAUGA OVERWATCH 2">
-                        </div>
-                        <div class="cardShadow">
-                            <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                <p class="p-0 m-0">
-                                    <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
-                                    <span class="badge rounded-pill text-bg-info p-2 px-4 mb-2 text-uppercase">overwatch 2</span>
-                                </p>
-                                <div class="w-75">
-                                    <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
-                                        Overwatch 2 : le Héros Mauga présenté en détails, déjà du teasing pour 2024 !
-                                    </a>
+                        <!-- CARD EVENT 3 -->
+                        <div class="col-md-6">
+                            <div class="card text-bg-dark border-0 rounded-4">
+                                <div class="ratio ratio-16x9 ">
+                                    <img src="/public/assets/img/valorant.jpg" class="card-img object-fit-cover rounded-4" alt="VALORANT">
                                 </div>
-                                <div class="card-text">
-                                    <small>
-                                        2024
-                                    </small>
+                                <div class="cardShadow">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                            <span class="badge rounded-pill text-bg-warning p-2 px-4 mb-2 text-uppercase">valorant</span>
+                                        </p>
+                                        <div class="w-75">
+                                            <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                                Valorant : Le prochain VCT Masters 2024 aura lieu à Shangaï !
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <small>
+                                                2024
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CARD EVENT 4 -->
+                        <div class="col-md-6 pb-4">
+                            <div class="card text-bg-dark border-0 rounded-4">
+                                <div class="ratio ratio-16x9 ">
+                                    <img src="/public/assets/img/maugaow2.jpeg" class="card-img object-fit-cover rounded-4" alt="MAUGA OVERWATCH 2">
+                                </div>
+                                <div class="cardShadow">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                            <span class="badge rounded-pill text-bg-info p-2 px-4 mb-2 text-uppercase">overwatch 2</span>
+                                        </p>
+                                        <div class="w-75">
+                                            <a href="#" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                                Overwatch 2 : le Héros Mauga présenté en détails, déjà du teasing pour 2024 !
+                                            </a>
+                                        </div>
+                                        <div class="card-text">
+                                            <small>
+                                                2024
+                                            </small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
