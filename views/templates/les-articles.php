@@ -5,13 +5,13 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-12 py-3">
+                            <div class="col-md-12 py-3">
                                 <h2 class="h2 text-uppercase fw-bold">Actus GTA 6</h2>
                             </div>
                         </div>
                         <!-- CARD ACTU -->
-                        <div class="row ">
-                            <div class="col-12 d-flex flex-wrap justify-content-between">
+                        <div class="row">
+                            <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
                                         <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="GTA 6" />
                                     <div class="card-img-overlay ">

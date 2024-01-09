@@ -235,8 +235,6 @@
                                 <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
                                 <li class="page-item"><a class="page-link text-dark" href="#">5</a></li>
                                 <li class="page-item"><a class="page-link text-dark" href="#">6</a></li>
-                                <li class="page-item"><a class="page-link text-dark" href="#">7</a></li>
-                                <li class="page-item"><a class="page-link text-dark" href="#">8</a></li>
                                 <li class="page-item"><a class="page-link text-dark" href="#">...</a></li>
                                 <li class="page-item"><a class="page-link text-dark" href="#">20</a></li>
                                 <li class="page-item">

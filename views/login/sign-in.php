@@ -23,7 +23,7 @@
                                 </h1>
                             </div>
                         </div>
-                        <div class="row w-50">
+                        <div class="row signUpRow">
                             <div class="col-12 ">
                                 <!-- EMAIL -->
                                 <div class="mb-4">

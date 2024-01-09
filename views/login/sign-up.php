@@ -23,7 +23,7 @@
                                 </h1>
                             </div>
                         </div>
-                        <div class="row w-50">
+                        <div class="row signUpRow">
                             <!-- FIRSTNAME -->
                             <div class="mb-4 col-md-6 col-12">
                                 <div><small id="firstnameHelp" class="form-text text-danger"><?= $error['firstname'] ?? '' ?></small></div>
@@ -67,7 +67,7 @@
                                     <small class=" text-center passMsgError text-danger"></small>
                                 </div>
                                 <label for="confirmPassword" class="form-label fw-semibold">Confimer le Mot de passe</label>
-                                <input type="password" name="confirmPassword" id="confirmPassword" value="<?= htmlentities($confirmPassword ?? '') ?>" class="form-control passwordConfirmSignIn" placeholder="Confimer" required>
+                                <input type="password" name="confirmPassword" id="confirmPassword" value="<?= htmlentities($confirmPassword ?? '') ?>" class="form-control passwordConfirmSignIn" placeholder="Confimer le Mot de passe" required>
                             </div>
                             <div class="mb-4">
                                 <div class="form-check">
@@ -84,7 +84,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row w-50 py-4 justify-content-center align-items-center">
+                        <div class="row signUpRow py-4 justify-content-center align-items-center">
                             <div class="col-5">
                                 <hr>
                             </div>
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                            <div class="col-md-12 d-flex justify-content-center align-items-center">
                                 <button class="btn btnSocialsForm mx-1 shadow">
                                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
                                         <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
@@ -134,7 +134,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row pt-5">
+                        <div class="row py-5">
                             <div class="col-md-12">
                                 <small>Vous avez déjà un compte ?</small>
                                 <a href="/controllers/login-ctrl/sign-in-ctrl.php" class="text-danger text-sm fw-semibold text-decoration-none">Se connecter</a>

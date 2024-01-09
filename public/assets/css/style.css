@@ -651,6 +651,10 @@ small {
     background-color: #DFE0E1;
 }
 
+.signUpRow  {
+    width: 30vw;
+}
+
 .formSection {
     height: 100vh;
 }
@@ -935,6 +939,8 @@ footer {
     margin-left: 1rem;
 }
 
+
+
 /* media query  */
 @media all and (max-width: 720px) {
     .imgForm {
@@ -968,6 +974,16 @@ footer {
         justify-content: center;
         display: flex;
         margin-bottom: 25px;
+    }
+    .signUpRow  {
+        width: 100vw;
+    }
+    .colActus {
+        justify-content: center !important;
+        gap: 1rem;
+    }
+    .cardActu {
+        width: 100%;
     }
 }
 
