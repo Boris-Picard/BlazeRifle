@@ -134,7 +134,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row py-5">
+                        <div class="row py-4">
                             <div class="col-md-12">
                                 <small>Vous avez déjà un compte ?</small>
                                 <a href="/controllers/login-ctrl/sign-in-ctrl.php" class="text-danger text-sm fw-semibold text-decoration-none">Se connecter</a>
