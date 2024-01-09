@@ -23,7 +23,7 @@
                                 </h1>
                             </div>
                         </div>
-                        <div class="row w-50">
+                        <div class="row signUpRow">
                             <!-- FIRSTNAME -->
                             <div class="mb-4 col-md-6 col-12">
                                 <div><small class="form-text text-danger"><?= $error['firstname'] ?? '' ?></small></div>
@@ -57,7 +57,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div>
+                            <div class="pb-5">
                                 <button type="submit" class="btn btn-danger w-100 rounded-5 p-3 fw-bold text-uppercase">
                                     Envoyer
                                 </button>
