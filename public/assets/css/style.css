@@ -249,6 +249,7 @@ small {
     }
     .cardGuideRight {
         justify-content: center;
+        gap: 0.6rem;
     }
     
     .imgGuideRight {
@@ -984,6 +985,34 @@ footer {
     }
     .cardActu {
         width: 100%;
+    }
+    .cardActUnder {
+        width: 100%;
+    }
+    .imgNewsUnder {
+        display: none;
+    }
+    .cardNews {
+        padding: 0 0.8rem;
+    }
+    .cardNewsUnder {
+        width: 95%;
+    }
+    .colGuideActus {
+        padding: 0.8rem;
+    }
+    .widthColRightActu {
+        width: 100%;
+        height: 100%;
+    }
+    .colGuideRight {
+        padding: 0;
+    }
+    .imgActuGuideRight {
+        display: none;
+    }
+    .bodycardGuideRight {
+        width: 90%;
     }
 }
 

@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <!-- CARD UNDER ACTU -->
-                            <div class="col-12 d-flex flex-wrap justify-content-between">
+                            <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-16x9">
                                         <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
@@ -187,7 +187,7 @@
                             </div>
                         </div>
                         <div class="row ">
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 cardNews">
                                 <div class="card mt-3 cardNewsUnder bg-transparent border-0 ">
                                     <div class="row g-0 cardNewsUnder ">
                                         <div class="col-auto imgNewsUnder">
@@ -289,7 +289,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4 p-0">
+                            <div class="col-md-4 col-12">
                                 <div class="card mt-3 cardNewsUnder bg-transparent border-0 ">
                                     <div class="row g-0 cardNewsUnder ">
                                         <div class="col-auto imgNewsUnder">
@@ -505,7 +505,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
                                     <img src="/public/assets/img/infinitebg.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach" />
                                     <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -526,8 +526,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3 justify-content-between d-flex flex-column">
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
+                            <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
+                                <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
                                             <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
@@ -620,7 +620,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3 d-flex justify-content-between flex-column">
+                            <div class="col-md-3 col-12 d-flex justify-content-between flex-column">
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
@@ -727,8 +727,8 @@
                                 <h2 class="h2 text-uppercase fw-bold">Les jeux à découvrir</h2>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-4">
+                        <div class="row g-3">
+                            <div class="col-md-4 col-12">
                                 <div class="card p-0 border-0 bg-transparent rounded-4">
                                     <div class="ratio ratio-1x1 ">
                                         <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
@@ -741,7 +741,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-md-4 col-12">
                                 <div class="card p-0 border-0 bg-transparent rounded-4">
                                     <div class="ratio ratio-1x1">
                                         <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />
@@ -754,7 +754,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-md-4 col-12">
                                 <div class="card p-0 border-0 bg-transparent rounded-4">
                                     <div class="ratio ratio-1x1">
                                         <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Sunset Over the Sea" />

@@ -5,10 +5,14 @@
                 <div class="col-md-8 col-12">
                     <div class="row">
                         <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
-                            <h2 class="h2 text-uppercase fw-bold text-center">Call of Duty: Modern Warfare 3</h2>
-                            <p class="text-center mt-2">Call of Duty: Modern Warfare 3", sorti en 2011, est un jeu de tir à la première personne développé par Infinity Ward et Sledgehammer Games.
-                                Il continue l'histoire intense de conflits modernes de ses prédécesseurs, proposant une campagne solo captivante et un mode multijoueur compétitif.
-                                Le jeu est reconnu pour son action rapide, ses scénarios variés à l'échelle mondiale et ses graphismes impressionnants pour l'époque.</p>
+                            <h2 class="h2 text-uppercase fw-bold text-center">halo infinite</h2>
+                            <p class="text-center mt-2">Halo Infinite" est un jeu vidéo de tir à la première personne développé par 343 Industries et publié par Xbox Game Studios, 
+                                sorti en 2021. Sixième jeu principal de la série "Halo", il continue l'histoire de Master Chief, le super-soldat protagoniste, 
+                                dans une aventure épique pour sauver l'humanité. Le jeu se distingue par son vaste monde ouvert sur un anneau Halo, 
+                                offrant une plus grande liberté d'exploration et de combat. "Halo Infinite" inclut également un mode multijoueur gratuit, 
+                                avec des matchs classiques de la série "Halo" et de nouvelles mécaniques, comme l'utilisation de grappins. 
+                                Le jeu est salué pour ses graphismes améliorés, son gameplay immersif et fidèle à la série, et sa narration captivante centrée sur Master Chief.
+                            </p>
                         </div>
                     </div>
                     <div class="col-12">
@@ -18,12 +22,12 @@
                         <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="Call of Duty: Modern Warfare 3">
+                                    <img src="/public/assets/img/infinite2.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="halo infinite">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body px-3 d-flex flex-column justify-content-end">
                                         <div>
-                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">cod : mw 3</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">halo infinite</span>
                                         </div>
                                         <a href="#" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, magni quisquam. Earum aperiam magni et minus quisquam fuga dicta amet quaerat quod voluptatum accusantium, unde veniam. Tenetur error est quos?</a>
                                         <p class="aCard mt-2">
@@ -43,12 +47,12 @@
                         <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="Call of Duty: Modern Warfare 3">
+                                    <img src="/public/assets/img/infinite2.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="halo infinite">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body px-3 d-flex flex-column justify-content-end">
                                         <div>
-                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">cod : mw 3</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">halo infinite</span>
                                         </div>
                                         <a href="#" class="stretched-link mt-2 h5 text-decoration-none aCard card-title fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
                                         <p class="aCard mt-2">
@@ -69,12 +73,12 @@
                         <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="Call of Duty: Modern Warfare 3">
+                                    <img src="/public/assets/img/infinite2.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="halo infinite">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body px-3 d-flex flex-column justify-content-end">
                                         <div>
-                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">cod : mw 3</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">halo infinite</span>
                                         </div>
                                         <a href="#" class="stretched-link mt-2 h5 text-decoration-none card-title aCard fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
                                         <p class="aCard mt-2">
@@ -95,12 +99,12 @@
                         <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="Call of Duty: Modern Warfare 3">
+                                    <img src="/public/assets/img/infinite2.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="halo infinite">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body px-3 d-flex flex-column justify-content-end">
                                         <div>
-                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">cod : mw 3</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">halo infinite</span>
                                         </div>
                                         <a href="#" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
                                         <p class="aCard mt-2">
@@ -121,12 +125,12 @@
                         <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="Call of Duty: Modern Warfare 3">
+                                    <img src="/public/assets/img/infinite2.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="halo infinite">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body px-3 d-flex flex-column justify-content-end">
                                         <div>
-                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">cod : mw 3</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">halo infinite</span>
                                         </div>
                                         <a href="#" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
                                         <p class="aCard mt-2">
@@ -147,12 +151,12 @@
                         <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="Call of Duty: Modern Warfare 3">
+                                    <img src="/public/assets/img/infinite2.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="halo infinite">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body px-3 d-flex flex-column justify-content-end">
                                         <div>
-                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">cod : mw 3</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">halo infinite</span>
                                         </div>
                                         <a href="#" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
                                         <p class="aCard mt-2">
@@ -173,12 +177,12 @@
                         <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="Call of Duty: Modern Warfare 3">
+                                    <img src="/public/assets/img/infinite2.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="halo infinite">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body px-3 d-flex flex-column justify-content-end">
                                         <div>
-                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">cod : mw 3</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">halo infinite</span>
                                         </div>
                                         <a href="#" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
                                         <p class="aCard mt-2">
@@ -199,12 +203,12 @@
                         <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="Call of Duty: Modern Warfare 3">
+                                    <img src="/public/assets/img/infinite2.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="halo infinite">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body px-3 d-flex flex-column justify-content-end">
                                         <div>
-                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">cod : mw 3</span>
+                                            <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">halo infinite</span>
                                         </div>
                                         <a href="#" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
                                         <p class="aCard mt-2">
@@ -247,20 +251,20 @@
                     </div>
                 </div>
                 <!-- LES GUIDES -->
-                <div class="col-md-4 col-12 mt-3">
+                <div class="col-md-4 col-12 colGuideRight mt-3">
                     <div class="row mx-4 rounded-4">
                         <div class="col-12 widthColRightActu shadow-lg rounded-4">
                             <div class="row">
                                 <div class="col-12 d-flex flex-row text-center align-items-center p-3">
                                     <i class="bi bi-grid fs-1 px-2"></i>
-                                    <h5 class="text-uppercase fw-bold"><span class="text-danger">les guides :</span> Call of Duty: Modern Warfare 3</h5>
+                                    <h5 class="text-uppercase fw-bold"><span class="text-danger">les guides :</span> halo infinite</h5>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-3" alt="Sunset Over the Sea" />
+                                            <img src="/public/assets/img/infinite2.jpg" class="object-fit-cover rounded-3" alt="halo infinite" />
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
@@ -274,7 +278,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/infinite2.jpg" alt="halo infinite" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -295,7 +299,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/infinite2.jpg" alt="halo infinite" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -316,7 +320,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/infinite2.jpg" alt="halo infinite" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -337,7 +341,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/infinite2.jpg" alt="halo infinite" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -358,7 +362,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/infinite2.jpg" alt="halo infinite" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -379,7 +383,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/infinite2.jpg" alt="halo infinite" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -411,7 +415,7 @@
                             <div class="row">
                                 <div class="col-12 d-flex flex-row text-center align-items-center p-3">
                                     <i class="bi bi-play-circle fs-1 px-2"></i>
-                                    <h5 class="text-uppercase fw-bold"><span class="text-warning">les vidéos :</span> Call of Duty: Modern Warfare 3</h5>
+                                    <h5 class="text-uppercase fw-bold"><span class="text-warning">les vidéos :</span> halo infinite</h5>
                                 </div>
                             </div>
                             <div class="row">

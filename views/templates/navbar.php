@@ -31,16 +31,16 @@
                         </a>
                         <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
                             <div class="d-flex flex-column">
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/gta-6-news-visu.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">Grand Theft Auto VI</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">call of duty : mw 3</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/1329760.jpeg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">Counter strike 2</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/apex.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">apex legends</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">call of duty : warzone 2</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/valorant.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">Valorant</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/infinite2.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">Halo infinite</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">overwatch 2</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/battlefield2042.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">battlefield 2042</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/borderlands-4-pc-jeu-cover.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">borderlands 4</span></a></li>
+                                <li><a href="/controllers/les-actus/grand-theft-auto-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/gta-6-news-visu.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">Grand Theft Auto VI</span></a></li>
+                                <li><a href="/controllers/les-actus/call-of-duty-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Call of duty mw 3">call of duty : mw 3</span></a></li>
+                                <li><a href="/controllers/les-actus/counter-strike-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/1329760.jpeg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Counter strike 2">Counter strike 2</span></a></li>
+                                <li><a href="/controllers/les-actus/apex-legends-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/apex.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Apex Legends">apex legends</span></a></li>
+                                <li><a href="/controllers/les-actus/call-of-duty-warzone-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Call of duty warzone 2">call of duty : warzone 2</span></a></li>
+                                <li><a href="/controllers/les-actus/valorant-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/valorant.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Valorant">Valorant</span></a></li>
+                                <li><a href="/controllers/les-actus/halo-infinite-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/infinite2.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Halo infinite">Halo infinite</span></a></li>
+                                <li><a href="/controllers/les-actus/overwatch-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Overwatch 2">overwatch 2</span></a></li>
+                                <li><a href="/controllers/les-actus/battlefield-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/battlefield2042.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Battlefield 2042">battlefield 2042</span></a></li>
+                                <li><a href="/controllers/les-actus/borderlands-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/borderlands3.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Borderlands 3">borderlands 3</span></a></li>
                             </div>
                         </ul>
                     </li>
@@ -58,10 +58,9 @@
                     </li>
                     <a class="nav-link navlinkHover" href="#">Les Guides</a>
                     <a class="nav-link navlinkHover" href="/controllers/quiz/quiz-ctrl.php">Le Quiz</a>
-                    <a class="nav-link navlinkHover text-light" href="#">Les Bons Plans</a>
-                    <a class="nav-link navlinkHover text-light" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
-                    <a class="nav-link navlinkHover text-light" href="#">Les Produits</a>
-                    <a class="nav-link navlinkHover text-light" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
+                    <a class="nav-link navlinkHover text-dark" href="#">Les Bons Plans</a>
+                    <a class="nav-link navlinkHover text-dark" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
+                    <a class="nav-link navlinkHover text-dark" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
                 </div>
             </div>
         </div>
