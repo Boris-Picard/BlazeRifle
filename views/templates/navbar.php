@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbarStyle navbar-expand-md fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand nameLogoNav" href="/../controllers/home-ctrl.php"><img src="../../public/assets/img/redlogo.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a>
+            <a class="navbar-brand nameLogoNav" href="/../controllers/home-ctrl.php"><img src="/../../public/assets/img/redlogo.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a>
             <div class="flex-shrink-0 d-flex dropdown order-md-3">
                 <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -50,15 +50,15 @@
                         </a>
                         <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
                             <div class="d-flex flex-column">
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-windows mx-2 fs-5"></i>PC</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-playstation mx-2 fs-5"></i>Playstation</span></a></li>
-                                <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-xbox mx-2 fs-5"></i>Xbox</span></a></li>
+                                <li><a href="/controllers/consoles/pc-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-windows mx-2 fs-5"></i>PC</span></a></li>
+                                <li><a href="/controllers/consoles/playstation-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-playstation mx-2 fs-5"></i>Playstation</span></a></li>
+                                <li><a href="/controllers/consoles/xbox-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-xbox mx-2 fs-5"></i>Xbox</span></a></li>
                             </div>
                         </ul>
                     </li>
-                    <a class="nav-link navlinkHover" href="#">Les Guides</a>
+                    <a class="nav-link navlinkHover" href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>
                     <a class="nav-link navlinkHover" href="/controllers/quiz/quiz-ctrl.php">Le Quiz</a>
-                    <a class="nav-link navlinkHover text-dark" href="/controllers/tips/tips-ctrl.php">Les Bons Plans</a>
+                    <a class="nav-link navlinkHover text-dark" href="/controllers/tips-list/tips-ctrl.php">Les Bons Plans</a>
                     <a class="nav-link navlinkHover text-dark" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
                     <a class="nav-link navlinkHover text-dark" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
                 </div>

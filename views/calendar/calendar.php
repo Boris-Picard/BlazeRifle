@@ -2,6 +2,14 @@
     <div class="container">
         <section>
             <div class="row">
+                <div class="col-12">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
+                            <li class="breadcrumb-item active text-capitalize" aria-current="page">Calendrier des évents à venir</li>
+                        </ol>
+                    </nav>
+                </div>
                 <div class="col-12 imgBannerCalendar rounded-4 p-0">
                     <div class="col-12 opacityBanner d-flex align-items-center justify-content-center h-100 rounded-4">
                         <h1 class="text-center fw-bold text-light text-uppercase">Calendrier des events</h1>

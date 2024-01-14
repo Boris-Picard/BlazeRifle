@@ -9,12 +9,12 @@
                                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Preview Des jeux</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Preview Des jeux PC</li>
                                     </ol>
                                 </nav>
                             </div>
                             <div class="col-md-8 col-12 py-3">
-                                <h2 class="h2 text-uppercase fw-bold">Tous les articles</h2>
+                                <h2 class="h2 text-uppercase fw-bold">Tous les articles PC</h2>
                             </div>
                             <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
                                 <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
@@ -38,6 +38,7 @@
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                     <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">apex legends</span>
+                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -55,6 +56,7 @@
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                     <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">GTA 6</span>
+                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -71,7 +73,8 @@
                                             <div class="card-text mb-3">
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Counter Strike 2</span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Counter Strike</span>
+                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -89,6 +92,7 @@
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                     <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Valorant</span>
+                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -110,6 +114,7 @@
                                             <small class="text-muted">25 déc, 18:05
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Call Of Duty : MW 3</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">PC</span>
                                             </small>
                                         </div>
                                     </div>
@@ -127,6 +132,7 @@
                                             <small class="text-muted">25 déc, 18:05
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Call Of Duty : Warzone 2</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">PC</span>
                                             </small>
                                         </div>
                                     </div>
@@ -144,6 +150,7 @@
                                             <small class="text-muted">25 déc, 18:05
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Overwatch 2</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">PC</span>
                                             </small>
                                         </div>
                                     </div>
@@ -161,6 +168,7 @@
                                             <small class="text-muted">25 déc, 18:05
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Borderlands 3</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">PC</span>
                                             </small>
                                         </div>
                                     </div>
@@ -202,6 +210,7 @@
                                             <small>il y a 47 minutes
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold">apex legends</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
                                             </small>
                                         </div>
                                     </div>
@@ -435,6 +444,7 @@
                                             <small>il y a 47 minutes
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold">HALO</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
                                             </small>
                                         </div>
                                     </div>
@@ -454,6 +464,7 @@
                                     <small class="text-muted">25 déc, 18:05
                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                         <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Battlefield 2042</span>
+                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">PC</span>
                                     </small>
                                 </div>
                             </div>
@@ -469,6 +480,7 @@
                                     <small class="text-muted">25 déc, 18:05
                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                         <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Counter Strike 2</span>
+                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">PC</span>
                                     </small>
                                 </div>
                             </div>
@@ -484,6 +496,7 @@
                                     <small class="text-muted">25 déc, 18:05
                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                         <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Overwatch 2</span>
+                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">PC</span>
                                     </small>
                                 </div>
                             </div>
@@ -499,6 +512,7 @@
                                     <small class="text-muted">25 déc, 18:05
                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                         <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Borderlands 3</span>
+                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">PC</span>
                                     </small>
                                 </div>
                             </div>

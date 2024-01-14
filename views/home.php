@@ -135,30 +135,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- UNDERCARD 4 -->
-                    <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="CALL OF DUTY MODERN WARFARE 3">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body py-1">
-                                    <p class="p-0 m-0">
-                                        <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2">GTA 6</span>
-                                    </p>
-                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCard text-wrap text-decoration-none text-dark">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                    </a>
-                                    <div class="mt-1">
-                                        <small class="text-muted">il y a 47 minutes
-                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- SIDECARD 1 -->
                 <div class="col-md-6">
@@ -281,30 +257,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- SIDECARD 6 -->
-                    <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="CALL OF DUTY MODERN WARFARE 3">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body py-1">
-                                    <p class="p-0 m-0">
-                                        <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2">GTA 6</span>
-                                    </p>
-                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCard text-wrap text-decoration-none text-dark">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                    </a>
-                                    <div class="mt-1">
-                                        <small class="text-muted">il y a 47 minutes
-                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -318,7 +270,7 @@
                     <h1 class="text-dark text-uppercase fw-bold">Les derniers guides</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les guides
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
@@ -485,7 +437,7 @@
                     <h1 class="articleTitle text-uppercase fw-bold">Les jeux du moment</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/games-preview/games-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les jeux
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
@@ -635,7 +587,7 @@
                     <h1 class="articleTitle text-uppercase fw-bold">Les bons plans</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         les bons plans
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
@@ -1165,7 +1117,7 @@
                     <h1 class="articleTitle text-uppercase fw-bold">les événements à venir</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         les événements
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>

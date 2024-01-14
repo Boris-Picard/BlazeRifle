@@ -1028,6 +1028,9 @@ footer {
     .articlesTitle {
         margin: 2rem 0 !important;
     }
+    .titleAllGuides {
+        padding-top: 3.5rem;;
+    }
 }
 
 @media all and (min-width: 720px) {
@@ -1051,3 +1054,165 @@ footer {
         display: block; 
     }
 }
+
+.rowAllGames {
+    height: 100vh;
+}
+
+
+.cards {
+    width: 100%;
+    height: 80%;
+    border-radius: 0.8rem;
+    /* background: #212121; */
+    display: flex;
+    gap: 5px;
+    padding: .4em;
+  }
+  
+  .cards p {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    transition: all .5s;
+    border: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cards p:hover {
+    flex: 4;
+  }
+  
+  .cards p span {
+    min-width: 14em;
+    padding: .5em;
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all .5s;
+    letter-spacing: .1em;
+  }
+  
+  .cards p:hover span {
+    transform: rotate(0);
+  }
+
+  .gtaGames {
+    background-image: url(../img/gta6.avif);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center center;
+  }
+  
+  .gtaGames:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+  
+  .codMw3Games {
+    background-image: url(../img/MWIII-REVEAL-FULL-TOUT.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center top;
+  }
+
+  .codMw3Games:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .cs2Games {
+    background-image: url(../img/cs2.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center right;
+    max-width: 100%;
+  }
+
+  .cs2Games:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .apexGames {
+    background-image: url(../img/apex.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center center;
+    max-width: 100%;
+  }
+
+  .apexGames:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .wz2Games {
+    background-image: url(../img/MWII-SEASON-01-ROADMAP-004.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center center;
+    max-width: 100%;
+  }
+
+  .wz2Games:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .valorantGames {
+    background-image: url(../img/valorant.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center center;
+    max-width: 100%;
+  }
+
+  .valorantGames:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .haloGames {
+    background-image: url(../img/infinitebg.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center right;
+    max-width: 100%;
+  }
+
+  .haloGames:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .overwatchGames {
+    background-image: url(../img/overwatch2.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center center;
+    max-width: 100%;
+  }
+
+  .overwatchGames:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .battlefieldGames {
+    background-image: url(../img/battlefield2042.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center center;
+    max-width: 100%;
+  }
+
+  .battlefieldGames:hover {
+    filter: grayscale(0%) opacity(100%);
+  }
+
+  .borderlandsGames {
+    background-image: url(../img/borderlands3.jpg);
+    object-fit: cover !important;
+    filter: grayscale(100%) opacity(35%);
+    background-position: center center;
+    max-width: 100%;
+  }
+
+  .borderlandsGames:hover {
+    filter: grayscale(0%) opacity(100%);
+  }

@@ -9,12 +9,12 @@
                                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Preview Des jeux</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Preview Des jeux Xbox</li>
                                     </ol>
                                 </nav>
                             </div>
                             <div class="col-md-8 col-12 py-3">
-                                <h2 class="h2 text-uppercase fw-bold">Tous les articles</h2>
+                                <h2 class="h2 text-uppercase fw-bold">Tous les articles Xbox</h2>
                             </div>
                             <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
                                 <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
@@ -27,9 +27,9 @@
                         <div class="row">
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
-                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="apex legends" />
+                                    <img src="/public/assets/img/infinite2.jpg" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="Halo Infinite" />
                                     <div class="card-img-overlay ">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">apex legends</span>
+                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Halo Infinite</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
                                             <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
                                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dignissimos officiis quaerat quis, ullam error sequi repudiandae magnam voluptas inventore nisi sit pariatur, similique consequuntur beatae saepe tempore eum debitis!
@@ -37,7 +37,8 @@
                                             <div class="card-text mb-3">
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">apex legends</span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Halo Infinite</span>
+                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">Xbox</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -49,46 +50,49 @@
                                         <span class="badge rounded-pill text-uppercase text-bg-danger p-2">GTA 6</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
                                             <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
+                                                Je ne m'attendais pas à trouver un Xbox portable gamer
                                             </a>
                                             <div class="card-text mb-3">
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                     <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">GTA 6</span>
+                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">Xbox</span>
                                                 </small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/1329760.jpeg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Counter Strike 2" />
+                                    <img src="/public/assets/img/gta6hero.avif" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="GTA 6" />
                                     <div class="card-img-overlay">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Counter Strike 2</span>
+                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">GTA 6</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
                                             <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
+                                                Je ne m'attendais pas à trouver un Xbox portable gamer
                                             </a>
                                             <div class="card-text mb-3">
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Counter Strike 2</span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">GTA 6</span>
+                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">Xbox</span>
                                                 </small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/valorant.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Valorant" />
+                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Apex Legends" />
                                     <div class="card-img-overlay">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Valorant</span>
+                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Apex Legends</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
                                             <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
+                                                Je ne m'attendais pas à trouver un Xbox portable gamer
                                             </a>
                                             <div class="card-text mb-3">
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Valorant</span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Apex Legends</span>
+                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">Xbox</span>
                                                 </small>
                                             </div>
                                         </div>
@@ -110,15 +114,16 @@
                                             <small class="text-muted">25 déc, 18:05
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Call Of Duty : MW 3</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">Xbox</span>
                                             </small>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent ">
                                     <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call Of Duty : Warzone 2" />
+                                        <img src="/public/assets/img/infinitebg.jpg" class="object-fit-cover rounded-4" alt="Halo Infinite" />
                                         <div class="p-3">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Call Of Duty : Warzone 2</span>
+                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Halo Infinite</span>
                                         </div>
                                     </div>
                                     <div class="card-body p-0 mt-1">
@@ -126,7 +131,8 @@
                                         <div class="card-text mb-3">
                                             <small class="text-muted">25 déc, 18:05
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Call Of Duty : Warzone 2</span>
+                                                <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Halo Infinite</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">Xbox</span>
                                             </small>
                                         </div>
                                     </div>
@@ -144,6 +150,7 @@
                                             <small class="text-muted">25 déc, 18:05
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Overwatch 2</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">Xbox</span>
                                             </small>
                                         </div>
                                     </div>
@@ -161,6 +168,7 @@
                                             <small class="text-muted">25 déc, 18:05
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Borderlands 3</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">Xbox</span>
                                             </small>
                                         </div>
                                     </div>
@@ -202,6 +210,7 @@
                                             <small>il y a 47 minutes
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold">apex legends</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">Xbox</span>
                                             </small>
                                         </div>
                                     </div>
@@ -224,7 +233,7 @@
                                                 <p class="card-text">
                                                     <small class="text-muted">Il y a 5 heures
                                                         <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">Xbox</span>
                                                     </small>
                                                 </p>
                                             </div>
@@ -234,11 +243,11 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/1329760.jpeg" alt="Counter Strike 2" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/gta-6-news-visu.jpg" alt="GTA 6" class="imgGuideRight object-fit-cover rounded-4" />
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Counter Strike 2</small>
+                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide GTA 6</small>
                                                 <div class="mt-1">
                                                     <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Les leaks de GTA 5 révèlent pas mal de choses...
@@ -247,7 +256,7 @@
                                                 <p class="card-text">
                                                     <small class="text-muted">Il y a 5 heures
                                                         <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">Xbox</span>
                                                     </small>
                                                 </p>
                                             </div>
@@ -257,11 +266,11 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/valorant.jpg" alt="Valorant" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/apex.jpg" alt="Apex Legends" class="imgGuideRight object-fit-cover rounded-4" />
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Valorant</small>
+                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Apex Legends</small>
                                                 <div class="mt-1">
                                                     <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         Les leaks de GTA 5 révèlent pas mal de choses...
@@ -270,7 +279,7 @@
                                                 <p class="card-text">
                                                     <small class="text-muted">Il y a 5 heures
                                                         <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">Xbox</span>
                                                     </small>
                                                 </p>
                                             </div>
@@ -293,7 +302,7 @@
                                                 <p class="card-text">
                                                     <small class="text-muted">Il y a 5 heures
                                                         <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">Xbox</span>
                                                     </small>
                                                 </p>
                                             </div>
@@ -318,7 +327,7 @@
                                                 <p class="card-text">
                                                     <small class="text-muted">Il y a 5 heures
                                                         <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">Xbox</span>
                                                     </small>
                                                 </p>
                                             </div>
@@ -341,7 +350,7 @@
                                                 <p class="card-text">
                                                     <small class="text-muted">Il y a 5 heures
                                                         <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">Xbox</span>
                                                     </small>
                                                 </p>
                                             </div>
@@ -364,7 +373,7 @@
                                                 <p class="card-text">
                                                     <small class="text-muted">Il y a 5 heures
                                                         <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">Xbox</span>
                                                     </small>
                                                 </p>
                                             </div>
@@ -387,7 +396,7 @@
                                                 <p class="card-text">
                                                     <small class="text-muted">Il y a 5 heures
                                                         <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">Xbox</span>
                                                     </small>
                                                 </p>
                                             </div>
@@ -435,6 +444,7 @@
                                             <small>il y a 47 minutes
                                                 <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                 <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold">HALO</span>
+                                                <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">Xbox</span>
                                             </small>
                                         </div>
                                     </div>
@@ -454,6 +464,7 @@
                                     <small class="text-muted">25 déc, 18:05
                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                         <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Battlefield 2042</span>
+                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">Xbox</span>
                                     </small>
                                 </div>
                             </div>
@@ -469,6 +480,7 @@
                                     <small class="text-muted">25 déc, 18:05
                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                         <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Counter Strike 2</span>
+                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">Xbox</span>
                                     </small>
                                 </div>
                             </div>
@@ -484,6 +496,7 @@
                                     <small class="text-muted">25 déc, 18:05
                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                         <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Overwatch 2</span>
+                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">Xbox</span>
                                     </small>
                                 </div>
                             </div>
@@ -499,6 +512,7 @@
                                     <small class="text-muted">25 déc, 18:05
                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                         <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Borderlands 3</span>
+                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-dark fw-semibold">Xbox</span>
                                     </small>
                                 </div>
                             </div>

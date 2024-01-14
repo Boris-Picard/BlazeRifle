@@ -6,8 +6,10 @@
                             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
-                                    <li class="breadcrumb-item"><a href="/controllers/tips-list/tips-ctrl.php">Preview Des Bons Plans</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Bon Plan</li>
+                                    <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php">Preview Des Jeux</a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php">Preview Des Articles</a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/guides-list/guides-ctrl.php">Guide sur Call Of Duty : MW 3</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Guide</li>
                                 </ol>
                             </nav>
                         </div>
@@ -16,7 +18,7 @@
                     <div class="row">
                         <div class="col-12 justify-content-between d-flex">
                             <small><a href="" class="text-decoration-none fw-bold">Précédent</a></small>
-                            <small><a href="" class="text-decoration-none text-capitalize fw-bold">Bons plans</a></small>
+                            <small><a href="" class="text-decoration-none text-capitalize fw-bold">Guides Call of duty : mw 3</a></small>
                             <small><a href="" class="text-decoration-none fw-bold">Suivant</a></small>
                         </div>
                     </div>
@@ -43,7 +45,7 @@
                             </h3>
                             <!-- IMG -->
                             <div class="ratio ratio-16x9 mt-5">
-                                <img class="rounded-5" src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" alt="call of duty">
+                                <img class="rounded-5" src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" alt="call of duty">
                             </div>
                         </div>
                     </div>
@@ -100,12 +102,12 @@
                     <div class="row">
                         <div class="col-12 my-2">
                             <h4 class="text-capitalize text-danger fw-bold">
-                                Les Bons Plans suivant
+                                Les guides suivant
                             </h4>
                             <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
                                 <div class="row g-0">
                                     <div class="col-md-2 d-flex">
-                                        <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="object-fit-cover img-fluid rounded-4" alt="call of duty">
+                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover img-fluid rounded-4" alt="call of duty">
                                     </div>
                                     <div class="col-md-10">
                                         <div class="card-body p-2 mx-2">
@@ -122,7 +124,7 @@
                             <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
                                 <div class="row g-0">
                                     <div class="col-md-2 d-flex">
-                                        <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="object-fit-cover img-fluid rounded-4" alt="call of duty">
+                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover img-fluid rounded-4" alt="call of duty">
                                     </div>
                                     <div class="col-md-10">
                                         <div class="card-body p-2 mx-2">
@@ -310,15 +312,16 @@
                     <div class="row mx-4 rounded-4">
                         <div class="col-12 widthColRightActu shadow-lg rounded-4">
                             <div class="row">
-                                <div class="col-12 d-flex flex-row text-center p-3 justify-content-center">
-                                    <h5 class="text-uppercase fw-bold"><span class="text-danger">Bons Plans</span></h5>
+                                <div class="col-12 d-flex flex-row text-center p-3">
+                                    <i class="bi bi-pen fs-3"></i>
+                                    <h5 class="text-uppercase fw-bold"><span class="text-danger">Guides sur :</span> Call of Duty: Modern Warfare 3</h5>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="object-fit-cover rounded-3" alt="Sunset Over the Sea" />
+                                            <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-3" alt="Sunset Over the Sea" />
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
@@ -332,7 +335,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -353,7 +356,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -374,7 +377,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -395,7 +398,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -416,7 +419,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -437,7 +440,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -457,7 +460,7 @@
                                     </div>
                                     <div class="d-flex justify-content-center mt-3 mb-4">
                                         <a href="#" class="btn btn-danger w-50 rounded-4 p-1 fw-bold text-uppercase">
-                                            les bons plans
+                                            les guides
                                         </a>
                                     </div>
                                 </div>
