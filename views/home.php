@@ -33,7 +33,7 @@
                     <h1 class="text-dark text-uppercase articleTitle fw-bold">Les derniers articles</h1>
                 </div>
                 <div class="col-md-2 d-flex  align-items-center justify-content-end">
-                    <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les articles
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>

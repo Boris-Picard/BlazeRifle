@@ -186,6 +186,10 @@ html{
     margin: 4.688rem 0 0 0;
 }
 
+.articlesTitle {
+    margin: 0 !important;
+}
+
 .cardActu {
     height: 31.25rem;
     width: 19.375rem;
@@ -1017,6 +1021,12 @@ footer {
     .btnTitle {
         padding: 0.8rem 0.8rem;
         margin-top: 0 !important;
+    }
+    .breadArticles {
+        display: none;
+    }
+    .articlesTitle {
+        margin: 2rem 0 !important;
     }
 }
 

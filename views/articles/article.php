@@ -2,12 +2,23 @@
     <div class="container">
         <section>
             <div class="row">
+            <div class="col-12 py-3 breadArticles">
+                            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php">Preview Des Jeux</a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php">Preview Des Articles</a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php">Articles sur Call Of Duty : MW 3</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Article</li>
+                                </ol>
+                            </nav>
+                        </div>
                 <div class="col-md-8 col-12">
                     <!-- PRECEDENT SUIVANT -->
                     <div class="row">
                         <div class="col-12 justify-content-between d-flex">
                             <small><a href="" class="text-decoration-none fw-bold">Précédent</a></small>
-                            <small><a href="" class="text-decoration-none text-capitalize fw-bold">Actus Call of duty : mw 3</a></small>
+                            <small><a href="" class="text-decoration-none text-capitalize fw-bold">Articles Call of duty : mw 3</a></small>
                             <small><a href="" class="text-decoration-none fw-bold">Suivant</a></small>
                         </div>
                     </div>
