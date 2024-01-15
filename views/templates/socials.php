@@ -10,4 +10,3 @@
             </div>
         </div>
         <!-- FIN BANDEAU DES RESEAUX SOCIAUX -->
-    </main>
