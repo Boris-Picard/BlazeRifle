@@ -1,5 +1,5 @@
+<main>
 <section class="articlesSection py-5 bg-light">
-    <main>
         <div class="container">
             <section>
                 <div class="row">
@@ -27,7 +27,7 @@
                         <div class="row">
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
-                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="apex legends" />
+                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="apex legends">
                                     <div class="card-img-overlay ">
                                         <span class="badge rounded-pill text-uppercase text-bg-danger p-2">apex legends</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="card bg-transparent text-white p-0 cardActu  border-0 cardShadow">
-                                    <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="GTA 6" />
+                                    <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="GTA 6">
                                     <div class="card-img-overlay">
                                         <span class="badge rounded-pill text-uppercase text-bg-danger p-2">GTA 6</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/gta6hero.avif" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="GTA 6" />
+                                    <img src="/public/assets/img/gta6hero.avif" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="GTA 6">
                                     <div class="card-img-overlay">
                                         <span class="badge rounded-pill text-uppercase text-bg-danger p-2">GTA 6</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Apex Legends" />
+                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Apex Legends">
                                     <div class="card-img-overlay">
                                         <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Apex Legends</span>
                                         <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -103,7 +103,7 @@
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Call Of Duty : MW 3" />
+                                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Call Of Duty : MW 3">
                                         <div class="p-3">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Call Of Duty : MW 3</span>
                                         </div>
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent ">
                                     <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call Of Duty : Warzone 2" />
+                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call Of Duty : Warzone 2">
                                         <div class="p-3">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Call Of Duty : Warzone 2</span>
                                         </div>
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Overwatch 2" />
+                                        <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Overwatch 2">
                                         <div class="p-3">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Overwatch 2</span>
                                         </div>
@@ -157,7 +157,7 @@
                                 </div>
                                 <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent ">
                                     <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/borderlands3.jpg" class="object-fit-cover rounded-4" alt="Borderlands 3" />
+                                        <img src="/public/assets/img/borderlands3.jpg" class="object-fit-cover rounded-4" alt="Borderlands 3">
                                         <div class="p-3">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Borderlands 3</span>
                                         </div>
@@ -196,7 +196,7 @@
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
-                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach" />
+                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach">
                                     <div class="card-img-overlay d-flex flex-column justify-content-end">
                                         <p class="p-0 m-0">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2">apex legends</span>
@@ -220,7 +220,7 @@
                                 <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/gta-6-news-visu.jpg" alt="GTA 6" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/gta-6-news-visu.jpg" alt="GTA 6" class="imgGuideRight object-fit-cover rounded-4">
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -243,7 +243,7 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/gta-6-news-visu.jpg" alt="GTA 6" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/gta-6-news-visu.jpg" alt="GTA 6" class="imgGuideRight object-fit-cover rounded-4">
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -266,7 +266,7 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/apex.jpg" alt="Apex Legends" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/apex.jpg" alt="Apex Legends" class="imgGuideRight object-fit-cover rounded-4">
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -289,7 +289,7 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" alt="Call Of Duty : MW 3" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" alt="Call Of Duty : MW 3" class="imgGuideRight object-fit-cover rounded-4">
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -314,7 +314,7 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" alt="Call Of Duty : Warzone 2" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" alt="Call Of Duty : Warzone 2" class="imgGuideRight object-fit-cover rounded-4">
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -337,7 +337,7 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/overwatch2.jpg" alt="Overwatch 2" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/overwatch2.jpg" alt="Overwatch 2" class="imgGuideRight object-fit-cover rounded-4">
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -360,7 +360,7 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/borderlands3.jpg" alt="Borderlands 3" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/borderlands3.jpg" alt="Borderlands 3" class="imgGuideRight object-fit-cover rounded-4">
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -383,7 +383,7 @@
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                     <div class="row g-0 cardGuideRight">
                                         <div class="col-auto">
-                                            <img src="/public/assets/img/battlefield2042.jpg" alt="Battlefield 2042" class="imgGuideRight object-fit-cover rounded-4" />
+                                            <img src="/public/assets/img/battlefield2042.jpg" alt="Battlefield 2042" class="imgGuideRight object-fit-cover rounded-4">
                                         </div>
                                         <div class="col-md-8 p-0 ">
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -429,7 +429,7 @@
                             <div class="col-12">
                                 <div class="card bg-dark text-white p-0 cardVideoPlayer rounded-4 border-0">
                                     <div class="ratio ratio-16x9">
-                                        <iframe class="cardVideoPlayer rounded-4" src="https://www.youtube.com/embed/QdBZY2fkU-0?si=1uhHYUak6A-F-lid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <iframe class="cardVideoPlayer rounded-4" src="https://www.youtube.com/embed/QdBZY2fkU-0?si=1uhHYUak6A-F-lid" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     </div>
                                     <div class="card-img-overlay d-flex flex-column justify-content-end py-0 cardShadow">
                                         <p class="m-0 p-0 z-1">
@@ -454,7 +454,7 @@
                     </div>
                     <div class="col-12 d-flex flex-wrap justify-content-between ">
                         <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/f2zcVxNtk7U?si=tHeC53lUtFvCkPKr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/f2zcVxNtk7U?si=tHeC53lUtFvCkPKr" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <div class="p-3 card-img-overlay">
                                 <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Battlefield 2042</span>
                             </div>
@@ -470,7 +470,7 @@
                             </div>
                         </div>
                         <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/NMWkEt_KF6g?si=U7Nq1It4NCgIGQhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/NMWkEt_KF6g?si=U7Nq1It4NCgIGQhY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <div class="p-3 card-img-overlay">
                                 <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Counter Strike 2</span>
                             </div>
@@ -486,7 +486,7 @@
                             </div>
                         </div>
                         <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/B_JsHq9f0pE?si=vrF7i7_8BGYwugwC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/B_JsHq9f0pE?si=vrF7i7_8BGYwugwC" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <div class="p-3 card-img-overlay">
                                 <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Overwatch 2</span>
                             </div>
@@ -502,7 +502,7 @@
                             </div>
                         </div>
                         <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/texF0VVePl8?si=nmfXaQG8ZQIuIzcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/texF0VVePl8?si=nmfXaQG8ZQIuIzcs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <div class="p-3 card-img-overlay">
                                 <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Borderlands 3</span>
                             </div>
@@ -539,7 +539,7 @@
                             <div class="col-md-4 col-12">
                                 <div class="card p-0 border-0 bg-transparent rounded-4">
                                     <div class="ratio ratio-1x1 ">
-                                        <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Grand Theft Auto VI" />
+                                        <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Grand Theft Auto VI">
                                     </div>
                                     <div class="card-img-overlay ">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">1</span>
@@ -552,7 +552,7 @@
                             <div class="col-md-4 col-12">
                                 <div class="card p-0 border-0 bg-transparent rounded-4">
                                     <div class="ratio ratio-1x1">
-                                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Call of Duty : MW 3" />
+                                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Call of Duty : MW 3">
                                     </div>
                                     <div class="card-img-overlay">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">2</span>
@@ -565,7 +565,7 @@
                             <div class="col-md-4 col-12">
                                 <div class="card p-0 border-0 bg-transparent rounded-4">
                                     <div class="ratio ratio-1x1">
-                                        <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Counter Strike 2" />
+                                        <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Counter Strike 2">
                                     </div>
                                     <div class="card-img-overlay">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">3</span>
@@ -580,7 +580,7 @@
                             <div class="col-12 flex-wrap d-flex justify-content-between">
                                 <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/apex.jpg" class="object-fit-cover rounded-4" alt="Apex Legends" />
+                                        <img src="/public/assets/img/apex.jpg" class="object-fit-cover rounded-4" alt="Apex Legends">
                                         <div class="p-3">
                                             <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">4</span>
                                         </div>
@@ -591,7 +591,7 @@
                                 </div>
                                 <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent overflow-hidden">
                                     <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call of duty : Warzone 2.0" />
+                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call of duty : Warzone 2.0">
                                         <div class="p-3">
                                             <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">5</span>
                                         </div>
@@ -602,7 +602,7 @@
                                 </div>
                                 <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/valorant.jpg" class="object-fit-cover rounded-4" alt="Valorant" />
+                                        <img src="/public/assets/img/valorant.jpg" class="object-fit-cover rounded-4" alt="Valorant">
                                         <div class="p-3">
                                             <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">6</span>
                                         </div>
@@ -613,7 +613,7 @@
                                 </div>
                                 <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/infinitebg.jpg" class="object-fit-cover rounded-4" alt="Halo Infinite" />
+                                        <img src="/public/assets/img/infinitebg.jpg" class="object-fit-cover rounded-4" alt="Halo Infinite">
                                         <div class="p-3">
                                             <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">7</span>
                                         </div>
@@ -624,7 +624,7 @@
                                 </div>
                                 <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Overwatch 2" />
+                                        <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Overwatch 2">
                                         <div class="p-3">
                                             <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">8</span>
                                         </div>
@@ -635,7 +635,7 @@
                                 </div>
                                 <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-4" alt="Battlefield 2042" />
+                                        <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-4" alt="Battlefield 2042">
                                         <div class="p-3">
                                             <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">9</span>
                                         </div>
@@ -646,7 +646,7 @@
                                 </div>
                                 <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                     <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/borderlands3.jpg" class="object-fit-cover rounded-4" alt="Borderlands 3" />
+                                        <img src="/public/assets/img/borderlands3.jpg" class="object-fit-cover rounded-4" alt="Borderlands 3">
                                         <div class="p-3">
                                             <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">10</span>
                                         </div>
@@ -661,5 +661,4 @@
                 </div>
             </section>
         </div>
-    </main>
 </section>

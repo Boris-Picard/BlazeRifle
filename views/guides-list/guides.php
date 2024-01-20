@@ -1,3 +1,4 @@
+<main>
 <section class="articlesSection py-5 bg-light">
     <div class="container">
         <section>
@@ -272,7 +273,7 @@
                                 <div class="col-12">
                                     <div class="card mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-3" alt="battlefield 2042" />
+                                            <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-3" alt="battlefield 2042">
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
@@ -286,7 +287,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -307,7 +308,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -328,7 +329,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -349,7 +350,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -370,7 +371,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -391,7 +392,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -430,7 +431,7 @@
                                 <div class="col-12">
                                     <div class="card mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/t8xJpEbAelU?si=dFdL0OE3ZJ4ZajTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/t8xJpEbAelU?si=dFdL0OE3ZJ4ZajTI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
@@ -443,7 +444,7 @@
                                     </div>
                                     <div class="card mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/0K6KrOm3MaA?si=gd5nUgQ4LwUblNM4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/0K6KrOm3MaA?si=gd5nUgQ4LwUblNM4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
@@ -456,7 +457,7 @@
                                     </div>
                                     <div class="card mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/XDPdtQD3dDw?si=8J56_M49Q6DJ7pyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/XDPdtQD3dDw?si=8J56_M49Q6DJ7pyY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>

@@ -1,7 +1,7 @@
 <section class="formSection d-flex justify-content-center">
     <div class="container-fluid">
         <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
-            <form action="" method="POST">
+            <form action="#" method="POST">
                 <div class="row bg-light">
                     <div class="col-12 col-md-6 imgLogIn">
                     </div>
@@ -122,7 +122,7 @@
                                     <span class="mx-3">Google</span>
                                 </button> 
                                 <button class="btn btnSocialsForm mx-1 shadow">
-                                    <svg xmlns:xlink="http://www.w3.org/1999/xlink32" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
+                                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
                                         <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
                                             <g fill-rule="nonzero" transform="translate(3.000000, 3.000000)">
                                                 <circle r="29.4882047" cy="29.4927506" cx="29.5091719" fill="#3C5A9A"></circle>

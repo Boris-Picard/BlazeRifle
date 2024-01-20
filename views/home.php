@@ -448,7 +448,7 @@
                         <div class="col-md-4 col-12">
                             <div class="card p-0 border-0 bg-transparent rounded-4">
                                 <div class="ratio ratio-1x1 ">
-                                    <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Grand Theft Auto VI" />
+                                    <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Grand Theft Auto VI">
                                 </div>
                                 <div class="card-img-overlay ">
                                     <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">1</span>
@@ -462,7 +462,7 @@
                         <div class="col-md-4 col-12">
                             <div class="card p-0 border-0 bg-transparent rounded-4">
                                 <div class="ratio ratio-1x1">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Call of Duty : MW 3" />
+                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Call of Duty : MW 3">
                                 </div>
                                 <div class="card-img-overlay">
                                     <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">2</span>
@@ -476,7 +476,7 @@
                         <div class="col-md-4 col-12">
                             <div class="card p-0 border-0 bg-transparent rounded-4">
                                 <div class="ratio ratio-1x1">
-                                    <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Counter Strike 2" />
+                                    <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Counter Strike 2">
                                 </div>
                                 <div class="card-img-overlay">
                                     <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">3</span>
@@ -492,7 +492,7 @@
                         <div class="col-12 flex-wrap d-flex justify-content-between">
                             <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                 <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                    <img src="/public/assets/img/apex.jpg" class="object-fit-cover rounded-4" alt="Apex Legends" />
+                                    <img src="/public/assets/img/apex.jpg" class="object-fit-cover rounded-4" alt="Apex Legends">
                                     <div class="p-3">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">4</span>
                                     </div>
@@ -504,7 +504,7 @@
                             <!-- CARD UNDER N5 -->
                             <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent overflow-hidden">
                                 <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                    <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call of duty : Warzone 2.0" />
+                                    <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call of duty : Warzone 2.0">
                                     <div class="p-3">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">5</span>
                                     </div>
@@ -516,7 +516,7 @@
                             <!-- CARD UNDER N6 -->
                             <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                 <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                    <img src="/public/assets/img/valorant.jpg" class="object-fit-cover rounded-4" alt="Valorant" />
+                                    <img src="/public/assets/img/valorant.jpg" class="object-fit-cover rounded-4" alt="Valorant">
                                     <div class="p-3">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">6</span>
                                     </div>
@@ -528,7 +528,7 @@
                             <!-- CARD UNDER N7 -->
                             <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                 <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                    <img src="/public/assets/img/infinitebg.jpg" class="object-fit-cover rounded-4" alt="Halo Infinite" />
+                                    <img src="/public/assets/img/infinitebg.jpg" class="object-fit-cover rounded-4" alt="Halo Infinite">
                                     <div class="p-3">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">7</span>
                                     </div>
@@ -540,7 +540,7 @@
                             <!-- CARD UNDER N8 -->
                             <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                 <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                    <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Overwatch 2" />
+                                    <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Overwatch 2">
                                     <div class="p-3">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">8</span>
                                     </div>
@@ -552,7 +552,7 @@
                             <!-- CARD UNDER N9 -->
                             <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                 <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                    <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-4" alt="Battlefield 2042" />
+                                    <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-4" alt="Battlefield 2042">
                                     <div class="p-3">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">9</span>
                                     </div>
@@ -564,7 +564,7 @@
                             <!-- CARD UNDER N10 -->
                             <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
                                 <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                    <img src="/public/assets/img/borderlands3.jpg" class="object-fit-cover rounded-4" alt="Borderlands 3" />
+                                    <img src="/public/assets/img/borderlands3.jpg" class="object-fit-cover rounded-4" alt="Borderlands 3">
                                     <div class="p-3">
                                         <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">10</span>
                                     </div>
@@ -577,6 +577,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
     <!-- FIN DES JEUX DU MOMENT  -->
     <!-- DEBUT LES BONS PLANS -->
@@ -597,7 +598,7 @@
                         <!-- MAIN CARD LEFT -->
                         <div class="col-12 col-md-6">
                             <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
-                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach" />
+                                <img src="/public/assets/img/steelseries-rival-3-e1637581769996-891x500.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
                                     <p class="p-0 m-0">
                                         <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase">bon plan</span>
@@ -620,7 +621,7 @@
                             <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                 <div class="row g-0 cardGuideRight">
                                     <div class="col-auto">
-                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4">
                                     </div>
                                     <div class="col-md-8 p-0 ">
                                         <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -643,7 +644,7 @@
                             <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                 <div class="row g-0 cardGuideRight">
                                     <div class="col-auto">
-                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4">
                                     </div>
                                     <div class="col-md-8 col-12 p-0 ">
                                         <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -666,7 +667,7 @@
                             <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                 <div class="row g-0 cardGuideRight">
                                     <div class="col-auto">
-                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4">
                                     </div>
                                     <div class="col-md-8 col-12 p-0 ">
                                         <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -689,7 +690,7 @@
                             <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                 <div class="row g-0 cardGuideRight">
                                     <div class="col-auto">
-                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4">
                                     </div>
                                     <div class="col-md-8 col-12 p-0 ">
                                         <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -714,7 +715,7 @@
                             <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                 <div class="row g-0 cardGuideRight">
                                     <div class="col-auto">
-                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4">
                                     </div>
                                     <div class="col-md-8 col-12 p-0 ">
                                         <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -737,7 +738,7 @@
                             <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                 <div class="row g-0 cardGuideRight">
                                     <div class="col-auto">
-                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4">
                                     </div>
                                     <div class="col-md-8 col-12 p-0 ">
                                         <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -760,7 +761,7 @@
                             <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                 <div class="row g-0 cardGuideRight">
                                     <div class="col-auto">
-                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4">
                                     </div>
                                     <div class="col-md-8 col-12 p-0 ">
                                         <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -783,7 +784,7 @@
                             <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
                                 <div class="row g-0 cardGuideRight">
                                     <div class="col-auto">
-                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4" />
+                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgGuideRight object-fit-cover rounded-4">
                                     </div>
                                     <div class="col-md-8 col-12 p-0 ">
                                         <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
@@ -806,6 +807,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
     <!-- FIN LES BONS PLANS -->
     <!-- DEBUT TOP JEUX SELECTION -->
@@ -817,12 +819,11 @@
                     <div class="card rounded-4 border-0 shadow ">
                         <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
                         <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
+                            <use href="#arrow-right"></use>
                             <p class="p-0 m-0 z-3">
                                 <a href="" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
                                     Grand Theft auto vi
-                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
-                                        <use xlink:href="#arrow-right"></use>
-                                    </i>
+                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true"></i>
                                 </a>
                             </p>
                             <div class="card-text z-3">
@@ -915,12 +916,11 @@
                     <div class="card rounded-4 border-0 shadow ">
                         <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
                         <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
+                            <use href="#arrow-right"></use>
                             <p class="p-0 m-0 z-3">
                                 <a href="" class="text-uppercase text-decoration-none fw-bold stretched-link text-light z-3 icon-link icon-link-hover">
                                     call of duty : modern warfare 3
-                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
-                                        <use xlink:href="#arrow-right"></use>
-                                    </i>
+                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true"></i>
                                 </a>
                             </p>
                             <div class="card-text z-3">
@@ -1013,12 +1013,11 @@
                     <div class="card rounded-4 border-0 shadow ">
                         <img src="/public/assets/img/1329760.jpeg" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
                         <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
+                            <use href="#arrow-right"></use>
                             <p class="p-0 m-0 z-3">
                                 <a href="" class="text-uppercase text-decoration-none fw-bold stretched-link text-light z-3 icon-link icon-link-hover">
                                     Counter strike 2
-                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
-                                        <use xlink:href="#arrow-right"></use>
-                                    </i>
+                                    <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true"></i>
                                 </a>
                             </p>
                             <div class="card-text z-3">

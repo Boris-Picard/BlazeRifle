@@ -1,3 +1,4 @@
+<main>
 <section class="articlesSection py-5 bg-light">
     <div class="container">
         <section>
@@ -20,10 +21,10 @@
                         <div class="col-12 d-flex justify-content-center shadow-lg mt-5 selectBgCalendar rounded-4">
                             <div class="row">
                                 <div class="col-12 d-flex flex-column justify-content-center">
-                                    <form action="" method="POST">
+                                    <form action="#" method="POST">
                                         <div><small class="form-text text-danger"><?= $error['games'] ?? '' ?></small></div>
                                         <select class="form-select" name="games" id="games" required>
-                                            <option selected disabled>Séléctionnez un jeu</option>
+                                            <option value="" selected disabled>Séléctionnez un jeu</option>
                                             <?php foreach ($gamesArray as $game) { ?>
                                                 <option value="<?= $game ?>" <?= (isset($games) && $games == $game) ? 'selected' : '' ?>><?= $game ?></option>
                                             <?php } ?>
@@ -95,7 +96,7 @@
                                 <div class="col-12">
                                     <div class="card mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-3" alt="Sunset Over the Sea" />
+                                            <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-3" alt="Sunset Over the Sea">
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
@@ -109,7 +110,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -130,7 +131,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -151,7 +152,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -172,7 +173,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -193,7 +194,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
@@ -214,7 +215,7 @@
                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                         <div class="row g-0 cardActuGuideRight">
                                             <div class="col-auto">
-                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3" />
+                                                <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
                                             </div>
                                             <div class="col-md-6 p-0 ">
                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">

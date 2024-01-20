@@ -1,5 +1,5 @@
+<main class="d-flex flex-nowrap">
 <section class="myAccount bg-light">
-    <main class="d-flex flex-nowrap">
         <!-- SIDEBAR -->
         <div class="container sidebar position-relative rounded-4 py-5 mt-4">
             <div class="row">
@@ -107,7 +107,7 @@
                             </button>
                         </div>
                     </form>
-                    <hr class="my-10" />
+                    <hr class="my-10">
                     <!-- Individual switch cards -->
                     <div class="row g-6">
                         <div class="col-md-6 py-3">
@@ -131,7 +131,7 @@
                                         Afficher vos adresses e-mail signifie que n'importe qui sur le réseau pourra vous trouver.
                                     </p>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckt">
                                     </div>
                                 </div>
                             </div>
@@ -157,5 +157,4 @@
                 </div>
             </div>
         </div>
-    </main>
-</section>
+    </section>
