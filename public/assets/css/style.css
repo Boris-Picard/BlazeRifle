@@ -40,11 +40,6 @@ html{
     margin-left: 1rem;
 }
 
-.dropdownAccount {
-    width: 25rem;
-    height: 25rem;
-}
-
 .logoNav {
     width: 60px;
     height: 60px;
@@ -866,85 +861,6 @@ footer {
     background-clip: text !important;
     -webkit-background-clip: text !important;
 }
-
-/* DASHBOARD FORM*/
-.articlesBanner {
-    height: 20vh;
-    width: 100vw;
-    background-image: url(../img/photo-1485988412941-77a35537dae4.avif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.opacityBanner {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.articlesColBackground {
-    padding: 30px 0 0 0;
-}
-
-/* MY ACCOUNT */
-.myAccount {
-    height: 100%;
-}
-
-.brandLogoAccount {
-    height: 5rem;
-    width: 5rem;
-}
-
-.accountProfilPicture {
-    height: 65px;
-    width: 65px;
-}
-
-/* SIDEBAR */
-.nameLogoAccount {
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 20px;
-    background: linear-gradient(to left, rgb(16, 31, 51), rgb(216, 0, 36), rgb(216, 0, 36));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.sidebar {
-    width: 250px; 
-    display: flex;
-    height: 90vh;
-}
-
-.colSidebar {
-    height: 78vh;
-}
-
-.navLink:hover, .navLink:focus {
-    background-color: rgba(200, 200, 200, 0.5 );
-}
-
-.sidebarLink.active {
-    background-color: rgba(200, 200, 200, 0.5 );
-}
-
-.sidebarLink.active span {
-    color: rgb(216, 0, 36) ;
-    font-weight: bold;
-}
-
-.sidebarLink:hover {
-    color: rgb(216, 0, 36);
-    font-weight: bold;
-}
-
-.sidebarLink:hover span {
-    transition: all 300ms ease;
-    margin-left: 1rem;
-}
-
-
 
 /* media query  */
 @media all and (max-width: 720px) {

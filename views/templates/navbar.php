@@ -9,7 +9,7 @@
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end shadow-lg dropdownAccount">
+                <ul class="dropdown-menu dropdown-menu-end shadow-lg">
                     <li><a class="dropdown-item d-flex" href="/controllers/login-ctrl/sign-up-ctrl.php">Mon compte</a></li>
                     <li><a class="dropdown-item" href="/controllers/dashboard/dashboard-ctrl.php">Settings</a></li>
                     <li><a class="dropdown-item" href="/controllers/account/account-ctrl.php">Profile</a></li>

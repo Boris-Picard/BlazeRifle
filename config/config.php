@@ -1,7 +1,10 @@
 <?php
 $error = [];
 
-$todayDate = date('d/m/Y');
+define('DSN', 'mysql:host=localhost;dbname=rent_my_ride');
+define('USER', 'BorisRide');
+define('PASSWORD', 'M7cya2wS3QLr85YF');
+
 $consolesArray = ['PS5', 'XBOX', 'SWITCH', 'PC'];
 $gamesArray = [
     'GTA6', 
@@ -28,6 +31,3 @@ define('REGEX_DATE','^([0-9]{4})[\/\-]?([0-9]{2})[\/\-]?([0-9]{2})$');
 define('REGEX_TEXTAREA','^[a-zA-Z\n\r]*$');
 define('MAX_FILESIZE', 2*1024*1024);
 
-define('LANGUAGES', ['HTML/CSS', 'Javascript', 'Php', 'Python']);
-define('AUTHORIZED_IMAGE_FORMAT', ['image/jpeg', 'image/png']);
-define('ARRAY_COUNTRIES', ['France', 'Suisse', 'Allemagne', 'Italie']);
