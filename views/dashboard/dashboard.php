@@ -1,6 +1,6 @@
 <section class="myAccount bg-light d-flex flex-nowrap">
     <!-- SIDEBAR -->
-    <div class="container sidebar position-relative rounded-4 py-5 mt-4">
+    <div class="container sidebar position-relative rounded-4 py-5">
         <div class="row">
             <div class="col-12 p-0 rounded-4 shadow-lg bg-white">
                 <div class="row m-0 p-0">
@@ -9,7 +9,7 @@
                         <a href="" class="py-3 nav-link navLink active text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Dashboard</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Comptes</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Commentaires</span></a>
-                        <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Articles</span></a>
+                        <a href="/controllers/dashboard/article/add-article-ctrl.php" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Articles</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Jeux</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Consoles</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Guides</span></a>

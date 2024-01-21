@@ -1,9 +1,9 @@
 <?php
 $error = [];
 
-define('DSN', 'mysql:host=localhost;dbname=rent_my_ride');
-define('USER', 'BorisRide');
-define('PASSWORD', 'M7cya2wS3QLr85YF');
+define('DSN', 'mysql:host=localhost;dbname=blazerifle');
+define('USER', 'BorisRifle');
+define('PASSWORD', 'r.g[WZL_FZkqM0Gs');
 
 $consolesArray = ['PS5', 'XBOX', 'SWITCH', 'PC'];
 $gamesArray = [
@@ -22,12 +22,21 @@ $gamesArray = [
     'DOOM',
 ];
 
+
+define('REGEX_TITLE', '^[a-zA-Z0-9_.\'"-]{10,150}+$');
+define('REGEX_DESCRIPTION', '^[a-zA-Z0-9_.\'"-]{50,500}+$');
+define('REGEX_SECTION', '^[a-zA-Z0-9_.\'"-]{250,1000}+$');
+define('REGEX_NAME',"^[A-Za-z-éèêëàâäôöûüç' ]{2,100}+$");
+define('IMAGE_TYPES',  ['image/jpeg', 'image/png', 'image/avif']);
+define('MAX_FILESIZE', 2*1024*1024);
+
+
+
 define('REGEX_FIRSTNAME',"^[A-Za-z-éèêëàâäôöûüç' ]+$");
 define('REGEX_PSEUDO','^[a-zA-Z0-9.-_]{3,20}$');
 define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}$');
 define('REGEX_ZIPCODE','^[0-9]{5}$');
-define('REGEX_LINKEDIN','^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)');
 define('REGEX_DATE','^([0-9]{4})[\/\-]?([0-9]{2})[\/\-]?([0-9]{2})$');
 define('REGEX_TEXTAREA','^[a-zA-Z\n\r]*$');
-define('MAX_FILESIZE', 2*1024*1024);
+
 
