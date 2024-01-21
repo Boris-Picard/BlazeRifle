@@ -13,41 +13,11 @@ try {
         if (empty($title)) {
             $error['title'] = 'Veuillez rentrer un titre';
         } else {
-            $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/u')));
             if (!$isOk) {
                 $error['title'] = 'Le titre n\'est pas valide';
             }
         }
-
-        // Photo de l'article nettoyage et validation
-        try {
-            if (empty($_FILES['image-article']['name'])) {
-                throw new Exception("Photo obligatoire");
-            }
-            if ($_FILES['image-article']['error'] != 0) {
-                throw new Exception("Error");
-            }
-            if (!in_array($_FILES['image-article']['type'], IMAGE_TYPES)) {
-                throw new Exception("Format non autorisé");
-            }
-            if ($_FILES['image-article']['size'] > MAX_FILESIZE) {
-                throw new Exception("Image trop grande");
-            }
-
-            $from = $_FILES['image-article']['tmp_name'];
-
-            $fileName = uniqid('img_');
-            $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
-
-            $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName . '.' . $extension;
-
-            $namePicture = $fileName . '.' . $extension;
-
-            $moveFile = move_uploaded_file($from, $to);
-        } catch (Throwable $th) {
-            $error['image-article'] = $th->getMessage();
-        }
-
 
         // Description de l'article nettoyage et validation
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -55,7 +25,7 @@ try {
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
-            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/')));
+            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/u')));
             if (!$isOk) {
                 $error['description'] = 'La description n\'est pas valide';
             }
@@ -67,7 +37,7 @@ try {
         if (empty($secondTitle)) {
             $error['secondTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/u')));
             if (!$isOk) {
                 $error['secondTitle'] = 'Le sous-titre n\'est pas valide';
             }
@@ -79,7 +49,7 @@ try {
         if (empty($thirdTitle)) {
             $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/u')));
             if (!$isOk) {
                 $error['thirdTitle'] = 'Le sous-titre n\'est pas valide';
             }
@@ -91,7 +61,7 @@ try {
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
-            $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
+            $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/u')));
             if (!$isOk) {
                 $error['firstSection'] = 'La section de l\'article n\'est pas valide';
             }
@@ -103,7 +73,7 @@ try {
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
-            $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
+            $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/u')));
             if (!$isOk) {
                 $error['secondSection'] = 'La deuxième section de l\'article n\'est pas valide';
             }
@@ -150,8 +120,36 @@ try {
         //         $error['id_user'] = 'Le pseudo n\'est pas valide';
         //     }
         // }
+        if (empty($error)) {
+            // Photo de l'article nettoyage et validation
+            try {
+                if (empty($_FILES['image-article']['name'])) {
+                    throw new Exception("Photo obligatoire");
+                }
+                if ($_FILES['image-article']['error'] != 0) {
+                    throw new Exception("Error");
+                }
+                if (!in_array($_FILES['image-article']['type'], IMAGE_TYPES)) {
+                    throw new Exception("Format non autorisé");
+                }
+                if ($_FILES['image-article']['size'] > MAX_FILESIZE) {
+                    throw new Exception("Image trop grande");
+                }
 
-        if(empty($error)) {
+                $from = $_FILES['image-article']['tmp_name'];
+
+                $fileName = uniqid('img_');
+                $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
+
+                $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName . '.' . $extension;
+
+                $namePicture = $fileName . '.' . $extension;
+
+                $moveFile = move_uploaded_file($from, $to);
+            } catch (Throwable $th) {
+                $error['image-article'] = $th->getMessage();
+            }
+            
             $article = new Article();
 
             $article->setTitle($title);
@@ -165,7 +163,7 @@ try {
 
             $result = $article->insert();
 
-            if($result) {
+            if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-articles-ctrl.php');
             }

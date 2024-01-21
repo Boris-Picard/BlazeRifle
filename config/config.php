@@ -23,10 +23,10 @@ $gamesArray = [
 ];
 
 
-define('REGEX_TITLE', '^[a-zA-Z0-9_.\'"-]{10,150}+$');
-define('REGEX_DESCRIPTION', '^[a-zA-Z0-9_.\'"-]{50,500}+$');
-define('REGEX_SECTION', '^[a-zA-Z0-9_.\'"-]{250,1000}+$');
-define('REGEX_NAME',"^[A-Za-z-éèêëàâäôöûüç' ]{2,100}+$");
+define('REGEX_TITLE', "^[a-zA-Z0-9 .,'\"éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{10,150}$");
+define('REGEX_DESCRIPTION', '^[a-zA-Z0-9 .,\'"éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{50,500}$');
+define('REGEX_SECTION', '^[a-zA-Z0-9 .,\'"éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{250,1000}$');
+define('REGEX_NAME',"^[A-Za-z-éèêëàâäôöûüç' ]{2,100}$");
 define('IMAGE_TYPES',  ['image/jpeg', 'image/png', 'image/avif']);
 define('MAX_FILESIZE', 2*1024*1024);
 
