@@ -174,11 +174,13 @@ class Article
         return $sth->rowCount() > 0;
     }
 
-    public static function getAll(): array|false
+    public static function getAll(?bool $showDeletedAt = null): array|false
     {
         $pdo = Database::connect();
 
         $sql = 'SELECT * FROM `articles`';
+
+        $showDeletedAt ? $sql .= ' WHERE `deleted_at` IS NULL ' : $sql .= ' WHERE `deleted_at` IS NOT NULL ';
 
         $sth = $pdo->query($sql);
 
@@ -242,4 +244,37 @@ class Article
 
         return $result;
     }
+
+    public static function archive(int $id, ?bool $archive = null): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `articles`';
+
+        $archive ? $sql .=  " SET `deleted_at`=NOW() WHERE `id_article`=:id_article "  : $sql .= " SET `deleted_at`= NULL WHERE `id_article`=:id_article ";
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_article', $id, PDO::PARAM_INT);
+
+        $result = $sth->execute();
+
+        return $result;
+    }
+
+    public static function delete(int $id): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `articles` WHERE `id_article` = :id_article;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_article', $id, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->rowCount() > 0;
+    }
+
 }

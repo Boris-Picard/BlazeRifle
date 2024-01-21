@@ -5,22 +5,24 @@ require_once __DIR__ . '/../../../models/Article.php';
 
 try {
     
-    $articles = Article::getAll(true);
-
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
+    
     $article = Article::get($id_article);
 
-    if($article) {
-        Article::archive($id_article, false);
-        header('location: /controllers/dashboard/articles/list-articles-ctrl.php');
+    $isDeleted = Article::delete($id_article);
+
+    if($isDeleted > 0) {
+        $link = unlink('../../../public/uploads/article/'.$article->picture);
     }
 
-    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
-
-    if(isset($_SESSION['msg'])) {
-        unset($_SESSION['msg']);
+    if($isDeleted) {
+        $_SESSION['msg'] = 'La donnée a bien été supprimée !';
+    } else {
+        $_SESSION['msg'] = 'Erreur la donnée n\'a pas été supprimée !';
     }
 
+    header('Location: /controllers/dashboard/articles/list-articles-ctrl.php');
+    die;
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
