@@ -14,13 +14,5 @@ try {
 
 
 
-
-
-
-
-
-
-
-
 include __DIR__ . '/../../../views/templates/header-dashboard.php';
-include __DIR__ . '/../../../views/dashboard/article/list-article.php';
+include __DIR__ . '/../../../views/dashboard/articles/list-articles.php';

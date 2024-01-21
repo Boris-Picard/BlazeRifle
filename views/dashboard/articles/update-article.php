@@ -9,7 +9,7 @@
                         <a href="" class="py-3 nav-link navLink  text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Dashboard</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Comptes</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Commentaires</span></a>
-                        <a href="/controllers/dashboard/article/list-article-ctrl.php" class="active py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Articles</span></a>
+                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="active py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Articles</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Jeux</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Consoles</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Guides</span></a>
@@ -53,43 +53,56 @@
                                 <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['title'] ?? '' ?></small></div>
                                     <label for="title" class="form-label">Titre de l'article</label>
-                                    <input type="text" class="form-control" name="title" id="title" value="<?= $title ?? '' ?>" aria-describedby="title" placeholder="Call of Duty 2025, une suite de Black Ops 2 ?" minlength="10" maxlength="150" pattern="REGEX_TITLE" required>
+                                    <input type="text" class="form-control" name="title" id="title" value="<?= $article->title ?>" aria-describedby="title" placeholder="Call of Duty 2025, une suite de Black Ops 2 ?" minlength="10" maxlength="150" pattern="REGEX_TITLE" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <div><small class="form-text text-danger"><?= $error['image-article'] ?? '' ?></small></div>
-                                    <label for="image-article" class="form-label">Ajouter une photo d'article</label>
-                                    <input class="form-control" type="file" id="image-article" name="image-article" accept="image/png, image/jpeg, image/avif">
+                                    <?php if (isset($article->picture)) { ?>
+                                        <div class="pt-3 d-flex justify-content-center">
+                                            <div class="ratio ratio-21x9">
+                                                <img src="/public/uploads/article/<?= $article->picture ?>" alt="<?= $article->picture ?>" class="object-fit-cover rounded-4">
+                                            </div>
+                                            <div class="mx-2 d-flex align-items-center">
+                                                <a href="/controllers/dashboard/articles/update-img-ctrl.php?id=<?= $article->id_article ?>" class="btn btn-danger fw-bold text-uppercase">
+                                                    Supprimer
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <?php } else { ?>
+                                        <div><small class="form-text text-danger"><?= $error['image-article'] ?? '' ?></small></div>
+                                        <label for="image-article" class="form-label">Ajouter une photo d'article</label>
+                                        <input class="form-control" type="file" id="image-article" name="image-article" accept="image/png, image/jpeg, image/avif" required>
+                                    <?php } ?>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
                                     <label for="description" class="form-label">Description de l'article</label>
-                                    <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="500" pattern="REGEX_DESCRIPTION" required><?= $description ?? '' ?></textarea>
+                                    <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="500" pattern="REGEX_DESCRIPTION" required><?= $article->description ?></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-md-6">
                                     <div><small class="form-text text-danger"><?= $error['secondTitle'] ?? '' ?></small></div>
                                     <label for="secondTitle" class="form-label">Sous-Titre 1 de l'article</label>
-                                    <input type="text" class="form-control" name="secondTitle" id="secondTitle" value="<?= $secondTitle ?? '' ?>" aria-describedby="secondTitle" placeholder="Les détails sur le prochain Black Ops confirment son intrigue" minlength="10" maxlength="150" pattern="REGEX_TITLE" required>
+                                    <input type="text" class="form-control" name="secondTitle" id="secondTitle" value="<?= $article->secondtitle ?>" aria-describedby="secondTitle" placeholder="Les détails sur le prochain Black Ops confirment son intrigue" minlength="10" maxlength="150" pattern="REGEX_TITLE" required>
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <div><small class="form-text text-danger"><?= $error['thirdTitle'] ?? '' ?></small></div>
                                     <label for="thirdTitle" class="form-label">Sous-Titre 2 de l'article</label>
-                                    <input type="text" class="form-control" name="thirdTitle" id="thirdTitle" value="<?= $thirdTitle ?? '' ?>" aria-describedby="thirdTitle" placeholder="Le retour de certaines maps connues dans le prochain Black Ops ?" minlength="10" maxlength="150" pattern="REGEX_TITLE" required>
+                                    <input type="text" class="form-control" name="thirdTitle" id="thirdTitle" value="<?= $article->thirdtitle ?>" aria-describedby="thirdTitle" placeholder="Le retour de certaines maps connues dans le prochain Black Ops ?" minlength="10" maxlength="150" pattern="REGEX_TITLE" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['firstSection'] ?? '' ?></small></div>
                                     <label for="firstSection" class="form-label">Première section de l'article</label>
-                                    <textarea class="form-control articleArea" name="firstSection" id="firstSection" placeholder="Première section d'article" aria-describedby="firstSection" minlength="250" maxlength="1000" pattern="REGEX_SECTION" required><?= $firstSection ?? '' ?></textarea>
+                                    <textarea class="form-control articleArea" name="firstSection" id="firstSection" placeholder="Première section d'article" aria-describedby="firstSection" minlength="250" maxlength="1000" pattern="REGEX_SECTION" required><?= $article->firstsection ?></textarea>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['secondSection'] ?? '' ?></small></div>
                                     <label for="secondSection" class="form-label">Deuxième section de l'article</label>
-                                    <textarea class="form-control articleArea" name="secondSection" id="secondSection" placeholder="Deuxième section d'article" aria-describedby="secondSection" minlength="250" maxlength="1000" pattern="REGEX_SECTION" required><?= $secondSection ?? '' ?></textarea>
+                                    <textarea class="form-control articleArea" name="secondSection" id="secondSection" placeholder="Deuxième section d'article" aria-describedby="secondSection" minlength="250" maxlength="1000" pattern="REGEX_SECTION" required><?= $article->secondsection ?></textarea>
                                 </div>
                             </div>
                             <div class="row">
@@ -120,8 +133,8 @@
                                 </div>
                             </div>
                             <div class="py-3">
-                                <button type="submit" class="btn btn-primary fw-bold text-uppercase">Ajouter un Article</button>
-                                <a href="/controllers/dashboard/article/list-article-ctrl.php" class="btn btn-outline-primary fw-bold text-uppercase">Voir les articles</a>
+                                <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Modifier l'article</button>
+                                <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
                             </div>
                         </form>
                     </div>

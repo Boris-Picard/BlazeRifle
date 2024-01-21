@@ -6,10 +6,10 @@
                 <div class="row m-0 p-0">
                     <a class="navbar-brand nameLogoAccount" href="/controllers/home-ctrl.php"><img src="/public/assets/img/redlogo.png" class="brandLogoAccount" alt="logo"> blaze rifle</a>
                     <div class="col-12 d-flex flex-column p-0 sidebar rounded colSidebar g-5">
-                        <a href="" class="py-3 nav-link navLink  text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Dashboard</span></a>
+                        <a href="/controllers/dashboard/dashboard-ctrl.php" class="py-3 nav-link navLink  text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Dashboard</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Comptes</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Commentaires</span></a>
-                        <a href="/controllers/dashboard/article/list-article-ctrl.php" class="active py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Articles</span></a>
+                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="active py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Articles</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Jeux</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Consoles</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Les Guides</span></a>
@@ -30,6 +30,14 @@
                 <div class="row">
                     <div class="col-12">
                         <h1 class="fw-bold text-uppercase">liste des articles</h1>
+                    </div>
+                </div>
+                <div class="row g-2">
+                    <div class="col-6 pt-3">
+                        <div class="d-flex mb-3">
+                            <a href="/controllers/dashboard/articles/add-article-ctrl.php" class="btn btn-danger rounded-4 text-uppercase fw-bold mx-2">Ajouter un article</a>
+                            <a href="/controllers/dashboard/articles/archive-articles-ctrl.php" class="btn btn-outline-danger rounded-4 text-uppercase fw-bold">Voir les articles archivées</a>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -54,8 +62,8 @@
                                     <?php foreach ($articles as $article) { ?>
                                         <tr>
                                             <th scope="row" class="fw-semibold"><?= $article->id_article ?></th>
-                                            <th scope="row" class="fw-semibold"><?= $article->title ?></th>
-                                            <td class="fw-semibold text-break"><?= $article->description ?></td>
+                                            <th scope="row" class="fw-semibold text-break"><?= $article->title ?></th>
+                                            <td class="fw-semibold text-break w-25"><?= $article->description ?></td>
                                             <td class="fw-semibold">
                                                 <?php if (isset($article->picture)) { ?>
                                                     <div class="ratio ratio-1x1">
@@ -64,14 +72,14 @@
                                                 <?php } ?>
                                             </td>
                                             <td class="fw-semibold"><?= $article->created_at ?></td>
-                                            <!-- <td>
-                                                <a href="/controllers/dashboard/vehicles/update-ctrl.php?id=<?= $article->id_vehicle ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <td>
+                                                <a href="/controllers/dashboard/articles/update-article-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>
                                                 </a>
-                                                <a href="/controllers/dashboard/vehicles/archive-ctrl.php?id=<?= $article->id_vehicle ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/articles/archive-article.php" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-archive text-dark fs-4"></i>
                                                 </a>
-                                            </td> -->
+                                            </td>
                                         </tr>
                                     <?php }
                                     ?>

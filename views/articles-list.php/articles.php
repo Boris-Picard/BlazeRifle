@@ -28,213 +28,37 @@
                             <hr class="hr">
                         </div>
                         <div class="col-12 p-0 py-3">
-                            <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="battlefield 2042">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body px-3 d-flex flex-column justify-content-end">
-                                            <div>
-                                                <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
+                            <?php foreach ($articles as $article) { ?>
+                                <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <div class="ratio ratio-16x9">
+                                                <img src="/public/uploads/article/<?= $article->picture ?>" class="img-fluid object-fit-cover card-img-top imgActus shadow-lg rounded-start rounded-3" alt="<?= $article->picture ?>">
                                             </div>
-                                            <a href="/controllers/articles/article-ctrl.php" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, magni quisquam. Earum aperiam magni et minus quisquam fuga dicta amet quaerat quod voluptatum accusantium, unde veniam. Tenetur error est quos?</a>
-                                            <p class="aCard mt-2">
-                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id excepturi ut ratione suscipit! Alias nesciunt iure officiis quis placeat, corrupti sint necessitatibus aspernatur libero sapiente, tempore rerum error fugiat provident?
-                                            </p>
-                                            <div>
-                                                <hr class="hr">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body px-3 d-flex flex-column justify-content-end">
+                                                <div>
+                                                    <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
+                                                </div>
+                                                <a href="/controllers/articles/article-ctrl.php?id=<?=$article->id_article?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
+                                                    <?= $article->title ?>
+                                                </a>
+                                                <p class="aCard mt-2">
+                                                    <?= $article->description ?>
+                                                </p>
+                                                <div>
+                                                    <hr class="hr">
+                                                </div>
+                                                <small>
+                                                    A <?= $article->formattedHour ?> le <?= $article->formattedDate ?>
+                                                    <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                </small>
                                             </div>
-                                            <small>
-                                                Il y a 20 heures
-                                                <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            </small>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="battlefield 2042">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body px-3 d-flex flex-column justify-content-end">
-                                            <div>
-                                                <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
-                                            </div>
-                                            <a href="/controllers/articles/article-ctrl.php" class="stretched-link mt-2 h5 text-decoration-none aCard card-title fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
-                                            <p class="aCard mt-2">
-                                                Vous souhaitez connaître les meilleures armes pour le mode Zombie de Call of Duty : Modern Warfare 3 ?
-                                                Au lieu de vous proposer une tier list qui n’aurait que très peu d..
-                                            </p>
-                                            <div>
-                                                <hr class="hr">
-                                            </div>
-                                            <small>
-                                                Il y a 20 heures
-                                                <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="battlefield 2042">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body px-3 d-flex flex-column justify-content-end">
-                                            <div>
-                                                <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
-                                            </div>
-                                            <a href="/controllers/articles/article-ctrl.php" class="stretched-link mt-2 h5 text-decoration-none card-title aCard fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
-                                            <p class="aCard mt-2">
-                                                Vous souhaitez connaître les meilleures armes pour le mode Zombie de Call of Duty : Modern Warfare 3 ?
-                                                Au lieu de vous proposer une tier list qui n’aurait que très peu d..
-                                            </p>
-                                            <div>
-                                                <hr class="hr">
-                                            </div>
-                                            <small>
-                                                Il y a 20 heures
-                                                <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="battlefield 2042">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body px-3 d-flex flex-column justify-content-end">
-                                            <div>
-                                                <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
-                                            </div>
-                                            <a href="/controllers/articles/article-ctrl.php" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
-                                            <p class="aCard mt-2">
-                                                Vous souhaitez connaître les meilleures armes pour le mode Zombie de Call of Duty : Modern Warfare 3 ?
-                                                Au lieu de vous proposer une tier list qui n’aurait que très peu d..
-                                            </p>
-                                            <div>
-                                                <hr class="hr">
-                                            </div>
-                                            <small>
-                                                Il y a 20 heures
-                                                <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="battlefield 2042">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body px-3 d-flex flex-column justify-content-end">
-                                            <div>
-                                                <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
-                                            </div>
-                                            <a href="/controllers/articles/article-ctrl.php" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
-                                            <p class="aCard mt-2">
-                                                Vous souhaitez connaître les meilleures armes pour le mode Zombie de Call of Duty : Modern Warfare 3 ?
-                                                Au lieu de vous proposer une tier list qui n’aurait que très peu d..
-                                            </p>
-                                            <div>
-                                                <hr class="hr">
-                                            </div>
-                                            <small>
-                                                Il y a 20 heures
-                                                <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="battlefield 2042">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body px-3 d-flex flex-column justify-content-end">
-                                            <div>
-                                                <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
-                                            </div>
-                                            <a href="/controllers/articles/article-ctrl.php" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
-                                            <p class="aCard mt-2">
-                                                Vous souhaitez connaître les meilleures armes pour le mode Zombie de Call of Duty : Modern Warfare 3 ?
-                                                Au lieu de vous proposer une tier list qui n’aurait que très peu d..
-                                            </p>
-                                            <div>
-                                                <hr class="hr">
-                                            </div>
-                                            <small>
-                                                Il y a 20 heures
-                                                <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="battlefield 2042">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body px-3 d-flex flex-column justify-content-end">
-                                            <div>
-                                                <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
-                                            </div>
-                                            <a href="/controllers/articles/article-ctrl.php" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
-                                            <p class="aCard mt-2">
-                                                Vous souhaitez connaître les meilleures armes pour le mode Zombie de Call of Duty : Modern Warfare 3 ?
-                                                Au lieu de vous proposer une tier list qui n’aurait que très peu d..
-                                            </p>
-                                            <div>
-                                                <hr class="hr">
-                                            </div>
-                                            <small>
-                                                Il y a 20 heures
-                                                <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="battlefield 2042">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body px-3 d-flex flex-column justify-content-end">
-                                            <div>
-                                                <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
-                                            </div>
-                                            <a href="/controllers/articles/article-ctrl.php" class="stretched-link mt-2 h5 text-decoration-none card-title aCardBig fw-bold stretchLinkHover">Meilleures armes Zombie Modern Warfare 3 : lesquelles choisir pour survivre ?</a>
-                                            <p class="aCard mt-2">
-                                                Vous souhaitez connaître les meilleures armes pour le mode Zombie de Call of Duty : Modern Warfare 3 ?
-                                                Au lieu de vous proposer une tier list qui n’aurait que très peu d..
-                                            </p>
-                                            <div>
-                                                <hr class="hr">
-                                            </div>
-                                            <small>
-                                                Il y a 20 heures
-                                                <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } ?>
                             <nav aria-label="pagination">
                                 <ul class="pagination justify-content-center mt-5">
                                     <li class="page-item">

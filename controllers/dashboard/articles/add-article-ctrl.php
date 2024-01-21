@@ -44,7 +44,7 @@ try {
             $namePicture = $fileName . '.' . $extension;
 
             $moveFile = move_uploaded_file($from, $to);
-        } catch (\Throwable $th) {
+        } catch (Throwable $th) {
             $error['image-article'] = $th->getMessage();
         }
 
@@ -165,10 +165,10 @@ try {
 
             $result = $article->insert();
 
-            // if($result) {
-            //     $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
-            //     header('Refresh:3; url=list-ctrl.php');
-            // }
+            if($result) {
+                $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
+                header('Refresh:3; url=list-articles-ctrl.php');
+            }
         }
     }
 } catch (PDOException $e) {
@@ -185,4 +185,4 @@ try {
 
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';
-include __DIR__ . '/../../../views/dashboard/article/add-article.php';
+include __DIR__ . '/../../../views/dashboard/articles/add-article.php';

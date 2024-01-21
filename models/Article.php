@@ -28,8 +28,7 @@ class Article
         ?string $updated_at = null,
         ?string $deleted_at = null,
         ?int $id_article = null
-    )
-    {
+    ) {
         $this->title = $title;
         $this->secondtitle = $secondtitle;
         $this->thirdtitle = $thirdtitle;
@@ -73,12 +72,12 @@ class Article
         return $this->thirdtitle;
     }
 
-    public function setPicture(string $picture)
+    public function setPicture(?string $picture)
     {
         $this->picture = $picture;
     }
 
-    public function getPicture(): string
+    public function getPicture(): ?string
     {
         return $this->picture;
     }
@@ -175,7 +174,7 @@ class Article
         return $sth->rowCount() > 0;
     }
 
-    public static function getAll()
+    public static function getAll(): array|false
     {
         $pdo = Database::connect();
 
@@ -184,6 +183,62 @@ class Article
         $sth = $pdo->query($sql);
 
         $result = $sth->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
+    public static function get(int $id)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT * FROM `articles` WHERE `id_article`=:id_article';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_article', $id, PDO::PARAM_INT);
+
+        $sth->execute();
+        
+        $result = $sth->fetch(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
+    public function update(): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `articles` 
+        SET `title`=:title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `picture`=:picture, `description`=:description, `firstsection`=:firstsection, `secondsection`=:secondsection
+        WHERE `id_article`=:id_article;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':title', $this->getTitle());
+        $sth->bindValue(':secondtitle', $this->getSecondTitle());
+        $sth->bindValue(':thirdtitle', $this->getThirdTitle());
+        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':description', $this->getDescription());
+        $sth->bindValue(':firstsection', $this->getFirstSection());
+        $sth->bindValue(':secondsection', $this->getSecondSection());
+        $sth->bindValue(':id_article', $this->getIdArticle(), PDO::PARAM_INT);
+
+        $result = $sth->execute();
+
+        return $result;
+    }
+
+    public static function updateImg(int $id): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `articles` SET `picture`= null WHERE `id_article`=:id_article;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_article', $id, PDO::PARAM_INT);
+
+        $result = $sth->execute();
 
         return $result;
     }

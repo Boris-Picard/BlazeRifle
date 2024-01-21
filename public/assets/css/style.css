@@ -340,6 +340,11 @@ small {
     width: auto;
 }
 
+.imgActus {
+    height: 16rem;
+    width: 18rem;
+}
+
 @media all and (max-width : 766px) {
     .cardsActus {
         width: auto;
