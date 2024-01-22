@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../../models/Article.php';
 
 
 try {
+    $listArticles = true;
     
     $articles = Article::getAll(true);
 
@@ -30,4 +31,6 @@ try {
 
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';
+include __DIR__ . '/../../../views/templates/sidebar-dashboard.php';
 include __DIR__ . '/../../../views/dashboard/articles/list-articles.php';
+include __DIR__ . '/../../../views/templates/footer-dashboard.php';

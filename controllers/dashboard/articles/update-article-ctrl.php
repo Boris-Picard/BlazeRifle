@@ -4,7 +4,8 @@ require_once __DIR__ . '/../../../models/Article.php';
 
 
 try {
-
+    $listArticles = true;
+    
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
     $article = Article::get($id_article);
@@ -192,4 +193,6 @@ try {
 
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';
+include __DIR__ . '/../../../views/templates/sidebar-dashboard.php';
 include __DIR__ . '/../../../views/dashboard/articles/update-article.php';
+include __DIR__ . '/../../../views/templates/footer-dashboard.php';

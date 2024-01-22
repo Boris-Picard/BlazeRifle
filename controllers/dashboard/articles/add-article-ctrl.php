@@ -4,7 +4,8 @@ require_once __DIR__ . '/../../../models/Article.php';
 
 
 try {
-
+    $listArticles = true;
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Titre de l'article nettoyage et validation
@@ -13,7 +14,7 @@ try {
         if (empty($title)) {
             $error['title'] = 'Veuillez rentrer un titre';
         } else {
-            $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/u')));
+            $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
             if (!$isOk) {
                 $error['title'] = 'Le titre n\'est pas valide';
             }
@@ -25,9 +26,13 @@ try {
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
-            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/u')));
+            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/')));
             if (!$isOk) {
                 $error['description'] = 'La description n\'est pas valide';
+            } else {
+                if (strlen($description) < 50 || strlen($description) > 500) {
+                    $error["description"] = "La longueur de la description doit faire minimum 50 caractères et maximum 500 caractères";
+                }
             }
         }
 
@@ -37,7 +42,7 @@ try {
         if (empty($secondTitle)) {
             $error['secondTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/u')));
+            $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
             if (!$isOk) {
                 $error['secondTitle'] = 'Le sous-titre n\'est pas valide';
             }
@@ -49,7 +54,7 @@ try {
         if (empty($thirdTitle)) {
             $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/u')));
+            $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
             if (!$isOk) {
                 $error['thirdTitle'] = 'Le sous-titre n\'est pas valide';
             }
@@ -57,13 +62,17 @@ try {
 
         // Première section de l'article nettoyage et validation
         $firstSection = filter_input(INPUT_POST, 'firstSection', FILTER_SANITIZE_SPECIAL_CHARS);
-
+        
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
-            $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/u')));
+            $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
             if (!$isOk) {
                 $error['firstSection'] = 'La section de l\'article n\'est pas valide';
+            } else {
+                if (strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
+                    $error["firstSection"] = "La longueur du paragraphe doit faire minimum 250 caractères et maximum 1500 caractères";
+                }
             }
         }
 
@@ -73,9 +82,13 @@ try {
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
-            $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/u')));
+            $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
             if (!$isOk) {
                 $error['secondSection'] = 'La deuxième section de l\'article n\'est pas valide';
+            } else {
+                if (strlen($secondSection) < 250 || strlen($secondSection) > 1500) {
+                    $error["secondSection"] = "La longueur du paragraphe doit faire minimum 250 caractères et maximum 1500 caractères";
+                }
             }
         }
 
@@ -141,12 +154,12 @@ try {
                 $fileName = uniqid('img_');
                 $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
 
-                $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName . '.' . $extension;
+                $to =  __DIR__ . '/../../../public/ploads/article/' . $fileName . '.' . $extension;
 
                 $namePicture = $fileName . '.' . $extension;
 
                 $moveFile = move_uploaded_file($from, $to);
-            } catch (Throwable $th) {
+            } catch (\Throwable $th) {
                 $error['image-article'] = $th->getMessage();
             }
             
@@ -183,4 +196,6 @@ try {
 
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';
+include __DIR__ . '/../../../views/templates/sidebar-dashboard.php';
 include __DIR__ . '/../../../views/dashboard/articles/add-article.php';
+include __DIR__ . '/../../../views/templates/footer-dashboard.php';

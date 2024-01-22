@@ -1,5 +1,5 @@
 <?php
-include(dirname(__FILE__) . '/../../config/config.php');
+require_once __DIR__ . '/../../config/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $games = filter_input(INPUT_POST, 'games', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (!in_array($games, $gamesArray)) {
         $error['games'] = 'Ce n\'est pas un jeu valide';
     }
+
+    
 }
 
 
