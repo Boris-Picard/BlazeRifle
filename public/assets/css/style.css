@@ -867,6 +867,42 @@ footer {
     -webkit-background-clip: text !important;
 }
 
+/* PROFIL */
+.rightCardProfil {
+    width: 21rem;
+}
+
+.child-card {
+    position: absolute;
+    top: 3rem;
+    left: 5rem;
+    margin: 10px;
+    width: 18rem;
+    height: 13rem;
+    background-image: url(../img/profilpicdefault.avif);
+    object-fit: cover;
+    background-position: center;
+}
+
+.cardProfilBanner {
+    background-image: url(../img/profilbanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 20rem;
+}
+
+.profilName {
+    position: absolute;
+    left: 20rem;
+    top: 0;
+}
+
+.profilSection {
+    margin: 4.688rem 0 0 0;
+}
+
 /* media query  */
 @media all and (max-width: 720px) {
     .imgForm {
@@ -952,6 +988,23 @@ footer {
     .titleAllGuides {
         padding-top: 3.5rem;;
     }
+    .child-card {
+        position: absolute;
+        top: 3.6rem;
+        left: 1.5rem;
+    }
+    .profilName {
+        position: relative;
+        left: 0;
+        top: -4.6rem;
+    }
+    .rightCardProfil {
+        width: 100%;
+        margin: 2rem 0 !important;
+    }
+    .profilSection {
+        height: 100% !important;
+    }
 }
 
 @media all and (min-width: 720px) {
@@ -976,42 +1029,3 @@ footer {
     }
 }
 
-.child-card {
-    position: absolute;
-    top: 3rem;
-    left: 5rem;
-    margin: 10px;
-    width: 18rem;
-    height: 13rem;
-    background-image: url(../img/profilpicdefault.avif);
-    object-fit: cover;
-    background-position: center;
-}
-
-.cardProfilBanner {
-    background-image: url(../img/profilbanner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 20rem;
-}
-
-.profilName {
-    position: absolute;
-    left: 20rem;
-    top: 0;
-}
-
-#filterable-cards .card.show {
-    opacity: 1; 
-    transform: scale(1) rotate(0deg); 
-    filter: blur(0px); 
-}
-
-#filterable-cards .card.hide {
-    opacity: 0;
-    pointer-events: none;
-    flex-basis: 0%;
-    transform: scale(1.05) rotate(5deg); 
-}

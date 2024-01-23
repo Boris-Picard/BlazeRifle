@@ -4,7 +4,8 @@ require_once __DIR__ . '/../../models/Article.php';
 try {
 
 
-    $articles = Article::getAll();
+    $articles = Article::getAll(true);
+
 
     foreach ($articles as $article) {
         $timestamp = strtotime($article->created_at);

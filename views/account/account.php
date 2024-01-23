@@ -1,4 +1,4 @@
-<section class="articlesSection py-5 bg-light vh-100">
+<section class="profilSection py-5 bg-light vh-100">
     <div class="container">
         <div class="row ">
             <div class="col-12">
@@ -12,24 +12,30 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12">
-                <div id="filter-buttons" class="from-right">
-                    <button class="active btn" data-filter="all">Tous mes projets</button>
-                    <button class="btn" data-filter="front">Front-end</button>
-                    <button class="btn" data-filter="back">Back-end</button>
-                    <button class="btn" data-filter="wordpress">Wordpress</button>
+            <div class="col-12 py-3">
+                <h2 class="fw-bold">Mon Profil</h2>
+            </div>
+            <div class="col-md-8 shadow-lg p-4 rounded-4 ">
+                <div class="pb-2 d-flex justify-content-center">
+                    <h3 class="fw-bold">Mes informations </h3>
+                </div>
+                <p>Prénom : <span class="fw-semibold">Boris</span></p>
+                <p>Nom : <span class="fw-semibold">Picard</span></p>
+                <p>Pseudo : <span class="fw-semibold">Boris7</span></p>
+                <p>Adresse mail : <span class="fw-semibold">boris@gmail.com</span></p>
+                <div class="py-3">
+                    <a href="" class="btn btn-danger rounded-4 p-2 fw-bold text-uppercase">Modifier mes informations</a>
                 </div>
             </div>
-            <div class="col-12">
-                <div id="filterable-cards">
-                    <div class="card" data-name="back">
-                        <div class="card-title">dadad</div>
-                    </div>
+            <div class="col-md-4 mx-5 shadow-lg rounded-4 rightCardProfil py-3">
+                <div class="d-flex justify-content-center flex-column">
+                    <a href="" class="btn btn-danger rounded-4 p-2 fw-bold text-uppercase">Modifer mon image de profil</a>
                 </div>
-                <div id="filterable-cards">
-                    <div class="card" data-name="front">
-                        <div class="card-title">dadad</div>
-                    </div>
+                <div class="d-flex justify-content-center py-3">
+                    <a href="" class="btn btn-warning rounded-4 p-2 fw-bold text-uppercase w-100">Rédiger un article</a>
+                </div>
+                <div class="d-flex justify-content-center ">
+                    <a href="" class="btn btn-secondary rounded-4 p-2 fw-bold text-uppercase w-100">Voir mes favoris</a>
                 </div>
             </div>
         </div>
