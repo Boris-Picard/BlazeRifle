@@ -1,11 +1,15 @@
 <?php
 require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Article.php';
+require_once __DIR__ . '/../../../models/Game.php';
+
 
 
 try {
     $listArticles = true;
 
+    $games = Game::getAll();
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Titre de l'article nettoyage et validation
