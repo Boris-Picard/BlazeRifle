@@ -1,3 +1,12 @@
+<?php
+require_once __DIR__ . '/../../models/Game.php';
+
+try {
+    $games = Game::getAll();
+} catch (\Throwable $e) {
+    $e->getMessage();
+}
+?>
 <header>
     <nav class="navbar navbarStyle navbar-expand-md fixed-top">
         <div class="container-fluid">
@@ -35,7 +44,7 @@
                             <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/1329760.jpeg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Counter strike 2">Counter strike 2</span></a></li>
                             <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/apex.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Apex Legends">apex legends</span></a></li>
                             <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Call of duty warzone 2">call of duty : warzone 2</span></a></li>
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/valorant.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Valorant">Valorant</span></a></li>
+                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/valorant.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Valorant"><?= $games[0]->name ?></span></a></li>
                             <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/infinite2.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Halo infinite">Halo infinite</span></a></li>
                             <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Overwatch 2">overwatch 2</span></a></li>
                             <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/battlefield2042.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Battlefield 2042">battlefield 2042</span></a></li>

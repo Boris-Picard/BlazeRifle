@@ -15,7 +15,8 @@ try {
     $article->formattedHour = date('H:i', $timestamp);
     $article->formattedDate = date('d/m/Y', $timestamp);
 
-    $articles = Article::getAll();
+    $articles = Article::getAll(false);
+
 
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());

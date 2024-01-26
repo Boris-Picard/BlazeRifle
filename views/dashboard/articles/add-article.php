@@ -28,7 +28,7 @@
                                 <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['title'] ?? '' ?></small></div>
                                     <label for="title" class="form-label">Titre de l'article <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="title" id="title" value="<?= $title ?? '' ?>" aria-describedby="title" placeholder="Call of Duty 2025, une suite de Black Ops 2 ?" minlength="10" maxlength="150" pattern="<?= REGEX_TITLE ?>" required>
+                                    <input type="text" class="form-control" name="title" id="title" value="<?= $title ?? '' ?>" aria-describedby="title" placeholder="Call of Duty 2025, une suite de Black Ops 2 ?" minlength="10" maxlength="150" required>
                                 </div>
                             </div>
                             <div class="row">
@@ -47,12 +47,12 @@
                                 <div class="mb-3 col-md-6">
                                     <div><small class="form-text text-danger"><?= $error['secondTitle'] ?? '' ?></small></div>
                                     <label for="secondTitle" class="form-label">Sous-Titre 1 de l'article <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="secondTitle" id="secondTitle" value="<?= $secondTitle ?? '' ?>" aria-describedby="secondTitle" placeholder="Les détails sur le prochain Black Ops confirment son intrigue" minlength="10" maxlength="150" pattern="<?= REGEX_TITLE ?>" required>
+                                    <input type="text" class="form-control" name="secondTitle" id="secondTitle" value="<?= $secondTitle ?? '' ?>" aria-describedby="secondTitle" placeholder="Les détails sur le prochain Black Ops confirment son intrigue" minlength="10" maxlength="150" required>
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <div><small class="form-text text-danger"><?= $error['thirdTitle'] ?? '' ?></small></div>
                                     <label for="thirdTitle" class="form-label">Sous-Titre 2 de l'article <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="thirdTitle" id="thirdTitle" value="<?= $thirdTitle ?? '' ?>" aria-describedby="thirdTitle" placeholder="Le retour de certaines maps connues dans le prochain Black Ops ?" minlength="10" maxlength="150" pattern="<?= REGEX_TITLE ?>" required>
+                                    <input type="text" class="form-control" name="thirdTitle" id="thirdTitle" value="<?= $thirdTitle ?? '' ?>" aria-describedby="thirdTitle" placeholder="Le retour de certaines maps connues dans le prochain Black Ops ?" minlength="10" maxlength="150" required>
                                 </div>
                             </div>
                             <div class="row">

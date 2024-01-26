@@ -174,13 +174,13 @@ class Article
         return $sth->rowCount() > 0;
     }
 
-    public static function getAll(?bool $showDeletedAt = null): array|false
+    public static function getAll(bool $showDeletedAt = false): array|false
     {
         $pdo = Database::connect();
 
         $sql = 'SELECT * FROM `articles`';
 
-        $showDeletedAt ? $sql .= ' WHERE `deleted_at` IS NULL ' : $sql .= ' WHERE `deleted_at` IS NOT NULL ';
+        $showDeletedAt ? $sql .= ' WHERE `deleted_at` IS NOT NULL ' : $sql .= ' WHERE `deleted_at` IS NULL ';
 
         $sth = $pdo->query($sql);
 

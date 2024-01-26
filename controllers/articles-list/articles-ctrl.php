@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../models/Article.php';
 try {
 
 
-    $articles = Article::getAll(true);
+    $articles = Article::getAll(false);
 
 
     foreach ($articles as $article) {
