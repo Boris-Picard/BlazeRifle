@@ -8,12 +8,10 @@ try {
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
     $article = Article::get($id_article);
-    // var_dump($article);
-    // die;
 
-    $timestamp = strtotime($article->created_at);
-    $article->formattedHour = date('H:i', $timestamp);
-    $article->formattedDate = date('d/m/Y', $timestamp);
+    // $timestamp = strtotime($article->created_at);
+    // $article->formattedHour = date('H:i', $timestamp);
+    // $article->formattedDate = date('d/m/Y', $timestamp);
 
     $articles = Article::getAll(false);
 

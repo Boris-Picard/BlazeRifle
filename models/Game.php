@@ -62,12 +62,12 @@ class Game
         $pdo = Database::connect();
 
         $sql = 'INSERT INTO `games` (`name`, `game_description`, `game_picture`)
-        VALUES(:name, :description, :game_picture);';
+        VALUES(:name, :game_description, :game_picture);';
 
         $sth = $pdo->prepare($sql);
 
         $sth->bindValue(':name', $this->getName());
-        $sth->bindValue(':description', $this->getGameDescription());
+        $sth->bindValue(':game_description', $this->getGameDescription());
         $sth->bindValue(':game_picture', $this->getGamePicture());
 
         $result = $sth->execute();
@@ -94,7 +94,8 @@ class Game
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM `games`;';
+        $sql = 'SELECT * FROM `games`
+        WHERE 1=1;';
 
         $sth = $pdo->query($sql);
 
@@ -103,11 +104,12 @@ class Game
         return $result;
     }
 
-    public static function get(int $id_game)
+    public static function get(int $id_game): object|false
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM `games` WHERE `games`.`id_game`=:id_game;';
+        $sql = 'SELECT * FROM `games`
+        WHERE `games`.`id_game`=:id_game;';
 
         $sth = $pdo->prepare($sql);
 

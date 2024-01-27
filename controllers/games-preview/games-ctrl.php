@@ -1,16 +1,15 @@
 <?php
 
 require_once __DIR__ . '/../../models/Game.php';
+require_once __DIR__ . '/../../models/Article.php';
 
 
 
 try {
-
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
-    $game = Game::get($id_game);
+    $articles = Article::getAll($id_game);
 
-    
 } catch (PDOException $e) {
     $e->getMessage();
 }

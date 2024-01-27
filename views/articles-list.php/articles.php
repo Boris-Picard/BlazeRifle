@@ -31,7 +31,7 @@
                                     <div class="row g-0">
                                         <div class="col-md-4">
                                             <div class="ratio ratio-16x9">
-                                                <img src="/public/uploads/article/<?= $article->picture ?>" class="img-fluid object-fit-cover card-img-top imgActus shadow-lg rounded-start rounded-3" alt="<?= $article->picture ?>">
+                                                <img src="/public/uploads/article/<?= $article->article_picture ?>" class="img-fluid object-fit-cover card-img-top imgActus shadow-lg rounded-start rounded-3" alt="<?= $article->article_picture ?>">
                                             </div>
                                         </div>
                                         <div class="col-md-8">
@@ -43,7 +43,7 @@
                                                     <?= $article->title ?>
                                                 </a>
                                                 <p class="aCard mt-2">
-                                                    <?= $article->description ?>
+                                                    <?= $article->article_description ?>
                                                 </p>
                                                 <div>
                                                     <hr class="hr">

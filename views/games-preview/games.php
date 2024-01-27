@@ -1,5 +1,5 @@
 <main>
-<section class="articlesSection py-5 bg-light">
+    <section class="articlesSection py-5 bg-light">
         <div class="container">
             <section>
                 <div class="row">
@@ -17,7 +17,7 @@
                                 <h2 class="h2 text-uppercase fw-bold">Tous les articles</h2>
                             </div>
                             <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
-                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?=$game->id_game?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $id_game ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                                     Tous les articles
                                     <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                 </a>
@@ -26,74 +26,26 @@
                         <!-- CARD ACTU -->
                         <div class="row">
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
-                                <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
-                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="apex legends">
-                                    <div class="card-img-overlay ">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">apex legends</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                            <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dignissimos officiis quaerat quis, ullam error sequi repudiandae magnam voluptas inventore nisi sit pariatur, similique consequuntur beatae saepe tempore eum debitis!
-                                            </a>
-                                            <div class="card-text mb-3">
-                                                <small>Il y a 20 heures
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">apex legends</span>
-                                                </small>
+                                <?php foreach ($articles as $article) { ?>
+                                    <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
+                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->name ?>">
+                                        <div class="card-img-overlay ">
+                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->name ?></span>
+                                            <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?=$article->id_article?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
+                                                    <?= $article->article_description ?>
+                                                </a>
+                                                <div class="card-text mb-3">
+                                                    <small>
+                                                        <?= $article->created_at ?>
+                                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                        <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= $article->name ?></span>
+                                                    </small>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card bg-transparent text-white p-0 cardActu  border-0 cardShadow">
-                                    <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="GTA 6">
-                                    <div class="card-img-overlay">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">GTA 6</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                            <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
-                                            </a>
-                                            <div class="card-text mb-3">
-                                                <small>Il y a 20 heures
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">GTA 6</span>
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/1329760.jpeg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Counter Strike 2">
-                                    <div class="card-img-overlay">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Counter Strike 2</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                            <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
-                                            </a>
-                                            <div class="card-text mb-3">
-                                                <small>Il y a 20 heures
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Counter Strike 2</span>
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/valorant.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Valorant">
-                                    <div class="card-img-overlay">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Valorant</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                            <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
-                                            </a>
-                                            <div class="card-text mb-3">
-                                                <small>Il y a 20 heures
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Valorant</span>
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                             <!-- CARD UNDER ACTU -->
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
@@ -647,4 +599,4 @@
                 </div>
             </section>
         </div>
-</section>
+    </section>

@@ -4,11 +4,11 @@ require_once __DIR__ . '/../../../models/Game.php';
 
 $listGames = true;
 
-
-$games = Game::getAll();
-
-
-
+try {
+    $games = Game::getAll();
+} catch (PDOException $e) {
+    $e->getMessage();
+}
 
 
 

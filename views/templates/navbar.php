@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../models/Game.php';
 
 try {
     $games = Game::getAll();
-
+    
 } catch (\Throwable $e) {
     $e->getMessage();
 }
@@ -41,7 +41,7 @@ try {
                         </a>
                         <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
                             <?php foreach ($games as $game) { ?>
-                                <li><a href="/controllers/games-preview/games-ctrl.php?id=<?=$game->id_game?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?=$game->game_picture?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6"><?=$game->name?></span></a></li>
+                                <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?=$game->id_game?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?=$game->game_picture?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6"><?=$game->name?></span></a></li>
                             <?php } ?>
                         </ul>
                     </li>
