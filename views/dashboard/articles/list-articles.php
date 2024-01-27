@@ -27,12 +27,11 @@
                             <thead>
                                 <tr>
                                     <th scope="col">
-                                        ID
+                                        Jeux
                                         <!-- <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
                                             <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a> -->
                                     </th>
                                     <th scope="col">Titre</th>
-                                    <th scope="col">Description</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Creation</th>
                                     <th scope="col">Action</th>
@@ -41,9 +40,8 @@
                             <tbody>
                                 <?php foreach ($articles as $article) { ?>
                                     <tr>
-                                        <th scope="row" class="fw-semibold"><?= $article->id_article ?></th>
+                                        <th scope="row" class="fw-semibold"><?= $article->name ?></th>
                                         <th scope="row" class="fw-semibold text-break"><?= $article->title ?></th>
-                                        <td class="fw-semibold text-break w-25"><?= $article->description ?></td>
                                         <td class="fw-semibold">
                                             <?php if (isset($article->picture)) { ?>
                                                 <div class="ratio ratio-1x1">

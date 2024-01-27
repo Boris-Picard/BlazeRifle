@@ -9,7 +9,8 @@ try {
     $listArticles = true;
 
     $games = Game::getAll();
-    
+
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Titre de l'article nettoyage et validation
@@ -22,7 +23,7 @@ try {
             // if (!$isOk) {
             //     $error['title'] = 'Le titre n\'est pas valide';
             // }
-            if(strlen($title) < 10 || strlen($title) > 150) {
+            if (strlen($title) < 10 || strlen($title) > 150) {
                 $error['title'] = 'La longueur du titre n\'est pas valide';
             }
         }
@@ -37,9 +38,9 @@ try {
             // if (!$isOk) {
             //     $error['description'] = 'La description n\'est pas valide';
             // } else {
-                if (strlen($description) < 50 || strlen($description) > 500) {
-                    $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 500 caractères';
-                }
+            if (strlen($description) < 50 || strlen($description) > 500) {
+                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 500 caractères';
+            }
             // }
         }
 
@@ -53,7 +54,7 @@ try {
             // if (!$isOk) {
             //     $error['secondTitle'] = 'Le sous-titre n\'est pas valide';
             // }
-            if(strlen($secondTitle) < 10 || strlen($secondTitle) > 150) {
+            if (strlen($secondTitle) < 10 || strlen($secondTitle) > 150) {
                 $error['secondTitle'] = 'La longueur du titre n\'est pas valide';
             }
         }
@@ -68,7 +69,7 @@ try {
             // if (!$isOk) {
             //     $error['thirdTitle'] = 'Le sous-titre n\'est pas valide';
             // }
-            if(strlen($thirdTitle) < 10 || strlen($thirdTitle) > 150) {
+            if (strlen($thirdTitle) < 10 || strlen($thirdTitle) > 150) {
                 $error['thirdTitle'] = 'La longueur du titre n\'est pas valide';
             }
         }
@@ -79,7 +80,7 @@ try {
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
-            if(strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
+            if (strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
                 $error['firstSection'] = 'La longueur du texte n\'est pas correct d\'article';
             }
             // $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
@@ -98,7 +99,7 @@ try {
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
-            if(strlen($secondSection) < 250 || strlen($secondSection) > 1500) {
+            if (strlen($secondSection) < 250 || strlen($secondSection) > 1500) {
                 $error['secondSection'] = 'La longueur du texte n\'est pas correct d\'article';
             }
             // $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
@@ -140,18 +141,20 @@ try {
 
         /* array_column permet de transformer mon tableau d'ojects en tableau 
             2 paramètres requis => tableau d'ojects et ce que je recherche dans ce dernier */
-        // $gamesId = array_column($gamesArray, 'id_game');
+        $gamesId = array_column($games, 'id_game');
 
-        // // Nettoyage et validation du select d'un jeu
-        // $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+        // Nettoyage et validation du select d'un jeu
+        $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
-        // if (empty($id_game)) {
-        //     $error['id_game'] = 'Veuillez sélectionner un jeu';
-        // } else {
-        //     if (!in_array($id_game, $gamesId)) {
-        //         $error['id_game'] = 'Ce n\'est pas un jeu valide';
-        //     }
-        // }
+        if (empty($id_game)) {
+            $error['id_game'] = 'Veuillez sélectionner un jeu';
+        } else {
+            if (!in_array($id_game, $gamesId)) {
+                $error['id_game'] = 'Ce n\'est pas un jeu valide';
+            }
+        }
+
+
 
         /* array_column permet de transformer mon tableau d'ojects en tableau 
             2 paramètres requis => tableau d'ojects et ce que je recherche dans ce dernier */
@@ -190,7 +193,7 @@ try {
             $article->setDescription($description);
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
-            // $article->setIdArticle($id_user);
+            $article->setIdGame($id_game);
 
             $result = $article->insert();
 

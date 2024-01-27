@@ -28,7 +28,7 @@
                                 <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['name'] ?? '' ?></small></div>
                                     <label for="name" class="form-label">Nom du jeu <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="name" id="name" value="<?= $name ?? '' ?>" aria-describedby="name" placeholder="" minlength="10" maxlength="150" required>
+                                    <input type="text" class="form-control" name="name" id="name" value="<?= $name ?? '' ?>" aria-describedby="name" placeholder="" minlength="2" maxlength="150" required>
                                 </div>
                             </div>
                             <div class="row">

@@ -16,11 +16,9 @@
                                 </nav>
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
-                                <h2 class="h2 text-uppercase fw-bold text-center">Les articles : battlefield 2042</h2>
-                                <p class="text-center mt-2">Battlefield 2042", sorti en 2021, est un jeu de tir à la première personne multijoueur développé par DICE.
-                                    Situé dans un futur proche, il propose des combats à grande échelle avec jusqu'à 128 joueurs et des cartes dynamiques affectées par des
-                                    conditions météorologiques extrêmes. Le jeu se concentre sur le multijoueur sans campagne solo et introduit le mode "Portal" pour des expériences personnalisées.
-                                    Il a reçu des critiques mitigées pour ses problèmes techniques et son manque initial de contenu.
+                                <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <?=$game->name?></h2>
+                                <p class="text-center text-break mt-2">
+                                    <?=$game->description?>
                                 </p>
                             </div>
                         </div>

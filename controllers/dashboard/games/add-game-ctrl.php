@@ -13,7 +13,7 @@ try {
         if (empty($name)) {
             $error['name'] = 'Veuillez renseigner un nom';
         } else {
-            if (strlen($name) > 150 || strlen($name) < 10) {
+            if (strlen($name) > 150 || strlen($name) < 2) {
                 $error['name'] = 'Veuillez renseigner un longueur valable de jeu';
             }
         }
@@ -57,7 +57,7 @@ try {
 
             $game->setName($name);
             $game->setDescription($description);
-            $game->setPicture($filename);
+            $game->setGamePicture($filename);
 
             $game->insert();
 

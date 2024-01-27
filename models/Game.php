@@ -7,13 +7,13 @@ class Game
     private ?int $id_game;
     private string $name;
     private string $description;
-    private string $picture;
+    private string $game_picture;
 
-    public function __construct(string $name = '', string $description = '', string $picture = '', ?int $id_game = null)
+    public function __construct(string $name = '', string $description = '', string $game_picture = '', ?int $id_game = null)
     {
         $this->name = $name;
         $this->description = $description;
-        $this->picture = $picture;
+        $this->game_picture = $game_picture;
         $this->id_game = $id_game;
     }
 
@@ -37,14 +37,14 @@ class Game
         return $this->description;
     }
 
-    public function setPicture(string $picture)
+    public function setGamePicture(string $game_picture)
     {
-        $this->picture = $picture;
+        $this->game_picture = $game_picture;
     }
 
-    public function getPicture(): string
+    public function getGamePicture(): string
     {
-        return $this->picture;
+        return $this->game_picture;
     }
 
     public function setIdGame(int $id_game)
@@ -61,14 +61,14 @@ class Game
     {
         $pdo = Database::connect();
 
-        $sql = 'INSERT INTO `games` (`name`, `description`, `picture`)
-        VALUES(:name, :description, :picture);';
+        $sql = 'INSERT INTO `games` (`name`, `description`, `game_picture`)
+        VALUES(:name, :description, :game_picture);';
 
         $sth = $pdo->prepare($sql);
 
         $sth->bindValue(':name', $this->getName());
         $sth->bindValue(':description', $this->getDescription());
-        $sth->bindValue(':picture', $this->getPicture());
+        $sth->bindValue(':game_picture', $this->getGamePicture());
 
         $result = $sth->execute();
 
@@ -84,6 +84,25 @@ class Game
         $sth = $pdo->query($sql);
 
         $result = $sth->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
+    public static function get(int $id_game)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT * FROM `games`
+        INNER JOIN `articles` ON `articles`.`id_game`=`games`.`id_game`
+        WHERE `games`.`id_game`=:id_game;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        $result = $sth->fetch(PDO::FETCH_OBJ);
 
         return $result;
     }

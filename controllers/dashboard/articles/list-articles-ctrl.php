@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../../models/Article.php';
 try {
     $listArticles = true;
     
-    $articles = Article::getAll(true);
+    $articles = Article::getAll(showDeletedAt: false);
 
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
     $article = Article::get($id_article);

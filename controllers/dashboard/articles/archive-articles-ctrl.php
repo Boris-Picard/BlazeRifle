@@ -8,7 +8,7 @@ try {
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
     $article = Article::get($id_article);
-    $articles = Article::getAll(false);
+    $articles = Article::getAll(showDeletedAt: true);
 
     if($article) {
         Article::archive($id_article, true);

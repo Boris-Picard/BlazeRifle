@@ -17,7 +17,7 @@
                                 <h2 class="h2 text-uppercase fw-bold">Tous les articles</h2>
                             </div>
                             <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
-                                <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?=$game->id_game?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                                     Tous les articles
                                     <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                 </a>
