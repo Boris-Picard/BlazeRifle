@@ -27,22 +27,22 @@ class Game
         return $this->name;
     }
 
-    public function setDescription(string $description)
+    public function setGameDescription(string $description)
     {
         $this->description = $description;
     }
 
-    public function getDescription(): string
+    public function getGameDescription(): string
     {
         return $this->description;
     }
 
-    public function setGamePicture(string $game_picture)
+    public function setGamePicture(?string $game_picture)
     {
         $this->game_picture = $game_picture;
     }
 
-    public function getGamePicture(): string
+    public function getGamePicture(): ?string
     {
         return $this->game_picture;
     }
@@ -61,18 +61,33 @@ class Game
     {
         $pdo = Database::connect();
 
-        $sql = 'INSERT INTO `games` (`name`, `description`, `game_picture`)
+        $sql = 'INSERT INTO `games` (`name`, `game_description`, `game_picture`)
         VALUES(:name, :description, :game_picture);';
 
         $sth = $pdo->prepare($sql);
 
         $sth->bindValue(':name', $this->getName());
-        $sth->bindValue(':description', $this->getDescription());
+        $sth->bindValue(':description', $this->getGameDescription());
         $sth->bindValue(':game_picture', $this->getGamePicture());
 
         $result = $sth->execute();
 
         return $result;
+    }
+
+    public static function delete(int $id_game)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `games` WHERE `id_game` = :id_game;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->rowCount() > 0;
     }
 
     public static function getAll()
@@ -92,9 +107,7 @@ class Game
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM `games`
-        INNER JOIN `articles` ON `articles`.`id_game`=`games`.`id_game`
-        WHERE `games`.`id_game`=:id_game;';
+        $sql = 'SELECT * FROM `games` WHERE `games`.`id_game`=:id_game;';
 
         $sth = $pdo->prepare($sql);
 
@@ -103,6 +116,41 @@ class Game
         $sth->execute();
 
         $result = $sth->fetch(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
+    public function update(): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `games` 
+        SET `name`=:name, `game_description`=:game_description, `game_picture`=:game_picture
+        WHERE `id_game`=:id_game;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':name', $this->getName());
+        $sth->bindValue(':game_description', $this->getGameDescription());
+        $sth->bindValue(':game_picture', $this->getGamePicture());
+        $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
+
+        $result = $sth->execute();
+
+        return $result;
+    }
+
+    public static function updateImg(int $id_game): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `games` SET `game_picture`= null WHERE `id_game`=:id_game;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+
+        $result = $sth->execute();
 
         return $result;
     }

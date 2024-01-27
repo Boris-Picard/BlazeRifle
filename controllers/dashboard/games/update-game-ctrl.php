@@ -1,11 +1,16 @@
 <?php
 
-require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Game.php';
 
 $listGames = true;
 
+
 try {
+
+    $id_game = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
+
+    $game = Game::get($id_game);
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -35,9 +40,11 @@ try {
             if ($_FILES['picture']['error'] != 0) {
                 throw new Exception("Erreur lors du transfert");
             }
+
             if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
                 throw new Exception("Format de fichier non autorisé");
             }
+
             if ($_FILES['picture']['size'] >= MAX_FILESIZE) {
                 throw new Exception("Poids dépassé!");
             }
@@ -54,10 +61,11 @@ try {
             $game = new Game();
 
             $game->setName($name);
-            $game->setDescription($description);
+            $game->setGameDescription($description);
             $game->setGamePicture($filename);
+            $game->setIdGame($id_game);
 
-            $game->insert();
+            $game->update();
 
             if ($game) {
                 echo 'Donnée inserée';
@@ -70,7 +78,12 @@ try {
 
 
 
+
+
+
+
+
 include __DIR__ . '/../../../views/templates/header-dashboard.php';
 include __DIR__ . '/../../../views/templates/sidebar-dashboard.php';
-include __DIR__ . '/../../../views/dashboard/games/add-game.php';
+include __DIR__ . '/../../../views/dashboard/games/update-game.php';
 include __DIR__ . '/../../../views/templates/footer-dashboard.php';

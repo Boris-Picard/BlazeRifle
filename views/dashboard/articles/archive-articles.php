@@ -35,8 +35,8 @@
                             <tbody>
                                 <?php foreach ($articles as $article) { ?>
                                     <tr>
-                                        <th scope="row" class="fw-semibold"><?= $article->id_article ?></th>
-                                        <th scope="row" class="fw-semibold text-break"><?= $article->title ?></th>
+                                        <td class="fw-semibold"><?= $article->id_article ?></td>
+                                        <td class="fw-semibold text-break"><?= $article->title ?></td>
                                         <td class="fw-semibold text-break w-25"><?= $article->description ?></td>
                                         <td class="fw-semibold">
                                             <?php if (isset($article->picture)) { ?>

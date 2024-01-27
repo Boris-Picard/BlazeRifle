@@ -40,8 +40,8 @@
                             <tbody>
                                 <?php foreach ($events as $event) { ?>
                                     <tr>
-                                        <th scope="row" class="fw-semibold"><?= $event->id_event ?></th>
-                                        <th scope="row" class="fw-semibold text-break"><?= $event->title ?></th>
+                                        <td class="fw-semibold"><?= $event->id_event ?></td>
+                                        <td class="fw-semibold text-break"><?= $event->title ?></td>
                                         <td class="fw-semibold text-break w-25"><?= $event->description ?></td>
                                         <td class="fw-semibold">
                                             <?php if (isset($event->picture)) { ?>

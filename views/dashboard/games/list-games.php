@@ -4,7 +4,7 @@
         <div class="col-xl-10 mx-auto mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="fw-bold text-uppercase">liste des articles</h1>
+                    <h1 class="fw-bold text-uppercase">liste des jeux</h1>
                 </div>
             </div>
             <div class="row">
@@ -15,8 +15,8 @@
             <div class="row g-2">
                 <div class="col-6 pt-3">
                     <div class="d-flex mb-3">
-                        <a href="/controllers/dashboard/articles/add-article-ctrl.php" class="btn btn-danger rounded-4 text-uppercase fw-bold mx-2">Ajouter un article</a>
-                        <a href="/controllers/dashboard/articles/archive-articles-ctrl.php" class="btn btn-outline-danger rounded-4 text-uppercase fw-bold">Voir les articles archivées</a>
+                        <a href="/controllers/dashboard/games/add-game-ctrl.php" class="btn btn-danger rounded-4 text-uppercase fw-bold mx-2">Ajouter un Jeu</a>
+                        <!-- <a href="/controllers/dashboard/articles/archive-articles-ctrl.php" class="btn btn-outline-danger rounded-4 text-uppercase fw-bold">Voir les articles archivées</a> -->
                     </div>
                 </div>
             </div>
@@ -31,31 +31,29 @@
                                         <!-- <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
                                             <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a> -->
                                     </th>
-                                    <th scope="col">Titre</th>
+                                    <th scope="col">Description</th>
                                     <th scope="col">Image</th>
-                                    <th scope="col">Creation</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($articles as $article) { ?>
+                                <?php foreach ($games as $game) { ?>
                                     <tr>
-                                        <td class="fw-semibold"><?= $article->name ?></td>
-                                        <td class="fw-semibold text-break"><?= $article->title ?></td>
+                                        <td class="fw-semibold"><?= $game->name ?></td>
+                                        <td class="fw-semibold text-break w-25 "><?= $game->game_description ?></td>
                                         <td class="fw-semibold">
-                                            <?php if (isset($article->picture)) { ?>
+                                            <?php if (isset($game->game_picture)) { ?>
                                                 <div class="ratio ratio-1x1">
-                                                    <img src="/public/uploads/article/<?= $article->picture ?>" alt="<?= $article->picture ?>" class="object-fit-cover rounded-circle ">
+                                                    <img src="/public/uploads/games/<?= $game->game_picture ?>" alt="<?= $game->game_picture ?>" class="object-fit-cover rounded-circle">
                                                 </div>
                                             <?php } ?>
                                         </td>
-                                        <td class="fw-semibold"><?= $article->created_at ?></td>
                                         <td>
-                                            <a href="/controllers/dashboard/articles/update-article-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <a href="/controllers/dashboard/games/update-game-ctrl.php?id=<?= $game->id_game ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-pencil-square text-dark fs-4"></i>
                                             </a>
-                                            <a href="/controllers/dashboard/articles/archive-articles-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
-                                                <i class="bi bi-archive text-dark fs-4"></i>
+                                            <a href="/controllers/dashboard/games/delete-game-ctrl.php?id=<?= $game->id_game ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                             </a>
                                         </td>
                                     </tr>
