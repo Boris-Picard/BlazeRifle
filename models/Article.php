@@ -8,8 +8,8 @@ class Article
     private string $title;
     private string $secondtitle;
     private string $thirdtitle;
-    private string $picture;
-    private string $description;
+    private string $article_picture;
+    private string $article_description;
     private string $firstsection;
     private string $secondsection;
     private ?string $created_at;
@@ -23,8 +23,8 @@ class Article
         string $title = '',
         string $secondtitle = '',
         string $thirdtitle = '',
-        string $picture = '',
-        string $description = '',
+        string $article_picture = '',
+        string $article_description = '',
         string $firstsection = '',
         string $secondsection = '',
         ?string $created_at = null,
@@ -38,8 +38,8 @@ class Article
         $this->title = $title;
         $this->secondtitle = $secondtitle;
         $this->thirdtitle = $thirdtitle;
-        $this->picture = $picture;
-        $this->description = $description;
+        $this->article_picture = $article_picture;
+        $this->article_description = $article_description;
         $this->firstsection = $firstsection;
         $this->secondsection = $secondsection;
         $this->created_at = $created_at;
@@ -81,24 +81,24 @@ class Article
         return $this->thirdtitle;
     }
 
-    public function setPicture(?string $picture)
+    public function setArticlePicture(?string $article_picture)
     {
-        $this->picture = $picture;
+        $this->article_picture = $article_picture;
     }
 
-    public function getPicture(): ?string
+    public function getArticlePicture(): ?string
     {
-        return $this->picture;
+        return $this->article_picture;
     }
 
-    public function setDescription(string $description)
+    public function setArticleDescription(string $article_description)
     {
-        $this->description = $description;
+        $this->article_description = $article_description;
     }
 
-    public function getDescription(): string
+    public function getArticleDescription(): string
     {
-        return $this->description;
+        return $this->article_description;
     }
 
     public function setFirstSection(string $firstsection)
@@ -195,16 +195,16 @@ class Article
     {
         $pdo = Database::connect();
 
-        $sql = 'INSERT INTO `articles` (`title`, `secondtitle`, `thirdtitle`, `picture`, `description`, `firstsection`, `secondsection`, `id_game`) 
-        VALUES(:title, :secondtitle, :thirdtitle, :picture, :description, :firstsection, :secondsection, :id_game)';
+        $sql = 'INSERT INTO `articles` (`title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`) 
+        VALUES(:title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game)';
 
         $sth = $pdo->prepare($sql);
 
         $sth->bindValue(':title', $this->getTitle());
         $sth->bindValue(':secondtitle', $this->getSecondTitle());
         $sth->bindValue(':thirdtitle', $this->getThirdTitle());
-        $sth->bindValue(':picture', $this->getPicture());
-        $sth->bindValue(':description', $this->getDescription());
+        $sth->bindValue(':article_picture', $this->getArticlePicture());
+        $sth->bindValue(':article_description', $this->getArticleDescription());
         $sth->bindValue(':firstsection', $this->getFirstSection());
         $sth->bindValue(':secondsection', $this->getSecondSection());
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
@@ -263,7 +263,7 @@ class Article
         $pdo = Database::connect();
 
         $sql = 'UPDATE `articles` 
-        SET `title`=:title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `picture`=:picture, `description`=:description, `firstsection`=:firstsection, `secondsection`=:secondsection
+        SET `title`=:title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection
         WHERE `id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
@@ -271,8 +271,8 @@ class Article
         $sth->bindValue(':title', $this->getTitle());
         $sth->bindValue(':secondtitle', $this->getSecondTitle());
         $sth->bindValue(':thirdtitle', $this->getThirdTitle());
-        $sth->bindValue(':picture', $this->getPicture());
-        $sth->bindValue(':description', $this->getDescription());
+        $sth->bindValue(':article_picture', $this->getArticlePicture());
+        $sth->bindValue(':article_description', $this->getArticleDescription());
         $sth->bindValue(':firstsection', $this->getFirstSection());
         $sth->bindValue(':secondsection', $this->getSecondSection());
         $sth->bindValue(':id_article', $this->getIdArticle(), PDO::PARAM_INT);
@@ -286,7 +286,7 @@ class Article
     {
         $pdo = Database::connect();
 
-        $sql = 'UPDATE `articles` SET `picture`= null WHERE `id_article`=:id_article;';
+        $sql = 'UPDATE `articles` SET `article_picture`= null WHERE `id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
 
@@ -304,8 +304,7 @@ class Article
         $sql = 'UPDATE `articles`';
 
         $archive ? $sql .=  " SET `deleted_at`=NOW() WHERE `id_article`=:id_article "  : $sql .= " SET `deleted_at`= NULL WHERE `id_article`=:id_article ";
-        // var_dump($sql);
-        // die;
+        
         $sth = $pdo->prepare($sql);
 
         $sth->bindValue(':id_article', $id, PDO::PARAM_INT);

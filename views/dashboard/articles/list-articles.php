@@ -43,9 +43,9 @@
                                         <td class="fw-semibold"><?= $article->name ?></td>
                                         <td class="fw-semibold text-break"><?= $article->title ?></td>
                                         <td class="fw-semibold">
-                                            <?php if (isset($article->picture)) { ?>
+                                            <?php if (isset($article->article_picture)) { ?>
                                                 <div class="ratio ratio-1x1">
-                                                    <img src="/public/uploads/article/<?= $article->picture ?>" alt="<?= $article->picture ?>" class="object-fit-cover rounded-circle ">
+                                                    <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>" class="object-fit-cover rounded-circle ">
                                                 </div>
                                             <?php } ?>
                                         </td>

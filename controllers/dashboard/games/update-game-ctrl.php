@@ -33,29 +33,36 @@ try {
             }
         }
 
-        try {
-            if (empty($_FILES['picture']['name'])) {
-                throw new Exception("Photo obligatoire");
-            }
-            if ($_FILES['picture']['error'] != 0) {
-                throw new Exception("Erreur lors du transfert");
-            }
+        $filename = $game->game_picture;
 
-            if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
-                throw new Exception("Format de fichier non autorisé");
-            }
+        if (empty($filename)) {
+            try {
+                if (empty($_FILES['picture']['name'])) {
+                    throw new Exception("Photo obligatoire");
+                }
+                if ($_FILES['picture']['error'] != 0) {
+                    throw new Exception("Erreur lors du transfert");
+                }
 
-            if ($_FILES['picture']['size'] >= MAX_FILESIZE) {
-                throw new Exception("Poids dépassé!");
+                if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
+                    throw new Exception("Format de fichier non autorisé");
+                }
+
+                if ($_FILES['picture']['size'] >= MAX_FILESIZE) {
+                    throw new Exception("Poids dépassé!");
+                }
+                $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+                $filename = uniqid() . '.' . $extension;
+                $from = $_FILES['picture']['tmp_name'];
+                $to = __DIR__ . '/../../../public/uploads/games/' . $filename;
+                move_uploaded_file($from, $to);
+            } catch (\Throwable $th) {
+                $error['picture'] = $th->getMessage();
             }
-            $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-            $filename = uniqid() . '.' . $extension;
-            $from = $_FILES['picture']['tmp_name'];
-            $to = __DIR__ . '/../../../public/uploads/games/' . $filename;
-            move_uploaded_file($from, $to);
-        } catch (\Throwable $th) {
-            $error['picture'] = $th->getMessage();
         }
+
+        // var_dump($filename);
+        // die;
 
         if (empty($error)) {
             $game = new Game();
@@ -65,15 +72,17 @@ try {
             $game->setGamePicture($filename);
             $game->setIdGame($id_game);
 
-            $game->update();
+            $result = $game->update();
 
-            if ($game) {
-                echo 'Donnée inserée';
+            if ($result) {
+                $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
+                header('Refresh:3; url=list-games-ctrl.php');
             }
         }
+        $game = Game::get($id_game);
     }
 } catch (PDOException $e) {
-    $error = $e->getMessage();
+    $error['error'] = $e->getMessage();
 }
 
 

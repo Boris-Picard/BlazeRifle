@@ -54,7 +54,7 @@ try {
             $game = new Game();
 
             $game->setName($name);
-            $game->setDescription($description);
+            $game->setGameDescription($description);
             $game->setGamePicture($filename);
 
             $game->insert();

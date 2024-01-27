@@ -29,9 +29,10 @@ try {
                 $error['title'] = 'Le titre n\'est pas valide';
             }
         }
-        $namePicture = $article->picture ?? null;
+
+        $namePicture = $article->article_picture;
         // Photo de l'article nettoyage et validation
-        if (!$article->picture) {
+        if (empty($namePicture)) {
             try {
                 if (empty($_FILES['image-article']['name'])) {
                     throw new Exception("Photo obligatoire");
@@ -67,10 +68,11 @@ try {
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
-            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/')));
-            if (!$isOk) {
-                $error['description'] = 'La description n\'est pas valide';
-            }
+            
+            // $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/')));
+            // if (!$isOk) {
+            //     $error['description'] = 'La description n\'est pas valide';
+            // }
         }
 
         // Sous-titre 1 de l'article nettoyage et validation
@@ -103,10 +105,13 @@ try {
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
-            $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
-            if (!$isOk) {
-                $error['firstSection'] = 'La section de l\'article n\'est pas valide';
+            if (strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
+                $error['firstSection'] = 'La longueur du texte n\'est pas correct d\'article';
             }
+            // $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
+            // if (!$isOk) {
+            //     $error['firstSection'] = 'La section de l\'article n\'est pas valide';
+            // }
         }
 
         // Deuxième section de l'article nettoyage et validation
@@ -115,10 +120,13 @@ try {
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
-            $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
-            if (!$isOk) {
-                $error['secondSection'] = 'La deuxième section de l\'article n\'est pas valide';
+            if (strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
+                $error['firstSection'] = 'La longueur du texte n\'est pas correct d\'article';
             }
+            // $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
+            // if (!$isOk) {
+            //     $error['secondSection'] = 'La deuxième section de l\'article n\'est pas valide';
+            // }
         }
 
         /* array_column permet de transformer mon tableau d'ojects en tableau 
@@ -169,8 +177,8 @@ try {
             $article->setTitle($title);
             $article->setSecondTitle($secondTitle);
             $article->setThirdTitle($thirdTitle);
-            $article->setPicture($namePicture);
-            $article->setDescription($description);
+            $article->setArticlePicture($namePicture);
+            $article->setArticleDescription($description);
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
             $article->setIdArticle($id_article);

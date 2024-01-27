@@ -7,8 +7,8 @@ try {
 
     $article = Article::get($id_article);
 
-    if($article->picture) {
-        $link = unlink('../../../public/uploads/article/'.$article->picture);
+    if($article->article_picture) {
+        $link = unlink('../../../public/uploads/article/'.$article->article_picture);
         $deleteImg = Article::updateImg($id_article);
     }
 

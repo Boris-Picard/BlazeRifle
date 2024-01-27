@@ -189,8 +189,8 @@ try {
             $article->setTitle($title);
             $article->setSecondTitle($secondTitle);
             $article->setThirdTitle($thirdTitle);
-            $article->setPicture($fileName);
-            $article->setDescription($description);
+            $article->setArticlePicture($fileName);
+            $article->setArticleDescription($description);
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
             $article->setIdGame($id_game);

@@ -33,10 +33,10 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <?php if (isset($article->picture)) { ?>
+                                <?php if (isset($article->article_picture)) { ?>
                                     <div class="pt-3 d-flex justify-content-center">
                                         <div class="ratio ratio-21x9">
-                                            <img src="/public/uploads/article/<?= $article->picture ?>" alt="<?= $article->picture ?>" class="object-fit-cover rounded-4">
+                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>" class="object-fit-cover rounded-4">
                                         </div>
                                         <div class="mx-2 d-flex align-items-center">
                                             <a href="/controllers/dashboard/articles/update-img-ctrl.php?id=<?= $article->id_article ?>" class="btn btn-danger fw-bold text-uppercase">
@@ -53,7 +53,7 @@
                             <div class="col-md-6 mb-3">
                                 <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
                                 <label for="description" class="form-label">Description de l'article</label>
-                                <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="500" pattern="REGEX_DESCRIPTION" required><?= $article->description ?></textarea>
+                                <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="500" pattern="REGEX_DESCRIPTION" required><?= $article->article_description ?></textarea>
                             </div>
                         </div>
                         <div class="row">

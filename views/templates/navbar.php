@@ -3,6 +3,7 @@ require_once __DIR__ . '/../../models/Game.php';
 
 try {
     $games = Game::getAll();
+
 } catch (\Throwable $e) {
     $e->getMessage();
 }
@@ -39,16 +40,9 @@ try {
                             Les jeux
                         </a>
                         <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/gta-6-news-visu.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6">Grand Theft Auto VI</span></a></li>
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Call of duty mw 3">call of duty : mw 3</span></a></li>
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/1329760.jpeg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Counter strike 2">Counter strike 2</span></a></li>
-                            <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?=$games[1]->id_game?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $games[1]->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Apex Legends"><?= $games[1]->name ?></span></a></li>
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Call of duty warzone 2">call of duty : warzone 2</span></a></li>
-                            <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?=$games[0]->id_game?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $games[0]->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Valorant"><?= $games[0]->name ?></span></a></li>
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/infinite2.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Halo infinite">Halo infinite</span></a></li>
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/overwatch-2-key-art-4k-ah-2048x1152-1.jpg.webp" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Overwatch 2">overwatch 2</span></a></li>
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/battlefield2042.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Battlefield 2042">battlefield 2042</span></a></li>
-                            <li><a href="" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/borderlands3.jpg" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="Borderlands 3">borderlands 3</span></a></li>
+                            <?php foreach ($games as $game) { ?>
+                                <li><a href="/controllers/games-preview/games-ctrl.php?id=<?=$game->id_game?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?=$game->game_picture?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6"><?=$game->name?></span></a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                     <li class="nav-item">
