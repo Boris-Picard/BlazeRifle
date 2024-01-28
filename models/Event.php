@@ -87,10 +87,10 @@ class Event
 
     public function setIdEvent(?int $id_event)
     {
-        $this->$id_event = $id_event;
+        $this->id_event = $id_event;
     }
 
-    public function getIdEvent(): int
+    public function getIdEvent(): ?int
     {
         return $this->id_event;
     }
@@ -138,7 +138,7 @@ class Event
         isset($id_game) ? $sql .= ' AND `games`.`id_game`=:id_game ' : '';
 
         $order == 'ASC' ? $sql .= ' ORDER BY `event_date` ASC ' : ' ORDER BY `event_date` DESC ';
-        
+
         if (isset($id_game)) {
             $sth = $pdo->prepare($sql);
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
@@ -153,21 +153,44 @@ class Event
         return $result;
     }
 
-    public static function get(int $id_game)
+    public static function get(int $id_event)
     {
         $pdo = Database::connect(DSN, USER, PASSWORD);
 
         $sql = 'SELECT * FROM `events`
         INNER JOIN `games` ON `games`.`id_game`=`events`.`id_game`
-        WHERE `games`.`id_game`=:id_game;';
+        WHERE `events`.`id_event`=:id_event;';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+        $sth->bindValue(':id_event', $id_event, PDO::PARAM_INT);
 
         $sth->execute();
 
         $result = $sth->fetch(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
+    public function update()
+    {
+        $pdo = Database::connect(DSN, USER, PASSWORD);
+
+        $sql = 'UPDATE `events` SET `event_title`=:event_title, `event_description`=:event_description, `event_picture`=:event_picture, `event_link`=:event_link, `place`=:place, `event_date`=:event_date, `id_game`=:id_game
+        WHERE `id_event`=`id_event`;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':event_title', $this->getEventTitle());
+        $sth->bindValue(':event_description', $this->getEventDescription());
+        $sth->bindValue(':event_picture', $this->getEventPicture());
+        $sth->bindValue(':event_link', $this->getEventLink());
+        $sth->bindValue(':place', $this->getPlace());
+        $sth->bindValue(':event_date', $this->getEventDate());
+        $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
+        $sth->bindValue(':id_event', $this->getIdEvent(), PDO::PARAM_INT);
+
+        $result = $sth->execute();
 
         return $result;
     }

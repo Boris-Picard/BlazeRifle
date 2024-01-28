@@ -33,9 +33,9 @@ try {
             }
         }
 
-        $namePicture = $article->article_picture;
+        $fileName = $article->article_picture;
         // Photo de l'article nettoyage et validation
-        if (empty($namePicture)) {
+        if (empty($fileName)) {
             try {
                 if (empty($_FILES['image-article']['name'])) {
                     throw new Exception("Photo obligatoire");
@@ -50,15 +50,12 @@ try {
                     throw new Exception("Image trop grande");
                 }
 
-                $from = $_FILES['image-article']['tmp_name'];
-
-                $fileName = uniqid('img_');
                 $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
-
-                $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName . '.' . $extension;
-
-                $namePicture = $fileName . '.' . $extension;
-
+                $fileName = uniqid('img_') . '.' . $extension;
+    
+                $from = $_FILES['image-article']['tmp_name'];
+                $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
+    
                 $moveFile = move_uploaded_file($from, $to);
             } catch (Throwable $th) {
                 $error['image-article'] = $th->getMessage();
@@ -180,7 +177,7 @@ try {
             $article->setTitle($title);
             $article->setSecondTitle($secondTitle);
             $article->setThirdTitle($thirdTitle);
-            $article->setArticlePicture($namePicture);
+            $article->setArticlePicture($fileName);
             $article->setArticleDescription($description);
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
@@ -191,6 +188,7 @@ try {
             if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-articles-ctrl.php');
+                die;
             }
         }
         $article = Article::get($id_article);

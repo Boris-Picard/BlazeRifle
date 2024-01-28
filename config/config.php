@@ -6,21 +6,6 @@ define('USER', 'BorisRifle');
 define('PASSWORD', 'r.g[WZL_FZkqM0Gs');
 
 $consolesArray = ['PS5', 'XBOX', 'SWITCH', 'PC'];
-$gamesArray = [
-    'GTA6', 
-    'Call of Duty : MW3', 
-    'Overwatch 2', 
-    'Counter-Strike 2', 
-    'Apex Legends', 
-    'Battlefield 2042',
-    'Far Cry 6',
-    'Quake',
-    'Call of Duty: Warzone 2.0',
-    'Valorant',
-    'Borderlands 4',
-    'Halo Infinite',
-    'DOOM',
-];
 
 
 define('REGEX_TITLE', '^[a-zA-Z0-9 .,\'éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{10,150}$');

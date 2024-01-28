@@ -100,40 +100,43 @@
                                         <div class="col-12">
                                             <div class="card mt-3 p-0 border-0 bg-transparent">
                                                 <div class="card-img-top ratio ratio-16x9">
-                                                    <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-3" alt="Sunset Over the Sea">
+                                                    <img src="/public/uploads/article/<?= $articles[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="Sunset Over the Sea">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
                                                     <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
                                                     <div class="card-text mb-3">
                                                         <small class="text-muted">
-                                                            25 déc, 18:05
+                                                            <?= $articles[0]->created_at ?>
                                                         </small>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                                <div class="row g-0 cardActuGuideRight">
-                                                    <div class="col-auto">
-                                                        <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                    </div>
-                                                    <div class="col-md-6 p-0 ">
-                                                        <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                            <div class="">
-                                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                                </a>
+                                            <?php foreach (array_slice($articles, 1) as $article) { ?>
+                                                <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
+                                                    <div class="row g-0 cardActuGuideRight">
+                                                        <div class="col-auto">
+                                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
+                                                        </div>
+                                                        <div class="col-md-6 p-0 ">
+                                                            <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
+                                                                <div class="">
+                                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                        <?= $article->title ?>
+                                                                    </a>
+                                                                </div>
+                                                                <p class="card-text">
+                                                                    <small class="text-muted">
+                                                                        Le <?= $article->created_at ?>
+                                                                    </small>
+                                                                </p>
                                                             </div>
-                                                            <p class="card-text">
-                                                                <small class="text-muted">
-                                                                    Il y a 5 heures
-                                                                </small>
-                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            <?php
+                                            } ?>
                                             <div class="d-flex justify-content-center mt-3 mb-4">
-                                                <a href="#" class="btn btn-danger w-50 rounded-4 p-1 fw-bold text-uppercase">
+                                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?? $articles[0]->id_game ?>" class="btn btn-danger w-50 rounded-4 p-1 fw-bold text-uppercase">
                                                     les articles
                                                 </a>
                                             </div>

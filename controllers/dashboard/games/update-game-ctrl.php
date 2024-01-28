@@ -61,9 +61,6 @@ try {
             }
         }
 
-        // var_dump($filename);
-        // die;
-
         if (empty($error)) {
             $game = new Game();
 
@@ -77,6 +74,7 @@ try {
             if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-games-ctrl.php');
+                die;
             }
         }
         $game = Game::get($id_game);

@@ -10,10 +10,9 @@ try {
     $games = Game::getAll();
 
 
-    $articles = Article::getAll($id_game);
+    $articles = Article::getAll($id_game, order: 'DESC');
 
-
-    $events = Event::getAll($id_game, 'ASC');
+    $events = Event::getAll($id_game);
 
     // formattage de la date en français
     $formatter = new IntlDateFormatter('fr_FR');

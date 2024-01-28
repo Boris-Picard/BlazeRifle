@@ -4,7 +4,7 @@
         <div class="col-xl-10 mx-auto mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="fw-bold text-uppercase">liste des articles</h1>
+                    <h1 class="fw-bold text-uppercase">liste des événements</h1>
                 </div>
             </div>
             <div class="row">
@@ -52,10 +52,10 @@
                                         </td>
                                         <td class="fw-semibold"><?= $event->event_date ?></td>
                                         <td>
-                                            <a href="/controllers/dashboard/articles/update-article-ctrl.php?id=<?= $event->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <a href="/controllers/dashboard/events/update-event-ctrl.php?id_event=<?= $event->id_event ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-pencil-square text-dark fs-4"></i>
                                             </a>
-                                            <a href="/controllers/dashboard/articles/archive-articles-ctrl.php?id=<?= $event->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <a href="/controllers/dashboard/events/delete-event-ctrl.php?id_event=<?= $event->id_event ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                             </a>
                                         </td>

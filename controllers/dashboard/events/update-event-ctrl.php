@@ -6,7 +6,11 @@ require_once __DIR__ . '/../../../models/Game.php';
 try {
     $listEvents = true;
 
+    $id_event = intval(filter_input(INPUT_GET, 'id_event', FILTER_SANITIZE_NUMBER_INT));
+
     $games = Game::getAll();
+
+    $event = Event::get($id_event);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Titre de l'événement nettoyage et validation
@@ -47,6 +51,7 @@ try {
             }
         }
 
+
         $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_INT);
         if (empty($date)) {
             $error['date'] = 'Veuillez renseigner une date';
@@ -66,41 +71,41 @@ try {
         }
 
         $link = filter_input(INPUT_POST, 'link', FILTER_SANITIZE_URL);
-        if(empty($link)) {
+        if (empty($link)) {
             $error['link'] = 'Veuillez renseigner un lien';
         } else {
             $isOk = filter_var($link, FILTER_VALIDATE_URL);
-            if(!$isOk) {
-                $error['link'] = 'Veuillez renseigner un lien correct';
+            if (!$isOk) {
+                $error['link'] = 'Veuillez renseigner un lien valide';
             }
         }
 
-        try {
-            if (empty($_FILES['picture']['name'])) {
-                throw new Exception("Photo obligatoire");
+        $fileName = $event->event_picture;
+        if (empty($fileName)) {
+            try {
+                if (empty($_FILES['picture']['name'])) {
+                    throw new Exception("Photo obligatoire");
+                }
+                if ($_FILES['picture']['error'] != 0) {
+                    throw new Exception("Error");
+                }
+                if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
+                    throw new Exception("Format non autorisé");
+                }
+                if ($_FILES['picture']['size'] > MAX_FILESIZE) {
+                    throw new Exception("Image trop grande");
+                }
+
+                $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
+                $fileName = uniqid('img_') . '.' . $extension;
+
+                $from = $_FILES['image-article']['tmp_name'];
+                $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
+
+                $moveFile = move_uploaded_file($from, $to);
+            } catch (\Throwable $th) {
+                $error['picture'] = $th->getMessage();
             }
-            if ($_FILES['picture']['error'] != 0) {
-                throw new Exception("Error");
-            }
-            if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
-                throw new Exception("Format non autorisé");
-            }
-            if ($_FILES['picture']['size'] > MAX_FILESIZE) {
-                throw new Exception("Image trop grande");
-            }
-
-            $from = $_FILES['picture']['tmp_name'];
-
-            $fileName = uniqid('img_');
-            $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-
-            $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName . '.' . $extension;
-
-            $namePicture = $fileName . '.' . $extension;
-
-            $moveFile = move_uploaded_file($from, $to);
-        } catch (\Throwable $th) {
-            $error['picture'] = $th->getMessage();
         }
 
         $gamesId = array_column($games, 'id_game');
@@ -121,17 +126,19 @@ try {
 
             $event->setEventTitle($title);
             $event->setEventDescription($description);
-            $event->setEventPicture($namePicture);
+            $event->setEventPicture($fileName);
             $event->setEventLink($link);
             $event->setPlace($place);
             $event->setEventDate($date);
+            $event->setIdEvent($id_event);
             $event->setIdGame($id_game);
 
-            $result = $event->insert();
-
+            $result = $event->update();
+            
             if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-events-ctrl.php');
+                die;
             }
         }
     }
@@ -148,5 +155,5 @@ try {
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';
 include __DIR__ . '/../../../views/templates/sidebar-dashboard.php';
-include __DIR__ . '/../../../views/dashboard/events/add-event.php';
+include __DIR__ . '/../../../views/dashboard/events/update-event.php';
 include __DIR__ . '/../../../views/templates/footer-dashboard.php';

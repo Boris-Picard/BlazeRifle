@@ -265,7 +265,7 @@ class Article
         $pdo = Database::connect();
 
         $sql = 'UPDATE `articles` 
-        SET `title`=:title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection
+        SET `title`=:title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game 
         WHERE `id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
@@ -277,6 +277,7 @@ class Article
         $sth->bindValue(':article_description', $this->getArticleDescription());
         $sth->bindValue(':firstsection', $this->getFirstSection());
         $sth->bindValue(':secondsection', $this->getSecondSection());
+        $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
         $sth->bindValue(':id_article', $this->getIdArticle(), PDO::PARAM_INT);
 
         $result = $sth->execute();
