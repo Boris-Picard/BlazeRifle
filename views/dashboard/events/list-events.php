@@ -31,7 +31,6 @@
                                             <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a> -->
                                     </th>
                                     <th scope="col">Titre</th>
-                                    <th scope="col">Description</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Action</th>
@@ -40,13 +39,12 @@
                             <tbody>
                                 <?php foreach ($events as $event) { ?>
                                     <tr>
-                                        <td class="fw-semibold"><?= $event->id_event ?></td>
-                                        <td class="fw-semibold text-break"><?= $event->title ?></td>
-                                        <td class="fw-semibold text-break w-25"><?= $event->description ?></td>
+                                        <td class="fw-semibold"><?= $event->name ?></td>
+                                        <td class="fw-semibold text-break w-25"><?= $event->event_title ?></td>
                                         <td class="fw-semibold">
-                                            <?php if (isset($event->picture)) { ?>
+                                            <?php if (isset($event->event_picture)) { ?>
                                                 <div class="ratio ratio-1x1">
-                                                    <img src="/public/uploads/events/<?= $event->picture ?>" alt="<?= $event->picture ?>" class="object-fit-cover rounded-circle imgVehicles">
+                                                    <img src="/public/uploads/events/<?= $event->event_picture ?>" alt="<?= $event->event_picture ?>" class="object-fit-cover rounded-circle imgVehicles">
                                                 </div>
                                             <?php } ?>
                                         </td>
@@ -56,7 +54,7 @@
                                                 <i class="bi bi-pencil-square text-dark fs-4"></i>
                                             </a>
                                             <a href="/controllers/dashboard/articles/archive-articles-ctrl.php?id=<?= $event->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
-                                                <i class="bi bi-archive text-dark fs-4"></i>
+                                                <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                             </a>
                                         </td>
                                     </tr>

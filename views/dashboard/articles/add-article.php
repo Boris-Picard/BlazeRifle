@@ -74,7 +74,7 @@
                                     <select class="form-select" name="id_game">
                                         <option selected disabled></option>
                                         <?php foreach ($games as $game) { ?>
-                                            <option value="<?= $game->id_game ?>" <?= $game->id_game == $id_game ? 'selected' : '' ?>><?= $game->name ?></option>
+                                            <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= $game->name ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>

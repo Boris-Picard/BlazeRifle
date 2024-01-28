@@ -1,10 +1,13 @@
 <?php
 require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Event.php';
+require_once __DIR__ . '/../../../models/Game.php';
 
 try {
     $listEvents = true;
-    
+
+    $games = Game::getAll();
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Titre de l'événement nettoyage et validation
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -24,9 +27,12 @@ try {
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
-            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/u')));
-            if (!$isOk) {
-                $error['description'] = 'La description n\'est pas valide';
+            // $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/u')));
+            // if (!$isOk) {
+            //     $error['description'] = 'La description n\'est pas valide';
+            // }
+            if (strlen($description) < 50 || strlen($description) > 500) {
+                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 500 caractères';
             }
         }
 
@@ -59,48 +65,62 @@ try {
             }
         }
 
+        try {
+            if (empty($_FILES['picture']['name'])) {
+                throw new Exception("Photo obligatoire");
+            }
+            if ($_FILES['picture']['error'] != 0) {
+                throw new Exception("Error");
+            }
+            if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
+                throw new Exception("Format non autorisé");
+            }
+            if ($_FILES['picture']['size'] > MAX_FILESIZE) {
+                throw new Exception("Image trop grande");
+            }
+
+            $from = $_FILES['picture']['tmp_name'];
+
+            $fileName = uniqid('img_');
+            $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+
+            $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName . '.' . $extension;
+
+            $namePicture = $fileName . '.' . $extension;
+
+            $moveFile = move_uploaded_file($from, $to);
+        } catch (\Throwable $th) {
+            $error['picture'] = $th->getMessage();
+        }
+
+        $gamesId = array_column($games, 'id_game');
+
+        // Nettoyage et validation du select d'un jeu
+        $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+
+        if (empty($id_game)) {
+            $error['id_game'] = 'Veuillez sélectionner un jeu';
+        } else {
+            if (!in_array($id_game, $gamesId)) {
+                $error['id_game'] = 'Ce n\'est pas un jeu valide';
+            }
+        }
+
         if (empty($error)) {
-            try {
-                if (empty($_FILES['picture']['name'])) {
-                    throw new Exception("Photo obligatoire");
-                }
-                if ($_FILES['picture']['error'] != 0) {
-                    throw new Exception("Error");
-                }
-                if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
-                    throw new Exception("Format non autorisé");
-                }
-                if ($_FILES['picture']['size'] > MAX_FILESIZE) {
-                    throw new Exception("Image trop grande");
-                }
+            $event = new Event();
 
-                $from = $_FILES['picture']['tmp_name'];
+            $event->setEventTitle($title);
+            $event->setEventDescription($description);
+            $event->setEventPicture($namePicture);
+            $event->setPlace($place);
+            $event->setEventDate($date);
+            $event->setIdGame($id_game);
 
-                $fileName = uniqid('img_');
-                $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+            $result = $event->insert();
 
-                $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName . '.' . $extension;
-
-                $namePicture = $fileName . '.' . $extension;
-
-                $moveFile = move_uploaded_file($from, $to);
-
-                $event = new Event();
-
-                $event->setTitle($title);
-                $event->setDescription($description);
-                $event->setPicture($namePicture);
-                $event->setPlace($place);
-                $event->setEventDate($date);
-
-                $result = $event->insert();
-
-                if ($result) {
-                    $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
-                    header('Refresh:3; url=list-articles-ctrl.php');
-                }
-            } catch (\Throwable $th) {
-                $error['picture'] = $th->getMessage();
+            if ($result) {
+                $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
+                header('Refresh:3; url=list-articles-ctrl.php');
             }
         }
     }
