@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../../models/Event.php';
 try {
     $listEvents = true;
     
-    $events = Event::getAll(true);
+    $events = Event::getAll();
 
     // $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
     // $article = Event::get($id_article);

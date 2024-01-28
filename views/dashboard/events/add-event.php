@@ -46,6 +46,13 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="mb-3 col-md-12">
+                                <div><small class="form-text text-danger"><?= $error['link'] ?? '' ?></small></div>
+                                <label for="link" class="form-label">Lien de l'event <span class="text-danger">*</span></label>
+                                <input type="url" class="form-control" name="link" id="link" value="<?= $link ?? '' ?>" aria-describedby="link" placeholder="https://www.millenium.org/" required>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="mb-3 col-md-4">
                                 <div><small class="form-text text-danger"><?= $error['place'] ?? '' ?></small></div>
                                 <label for="place" class="form-label">Lieu de l'événement <span class="text-danger">*</span></label>

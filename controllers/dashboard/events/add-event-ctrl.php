@@ -65,6 +65,16 @@ try {
             }
         }
 
+        $link = filter_input(INPUT_POST, 'link', FILTER_SANITIZE_URL);
+        if(empty($link)) {
+            $error['link'] = 'Veuillez renseigner un lien';
+        } else {
+            $isOk = filter_var($link, FILTER_VALIDATE_URL);
+            if(!$isOk) {
+                $error['link'] = 'Veuillez renseigner un lien correct';
+            }
+        }
+
         try {
             if (empty($_FILES['picture']['name'])) {
                 throw new Exception("Photo obligatoire");
@@ -112,6 +122,7 @@ try {
             $event->setEventTitle($title);
             $event->setEventDescription($description);
             $event->setEventPicture($namePicture);
+            $event->setEventLink($link);
             $event->setPlace($place);
             $event->setEventDate($date);
             $event->setIdGame($id_game);
