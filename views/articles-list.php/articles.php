@@ -16,9 +16,9 @@
                                 </nav>
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
-                                <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <?=$game->name?></h2>
+                                <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <?= $articles[0]->name ?></h2>
                                 <p class="text-center text-break mt-2">
-                                    <?=$game->description?>
+                                    <?= $articles[0]->game_description ?>
                                 </p>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                                                 <div>
                                                     <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
                                                 </div>
-                                                <a href="/controllers/articles/article-ctrl.php?id=<?=$article->id_article?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
+                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?=$article->id_game?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
                                                     <?= $article->title ?>
                                                 </a>
                                                 <p class="aCard mt-2">

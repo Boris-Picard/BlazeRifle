@@ -9,7 +9,7 @@
                                 <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
                                 <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php">Preview Des Jeux</a></li>
                                 <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php">Preview Des Articles</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php">Articles sur Call Of Duty : MW 3</a></li>
+                                <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>">Articles sur <?= $article->name ?></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Article</li>
                             </ol>
                         </nav>
@@ -19,7 +19,7 @@
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
                                 <small><a href="" class="text-decoration-none fw-bold">Précédent</a></small>
-                                <small><a href="/controllers/articles-list/articles-ctrl.php" class="text-decoration-none text-capitalize fw-bold">Articles Call of duty : mw 3</a></small>
+                                <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->name ?></a></small>
                                 <small><a href="" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
                         </div>
@@ -41,11 +41,11 @@
                             <!-- DESCRIPTION -->
                             <div class="col-12 py-5">
                                 <h3 class="fw-semibold text-break">
-                                    <?= $article->description ?>
+                                    <?= $article->article_description ?>
                                 </h3>
                                 <!-- IMG -->
                                 <div class="ratio ratio-16x9 mt-5">
-                                    <img class="rounded-5 object-fit-cover" src="/public/uploads/article/<?= $article->picture ?>" alt="<?= $article->picture ?>">
+                                    <img class="rounded-5 object-fit-cover" src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>">
                                 </div>
                             </div>
                         </div>
@@ -85,21 +85,21 @@
                                     Article suivant
                                 </h4>
                                 <?php foreach ($articles as $article) {
-                                    if ($id_article != $article->id_article) { ?>
+                                    if ($id_article != $article->id_article && $id_game == $article->id_game) { ?>
                                         <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
                                             <div class="row g-0">
                                                 <div class="col-md-2 d-flex">
                                                     <div class="ratio ratio-16x9">
-                                                        <img src="/public/uploads/article/<?= $article->picture ?>" class="object-fit-cover img-fluid rounded-4" alt="<?= $article->picture ?>">
+                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="object-fit-cover img-fluid rounded-4" alt="<?= $article->article_picture ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-10">
                                                     <div class="card-body p-2 mx-2">
-                                                        <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
+                                                        <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
                                                             <?= $article->title ?>
                                                         </a>
                                                         <p class="text-card aCard m-0 mt-2">
-                                                            <?= $article->description ?>
+                                                            <?= $article->article_description ?>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -281,9 +281,8 @@
                         <div class="row mx-4 rounded-4">
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
-                                    <div class="col-12 d-flex flex-row text-center p-3">
-                                        <i class="bi bi-pen fs-3"></i>
-                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> Call of Duty: Modern Warfare 3</h5>
+                                    <div class="col-12 d-flex flex-row justify-content-center text-center p-3">
+                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= $article->name ?></h5>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -301,134 +300,31 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
+                                        <?php foreach ($articles as $article) { ?>
+                                            <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
+                                                <div class="row g-0 cardActuGuideRight">
+                                                    <div class="col-auto">
+                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
+                                                    </div>
+                                                    <div class="col-md-6 p-0 ">
+                                                        <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
+                                                            <div class="">
+                                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                    <?= $article->article_description ?>
+                                                                </a>
+                                                            </div>
+                                                            <p class="card-text">
+                                                                <small class="text-muted">
+                                                                    Le <?= $article->created_at ?>
+                                                                </small>
+                                                            </p>
                                                         </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/gta-6-news-visu.jpg" alt="Trendy Pants and Shoes" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php } ?>
                                         <div class="d-flex justify-content-center mt-3 mb-4">
-                                            <a href="#" class="btn btn-danger w-50 rounded-4 p-1 fw-bold text-uppercase">
+                                            <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="btn btn-danger w-50 rounded-4 p-1 fw-bold text-uppercase">
                                                 les articles
                                             </a>
                                         </div>

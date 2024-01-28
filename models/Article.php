@@ -214,7 +214,7 @@ class Article
         return $sth->rowCount() > 0;
     }
 
-    public static function getAll(?int $id_game = null, bool $showDeletedAt = false): array|false
+    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC'): array|false
     {
         $pdo = Database::connect();
 
@@ -225,6 +225,8 @@ class Article
         $showDeletedAt ? $sql .= ' AND `deleted_at` IS NOT NULL ' : $sql .= ' AND `deleted_at` IS NULL ';
 
         isset($id_game) ? $sql .= ' AND `games`.`id_game`=:id_game ' : null;
+
+        $order == 'ASC' ? $sql .= ' ORDER BY `articles`.`created_at` ASC ' : $sql .= ' ORDER BY `articles`.`created_at` DESC ';
 
         if (isset($id_game)) {
             $sth = $pdo->prepare($sql);

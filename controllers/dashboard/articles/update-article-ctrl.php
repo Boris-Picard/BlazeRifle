@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../../models/Article.php';
+require_once __DIR__ . '/../../../models/Game.php';
 
 
 try {
@@ -9,6 +10,8 @@ try {
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
     $article = Article::get($id_article);
+
+    $games = Game::getAll();
 
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
 
@@ -131,18 +134,18 @@ try {
 
         /* array_column permet de transformer mon tableau d'ojects en tableau 
             2 paramètres requis => tableau d'ojects et ce que je recherche dans ce dernier */
-        // $gamesId = array_column($gamesArray, 'id_game');
+            $gamesId = array_column($games, 'id_game');
 
-        // // Nettoyage et validation du select d'un jeu
-        // $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
-
-        // if (empty($id_game)) {
-        //     $error['id_game'] = 'Veuillez sélectionner un jeu';
-        // } else {
-        //     if (!in_array($id_game, $gamesId)) {
-        //         $error['id_game'] = 'Ce n\'est pas un jeu valide';
-        //     }
-        // }
+            // Nettoyage et validation du select d'un jeu
+            $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+    
+            if (empty($id_game)) {
+                $error['id_game'] = 'Veuillez sélectionner un jeu';
+            } else {
+                if (!in_array($id_game, $gamesId)) {
+                    $error['id_game'] = 'Ce n\'est pas un jeu valide';
+                }
+            }
 
         /* array_column permet de transformer mon tableau d'ojects en tableau 
             2 paramètres requis => tableau d'ojects et ce que je recherche dans ce dernier */

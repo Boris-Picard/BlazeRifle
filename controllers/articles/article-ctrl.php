@@ -6,16 +6,15 @@ require_once __DIR__ . '/../../models/Article.php';
 try {
 
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
+    $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
     $article = Article::get($id_article);
 
-    // $timestamp = strtotime($article->created_at);
-    // $article->formattedHour = date('H:i', $timestamp);
-    // $article->formattedDate = date('d/m/Y', $timestamp);
+    $timestamp = strtotime($article->created_at);
+    $article->formattedHour = date('H:i', $timestamp);
+    $article->formattedDate = date('d/m/Y', $timestamp);
 
-    $articles = Article::getAll(false);
-
-
+    $articles = Article::getAll($id_game, false, 'DESC');
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

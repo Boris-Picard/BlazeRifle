@@ -8,8 +8,6 @@ try {
 
     $articles = Article::getAll($id_game,false);
     
-    $game = Game::get($id_game);
-    
     foreach ($articles as $article) {
         $timestamp = strtotime($article->created_at);
         $article->formattedHour = date('H:i', $timestamp);

@@ -86,8 +86,8 @@
                                 <label for="id_game" class="mb-2">Jeux de l'article</label>
                                 <select class="form-select" name="id_game">
                                     <option selected disabled></option>
-                                    <?php foreach ($gamesArray as $game) { ?>
-                                        <option value="<?= $game ?>" <?= (isset($games) && $games == $game) ? 'selected' : '' ?>><?= $game ?></option>
+                                    <?php foreach ($games as $game) { ?>
+                                        <option value="<?= $game->id_game ?>" <?= $game->id_game == $article->id_game ? 'selected' : '' ?>><?= $game->name ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
