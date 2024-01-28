@@ -7,8 +7,6 @@ try {
     
     $id_game = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
     
-    $game = Game::get($id_game);
-
     $isDeleted = Game::delete($id_game);
 
     if($isDeleted > 0) {

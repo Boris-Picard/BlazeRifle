@@ -7,8 +7,6 @@ try {
     
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
     
-    $article = Article::get($id_article);
-
     $isDeleted = Article::delete($id_article);
 
     if($isDeleted > 0) {

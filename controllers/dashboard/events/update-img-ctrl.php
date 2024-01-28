@@ -3,13 +3,13 @@ session_start();
 require_once __DIR__ . '/../../../models/Event.php';
 
 try {
-    $id_vent = intval(filter_input(INPUT_GET, 'id_event', FILTER_SANITIZE_NUMBER_INT));
+    $id_event = intval(filter_input(INPUT_GET, 'id_event', FILTER_SANITIZE_NUMBER_INT));
 
-    $event = Event::get($id_vent);
-
+    $event = Event::get($id_event);
+    
     if($event->event_picture) {
-        $link = unlink('../../../public/uploads/article/'.$event->event_picture);
-        $deleteImg = Article::updateImg($id_vent);
+        $link = unlink('../../../public/uploads/events/'.$event->event_picture);
+        $deleteImg = Event::updateImg($id_event);
     }
 
     if($deleteImg) {
@@ -18,7 +18,7 @@ try {
         $_SESSION['msg'] = 'Erreur la donnée n\'a pas été supprimée !';
     }
     
-    header('Location: /controllers/dashboard/events/update-event-ctrl.php?id='.$event->id_event);
+    header('Location: /controllers/dashboard/events/update-event-ctrl.php?id_event='.$event->id_event);
 
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());

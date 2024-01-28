@@ -80,12 +80,12 @@ class Event
         $this->event_date = $event_date;
     }
 
-    public function getEventDate(): ?string
+    public function getEventDate(): string
     {
         return $this->event_date;
     }
 
-    public function setIdEvent(?int $id_event)
+    public function setIdEvent(string $id_event)
     {
         $this->id_event = $id_event;
     }
@@ -172,12 +172,13 @@ class Event
         return $result;
     }
 
-    public function update()
+    public function update(): bool
     {
         $pdo = Database::connect(DSN, USER, PASSWORD);
 
-        $sql = 'UPDATE `events` SET `event_title`=:event_title, `event_description`=:event_description, `event_picture`=:event_picture, `event_link`=:event_link, `place`=:place, `event_date`=:event_date, `id_game`=:id_game
-        WHERE `id_event`=`id_event`;';
+        $sql = 'UPDATE `events`
+        SET `event_title`=:event_title, `event_description`=:event_description, `event_picture`=:event_picture, `event_link`=:event_link, `place`=:place, `event_date`=:event_date, `id_game`=:id_game
+        WHERE `id_event`=:id_event;';
 
         $sth = $pdo->prepare($sql);
 
@@ -193,5 +194,35 @@ class Event
         $result = $sth->execute();
 
         return $result;
+    }
+
+    public static function updateImg(int $id): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `events` SET `event_picture`= null WHERE `id_event`=:id_event;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_event', $id, PDO::PARAM_INT);
+
+        $result = $sth->execute();
+
+        return $result;
+    }
+
+    public static function delete(int $id): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `events` WHERE `id_event` = :id_event;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_event', $id, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->rowCount() > 0;
     }
 }

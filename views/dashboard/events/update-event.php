@@ -39,7 +39,7 @@
                                             <img src="/public/uploads/events/<?= $event->event_picture ?>" alt="<?= $event->event_picture ?>" class="object-fit-cover rounded-4">
                                         </div>
                                         <div class="mx-2 d-flex align-items-center">
-                                            <a href="/controllers/dashboard/events/update-img-ctrl.php?id=<?= $event->id_event ?>" class="btn btn-danger fw-bold text-uppercase">
+                                            <a href="/controllers/dashboard/events/update-img-ctrl.php?id_event=<?= $event->id_event ?>" class="btn btn-danger fw-bold text-uppercase">
                                                 Supprimer
                                             </a>
                                         </div>

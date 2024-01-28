@@ -181,12 +181,12 @@ class Article
         return $this->id_console;
     }
 
-    public function setIdGame(int $id_game)
+    public function setIdGame(?int $id_game)
     {
         $this->id_game = $id_game;
     }
 
-    public function getIdGame(): int
+    public function getIdGame(): ?int
     {
         return $this->id_game;
     }

@@ -181,6 +181,7 @@ try {
             $article->setArticleDescription($description);
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
+            $article->setIdGame($id_game);
             $article->setIdArticle($id_article);
 
             $result = $article->update();
@@ -188,8 +189,8 @@ try {
             if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-articles-ctrl.php');
-                die;
             }
+            
         }
         $article = Article::get($id_article);
     }

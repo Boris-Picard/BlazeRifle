@@ -96,11 +96,11 @@ try {
                     throw new Exception("Image trop grande");
                 }
 
-                $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
+                $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
                 $fileName = uniqid('img_') . '.' . $extension;
 
-                $from = $_FILES['image-article']['tmp_name'];
-                $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
+                $from = $_FILES['picture']['tmp_name'];
+                $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName;
 
                 $moveFile = move_uploaded_file($from, $to);
             } catch (\Throwable $th) {
@@ -134,13 +134,14 @@ try {
             $event->setIdGame($id_game);
 
             $result = $event->update();
-            
+
             if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-events-ctrl.php');
-                die;
             }
         }
+
+        $event = Event::get($id_event);
     }
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());

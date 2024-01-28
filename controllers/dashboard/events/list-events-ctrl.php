@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 require_once __DIR__ . '/../../../models/Event.php';
 
 
@@ -8,19 +8,11 @@ try {
     
     $events = Event::getAll();
 
-    // $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
-    // $article = Event::get($id_article);
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
 
-    // if($article) {
-    //     Event::archive($id_article, false);
-    //     header('location: /controllers/dashboard/articles/list-articles-ctrl.php');
-    // }
-
-    // $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
-
-    // if(isset($_SESSION['msg'])) {
-    //     unset($_SESSION['msg']);
-    // }
+    if(isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
 
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());

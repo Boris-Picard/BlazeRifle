@@ -21,7 +21,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">
-                                        ID
+                                        Jeux
                                         <!-- <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
                                             <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a> -->
                                     </th>
@@ -35,13 +35,13 @@
                             <tbody>
                                 <?php foreach ($articles as $article) { ?>
                                     <tr>
-                                        <td class="fw-semibold"><?= $article->id_article ?></td>
+                                        <td class="fw-semibold"><?= $article->name ?></td>
                                         <td class="fw-semibold text-break"><?= $article->title ?></td>
-                                        <td class="fw-semibold text-break w-25"><?= $article->description ?></td>
+                                        <td class="fw-semibold text-break w-25"><?= $article->article_description ?></td>
                                         <td class="fw-semibold">
-                                            <?php if (isset($article->picture)) { ?>
+                                            <?php if (isset($article->article_picture)) { ?>
                                                 <div class="ratio ratio-1x1">
-                                                    <img src="/public/uploads/article/<?= $article->picture ?>" alt="<?= $article->picture ?>" class="object-fit-cover rounded-circle imgVehicles">
+                                                    <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>" class="object-fit-cover rounded-circle imgVehicles">
                                                 </div>
                                             <?php } ?>
                                         </td>
