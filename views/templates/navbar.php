@@ -1,13 +1,3 @@
-<?php
-require_once __DIR__ . '/../../models/Game.php';
-
-try {
-    $games = Game::getAll();
-    
-} catch (\Throwable $e) {
-    $e->getMessage();
-}
-?>
 <header>
     <nav class="navbar navbarStyle navbar-expand-md fixed-top">
         <div class="container-fluid">
