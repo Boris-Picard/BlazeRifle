@@ -22,7 +22,6 @@
                                 <div class="row">
                                     <div class="col-12 d-flex flex-column justify-content-center">
                                         <form action="">
-                                            <div><small class="form-text text-danger"><?= $error['id_game'] ?? '' ?></small></div>
                                             <select class="form-select" name="id_game" id="id_game" required>
                                                 <option value="" selected disabled>Séléctionnez un jeu</option>
                                                 <?php foreach ($games as $game) { ?>

@@ -6,6 +6,12 @@ $listGames = true;
 
 try {
     $games = Game::getAll();
+
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    if(isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
 } catch (PDOException $e) {
     $e->getMessage();
 }

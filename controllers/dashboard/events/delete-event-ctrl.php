@@ -7,10 +7,12 @@ try {
     
     $id_event = intval(filter_input(INPUT_GET, 'id_event', FILTER_SANITIZE_SPECIAL_CHARS));
     
+    $event = Event::get($id_event);
+
     $isDeleted = Event::delete($id_event);
 
     if($isDeleted > 0) {
-        $link = unlink('../../../public/uploads/event/'.$event->event_picture);
+        $link = unlink('../../../public/uploads/events/'.$event->event_picture);
     }
 
     if($isDeleted) {

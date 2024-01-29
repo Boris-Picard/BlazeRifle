@@ -19,6 +19,20 @@
                         <a href="/controllers/dashboard/articles/archive-articles-ctrl.php" class="btn btn-outline-danger rounded-4 text-uppercase fw-bold">Voir les articles archivées</a>
                     </div>
                 </div>
+                <div class="col-6 pt-3">
+                    <div class="d-flex mb-3 justify-content-end">
+                        <form action="" class="d-flex">
+                            <select class="form-select fw-bold border-dark" name="id_game" id="id_game">
+                                <option selected disabled>Trier la liste par jeu</option>
+                                <option value="">Voir tous les jeux</option>
+                                <?php foreach ($games as $game) { ?>
+                                    <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= $game->name ?></option>
+                                <?php } ?>
+                            </select>
+                            <button type="submit" class="btn mx-3 btn-danger rounded-4 fw-bold text-capitalize">Valider</button>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-12">

@@ -6,11 +6,13 @@ require_once __DIR__ . '/../../../models/Article.php';
 try {
     
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
+
+    $article = Article::get($id_article);
     
     $isDeleted = Article::delete($id_article);
 
     if($isDeleted > 0) {
-        $link = unlink('../../../public/uploads/article/'.$article->picture);
+        $link = unlink('../../../public/uploads/article/'.$article->article_picture);
     }
 
     if($isDeleted) {

@@ -1,7 +1,16 @@
 <?php
 
+require_once __DIR__ . '/../../models/Article.php';
+
 $dashboard = true;
 
+try {
+    
+    $articles = Article::getAll(order: 'DESC');
+
+} catch (PDOException $e) {
+    'Erreur : ' . $e->getMessage();
+}
 
 
 
