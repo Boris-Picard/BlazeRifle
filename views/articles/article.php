@@ -1,5 +1,5 @@
 <main>
-    <section class="articlesSection py-5 bg-light">
+    <section class="articlesSection py-5">
         <div class="container">
             <section>
                 <div class="row">
@@ -50,37 +50,33 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 my-2">
+                            <div class="col-md-12 my-2">
                                 <!-- SECOND TITLE -->
                                 <h3 class="fw-bold text-break">
                                     <?= $article->secondtitle ?>
                                 </h3>
                             </div>
                             <!-- PREMIERE SECTION -->
-                            <div class="col-12 my-2">
-                                <p class="text-break">
-                                    <?= $article->firstsection ?>
-                                </p>
+                            <div class="col-md-12 my-2 text-break">
+                                <?= html_entity_decode($article->firstsection) ?>
                             </div>
-                            <div class="col-12 my-2">
+                            <div class="col-md-12 my-2">
                                 <!-- THIRD TITLE-->
                                 <h3 class="fw-bold text-break">
                                     <?= $article->thirdtitle ?>
                                 </h3>
                             </div>
                             <!-- DEUXIEME SECTION -->
-                            <div class="col-12 my-2">
-                                <p class="text-break">
-                                    <?= $article->secondsection ?>
-                                </p>
+                            <div class="col-md-12 my-2 text-break">
+                                <?= html_entity_decode($article->secondsection) ?>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-md-12">
                             <hr>
                         </div>
                         <!-- ARTICLE SUIVANT -->
                         <div class="row">
-                            <div class="col-12 my-2">
+                            <div class="col-md-12 my-2">
                                 <h4 class="text-capitalize text-danger fw-bold">
                                     Article suivant
                                 </h4>

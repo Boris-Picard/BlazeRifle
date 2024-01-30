@@ -6,7 +6,7 @@ try {
 
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
-    $articles = Article::getAll($id_game,false);
+    $articles = Article::getAll($id_game,false, 'DESC');
     
     foreach ($articles as $article) {
         $timestamp = strtotime($article->created_at);
