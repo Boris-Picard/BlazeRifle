@@ -214,7 +214,7 @@ class Article
         return $sth->rowCount() > 0;
     }
 
-    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC'): array|false
+    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 10, int $offset = 0): array|false
     {
         $pdo = Database::connect();
 
@@ -228,9 +228,15 @@ class Article
 
         $order == 'ASC' ? $sql .= ' ORDER BY `articles`.`created_at` ASC ' : $sql .= ' ORDER BY `articles`.`created_at` DESC ';
 
+        if(isset($limit) && isset($offset)) {
+            $sql .= ' LIMIT :limit OFFSET :offset ';
+        }
+
         if (isset($id_game)) {
             $sth = $pdo->prepare($sql);
             $sth->bindValue('id_game', $id_game, PDO::PARAM_INT);
+            $sth->bindValue('limit', $limit, PDO::PARAM_INT);
+            $sth->bindValue('offset', $offset, PDO::PARAM_INT);
             $sth->execute();
         } else {
             $sth = $pdo->query($sql);

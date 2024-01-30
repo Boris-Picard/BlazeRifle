@@ -32,7 +32,7 @@
                                         <div class="card-img-overlay ">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->name ?></span>
                                             <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?=$article->id_article?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
+                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
                                                     <?= $article->article_description ?>
                                                 </a>
                                                 <div class="card-text mb-3">
