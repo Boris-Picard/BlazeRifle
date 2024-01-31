@@ -42,12 +42,14 @@
                                 <tr>
                                     <th scope="col">
                                         Jeux
-                                        <!-- <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
-                                            <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a> -->
                                     </th>
                                     <th scope="col">Titre</th>
                                     <th scope="col">Image</th>
-                                    <th scope="col">Creation</th>
+                                    <th scope="col">
+                                        Creation
+                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id_game=<?=$id_game?>&order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
+                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id_game=<?=$id_game?>&order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
+                                    </th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

@@ -214,7 +214,7 @@ class Article
         return $sth->rowCount() > 0;
     }
 
-    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = 1): array|false
+    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = 1, int $offset = 0): array|false
     {
         $pdo = Database::connect();
 

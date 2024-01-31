@@ -15,11 +15,11 @@ try {
         $article->formattedHour = date('H:i', $timestamp);
         $article->formattedDate = date('d/m/Y', $timestamp);
     } else {
-        header('Location: /controllers/articles-list/articles-ctrl.php');
+        header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game);
         die;
     }
 
-    $articles = Article::getAll($id_game, false, 'DESC');
+    $articles = Article::getAll($id_game, false, 'DESC', limit: 3);
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
