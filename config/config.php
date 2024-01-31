@@ -16,6 +16,8 @@ define('MAX_FILESIZE', 2*1024*1024);
 define('REGEX_PLACE', '^[A-Za-zÀ-ÖØ-öø-ÿ\-\s\']{2,}$');
 define('REGEX_DATE','^([0-9]{4})[\/\-]?([0-9]{2})[\/\-]?([0-9]{2})$');
 
+define('DATE', '^(?:\d{4}-\d{2}-\d{2})$');
+
 
 define('REGEX_FIRSTNAME',"^[A-Za-z-éèêëàâäôöûüç' ]*$");
 define('REGEX_PSEUDO','^[a-zA-Z0-9.-_]{3,20}*$');

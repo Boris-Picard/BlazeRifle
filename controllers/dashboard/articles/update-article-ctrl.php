@@ -27,9 +27,12 @@ try {
         if (empty($title)) {
             $error['title'] = 'Veuillez rentrer un titre';
         } else {
-            $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
-            if (!$isOk) {
-                $error['title'] = 'Le titre n\'est pas valide';
+            // $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            // if (!$isOk) {
+            //     $error['title'] = 'Le titre n\'est pas valide';
+            // }
+            if (strlen($title) < 10 || strlen($title) > 200) {
+                $error['title'] = 'La longueur du titre n\'est pas valide';
             }
         }
 
@@ -68,10 +71,13 @@ try {
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
-            
             // $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/')));
             // if (!$isOk) {
             //     $error['description'] = 'La description n\'est pas valide';
+            // } else {
+            if (strlen($description) < 50 || strlen($description) > 1000) {
+                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 1000 caractères';
+            }
             // }
         }
 
@@ -81,9 +87,12 @@ try {
         if (empty($secondTitle)) {
             $error['secondTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
-            if (!$isOk) {
-                $error['secondTitle'] = 'Le sous-titre n\'est pas valide';
+            // $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            // if (!$isOk) {
+            //     $error['secondTitle'] = 'Le sous-titre n\'est pas valide';
+            // }
+            if (strlen($secondTitle) < 10 || strlen($secondTitle) > 200) {
+                $error['secondTitle'] = 'La longueur du titre n\'est pas valide';
             }
         }
 
@@ -93,9 +102,12 @@ try {
         if (empty($thirdTitle)) {
             $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
-            if (!$isOk) {
-                $error['thirdTitle'] = 'Le sous-titre n\'est pas valide';
+            // $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            // if (!$isOk) {
+            //     $error['thirdTitle'] = 'Le sous-titre n\'est pas valide';
+            // }
+            if (strlen($thirdTitle) < 10 || strlen($thirdTitle) > 200) {
+                $error['thirdTitle'] = 'La longueur du titre n\'est pas valide';
             }
         }
 
@@ -105,7 +117,7 @@ try {
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
-            if (strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
+            if (strlen($firstSection) < 250 || strlen($firstSection) > 5000) {
                 $error['firstSection'] = 'La longueur du texte n\'est pas correct d\'article';
             }
             // $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
@@ -120,7 +132,7 @@ try {
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
-            if (strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
+            if (strlen($firstSection) < 250 || strlen($firstSection) > 5000) {
                 $error['firstSection'] = 'La longueur du texte n\'est pas correct d\'article';
             }
             // $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));

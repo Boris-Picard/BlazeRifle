@@ -224,23 +224,24 @@ class Article
 
         $showDeletedAt ? $sql .= ' AND `deleted_at` IS NOT NULL ' : $sql .= ' AND `deleted_at` IS NULL ';
 
-        isset($id_game) ? $sql .= ' AND `games`.`id_game`=:id_game ' : null;
+        if (isset($id_game)) {
+            $sql .= ' AND `games`.`id_game`=:id_game ';
+        }
 
         $order == 'ASC' ? $sql .= ' ORDER BY `articles`.`created_at` ASC ' : $sql .= ' ORDER BY `articles`.`created_at` DESC ';
 
-        if(isset($limit) && isset($offset)) {
-            $sql .= ' LIMIT :limit OFFSET :offset ';
+        if (isset($limit) && isset($offset)) {
+            $sql .= " LIMIT $limit OFFSET $offset ";
         }
 
         if (isset($id_game)) {
             $sth = $pdo->prepare($sql);
-            $sth->bindValue('id_game', $id_game, PDO::PARAM_INT);
-            $sth->bindValue('limit', $limit, PDO::PARAM_INT);
-            $sth->bindValue('offset', $offset, PDO::PARAM_INT);
-            $sth->execute();
+            $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
         } else {
             $sth = $pdo->query($sql);
         }
+
+        $sth->execute();
 
         $result = $sth->fetchAll(PDO::FETCH_OBJ);
 
@@ -313,7 +314,7 @@ class Article
         $sql = 'UPDATE `articles`';
 
         $archive ? $sql .=  " SET `deleted_at`=NOW() WHERE `id_article`=:id_article "  : $sql .= " SET `deleted_at`= NULL WHERE `id_article`=:id_article ";
-        
+
         $sth = $pdo->prepare($sql);
 
         $sth->bindValue(':id_article', $id, PDO::PARAM_INT);

@@ -24,7 +24,7 @@ try {
             // if (!$isOk) {
             //     $error['title'] = 'Le titre n\'est pas valide';
             // }
-            if (strlen($title) < 10 || strlen($title) > 150) {
+            if (strlen($title) < 10 || strlen($title) > 200) {
                 $error['title'] = 'La longueur du titre n\'est pas valide';
             }
         }
@@ -39,8 +39,8 @@ try {
             // if (!$isOk) {
             //     $error['description'] = 'La description n\'est pas valide';
             // } else {
-            if (strlen($description) < 50 || strlen($description) > 500) {
-                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 500 caractères';
+            if (strlen($description) < 50 || strlen($description) > 1000) {
+                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 1000 caractères';
             }
             // }
         }
@@ -55,7 +55,7 @@ try {
             // if (!$isOk) {
             //     $error['secondTitle'] = 'Le sous-titre n\'est pas valide';
             // }
-            if (strlen($secondTitle) < 10 || strlen($secondTitle) > 150) {
+            if (strlen($secondTitle) < 10 || strlen($secondTitle) > 200) {
                 $error['secondTitle'] = 'La longueur du titre n\'est pas valide';
             }
         }
@@ -70,7 +70,7 @@ try {
             // if (!$isOk) {
             //     $error['thirdTitle'] = 'Le sous-titre n\'est pas valide';
             // }
-            if (strlen($thirdTitle) < 10 || strlen($thirdTitle) > 150) {
+            if (strlen($thirdTitle) < 10 || strlen($thirdTitle) > 200) {
                 $error['thirdTitle'] = 'La longueur du titre n\'est pas valide';
             }
         }
@@ -81,7 +81,7 @@ try {
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
-            if (strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
+            if (strlen($firstSection) < 250 || strlen($firstSection) > 5000) {
                 $error['firstSection'] = 'La longueur du texte n\'est pas correct d\'article';
             }
             // $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
@@ -100,7 +100,7 @@ try {
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
-            if (strlen($secondSection) < 250 || strlen($secondSection) > 1500) {
+            if (strlen($secondSection) < 250 || strlen($secondSection) > 5000) {
                 $error['secondSection'] = 'La longueur du texte n\'est pas correct d\'article';
             }
             // $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
