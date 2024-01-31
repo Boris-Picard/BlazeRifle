@@ -8,10 +8,12 @@ require_once __DIR__ . '/../../models/Article.php';
 try {
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
-    $articles = Article::getAll($id_game, limit: 4);
+    $articles = Article::getAll($id_game, limit: 4, order: 'DESC');
 
+    $articlesUnder = Article::getAll($id_game, limit: 4, offset: 4, order: 'DESC');
 } catch (PDOException $e) {
     $e->getMessage();
+    die;
 }
 
 

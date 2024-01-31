@@ -44,8 +44,8 @@
                                     <?= $article->article_description ?>
                                 </h3>
                                 <!-- IMG -->
-                                <div class="ratio ratio-16x9 mt-5">
-                                    <img class="rounded-5 object-fit-cover" src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>">
+                                <div class="ratio ratio-16x9 mt-5 shadow-lg rounded-4">
+                                    <img class="rounded-4 object-fit-cover" src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>">
                                 </div>
                             </div>
                         </div>

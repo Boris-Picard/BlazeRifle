@@ -214,9 +214,11 @@ class Article
         return $sth->rowCount() > 0;
     }
 
-    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 10, int $offset = 0): array|false
+    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = 1): array|false
     {
         $pdo = Database::connect();
+
+        $offset = ($page - 1) * $limit;
 
         $sql = 'SELECT * FROM `articles`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
@@ -337,5 +339,27 @@ class Article
         $sth->execute();
 
         return $sth->rowCount() > 0;
+    }
+
+    public static function count(?int $id_game = null): int
+    {
+        $pdo = Database::connect();
+
+        $sql = "SELECT count(*) as `count` from `articles`
+                INNER JOIN `games` ON `games`.`id_game` = `articles`.`id_game`
+                WHERE 1 = 1";
+
+        if (!is_null($id_game)) {
+            $sql .= " AND `articles`.`id_game` = :id_game";
+        }
+
+        $sth = $pdo->prepare($sql);
+
+        if (!is_null($id_game)) {
+            $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+        }
+        $sth->execute();
+        $result = $sth->fetchColumn();
+        return $result;
     }
 }

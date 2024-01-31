@@ -5,9 +5,18 @@ require_once __DIR__ . '/../../models/Game.php';
 try {
 
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+    $currentPage = intval(filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT));
 
-    $articles = Article::getAll($id_game,false, 'DESC');
-    
+
+    $nbArticles = Article::count($id_game);
+    $nbPages = ceil($nbArticles / 7);
+
+
+    $currentPage = ($currentPage > $nbPages) ? $nbPages : $currentPage;
+    $currentPage = ($currentPage <= 0) ? 1 : $currentPage;
+
+    $articles = Article::getAll($id_game, false, 'DESC', page: $currentPage);
+
     foreach ($articles as $article) {
         $timestamp = strtotime($article->created_at);
         $article->formattedHour = date('H:i', $timestamp);

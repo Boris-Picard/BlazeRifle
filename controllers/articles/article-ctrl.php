@@ -10,9 +10,14 @@ try {
 
     $article = Article::get($id_article);
 
-    $timestamp = strtotime($article->created_at);
-    $article->formattedHour = date('H:i', $timestamp);
-    $article->formattedDate = date('d/m/Y', $timestamp);
+    if (!empty($article)) {
+        $timestamp = strtotime($article->created_at);
+        $article->formattedHour = date('H:i', $timestamp);
+        $article->formattedDate = date('d/m/Y', $timestamp);
+    } else {
+        header('Location: /controllers/articles-list/articles-ctrl.php');
+        die;
+    }
 
     $articles = Article::getAll($id_game, false, 'DESC');
 } catch (PDOException $e) {

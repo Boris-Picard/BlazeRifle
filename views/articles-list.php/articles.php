@@ -16,10 +16,12 @@
                                 </nav>
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
-                                <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <?= $articles[0]->name ?></h2>
-                                <p class="text-center text-break mt-2">
-                                    <?= $articles[0]->game_description ?>
-                                </p>
+                                <?php if (!empty($articles)) { ?>
+                                    <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= $articles[0]->name ?></span></h2>
+                                    <p class="text-center text-break mt-2">
+                                        <?= $articles[0]->game_description ?>
+                                    </p>
+                                <?php  } ?>
                             </div>
                         </div>
                         <div class="col-12">
@@ -39,7 +41,7 @@
                                                 <div>
                                                     <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
                                                 </div>
-                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?=$article->id_game?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
+                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
                                                     <?= $article->title ?>
                                                 </a>
                                                 <p class="aCard mt-2">
@@ -60,20 +62,18 @@
                             <nav aria-label="pagination">
                                 <ul class="pagination justify-content-center mt-5">
                                     <li class="page-item">
-                                        <a class="page-link text-dark" href="#" aria-label="Previous">
+                                        <a class="page-link text-dark" href="?page=<?= $currentPage - 1 ?>&id_game=<?= $id_game ?>" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </a>
                                     </li>
-                                    <li class="page-item"><a class="page-link text-dark activePagination" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
-                                    <li class="page-item"><a class="page-link text-dark" href="#">5</a></li>
-                                    <li class="page-item"><a class="page-link text-dark" href="#">6</a></li>
-                                    <li class="page-item"><a class="page-link text-dark" href="#">...</a></li>
-                                    <li class="page-item"><a class="page-link text-dark" href="#">20</a></li>
+                                    <?php
+                                    for ($page = 1; $page <= $nbPages; $page++) {
+                                        $isActive = ($currentPage == $page) ? 'activePagination' : '';
+                                    ?>
+                                        <li class="page-item"><a class="page-link text-dark <?= $isActive ?>" href="?page=<?= $page ?>&id_game=<?= $id_game ?>"><?= $page ?></a></li>
+                                    <?php  } ?>
                                     <li class="page-item">
-                                        <a class="page-link text-dark" href="#" aria-label="Next">
+                                        <a class="page-link text-dark" href="?page=<?= $currentPage + 1 ?>&id_game=<?= $id_game ?>" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>
@@ -87,7 +87,7 @@
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row text-center align-items-center p-3">
-                                        <i class="bi bi-grid fs-1 px-2"></i>
+                                        <i class="bi bi-book fs-1 px-2"></i>
                                         <h5 class="text-uppercase fw-bold"><span class="text-danger">les guides :</span> battlefield 2042</h5>
                                     </div>
                                 </div>

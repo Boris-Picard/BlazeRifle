@@ -13,21 +13,23 @@
                                     </ol>
                                 </nav>
                             </div>
-                            <div class="col-md-8 col-12 py-3">
-                                <h2 class="h2 text-uppercase fw-bold">Tous les articles</h2>
-                            </div>
-                            <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
-                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $id_game ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                    Tous les articles
-                                    <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                                </a>
-                            </div>
+                            <?php if (!empty($articles[0])) { ?>
+                                <div class="col-md-8 col-12 py-3">
+                                    <h2 class="h2 text-uppercase fw-bold">Tous les articles sur <span class="text-danger"><?= $articles[0]->name ?></span></h2>
+                                </div>
+                                <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
+                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $id_game ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                        Tous les articles : <?= $articles[0]->name ?>
+                                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            <?php  } ?>
                         </div>
                         <!-- CARD ACTU -->
                         <div class="row">
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <?php foreach ($articles as $article) { ?>
-                                    <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
+                                    <div class="card bg-transparent rounded-4 shadow-lg text-white p-0 cardActu border-0 cardShadow ">
                                         <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->name ?>">
                                         <div class="card-img-overlay ">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->name ?></span>
@@ -49,74 +51,27 @@
                             </div>
                             <!-- CARD UNDER ACTU -->
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
-                                <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                                    <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Call Of Duty : MW 3">
-                                        <div class="p-3">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Call Of Duty : MW 3</span>
+                                <?php foreach ($articlesUnder as $article) { ?>
+                                    <div class="card cardActUnder rounded-4 mt-3 p-0 border-0 bg-transparent">
+                                        <div class="card-img-top ratio ratio-16x9">
+                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4" alt="<?= $article->name ?>">
+                                            <div class="p-3">
+                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->name ?></span>
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-0 mt-1">
+                                            <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">
+                                                <?= $article->article_description ?>
+                                            </a>
+                                            <div class="card-text mb-3">
+                                                <small class="text-muted"><?= $article->created_at ?>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold"><?= $article->name ?></span>
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-body p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A libero illum corporis sunt aperiam neque expedita molestias excepturi! Ratione cupiditate cumque earum dolorem maxime voluptas perferendis distinctio blanditiis nostrum adipisci.</a>
-                                        <div class="card-text mb-3">
-                                            <small class="text-muted">25 déc, 18:05
-                                                <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Call Of Duty : MW 3</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent ">
-                                    <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call Of Duty : Warzone 2">
-                                        <div class="p-3">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Call Of Duty : Warzone 2</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-body p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">Some quick example text to build on the card title and make up the...</a>
-                                        <div class="card-text mb-3">
-                                            <small class="text-muted">25 déc, 18:05
-                                                <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Call Of Duty : Warzone 2</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                                    <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Overwatch 2">
-                                        <div class="p-3">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Overwatch 2</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-body p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">Some quick example text to build on the card title and make up the...</a>
-                                        <div class="card-text mb-3">
-                                            <small class="text-muted">25 déc, 18:05
-                                                <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Overwatch 2</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent ">
-                                    <div class="card-img-top ratio ratio-16x9">
-                                        <img src="/public/assets/img/borderlands3.jpg" class="object-fit-cover rounded-4" alt="Borderlands 3">
-                                        <div class="p-3">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Borderlands 3</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-body p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">Some quick example text to build on the card title and make up the...</a>
-                                        <div class="card-text mb-3">
-                                            <small class="text-muted">25 déc, 18:05
-                                                <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Borderlands 3</span>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

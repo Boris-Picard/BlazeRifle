@@ -40,7 +40,7 @@
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
                                     <label for="description" class="form-label">Description de l'article <span class="text-danger">*</span></label>
-                                    <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="100" required><?= $description ?? '' ?></textarea>
+                                    <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="1000" required><?= $description ?? '' ?></textarea>
                                 </div>
                             </div>
                             <div class="row">
