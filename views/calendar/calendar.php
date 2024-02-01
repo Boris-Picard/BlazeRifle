@@ -25,7 +25,7 @@
                                             <select class="form-select" name="id_game" id="id_game" required>
                                                 <option value="" selected disabled>Séléctionnez un jeu</option>
                                                 <?php foreach ($games as $game) { ?>
-                                                    <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= $game->name ?></option>
+                                                    <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= $game->game_name ?></option>
                                                 <?php } ?>
                                             </select>
                                             <div class="mt-4">
@@ -56,12 +56,12 @@
                                     <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                                         <div class="row g-0">
                                             <div class="col-md-4">
-                                                <img src="/public/uploads/events/<?= $event->event_picture ?>" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="<?= $event->name ?>">
+                                                <img src="/public/uploads/events/<?= $event->event_picture ?>" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="<?= $event->game_name ?>">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body px-3 d-flex flex-column justify-content-end">
                                                     <div>
-                                                        <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase"><?= $event->name ?></span>
+                                                        <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase"><?= $event->game_name ?></span>
                                                     </div>
                                                     <a href="<?= $event->event_link ?>" target="_blank" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
                                                         <?= $event->event_title ?>
@@ -92,7 +92,7 @@
                                 <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center justify-content-center p-3">
-                                            <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= $event->name ?></h5>
+                                            <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= $event->game_name ?></h5>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -102,7 +102,7 @@
                                                     <img src="/public/uploads/article/<?= $articles[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="Sunset Over the Sea">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
-                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
+                                                    <a href="/controllers/articles/article-ctrl.php?id=<?=$articles[0]->id_article?>&id_game=<?=$articles[0]->id_game?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link"><?=$articles[0]->article_description?></a>
                                                     <div class="card-text mb-3">
                                                         <small class="text-muted">
                                                             <?= $articles[0]->created_at ?>

@@ -9,7 +9,7 @@
                                 <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
                                 <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php">Preview Des Jeux</a></li>
                                 <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php">Preview Des Articles</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>">Articles sur <?= $article->name ?></a></li>
+                                <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>">Articles sur <?= $article->game_name ?></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Article</li>
                             </ol>
                         </nav>
@@ -19,14 +19,14 @@
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
                                 <small><a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article + 1 ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Précédent</a></small>
-                                <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->name ?></a></small>
+                                <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->game_name ?></a></small>
                                 <small><a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article - 1 ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
                         </div>
                         <!-- TITLE -->
                         <div class="row mt-5">
                             <div class="col-12 d-flex text-center">
-                                <h1 class="fw-bold text-break"><?= $article->title ?></h1>
+                                <h1 class="fw-bold text-break"><?= $article->article_title ?></h1>
                             </div>
                         </div>
                         <div class="row">
@@ -92,7 +92,7 @@
                                                 <div class="col-md-10">
                                                     <div class="card-body p-2 mx-2">
                                                         <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
-                                                            <?= $article->title ?>
+                                                            <?= $article->article_title ?>
                                                         </a>
                                                         <p class="text-card aCard m-0 mt-2">
                                                             <?= $article->article_description ?>
@@ -278,7 +278,7 @@
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row justify-content-center text-center p-3">
-                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= $article->name ?></h5>
+                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= $article->game_name ?></h5>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -300,7 +300,7 @@
                                             <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                                 <div class="row g-0 cardActuGuideRight">
                                                     <div class="col-auto">
-                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
+                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->game_name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
                                                     </div>
                                                     <div class="col-md-6 p-0 ">
                                                         <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">

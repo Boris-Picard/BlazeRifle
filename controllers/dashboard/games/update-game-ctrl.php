@@ -79,7 +79,7 @@ try {
         if (empty($error)) {
             $game = new Game();
 
-            $game->setName($name);
+            $game->setGameName($name);
             $game->setGameDescription($description);
             $game->setGamePicture($filename);
             $game->setIdGame($id_game);

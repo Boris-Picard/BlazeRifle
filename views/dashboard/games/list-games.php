@@ -39,7 +39,7 @@
                             <tbody>
                                 <?php foreach ($games as $game) { ?>
                                     <tr>
-                                        <td class="fw-semibold"><?= $game->name ?></td>
+                                        <td class="fw-semibold"><?= $game->game_name ?></td>
                                         <td class="fw-semibold text-break w-25 "><?= $game->game_description ?></td>
                                         <td class="fw-semibold">
                                             <?php if (isset($game->game_picture)) { ?>

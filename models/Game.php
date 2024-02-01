@@ -5,26 +5,26 @@ require_once __DIR__ . '/../helpers/Database.php';
 class Game
 {
     private ?int $id_game;
-    private string $name;
+    private string $game_name;
     private string $description;
     private string $game_picture;
 
-    public function __construct(string $name = '', string $description = '', string $game_picture = '', ?int $id_game = null)
+    public function __construct(string $game_name = '', string $description = '', string $game_picture = '', ?int $id_game = null)
     {
-        $this->name = $name;
+        $this->game_name = $game_name;
         $this->description = $description;
         $this->game_picture = $game_picture;
         $this->id_game = $id_game;
     }
 
-    public function setName(string $name)
+    public function setGameName(string $game_name)
     {
-        $this->name = $name;
+        $this->game_name = $game_name;
     }
 
-    public function getName(): string
+    public function getGameName(): string
     {
-        return $this->name;
+        return $this->game_name;
     }
 
     public function setGameDescription(string $description)
@@ -65,12 +65,12 @@ class Game
     {
         $pdo = Database::connect();
 
-        $sql = 'INSERT INTO `games` (`name`, `game_description`, `game_picture`)
-        VALUES(:name, :game_description, :game_picture);';
+        $sql = 'INSERT INTO `games` (`game_name`, `game_description`, `game_picture`)
+        VALUES(:game_name, :game_description, :game_picture);';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':name', $this->getName());
+        $sth->bindValue(':game_name', $this->getGameName());
         $sth->bindValue(':game_description', $this->getGameDescription());
         $sth->bindValue(':game_picture', $this->getGamePicture());
 
@@ -151,12 +151,12 @@ class Game
         $pdo = Database::connect();
 
         $sql = 'UPDATE `games` 
-        SET `name`=:name, `game_description`=:game_description, `game_picture`=:game_picture
+        SET `game_name`=:game_name, `game_description`=:game_description, `game_picture`=:game_picture
         WHERE `id_game`=:id_game;';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':name', $this->getName());
+        $sth->bindValue(':game_name', $this->getGameName());
         $sth->bindValue(':game_description', $this->getGameDescription());
         $sth->bindValue(':game_picture', $this->getGamePicture());
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);

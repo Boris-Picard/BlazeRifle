@@ -15,11 +15,11 @@
                             </div>
                             <?php if (!empty($articles[0])) { ?>
                                 <div class="col-md-8 col-12 py-3">
-                                    <h2 class="h2 text-uppercase fw-bold">Tous les articles sur <span class="text-danger"><?= $articles[0]->name ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold">Tous les articles sur <span class="text-danger"><?= $articles[0]->game_name ?></span></h2>
                                 </div>
                                 <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
                                     <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $id_game ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                        Tous les articles : <?= $articles[0]->name ?>
+                                        Tous les articles : <?= $articles[0]->game_name ?>
                                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                     </a>
                                 </div>
@@ -30,9 +30,9 @@
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <?php foreach ($articles as $article) { ?>
                                     <div class="card bg-transparent rounded-4 shadow-lg text-white p-0 cardActu border-0 cardShadow ">
-                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->name ?>">
+                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->game_name ?>">
                                         <div class="card-img-overlay ">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->name ?></span>
+                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->game_name ?></span>
                                             <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
                                                 <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
                                                     <?= $article->article_description ?>
@@ -41,7 +41,7 @@
                                                     <small>
                                                         <?= $article->created_at ?>
                                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= $article->name ?></span>
+                                                        <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= $article->game_name ?></span>
                                                     </small>
                                                 </div>
                                             </div>
@@ -54,9 +54,9 @@
                                 <?php foreach ($articlesUnder as $article) { ?>
                                     <div class="card cardActUnder rounded-4 mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4" alt="<?= $article->name ?>">
+                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4" alt="<?= $article->game_name ?>">
                                             <div class="p-3">
-                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->name ?></span>
+                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->game_name ?></span>
                                             </div>
                                         </div>
                                         <div class="card-body p-0 mt-1">
@@ -66,7 +66,7 @@
                                             <div class="card-text mb-3">
                                                 <small class="text-muted"><?= $article->created_at ?>
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold"><?= $article->name ?></span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold"><?= $article->game_name ?></span>
                                                 </small>
                                             </div>
                                         </div>

@@ -76,7 +76,7 @@ try {
             $game = new Game();
 
             // Attribution des valeurs aux propriétés de l'objet Game
-            $game->setName($name);
+            $game->setGameName($name);
             $game->setGameDescription($description);
             $game->setGamePicture($filename);
 

@@ -27,8 +27,6 @@
                                 <tr>
                                     <th scope="col">
                                         Jeux
-                                        <!-- <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
-                                            <a href="/controllers/dashboard/vehicles/list-ctrl.php?order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a> -->
                                     </th>
                                     <th scope="col">Titre</th>
                                     <th scope="col">Lien</th>
@@ -40,7 +38,7 @@
                             <tbody>
                                 <?php foreach ($events as $event) { ?>
                                     <tr>
-                                        <td class="fw-semibold"><?= $event->name ?></td>
+                                        <td class="fw-semibold"><?= $event->game_name ?></td>
                                         <td class="fw-semibold text-break w-25"><?= $event->event_title ?></td>
                                         <td class="fw-semibold text-break w-25"><?= $event->event_link ?></td>
                                         <td class="fw-semibold">

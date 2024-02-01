@@ -42,13 +42,12 @@
                                                     </div>
                                                 <?php } ?>
                                             </td>
-                                            <td class="fw-semibold"><?= $article->created_at ?></td>
                                             <td>
-                                                <a href="/controllers/dashboard/articles/update-article-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/consoles/update-console-ctrl.php?id_console=<?=$id_console?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>
                                                 </a>
-                                                <a href="/controllers/dashboard/articles/archive-articles-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
-                                                    <i class="bi bi-archive text-dark fs-4"></i>
+                                                <a href="/controllers/dashboard/consoles/delete-console-ctrl.php?id_console=<?=$id_console?>" class="text-decoration-none btn btn-sm btn-light">
+                                                    <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                                 </a>
                                             </td>
                                         </tr>

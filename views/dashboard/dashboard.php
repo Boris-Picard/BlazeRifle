@@ -14,8 +14,8 @@
                             <div class="card-text text-center">
                                 <h1 class="fw-bold"><?= count($articles) ?></h1>
                                 <p class="text-capitalize fw-bold">dernier article ajouté : </p>
-                                <p><?= $articles[0]->name ?></p>
-                                <p><?= $articles[0]->title ?></p>
+                                <p><?= $articles[0]->game_name ?></p>
+                                <p><?= $articles[0]->article_title ?></p>
                                 <p><?= $articles[0]->created_at ?></p>
                             </div>
                         </div>

@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
                                 <?php if (!empty($articles)) { ?>
-                                    <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= $articles[0]->name ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= $articles[0]->game_name ?></span></h2>
                                     <p class="text-center text-break mt-2">
                                         <?= $articles[0]->game_description ?>
                                     </p>
@@ -42,7 +42,7 @@
                                                     <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
                                                 </div>
                                                 <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
-                                                    <?= $article->title ?>
+                                                    <?= $article->article_title ?>
                                                 </a>
                                                 <p class="aCard mt-2">
                                                     <?= $article->article_description ?>
