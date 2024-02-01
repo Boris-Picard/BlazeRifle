@@ -15,7 +15,7 @@
             <div class="row g-2">
                 <div class="col-6 pt-3">
                     <div class="d-flex mb-3">
-                        <a href="/controllers/dashboard/articles/add-article-ctrl.php" class="btn btn-danger rounded-4 text-uppercase fw-bold mx-2">Ajouter une console</a>
+                        <a href="/controllers/dashboard/consoles/add-console-ctrl.php" class="btn btn-danger rounded-4 text-uppercase fw-bold mx-2">Ajouter une console</a>
                     </div>
                 </div>
             </div>
@@ -25,28 +25,20 @@
                         <table class="table table-borderless table-hover table-responsive align-middle">
                             <thead>
                                 <tr>
-                                    <th scope="col">
-                                        Jeux
-                                    </th>
                                     <th scope="col">Console</th>
-                                    <th scope="col">Auteur</th>
-                                    <th scope="col">Commentaires</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (isset($articles)) {
-                                    foreach ($articles as $article) { ?>
+                                <?php if (isset($consoles)) {
+                                    foreach ($consoles as $console) { ?>
                                         <tr>
-                                            <td class="fw-semibold"><?= $article->name ?></td>
-                                            <td class="fw-semibold text-break">Xbox</td>
-                                            <td class="fw-semibold text-break">Boris</td>
-                                            <td class="fw-semibold text-break">5</td>
+                                            <td class="fw-semibold text-break"><?=$console->console_name?></td>
                                             <td class="fw-semibold">
-                                                <?php if (isset($article->article_picture)) { ?>
+                                                <?php if (isset($console->console_picture)) { ?>
                                                     <div class="ratio ratio-1x1">
-                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>" class="object-fit-cover rounded-circle ">
+                                                        <img src="/public/uploads/consoles/<?= $console->console_picture ?>" alt="<?= $console->console_picture ?>" class="object-fit-cover rounded-circle ">
                                                     </div>
                                                 <?php } ?>
                                             </td>

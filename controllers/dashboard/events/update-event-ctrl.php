@@ -6,16 +6,20 @@ require_once __DIR__ . '/../../../models/Game.php';
 try {
     $listEvents = true;
 
+    // Récupération de l'identifiant de l'événement depuis la requête
     $id_event = intval(filter_input(INPUT_GET, 'id_event', FILTER_SANITIZE_NUMBER_INT));
 
+    // Récupération de tous les jeux depuis la base de données
     $games = Game::getAll();
 
+    // Récupération de l'événement spécifié par l'identifiant
     $event = Event::get($id_event);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Titre de l'événement nettoyage et validation
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
 
+        // Validation du titre
         if (empty($title)) {
             $error['title'] = 'Veuillez rentrer un titre';
         } else {
@@ -28,6 +32,7 @@ try {
         // Description de l'événement nettoyage et validation
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
 
+        // Validation de la description
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
@@ -40,8 +45,10 @@ try {
             }
         }
 
+        // Lieu de l'événement nettoyage et validation
         $place = filter_input(INPUT_POST, 'place', FILTER_SANITIZE_SPECIAL_CHARS);
 
+        // Validation du lieu
         if (empty($place)) {
             $error['place'] = 'Veuillez renseigner un lieu';
         } else {
@@ -51,8 +58,10 @@ try {
             }
         }
 
-
+        // Date de l'événement nettoyage et validation
         $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_INT);
+
+        // Validation de la date
         if (empty($date)) {
             $error['date'] = 'Veuillez renseigner une date';
         } else {
@@ -70,7 +79,10 @@ try {
             }
         }
 
+        // Lien de l'événement nettoyage et validation
         $link = filter_input(INPUT_POST, 'link', FILTER_SANITIZE_URL);
+
+        // Validation du lien
         if (empty($link)) {
             $error['link'] = 'Veuillez renseigner un lien';
         } else {
@@ -81,6 +93,8 @@ try {
         }
 
         $fileName = $event->event_picture;
+
+        // Vérification de la présence de la photo et gestion des erreurs éventuelles
         if (empty($fileName)) {
             try {
                 if (empty($_FILES['picture']['name'])) {
@@ -96,23 +110,28 @@ try {
                     throw new Exception("Image trop grande");
                 }
 
+                // Génération d'un nom de fichier unique
                 $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
                 $fileName = uniqid('img_') . '.' . $extension;
 
+                // Déplacement du fichier téléchargé vers le répertoire des images d'événements
                 $from = $_FILES['picture']['tmp_name'];
                 $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName;
 
                 $moveFile = move_uploaded_file($from, $to);
             } catch (\Throwable $th) {
+                // Gestion des erreurs liées au téléchargement de la photo
                 $error['picture'] = $th->getMessage();
             }
         }
 
+        // Récupération des identifiants des jeux
         $gamesId = array_column($games, 'id_game');
 
         // Nettoyage et validation du select d'un jeu
         $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
+        // Validation de l'identifiant du jeu
         if (empty($id_game)) {
             $error['id_game'] = 'Veuillez sélectionner un jeu';
         } else {
@@ -121,9 +140,17 @@ try {
             }
         }
 
+        //Si le tableau d'erreurs n'est pas vide alors message d'erreur
+        if(!empty($error)) {
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
+        // Vérification finale des erreurs
         if (empty($error)) {
+            // Création d'une instance d'événement
             $event = new Event();
 
+            // Configuration des propriétés de l'événement avec les valeurs fournies
             $event->setEventTitle($title);
             $event->setEventDescription($description);
             $event->setEventPicture($fileName);
@@ -133,19 +160,24 @@ try {
             $event->setIdEvent($id_event);
             $event->setIdGame($id_game);
 
+            // Mise à jour de l'événement dans la base de données
             $result = $event->update();
 
+            // Vérification du résultat de la mise à jour
             if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-events-ctrl.php');
             }
         }
 
+        // Récupération de l'événement après mise à jour
         $event = Event::get($id_event);
     }
 } catch (PDOException $e) {
+    // En cas d'erreur PDO, affichage du message d'erreur
     die('Erreur : ' . $e->getMessage());
 }
+
 
 
 

@@ -6,26 +6,36 @@ require_once __DIR__ . '/../../../models/Game.php';
 try {
     $listArticles = true;
 
+    // Récupération des paramètres depuis l'URL
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
     $nbArticles = intval(filter_input(INPUT_GET, 'nbArticles', FILTER_SANITIZE_SPECIAL_CHARS));
 
+    // Récupération de la liste de tous les jeux
     $games = Game::getAll();
 
+    // Si l'ordre n'est pas spécifié dans l'URL, par défaut, il est défini à 'DESC'
     if ($order == null) {
         $order = 'DESC';
     }
 
+    // Récupération des détails de l'article spécifié par son ID
     $article = Article::get($id_article);
 
+    // Définition des paramètres à utiliser dans la récupération de tous les articles
     $id_gameToUse = !empty($id_game) ? $id_game : null;
     $nbArticlesToUse = !empty($nbArticles) ? $nbArticles : 100;
 
+    // Récupération de la liste des articles en fonction des paramètres
     $articles = Article::getAll($id_gameToUse, showDeletedAt: true, limit: $nbArticlesToUse, order: $order);
 
+    // Si l'article spécifié existe
     if ($article) {
+        // Archiver l'article spécifié
         Article::archive($id_article, true);
+
+        // Redirection vers le contrôleur de gestion des articles archivés
         header('location: /controllers/dashboard/articles/archive-articles-ctrl.php');
         die;
     }

@@ -45,12 +45,12 @@ class Event
         return $this->event_description;
     }
 
-    public function setEventPicture(?string $event_picture)
+    public function setEventPicture(string $event_picture)
     {
         $this->event_picture = $event_picture;
     }
 
-    public function getEventPicture(): ?string
+    public function getEventPicture(): string
     {
         return $this->event_picture;
     }
@@ -105,6 +105,10 @@ class Event
         return $this->id_game;
     }
 
+    /**
+     * Méthode d'insertion des données dans la table events
+     * @return int
+     */
     public function insert(): int
     {
         $pdo = Database::connect(DSN, USER, PASSWORD);
@@ -127,6 +131,13 @@ class Event
         return $sth->rowCount() > 0;
     }
 
+    /**
+     * Méthode de récupération des données dans la table events, avec un id_game et un ordre ASC ou DESC
+     * @param int|null $id_game
+     * @param string $order
+     * 
+     * @return array
+     */
     public static function getAll(?int $id_game = null, string $order = 'ASC'): array|false
     {
         $pdo = Database::connect(DSN, USER, PASSWORD);
@@ -153,6 +164,12 @@ class Event
         return $result;
     }
 
+    /**
+     * Méthode pour récuperer un event en particulier avec son id
+     * @param int $id_event
+     * 
+     * @return [type]
+     */
     public static function get(int $id_event)
     {
         $pdo = Database::connect(DSN, USER, PASSWORD);
@@ -172,6 +189,10 @@ class Event
         return $result;
     }
 
+    /**
+     * Méthode pour update les events
+     * @return bool
+     */
     public function update(): bool
     {
         $pdo = Database::connect(DSN, USER, PASSWORD);
@@ -196,6 +217,12 @@ class Event
         return $result;
     }
 
+    /**
+     * Méthode pour mettre a jour une image dans la table events avec son id
+     * @param int $id
+     * 
+     * @return bool
+     */
     public static function updateImg(int $id): bool
     {
         $pdo = Database::connect();
@@ -211,6 +238,12 @@ class Event
         return $result;
     }
 
+    /**
+     * Méthode pour supprimer une donnée dans la table events
+     * @param int $id
+     * 
+     * @return int
+     */
     public static function delete(int $id): int
     {
         $pdo = Database::connect();

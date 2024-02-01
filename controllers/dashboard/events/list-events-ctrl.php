@@ -6,10 +6,13 @@ require_once __DIR__ . '/../../../models/Event.php';
 try {
     $listEvents = true;
     
+    // Récupération de tous les événements depuis la base de données
     $events = Event::getAll();
 
+    // Récupération du message stocké en session (s'il existe) et nettoyage de la session
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
 
+    // Suppression du message de la session après récupération
     if(isset($_SESSION['msg'])) {
         unset($_SESSION['msg']);
     }
@@ -17,6 +20,7 @@ try {
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
+
 
 
 

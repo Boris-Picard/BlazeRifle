@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Article.php';
+require_once __DIR__ . '/../../../models/Console.php';
 require_once __DIR__ . '/../../../models/Game.php';
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
@@ -8,144 +9,126 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 
 try {
     $listArticles = true;
-
+    // Récupération de la liste de tous les jeux
     $games = Game::getAll();
+
+    // Récupération de la liste de toutes les consoles
     $consoles = Console::getAll();
 
-
+    // Vérification si la requête est de type POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        // Titre de l'article nettoyage et validation
+        // Nettoyage du titre de l'article et validation
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($title)) {
             $error['title'] = 'Veuillez rentrer un titre';
         } else {
-            // $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
-            // if (!$isOk) {
-            //     $error['title'] = 'Le titre n\'est pas valide';
-            // }
+            // Validation de la longueur du titre
             if (strlen($title) < 10 || strlen($title) > 200) {
                 $error['title'] = 'La longueur du titre n\'est pas valide';
             }
         }
 
-        // Description de l'article nettoyage et validation
+        // Nettoyage de la description de l'article et validation
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
-            // $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/')));
-            // if (!$isOk) {
-            //     $error['description'] = 'La description n\'est pas valide';
-            // } else {
+            // Validation de la longueur de la description
             if (strlen($description) < 50 || strlen($description) > 1000) {
                 $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 1000 caractères';
             }
-            // }
         }
 
-        // Sous-titre 1 de l'article nettoyage et validation
+        // Nettoyage du premier sous-titre de l'article et validation
         $secondTitle = filter_input(INPUT_POST, 'secondTitle', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($secondTitle)) {
             $error['secondTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            // $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
-            // if (!$isOk) {
-            //     $error['secondTitle'] = 'Le sous-titre n\'est pas valide';
-            // }
+            // Validation de la longueur du sous-titre
             if (strlen($secondTitle) < 10 || strlen($secondTitle) > 200) {
-                $error['secondTitle'] = 'La longueur du titre n\'est pas valide';
+                $error['secondTitle'] = 'La longueur du sous-titre n\'est pas valide';
             }
         }
 
-        // Sous-titre 2 de l'article nettoyage et validation
+        // Nettoyage du deuxième sous-titre de l'article et validation
         $thirdTitle = filter_input(INPUT_POST, 'thirdTitle', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($thirdTitle)) {
             $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            // $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
-            // if (!$isOk) {
-            //     $error['thirdTitle'] = 'Le sous-titre n\'est pas valide';
-            // }
+            // Validation de la longueur du sous-titre
             if (strlen($thirdTitle) < 10 || strlen($thirdTitle) > 200) {
-                $error['thirdTitle'] = 'La longueur du titre n\'est pas valide';
+                $error['thirdTitle'] = 'La longueur du sous-titre n\'est pas valide';
             }
         }
 
-        // Première section de l'article nettoyage et validation
+        // Nettoyage de la première section de l'article et validation
         $firstSection = filter_input(INPUT_POST, 'firstSection', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
+            // Validation de la longueur de la première section
             if (strlen($firstSection) < 250 || strlen($firstSection) > 5000) {
-                $error['firstSection'] = 'La longueur du texte n\'est pas correct d\'article';
+                $error['firstSection'] = 'La longueur du texte de la première section n\'est pas correcte';
             }
-            // $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
-            // if (!$isOk) {
-            //     $error['firstSection'] = 'La section de l\'article n\'est pas valide';
-            // } else {
-            //     if (strlen($firstSection) < 250 || strlen($firstSection) > 1500) {
-            //         $error["firstSection"] = "La longueur du paragraphe doit faire minimum 250 caractères et maximum 1500 caractères";
-            //     }
-            // }
         }
 
-        // Deuxième section de l'article nettoyage et validation
+        // Nettoyage de la deuxième section de l'article et validation
         $secondSection = filter_input(INPUT_POST, 'secondSection', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
+            // Validation de la longueur de la deuxième section
             if (strlen($secondSection) < 250 || strlen($secondSection) > 5000) {
-                $error['secondSection'] = 'La longueur du texte n\'est pas correct d\'article';
+                $error['secondSection'] = 'La longueur du texte de la deuxième section n\'est pas correcte';
             }
-            // $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
-            // if (!$isOk) {
-            //     $error['secondSection'] = 'La deuxième section de l\'article n\'est pas valide';
-            // } else {
-            //     if (strlen($secondSection) < 250 || strlen($secondSection) > 1500) {
-            //         $error["secondSection"] = "La longueur du paragraphe doit faire minimum 250 caractères et maximum 1500 caractères";
-            //     }
-            // }
         }
 
-        $filename = NULL;
-        // Photo de l'article nettoyage et validation
+
+        // Nettoyage de la photo de l'article et validation
         try {
+            // Vérification de l'existence de la photo
             if (empty($_FILES['image-article']['name'])) {
                 throw new Exception("Photo obligatoire");
             }
+            // Vérification d'éventuelles erreurs lors du téléchargement du fichier
             if ($_FILES['image-article']['error'] != 0) {
                 throw new Exception("Error");
             }
+            // Vérification du format de la photo
             if (!in_array($_FILES['image-article']['type'], IMAGE_TYPES)) {
                 throw new Exception("Format non autorisé");
             }
+            // Vérification de la taille de la photo
             if ($_FILES['image-article']['size'] > MAX_FILESIZE) {
                 throw new Exception("Image trop grande");
             }
 
+            // Génération d'un nom de fichier unique
             $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
             $fileName = uniqid('img_') . '.' . $extension;
 
+            // Déplacement du fichier téléchargé vers le répertoire de destination
             $from = $_FILES['image-article']['tmp_name'];
             $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
 
             $moveFile = move_uploaded_file($from, $to);
         } catch (\Throwable $e) {
+            // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
             $error['image-article'] = $e->getMessage();
         }
 
-        /* array_column permet de transformer mon tableau d'ojects en tableau 
-            2 paramètres requis => tableau d'ojects et ce que je recherche dans ce dernier */
+        // Récupération des IDs des jeux et des consoles pour la validation du select
         $gamesId = array_column($games, 'id_game');
+        $consolesId = array_column($consoles, 'id_console');
 
-        // Nettoyage et validation du select d'un jeu
+        // Nettoyage du select du jeu et validation
         $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
         if (empty($id_game)) {
@@ -156,39 +139,28 @@ try {
             }
         }
 
-
-
-        /* array_column permet de transformer mon tableau d'ojects en tableau 
-            2 paramètres requis => tableau d'ojects et ce que je recherche dans ce dernier */
-        $consolesId = array_column($consoles, 'id_console');
-
-        // Nettoyage et validation du select d'une console
+        // Nettoyage du select de la console et validation
         $id_console = intval(filter_input(INPUT_POST, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
         if (empty($id_console)) {
             $error['id_console'] = 'Veuillez sélectionner une console';
         } else {
-            if (!in_array($id_console, $gamesId)) {
+            if (!in_array($id_console, $consolesId)) {
                 $error['id_console'] = 'Ce n\'est pas une console valide';
             }
         }
 
-        // Nettoyage et validation d'un auteur
-        // $id_user = filter_input(INPUT_POST, 'id_user', FILTER_SANITIZE_SPECIAL_CHARS);
+        //Si le tableau d'erreurs n'est pas vide alors message d'erreur
+        if(!empty($error)) {
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
 
-        // if (empty($id_user)) {
-        //     $error['id_user'] = 'Veuillez rentrer un pseudo';
-        // } else {
-        //     $isOk = filter_var($id_user, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NAME . '/')));
-        //     if (!$isOk) {
-        //         $error['id_user'] = 'Le pseudo n\'est pas valide';
-        //     }
-        // }
+        // Si il n'y a pas d'erreurs, j'hydrate les attributs de la classe Article
         if (empty($error)) {
 
             $article = new Article();
 
-            $article->setTitle($title);
+            $article->setArticleTitle($title);
             $article->setSecondTitle($secondTitle);
             $article->setThirdTitle($thirdTitle);
             $article->setArticlePicture($fileName);
@@ -198,8 +170,10 @@ try {
             $article->setIdGame($id_game);
             $article->setIdConsole($id_console);
 
+            // Insertion de l'article et validation dans la base de données
             $result = $article->insert();
 
+            // Si l'insertion a réussi, affichage d'un message de succès et redirection
             if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-articles-ctrl.php');
@@ -207,8 +181,10 @@ try {
         }
     }
 } catch (PDOException $e) {
-    die('Erreur : ' . $e->getMessage());
+    $error = $e->getMessage();
+    die;
 }
+
 
 
 

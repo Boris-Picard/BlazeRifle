@@ -3,20 +3,24 @@ require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Game.php';
 
 try {
-
+    // Récupérer l'ID du jeu et le numéro de la page depuis la requête GET
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $currentPage = intval(filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT));
 
-
+    // Obtenir le nombre total d'articles pour le jeu
     $nbArticles = Article::count($id_game);
+
+    // Calculer le nombre total de pages nécessaires pour afficher les articles
     $nbPages = ceil($nbArticles / 7);
 
-
+    // S'assurer que la page actuelle est dans une plage valide
     $currentPage = ($currentPage > $nbPages) ? $nbPages : $currentPage;
     $currentPage = ($currentPage <= 0) ? 1 : $currentPage;
 
+    // Récupérer les articles de la page actuelle pour le jeu donné
     $articles = Article::getAll($id_game, false, 'DESC', page: $currentPage);
 
+    // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {
         $timestamp = strtotime($article->created_at);
         $article->formattedHour = date('H:i', $timestamp);
@@ -25,6 +29,7 @@ try {
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
+
 
 
 

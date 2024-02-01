@@ -5,7 +5,7 @@ require_once __DIR__ . '/../helpers/Database.php';
 class Article
 {
     private ?int $id_article;
-    private string $title;
+    private string $article_title;
     private string $secondtitle;
     private string $thirdtitle;
     private string $article_picture;
@@ -20,7 +20,7 @@ class Article
     private ?int $id_game;
 
     public function __construct(
-        string $title = '',
+        string $article_title = '',
         string $secondtitle = '',
         string $thirdtitle = '',
         string $article_picture = '',
@@ -35,7 +35,7 @@ class Article
         ?int $id_console = null,
         ?int $id_game = null
     ) {
-        $this->title = $title;
+        $this->article_title = $article_title;
         $this->secondtitle = $secondtitle;
         $this->thirdtitle = $thirdtitle;
         $this->article_picture = $article_picture;
@@ -51,14 +51,14 @@ class Article
         $this->id_game = $id_game;
     }
 
-    public function setTitle(string $title)
+    public function setArticleTitle(string $article_title)
     {
-        $this->title = $title;
+        $this->article_title = $article_title;
     }
 
-    public function getTitle(): string
+    public function getArticleTitle(): string
     {
-        return $this->title;
+        return $this->article_title;
     }
 
     public function setSecondTitle(string $secondtitle)
@@ -81,12 +81,12 @@ class Article
         return $this->thirdtitle;
     }
 
-    public function setArticlePicture(?string $article_picture)
+    public function setArticlePicture(string $article_picture)
     {
         $this->article_picture = $article_picture;
     }
 
-    public function getArticlePicture(): ?string
+    public function getArticlePicture(): string
     {
         return $this->article_picture;
     }
@@ -191,23 +191,27 @@ class Article
         return $this->id_game;
     }
 
+    /**
+     * Insertion des données dans la table articles
+     * @return int
+     */
     public function insert(): int
     {
         $pdo = Database::connect();
 
-        $sql = 'INSERT INTO `articles` (`title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`, `id_console`) 
-        VALUES(:title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game, :id_console)';
+        $sql = 'INSERT INTO `articles` (`article_title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`, `id_console`) 
+        VALUES(:article_title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game, :id_console)';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':title', $this->getTitle());
+        $sth->bindValue(':article_title', $this->getArticleTitle());
         $sth->bindValue(':secondtitle', $this->getSecondTitle());
         $sth->bindValue(':thirdtitle', $this->getThirdTitle());
         $sth->bindValue(':article_picture', $this->getArticlePicture());
         $sth->bindValue(':article_description', $this->getArticleDescription());
         $sth->bindValue(':firstsection', $this->getFirstSection());
         $sth->bindValue(':secondsection', $this->getSecondSection());
-        $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
+        $sth->bindValue(':id_console', $this->getIdGame(), PDO::PARAM_INT);
         $sth->bindValue(':id_game', $this->getIdConsole(), PDO::PARAM_INT);
 
         $sth->execute();
@@ -215,6 +219,17 @@ class Article
         return $sth->rowCount() > 0;
     }
 
+    /**
+     * Récupération de toutes les données dans la table 'articles', jointure avec les tables 'games' et 'consoles', vérification des articles supprimés ou non, ordre ASC ou DESC, application des LIMIT et OFFSET pour les articles visibles, ainsi que la pagination
+     * @param int|null $id_game
+     * @param bool $showDeletedAt
+     * @param string $order
+     * @param int $limit
+     * @param int $page
+     * @param int $offset
+     * 
+     * @return array
+     */
     public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = 1, int $offset = 0): array|false
     {
         $pdo = Database::connect();
@@ -251,6 +266,12 @@ class Article
         return $result;
     }
 
+    /**
+     * Récupération d'une donnée spécifique via son id 
+     * @param int $id
+     * 
+     * @return [type]
+     */
     public static function get(int $id)
     {
         $pdo = Database::connect();
@@ -270,17 +291,21 @@ class Article
         return $result;
     }
 
+    /**
+     * Méthode pour mettre a jour les données de la table articles
+     * @return bool
+     */
     public function update(): bool
     {
         $pdo = Database::connect();
 
         $sql = 'UPDATE `articles` 
-        SET `title`=:title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game, `id_console`=:id_console 
+        SET `article_title`=:article_title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game, `id_console`=:id_console 
         WHERE `id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':title', $this->getTitle());
+        $sth->bindValue(':article_title', $this->getArticleTitle());
         $sth->bindValue(':secondtitle', $this->getSecondTitle());
         $sth->bindValue(':thirdtitle', $this->getThirdTitle());
         $sth->bindValue(':article_picture', $this->getArticlePicture());
@@ -289,13 +314,19 @@ class Article
         $sth->bindValue(':secondsection', $this->getSecondSection());
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
         $sth->bindValue(':id_article', $this->getIdArticle(), PDO::PARAM_INT);
-        $sth->bindValue(':id_article', $this->getIdConsole(), PDO::PARAM_INT);
+        $sth->bindValue(':id_console', $this->getIdConsole(), PDO::PARAM_INT);
 
         $result = $sth->execute();
 
         return $result;
     }
 
+    /**
+     * Méthode spécifique pour mettre a jour l'image d'un article en récupérant son id
+     * @param int $id
+     * 
+     * @return bool
+     */
     public static function updateImg(int $id): bool
     {
         $pdo = Database::connect();
@@ -311,6 +342,13 @@ class Article
         return $result;
     }
 
+    /**
+     * Méthode pour archiver et désarchiver un article via son id
+     * @param int $id
+     * @param bool $archive
+     * 
+     * @return bool
+     */
     public static function archive(int $id, bool $archive = false): bool
     {
         $pdo = Database::connect();
@@ -328,6 +366,12 @@ class Article
         return $result;
     }
 
+    /**
+     * Méthode de suppression d'un article
+     * @param int $id
+     * 
+     * @return int
+     */
     public static function delete(int $id): int
     {
         $pdo = Database::connect();
@@ -343,6 +387,12 @@ class Article
         return $sth->rowCount() > 0;
     }
 
+    /**
+     * Méthode pour retourner le nombre total d'articles 
+     * @param int|null $id_game
+     * 
+     * @return int
+     */
     public static function count(?int $id_game = null): int
     {
         $pdo = Database::connect();

@@ -83,8 +83,8 @@
                                     <label for="id_console" class="mb-2">Console de l'article <span class="text-danger">*</span></label>
                                     <select class="form-select" name="id_console">
                                         <option selected disabled></option>
-                                        <?php foreach ($consolesArray as $console) { ?>
-                                            <option value="<?= $console ?>" <?= (isset($consoles) && $consoles == $console) ? 'selected' : '' ?>><?= $console ?></option>
+                                        <?php foreach ($consoles as $console) { ?>
+                                            <option value="<?= $console->id_console ?>" <?= (isset($id_console) && $id_console == $console->id_console) ? 'selected' : '' ?>><?= $console->console_name ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>

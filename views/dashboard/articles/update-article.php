@@ -28,7 +28,7 @@
                             <div class="mb-3 col-md-12">
                                 <div><small class="form-text text-danger"><?= $error['title'] ?? '' ?></small></div>
                                 <label for="title" class="form-label">Titre de l'article</label>
-                                <input type="text" class="form-control" name="title" id="title" value="<?= $article->title ?>" aria-describedby="title" placeholder="Call of Duty 2025, une suite de Black Ops 2 ?" minlength="10" maxlength="200" required>
+                                <input type="text" class="form-control" name="title" id="title" value="<?= $article->article_title ?>" aria-describedby="title" placeholder="Call of Duty 2025, une suite de Black Ops 2 ?" minlength="10" maxlength="200" required>
                             </div>
                         </div>
                         <div class="row">
@@ -96,8 +96,8 @@
                                 <label for="id_console" class="mb-2">Console de l'article</label>
                                 <select class="form-select" name="id_console">
                                     <option selected disabled></option>
-                                    <?php foreach ($consolesArray as $console) { ?>
-                                        <option value="<?= $console ?>" <?= (isset($consoles) && $consoles == $console) ? 'selected' : '' ?>><?= $console ?></option>
+                                    <?php foreach ($consoles as $console) { ?>
+                                        <option value="<?= $console->id_console ?>" <?= $console->id_console == $article->id_console ? 'selected' : '' ?>><?= $console->console_name ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

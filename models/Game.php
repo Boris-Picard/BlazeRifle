@@ -37,12 +37,12 @@ class Game
         return $this->description;
     }
 
-    public function setGamePicture(?string $game_picture)
+    public function setGamePicture(string $game_picture)
     {
         $this->game_picture = $game_picture;
     }
 
-    public function getGamePicture(): ?string
+    public function getGamePicture(): string
     {
         return $this->game_picture;
     }
@@ -57,6 +57,10 @@ class Game
         return $this->id_game;
     }
 
+    /**
+     * Méthode d'insertion des données dans la table games
+     * @return [type]
+     */
     public function insert()
     {
         $pdo = Database::connect();
@@ -75,6 +79,12 @@ class Game
         return $result;
     }
 
+    /**
+     * Méthode pour supprimer un ligne dans la table games
+     * @param int $id_game
+     * 
+     * @return [type]
+     */
     public static function delete(int $id_game)
     {
         $pdo = Database::connect();
@@ -90,6 +100,10 @@ class Game
         return $sth->rowCount() > 0;
     }
 
+    /**
+     * Méthode pour récuperer toutes les données dans la table games
+     * @return [type]
+     */
     public static function getAll()
     {
         $pdo = Database::connect();
@@ -104,6 +118,12 @@ class Game
         return $result;
     }
 
+    /**
+     * Méthode pour récuperer une donnée spécifique dans la table games
+     * @param int $id_game
+     * 
+     * @return object
+     */
     public static function get(int $id_game): object|false
     {
         $pdo = Database::connect();
@@ -122,6 +142,10 @@ class Game
         return $result;
     }
 
+    /**
+     * Méthode pour mettre a jour une ligne dans la table games
+     * @return bool
+     */
     public function update(): bool
     {
         $pdo = Database::connect();
@@ -142,6 +166,12 @@ class Game
         return $result;
     }
 
+    /**
+     * Méthode pour mettre a jour une image 
+     * @param int $id_game
+     * 
+     * @return bool
+     */
     public static function updateImg(int $id_game): bool
     {
         $pdo = Database::connect();
