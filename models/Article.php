@@ -195,8 +195,8 @@ class Article
     {
         $pdo = Database::connect();
 
-        $sql = 'INSERT INTO `articles` (`title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`) 
-        VALUES(:title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game)';
+        $sql = 'INSERT INTO `articles` (`title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`, `id_console`) 
+        VALUES(:title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game, :id_console)';
 
         $sth = $pdo->prepare($sql);
 
@@ -208,6 +208,7 @@ class Article
         $sth->bindValue(':firstsection', $this->getFirstSection());
         $sth->bindValue(':secondsection', $this->getSecondSection());
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
+        $sth->bindValue(':id_game', $this->getIdConsole(), PDO::PARAM_INT);
 
         $sth->execute();
 
@@ -274,7 +275,7 @@ class Article
         $pdo = Database::connect();
 
         $sql = 'UPDATE `articles` 
-        SET `title`=:title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game 
+        SET `title`=:title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game, `id_console`=:id_console 
         WHERE `id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
@@ -288,6 +289,7 @@ class Article
         $sth->bindValue(':secondsection', $this->getSecondSection());
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
         $sth->bindValue(':id_article', $this->getIdArticle(), PDO::PARAM_INT);
+        $sth->bindValue(':id_article', $this->getIdConsole(), PDO::PARAM_INT);
 
         $result = $sth->execute();
 

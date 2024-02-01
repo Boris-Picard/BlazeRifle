@@ -18,17 +18,11 @@ try {
     }
 
     $article = Article::get($id_article);
-    // $articles = Article::getAll(showDeletedAt: true, order: $order);
 
-    if (!empty($id_game) && !empty($nbArticles)) {
-        $articles = Article::getAll($id_game, showDeletedAt: true, limit: $nbArticles, order: $order);
-    } elseif(empty($id_game) && empty($nbArticles)) {
-        $articles = Article::getAll(showDeletedAt: true, limit: 100, order: $order);
-    } elseif(!empty($nbArticles)) {
-        $articles = Article::getAll(showDeletedAt: true, limit: $nbArticles, order: $order);
-    } else {
-        $articles = Article::getAll($id_game, showDeletedAt: true, limit: 100, order: $order);
-    }
+    $id_gameToUse = !empty($id_game) ? $id_game : null;
+    $nbArticlesToUse = !empty($nbArticles) ? $nbArticles : 100;
+
+    $articles = Article::getAll($id_gameToUse, showDeletedAt: true, limit: $nbArticlesToUse, order: $order);
 
     if ($article) {
         Article::archive($id_article, true);

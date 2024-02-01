@@ -45,13 +45,6 @@
                                     <input type="file" class="form-control" name="picture" id="picture" aria-describedby="picture" placeholder="" accept="image/png, image/jpeg, image/avif" required>
                                 </div>
                             </div>
-                            <!-- <div class="row">
-                                <div class="mb-3 col-md-12">
-                                    <div><small class="form-text text-danger"><?= $error['user'] ?? '' ?></small></div>
-                                    <label for="user" class="form-label">Utilisateur <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="user" id="user" value="<?= $user ?? '' ?>" aria-describedby="user" placeholder="" minlength="10" maxlength="150" required>
-                                </div>
-                            </div> -->
                             <div class="py-3">
                                 <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Ajouter un Jeu</button>
                                 <a href="/controllers/dashboard/games/list-games-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Voir les jeux</a>

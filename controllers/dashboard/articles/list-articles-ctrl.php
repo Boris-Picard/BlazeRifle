@@ -18,15 +18,10 @@ try {
         $order = 'DESC';
     }
 
-    if (!empty($id_game) && !empty($nbArticles)) {
-        $articles = Article::getAll($id_game, showDeletedAt: false, limit: $nbArticles, order: $order);
-    } elseif(empty($id_game) && empty($nbArticles)) {
-        $articles = Article::getAll(showDeletedAt: false, limit: 100, order: $order);
-    } elseif(!empty($nbArticles)) {
-        $articles = Article::getAll(showDeletedAt: false, limit: $nbArticles, order: $order);
-    } else {
-        $articles = Article::getAll($id_game, showDeletedAt: false, limit: 100, order: $order);
-    }
+    $id_gameToUse = !empty($id_game) ? $id_game : null;
+    $nbArticlesToUse = !empty($nbArticles) ? $nbArticles : 100;
+
+    $articles = Article::getAll($id_gameToUse, showDeletedAt: false, limit: $nbArticlesToUse, order: $order);
 
     $article = Article::get($id_article);
 

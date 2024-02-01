@@ -10,6 +10,7 @@ try {
     $listArticles = true;
 
     $games = Game::getAll();
+    $consoles = Console::getAll();
 
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -159,18 +160,18 @@ try {
 
         /* array_column permet de transformer mon tableau d'ojects en tableau 
             2 paramètres requis => tableau d'ojects et ce que je recherche dans ce dernier */
-        // $consolesId = array_column($consolesArray, 'id_console');
+        $consolesId = array_column($consoles, 'id_console');
 
         // Nettoyage et validation du select d'une console
-        // $id_console = intval(filter_input(INPUT_POST, 'id_console', FILTER_SANITIZE_NUMBER_INT));
+        $id_console = intval(filter_input(INPUT_POST, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
-        // if (empty($id_console)) {
-        //     $error['id_console'] = 'Veuillez sélectionner une console';
-        // } else {
-        //     if (!in_array($id_console, $gamesId)) {
-        //         $error['id_console'] = 'Ce n\'est pas une console valide';
-        //     }
-        // }
+        if (empty($id_console)) {
+            $error['id_console'] = 'Veuillez sélectionner une console';
+        } else {
+            if (!in_array($id_console, $gamesId)) {
+                $error['id_console'] = 'Ce n\'est pas une console valide';
+            }
+        }
 
         // Nettoyage et validation d'un auteur
         // $id_user = filter_input(INPUT_POST, 'id_user', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -195,6 +196,7 @@ try {
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
             $article->setIdGame($id_game);
+            $article->setIdConsole($id_console);
 
             $result = $article->insert();
 

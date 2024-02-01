@@ -11,7 +11,7 @@
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-chat px-3 fw-bold"></i>Les Commentaires</span></a>
                         <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="<?= $listArticles ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-pen px-3 fw-bold"></i>Les Articles</span></a>
                         <a href="/controllers/dashboard/games/list-games-ctrl.php" class="<?= $listGames ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-controller px-3 fw-bold"></i>Les Jeux</span></a>
-                        <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-xbox px-3 fw-bold"></i>Les Consoles</span></a>
+                        <a href="/controllers/dashboard/consoles/add-console-ctrl.php" class="<?= $listConsoles ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-xbox px-3 fw-bold"></i>Les Consoles</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-book px-3 fw-bold"></i>Les Guides</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-file-arrow-up px-3 fw-bold"></i>Les Bons plans</span></a>
                         <a href="/controllers/dashboard/events/list-events-ctrl.php" class="py-3 <?= $listEvents ? 'active' : '' ?> nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-calendar-date px-3 fw-bold"></i>Calendrier des events</span></a>
