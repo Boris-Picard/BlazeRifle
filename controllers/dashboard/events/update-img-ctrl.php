@@ -27,7 +27,7 @@ try {
 
     // Redirection vers la page de mise à jour de l'événement avec un message
     header('Location: /controllers/dashboard/events/update-event-ctrl.php?id_event=' . $event->id_event);
-
+    die;
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

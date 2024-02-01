@@ -53,7 +53,7 @@
                             <div class="col-md-6 mb-3">
                                 <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
                                 <label for="description" class="form-label">Description de l'article</label>
-                                <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="1000"  required><?= $article->article_description ?></textarea>
+                                <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="1000" required><?= $article->article_description ?></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -109,7 +109,9 @@
                         </div>
                         <div class="py-3">
                             <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Modifier l'article</button>
-                            <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
+                            <?php if (!empty($article->article_picture)) { ?>
+                                <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
+                            <?php } ?>
                         </div>
                     </form>
                 </div>

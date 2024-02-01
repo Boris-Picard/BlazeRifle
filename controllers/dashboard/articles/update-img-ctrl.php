@@ -27,6 +27,7 @@ try {
 
     // Redirection vers le contrôleur de mise à jour de l'article avec l'ID de l'article
     header('Location: /controllers/dashboard/articles/update-article-ctrl.php?id=' . $article->id_article);
+    die;
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

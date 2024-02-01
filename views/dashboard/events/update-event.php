@@ -89,7 +89,9 @@
                         </div>
                         <div class="py-3">
                             <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Modifier</button>
-                            <a href="/controllers/dashboard/events/list-events-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
+                            <?php if (!empty($event->event_picture)) { ?>
+                                <a href="/controllers/dashboard/events/list-events-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
+                            <?php  } ?>
                         </div>
                     </form>
                 </div>

@@ -27,7 +27,7 @@ try {
     
     // Rediriger vers la page de mise à jour du jeu après la suppression de l'image
     header('Location: /controllers/dashboard/games/update-game-ctrl.php?id='.$game->id_game);
-
+    die;
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
