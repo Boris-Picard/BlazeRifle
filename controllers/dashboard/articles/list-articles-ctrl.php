@@ -10,6 +10,7 @@ try {
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
+    $nbArticles = intval(filter_input(INPUT_GET, 'nbArticles', FILTER_SANITIZE_SPECIAL_CHARS));
 
     $games = Game::getAll();
 
@@ -17,10 +18,14 @@ try {
         $order = 'DESC';
     }
 
-    if (!empty($id_game)) {
-        $articles = Article::getAll($id_game, showDeletedAt: false, limit: 100, order: $order);
-    } else {
+    if (!empty($id_game) && !empty($nbArticles)) {
+        $articles = Article::getAll($id_game, showDeletedAt: false, limit: $nbArticles, order: $order);
+    } elseif(empty($id_game) && empty($nbArticles)) {
         $articles = Article::getAll(showDeletedAt: false, limit: 100, order: $order);
+    } elseif(!empty($nbArticles)) {
+        $articles = Article::getAll(showDeletedAt: false, limit: $nbArticles, order: $order);
+    } else {
+        $articles = Article::getAll($id_game, showDeletedAt: false, limit: 100, order: $order);
     }
 
     $article = Article::get($id_article);
