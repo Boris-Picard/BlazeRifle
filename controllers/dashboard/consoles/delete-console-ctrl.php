@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../../models/Console.php';
 try {
     // Récupération de l'identifiant de l'événement à supprimer depuis les paramètres de la requête
     $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_SPECIAL_CHARS));
-    
+
     // Récupération de l'événement à supprimer depuis la base de données
     $console = Console::get($id_console);
 
@@ -14,13 +14,8 @@ try {
     $isDeleted = Console::delete($id_console);
 
     // Si l'événement a été supprimé avec succès
-    if($isDeleted > 0) {
-        // Suppression du fichier image associé à l'événement
-        $link = unlink('../../../public/uploads/consoles/'.$console->console_picture);
-    }
-
-    // Vérification si la suppression a réussi
-    if($isDeleted) {
+    if ($isDeleted > 0) {
+        $link = unlink('../../../public/uploads/consoles/' . $console->console_picture);
         // Message de succès si la suppression a réussi
         $_SESSION['msg'] = 'La donnée a bien été supprimée !';
     } else {
@@ -32,7 +27,9 @@ try {
     header('Location: /controllers/dashboard/consoles/list-consoles-ctrl.php');
     die;
 } catch (PDOException $e) {
-    die('Erreur : ' . $e->getMessage());
+    $_SESSION['msg'] = $e->getMessage();
+    header('Location: /controllers/dashboard/consoles/list-consoles-ctrl.php');
+    die;
 }
 
 

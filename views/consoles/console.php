@@ -1,5 +1,5 @@
 <main>
-<section class="articlesSection py-5 bg-light">
+    <section class="articlesSection py-5 bg-light">
         <div class="container">
             <section>
                 <div class="row">
@@ -14,7 +14,7 @@
                                 </nav>
                             </div>
                             <div class="col-md-8 col-12 py-3">
-                                <h2 class="h2 text-uppercase fw-bold">Tous les articles PC</h2>
+                                <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= $console->console_name ?></span></h2>
                             </div>
                             <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
                                 <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
@@ -38,60 +38,6 @@
                                                 <small>Il y a 20 heures
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                     <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">apex legends</span>
-                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card bg-transparent text-white p-0 cardActu  border-0 cardShadow">
-                                    <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="GTA 6">
-                                    <div class="card-img-overlay">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">GTA 6</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                            <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
-                                            </a>
-                                            <div class="card-text mb-3">
-                                                <small>Il y a 20 heures
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">GTA 6</span>
-                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/1329760.jpeg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Counter Strike 2">
-                                    <div class="card-img-overlay">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Counter Strike 2</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                            <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
-                                            </a>
-                                            <div class="card-text mb-3">
-                                                <small>Il y a 20 heures
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Counter Strike</span>
-                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
-                                                </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow">
-                                    <img src="/public/assets/img/valorant.jpg" class="card-img object-fit-cover rounded-4  h-100 w-100" alt="Valorant">
-                                    <div class="card-img-overlay">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Valorant</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                            <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light mb-1">
-                                                Je ne m'attendais pas à trouver un PC portable gamer
-                                            </a>
-                                            <div class="card-text mb-3">
-                                                <small>Il y a 20 heures
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">Valorant</span>
                                                     <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
                                                 </small>
                                             </div>
@@ -661,4 +607,4 @@
                 </div>
             </section>
         </div>
-</section>
+    </section>

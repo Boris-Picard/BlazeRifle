@@ -1,9 +1,10 @@
 <?php
 require_once __DIR__ . '/../../models/Game.php';
+require_once __DIR__ . '/../../models/Console.php';
 
 try {
     $games = Game::getAll();
-    
+    $consoles = Console::getAll();
 } catch (\Throwable $e) {
     $e->getMessage();
 }
@@ -41,7 +42,7 @@ try {
                         </a>
                         <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
                             <?php foreach ($games as $game) { ?>
-                                <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?=$game->id_game?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?=$game->game_picture?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="GTA 6"><?=$game->game_name?></span></a></li>
+                                <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $game->id_game ?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $game->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $game->game_name ?>"><?= $game->game_name ?></span></a></li>
                             <?php } ?>
                         </ul>
                     </li>
@@ -50,9 +51,9 @@ try {
                             Les Consoles
                         </a>
                         <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
-                            <li><a href="/controllers/consoles/pc-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-windows mx-2 fs-5"></i>PC</span></a></li>
-                            <li><a href="/controllers/consoles/playstation-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-playstation mx-2 fs-5"></i>Playstation</span></a></li>
-                            <li><a href="/controllers/consoles/xbox-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><i class="bi bi-xbox mx-2 fs-5"></i>Xbox</span></a></li>
+                            <?php foreach ($consoles as $console) { ?>
+                                <li><a href="/controllers/consoles/console-ctrl.php?id_console=<?= $console->id_console ?>" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><img src="/public/uploads/consoles/<?= $console->console_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $console->console_name ?>"></img><?= $console->console_name ?></span></a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                     <a class="nav-link navlinkHover" href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>

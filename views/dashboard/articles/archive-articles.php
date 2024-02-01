@@ -32,7 +32,7 @@
                             <option selected disabled>Trier la liste par jeu</option>
                             <option value="">Voir tous les jeux</option>
                             <?php foreach ($games as $game) { ?>
-                                <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= $game->name ?></option>
+                                <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= $game->game_name ?></option>
                             <?php } ?>
                         </select>
                         <button type="submit" class="btn mx-3 btn-danger rounded-4 fw-bold text-capitalize">Valider</button>
@@ -62,7 +62,7 @@
                             <tbody>
                                 <?php foreach ($articles as $article) { ?>
                                     <tr>
-                                        <td class="fw-semibold"><?= $article->name ?></td>
+                                        <td class="fw-semibold"><?= $article->game_name ?></td>
                                         <td class="fw-semibold text-break">Boris</td>
                                         <td class="fw-semibold text-break">5</td>
                                         <td class="fw-semibold">

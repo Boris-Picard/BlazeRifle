@@ -15,22 +15,21 @@ try {
 
     // Si la suppression a réussi, tenter de supprimer le fichier associé à l'article
     if ($isDeleted > 0) {
-        // Suppression du fichier à partir du chemin spécifié
         $link = unlink('../../../public/uploads/article/' . $article->article_picture);
-    }
-
-    // Gestion des messages de session en fonction du succès ou de l'échec de la suppression
-    if ($isDeleted) {
+        // Message de succès si la suppression a réussi
         $_SESSION['msg'] = 'La donnée a bien été supprimée !';
     } else {
-        $_SESSION['msg'] = 'Erreur : la donnée n\'a pas été supprimée !';
+        // Message d'erreur si la suppression a échoué
+        $_SESSION['msg'] = 'Erreur, la donnée n\'a pas été supprimée !';
     }
 
     // Redirection vers la liste des articles du tableau de bord
     header('Location: /controllers/dashboard/articles/list-articles-ctrl.php');
     die;
 } catch (PDOException $e) {
-    die('Erreur : ' . $e->getMessage());
+    $_SESSION['msg'] = $e->getMessage();
+    header('Location: /controllers/dashboard/articles/list-articles-ctrl.php');
+    die;
 }
 
 

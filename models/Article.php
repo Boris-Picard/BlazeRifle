@@ -219,9 +219,14 @@ class Article
         return $sth->rowCount() > 0;
     }
 
+
     /**
-     * Récupération de toutes les données dans la table 'articles', jointure avec les tables 'games' et 'consoles', vérification des articles supprimés ou non, ordre ASC ou DESC, application des LIMIT et OFFSET pour les articles visibles, ainsi que la pagination
+     * Récupération de toutes les données dans la table 'articles', 
+     * jointure avec les tables 'games' et 'consoles', 
+     * vérification des articles supprimés ou non, ordre ASC ou DESC, 
+     * application des LIMIT et OFFSET pour les articles visibles, ainsi que la pagination
      * @param int|null $id_game
+     * @param int|null $id_console
      * @param bool $showDeletedAt
      * @param string $order
      * @param int $limit
@@ -230,7 +235,7 @@ class Article
      * 
      * @return array
      */
-    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = 1, int $offset = 0): array|false
+    public static function getAll(?int $id_game = null, ?int $id_console = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = 1, int $offset = 0): array|false
     {
         $pdo = Database::connect();
 
@@ -238,12 +243,17 @@ class Article
 
         $sql = 'SELECT * FROM `articles`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
+        INNER JOIN `consoles` ON `consoles`.`id_console`=`articles`.`id_console`
         WHERE 1=1';
 
         $showDeletedAt ? $sql .= ' AND `deleted_at` IS NOT NULL ' : $sql .= ' AND `deleted_at` IS NULL ';
 
         if (isset($id_game)) {
             $sql .= ' AND `games`.`id_game`=:id_game ';
+        }
+
+        if (isset($id_console)) {
+            $sql .= ' AND `consoles`.`id_console`=:id_console ';
         }
 
         $order == 'ASC' ? $sql .= ' ORDER BY `articles`.`created_at` ASC ' : $sql .= ' ORDER BY `articles`.`created_at` DESC ';
@@ -368,11 +378,11 @@ class Article
 
     /**
      * Méthode de suppression d'un article
-     * @param int $id
+     * @param int $id_article
      * 
      * @return int
      */
-    public static function delete(int $id): int
+    public static function delete(int $id_article): int
     {
         $pdo = Database::connect();
 
@@ -380,7 +390,7 @@ class Article
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':id_article', $id, PDO::PARAM_INT);
+        $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT);
 
         $sth->execute();
 
