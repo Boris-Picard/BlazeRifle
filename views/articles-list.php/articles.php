@@ -41,7 +41,7 @@
                                                 <div>
                                                     <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
                                                 </div>
-                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?><?= isset($gameId) ? '&id_game=' . $article->id_game : '&id_console=' .$article->id_console ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
+                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?><?= isset($gameId) ? '&id_game=' . $article->id_game : '&id_console=' . $article->id_console ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
                                                     <?= $article->article_title ?>
                                                 </a>
                                                 <p class="aCard mt-2">
@@ -62,7 +62,7 @@
                             <nav aria-label="pagination">
                                 <ul class="pagination justify-content-center mt-5">
                                     <li class="page-item">
-                                        <a class="page-link text-dark" href="?page=<?= $currentPage - 1 ?>&id_game=<?= $id_game ?>" aria-label="Previous">
+                                        <a class="page-link text-dark" href="?page=<?= $currentPage - 1 ?>&<?= !empty($id_game) ? 'id_game=' . $id_game : 'id_console=' . $id_console ?>" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </a>
                                     </li>
@@ -70,10 +70,10 @@
                                     for ($page = 1; $page <= $nbPages; $page++) {
                                         $isActive = ($currentPage == $page) ? 'activePagination' : '';
                                     ?>
-                                        <li class="page-item"><a class="page-link text-dark <?= $isActive ?>" href="?page=<?= $page ?>&id_game=<?= $id_game ?>"><?= $page ?></a></li>
+                                        <li class="page-item"><a class="page-link text-dark <?= $isActive ?>" href="?page=<?= $page ?>&<?= !empty($id_game) ? 'id_game=' . $id_game : 'id_console=' . $id_console ?>"><?= $page ?></a></li>
                                     <?php  } ?>
                                     <li class="page-item">
-                                        <a class="page-link text-dark" href="?page=<?= $currentPage + 1 ?>&id_game=<?= $id_game ?>" aria-label="Next">
+                                        <a class="page-link text-dark" href="?page=<?= $currentPage + 1 ?>&<?= !empty($id_game) ? 'id_game=' . $id_game : 'id_console=' . $id_console ?>" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>

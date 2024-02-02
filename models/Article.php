@@ -235,11 +235,13 @@ class Article
      * 
      * @return array
      */
-    public static function getAll(?int $id_game = null, ?int $id_console = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = 1, int $offset = 0): array|false
+    public static function getAll(?int $id_game = null, ?int $id_console = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = null, int $offset = 0): array|false
     {
         $pdo = Database::connect();
 
-        $offset = ($page - 1) * $limit;
+        if (!is_null($page)) {
+            $offset = ($page - 1) * $limit;
+        }
 
         $sql = 'SELECT * FROM `articles`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
@@ -438,7 +440,7 @@ class Article
         $sth->execute();
 
         $result = $sth->fetchColumn();
-        
+
         return $result;
     }
 }

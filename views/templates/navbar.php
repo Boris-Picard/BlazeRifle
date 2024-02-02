@@ -52,7 +52,7 @@ try {
                         </a>
                         <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
                             <?php foreach ($consoles as $console) { ?>
-                                <li><a href="/controllers/consoles/console-ctrl.php?id_console=<?= $console->id_console ?>" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><img src="/public/uploads/consoles/<?= $console->console_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $console->console_name ?>"></img><?= $console->console_name ?></span></a></li>
+                                <li><a href="/controllers/games-preview/games-ctrl.php?id_console=<?= $console->id_console ?>" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><img src="/public/uploads/consoles/<?= $console->console_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $console->console_name ?>"></img><?= $console->console_name ?></span></a></li>
                             <?php } ?>
                         </ul>
                     </li>
