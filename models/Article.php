@@ -211,8 +211,8 @@ class Article
         $sth->bindValue(':article_description', $this->getArticleDescription());
         $sth->bindValue(':firstsection', $this->getFirstSection());
         $sth->bindValue(':secondsection', $this->getSecondSection());
-        $sth->bindValue(':id_console', $this->getIdGame(), PDO::PARAM_INT);
-        $sth->bindValue(':id_game', $this->getIdConsole(), PDO::PARAM_INT);
+        $sth->bindValue(':id_console', $this->getIdConsole(), PDO::PARAM_INT);
+        $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
 
         $sth->execute();
 
@@ -262,11 +262,14 @@ class Article
             $sql .= " LIMIT $limit OFFSET $offset ";
         }
 
+        $sth = $pdo->prepare($sql);
+
         if (isset($id_game)) {
-            $sth = $pdo->prepare($sql);
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
-        } else {
-            $sth = $pdo->query($sql);
+        }
+
+        if (isset($id_console)) {
+            $sth->bindValue(':id_console', $id_console, PDO::PARAM_INT);
         }
 
         $sth->execute();
@@ -403,16 +406,21 @@ class Article
      * 
      * @return int
      */
-    public static function count(?int $id_game = null): int
+    public static function count(?int $id_game = null, ?int $id_console = null): int
     {
         $pdo = Database::connect();
 
-        $sql = "SELECT count(*) as `count` from `articles`
+        $sql = 'SELECT count(*) as `count` from `articles`
                 INNER JOIN `games` ON `games`.`id_game` = `articles`.`id_game`
-                WHERE 1 = 1";
+                INNER JOIN `consoles` ON `consoles`.`id_console` = `articles`.`id_console`
+                WHERE 1 = 1';
 
         if (!is_null($id_game)) {
-            $sql .= " AND `articles`.`id_game` = :id_game";
+            $sql .= ' AND `articles`.`id_game` = :id_game';
+        }
+
+        if (!is_null($id_console)) {
+            $sql .= ' AND `articles`.`id_console` = :id_console';
         }
 
         $sth = $pdo->prepare($sql);

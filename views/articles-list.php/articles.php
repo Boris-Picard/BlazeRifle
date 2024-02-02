@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
                                 <?php if (!empty($articles)) { ?>
-                                    <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= $articles[0]->game_name ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= isset($gameId) ? $articles[0]->game_name : $articles[0]->console_name ?></span></h2>
                                     <p class="text-center text-break mt-2">
                                         <?= $articles[0]->game_description ?>
                                     </p>

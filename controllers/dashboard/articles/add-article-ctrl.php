@@ -181,7 +181,7 @@ try {
         }
     }
 } catch (PDOException $e) {
-    $error = $e->getMessage();
+    $alert['error'] = $e->getMessage();
     die;
 }
 

@@ -17,8 +17,8 @@
                                 <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= $console->console_name ?></span></h2>
                             </div>
                             <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
-                                <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                    Tous les articles
+                                <a href="/controllers/articles-list/articles-ctrl.php?id_console<?=$articles[0]->id_console?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                    Tous les articles <?= $articles[0]->console_name ?>
                                     <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -26,24 +26,30 @@
                         <!-- CARD ACTU -->
                         <div class="row">
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
-                                <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
-                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="apex legends">
-                                    <div class="card-img-overlay ">
-                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2">apex legends</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                            <a href="#" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dignissimos officiis quaerat quis, ullam error sequi repudiandae magnam voluptas inventore nisi sit pariatur, similique consequuntur beatae saepe tempore eum debitis!
-                                            </a>
-                                            <div class="card-text mb-3">
-                                                <small>Il y a 20 heures
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold">apex legends</span>
-                                                    <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold">PC</span>
-                                                </small>
+                                <?php foreach ($articles as $article) { ?>
+                                    <div class="card bg-transparent text-white p-0 cardActu border-0 cardShadow ">
+                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->game_name ?>">
+                                        <div class="card-img-overlay ">
+                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->game_name ?></span>
+                                            <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
+                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
+                                                    <?= $article->article_description ?>
+                                                </a>
+                                                <div class="card-text mb-3">
+                                                    <small>
+                                                        A
+                                                        <?= $article->formattedHour ?>
+                                                        le 
+                                                        <?= $article->formattedDate ?>
+                                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                        <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= $article->game_name ?></span>
+                                                        <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold"><?= $article->console_name ?></span>
+                                                    </small>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                <?php   } ?>
                             </div>
                             <!-- CARD UNDER ACTU -->
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">

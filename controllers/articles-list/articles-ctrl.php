@@ -1,14 +1,19 @@
 <?php
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Game.php';
+require_once __DIR__ . '/../../models/Console.php';
 
 try {
     // Récupérer l'ID du jeu et le numéro de la page depuis la requête GET
-    $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+    $id_game = filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT);
     $currentPage = intval(filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT));
+    $id_console = filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT);
 
-    // Obtenir le nombre total d'articles pour le jeu
-    $nbArticles = Article::count($id_game);
+    // Coalescente pour filtrer l'id_console ou game
+    $gameId = isset($id_game) ? $id_game : null;
+    $consoleId = isset($id_console) ? $id_console : null;
+    // Obtenir le nombre total d'articles pour le jeu ou la console
+    $nbArticles = Article::count(id_game: $gameId, id_console: $consoleId);
 
     // Calculer le nombre total de pages nécessaires pour afficher les articles
     $nbPages = ceil($nbArticles / 7);
@@ -18,7 +23,7 @@ try {
     $currentPage = ($currentPage <= 0) ? 1 : $currentPage;
 
     // Récupérer les articles de la page actuelle pour le jeu donné
-    $articles = Article::getAll($id_game, false, 'DESC', page: $currentPage);
+    $articles = Article::getAll($gameId, showDeletedAt: false, order: 'DESC', page: $currentPage);
 
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {
