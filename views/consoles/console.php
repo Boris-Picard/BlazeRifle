@@ -14,10 +14,10 @@
                                 </nav>
                             </div>
                             <div class="col-md-8 col-12 py-3">
-                                <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= $console->console_name ?></span></h2>
+                                <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= $article->console_name ?></span></h2>
                             </div>
                             <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
-                                <a href="/controllers/articles-list/articles-ctrl.php?id_console<?=$articles[0]->id_console?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                <a href="/controllers/articles-list/articles-ctrl.php?id_console=<?= $articles[0]->id_console ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                                     Tous les articles <?= $articles[0]->console_name ?>
                                     <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                 </a>
@@ -32,14 +32,14 @@
                                         <div class="card-img-overlay ">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->game_name ?></span>
                                             <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
+                                                <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_console=<?= $article->id_console ?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
                                                     <?= $article->article_description ?>
                                                 </a>
                                                 <div class="card-text mb-3">
                                                     <small>
                                                         A
                                                         <?= $article->formattedHour ?>
-                                                        le 
+                                                        le
                                                         <?= $article->formattedDate ?>
                                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                         <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= $article->game_name ?></span>

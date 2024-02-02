@@ -6,9 +6,6 @@ try {
     // Convertir et filtrer l'ID de la console à partir de la requête GET
     $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
-    // Récupérer l'objet Console correspondant à l'ID
-    $console = Console::get($id_console);
-
     // Récupérer tous les articles associés à la console spécifiée
     $articles = Article::getAll(id_console: $id_console);
 

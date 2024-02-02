@@ -23,7 +23,7 @@ try {
     $currentPage = ($currentPage <= 0) ? 1 : $currentPage;
 
     // Récupérer les articles de la page actuelle pour le jeu donné
-    $articles = Article::getAll($gameId, showDeletedAt: false, order: 'DESC', page: $currentPage);
+    $articles = Article::getAll($gameId, $consoleId, showDeletedAt: false, order: 'DESC', page: $currentPage);
 
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {

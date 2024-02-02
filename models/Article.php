@@ -248,29 +248,30 @@ class Article
 
         $showDeletedAt ? $sql .= ' AND `deleted_at` IS NOT NULL ' : $sql .= ' AND `deleted_at` IS NULL ';
 
-        if (isset($id_game)) {
+        if (!is_null($id_game)) {
             $sql .= ' AND `games`.`id_game`=:id_game ';
         }
 
-        if (isset($id_console)) {
+        if (!is_null($id_console)) {
             $sql .= ' AND `consoles`.`id_console`=:id_console ';
         }
 
         $order == 'ASC' ? $sql .= ' ORDER BY `articles`.`created_at` ASC ' : $sql .= ' ORDER BY `articles`.`created_at` DESC ';
 
-        if (isset($limit) && isset($offset)) {
-            $sql .= " LIMIT $limit OFFSET $offset ";
-        }
+        $sql .= " LIMIT :limit OFFSET :offset ";
 
         $sth = $pdo->prepare($sql);
 
-        if (isset($id_game)) {
+        if (!is_null($id_game)) {
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
         }
 
-        if (isset($id_console)) {
+        if (!is_null($id_console)) {
             $sth->bindValue(':id_console', $id_console, PDO::PARAM_INT);
         }
+
+        $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
 
         $sth->execute();
 
@@ -285,17 +286,18 @@ class Article
      * 
      * @return [type]
      */
-    public static function get(int $id)
+    public static function get(int $id_article = null, int $id_console = null)
     {
         $pdo = Database::connect();
 
         $sql = 'SELECT * FROM `articles`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
+        INNER JOIN `consoles` ON `consoles`.`id_console`=`articles`.`id_console`
         WHERE `id_article`=:id_article';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':id_article', $id, PDO::PARAM_INT);
+        isset($id_article) ? $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT) : $sth->bindValue(':id_console', $id_console, PDO::PARAM_INT);
 
         $sth->execute();
 
@@ -428,8 +430,15 @@ class Article
         if (!is_null($id_game)) {
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
         }
+
+        if (!is_null($id_console)) {
+            $sth->bindValue(':id_console', $id_console, PDO::PARAM_INT);
+        }
+
         $sth->execute();
+
         $result = $sth->fetchColumn();
+        
         return $result;
     }
 }

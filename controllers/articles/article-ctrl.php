@@ -7,9 +7,10 @@ try {
     // Récupérer les ID de l'article et du jeu depuis la requête GET
     $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+    $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
     // Récupérer les détails de l'article
-    $article = Article::get($id_article);
+    $article = Article::get($id_article, $id_console);
 
     // Vérifier si l'article existe
     if (!empty($article)) {
