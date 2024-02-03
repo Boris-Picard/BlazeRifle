@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Game.php';
+require_once __DIR__ . '/../../../models/Console.php';
 
 $listGames = true;
 
@@ -9,7 +10,7 @@ try {
     // Vérification de la méthode de la requête (POST)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        // Récupération et nettoyage du nom du jeu
+        // Récupération nettoyage et validation du nom du jeu
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
 
         // Validation du nom
@@ -22,7 +23,7 @@ try {
             }
         }
 
-        // Récupération et nettoyage de la description du jeu
+        // Récupération nettoyage et validation de la description du jeu
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
 
         // Validation de la description
@@ -60,14 +61,23 @@ try {
             // Déplacement de la photo vers le répertoire d'uploads
             $from = $_FILES['picture']['tmp_name'];
             $to = __DIR__ . '/../../../public/uploads/games/' . $filename;
-            move_uploaded_file($from, $to);
+            // Déplacement du fichier téléchargé vers le répertoire de destination
+            if (empty($error)) {
+                $moveFile = move_uploaded_file($from, $to);
+            }
         } catch (\Throwable $th) {
             $error['picture'] = $th->getMessage();
         }
 
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
-        if(!empty($error)) {
+        if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
+        //Condition pour vérifier si la donnée dans la colonne 'game_name' existe déjà ou non. Si c'est vrai, bloquer l'envoi de la donnée.
+        if (Game::isExist($name)) {
+            $error['isExist'] = 'Jeu déjà existant';
+            $alert['error'] = 'Jeu déjà existant';
         }
 
         // Vérification s'il n'y a pas d'erreurs
@@ -86,7 +96,7 @@ try {
             // Si l'insertion a réussi, affichage d'un message de succès et redirection
             if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
-                header('Refresh:3; url=list-articles-ctrl.php');
+                header('Refresh:3; url=list-games-ctrl.php');
             }
         }
     }

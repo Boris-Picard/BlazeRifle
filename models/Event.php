@@ -258,4 +258,25 @@ class Event
 
         return $sth->rowCount() > 0;
     }
+
+    /**
+     * Méthode pour savoir si une donnée existe déja en base de donnée
+     * @param string $registration
+     * 
+     * @return bool
+     */
+    public static function isExist(string $event_link): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(`id_event`) AS "count" FROM `events` WHERE `event_link`=:event_link;';
+
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':event_link', $event_link);
+        $sth->execute();
+
+        $result = $sth->fetchColumn();
+
+        return (bool) $result > 0;
+    }
 }

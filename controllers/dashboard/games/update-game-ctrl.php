@@ -64,15 +64,25 @@ try {
                 $filename = uniqid() . '.' . $extension;
                 $from = $_FILES['picture']['tmp_name'];
                 $to = __DIR__ . '/../../../public/uploads/games/' . $filename;
-                move_uploaded_file($from, $to);
+                // Déplacement du fichier téléchargé vers le répertoire de destination
+                if (empty($error)) {
+                    $moveFile = move_uploaded_file($from, $to);
+                }
             } catch (\Throwable $th) {
                 $error['picture'] = $th->getMessage();
             }
         }
 
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
-        if(!empty($error)) {
+        if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
+        // Vérification de l'existence d'un jeu avec le même nom.
+        // Si le nom existe déjà dans la base de données et n'est pas celui du jeu actuel, déclencher une erreur.
+        if (Game::isExist($name) && $name != $game->game_name) {
+            $error['isExist'] = 'Jeu déjà existant';
+            $alert['error'] = 'Jeu déjà existant';
         }
 
         // Si aucune erreur, mettre à jour les données du jeu

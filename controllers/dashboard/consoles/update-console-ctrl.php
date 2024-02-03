@@ -69,7 +69,9 @@ try {
                 $from = $_FILES['picture']['tmp_name'];
                 $to =  __DIR__ . '/../../../public/uploads/consoles/' . $fileName;
 
-                $moveFile = move_uploaded_file($from, $to);
+                if (empty($error)) {
+                    $moveFile = move_uploaded_file($from, $to);
+                }
             } catch (\Throwable $e) {
                 $error['picture'] = $e->getMessage();
             }

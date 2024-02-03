@@ -18,7 +18,7 @@ try {
     // Vérification si la requête est de type POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        // Nettoyage du titre de l'article et validation
+        // Nettoyage et validation du titre de l'article et validation
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($title)) {
@@ -30,7 +30,7 @@ try {
             }
         }
 
-        // Nettoyage de la description de l'article et validation
+        // Nettoyage et validation de la description de l'article et validation
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($description)) {
@@ -42,7 +42,7 @@ try {
             }
         }
 
-        // Nettoyage du premier sous-titre de l'article et validation
+        // Nettoyage et validation du premier sous-titre de l'article et validation
         $secondTitle = filter_input(INPUT_POST, 'secondTitle', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($secondTitle)) {
@@ -54,7 +54,7 @@ try {
             }
         }
 
-        // Nettoyage du deuxième sous-titre de l'article et validation
+        // Nettoyage et validation du deuxième sous-titre de l'article et validation
         $thirdTitle = filter_input(INPUT_POST, 'thirdTitle', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($thirdTitle)) {
@@ -66,7 +66,7 @@ try {
             }
         }
 
-        // Nettoyage de la première section de l'article et validation
+        // Nettoyage et validation de la première section de l'article et validation
         $firstSection = filter_input(INPUT_POST, 'firstSection', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($firstSection)) {
@@ -78,7 +78,7 @@ try {
             }
         }
 
-        // Nettoyage de la deuxième section de l'article et validation
+        // Nettoyage et validation de la deuxième section de l'article et validation
         $secondSection = filter_input(INPUT_POST, 'secondSection', FILTER_SANITIZE_SPECIAL_CHARS);
 
         if (empty($secondSection)) {
@@ -88,40 +88,6 @@ try {
             if (strlen($secondSection) < 250 || strlen($secondSection) > 5000) {
                 $error['secondSection'] = 'La longueur du texte de la deuxième section n\'est pas correcte';
             }
-        }
-
-
-        // Nettoyage de la photo de l'article et validation
-        try {
-            // Vérification de l'existence de la photo
-            if (empty($_FILES['image-article']['name'])) {
-                throw new Exception("Photo obligatoire");
-            }
-            // Vérification d'éventuelles erreurs lors du téléchargement du fichier
-            if ($_FILES['image-article']['error'] != 0) {
-                throw new Exception("Error");
-            }
-            // Vérification du format de la photo
-            if (!in_array($_FILES['image-article']['type'], IMAGE_TYPES)) {
-                throw new Exception("Format non autorisé");
-            }
-            // Vérification de la taille de la photo
-            if ($_FILES['image-article']['size'] > MAX_FILESIZE) {
-                throw new Exception("Image trop grande");
-            }
-
-            // Génération d'un nom de fichier unique
-            $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
-            $fileName = uniqid('img_') . '.' . $extension;
-
-            // Déplacement du fichier téléchargé vers le répertoire de destination
-            $from = $_FILES['image-article']['tmp_name'];
-            $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
-
-            $moveFile = move_uploaded_file($from, $to);
-        } catch (\Throwable $e) {
-            // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
-            $error['image-article'] = $e->getMessage();
         }
 
         // Récupération des IDs des jeux et des consoles pour la validation du select
@@ -150,9 +116,50 @@ try {
             }
         }
 
+        // Nettoyage et validation de la photo de l'article et validation
+        try {
+            // Vérification de l'existence de la photo
+            if (empty($_FILES['image-article']['name'])) {
+                throw new Exception("Photo obligatoire");
+            }
+            // Vérification d'éventuelles erreurs lors du téléchargement du fichier
+            if ($_FILES['image-article']['error'] != 0) {
+                throw new Exception("Error");
+            }
+            // Vérification du format de la photo
+            if (!in_array($_FILES['image-article']['type'], IMAGE_TYPES)) {
+                throw new Exception("Format non autorisé");
+            }
+            // Vérification de la taille de la photo
+            if ($_FILES['image-article']['size'] > MAX_FILESIZE) {
+                throw new Exception("Image trop grande");
+            }
+
+            // Génération d'un nom de fichier unique
+            $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
+            $fileName = uniqid('img_') . '.' . $extension;
+
+            // Déplacement du fichier téléchargé vers le répertoire de destination
+            $from = $_FILES['image-article']['tmp_name'];
+            $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
+
+            if (empty($error)) {
+                $moveFile = move_uploaded_file($from, $to);
+            }
+        } catch (\Throwable $e) {
+            // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
+            $error['image-article'] = $e->getMessage();
+        }
+
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
-        if(!empty($error)) {
+        if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
+        //Condition pour vérifier si la donnée dans la colonne 'article_title' existe déjà ou non. Si c'est vrai, bloquer l'envoi de la donnée.
+        if (Article::isExist($title)) {
+            $error['isExist'] = 'Article déjà existant';
+            $alert['error'] = 'Article déjà existant';
         }
 
         // Si il n'y a pas d'erreurs, j'hydrate les attributs de la classe Article

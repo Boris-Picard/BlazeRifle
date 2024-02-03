@@ -92,6 +92,21 @@ try {
             }
         }
 
+        // Récupération des identifiants des jeux
+        $gamesId = array_column($games, 'id_game');
+
+        // Nettoyage et validation du select d'un jeu
+        $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+
+        // Validation de l'identifiant du jeu
+        if (empty($id_game)) {
+            $error['id_game'] = 'Veuillez sélectionner un jeu';
+        } else {
+            if (!in_array($id_game, $gamesId)) {
+                $error['id_game'] = 'Ce n\'est pas un jeu valide';
+            }
+        }
+
         $fileName = $event->event_picture;
 
         // Vérification de la présence de la photo et gestion des erreurs éventuelles
@@ -118,30 +133,17 @@ try {
                 $from = $_FILES['picture']['tmp_name'];
                 $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName;
 
-                $moveFile = move_uploaded_file($from, $to);
+                if (empty($error)) {
+                    $moveFile = move_uploaded_file($from, $to);
+                }
             } catch (\Throwable $th) {
                 // Gestion des erreurs liées au téléchargement de la photo
                 $error['picture'] = $th->getMessage();
             }
         }
 
-        // Récupération des identifiants des jeux
-        $gamesId = array_column($games, 'id_game');
-
-        // Nettoyage et validation du select d'un jeu
-        $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
-
-        // Validation de l'identifiant du jeu
-        if (empty($id_game)) {
-            $error['id_game'] = 'Veuillez sélectionner un jeu';
-        } else {
-            if (!in_array($id_game, $gamesId)) {
-                $error['id_game'] = 'Ce n\'est pas un jeu valide';
-            }
-        }
-
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
-        if(!empty($error)) {
+        if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';
         }
 

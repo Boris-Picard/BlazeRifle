@@ -21,7 +21,6 @@ try {
                 $error['name'] = 'Veuillez rentrer une console valide';
             }
         }
-
         // Validation et traitement de la photo de la console
         try {
             // Vérification de l'existence de la photo
@@ -51,15 +50,16 @@ try {
             // Déplacement du fichier téléchargé vers le répertoire de destination
             $from = $_FILES['picture']['tmp_name'];
             $to =  __DIR__ . '/../../../public/uploads/consoles/' . $fileName;
-
-            $moveFile = move_uploaded_file($from, $to);
+            if (empty($error)) {
+                $moveFile = move_uploaded_file($from, $to);
+            }
         } catch (\Throwable $e) {
             // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
             $error['picture'] = $e->getMessage();
         }
 
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
-        if(!empty($error)) {
+        if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';
         }
 

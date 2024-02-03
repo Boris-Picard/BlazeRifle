@@ -186,4 +186,25 @@ class Game
 
         return $result;
     }
+
+    /**
+     * Méthode pour savoir si une donnée existe déja en base de donnée
+     * @param string $registration
+     * 
+     * @return bool
+     */
+    public static function isExist(string $game_name): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(`id_game`) AS "count" FROM `games` WHERE `game_name`=:game_name;';
+
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':game_name', $game_name);
+        $sth->execute();
+
+        $result = $sth->fetchColumn();
+
+        return (bool) $result > 0;
+    }
 }

@@ -82,6 +82,21 @@ try {
             }
         }
 
+        // Récupération des identifiants de jeux
+        $gamesId = array_column($games, 'id_game');
+
+        // Nettoyage et validation de l'identifiant du jeu
+        $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+
+        if (empty($id_game)) {
+            $error['id_game'] = 'Veuillez sélectionner un jeu';
+        } else {
+            // Validation de l'identifiant du jeu
+            if (!in_array($id_game, $gamesId)) {
+                $error['id_game'] = 'Ce n\'est pas un jeu valide';
+            }
+        }
+
         // Tentative de téléchargement de la photo de l'événement
         try {
             if (empty($_FILES['picture']['name'])) {
@@ -107,30 +122,23 @@ try {
             $namePicture = $fileName . '.' . $extension;
 
             // Déplacement du fichier téléchargé vers le répertoire de destination
-            $moveFile = move_uploaded_file($from, $to);
+            if (empty($error)) {
+                $moveFile = move_uploaded_file($from, $to);
+            }
         } catch (\Throwable $th) {
             // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
             $error['picture'] = $th->getMessage();
         }
 
-        // Récupération des identifiants de jeux
-        $gamesId = array_column($games, 'id_game');
-
-        // Nettoyage et validation de l'identifiant du jeu
-        $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
-
-        if (empty($id_game)) {
-            $error['id_game'] = 'Veuillez sélectionner un jeu';
-        } else {
-            // Validation de l'identifiant du jeu
-            if (!in_array($id_game, $gamesId)) {
-                $error['id_game'] = 'Ce n\'est pas un jeu valide';
-            }
+        //Si le tableau d'erreurs n'est pas vide alors message d'erreur
+        if (!empty($error)) {
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
         }
 
-        //Si le tableau d'erreurs n'est pas vide alors message d'erreur
-        if(!empty($error)) {
-            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        //Condition pour vérifier si la donnée dans la colonne 'event_link' existe déjà ou non. Si c'est vrai, bloquer l'envoi de la donnée.
+        if (Event::isExist($link)) {
+            $error['isExist'] = 'Lien déjà existant';
+            $alert['error'] = 'Lien déjà existant';
         }
 
         // Si aucune erreur, hydratation des attributs de la classe Event

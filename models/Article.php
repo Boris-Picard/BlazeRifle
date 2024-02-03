@@ -443,4 +443,25 @@ class Article
 
         return $result;
     }
+
+    /**
+     * Méthode pour savoir si une donnée existe déja en base de donnée
+     * @param string $registration
+     * 
+     * @return bool
+     */
+    public static function isExist(string $article_title): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(`id_article`) AS "count" FROM `articles` WHERE `article_title`=:article_title;';
+
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':article_title', $article_title);
+        $sth->execute();
+
+        $result = $sth->fetchColumn();
+
+        return (bool) $result > 0;
+    }
 }
