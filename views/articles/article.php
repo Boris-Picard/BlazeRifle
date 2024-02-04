@@ -7,9 +7,9 @@
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php">Preview Des Jeux</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php">Preview Des Articles</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>">Articles sur <?= $article->game_name ?></a></li>
+                                <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>">Preview <?= !is_null($gameId) ? $article->game_name : $article->console_name ?> </a></li>
+                                <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php?">Preview Des Articles</a></li>
+                                <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>">Articles sur <?= !is_null($gameId) ? $article->game_name : $article->console_name ?></a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Article</li>
                             </ol>
                         </nav>
@@ -18,15 +18,15 @@
                         <!-- PRECEDENT SUIVANT -->
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
-                                <small><a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article + 1 ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Précédent</a></small>
-                                <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= isset($article) ? $article->id_game : $article->id_console ?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->game_name ?></a></small>
-                                <small><a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article - 1 ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Suivant</a></small>
+                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none fw-bold">Précédent</a></small>
+                                <small><a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= !is_null($gameId) ? $article->game_name : $article->console_name ?></a></small>
+                                <small><a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article + 1 ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
                         </div>
                         <!-- TITLE -->
                         <div class="row mt-5">
                             <div class="col-12 d-flex text-center">
-                                <h1 class="fw-bold text-break"><?= $article->article_title ?></h1>
+                                <h1 class="fw-bold text-uppercase text-break"><?= $article->article_title ?></h1>
                             </div>
                         </div>
                         <div class="row">
@@ -91,7 +91,7 @@
                                                 </div>
                                                 <div class="col-md-10">
                                                     <div class="card-body p-2 mx-2">
-                                                        <a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
+                                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
                                                             <?= $article->article_title ?>
                                                         </a>
                                                         <p class="text-card aCard m-0 mt-2">
@@ -278,7 +278,7 @@
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row justify-content-center text-center p-3">
-                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= $article->game_name ?></h5>
+                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= !is_null($gameId) ? $article->game_name : $article->console_name ?></h5>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -305,7 +305,7 @@
                                                     <div class="col-md-6 p-0 ">
                                                         <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
                                                             <div class="">
-                                                                <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
                                                                     <?= $article->article_description ?>
                                                                 </a>
                                                             </div>
@@ -320,8 +320,8 @@
                                             </div>
                                         <?php } ?>
                                         <div class="d-flex justify-content-center mt-3 mb-4">
-                                            <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="btn btn-danger w-50 rounded-4 p-1 fw-bold text-uppercase">
-                                                les articles
+                                            <a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                les articles <?= !is_null($gameId) ? $article->game_name : $article->console_name ?>
                                             </a>
                                         </div>
                                     </div>

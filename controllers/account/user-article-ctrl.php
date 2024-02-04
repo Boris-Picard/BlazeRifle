@@ -1,0 +1,197 @@
+<?php
+
+require_once __DIR__ . '/../../config/config.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+
+try {
+    $userArticle = true;
+    // Récupération de la liste de tous les jeux
+    // $games = Game::getAll();
+
+    // Récupération de la liste de toutes les consoles
+    // $consoles = Console::getAll();
+
+    // Vérification si la requête est de type POST
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        // Nettoyage et validation du titre de l'article et validation
+        $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if (empty($title)) {
+            $error['title'] = 'Veuillez rentrer un titre';
+        } else {
+            // Validation de la longueur du titre
+            if (strlen($title) < 10 || strlen($title) > 200) {
+                $error['title'] = 'La longueur du titre n\'est pas valide';
+            }
+        }
+
+        // Nettoyage et validation de la description de l'article et validation
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if (empty($description)) {
+            $error['description'] = 'Veuillez rentrer une description';
+        } else {
+            // Validation de la longueur de la description
+            if (strlen($description) < 50 || strlen($description) > 1000) {
+                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 1000 caractères';
+            }
+        }
+
+        // Nettoyage et validation du premier sous-titre de l'article et validation
+        $secondTitle = filter_input(INPUT_POST, 'secondTitle', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if (empty($secondTitle)) {
+            $error['secondTitle'] = 'Veuillez rentrer un sous-titre';
+        } else {
+            // Validation de la longueur du sous-titre
+            if (strlen($secondTitle) < 10 || strlen($secondTitle) > 200) {
+                $error['secondTitle'] = 'La longueur du sous-titre n\'est pas valide';
+            }
+        }
+
+        // Nettoyage et validation du deuxième sous-titre de l'article et validation
+        $thirdTitle = filter_input(INPUT_POST, 'thirdTitle', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if (empty($thirdTitle)) {
+            $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
+        } else {
+            // Validation de la longueur du sous-titre
+            if (strlen($thirdTitle) < 10 || strlen($thirdTitle) > 200) {
+                $error['thirdTitle'] = 'La longueur du sous-titre n\'est pas valide';
+            }
+        }
+
+        // Nettoyage et validation de la première section de l'article et validation
+        $firstSection = filter_input(INPUT_POST, 'firstSection', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if (empty($firstSection)) {
+            $error['firstSection'] = 'Veuillez rentrer une section d\'article';
+        } else {
+            // Validation de la longueur de la première section
+            if (strlen($firstSection) < 250 || strlen($firstSection) > 5000) {
+                $error['firstSection'] = 'La longueur du texte de la première section n\'est pas correcte';
+            }
+        }
+
+        // Nettoyage et validation de la deuxième section de l'article et validation
+        $secondSection = filter_input(INPUT_POST, 'secondSection', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if (empty($secondSection)) {
+            $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
+        } else {
+            // Validation de la longueur de la deuxième section
+            if (strlen($secondSection) < 250 || strlen($secondSection) > 5000) {
+                $error['secondSection'] = 'La longueur du texte de la deuxième section n\'est pas correcte';
+            }
+        }
+
+        // Récupération des IDs des jeux et des consoles pour la validation du select
+        $gamesId = array_column($games, 'id_game');
+        $consolesId = array_column($consoles, 'id_console');
+
+        // Nettoyage du select du jeu et validation
+        $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+
+        if (empty($id_game)) {
+            $error['id_game'] = 'Veuillez sélectionner un jeu';
+        } else {
+            if (!in_array($id_game, $gamesId)) {
+                $error['id_game'] = 'Ce n\'est pas un jeu valide';
+            }
+        }
+
+        // Nettoyage du select de la console et validation
+        $id_console = intval(filter_input(INPUT_POST, 'id_console', FILTER_SANITIZE_NUMBER_INT));
+
+        if (empty($id_console)) {
+            $error['id_console'] = 'Veuillez sélectionner une console';
+        } else {
+            if (!in_array($id_console, $consolesId)) {
+                $error['id_console'] = 'Ce n\'est pas une console valide';
+            }
+        }
+
+        // Nettoyage et validation de la photo de l'article et validation
+        try {
+            // Vérification de l'existence de la photo
+            if (empty($_FILES['image-article']['name'])) {
+                throw new Exception("Photo obligatoire");
+            }
+            // Vérification d'éventuelles erreurs lors du téléchargement du fichier
+            if ($_FILES['image-article']['error'] != 0) {
+                throw new Exception("Error");
+            }
+            // Vérification du format de la photo
+            if (!in_array($_FILES['image-article']['type'], IMAGE_TYPES)) {
+                throw new Exception("Format non autorisé");
+            }
+            // Vérification de la taille de la photo
+            if ($_FILES['image-article']['size'] > MAX_FILESIZE) {
+                throw new Exception("Image trop grande");
+            }
+
+            // Génération d'un nom de fichier unique
+            $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
+            $fileName = uniqid('img_') . '.' . $extension;
+
+            // Déplacement du fichier téléchargé vers le répertoire de destination
+            $from = $_FILES['image-article']['tmp_name'];
+            $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
+
+            if (empty($error)) {
+                $moveFile = move_uploaded_file($from, $to);
+            }
+        } catch (\Throwable $e) {
+            // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
+            $error['image-article'] = $e->getMessage();
+        }
+
+        //Si le tableau d'erreurs n'est pas vide alors message d'erreur
+        if (!empty($error)) {
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
+        //Condition pour vérifier si la donnée dans la colonne 'article_title' existe déjà ou non. Si c'est vrai, bloquer l'envoi de la donnée.
+        // if (Article::isExist($title)) {
+        //     $error['isExist'] = 'Article déjà existant';
+        //     $alert['error'] = 'Article déjà existant';
+        // }
+
+        // // Si il n'y a pas d'erreurs, j'hydrate les attributs de la classe Article
+        // if (empty($error)) {
+
+        //     $article = new Article();
+
+        //     $article->setArticleTitle($title);
+        //     $article->setSecondTitle($secondTitle);
+        //     $article->setThirdTitle($thirdTitle);
+        //     $article->setArticlePicture($fileName);
+        //     $article->setArticleDescription($description);
+        //     $article->setFirstSection($firstSection);
+        //     $article->setSecondSection($secondSection);
+        //     $article->setIdGame($id_game);
+        //     $article->setIdConsole($id_console);
+
+        //     // Insertion de l'article et validation dans la base de données
+        //     $result = $article->insert();
+
+        //     // Si l'insertion a réussi, affichage d'un message de succès et redirection
+        //     if ($result) {
+        //         $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
+        //         header('Refresh:3; url=list-articles-ctrl.php');
+        //     }
+        // }
+    }
+} catch (PDOException $e) {
+    $alert['error'] = $e->getMessage();
+    die;
+}
+
+
+include __DIR__ . '/../../views/templates/header.php';
+include __DIR__ . '/../../views/templates/navbar.php';
+include __DIR__ . '/../../views/account/user-article.php';
+include __DIR__ . '/../../views/templates/socials.php';
+include __DIR__ . '/../../views/templates/footer.php';

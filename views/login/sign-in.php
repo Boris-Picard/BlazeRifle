@@ -27,12 +27,16 @@
                             <div class="col-12 ">
                                 <!-- EMAIL -->
                                 <div class="mb-4">
-                                    <label class="form-label fw-semibold" for="email">Email *</label>
+                                    <div><small id="emailError" class="form-text text-danger text-center"><?= $error['email'] ?? '' ?></small></div>
+                                    <label class="form-label fw-semibold" for="email">Email <span class="text-danger">*</span></label>
                                     <input type="email" id="email" class="form-control" placeholder="Votre email" autocomplete="email">
                                 </div>
                                 <!-- PASSWORD -->
                                 <div class="mb-4">
-                                    <label class="form-label fw-semibold" for="password">Mot de passe *</label>
+                                    <div>
+                                        <small class="form-text  text-danger"><?= $error['password'] ?? '' ?></small>
+                                    </div>
+                                    <label class="form-label fw-semibold" for="password">Mot de passe <span class="text-danger">*</span></label>
                                     <input type="password" id="password" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password">
                                 </div>
                                 <div class="mb-4 d-flex flex-wrap justify-content-between ">

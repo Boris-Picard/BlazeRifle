@@ -9,6 +9,10 @@ try {
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
+    //Récupération des IDs nettoyés. Si l'ID est égal à 0, alors je retourne la valeur null.
+    $gameId = $id_game == 0 ? null : $id_game;
+    $consoleId = $id_console == 0 ? null : $id_console;
+
     // Récupérer les détails de l'article
     $article = Article::get($id_article, $id_console);
 
@@ -25,7 +29,7 @@ try {
     }
 
     // Récupérer les trois derniers articles du même jeu pour afficher en bas de page
-    $articles = Article::getAll($id_game, false, 'DESC', limit: 3);
+    $articles = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 3);
 
     // Gérer le formulaire de commentaire s'il est soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -44,7 +48,6 @@ try {
         }
     }
 } catch (PDOException $e) {
-    // Capturer toute exception PDO et afficher un message d'erreur
     die('Erreur : ' . $e->getMessage());
 }
 
