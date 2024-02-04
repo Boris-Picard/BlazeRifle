@@ -57,7 +57,14 @@
                                     <small id="passwordMin"></small>
                                 </div>
                                 <label for="password" class="form-label">Mot de passe <span class="text-danger">*</span></label>
-                                <input type="password" name="password" id="password" value="<?= htmlentities($password ?? '') ?>" class="form-control passwordSignIn " placeholder="Mot de passe" pattern="<?= REGEX_PASSWORD ?>" required>
+                                <input type="password" 
+                                name="password" 
+                                id="password" 
+                                value="<?= htmlentities($password ?? '') ?>" 
+                                class="form-control passwordSignIn " 
+                                placeholder="Mot de passe" 
+                                pattern="<?= REGEX_PASSWORD ?>" 
+                                required>
                                 <div><small class="form-text text-danger" id="passwordStrength"></small></div>
                             </div>
                             <!-- PASSWORD CONFIRM -->
@@ -67,7 +74,13 @@
                                     <small class=" text-center passMsgError text-danger"></small>
                                 </div>
                                 <label for="confirmPassword" class="form-label">Confimer le Mot de passe <span class="text-danger">*</span></label>
-                                <input type="password" name="confirmPassword" id="confirmPassword" value="<?= htmlentities($confirmPassword ?? '') ?>" class="form-control passwordConfirmSignIn" placeholder="Confimer le Mot de passe" required>
+                                <input type="password"
+                                name="confirmPassword" 
+                                id="confirmPassword" 
+                                value="<?= htmlentities($confirmPassword ?? '') ?>" 
+                                class="form-control passwordConfirmSignIn" 
+                                placeholder="Confimer le Mot de passe" 
+                                required>
                             </div>
                             <div class="mb-4">
                                 <div class="form-check">

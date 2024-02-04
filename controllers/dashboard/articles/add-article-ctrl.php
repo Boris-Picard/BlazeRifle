@@ -147,7 +147,6 @@ try {
                 $moveFile = move_uploaded_file($from, $to);
             }
         } catch (\Throwable $e) {
-            // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
             $error['image-article'] = $e->getMessage();
         }
 

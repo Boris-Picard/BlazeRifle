@@ -47,7 +47,7 @@
                             </div>
                             <div class="py-3">
                                 <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Ajouter un Jeu</button>
-                                <a href="/controllers/dashboard/games/list-games-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Voir les jeux</a>
+                                <a href="/controllers/dashboard/games/list-games-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
                             </div>
                         </form>
                     </div>

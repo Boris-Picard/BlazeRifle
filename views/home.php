@@ -16,7 +16,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 p-0 bgHero">
-                                <img src="/public/assets/img/gta6hero.avif" class="h-100 object-fit-cover img-fluid opacity-50" alt="GTA 6 Hero page">
+                                <img src="/public/assets/img/infinitebg.jpg" class="h-100 object-fit-cover img-fluid opacity-50" alt="GTA 6 Hero page">
                             </div>
                         </div>
                     </div>
