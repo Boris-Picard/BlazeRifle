@@ -32,7 +32,7 @@
         </div>
     </div>
 </footer>
-<?php if ($userArticle) { ?>
+<?php if (isset($userArticle)) { ?>
     <script src="/vendor/tinymce/tinymce/tinymce.min.js"></script>
     <script src="/public/assets/js/tinymce.js"></script>
 <?php } ?>

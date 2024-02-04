@@ -7,7 +7,7 @@
                             <div class="card-body cardProfilBanner rounded-4 ">
                                 <div class="card child-card border-0 rounded-4">
                                     <div class="card-body ">
-                                        <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-2 rounded-4">Boris</p>
+                                        <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-3 rounded-5">Boris</p>
                                     </div>
                                 </div>
                             </div>
@@ -104,8 +104,8 @@
                                             <input type="text" class="form-control" name="id_user" id="id_user" value="<?= $id_user ?? '' ?>" aria-describedby="id_user" placeholder="Votre pseudo" minlength="2" maxlength="100" pattern="<?= REGEX_NAME ?>" required>
                                         </div>
                                     </div>
-                                    <div class="py-3">
-                                        <button type="submit" class="btn btn-danger rounded-5 p-3 fw-bold text-uppercase">écrire un article</button>
+                                    <div class="mt-3 py-3">
+                                        <button type="submit" class="btn btn-danger rounded-5 p-3 fw-bold text-uppercase">Ajouter</button>
                                         <a href="/controllers/account/account-ctrl.php" class="btn btn-outline-danger p-3 rounded-5 fw-bold text-uppercase">Annuler</a>
                                     </div>
                                 </form>

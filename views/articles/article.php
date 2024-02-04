@@ -81,12 +81,12 @@
                                     Article suivant
                                 </h4>
                                 <?php foreach ($articles as $article) {
-                                    if ($id_article != $article->id_article && $id_game == $article->id_game) { ?>
+                                    if ($id_article != $article->id_article) { ?>
                                         <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
                                             <div class="row g-0">
                                                 <div class="col-md-2 d-flex">
                                                     <div class="ratio ratio-16x9">
-                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="object-fit-cover img-fluid rounded-4" alt="<?= $article->article_picture ?>">
+                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="object-fit-cover img-fluid rounded-4" alt="<?= $article->game_name ?>">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-10">

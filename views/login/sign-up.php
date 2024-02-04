@@ -26,37 +26,37 @@
                         <div class="row signUpRow">
                             <!-- FIRSTNAME -->
                             <div class="mb-4 col-md-6 col-12">
-                                <div><small id="firstnameHelp" class="form-text text-danger"><?= $error['firstname'] ?? '' ?></small></div>
-                                <label for="firstname" class="form-label fw-semibold">Prénom <span class="text-danger">*</span></label>
+                                <div><small class="form-text text-danger"><?= $error['firstname'] ?? '' ?></small></div>
+                                <label for="firstname" class="form-label">Prénom <span class="text-danger">*</span></label>
                                 <input type="text" id="firstname" class="form-control" placeholder="Votre prénom" name="firstname" autocomplete="given-name" value="<?= htmlentities($firstname ?? '') ?>" minlength="2" maxlength="70" pattern="<?= REGEX_FIRSTNAME ?>" required>
                             </div>
                             <!-- LASTNAME -->
                             <div class="mb-4 col-md-6 col-12">
-                                <div><small id="lastnameHelp" class="form-text text-danger"><?= $error['lastname'] ?? '' ?></small></div>
-                                <label for="lastname" class="form-label fw-semibold">Nom <span class="text-danger">*</span></label>
+                                <div><small class="form-text text-danger"><?= $error['lastname'] ?? '' ?></small></div>
+                                <label for="lastname" class="form-label">Nom <span class="text-danger">*</span></label>
                                 <input type="text" id="lastname" class="form-control" placeholder="Votre nom" name="lastname" autocomplete="family-name" value="<?= htmlentities($lastname ?? '') ?>" minlength="2" maxlength="70" pattern="<?= REGEX_FIRSTNAME ?>" required>
                             </div>
                             <!-- PSEUDO -->
                             <div class="mb-4 col-md-12 col-12">
-                                <div><small id="pseudoHelp" class="form-text text-danger text-center"><?= $error['pseudo'] ?? '' ?></small></div>
-                                <label for="pseudo" class="form-label fw-semibold">Pseudo <span class="text-danger">*</span></label>
+                                <div><small class="form-text text-danger text-center"><?= $error['pseudo'] ?? '' ?></small></div>
+                                <label for="pseudo" class="form-label">Pseudo <span class="text-danger">*</span></label>
                                 <input type="text" id="pseudo" class="form-control" placeholder="Votre pseudo" name="pseudo" autocomplete="username" value="<?= htmlentities($pseudo ?? '') ?>" minlength="3" maxlength="20" pattern="<?= REGEX_PSEUDO ?>" required>
                             </div>
                             <!-- EMAIL -->
                             <div class="mb-4 col-md-12 col-12">
-                                <div><small id="emailError" class="form-text text-danger text-center"><?= $error['email'] ?? '' ?></small></div>
-                                <label for="email" class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+                                <div><small class="form-text text-danger text-center"><?= $error['email'] ?? '' ?></small></div>
+                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                                 <input type="email" id="email" class="form-control" autocomplete="email" name="email" value="<?= htmlentities($email ?? '') ?>" placeholder="Votre email" required>
                             </div>
                             <!-- PASSWORD -->
                             <div class="mb-4 col-md-6 col-12">
                                 <div>
-                                    <small class="form-text  text-danger"><?= $error['password'] ?? '' ?></small>
+                                    <small class="form-text text-danger"><?= $error['password'] ?? '' ?></small>
                                 </div>
                                 <div>
-                                    <small class="" id="passwordMin"></small>
+                                    <small id="passwordMin"></small>
                                 </div>
-                                <label for="password" class="form-label fw-semibold">Mot de passe <span class="text-danger">*</span><span class="text-danger">*</span></label>
+                                <label for="password" class="form-label">Mot de passe <span class="text-danger">*</span></label>
                                 <input type="password" name="password" id="password" value="<?= htmlentities($password ?? '') ?>" class="form-control passwordSignIn " placeholder="Mot de passe" pattern="<?= REGEX_PASSWORD ?>" required>
                                 <div><small class="form-text text-danger" id="passwordStrength"></small></div>
                             </div>
@@ -66,12 +66,12 @@
                                     <small class="form-text text-danger"><?= $error['confirmPassword'] ?? '' ?></small>
                                     <small class=" text-center passMsgError text-danger"></small>
                                 </div>
-                                <label for="confirmPassword" class="form-label fw-semibold">Confimer le Mot de passe</label>
+                                <label for="confirmPassword" class="form-label">Confimer le Mot de passe <span class="text-danger">*</span></label>
                                 <input type="password" name="confirmPassword" id="confirmPassword" value="<?= htmlentities($confirmPassword ?? '') ?>" class="form-control passwordConfirmSignIn" placeholder="Confimer le Mot de passe" required>
                             </div>
                             <div class="mb-4">
                                 <div class="form-check">
-                                    <div><small id="checkbox" class="form-text text-danger"><?= $error['checkboxForm'] ?? '' ?></small></div>
+                                    <div><small class="form-text text-danger"><?= $error['checkboxForm'] ?? '' ?></small></div>
                                     <input class="form-check-input" id="checkboxForm" name="checkboxForm" type="checkbox" value="checkbox" <?= (isset($checkbox)) ? 'checked' : '' ?> required>
                                     <label class="form-check-label" for="checkboxForm">
                                         J'accepte que mes données soient utilisées conformément à la <a href="#">politique de confidentialité.</a>

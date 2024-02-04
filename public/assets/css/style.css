@@ -1,10 +1,37 @@
 body {
     font-family: 'Poppins', sans-serif;
+    --sb-track-color: #232E33;
+    --sb-thumb-color: #dc3545;
+    --sb-size: 14px;
+}
+
+/* SCROLLBAR */
+body::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 0;    
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 10px;
+    
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+    scrollbar-color: var(--sb-thumb-color)
+                    var(--sb-track-color);
+    }
 }
 
 html{
     scroll-behavior: smooth;
 }
+
 
 /* section navbar */
 /* permet de retirer la bordure de bootstrap au clic */
