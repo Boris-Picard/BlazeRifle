@@ -278,7 +278,7 @@
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row justify-content-center text-center p-3">
-                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= !is_null($gameId) ? $article->game_name : $article->console_name ?></h5>
+                                        <h5 class="text-uppercase fw-bold">articles sur : <span class="text-danger"><?= !is_null($gameId) ? $article->game_name : $article->console_name ?></span></h5>
                                     </div>
                                 </div>
                                 <div class="row">
