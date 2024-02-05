@@ -29,7 +29,7 @@ try {
     }
     
     // Récupération des articles pour les afficher dans la sidebar
-    $articleSidebar = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 8);
+    $articleSidebar = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 7);
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
     $articlesBottom = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 3);
     // Gérer le formulaire de commentaire s'il est soumis

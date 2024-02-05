@@ -17,9 +17,9 @@
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
                                 <?php if (!empty($articles)) { ?>
-                                    <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= isset($gameId) ? $articles[0]->game_name : $articles[0]->console_name ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= isset($gameId) ? htmlspecialchars($articles[0]->game_name) : htmlspecialchars($articles[0]->console_name) ?></span></h2>
                                     <p class="text-center text-break mt-2">
-                                        <?= $articles[0]->game_description ?>
+                                        <?= htmlspecialchars($articles[0]->game_description) ?>
                                     </p>
                                 <?php  } ?>
                             </div>
@@ -42,10 +42,10 @@
                                                     <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
                                                 </div>
                                                 <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?><?= isset($gameId) ? '&id_game=' . $article->id_game : '&id_console=' . $article->id_console ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
-                                                    <?= $article->article_title ?>
+                                                    <?= htmlspecialchars($article->article_title) ?>
                                                 </a>
                                                 <p class="aCard mt-2">
-                                                    <?= $article->article_description ?>
+                                                    <?= htmlspecialchars($article->article_description) ?>
                                                 </p>
                                                 <div>
                                                     <hr class="hr">

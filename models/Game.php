@@ -104,7 +104,7 @@ class Game
      * Méthode pour récuperer toutes les données dans la table games
      * @return [type]
      */
-    public static function getAll()
+    public static function getAll(): array|false
     {
         $pdo = Database::connect();
 

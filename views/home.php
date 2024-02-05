@@ -819,7 +819,6 @@
                     <div class="card rounded-4 border-0 shadow ">
                         <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
                         <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
-                            <use href="#arrow-right"></use>
                             <p class="p-0 m-0 z-3">
                                 <a href="" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
                                     Grand Theft auto vi
@@ -916,7 +915,6 @@
                     <div class="card rounded-4 border-0 shadow ">
                         <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
                         <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
-                            <use href="#arrow-right"></use>
                             <p class="p-0 m-0 z-3">
                                 <a href="" class="text-uppercase text-decoration-none fw-bold stretched-link text-light z-3 icon-link icon-link-hover">
                                     call of duty : modern warfare 3
@@ -1013,7 +1011,6 @@
                     <div class="card rounded-4 border-0 shadow ">
                         <img src="/public/assets/img/1329760.jpeg" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
                         <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
-                            <use href="#arrow-right"></use>
                             <p class="p-0 m-0 z-3">
                                 <a href="" class="text-uppercase text-decoration-none fw-bold stretched-link text-light z-3 icon-link icon-link-hover">
                                     Counter strike 2

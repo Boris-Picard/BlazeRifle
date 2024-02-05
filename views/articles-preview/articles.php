@@ -18,95 +18,40 @@
             <div class="row g-3 mt-3">
                 <?php foreach ($games as $game) { ?>
                     <div class="col-md-4">
-                        <h2 class="fw-bold text-uppercase py-2 aCardMin">grand theft auto vi</h2>
+                        <h2 class="fw-bold text-uppercase py-2 aCardMin"><?= htmlspecialchars($game->game_name) ?></h2>
                         <div class="card rounded-4 border-0 shadow ">
-                            <img src="/public/assets/img/gta6.avif" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="GTA 6">
+                            <img src="/public/uploads/games/<?= $game->game_picture ?>" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="GTA 6">
                             <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
-                                <use href="#arrow-right"></use>
                                 <p class="p-0 m-0 z-3">
-                                    <a href="/controllers/articles-list/articles-ctrl.php" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
-                                        Grand Theft auto vi
+                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
+                                        <?= htmlspecialchars($game->game_name) ?>
                                         <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
                                         </i>
                                     </a>
                                 </p>
                                 <div class="card-text z-3">
-                                    <small class="text-light">il y a 47 minutes
+                                    <small class="text-light">
+                                        <!-- <?= $game->created_at ?> -->
                                         <span class="badge rounded-pill mx-1 border bg-transparent text-light fw-semibold "><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                     </small>
                                 </div>
                             </div>
                             <div class="card-body p-3">
-                                <!-- ARTICLE 1 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 2 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 3 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 4 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 5 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 6 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 7 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 8 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 9 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
-                                <!-- ARTICLE 10 -->
-                                <p class="card-text d-flex align-items-center my-0">
-                                    <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                    <a href="" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet, quam deserunt corrupti id consequuntur iste provident nemo nulla dolor minus, quaerat laborum? Nisi error distinctio iste quam cum odio!i
-                                    </a>
-                                </p>
+                                <?php foreach ($allArticles as $articles) {
+                                    foreach ($articles as $article) {
+                                        // Vérifier si le nom du jeu actuel correspond au nom du jeu de l'article en cours
+                                        if ($game->game_name == $article->game_name) { ?>
+                                            <!-- ARTICLE -->
+                                            <p class="card-text d-flex align-items-center my-0">
+                                                <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $game->id_game ?>" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                                    <!-- Afficher le titre de l'article en utilisant htmlspecialchars pour éviter les problèmes de sécurité -->
+                                                    <?= htmlspecialchars($article->article_title) ?>
+                                                </a>
+                                            </p>
+                                <?php }
+                                    }
+                                } ?>
                                 <!-- BUTTON ARTICLE -->
                                 <a href="/controllers/articles-list/articles-ctrl.php" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase aCardMin mt-3 mb-1">
                                     Tous les articles sur : Grand Theft Auto VI
