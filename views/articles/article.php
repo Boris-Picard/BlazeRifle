@@ -80,7 +80,7 @@
                                 <h4 class="text-capitalize text-danger fw-bold">
                                     Article suivant
                                 </h4>
-                                <?php foreach ($articles as $article) {
+                                <?php foreach ($articlesBottom as $article) {
                                     if ($id_article != $article->id_article) { ?>
                                         <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
                                             <div class="row g-0">
@@ -285,40 +285,44 @@
                                     <div class="col-12">
                                         <div class="card mt-3 p-0 border-0 bg-transparent">
                                             <div class="card-img-top ratio ratio-16x9">
-                                                <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-3" alt="Sunset Over the Sea">
+                                                <img src="/public/uploads/article/<?= $articleSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articleSidebar[0]->game_name ?>">
                                             </div>
                                             <div class="card-body p-0 mt-1">
-                                                <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
+                                                <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                    <?= $articleSidebar[0]->article_title ?>
+                                                </a>
                                                 <div class="card-text mb-3">
                                                     <small class="text-muted">
-                                                        25 déc, 18:05
+                                                        <?= $articleSidebar[0]->created_at ?>
                                                     </small>
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php foreach ($articles as $article) { ?>
-                                            <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                                <div class="row g-0 cardActuGuideRight">
-                                                    <div class="col-auto">
-                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->game_name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                    </div>
-                                                    <div class="col-md-6 p-0 ">
-                                                        <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                            <div class="">
-                                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                    <?= $article->article_description ?>
-                                                                </a>
+                                        <?php foreach ($articleSidebar as $article) {
+                                            if ($articleSidebar[0]->id_article != $article->id_article && $article->id_article != $id_article) { ?>
+                                                <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
+                                                    <div class="row g-0 cardActuGuideRight">
+                                                        <div class="col-auto">
+                                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->game_name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
+                                                        </div>
+                                                        <div class="col-md-6 p-0 ">
+                                                            <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
+                                                                <div class="">
+                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                        <?= $article->article_title ?>
+                                                                    </a>
+                                                                </div>
+                                                                <p class="card-text">
+                                                                    <small class="text-muted">
+                                                                        Le <?= $article->created_at ?>
+                                                                    </small>
+                                                                </p>
                                                             </div>
-                                                            <p class="card-text">
-                                                                <small class="text-muted">
-                                                                    Le <?= $article->created_at ?>
-                                                                </small>
-                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        <?php } ?>
+                                        <?php }
+                                        } ?>
                                         <div class="d-flex justify-content-center mt-3 mb-4">
                                             <a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
                                                 les articles <?= !is_null($gameId) ? $article->game_name : $article->console_name ?>

@@ -27,10 +27,11 @@ try {
         header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game);
         die;
     }
-
-    // Récupérer les trois derniers articles du même jeu pour afficher en bas de page
-    $articles = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 3);
-
+    
+    // Récupération des articles pour les afficher dans la sidebar
+    $articleSidebar = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 8);
+    // Récupération des trois derniers articles du même jeu pour afficher en bas de page
+    $articlesBottom = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 3);
     // Gérer le formulaire de commentaire s'il est soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $textAreaComment = filter_input(INPUT_POST, 'textAreaComment', FILTER_SANITIZE_SPECIAL_CHARS);

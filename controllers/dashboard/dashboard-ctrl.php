@@ -5,7 +5,7 @@ require_once __DIR__ . '/../../models/Article.php';
 $dashboard = true;
 
 try {
-    $articles = Article::getAll(order: 'DESC');
+    $articles = Article::getAll(order: 'DESC', limit: 100);
 } catch (PDOException $e) {
     'Erreur : ' . $e->getMessage();
 }

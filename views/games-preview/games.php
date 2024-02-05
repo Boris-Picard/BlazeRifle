@@ -35,7 +35,7 @@
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $article->game_name ?></span>
                                             <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
                                                 <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
-                                                    <?= $article->article_description ?>
+                                                    <?= $article->article_title ?>
                                                 </a>
                                                 <div class="card-text mb-3">
                                                     <small>
@@ -62,7 +62,7 @@
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?>" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">
-                                                <?= $article->article_description ?>
+                                                <?= $article->article_title ?>
                                             </a>
                                             <div class="card-text mb-3">
                                                 <small class="text-muted"><?= $article->created_at ?>
