@@ -8,7 +8,7 @@ class Category
     private string $created_at;
     private string $updated_at;
     private string $deleted_at;
-    private ?int $id_category;
+    private int $id_category;
 
 
     public function __construct(
@@ -16,7 +16,7 @@ class Category
         string $created_at = '',
         string $updated_at = '',
         string $deleted_at = '',
-        ?int $id_category = null
+        int $id_category = 0
     ) {
         $this->label = $label;
         $this->created_at = $created_at;

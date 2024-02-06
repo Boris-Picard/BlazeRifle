@@ -4,7 +4,7 @@ require_once __DIR__ . '/../helpers/Database.php';
 
 class Article
 {
-    private ?int $id_article;
+    private int $id_article;
     private string $article_title;
     private string $secondtitle;
     private string $thirdtitle;
@@ -16,8 +16,8 @@ class Article
     private string $updated_at;
     private ?string $deleted_at;
     private ?string $confirmed_at;
-    private ?int $id_console;
-    private ?int $id_game;
+    private int $id_console;
+    private int $id_game;
 
     public function __construct(
         string $article_title = '',
@@ -30,10 +30,10 @@ class Article
         ?string $created_at = null,
         ?string $updated_at = null,
         ?string $deleted_at = null,
-        ?int $id_article = null,
+        int $id_article = 0,
         ?string $confirmed_at = null,
-        ?int $id_console = null,
-        ?int $id_game = null
+        int $id_console = 0,
+        int $id_game = 0
     ) {
         $this->article_title = $article_title;
         $this->secondtitle = $secondtitle;

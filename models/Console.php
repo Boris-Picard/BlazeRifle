@@ -6,9 +6,9 @@ class Console
 {
     private string $console_name;
     private string $console_picture;
-    private ?int $id_console;
+    private int $id_console;
 
-    public function __construct(string $console_name = '', string $console_picture = '', ?int $id_console = null)
+    public function __construct(string $console_name = '', string $console_picture = '', int $id_console = 0)
     {
         $this->console_name = $console_name;
         $this->console_picture = $console_picture;

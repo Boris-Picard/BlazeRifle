@@ -4,16 +4,16 @@ require_once __DIR__ . '/../helpers/Database.php';
 
 class Event
 {
-    private ?int $id_event;
+    private int $id_event;
     private string $event_title;
     private string $event_description;
     private string $event_picture;
     private string $event_link;
     private string $place;
     private string $event_date;
-    private ?int $id_game;
+    private int $id_game;
 
-    public function __construct(string $event_title = '', string $event_description = '', string $event_picture = '', string $event_link = '', string $place = '', string $event_date = '', ?int $id_event = 0, ?int $id_game = null)
+    public function __construct(string $event_title = '', string $event_description = '', string $event_picture = '', string $event_link = '', string $place = '', string $event_date = '', int $id_event = 0, int $id_game = 0)
     {
         $this->event_title = $event_title;
         $this->event_description = $event_description;

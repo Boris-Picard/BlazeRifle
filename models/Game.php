@@ -4,12 +4,12 @@ require_once __DIR__ . '/../helpers/Database.php';
 
 class Game
 {
-    private ?int $id_game;
+    private int $id_game;
     private string $game_name;
     private string $description;
     private string $game_picture;
 
-    public function __construct(string $game_name = '', string $description = '', string $game_picture = '', ?int $id_game = null)
+    public function __construct(string $game_name = '', string $description = '', string $game_picture = '', int $id_game = 0)
     {
         $this->game_name = $game_name;
         $this->description = $description;

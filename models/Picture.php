@@ -5,9 +5,9 @@ require_once __DIR__ . '/../helpers/Database.php';
 class Picture
 {
     private string $picture;
-    private ?int $id_picture;
+    private int $id_picture;
 
-    public function __construct(string $picture = '', ?int $id_picture = null)
+    public function __construct(string $picture = '', int $id_picture = 0)
     {
         $this->picture = $picture;
         $this->id_picture = $id_picture;
