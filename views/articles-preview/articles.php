@@ -53,9 +53,13 @@
                                     }
                                 } ?>
                                 <!-- BUTTON ARTICLE -->
-                                <a href="/controllers/articles-list/articles-ctrl.php" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase aCardMin mt-3 mb-1">
-                                    Tous les articles sur : Grand Theft Auto VI
-                                </a>
+                                <?php foreach ($games as $game) {
+                                    if ($article->id_game == $game->id_game) { ?>
+                                        <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase aCardMin mt-3 mb-1">
+                                            Tous les articles sur : <?= $game->game_name ?>
+                                        </a>
+                                <?php }
+                                } ?>
                             </div>
                         </div>
                     </div>
