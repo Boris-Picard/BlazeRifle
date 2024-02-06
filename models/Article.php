@@ -12,8 +12,8 @@ class Article
     private string $article_description;
     private string $firstsection;
     private string $secondsection;
-    private ?string $created_at;
-    private ?string $updated_at;
+    private string $created_at;
+    private string $updated_at;
     private ?string $deleted_at;
     private ?string $confirmed_at;
     private ?int $id_console;
