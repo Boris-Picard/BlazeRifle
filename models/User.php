@@ -18,6 +18,7 @@ class User
     private ?string $adress;
     private ?int $zipcode;
     private ?string $city;
+    private ?string $confirmed_at;
 
     public function __construct(
         int $id_user = 0,
@@ -33,9 +34,9 @@ class User
         ?string $deleted_at = '',
         ?string $adress = '',
         ?int $zipcode = 0,
-        ?string $city = ''
-    )
-    {
+        ?string $city = '',
+        ?string $confirmed_at = ''
+    ) {
         $this->id_user = $id_user;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
@@ -50,5 +51,188 @@ class User
         $this->adress = $adress;
         $this->zipcode = $zipcode;
         $this->city = $city;
+        $this->confirmed_at = $confirmed_at;
+    }
+
+    public function setFirstname(string $firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    public function getFirstname(): string
+    {
+        return $this->firstname;
+    }
+
+    public function setLastname(string $lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    public function getLastname(): string
+    {
+        return $this->lastname;
+    }
+
+    public function setPseudo(string $pseudo)
+    {
+        $this->pseudo = $pseudo;
+    }
+
+    public function getPseudo(): string
+    {
+        return $this->pseudo;
+    }
+
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
+    }
+
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setRole(string $role)
+    {
+        $this->role = $role;
+    }
+
+    public function getRole(): string
+    {
+        return $this->role;
+    }
+
+    public function setUserPicture(?string $user_picture)
+    {
+        $this->user_picture = $user_picture;
+    }
+
+    public function getUserPicture(): ?string
+    {
+        return $this->user_picture;
+    }
+
+    public function setCreatedAt(?string $created_at)
+    {
+        $this->created_at = $created_at;
+    }
+
+    public function getCreatedAt(): ?string
+    {
+        return $this->created_at;
+    }
+
+    public function setUpdatedAt(?string $updated_at)
+    {
+        $this->updated_at = $updated_at;
+    }
+
+    public function getUpdatedAt(): ?string
+    {
+        return $this->updated_at;
+    }
+
+    public function setDeletedAt(?string $deleted_at)
+    {
+        $this->deleted_at = $deleted_at;
+    }
+
+    public function getDeletedAt(): ?string
+    {
+        return $this->deleted_at;
+    }
+
+    public function setAdress(?string $adress)
+    {
+        $this->adress = $adress;
+    }
+
+    public function getAdress(): ?string
+    {
+        return $this->adress;
+    }
+
+    public function setZipCode(?int $zipcode)
+    {
+        $this->zipcode = $zipcode;
+    }
+
+    public function getZipCode(): ?int
+    {
+        return $this->zipcode;
+    }
+
+    public function setCity(?string $city)
+    {
+        $this->city = $city;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setConfirmedAt(?string $confirmed_at)
+    {
+        $this->confirmed_at = $confirmed_at;
+    }
+
+    public function getConfirmedAt(): ?string
+    {
+        return $this->confirmed_at;
+    }
+
+    public function insert(): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'INSERT INTO `users` 
+        (`firstname`, `lastname`, `pseudo`, `email`, `password`, `role`, `user_picture`, `adress`, `zipcode`, `city`, `confirmed_at`)
+        VALUES (:firstname, :lastname, :pseudo, :email, :password, :role, :user_picture, :adress, :zipcode, :city, :confirmed_at);';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':firstname', $this->getFirstname());
+        $sth->bindValue(':lastname', $this->getLastname());
+        $sth->bindValue(':pseudo', $this->getPseudo());
+        $sth->bindValue(':email', $this->getEmail());
+        $sth->bindValue(':password', $this->getPassword());
+        $sth->bindValue(':role', $this->getRole());
+        $sth->bindValue(':user_picture', $this->getUserPicture());
+        $sth->bindValue(':adress', $this->getAdress());
+        $sth->bindValue(':zipcode', $this->getZipCode());
+        $sth->bindValue(':city', $this->getCity());
+        $sth->bindValue(':confirmed_at', $this->getConfirmedAt());
+
+        $sth->execute();
+
+        return $sth->rowCount() > 0;
+    }
+
+    public static function getUserMail(string $email): object|false
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT * FROM `users` WHERE `email`=:email;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':email', $email);
+
+        $sth->execute();
+
+        return $sth->fetch(PDO::FETCH_OBJ);
     }
 }

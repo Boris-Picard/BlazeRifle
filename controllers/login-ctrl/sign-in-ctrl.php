@@ -16,20 +16,26 @@ try {
         }
         //===================== MOT DE PASSE =====================
         $password = filter_input(INPUT_POST, 'password');
-        $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
         if (empty($password)) {
             $error['password'] = 'Veuillez entrer un mot de passe';
-        } elseif (empty($confirmPassword)) {
-            $error['confirmPassword'] = 'Veuillez entrer un mot de passe';
         } else {
             $isOk = filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_PASSWORD . '/')));
-            $isConfirmOk = filter_var($confirmPassword, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_PASSWORD . '/')));
-            if (!$isOk && !$isConfirmOk) {
+            if (!$isOk) {
                 $error['password'] = "Veuillez entrer un mot de passe valide";
-            } elseif ($isOk != $isConfirmOk) {
-                $error['confirmPassword'] = "Veuillez entrer le même mot de passe";
+            }
+        }
+
+        if (empty($error)) {
+            $user = User::getUserMail($email);
+            if (!$user) {
+                $error['email'] = '';
             } else {
-                $hash = password_hash($isOk, PASSWORD_DEFAULT);
+                $paswordHash = $user->password();
+                $isAuth = password_verify($isOk, $paswordHash);
+                if ($isAuth) {
+                    unset($user->password);
+                    $_SESSION['user'] = $user;
+                }
             }
         }
     }

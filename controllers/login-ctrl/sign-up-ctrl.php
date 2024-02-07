@@ -1,9 +1,10 @@
 <?php
 require_once __DIR__ . '/../../config/config.php';
+require_once __DIR__ . '/../../models/User.php';
 
 try {
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //===================== Firstname : Nettoyage et validation =======================
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_SPECIAL_CHARS);
         // On vérifie que ce n'est pas vide
@@ -52,10 +53,10 @@ try {
                     $error["pseudo"] = "La longueur du pseudo n'est pas bon";
                 }
             }
-        }        
+        }
         //===================== email : Nettoyage et validation =======================
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    
+
         if (empty($email)) {
             $error["email"] = "L'adresse mail est obligatoire";
         } else {
@@ -63,34 +64,42 @@ try {
             if (!$testEmail) {
                 $error["email"] = "L'adresse email n'est pas au bon format";
             }
-        }      
+        }
         //===================== MOT DE PASSE =====================
         $password = filter_input(INPUT_POST, 'password');
         $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
-        if(empty($password)) {
+        if (empty($password)) {
             $error['password'] = 'Veuillez entrer un mot de passe';
-        } elseif(empty($confirmPassword)) {
+        } elseif (empty($confirmPassword)) {
             $error['confirmPassword'] = 'Veuillez entrer un mot de passe';
         } else {
-            $isOk = filter_var($password, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/' . REGEX_PASSWORD . '/')));
-            $isConfirmOk = filter_var($confirmPassword, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/' . REGEX_PASSWORD . '/')));
-            if(!$isOk && !$isConfirmOk) {
+            $isOk = filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_PASSWORD . '/')));
+            $isConfirmOk = filter_var($confirmPassword, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_PASSWORD . '/')));
+            if (!$isOk && !$isConfirmOk) {
                 $error['password'] = "Veuillez entrer un mot de passe valide";
-            } elseif($isOk != $isConfirmOk) {
+            } elseif ($isOk != $isConfirmOk) {
                 $error['confirmPassword'] = "Veuillez entrer le même mot de passe";
-            } else {
-                $hash = password_hash($isOk, PASSWORD_DEFAULT);
             }
-        }               
+        }
         // CHECKBOX
-        $checkbox = filter_input(INPUT_POST,'checkboxForm', FILTER_SANITIZE_SPECIAL_CHARS);
-        if(empty($checkbox)) {
+        $checkbox = filter_input(INPUT_POST, 'checkboxForm', FILTER_SANITIZE_SPECIAL_CHARS);
+        if (empty($checkbox)) {
             $error['checkboxForm'] = "Veuillez accepter";
-        } 
-    }
+        }
 
+        if (empty($error)) {
+            $passwordHash = password_hash($isOk, PASSWORD_DEFAULT);
+            $user = new User();
+
+            $user->setFirstname($firstname);
+            $user->setLastname($lastname);
+            $user->setPseudo($pseudo);
+            $user->setEmail($email);
+            $user->setPassword($passwordHash);
+        }
+    }
 } catch (PDOException $e) {
-    die('Erreur : '. $e->getMessage());
+    die('Erreur : ' . $e->getMessage());
 }
 
 
