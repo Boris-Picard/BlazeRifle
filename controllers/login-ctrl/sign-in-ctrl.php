@@ -33,8 +33,14 @@ try {
                 $paswordHash = $user->password();
                 $isAuth = password_verify($isOk, $paswordHash);
                 if ($isAuth) {
-                    unset($user->password);
-                    $_SESSION['user'] = $user;
+                    if (is_null($user->confirmed_at)) {
+                        $error['email'] = 'Confimez le mail';
+                    } else {
+                        unset($user->password);
+                        $_SESSION['user'] = $user;
+                    }
+                } else {
+                    $error['password'] = 'mauvais mdp';
                 }
             }
         }

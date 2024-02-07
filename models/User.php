@@ -235,4 +235,23 @@ class User
 
         return $sth->fetch(PDO::FETCH_OBJ);
     }
+
+    public static function confirm(?string $email): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `users` set `confirmed_at`= NOW() WHERE `email`= :email;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':email', $email);
+
+        $sth->execute();
+
+        if($sth->rowCount() <= 0) {
+            throw new Exception('erreur mail');
+        } else {
+            return true;
+        }
+    }
 }

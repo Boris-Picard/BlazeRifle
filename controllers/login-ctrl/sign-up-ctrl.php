@@ -96,6 +96,14 @@ try {
             $user->setPseudo($pseudo);
             $user->setEmail($email);
             $user->setPassword($passwordHash);
+
+            $isInserted = $user->insert();
+            if($isInserted) {
+                $to = $email;
+                $subject = 'Confirmation de mail';
+                $message = '<a href="/controllers/login-ctrl/confirmed-ctrl.php">Veuillez cliquer</a>';
+                mail($to, $subject, $message);
+            }
         }
     }
 } catch (PDOException $e) {
