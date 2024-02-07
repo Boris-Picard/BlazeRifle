@@ -98,10 +98,10 @@ try {
             $user->setPassword($passwordHash);
 
             $isInserted = $user->insert();
-            if($isInserted) {
+            if ($isInserted) {
                 $to = $email;
                 $subject = 'Confirmation de mail';
-                $message = '<a href="/controllers/login-ctrl/confirmed-ctrl.php">Veuillez cliquer</a>';
+                $message = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login-ctrl/confirmed-ctrl.php?email=' . $email . '">Veuillez cliquer</a>';
                 mail($to, $subject, $message);
             }
         }

@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../models/Article.php';
 
 // Auth::check;
 if(empty($_SESSION['user']) || $_SESSION['user']->role != 1) {
-    header('location: /../../../views/home.php');
+    header('location: /../../../controllers/home-ctrl.php');
     exit;
 }
 
