@@ -13,7 +13,7 @@
                                 </h1>
                                 <?php if (empty($_SESSION['user'])) { ?>
                                     <div class="justify-content-center d-flex py-5">
-                                        <a href="/controllers/login-ctrl/sign-up-ctrl.php" class="btn btn-danger rounded-5 fw-bold text-uppercase p-3">Rejoignez-nous !</a>
+                                        <a href="/controllers/login/sign-up-ctrl.php" class="btn btn-danger rounded-5 fw-bold text-uppercase p-3">Rejoignez-nous !</a>
                                     </div>
                                 <?php  } ?>
                             </div>

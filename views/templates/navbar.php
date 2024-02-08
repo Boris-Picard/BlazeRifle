@@ -16,8 +16,8 @@ try {
             <div class="flex-shrink-0 d-flex dropdown order-md-3">
                 <?php if (!isset($_SESSION['user'])) { ?>
                     <div class="mx-2">
-                        <a href="/controllers/login/sign-up-ctrl.php" class="btn btn-danger rounded-5 text-uppercase p-3">S'inscrire</a>
-                        <a href="/controllers/login/sign-in-ctrl.php" class="btn btn-danger rounded-5 text-uppercase p-3">Se connecter</a>
+                        <a href="/controllers/login/sign-up-ctrl.php" class="btn btn-danger rounded-5 text-uppercase p-2">S'inscrire</a>
+                        <a href="/controllers/login/sign-in-ctrl.php" class="btn btn-danger rounded-5 text-uppercase p-2">Se connecter</a>
                     </div>
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>

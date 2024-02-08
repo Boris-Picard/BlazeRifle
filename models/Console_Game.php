@@ -53,4 +53,18 @@ class Console_Game
             return true;
         }
     }
+
+    public static function getAll()
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT * 
+        FROM `consoles_games`
+        INNER JOIN `games` ON `consoles_games`.`id_game`=`games`.`id_game`
+        INNER JOIN `consoles` ON `consoles_games`.`id_console`=`consoles`.`id_console`;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetchAll(PDO::FETCH_OBJ);
+    }
 }
