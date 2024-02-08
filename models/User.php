@@ -28,13 +28,13 @@ class User
         string $email = '',
         string $password = '',
         int $role = 0,
-        ?string $user_picture = '',
+        ?string $user_picture = null,
         ?string $created_at = '',
         ?string $updated_at = '',
         ?string $deleted_at = '',
-        ?string $adress = '',
+        ?string $adress = null,
         ?int $zipcode = 0,
-        ?string $city = '',
+        ?string $city = null,
         ?string $confirmed_at = ''
     ) {
         $this->id_user = $id_user;
@@ -194,13 +194,23 @@ class User
         return $this->confirmed_at;
     }
 
+    public function setIdUser(?string $id_user)
+    {
+        $this->id_user = $id_user;
+    }
+
+    public function getIdUser(): ?string
+    {
+        return $this->id_user;
+    }
+
     public function insert(): int
     {
         $pdo = Database::connect();
 
         $sql = 'INSERT INTO `users` 
-        (`firstname`, `lastname`, `pseudo`, `email`, `password`, `role`, `user_picture`, `adress`, `zipcode`, `city`, `confirmed_at`)
-        VALUES (:firstname, :lastname, :pseudo, :email, :password, :role, :user_picture, :adress, :zipcode, :city, :confirmed_at);';
+        (`firstname`, `lastname`, `pseudo`, `email`, `password`, `role`, `user_picture`, `adress`, `zipcode`, `city`)
+        VALUES (:firstname, :lastname, :pseudo, :email, :password, :role, :user_picture, :adress, :zipcode, :city);';
 
         $sth = $pdo->prepare($sql);
 
@@ -214,7 +224,6 @@ class User
         $sth->bindValue(':adress', $this->getAdress());
         $sth->bindValue(':zipcode', $this->getZipCode());
         $sth->bindValue(':city', $this->getCity());
-        $sth->bindValue(':confirmed_at', $this->getConfirmedAt());
 
         $sth->execute();
 

@@ -29,7 +29,7 @@
                                 <div class="mb-4">
                                     <div><small class="form-text text-danger text-center"><?= $error['email'] ?? '' ?></small></div>
                                     <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
-                                    <input type="email" id="email" class="form-control" placeholder="Votre email" autocomplete="email" required>
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Votre email" autocomplete="email" required>
                                 </div>
                                 <!-- PASSWORD -->
                                 <div class="mb-4">
@@ -37,7 +37,7 @@
                                         <small class="form-text  text-danger"><?= $error['password'] ?? '' ?></small>
                                     </div>
                                     <label class="form-label" for="password">Mot de passe <span class="text-danger">*</span></label>
-                                    <input type="password" id="password" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
+                                    <input type="password" name="password" id="password" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
                                 </div>
                                 <div class="mb-4 d-flex flex-wrap justify-content-between ">
                                     <div class="form-check">

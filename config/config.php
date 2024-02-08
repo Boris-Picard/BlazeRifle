@@ -17,9 +17,9 @@ define('REGEX_CONSOLE', "^[a-zA-Z0-9 ]{2,20}$");
 define('DATE', '^(?:\d{4}-\d{2}-\d{2})$');
 
 
-define('REGEX_FIRSTNAME',"^[A-Za-z-éèêëàâäôöûüç' ]*$");
-define('REGEX_PSEUDO','^[a-zA-Z0-9.-_]{3,20}*$');
-define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}*$');
+define('REGEX_FIRSTNAME',"^[A-Za-z-éèêëàâäôöûüç' ]+$");
+define('REGEX_PSEUDO','^[a-zA-Z0-9.-_]{3,20}+$');
+define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}+$');
 define('REGEX_ZIPCODE','^[0-9]{5}$');
 define('REGEX_TEXTAREA','^[a-zA-Z\n\r]*$');
 

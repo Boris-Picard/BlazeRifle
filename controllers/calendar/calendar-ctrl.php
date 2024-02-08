@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/../../config/config.php';
 require_once __DIR__ . '/../../models/Event.php';
 require_once __DIR__ . '/../../models/Game.php';

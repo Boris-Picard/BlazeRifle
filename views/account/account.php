@@ -7,7 +7,7 @@
                         <div class="card-body cardProfilBanner rounded-4 ">
                             <div class="card child-card border-0 rounded-4">
                                 <div class="card-body ">
-                                    <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-3 rounded-5">Boris</p>
+                                    <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-3 rounded-5"><?= $_SESSION['user']->pseudo ?></p>
                                 </div>
                             </div>
                         </div>
