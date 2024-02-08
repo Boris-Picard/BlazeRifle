@@ -172,7 +172,7 @@
                                     <div class="dot-spinner__dot"></div>
                                     <div class="dot-spinner__dot"></div>
                                 </div>
-                                <h5 class="mb-2 py-5 text-uppercase fw-bold">Vous êtes bien enregistré !</h5>
+                                <h5 class="mb-2 py-5 text-uppercase fw-bold">Vous avez reçu un mail de confirmation !</h5>
                                 <p class="text-sm text-muted mb-6 p-5">
                                     Vous serez redirigé dans quelques secondes
                                 </p>

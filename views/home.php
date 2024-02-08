@@ -11,9 +11,11 @@
                                     Plongez au cœur de l'action avec les dernières actualités FPS!
                                     Découvrez, jouez, et dominez dans l'univers des jeux de tir. Votre aventure commence ici !
                                 </h1>
-                                <div class="justify-content-center d-flex py-5">
-                                    <button class="btn btn-danger rounded-5 fw-bold text-uppercase p-3">Rejoignez-nous !</button>
-                                </div>
+                                <?php if (empty($_SESSION['user'])) { ?>
+                                    <div class="justify-content-center d-flex py-5">
+                                        <a href="/controllers/login-ctrl/sign-up-ctrl.php" class="btn btn-danger rounded-5 fw-bold text-uppercase p-3">Rejoignez-nous !</a>
+                                    </div>
+                                <?php  } ?>
                             </div>
                             <div class="col-12 col-md-6 p-0 bgHero">
                                 <img src="/public/assets/img/infinitebg.jpg" class="h-100 object-fit-cover img-fluid opacity-50" alt="GTA 6 Hero page">

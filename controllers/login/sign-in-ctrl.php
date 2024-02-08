@@ -29,15 +29,19 @@ try {
         if (empty($error)) {
             $user = User::getUserMail($email);
             if (!$user) {
-                $error['email'] = 'Entrer un mail valide';
+                $error['email'] = 'Veuillez entrer un mail valide';
             } else {
                 $paswordHash = $user->password;
                 $isAuth = password_verify($isOk, $paswordHash);
                 if ($isAuth) {
-                    unset($user->password);
-                    $_SESSION['user'] = $user;
+                    if (is_null($user->confirmed_at)) {
+                        $error['email'] = 'Veuillez confirmer votre adresse mail';
+                    } else {
+                        unset($user->password);
+                        $_SESSION['user'] = $user;
+                    }
                 } else {
-                    $error['password'] = 'Entrer un mot de passe valide';
+                    $error['password'] = 'Veuillez entrer un mot de passe valide';
                 }
             }
         }
@@ -45,12 +49,7 @@ try {
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
-// if (is_null($user->confirmed_at)) {
-//     $error['email'] = 'Confimez le mail';
-// } else {
-//     unset($user->password);
-//     $_SESSION['user'] = $user;
-// }
+
 
 
 

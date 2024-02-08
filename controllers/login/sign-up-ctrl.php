@@ -1,7 +1,8 @@
 <?php
-session_start(); 
+session_start();
 require_once __DIR__ . '/../../config/config.php';
 require_once __DIR__ . '/../../models/User.php';
+require_once __DIR__ . '/../../helpers/Mail.php';
 
 try {
 
@@ -100,10 +101,11 @@ try {
 
             $isInserted = $user->insert();
             if ($isInserted) {
-                $to = $email;
-                $subject = 'Confirmation de mail';
-                $message = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login-ctrl/confirmed-ctrl.php?email=' . $email . '">Veuillez cliquer</a>';
-                mail($to, $subject, $message);
+                $adress = $email;
+                $nameAdress = $pseudo;
+                $subject = 'Confirmation de réservation';
+                $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login-ctrl/confirmed-ctrl.php?email=' . $email . '">Veuillez cliquer pour confirmer</a>';
+                $mail = Mail::sendMail($adress, $nameAdress, $subject, $body);
             }
         }
     }
