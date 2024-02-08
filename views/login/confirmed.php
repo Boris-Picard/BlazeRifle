@@ -1,4 +1,4 @@
-<div class="container-fluid validContainer bg-light h-100">
+<!-- <div class="container-fluid validContainer bg-light h-100">
     <div class="row m-0 w-100 h-100">
         <div class="col-md-12 justify-content-center d-flex align-items-center h-100">
             <?php if (isset($isConfirmed)) { ?>
@@ -32,4 +32,4 @@
             <?php } ?>
         </div>
     </div>
-</div>
+</div> -->

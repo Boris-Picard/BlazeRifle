@@ -3,6 +3,7 @@ session_start();
 require_once __DIR__ . '/../../config/config.php';
 require_once __DIR__ . '/../../models/User.php';
 require_once __DIR__ . '/../../helpers/Mail.php';
+require_once __DIR__ . '/../../helpers/JWT.php';
 
 try {
 
@@ -101,10 +102,11 @@ try {
 
             $isInserted = $user->insert();
             if ($isInserted) {
+                $jwt = JWT::generateToken($email);
                 $adress = $email;
                 $nameAdress = $pseudo;
                 $subject = 'Confirmation de réservation';
-                $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login/confirmed-ctrl.php?email=' . $email . '">Veuillez cliquer pour confirmer</a>';
+                $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login/confirmed-ctrl.php?jwt=' . $jwt . '">Veuillez cliquer pour confirmer</a>';
                 $mail = Mail::sendMail($adress, $nameAdress, $subject, $body);
             }
         }

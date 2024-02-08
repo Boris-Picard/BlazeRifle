@@ -27,7 +27,7 @@ try {
                     <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end shadow-lg">
+                    <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0">
                         <li><a class="dropdown-item" href="/controllers/account/account-ctrl.php">Profile</a></li>
                         <?php if (!empty($_SESSION['user']) && $_SESSION['user']->role === 1) { ?>
                             <li><a class="dropdown-item" href="/controllers/dashboard/dashboard-ctrl.php">Dashboard</a></li>

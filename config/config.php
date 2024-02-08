@@ -23,4 +23,5 @@ define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,
 define('REGEX_ZIPCODE','^[0-9]{5}$');
 define('REGEX_TEXTAREA','^[a-zA-Z\n\r]*$');
 
+define('SECRET_KEY', 'kadzefze6rze6r5ze9rzggr:!;ezfoi"à"é"éd56d48ez4f6zef6fz');
 

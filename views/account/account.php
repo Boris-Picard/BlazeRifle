@@ -22,6 +22,7 @@
                     <p>Nom : <span class="fw-semibold text-capitalize"><?= $_SESSION['user']->lastname ?></span></p>
                     <p>Pseudo : <span class="fw-semibold text-capitalize"><?= $_SESSION['user']->pseudo ?></span></p>
                     <p>Adresse mail : <span class="fw-semibold"><?= $_SESSION['user']->email ?></span></p>
+                    <p>Date de création du compte : <span class="fw-semibold"><?= $_SESSION['user']->created_at ?></span></p>
                     <div class="py-3">
                         <a href="/controllers/account/update-account-ctrl.php" class="btn btn-danger py-3 rounded-5 fw-bold text-uppercase">Modifier mes informations</a>
                     </div>

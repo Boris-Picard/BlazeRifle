@@ -4,20 +4,8 @@
             <div class="col-12 d-flex align-items-center">
                 <div class="d-flex align-items-center w-100 flex-wrap justify-content-center ">
                     <img src="../../public/assets/img/redlogo.png" class="img-fluid logoQuiz" alt="logoBrand">
-                    <a class="navbar-brand nameLogoQuiz" href="#">blaze rifle</a>
+                    <p class="navbar-brand nameLogoQuiz mt-2">blaze rifle</p>
                 </div>
-                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end shadow dropdownAccount">
-                    <li><a class="dropdown-item d-flex" href="/controllers/login-ctrl/sign-up-ctrl.php">Mon compte</a></li>
-                    <li><a class="dropdown-item" href="/controllers/account/my-account-ctrl.php">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                </ul>
             </div>
         </div>
     </div>

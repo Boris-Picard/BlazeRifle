@@ -1,15 +1,19 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../models/User.php';
+require_once __DIR__ . '/../../helpers/JWT.php';
 
 try {
-    $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
-    $isConfirmed = User::confirm($email);
-    if ($isConfirmed) {
-        header("Refresh:7;url=/controllers/login/sign-in-ctrl.php");
-    } else {
-        header("Refresh:3;url=/controllers/home-ctrl.php");
-    }
+    $jwt = filter_input(INPUT_GET, 'jwt');
+    $verifyToken = JWT::verifyToken($jwt);
+    var_dump($verifyToken);
+    die;
+    // if ($verifyToken && $verifyToken['userMail'] == $jwt) {
+    //     $isConfirmed = User::confirm($jwt);
+    //     header("Refresh:7;url=/controllers/login/sign-in-ctrl.php");
+    // } else {
+    //     header("Refresh:3;url=/controllers/home-ctrl.php");
+    // }
 } catch (\Throwable $th) {
     $th->getMessage();
 }
