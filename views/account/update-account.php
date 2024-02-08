@@ -18,24 +18,24 @@
                             <div class="col-md-6">
                                 <div><small id="firstnameHelp" class="form-text text-danger"><?= $error['firstname'] ?? '' ?></small></div>
                                 <label for="firstname" class="form-label">Prénom <span class="text-danger">*</span></label>
-                                <input type="text" id="firstname" class="form-control" placeholder="Votre prénom" name="firstname" autocomplete="given-name" value="<?= htmlentities($firstname ?? '') ?>" minlength="2" maxlength="70" pattern="<?= REGEX_FIRSTNAME ?>" required>
+                                <input type="text" id="firstname" class="form-control" value="<?= htmlspecialchars($_SESSION['user']->firstname) ?? '' ?>" placeholder="Votre prénom" name="firstname" autocomplete="given-name" minlength="2" maxlength="70" pattern="<?= REGEX_FIRSTNAME ?>" required>
                             </div>
                             <div class="col-md-6">
                                 <div><small id="lastnameHelp" class="form-text text-danger"><?= $error['lastname'] ?? '' ?></small></div>
                                 <label for="lastname" class="form-label">Nom <span class="text-danger">*</span></label>
-                                <input type="text" id="lastname" class="form-control" placeholder="Votre nom" name="lastname" autocomplete="family-name" value="<?= htmlentities($lastname ?? '') ?>" minlength="2" maxlength="70" pattern="<?= REGEX_FIRSTNAME ?>" required>
+                                <input type="text" id="lastname" class="form-control" placeholder="Votre nom" name="lastname" autocomplete="family-name" value="<?= htmlspecialchars($_SESSION['user']->lastname) ?? '' ?>" minlength="2" maxlength="70" pattern="<?= REGEX_FIRSTNAME ?>" required>
                             </div>
                         </div>
                         <div class="row w-100 mb-3">
                             <div class="col-md-6">
                                 <div><small id="pseudoHelp" class="form-text text-danger text-center"><?= $error['pseudo'] ?? '' ?></small></div>
                                 <label for="pseudo" class="form-label">Pseudo <span class="text-danger">*</span></label>
-                                <input type="text" id="pseudo" class="form-control" placeholder="Votre pseudo" name="pseudo" autocomplete="username" value="<?= htmlentities($pseudo ?? '') ?>" minlength="3" maxlength="20" pattern="<?= REGEX_PSEUDO ?>" required>
+                                <input type="text" id="pseudo" class="form-control" placeholder="Votre pseudo" name="pseudo" autocomplete="username" value="<?= htmlspecialchars($_SESSION['user']->pseudo) ?? '' ?>" minlength="3" maxlength="20" pattern="<?= REGEX_PSEUDO ?>" required>
                             </div>
                             <div class="col-md-6">
                                 <div><small id="emailError" class="form-text text-danger text-center"><?= $error['email'] ?? '' ?></small></div>
                                 <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                                <input type="email" id="email" class="form-control" autocomplete="email" name="email" value="<?= htmlentities($email ?? '') ?>" placeholder="Votre email" required>
+                                <input type="email" id="email" class="form-control" autocomplete="email" name="email" value="<?= htmlspecialchars($_SESSION['user']->email) ?? '' ?>" placeholder="Votre email" required>
                             </div>
                         </div>
                         <div class="row w-100 mb-3">

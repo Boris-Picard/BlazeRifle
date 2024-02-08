@@ -7,7 +7,7 @@
                         <div class="card-body cardProfilBanner rounded-4 ">
                             <div class="card child-card border-0 rounded-4">
                                 <div class="card-body ">
-                                    <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-3 rounded-5"><?= $_SESSION['user']->pseudo ?></p>
+                                    <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-3 text-uppercase rounded-5"><?= $_SESSION['user']->pseudo ?></p>
                                 </div>
                             </div>
                         </div>
@@ -18,10 +18,10 @@
                     <div class="pb-2 d-flex justify-content-center">
                         <h3 class="fw-bold">Mes informations </h3>
                     </div>
-                    <p>Prénom : <span class="fw-semibold">Boris</span></p>
-                    <p>Nom : <span class="fw-semibold">Picard</span></p>
-                    <p>Pseudo : <span class="fw-semibold">Boris7</span></p>
-                    <p>Adresse mail : <span class="fw-semibold">boris@gmail.com</span></p>
+                    <p>Prénom : <span class="fw-semibold text-capitalize"><?= $_SESSION['user']->firstname ?></span></p>
+                    <p>Nom : <span class="fw-semibold text-capitalize"><?= $_SESSION['user']->lastname ?></span></p>
+                    <p>Pseudo : <span class="fw-semibold text-capitalize"><?= $_SESSION['user']->pseudo ?></span></p>
+                    <p>Adresse mail : <span class="fw-semibold"><?= $_SESSION['user']->email ?></span></p>
                     <div class="py-3">
                         <a href="/controllers/account/update-account-ctrl.php" class="btn btn-danger py-3 rounded-5 fw-bold text-uppercase">Modifier mes informations</a>
                     </div>

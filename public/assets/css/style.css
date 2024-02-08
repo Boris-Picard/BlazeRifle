@@ -906,7 +906,7 @@ footer {
     margin: 10px;
     width: 18rem;
     height: 13rem;
-    background-image: url(../img/profilpicdefault.avif);
+    background-image: url(../../uploads/users/profilpicdefault.avif);
     object-fit: cover;
     background-position: center;
 }

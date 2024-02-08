@@ -22,7 +22,7 @@ try {
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        <img src="/public/uploads/users/<?= $_SESSION['user']->user_picture ?? '' ?>" alt="" width="32" height="32" class="rounded-circle">
                     </a>
                     <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
