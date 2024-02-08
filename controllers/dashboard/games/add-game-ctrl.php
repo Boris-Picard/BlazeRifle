@@ -1,8 +1,11 @@
 <?php
-
+session_start();
 require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Game.php';
 require_once __DIR__ . '/../../../models/Console.php';
+require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
+
+$check = CheckPermissions::checkAdmin();
 
 $listGames = true;
 
