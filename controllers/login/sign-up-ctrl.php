@@ -104,7 +104,7 @@ try {
                 $adress = $email;
                 $nameAdress = $pseudo;
                 $subject = 'Confirmation de réservation';
-                $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login-ctrl/confirmed-ctrl.php?email=' . $email . '">Veuillez cliquer pour confirmer</a>';
+                $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login/confirmed-ctrl.php?email=' . $email . '">Veuillez cliquer pour confirmer</a>';
                 $mail = Mail::sendMail($adress, $nameAdress, $subject, $body);
             }
         }

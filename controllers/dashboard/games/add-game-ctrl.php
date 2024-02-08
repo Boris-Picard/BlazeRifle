@@ -3,6 +3,7 @@ session_start();
 require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Game.php';
 require_once __DIR__ . '/../../../models/Console.php';
+require_once __DIR__ . '/../../../models/Console_Game.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
 $check = CheckPermissions::checkAdmin();
@@ -10,6 +11,8 @@ $check = CheckPermissions::checkAdmin();
 $listGames = true;
 
 try {
+    $consoles = Console::getAll();
+
     // Vérification de la méthode de la requête (POST)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -36,6 +39,18 @@ try {
             // Validation de la longueur de la description
             if (strlen($description) > 500 || strlen($description) < 150) {
                 $error['description'] = 'Veuillez renseigner une longueur valable pour la description du jeu';
+            }
+        }
+
+        $selectedConsoles = filter_input(INPUT_POST, 'consoles', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY) ?? [];
+        if (empty($selectedConsoles)) {
+            $error["consoles"] = "Veuillez choisir une console";
+        }
+        foreach ($selectedConsoles as $value) {
+            // var_dump($selectedConsoles);
+            // die;
+            if ($value != $consoles) {
+                $error["consoles"] = "Certaines consoles choisis ne sont pas bons";
             }
         }
 

@@ -9,4 +9,12 @@ class CheckPermissions
             exit;
         }
     }
+
+    public static function checkMember()
+    {
+        if (empty($_SESSION['user'])) {
+            header('location: /controllers/home-ctrl.php');
+            exit;
+        }
+    }
 }
