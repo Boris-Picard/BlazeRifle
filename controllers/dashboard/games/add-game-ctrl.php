@@ -1,125 +1,127 @@
 <?php
 session_start();
+require_once __DIR__ . '/../../../helpers/Database.php';
 require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Game.php';
 require_once __DIR__ . '/../../../models/Console.php';
 require_once __DIR__ . '/../../../models/Console_Game.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
-$check = CheckPermissions::checkAdmin();
+$check = CheckPermissions::checkAdmin(); // Vérifie si l'utilisateur a les droits d'administrateur.
 
-$listGames = true;
+$listGames = true; 
 
 try {
-    $consoles = Console::getAll();
+    $consoles = Console::getAll(); // Récupère toutes les consoles disponibles dans la base de données.
 
-    // Vérification de la méthode de la requête (POST)
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
 
-        // Récupération nettoyage et validation du nom du jeu
-        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS); // Nettoie et récupère le nom du jeu depuis le formulaire.
 
-        // Validation du nom
         if (empty($name)) {
-            $error['name'] = 'Veuillez renseigner un nom';
+            $error['name'] = 'Veuillez renseigner un nom'; // Vérifie que le nom du jeu n'est pas vide.
         } else {
-            // Validation de la longueur du nom
             if (strlen($name) > 150 || strlen($name) < 2) {
-                $error['name'] = 'Veuillez renseigner une longueur valable pour le nom du jeu';
+                $error['name'] = 'Veuillez renseigner une longueur valable pour le nom du jeu'; // Vérifie la longueur du nom du jeu.
             }
         }
 
-        // Récupération nettoyage et validation de la description du jeu
-        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS); // Nettoie et récupère la description du jeu depuis le formulaire.
 
-        // Validation de la description
         if (empty($description)) {
-            $error['description'] = 'Veuillez renseigner une description';
+            $error['description'] = 'Veuillez renseigner une description'; // Vérifie que la description n'est pas vide.
         } else {
-            // Validation de la longueur de la description
             if (strlen($description) > 500 || strlen($description) < 150) {
-                $error['description'] = 'Veuillez renseigner une longueur valable pour la description du jeu';
+                $error['description'] = 'Veuillez renseigner une longueur valable pour la description du jeu'; // Vérifie la longueur de la description.
             }
         }
 
-        $selectedConsoles = filter_input(INPUT_POST, 'consoles', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY) ?? [];
+        $selectedConsoles = filter_input(INPUT_POST, 'consoles', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY) ?? []; // Nettoie et récupère les consoles sélectionnées depuis le formulaire.
+        $id_console = array_column($consoles, 'id_console'); // Extrait les ID des consoles pour vérification.
+
         if (empty($selectedConsoles)) {
-            $error["consoles"] = "Veuillez choisir une console";
+            $error["consoles"] = "Veuillez choisir une console"; // Vérifie que au moins une console est sélectionnée.
         }
         foreach ($selectedConsoles as $value) {
-            // var_dump($selectedConsoles);
-            // die;
-            if ($value != $consoles) {
-                $error["consoles"] = "Certaines consoles choisis ne sont pas bons";
+            if (!in_array($value, $id_console)) {
+                $error["consoles"] = "Certaines consoles choisis ne sont pas valides"; // Vérifie la validité des consoles sélectionnées.
+                break;
             }
         }
 
         try {
-            // Vérification de la présence d'une photo
             if (empty($_FILES['picture']['name'])) {
-                throw new Exception("Photo obligatoire");
+                throw new Exception("Photo obligatoire"); // Vérifie qu'une photo est bien téléchargée.
             }
-            // Vérification des erreurs lors du transfert de la photo
             if ($_FILES['picture']['error'] != 0) {
-                throw new Exception("Erreur lors du transfert");
+                throw new Exception("Erreur lors du transfert"); // Vérifie qu'il n'y a pas eu d'erreur lors du transfert de la photo.
             }
-            // Vérification du format de fichier autorisé
             if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
-                throw new Exception("Format de fichier non autorisé");
+                throw new Exception("Format de fichier non autorisé"); // Vérifie le format de la photo.
             }
-            // Vérification du poids de la photo
             if ($_FILES['picture']['size'] >= MAX_FILESIZE) {
-                throw new Exception("Poids dépassé!");
+                throw new Exception("Poids dépassé!"); // Vérifie la taille de la photo.
             }
 
-            // Génération d'un nom unique pour la photo
-            $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-            $filename = uniqid() . '.' . $extension;
+            $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION); // Extrait l'extension du fichier de la photo.
+            $filename = uniqid() . '.' . $extension; // Génère un nom unique pour la photo.
 
-            // Déplacement de la photo vers le répertoire d'uploads
             $from = $_FILES['picture']['tmp_name'];
-            $to = __DIR__ . '/../../../public/uploads/games/' . $filename;
-            // Déplacement du fichier téléchargé vers le répertoire de destination
+            $to = __DIR__ . '/../../../public/uploads/games/' . $filename; // Définit le chemin de destination pour la photo.
             if (empty($error)) {
-                $moveFile = move_uploaded_file($from, $to);
+                $moveFile = move_uploaded_file($from, $to); // Déplace la photo dans le répertoire des uploads si aucune erreur.
             }
         } catch (\Throwable $th) {
-            $error['picture'] = $th->getMessage();
+            $error['picture'] = $th->getMessage(); // Capture et stocke l'erreur liée à la photo.
         }
 
-        //Si le tableau d'erreurs n'est pas vide alors message d'erreur
         if (!empty($error)) {
-            $alert['error'] = 'Les données n\'ont pas été insérées !';
+            $alert['error'] = 'Les données n\'ont pas été insérées !'; // Informe l'utilisateur en cas d'erreurs de validation.
         }
 
-        //Condition pour vérifier si la donnée dans la colonne 'game_name' existe déjà ou non. Si c'est vrai, bloquer l'envoi de la donnée.
         if (Game::isExist($name)) {
-            $error['isExist'] = 'Jeu déjà existant';
+            $error['isExist'] = 'Jeu déjà existant'; // Vérifie si le nom du jeu existe déjà dans la base de données.
             $alert['error'] = 'Jeu déjà existant';
         }
 
-        // Vérification s'il n'y a pas d'erreurs
         if (empty($error)) {
-            // Création d'une instance de la classe Game
-            $game = new Game();
+            try {
+                $pdo = Database::connect(); // Établit une connexion à la base de données.
+                $pdo->beginTransaction(); // Commence une transaction pour assurer l'intégrité des données.
 
-            // Attribution des valeurs aux propriétés de l'objet Game
-            $game->setGameName($name);
-            $game->setGameDescription($description);
-            $game->setGamePicture($filename);
+                $game = new Game(); // Crée une instance de la classe Game.
+                $console_game = new Console_Game(); // Crée une instance de la classe Console_Game.
 
-            // Insertion du jeu dans la base de données
-            $result = $game->insert();
+                $game->setGameName($name); // Attribue le nom au jeu.
+                $game->setGameDescription($description); // Attribue la description au jeu.
+                $game->setGamePicture($filename); // Attribue le nom de fichier de la photo au jeu.
 
-            // Si l'insertion a réussi, affichage d'un message de succès et redirection
-            if ($result) {
-                $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
-                header('Refresh:3; url=list-games-ctrl.php');
+                $result = $game->insert(); // Insère le jeu dans la base de données.
+
+                $id_game = $pdo->lastInsertId(); // Récupère l'ID du jeu inséré.
+
+                foreach ($selectedConsoles as $value) {
+                    $console_game->setIdGame($id_game); // Attribue l'ID du jeu.
+                    $console_game->setIdConsole($value); // Attribue l'ID de la console.
+                    $console_game->insert(); // Insère la relation entre le jeu et la console.
+                }
+
+                $pdo->commit(); // Valide la transaction.
+
+                if ($result && $console_game) {
+                    $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).'; // Affiche un message de succès si l'insertion est réussie.
+                    header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers la liste des jeux.
+                }
+            } catch (PDOException $e) {
+                $pdo->rollback(); // Annule la transaction en cas d'erreur.
+                $alert['error'] = 'Erreur lors de l\'insertion' . $e->getMessage(); // Affiche un message d'erreur.
+                header('Refresh:3; url=add-game-ctrl.php'); // Redirige vers le formulaire d'ajout en cas d'erreur.
             }
         }
     }
 } catch (PDOException $e) {
-    $error = $e->getMessage();
+    $alert['error'] = 'Erreur lors de la soumission du formulaire' . $e->getMessage(); // Affiche un message d'erreur en cas de problème avec la base de données.
+    header('Refresh:3; url=add-game-ctrl.php'); // Redirige vers le formulaire d'ajout en cas d'erreur.
 }
 
 

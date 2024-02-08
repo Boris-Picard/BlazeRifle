@@ -57,7 +57,7 @@
                                             value="<?=$console->id_console?>" 
                                             id="console<?=$key?>"
                                             name="consoles[]"
-                                            <?= (isset($selectedConsoles) && in_array($key, $selectedConsoles)) ? 'checked' : '' ?>>
+                                            <?= (isset($selectedConsoles) && in_array($console->id_console, $selectedConsoles)) ? 'checked' : '' ?>>
                                             <label class="form-check-label" for="console<?=$key?>">
                                                 <?= htmlentities($console->console_name) ?>
                                             </label>

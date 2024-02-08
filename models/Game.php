@@ -61,7 +61,7 @@ class Game
      * Méthode d'insertion des données dans la table games
      * @return [type]
      */
-    public function insert()
+    public function insert(): bool
     {
         $pdo = Database::connect();
 
@@ -76,7 +76,11 @@ class Game
 
         $result = $sth->execute();
 
-        return $result;
+        if ($sth->rowCount() <= 0) {
+            throw new Exception('Erreur dans consoles_games');
+        } else {
+            return true;
+        }
     }
 
     /**
