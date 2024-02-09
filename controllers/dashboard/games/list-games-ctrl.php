@@ -9,22 +9,18 @@ $check = CheckPermissions::checkAdmin();
 $listGames = true;
 
 try {
-    // Récupération de tous les jeux depuis la base de données et des consoles
-    $games = Game::getAll();
-    $consoles_games = Console_Game::getAll();
-    
+    // Récupération de tous les jeux et des consoles depuis la base de données 
+    $games = Game::concat();
     // Récupération du message stocké en session (s'il existe)
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
 
     // Suppression du message en session après l'avoir récupéré
-    if(isset($_SESSION['msg'])) {
+    if (isset($_SESSION['msg'])) {
         unset($_SESSION['msg']);
     }
 } catch (PDOException $e) {
     exit('Erreur : ' . $e->getMessage());
 }
-
-
 
 
 

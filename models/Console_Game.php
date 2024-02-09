@@ -67,4 +67,6 @@ class Console_Game
 
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
+
+    
 }

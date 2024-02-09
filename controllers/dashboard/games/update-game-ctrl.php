@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../../models/Game.php';
+require_once __DIR__ . '/../../../models/Console.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
 $check = CheckPermissions::checkAdmin();
@@ -14,7 +15,9 @@ try {
 
     // Récupérer les détails du jeu
     $game = Game::get($id_game);
-
+    $consoles = Console::getAll(); // Récupère toutes les consoles disponibles dans la base de données.
+    $concatGames = Game::concat();
+    var_dump($game);
     // Vérifier si la requête est une soumission de formulaire (POST)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -35,6 +38,19 @@ try {
         } else {
             if (strlen($description) > 500 || strlen($description) < 150) {
                 $error['description'] = 'Veuillez renseigner une longueur de description valide';
+            }
+        }
+
+        $selectedConsoles = filter_input(INPUT_POST, 'consoles', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY) ?? []; // Nettoie et récupère les consoles sélectionnées depuis le formulaire.
+        $id_console = array_column($consoles, 'id_console'); // Extrait les ID des consoles pour vérification.
+
+        if (empty($selectedConsoles)) {
+            $error["consoles"] = "Veuillez choisir une console"; // Vérifie que au moins une console est sélectionnée.
+        }
+        foreach ($selectedConsoles as $value) {
+            if (!in_array($value, $id_console)) {
+                $error["consoles"] = "Certaines consoles choisis ne sont pas valides"; // Vérifie la validité des consoles sélectionnées.
+                break;
             }
         }
 

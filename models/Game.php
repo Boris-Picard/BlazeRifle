@@ -132,7 +132,12 @@ class Game
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM `games`
+        $sql = 'SELECT * 
+        FROM `games`
+        LEFT JOIN 
+            `consoles_games` ON `games`.`id_game` = `consoles_games`.`id_game`
+        LEFT JOIN 
+            `consoles` ON `consoles_games`.`id_console` = `consoles`.`id_console`
         WHERE `games`.`id_game`=:id_game;';
 
         $sth = $pdo->prepare($sql);
@@ -210,5 +215,40 @@ class Game
         $result = $sth->fetchColumn();
 
         return (bool) $result > 0;
+    }
+
+    /**
+     * Récupère tous les jeux avec les noms des consoles associées.
+     *
+     * Cette méthode exécute une requête SQL qui joint les tables 'games', 'consoles_games', et 'consoles'
+     * pour récupérer chaque jeu avec une chaîne concaténée des noms de toutes les consoles sur lesquelles le jeu est disponible.
+     * Les jeux sont regroupés par 'id_game' pour éviter les doublons et sont triés par 'game_name'.
+     * 
+     * @return array La liste des jeux avec leurs consoles associées sous forme d'objets.
+     */
+    public static function concat(): array
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT 
+        `games`.`id_game`,
+        `games`.`game_name`,
+        `games`.`game_description`,
+        `games`.`game_picture`,
+        GROUP_CONCAT(`consoles`.`console_name` ORDER BY `consoles`.`console_name`) AS `consoles`
+        FROM 
+            `games`
+        LEFT JOIN 
+            `consoles_games` ON `games`.`id_game` = `consoles_games`.`id_game`
+        LEFT JOIN 
+            `consoles` ON `consoles_games`.`id_console` = `consoles`.`id_console`
+        GROUP BY 
+            `games`.`id_game`
+        ORDER BY 
+        `games`.`game_name`;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetchAll(PDO::FETCH_OBJ);
     }
 }

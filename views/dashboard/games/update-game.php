@@ -58,13 +58,26 @@
                                     <?php } ?>
                                 </div>
                             </div>
-                            <!-- <div class="row">
-                                <div class="mb-3 col-md-12">
-                                    <div><small class="form-text text-danger"><?= $error['user'] ?? '' ?></small></div>
-                                    <label for="user" class="form-label">Utilisateur <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="user" id="user" value="<?= $user ?? '' ?>" aria-describedby="user" placeholder="" minlength="10" maxlength="150" required>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div><small class="form-text text-danger"><?= $error['consoles'] ?? '' ?></small></div>
+                                    <label for="">Séléctionnez au moins une console <span class="text-danger">*</span></label>
+                                    <?php foreach ($consoles as $key => $console) { ?>
+                                        <div class="form-check">
+                                            <input
+                                            class="form-check-input" 
+                                            type="checkbox" 
+                                            value="<?=$console->id_console?>" 
+                                            id="console<?=$key?>"
+                                            name="consoles[]"
+                                            <?= isset($concatGames->id_game) == $game->id_game ? 'checked' : '' ?>>
+                                            <label class="form-check-label" for="console<?=$key?>">
+                                                <?= htmlentities($console->console_name) ?>
+                                            </label>
+                                        </div>
+                                    <?php } ?>
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="py-3">
                                 <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Modifier</button>
                                 <?php if (!empty($game->game_picture)) { ?>
