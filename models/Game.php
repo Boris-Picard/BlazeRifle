@@ -156,6 +156,24 @@ class Game
         return $result;
     }
 
+    public static function getConsoleIdsByGameId(int $id_game): array
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT `consoles_games`.`id_console`
+            FROM `consoles_games`
+            WHERE `consoles_games`.`id_game` = :id_game;';
+
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+        $sth->execute();
+
+        $consoleIds = $sth->fetchAll(PDO::FETCH_COLUMN);
+
+        return $consoleIds;
+    }
+
+
     /**
      * Méthode pour mettre a jour une ligne dans la table games
      * @return bool

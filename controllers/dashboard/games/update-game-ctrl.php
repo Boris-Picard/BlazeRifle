@@ -16,7 +16,8 @@ try {
 
     // Récupérer les détails du jeu
     $game = Game::get($id_game);
-    $console_game = Console_Game::get($id_game);
+    $console_id = Game::getConsoleIdsByGameId($id_game);
+
     $consoles = Console::getAll(); // Récupère toutes les consoles disponibles dans la base de données.
     // Vérifier si la requête est une soumission de formulaire (POST)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -118,34 +119,33 @@ try {
 
                 $result = $game->update();
 
-
-                // Supprimer les associations non sélectionnées
-                foreach ($console_game as $console) {
-                    if (!in_array($console_game->id_console, $selectedConsoles)) {
-                        Console_Game::delete($console_game->id_console, $id_game);
+                // Suppression des associations non désirées
+                foreach ($console_id as $consoleId) {
+                    if (!in_array($consoleId, $selectedConsoles)) {
+                        Console_Game::delete($consoleId, $id_game);
                     }
                 }
 
                 // Ajouter des associations pour les nouvelles consoles sélectionnées
-                // foreach ($selectedConsoles as $selectedConsoleId) {
-                //     if (!in_array($selectedConsoleId, $console_game)) {
-                //         $console_game = new Console_Game();
-                //         $console_game->setIdGame($id_game);
-                //         $console_game->setIdConsole($selectedConsoleId);
-                //         $console_game->insert();
-                //     }
-                // }
+                foreach ($selectedConsoles as $selectedConsoleId) {
+                    if (!in_array($selectedConsoleId, $console_id)) {
+                        $console_game = new Console_Game();
+                        $console_game->setIdGame($id_game);
+                        $console_game->setIdConsole($selectedConsoleId);
+                        $console_game->insert();
+                    }
+                }
 
+                $result = $pdo->commit(); // Valide la transaction.
 
-                $pdo->commit(); // Valide la transaction.
-                // if ($result && $console_game) {
+                if ($result) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).'; // Affiche un message de succès si l'insertion est réussie.
-                // header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers la liste des jeux.
-                // }
+                header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers la liste des jeux.
+                }
             } catch (PDOException $e) {
                 $pdo->rollback(); // Annule la transaction en cas d'erreur.
                 $alert['error'] = 'Erreur lors de l\'insertion' . $e->getMessage(); // Affiche un message d'erreur.
-                // header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers le formulaire d'ajout en cas d'erreur.
+                header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers le formulaire d'ajout en cas d'erreur.
             }
         }
 

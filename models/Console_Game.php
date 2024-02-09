@@ -68,7 +68,7 @@ class Console_Game
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public static function get(int $id_game)
+    public static function get()
     {
         $pdo = Database::connect();
 
