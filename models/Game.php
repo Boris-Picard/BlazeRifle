@@ -132,7 +132,12 @@ class Game
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * 
+        $sql = 'SELECT 
+        `games`.`id_game`,
+        `games`.`game_name`,
+        `games`.`game_description`,
+        `games`.`game_picture`,
+        GROUP_CONCAT(`consoles`.`console_name`) AS `consoles`
         FROM `games`
         LEFT JOIN 
             `consoles_games` ON `games`.`id_game` = `consoles_games`.`id_game`
@@ -243,9 +248,7 @@ class Game
         LEFT JOIN 
             `consoles` ON `consoles_games`.`id_console` = `consoles`.`id_console`
         GROUP BY 
-            `games`.`id_game`
-        ORDER BY 
-        `games`.`game_name`;';
+            `games`.`id_game`;';
 
         $sth = $pdo->query($sql);
 

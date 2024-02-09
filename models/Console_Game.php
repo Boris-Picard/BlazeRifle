@@ -68,5 +68,25 @@ class Console_Game
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
 
-    
+    public static function delete(int $id_console, int $id_game)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `consoles_games`
+        WHERE `id_console`=:id_console
+        AND `id_game`=:id_game;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_console', $id_console, PDO::PARAM_INT);
+        $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        if ($sth->rowCount() <= 0) {
+            throw new Exception('Erreur dans consoles_games');
+        } else {
+            return true;
+        }
+    }
 }

@@ -70,9 +70,9 @@
                                             value="<?=$console->id_console?>" 
                                             id="console<?=$key?>"
                                             name="consoles[]"
-                                            <?= isset($concatGames->id_game) == $game->id_game ? 'checked' : '' ?>>
+                                            <?= in_array($console->console_name, explode(',', $game->consoles ?? 0)) ? 'checked' : '' ?>>
                                             <label class="form-check-label" for="console<?=$key?>">
-                                                <?= htmlentities($console->console_name) ?>
+                                                <?= htmlspecialchars($console->console_name) ?>
                                             </label>
                                         </div>
                                     <?php } ?>

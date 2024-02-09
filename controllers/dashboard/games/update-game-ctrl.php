@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../../models/Game.php';
+require_once __DIR__ . '/../../../models/Console_Game.php';
 require_once __DIR__ . '/../../../models/Console.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
@@ -16,8 +17,6 @@ try {
     // Récupérer les détails du jeu
     $game = Game::get($id_game);
     $consoles = Console::getAll(); // Récupère toutes les consoles disponibles dans la base de données.
-    $concatGames = Game::concat();
-    var_dump($game);
     // Vérifier si la requête est une soumission de formulaire (POST)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -103,23 +102,45 @@ try {
             $error['isExist'] = 'Jeu déjà existant';
             $alert['error'] = 'Jeu déjà existant';
         }
-
         // Si aucune erreur, mettre à jour les données du jeu
         if (empty($error)) {
-            $game = new Game();
+            try {
+                $pdo = Database::connect(); // Établit une connexion à la base de données.
+                $pdo->beginTransaction(); // Commence une transaction pour assurer l'intégrité des données.
 
-            $game->setGameName($name);
-            $game->setGameDescription($description);
-            $game->setGamePicture($filename);
-            $game->setIdGame($id_game);
+                $game = new Game(); // Crée une instance de la classe Game.
+                $console_game = new Console_Game(); // Crée une instance de la classe Console_Game.
 
-            // Mettre à jour les données dans la base de données
-            $result = $game->update();
 
-            // Afficher un message de réussite et rediriger après la mise à jour
-            if ($result) {
-                $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
-                header('Refresh:3; url=list-games-ctrl.php');
+                $game->setGameName($name); // Attribue le nom au jeu.
+                $game->setGameDescription($description); // Attribue la description au jeu.
+                $game->setGamePicture($filename); // Attribue le nom de fichier de la photo au jeu.
+                $game->setIdGame($id_game);
+
+                $result = $game->update();
+                
+                foreach ($selectedConsoles as $value) {
+                    $console_game::delete($value, $id_game);
+                }
+
+
+                if (!empty($selectedConsoles)) {
+                    foreach ($selectedConsoles as $value) {
+                        $console_game->setIdGame($id_game);
+                        $console_game->setIdConsole($value);
+                        $console_game->insert();
+                    }
+                }
+
+                $pdo->commit(); // Valide la transaction.
+                // if ($result && $console_game) {
+                $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).'; // Affiche un message de succès si l'insertion est réussie.
+                // header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers la liste des jeux.
+                // }
+            } catch (PDOException $e) {
+                $pdo->rollback(); // Annule la transaction en cas d'erreur.
+                $alert['error'] = 'Erreur lors de l\'insertion' . $e->getMessage(); // Affiche un message d'erreur.
+                // header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers le formulaire d'ajout en cas d'erreur.
             }
         }
 
