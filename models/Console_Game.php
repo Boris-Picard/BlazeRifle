@@ -68,6 +68,20 @@ class Console_Game
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public static function get(int $id_game)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT * 
+        FROM `consoles_games`
+        INNER JOIN `games` ON `consoles_games`.`id_game`=`games`.`id_game`
+        INNER JOIN `consoles` ON `consoles_games`.`id_console`=`consoles`.`id_console`;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetch(PDO::FETCH_OBJ);
+    }
+
     public static function delete(int $id_console, int $id_game)
     {
         $pdo = Database::connect();

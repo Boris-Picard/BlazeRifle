@@ -16,6 +16,7 @@ try {
 
     // Récupérer les détails du jeu
     $game = Game::get($id_game);
+    $console_game = Console_Game::get($id_game);
     $consoles = Console::getAll(); // Récupère toutes les consoles disponibles dans la base de données.
     // Vérifier si la requête est une soumission de formulaire (POST)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -109,8 +110,6 @@ try {
                 $pdo->beginTransaction(); // Commence une transaction pour assurer l'intégrité des données.
 
                 $game = new Game(); // Crée une instance de la classe Game.
-                $console_game = new Console_Game(); // Crée une instance de la classe Console_Game.
-
 
                 $game->setGameName($name); // Attribue le nom au jeu.
                 $game->setGameDescription($description); // Attribue la description au jeu.
@@ -118,19 +117,25 @@ try {
                 $game->setIdGame($id_game);
 
                 $result = $game->update();
-                
-                foreach ($selectedConsoles as $value) {
-                    $console_game::delete($value, $id_game);
-                }
 
 
-                if (!empty($selectedConsoles)) {
-                    foreach ($selectedConsoles as $value) {
-                        $console_game->setIdGame($id_game);
-                        $console_game->setIdConsole($value);
-                        $console_game->insert();
+                // Supprimer les associations non sélectionnées
+                foreach ($console_game as $console) {
+                    if (!in_array($console_game->id_console, $selectedConsoles)) {
+                        Console_Game::delete($console_game->id_console, $id_game);
                     }
                 }
+
+                // Ajouter des associations pour les nouvelles consoles sélectionnées
+                // foreach ($selectedConsoles as $selectedConsoleId) {
+                //     if (!in_array($selectedConsoleId, $console_game)) {
+                //         $console_game = new Console_Game();
+                //         $console_game->setIdGame($id_game);
+                //         $console_game->setIdConsole($selectedConsoleId);
+                //         $console_game->insert();
+                //     }
+                // }
+
 
                 $pdo->commit(); // Valide la transaction.
                 // if ($result && $console_game) {
