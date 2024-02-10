@@ -18,6 +18,7 @@ class Article
     private ?string $confirmed_at;
     private int $id_console;
     private int $id_game;
+    private int $id_category;
 
     public function __construct(
         string $article_title = '',
@@ -33,7 +34,8 @@ class Article
         int $id_article = 0,
         ?string $confirmed_at = null,
         int $id_console = 0,
-        int $id_game = 0
+        int $id_game = 0,
+        int $id_category = 0
     ) {
         $this->article_title = $article_title;
         $this->secondtitle = $secondtitle;
@@ -49,6 +51,7 @@ class Article
         $this->confirmed_at = $confirmed_at;
         $this->id_console = $id_console;
         $this->id_game = $id_game;
+        $this->id_category = $id_category;
     }
 
     public function setArticleTitle(string $article_title)
@@ -181,14 +184,24 @@ class Article
         return $this->id_console;
     }
 
-    public function setIdGame(?int $id_game)
+    public function setIdGame(int $id_game)
     {
         $this->id_game = $id_game;
     }
 
-    public function getIdGame(): ?int
+    public function getIdGame(): int
     {
         return $this->id_game;
+    }
+
+    public function setIdCategory(int $id_category)
+    {
+        $this->id_category = $id_category;
+    }
+
+    public function getIdCategory(): int
+    {
+        return $this->id_category;
     }
 
     /**
@@ -199,8 +212,8 @@ class Article
     {
         $pdo = Database::connect();
 
-        $sql = 'INSERT INTO `articles` (`article_title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`, `id_console`) 
-        VALUES(:article_title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game, :id_console)';
+        $sql = 'INSERT INTO `articles` (`article_title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`, `id_console`,`id_category`) 
+        VALUES(:article_title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game, :id_console, :id_category)';
 
         $sth = $pdo->prepare($sql);
 
@@ -213,6 +226,7 @@ class Article
         $sth->bindValue(':secondsection', $this->getSecondSection());
         $sth->bindValue(':id_console', $this->getIdConsole(), PDO::PARAM_INT);
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
+        $sth->bindValue(':id_category', $this->getIdCategory(), PDO::PARAM_INT);
 
         $sth->execute();
 

@@ -24,6 +24,9 @@
                 <div class="row">
                     <div class="col-12">
                         <form action="#" method="POST" class="shadow-lg p-5 rounded-4" novalidate enctype="multipart/form-data">
+                            <div class="d-flex justify-content-center">
+                                <p>Auteur : <span class="fw-bold text-uppercase"><?= $_SESSION['user']->pseudo ?></span></p>
+                            </div>
                             <div class="row">
                                 <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['title'] ?? '' ?></small></div>
@@ -79,19 +82,26 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <div><small class="form-text text-danger"><?= $error['id_console'] ?? '' ?></small></div>
-                                    <label for="id_console" class="mb-2">Console de l'article <span class="text-danger">*</span></label>
-                                    <select class="form-select" name="id_console">
-                                        <option selected disabled></option>
-                                        <?php foreach ($consoles as $console) { ?>
-                                            <option value="<?= $console->id_console ?>" <?= (isset($id_console) && $id_console == $console->id_console) ? 'selected' : '' ?>><?= $console->console_name ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <div><small class="form-text text-danger"><?= $error['consoles'] ?? '' ?></small></div>
+                                    <label for="">Séléctionnez au moins une console <span class="text-danger">*</span></label>
+                                    <?php foreach ($consoles as $key => $console) { ?>
+                                        <div class="form-check">
+                                            <input class="form-check-input text-uppercase" type="checkbox" value="<?= $console->id_console ?>" id="console<?= $key ?>" name="consoles[]" <?= (isset($selectedConsoles) && in_array($console->id_console, $selectedConsoles)) ? 'checked' : '' ?>>
+                                            <label class="form-check-label" for="console<?= $key ?>">
+                                                <?= htmlentities($console->console_name) ?>
+                                            </label>
+                                        </div>
+                                    <?php } ?>
                                 </div>
                                 <div class="mb-3 col-md-4">
-                                    <div><small class="form-text text-danger"><?= $error['id_user'] ?? '' ?></small></div>
-                                    <label for="id_user" class="form-label">Auteur <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="id_user" id="id_user" value="<?= $id_user ?? '' ?>" aria-describedby="id_user" placeholder="Votre pseudo" minlength="2" maxlength="100" pattern="<?= REGEX_NAME ?>" required>
+                                    <div><small class="form-text text-danger"><?= $error['id_category'] ?? '' ?></small></div>
+                                    <label for="id_category" class="mb-2">Categorie de l'article <span class="text-danger">*</span></label>
+                                    <select class="form-select" name="id_category">
+                                        <option selected disabled></option>
+                                        <?php foreach ($games as $game) { ?>
+                                            <option value="<?= $game->id_category ?>" <?= (isset($id_category) && $id_category == $game->id_category) ? 'selected' : '' ?>><?= $game->game_name ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="py-3">

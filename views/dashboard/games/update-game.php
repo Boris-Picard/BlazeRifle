@@ -9,7 +9,6 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <?= $msg ?>
                         <?php if (isset($alert['success'])) { ?>
                             <div class="alert alert-success">
                                 <?= $alert['success'] ?>
