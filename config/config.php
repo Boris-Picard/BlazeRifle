@@ -5,14 +5,16 @@ define('DSN', 'mysql:host=localhost;dbname=blazerifle');
 define('USER', 'BorisRifle');
 define('PASSWORD', 'r.g[WZL_FZkqM0Gs');
 
-define('REGEX_TITLE', '^[a-zA-Z0-9 .,\'éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{10,150}$');
-define('REGEX_SECTION', "^[a-zA-Z0-9 '.,éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{250,1500}$");
-define('REGEX_NAME','^[A-Za-z-éèêëàâäôöûüç\' ]{2,100}$');
+define('REGEX_TITLE', '^[a-zA-Z0-9 .,\'éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{10,150}+$');
+define('REGEX_SECTION', "^[a-zA-Z0-9 '.,éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{250,1500}+$");
+define('REGEX_NAME','^[A-Za-z-éèêëàâäôöûüç\' ]{2,100}+$');
 define('IMAGE_TYPES',  ['image/jpeg', 'image/png', 'image/avif']);
 define('MAX_FILESIZE', 2*1024*1024);
-define('REGEX_PLACE', '^[A-Za-zÀ-ÖØ-öø-ÿ\-\s\']{2,}$');
-define('REGEX_DATE','^([0-9]{4})[\/\-]?([0-9]{2})[\/\-]?([0-9]{2})$');
-define('REGEX_CONSOLE', "^[a-zA-Z0-9 ]{2,20}$");
+define('REGEX_PLACE', '^[A-Za-zÀ-ÖØ-öø-ÿ\-\s\']{2,}+$');
+define('REGEX_DATE','^([0-9]{4})[\/\-]?([0-9]{2})[\/\-]?([0-9]{2})+$');
+define('REGEX_CONSOLE', "^[a-zA-Z0-9 ]{2,20}+$");
+
+define('REGEX_CATEGORY', '^[a-zA-Z ]{5,100}+$');
 
 define('DATE', '^(?:\d{4}-\d{2}-\d{2})$');
 

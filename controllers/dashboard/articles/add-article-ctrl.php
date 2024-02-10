@@ -183,7 +183,7 @@ try {
             $result = $article->insert();
 
             // Si l'insertion a réussi, affichage d'un message de succès et redirection
-            if ($result) {
+            if ($result > 0) {
                 $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
                 header('Refresh:3; url=list-articles-ctrl.php');
             }
