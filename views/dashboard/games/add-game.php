@@ -52,7 +52,7 @@
                                     <?php foreach ($consoles as $key => $console) { ?>
                                         <div class="form-check">
                                             <input
-                                            class="form-check-input" 
+                                            class="form-check-input text-uppercase" 
                                             type="checkbox" 
                                             value="<?=$console->id_console?>" 
                                             id="console<?=$key?>"
