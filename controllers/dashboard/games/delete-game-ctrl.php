@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../../models/Game.php';
+require_once __DIR__ . '/../../../models/Console_Game.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
 $check = CheckPermissions::checkAdmin();
@@ -15,9 +16,15 @@ try {
 
     // Suppression du jeu de la base de données
     $isDeleted = Game::delete($id_game);
+    $getConsoleByIdGame = Game::getConsoleIdsByGameId($id_game);
+
 
     // Si la suppression a réussi, on supprime également l'image associée
+    // Et des données dans la table relationnel consoles_games
     if ($isDeleted > 0) {
+        foreach ($getConsoleByIdGame as $consoleId) {
+            Console_Game::delete($consoleId, $id_game);
+        }
         $link = unlink('../../../public/uploads/games/' . $game->game_picture);
         // Message de succès si la suppression a réussi
         $_SESSION['msg'] = 'La donnée a bien été supprimée !';

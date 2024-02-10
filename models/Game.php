@@ -156,6 +156,13 @@ class Game
         return $result;
     }
 
+    /**
+     * Méthode permettant de récupérer tous les identifiants de consoles associés à un jeu spécifique dans la table consoles_games.
+     * Utilise l'identifiant du jeu pour rechercher les correspondances.
+     * @param int $id_game
+     * 
+     * @return array
+     */
     public static function getConsoleIdsByGameId(int $id_game): array
     {
         $pdo = Database::connect();
