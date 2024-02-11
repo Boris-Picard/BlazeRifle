@@ -9,6 +9,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
+                    <?= $msg ?>
                     <?php if (isset($alert['success'])) { ?>
                         <div class="alert alert-success">
                             <?= $alert['success'] ?>
@@ -55,7 +56,7 @@
                             <div class="col-md-12 mb-3">
                                 <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
                                 <label for="description" class="form-label">Description de l'événement <span class="text-danger">*</span></label>
-                                <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="500" required><?= $event->event_description ?></textarea>
+                                <textarea class="form-control descriptionArea" name="description" id="description" pattern="<?= REGEX_TEXTAREA ?>" placeholder="Créer une description d'article" aria-describedby="description" minlength="50" maxlength="500" required><?= $event->event_description ?></textarea>
                             </div>
                         </div>
                         <div class="row">

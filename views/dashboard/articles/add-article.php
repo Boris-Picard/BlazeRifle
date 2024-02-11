@@ -36,9 +36,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <div><small class="form-text text-danger"><?= $error['image-article'] ?? '' ?></small></div>
-                                    <label for="image-article" class="form-label">Ajouter une photo d'article <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="file" id="image-article" name="image-article" accept="image/png, image/jpeg, image/avif">
+                                    <div><small class="form-text text-danger"><?= $error['picture'] ?? '' ?></small></div>
+                                    <label for="picture" class="form-label">Ajouter une photo d'article <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="file" id="picture" name="picture" accept="image/png, image/jpeg, image/avif">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['id_game'] ?? '' ?></small></div>
                                     <label for="id_game" class="mb-2">Jeux de l'article <span class="text-danger">*</span></label>
                                     <select class="form-select" name="id_game">
@@ -81,25 +81,13 @@
                                         <?php } ?>
                                     </select>
                                 </div>
-                                <div class="col-md-4 mb-3">
-                                    <div><small class="form-text text-danger"><?= $error['consoles'] ?? '' ?></small></div>
-                                    <label for="">Séléctionnez au moins une console <span class="text-danger">*</span></label>
-                                    <?php foreach ($consoles as $key => $console) { ?>
-                                        <div class="form-check">
-                                            <input class="form-check-input text-uppercase" type="checkbox" value="<?= $console->id_console ?>" id="console<?= $key ?>" name="consoles[]" <?= (isset($selectedConsoles) && in_array($console->id_console, $selectedConsoles)) ? 'checked' : '' ?>>
-                                            <label class="form-check-label" for="console<?= $key ?>">
-                                                <?= htmlentities($console->console_name) ?>
-                                            </label>
-                                        </div>
-                                    <?php } ?>
-                                </div>
-                                <div class="mb-3 col-md-4">
+                                <div class="mb-3 col-md-6">
                                     <div><small class="form-text text-danger"><?= $error['id_category'] ?? '' ?></small></div>
                                     <label for="id_category" class="mb-2">Categorie de l'article <span class="text-danger">*</span></label>
                                     <select class="form-select" name="id_category">
                                         <option selected disabled></option>
                                         <?php foreach ($categories as $category) { ?>
-                                            <option value="<?= $category->id_category ?>" <?= (isset($id_category) && $id_category == $game->category) ? 'selected' : '' ?>><?= $category->label ?></option>
+                                            <option value="<?= $category->id_category ?>" <?= (isset($id_category) && $id_category == $category->id_category) ? 'selected' : '' ?>><?= $category->label ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>

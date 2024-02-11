@@ -10,6 +10,7 @@ $check = CheckPermissions::checkAdmin();
 try {
     $listEvents = true;
 
+    $id_user = $_SESSION['user']->id_user;
     // Récupération de la liste de tous les jeux
     $games = Game::getAll();
 
@@ -36,8 +37,9 @@ try {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
             // Validation de la longueur de la description
-            if (strlen($description) < 50 || strlen($description) > 500) {
-                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 500 caractères';
+            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/u')));
+            if (!$isOk) {
+                $error['description'] = 'Veuillez renseigner une description valide';
             }
         }
 
@@ -156,6 +158,7 @@ try {
             $event->setPlace($place);
             $event->setEventDate($date);
             $event->setIdGame($id_game);
+            $event->setIdUser($id_user);
 
             // Insertion de l'événement dans la base de données
             $result = $event->insert();

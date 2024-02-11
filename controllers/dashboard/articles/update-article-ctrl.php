@@ -2,7 +2,6 @@
 session_start();
 require_once __DIR__ . '/../../../models/Article.php';
 require_once __DIR__ . '/../../../models/Game.php';
-require_once __DIR__ . '/../../../models/Console.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
 $check = CheckPermissions::checkAdmin();
@@ -19,7 +18,6 @@ try {
 
     // Récupération de la liste de tous les jeux et consoles
     $games = Game::getAll();
-    $consoles = Console::getAll();
 
     // Récupération du message stocké en session
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -104,9 +102,8 @@ try {
             }
         }
 
-        // Récupération des identifiants de jeux et de consoles
+        // Récupération des identifiants de jeux
         $gamesId = array_column($games, 'id_game');
-        $consolesId = array_column($consoles, 'id_console');
 
         // Nettoyage et validation de l'identifiant du jeu
         $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
@@ -117,18 +114,6 @@ try {
             // Validation de l'identifiant du jeu
             if (!in_array($id_game, $gamesId)) {
                 $error['id_game'] = 'Ce n\'est pas un jeu valide';
-            }
-        }
-
-        // Nettoyage et validation de l'identifiant de la console
-        $id_console = intval(filter_input(INPUT_POST, 'id_console', FILTER_SANITIZE_NUMBER_INT));
-
-        if (empty($id_console)) {
-            $error['id_console'] = 'Veuillez sélectionner une console';
-        } else {
-            // Validation de l'identifiant de la console
-            if (!in_array($id_console, $gamesId)) {
-                $error['id_console'] = 'Ce n\'est pas une console valide';
             }
         }
 
@@ -166,17 +151,6 @@ try {
             }
         }
 
-        // Vérification d'un auteur (commenté pour le moment)
-        // $id_user = filter_input(INPUT_POST, 'id_user', FILTER_SANITIZE_SPECIAL_CHARS);
-
-        // if (empty($id_user)) {
-        //     $error['id_user'] = 'Veuillez rentrer un pseudo';
-        // } else {
-        //     $isOk = filter_var($id_user, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NAME . '/')));
-        //     if (!$isOk) {
-        //         $error['id_user'] = 'Le pseudo n\'est pas valide';
-        //     }
-        // }
 
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
         if (!empty($error)) {
@@ -202,7 +176,6 @@ try {
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
             $article->setIdGame($id_game);
-            $article->setIdConsole($id_console);
             $article->setIdArticle($id_article);
 
             // Mise à jour de l'article dans la base de données

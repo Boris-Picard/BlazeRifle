@@ -16,9 +16,12 @@ try {
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
     $nbArticles = intval(filter_input(INPUT_GET, 'nbArticles', FILTER_SANITIZE_SPECIAL_CHARS));
-
+    
     // Récupération de la liste de tous les jeux
     $games = Game::getAll();
+
+    var_dump($games);
+    die;
 
     // Si l'ordre n'est pas spécifié dans l'URL, par défaut, il est défini à 'DESC'
     if ($order == null) {
@@ -50,7 +53,7 @@ try {
         unset($_SESSION['msg']);
     }
 } catch (PDOException $e) {
-    die('Erreur : ' . $e->getMessage());
+    die('Erreur listing : ' . $e->getMessage());
 }
 
 

@@ -12,13 +12,13 @@ class Article
     private string $article_description;
     private string $firstsection;
     private string $secondsection;
-    private string $created_at;
-    private string $updated_at;
+    private ?string $created_at;
+    private ?string $updated_at;
     private ?string $deleted_at;
     private ?string $confirmed_at;
-    private int $id_console;
     private int $id_game;
     private int $id_category;
+    private int $id_user;
 
     public function __construct(
         string $article_title = '',
@@ -33,9 +33,9 @@ class Article
         ?string $deleted_at = null,
         int $id_article = 0,
         ?string $confirmed_at = null,
-        int $id_console = 0,
         int $id_game = 0,
-        int $id_category = 0
+        int $id_category = 0,
+        int $id_user = 0
     ) {
         $this->article_title = $article_title;
         $this->secondtitle = $secondtitle;
@@ -49,9 +49,9 @@ class Article
         $this->deleted_at = $deleted_at;
         $this->id_article = $id_article;
         $this->confirmed_at = $confirmed_at;
-        $this->id_console = $id_console;
         $this->id_game = $id_game;
         $this->id_category = $id_category;
+        $this->id_user = $id_user;
     }
 
     public function setArticleTitle(string $article_title)
@@ -174,16 +174,6 @@ class Article
         return $this->confirmed_at;
     }
 
-    public function setIdConsole(int $id_console)
-    {
-        $this->id_console = $id_console;
-    }
-
-    public function getIdConsole(): int
-    {
-        return $this->id_console;
-    }
-
     public function setIdGame(int $id_game)
     {
         $this->id_game = $id_game;
@@ -204,6 +194,16 @@ class Article
         return $this->id_category;
     }
 
+    public function setIdUser(int $id_user)
+    {
+        $this->id_user = $id_user;
+    }
+
+    public function getIdUser(): int
+    {
+        return $this->id_user;
+    }
+
     /**
      * Insertion des données dans la table articles
      * @return int
@@ -212,8 +212,8 @@ class Article
     {
         $pdo = Database::connect();
 
-        $sql = 'INSERT INTO `articles` (`article_title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`, `id_console`,`id_category`) 
-        VALUES(:article_title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game, :id_console, :id_category)';
+        $sql = 'INSERT INTO `articles` (`article_title`, `secondtitle`, `thirdtitle`, `article_picture`, `article_description`, `firstsection`, `secondsection`, `id_game`, `id_category`, `id_user`) 
+        VALUES(:article_title, :secondtitle, :thirdtitle, :article_picture, :article_description, :firstsection, :secondsection, :id_game, :id_category, :id_user)';
 
         $sth = $pdo->prepare($sql);
 
@@ -224,9 +224,9 @@ class Article
         $sth->bindValue(':article_description', $this->getArticleDescription());
         $sth->bindValue(':firstsection', $this->getFirstSection());
         $sth->bindValue(':secondsection', $this->getSecondSection());
-        $sth->bindValue(':id_console', $this->getIdConsole(), PDO::PARAM_INT);
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
         $sth->bindValue(':id_category', $this->getIdCategory(), PDO::PARAM_INT);
+        $sth->bindValue(':id_user', $this->getIdUser(), PDO::PARAM_INT);
 
         $sth->execute();
 
@@ -236,11 +236,10 @@ class Article
 
     /**
      * Récupération de toutes les données dans la table 'articles', 
-     * jointure avec les tables 'games' et 'consoles', 
+     * jointure avec les tables 'games', 
      * vérification des articles supprimés ou non, ordre ASC ou DESC, 
      * application des LIMIT et OFFSET pour les articles visibles, ainsi que la pagination
      * @param int|null $id_game
-     * @param int|null $id_console
      * @param bool $showDeletedAt
      * @param string $order
      * @param int $limit
@@ -249,7 +248,7 @@ class Article
      * 
      * @return array
      */
-    public static function getAll(?int $id_game = null, ?int $id_console = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = null, int $offset = 0): array|false
+    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = null, int $offset = 0): array|false
     {
         $pdo = Database::connect();
 
@@ -259,17 +258,12 @@ class Article
 
         $sql = 'SELECT * FROM `articles`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
-        INNER JOIN `consoles` ON `consoles`.`id_console`=`articles`.`id_console`
         WHERE 1=1';
 
         $showDeletedAt ? $sql .= ' AND `deleted_at` IS NOT NULL ' : $sql .= ' AND `deleted_at` IS NULL ';
 
         if (!is_null($id_game)) {
             $sql .= ' AND `games`.`id_game`=:id_game ';
-        }
-
-        if (!is_null($id_console)) {
-            $sql .= ' AND `consoles`.`id_console`=:id_console ';
         }
 
         $order == 'ASC' ? $sql .= ' ORDER BY `articles`.`created_at` ASC ' : $sql .= ' ORDER BY `articles`.`created_at` DESC ';
@@ -280,10 +274,6 @@ class Article
 
         if (!is_null($id_game)) {
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
-        }
-
-        if (!is_null($id_console)) {
-            $sth->bindValue(':id_console', $id_console, PDO::PARAM_INT);
         }
 
         $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
@@ -302,18 +292,19 @@ class Article
      * 
      * @return [type]
      */
-    public static function get(int $id_article = null, int $id_console = null)
+    public static function get(?int $id_article = null)
     {
         $pdo = Database::connect();
 
         $sql = 'SELECT * FROM `articles`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
-        INNER JOIN `consoles` ON `consoles`.`id_console`=`articles`.`id_console`
         WHERE `id_article`=:id_article';
 
         $sth = $pdo->prepare($sql);
 
-        isset($id_article) ? $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT) : $sth->bindValue(':id_console', $id_console, PDO::PARAM_INT);
+        if ($id_article !== null) {
+            $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT);
+        }
 
         $sth->execute();
 
@@ -331,7 +322,7 @@ class Article
         $pdo = Database::connect();
 
         $sql = 'UPDATE `articles` 
-        SET `article_title`=:article_title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game, `id_console`=:id_console 
+        SET `article_title`=:article_title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game, `id_user`=:id_user 
         WHERE `id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
@@ -345,7 +336,7 @@ class Article
         $sth->bindValue(':secondsection', $this->getSecondSection());
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
         $sth->bindValue(':id_article', $this->getIdArticle(), PDO::PARAM_INT);
-        $sth->bindValue(':id_console', $this->getIdConsole(), PDO::PARAM_INT);
+        $sth->bindValue(':id_user', $this->getIdUser(), PDO::PARAM_INT);
 
         $result = $sth->execute();
 
@@ -424,31 +415,22 @@ class Article
      * 
      * @return int
      */
-    public static function count(?int $id_game = null, ?int $id_console = null): int
+    public static function count(?int $id_game = null): int
     {
         $pdo = Database::connect();
 
         $sql = 'SELECT count(*) as `count` from `articles`
                 INNER JOIN `games` ON `games`.`id_game` = `articles`.`id_game`
-                INNER JOIN `consoles` ON `consoles`.`id_console` = `articles`.`id_console`
                 WHERE 1 = 1';
 
         if (!is_null($id_game)) {
             $sql .= ' AND `articles`.`id_game` = :id_game';
         }
 
-        if (!is_null($id_console)) {
-            $sql .= ' AND `articles`.`id_console` = :id_console';
-        }
-
         $sth = $pdo->prepare($sql);
 
         if (!is_null($id_game)) {
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
-        }
-
-        if (!is_null($id_console)) {
-            $sth->bindValue(':id_console', $id_console, PDO::PARAM_INT);
         }
 
         $sth->execute();

@@ -12,8 +12,9 @@ class Event
     private string $place;
     private string $event_date;
     private int $id_game;
+    private int $id_user;
 
-    public function __construct(string $event_title = '', string $event_description = '', string $event_picture = '', string $event_link = '', string $place = '', string $event_date = '', int $id_event = 0, int $id_game = 0)
+    public function __construct(string $event_title = '', string $event_description = '', string $event_picture = '', string $event_link = '', string $place = '', string $event_date = '', int $id_event = 0, int $id_game = 0, int $id_user = 0)
     {
         $this->event_title = $event_title;
         $this->event_description = $event_description;
@@ -23,6 +24,7 @@ class Event
         $this->event_date = $event_date;
         $this->id_event = $id_event;
         $this->id_game = $id_game;
+        $this->id_user = $id_user;
     }
 
     public function setEventTitle(string $event_title)
@@ -105,6 +107,16 @@ class Event
         return $this->id_game;
     }
 
+    public function setIdUser(?int $id_user)
+    {
+        $this->id_user = $id_user;
+    }
+
+    public function getIdUser(): ?int
+    {
+        return $this->id_user;
+    }
+
     /**
      * Méthode d'insertion des données dans la table events
      * @return int
@@ -113,8 +125,8 @@ class Event
     {
         $pdo = Database::connect(DSN, USER, PASSWORD);
 
-        $sql = 'INSERT INTO `events` (`event_title`, `event_description`, `event_picture`, `event_link`, `place`, `event_date`, `id_game`)
-        VALUES (:event_title, :event_description, :event_picture, :event_link, :place, :event_date, :id_game)';
+        $sql = 'INSERT INTO `events` (`event_title`, `event_description`, `event_picture`, `event_link`, `place`, `event_date`, `id_game`, `id_user`)
+        VALUES (:event_title, :event_description, :event_picture, :event_link, :place, :event_date, :id_game, :id_user)';
 
         $sth = $pdo->prepare($sql);
 
@@ -125,6 +137,7 @@ class Event
         $sth->bindValue(':place', $this->getPlace());
         $sth->bindValue(':event_date', $this->getEventDate());
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
+        $sth->bindValue(':id_user', $this->getIdUser(), PDO::PARAM_INT);
 
         $sth->execute();
 
@@ -198,7 +211,7 @@ class Event
         $pdo = Database::connect(DSN, USER, PASSWORD);
 
         $sql = 'UPDATE `events`
-        SET `event_title`=:event_title, `event_description`=:event_description, `event_picture`=:event_picture, `event_link`=:event_link, `place`=:place, `event_date`=:event_date, `id_game`=:id_game
+        SET `event_title`=:event_title, `event_description`=:event_description, `event_picture`=:event_picture, `event_link`=:event_link, `place`=:place, `event_date`=:event_date, `id_game`=:id_game, `id_user`=:id_user
         WHERE `id_event`=:id_event;';
 
         $sth = $pdo->prepare($sql);
@@ -211,6 +224,7 @@ class Event
         $sth->bindValue(':event_date', $this->getEventDate());
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
         $sth->bindValue(':id_event', $this->getIdEvent(), PDO::PARAM_INT);
+        $sth->bindValue(':id_user', $this->getIdUser(), PDO::PARAM_INT);
 
         $result = $sth->execute();
 

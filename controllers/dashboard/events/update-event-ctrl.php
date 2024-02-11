@@ -10,6 +10,8 @@ $check = CheckPermissions::checkAdmin();
 try {
     $listEvents = true;
 
+    $id_user = $_SESSION['user']->id_user;
+
     // Récupération de l'identifiant de l'événement depuis la requête
     $id_event = intval(filter_input(INPUT_GET, 'id_event', FILTER_SANITIZE_NUMBER_INT));
 
@@ -18,6 +20,14 @@ try {
 
     // Récupération de l'événement spécifié par l'identifiant
     $event = Event::get($id_event);
+
+    // Récupération du message stocké en session
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    // Suppression du message en session s'il existe
+    if (isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Titre de l'événement nettoyage et validation
@@ -40,12 +50,9 @@ try {
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
-            // $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_DESCRIPTION . '/u')));
-            // if (!$isOk) {
-            //     $error['description'] = 'La description n\'est pas valide';
-            // }
-            if (strlen($description) < 50 || strlen($description) > 500) {
-                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 500 caractères';
+            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/u')));
+            if (!$isOk) {
+                $error['description'] = 'La description n\'est pas valide';
             }
         }
 
@@ -165,6 +172,7 @@ try {
             $event->setEventDate($date);
             $event->setIdEvent($id_event);
             $event->setIdGame($id_game);
+            $event->setIdUser($id_user);
 
             // Mise à jour de l'événement dans la base de données
             $result = $event->update();

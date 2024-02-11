@@ -2,7 +2,6 @@
 session_start();
 require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Article.php';
-require_once __DIR__ . '/../../../models/Console.php';
 require_once __DIR__ . '/../../../models/Game.php';
 require_once __DIR__ . '/../../../models/Category.php';
 require_once __DIR__ . '/../../../vendor/autoload.php';
@@ -16,10 +15,10 @@ try {
     // Récupération de la liste de tous les jeux
     $games = Game::getAll();
 
-    // Récupération de la liste de toutes les consoles
-    $consoles = Console::getAll();
+    // Récupération de la liste de toutes les catégories
     $categories = Category::getAll();
 
+    $id_user = $_SESSION['user']->id_user;
     // Vérification si la requête est de type POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -95,9 +94,9 @@ try {
             }
         }
 
-        // Récupération des IDs des jeux et des consoles pour la validation du select
+        // Récupération des IDs des jeux pour la validation du select
         $gamesId = array_column($games, 'id_game');
-        $consolesId = array_column($consoles, 'id_console');
+        $categoryId = array_column($categories, 'id_category');
 
         // Nettoyage du select du jeu et validation
         $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
@@ -110,49 +109,48 @@ try {
             }
         }
 
-        // Nettoyage du select de la console et validation
-        $id_console = intval(filter_input(INPUT_POST, 'id_console', FILTER_SANITIZE_NUMBER_INT));
+        $id_category = intval(filter_input(INPUT_POST, 'id_category', FILTER_SANITIZE_NUMBER_INT));
 
-        if (empty($id_console)) {
-            $error['id_console'] = 'Veuillez sélectionner une console';
+        if (empty($id_category)) {
+            $error['id_category'] = 'Veuillez sélectionner une catégorie';
         } else {
-            if (!in_array($id_console, $consolesId)) {
-                $error['id_console'] = 'Ce n\'est pas une console valide';
+            if (!in_array($id_category, $gamesId)) {
+                $error['id_category'] = 'Ce n\'est pas une catégorie';
             }
         }
 
         // Nettoyage et validation de la photo de l'article et validation
         try {
             // Vérification de l'existence de la photo
-            if (empty($_FILES['image-article']['name'])) {
+            if (empty($_FILES['picture']['name'])) {
                 throw new Exception("Photo obligatoire");
             }
             // Vérification d'éventuelles erreurs lors du téléchargement du fichier
-            if ($_FILES['image-article']['error'] != 0) {
+            if ($_FILES['picture']['error'] != 0) {
                 throw new Exception("Error");
             }
             // Vérification du format de la photo
-            if (!in_array($_FILES['image-article']['type'], IMAGE_TYPES)) {
+            if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
                 throw new Exception("Format non autorisé");
             }
             // Vérification de la taille de la photo
-            if ($_FILES['image-article']['size'] > MAX_FILESIZE) {
+            if ($_FILES['picture']['size'] > MAX_FILESIZE) {
                 throw new Exception("Image trop grande");
             }
 
             // Génération d'un nom de fichier unique
-            $extension = pathinfo($_FILES['image-article']['name'], PATHINFO_EXTENSION);
+            $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
             $fileName = uniqid('img_') . '.' . $extension;
 
             // Déplacement du fichier téléchargé vers le répertoire de destination
-            $from = $_FILES['image-article']['tmp_name'];
+            $from = $_FILES['picture']['tmp_name'];
             $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
 
             if (empty($error)) {
                 $moveFile = move_uploaded_file($from, $to);
             }
         } catch (\Throwable $e) {
-            $error['image-article'] = $e->getMessage();
+            $error['picture'] = $e->getMessage();
         }
 
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
@@ -179,7 +177,8 @@ try {
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
             $article->setIdGame($id_game);
-            $article->setIdConsole($id_console);
+            $article->setIdCategory($id_category);
+            $article->setIdUser($id_user);
 
             // Insertion de l'article et validation dans la base de données
             $result = $article->insert();
@@ -193,15 +192,7 @@ try {
     }
 } catch (PDOException $e) {
     $alert['error'] = $e->getMessage();
-    die;
 }
-
-
-
-
-
-
-
 
 
 
