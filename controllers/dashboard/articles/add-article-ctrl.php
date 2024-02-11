@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../../config/config.php';
 require_once __DIR__ . '/../../../models/Article.php';
 require_once __DIR__ . '/../../../models/Console.php';
 require_once __DIR__ . '/../../../models/Game.php';
+require_once __DIR__ . '/../../../models/Category.php';
 require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
@@ -17,6 +18,7 @@ try {
 
     // Récupération de la liste de toutes les consoles
     $consoles = Console::getAll();
+    $categories = Category::getAll();
 
     // Vérification si la requête est de type POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {

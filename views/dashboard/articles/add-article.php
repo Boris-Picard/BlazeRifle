@@ -98,8 +98,8 @@
                                     <label for="id_category" class="mb-2">Categorie de l'article <span class="text-danger">*</span></label>
                                     <select class="form-select" name="id_category">
                                         <option selected disabled></option>
-                                        <?php foreach ($games as $game) { ?>
-                                            <option value="<?= $game->id_category ?>" <?= (isset($id_category) && $id_category == $game->id_category) ? 'selected' : '' ?>><?= $game->game_name ?></option>
+                                        <?php foreach ($categories as $category) { ?>
+                                            <option value="<?= $category->id_category ?>" <?= (isset($id_category) && $id_category == $game->category) ? 'selected' : '' ?>><?= $category->label ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>

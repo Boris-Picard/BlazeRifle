@@ -23,6 +23,6 @@ define('REGEX_FIRSTNAME', "^[A-Za-z-éèêëàâäôöûüç' ]+$");
 define('REGEX_PSEUDO', '^[a-zA-Z0-9.-_]{3,20}+$');
 define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}+$');
 define('REGEX_ZIPCODE', '^[0-9]{5}$');
-define('REGEX_TEXTAREA', '[a-zA-Z0-9\s.,!?()-éèàêîôû]{150,500}+$');
+define('REGEX_TEXTAREA', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{150,500}$");
 
 define('SECRET_KEY', 'kadzefze6rze6r5ze9rzggr:!;ezfoi"à"é"éd56d48ez4f6zef6fz');

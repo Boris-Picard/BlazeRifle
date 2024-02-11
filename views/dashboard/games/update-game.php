@@ -29,18 +29,18 @@
                 <div class="row">
                     <div class="col-12">
                         <form action="#" method="POST" class="shadow-lg p-5 rounded-4" novalidate enctype="multipart/form-data">
-                            <div class="row">
+                        <div class="row">
                                 <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['name'] ?? '' ?></small></div>
                                     <label for="name" class="form-label">Nom du jeu <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="name" id="name" value="<?= $game->game_name ?>" aria-describedby="name" placeholder="" minlength="2" maxlength="150" required>
+                                    <input type="text" class="form-control" name="name" id="name" value="<?= $game->game_name ?? '' ?>" pattern="<?= REGEX_NAME ?>" aria-describedby="name" placeholder="Ex : Valorant" minlength="2" maxlength="150" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
                                     <label for="description" class="form-label">Description du jeu <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" name="description" id="description" aria-describedby="description" placeholder="" minlength="150" maxlength="500" required><?= $game->game_description ?></textarea>
+                                    <textarea class="form-control" name="description" id="description" aria-describedby="description" pattern="<?= REGEX_TEXTAREA ?>" placeholder="" minlength="150" maxlength="500" required><?= $game->game_description ?? '' ?></textarea>
                                 </div>
                             </div>
                             <div class="row">

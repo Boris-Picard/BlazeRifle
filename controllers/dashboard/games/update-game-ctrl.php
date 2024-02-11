@@ -31,22 +31,25 @@ try {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Nettoyer et valider le nom du jeu
-        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS); // Nettoie et récupère le nom du jeu depuis le formulaire.
+
         if (empty($name)) {
-            $error['name'] = 'Veuillez renseigner un nom';
+            $error['name'] = 'Veuillez renseigner un nom'; // Vérifie que le nom du jeu n'est pas vide.
         } else {
-            if (strlen($name) > 150 || strlen($name) < 2) {
-                $error['name'] = 'Veuillez renseigner une longueur de jeu valide';
+            $isOk = filter_var($name, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NAME . '/')));
+            if (!$isOk) {
+                $error['name'] = 'Veuillez renseigner un nom de jeu correct';
             }
         }
 
-        // Nettoyer et valider la description du jeu
-        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS); // Nettoie et récupère la description du jeu depuis le formulaire.
+
         if (empty($description)) {
-            $error['description'] = 'Veuillez renseigner une description';
+            $error['description'] = 'Veuillez renseigner une description'; // Vérifie que la description n'est pas vide.
         } else {
-            if (strlen($description) > 500 || strlen($description) < 150) {
-                $error['description'] = 'Veuillez renseigner une longueur de description valide';
+            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/')));
+            if (!$isOk) {
+                $error['description'] = 'Veuillez renseigner une description de jeu correct';
             }
         }
 
