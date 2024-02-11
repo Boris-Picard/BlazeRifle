@@ -8,7 +8,7 @@ $check = CheckPermissions::checkAdmin();
 
 try {
     // Récupération de l'identifiant de l'événement à supprimer depuis les paramètres de la requête
-    $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_SPECIAL_CHARS));
+    $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
     // Récupération de l'événement à supprimer depuis la base de données
     $console = Console::get($id_console);

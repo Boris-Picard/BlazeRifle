@@ -10,6 +10,14 @@ $listCategories = true;
 
 try {
     $categories = Category::getAll();
+
+    // Récupération du message stocké en session (s'il existe)
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    // Suppression du message en session après l'avoir récupéré
+    if (isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
 } catch (PDOException $e) {
     $error['database'] = $e->getMessage();
 }

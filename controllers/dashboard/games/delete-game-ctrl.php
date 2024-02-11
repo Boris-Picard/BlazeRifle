@@ -9,7 +9,7 @@ $check = CheckPermissions::checkAdmin();
 
 try {
     // Récupération de l'ID du jeu depuis les paramètres de l'URL
-    $id_game = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS));
+    $id_game = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
 
     // Récupération des informations du jeu à supprimer
     $game = Game::get($id_game);

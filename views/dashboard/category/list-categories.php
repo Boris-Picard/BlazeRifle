@@ -4,6 +4,7 @@
         <div class="col-xl-10 mx-auto mt-5">
             <div class="row">
                 <div class="col-12">
+                    <h1 class="fw-bold text-uppercase">liste des catégories</h1>
                 </div>
             </div>
             <div class="row">
@@ -35,13 +36,13 @@
                                 <?php if (isset($categories)) {
                                     foreach ($categories as $category) { ?>
                                         <tr>
-                                            <td class="fw-semibold"><?= $category->label ?></td>
+                                            <td class="fw-semibold"><?= htmlspecialchars($category->label) ?></td>
                                             <!-- <td class="fw-semibold text-break"><?= $article->console_name ?></td> -->
                                             <td>
-                                                <a href="/controllers/dashboard/category/update-category-ctrl.php?id=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/category/update-category-ctrl.php?id_category=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>
                                                 </a>
-                                                <a href="/controllers/dashboard/category/delete-category-ctrl.php?id=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/category/delete-category-ctrl.php?id_category=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                                 </a>
                                             </td>

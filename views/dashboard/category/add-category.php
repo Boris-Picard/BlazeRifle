@@ -4,7 +4,7 @@
             <div class="col-xl-10 mx-auto mt-5">
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="fw-bold text-uppercase">Ajouter un article</h1>
+                        <h1 class="fw-bold text-uppercase">Ajouter une catégorie</h1>
                     </div>
                 </div>
                 <div class="row">
