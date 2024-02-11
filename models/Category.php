@@ -59,15 +59,21 @@ class Category
     }
 
     /**
-     * Récupère toutes les catégories de la base de données.
+     * Récupère toutes les catégories de la base de données avec le nombre d'articles associés à chaque catégorie.
      * 
-     * @return array|false Retourne un tableau d'objets de catégories ou false en cas d'échec.
+     * Cette requête effectue une jointure entre les tables `categories` et `articles` pour compter le nombre d'articles dans chaque catégorie, incluant les catégories sans articles (comptées comme 0).
+     * 
+     * @return array|false 
      */
+
     public static function getAll(): array|false
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM `categories`;';
+        $sql = 'SELECT `categories`.`id_category`, `categories`.`label`, COUNT(`articles`.`id_article`) AS article_count 
+        FROM `categories`
+        LEFT JOIN `articles` ON `articles`.`id_category` = `categories`.`id_category`
+        GROUP BY `categories`.`id_category`;';
 
         $sth = $pdo->query($sql);
 

@@ -113,6 +113,7 @@ class Game
         $pdo = Database::connect();
 
         $sql = 'SELECT * FROM `games`
+        -- INNER JOIN `consoles_games` ON `consoles_games`.`id_game`=`games`.`id_game`
         WHERE 1=1;';
 
         $sth = $pdo->query($sql);

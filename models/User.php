@@ -257,7 +257,7 @@ class User
 
         $sth->execute();
 
-        if($sth->rowCount() <= 0) {
+        if ($sth->rowCount() <= 0) {
             throw new Exception('erreur mail');
         } else {
             return true;

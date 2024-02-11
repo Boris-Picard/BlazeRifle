@@ -9,6 +9,7 @@
                         <a href="/controllers/dashboard/dashboard-ctrl.php" class="py-3 nav-link navLink <?= $dashboard ? 'active' : '' ?> text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Dashboard</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-person-circle px-3 fw-bold"></i>Les Comptes</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-chat px-3 fw-bold"></i>Les Commentaires</span></a>
+                        
                         <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="<?= $listArticles ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-pen px-3 fw-bold"></i>Les Articles</span></a>
                         <a href="/controllers/dashboard/games/list-games-ctrl.php" class="<?= $listGames ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-controller px-3 fw-bold"></i>Les Jeux</span></a>
                         <a href="/controllers/dashboard/consoles/list-consoles-ctrl.php" class="<?= $listConsoles ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-xbox px-3 fw-bold"></i>Les Consoles</span></a>

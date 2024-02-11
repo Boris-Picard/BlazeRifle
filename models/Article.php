@@ -16,7 +16,7 @@ class Article
     private ?string $updated_at;
     private ?string $deleted_at;
     private ?string $confirmed_at;
-    private int $id_game;
+    private ?int $id_game;
     private int $id_category;
     private int $id_user;
 
@@ -33,7 +33,7 @@ class Article
         ?string $deleted_at = null,
         int $id_article = 0,
         ?string $confirmed_at = null,
-        int $id_game = 0,
+        ?int $id_game = null,
         int $id_category = 0,
         int $id_user = 0
     ) {
@@ -174,12 +174,12 @@ class Article
         return $this->confirmed_at;
     }
 
-    public function setIdGame(int $id_game)
+    public function setIdGame(?int $id_game)
     {
         $this->id_game = $id_game;
     }
 
-    public function getIdGame(): int
+    public function getIdGame(): ?int
     {
         return $this->id_game;
     }
@@ -256,11 +256,24 @@ class Article
             $offset = ($page - 1) * $limit;
         }
 
-        $sql = 'SELECT * FROM `articles`
+        $sql = 
+        'SELECT `articles`.`id_article`,
+        `articles`.`article_picture`,
+        `articles`.`article_title`,
+        `articles`.`article_description`,
+        `articles`.`created_at` AS article_created_at,
+        `articles`.`deleted_at` AS article_deleted_at,
+        `articles`.`confirmed_at` AS article_confirmed_at,
+        `games`.`game_name`,
+        `games`.`id_game`,
+        `users`.`pseudo`,
+        `users`.`created_at` AS user_created_at
+        FROM `articles`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
+        INNER JOIN `users` ON `users`.`id_user`=`articles`.`id_user`
         WHERE 1=1';
 
-        $showDeletedAt ? $sql .= ' AND `deleted_at` IS NOT NULL ' : $sql .= ' AND `deleted_at` IS NULL ';
+        $showDeletedAt ? $sql .= ' AND `articles`.`deleted_at` IS NOT NULL ' : $sql .= ' AND `articles`.`deleted_at` IS NULL ';
 
         if (!is_null($id_game)) {
             $sql .= ' AND `games`.`id_game`=:id_game ';

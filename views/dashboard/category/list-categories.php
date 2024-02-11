@@ -37,7 +37,7 @@
                                     foreach ($categories as $category) { ?>
                                         <tr>
                                             <td class="fw-semibold"><?= htmlspecialchars($category->label) ?></td>
-                                            <!-- <td class="fw-semibold text-break"><?= $article->console_name ?></td> -->
+                                            <td class="fw-semibold text-break"><?= $category->article_count ?></td>
                                             <td>
                                                 <a href="/controllers/dashboard/category/update-category-ctrl.php?id_category=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>

@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-3" id="id_game">
                                     <div><small class="form-text text-danger"><?= $error['id_game'] ?? '' ?></small></div>
                                     <label for="id_game" class="mb-2">Jeux de l'article <span class="text-danger">*</span></label>
                                     <select class="form-select" name="id_game">
@@ -84,7 +84,7 @@
                                 <div class="mb-3 col-md-6">
                                     <div><small class="form-text text-danger"><?= $error['id_category'] ?? '' ?></small></div>
                                     <label for="id_category" class="mb-2">Categorie de l'article <span class="text-danger">*</span></label>
-                                    <select class="form-select" name="id_category">
+                                    <select class="form-select" name="id_category" id="id_category">
                                         <option selected disabled></option>
                                         <?php foreach ($categories as $category) { ?>
                                             <option value="<?= $category->id_category ?>" <?= (isset($id_category) && $id_category == $category->id_category) ? 'selected' : '' ?>><?= $category->label ?></option>

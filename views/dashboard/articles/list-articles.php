@@ -55,6 +55,9 @@
                                     <th scope="col">
                                         Jeux
                                     </th>
+                                    <th scope="col">
+                                        Consoles
+                                    </th>
                                     <th scope="col">Auteur</th>
                                     <th scope="col">Commentaires</th>
                                     <th scope="col">Image</th>
@@ -71,7 +74,8 @@
                                     foreach ($articles as $article) { ?>
                                         <tr>
                                             <td class="fw-semibold"><?= $article->game_name ?></td>
-                                            <td class="fw-semibold text-break">Boris</td>
+                                            <td class="fw-semibold"><?= $game->consoles ?></td>
+                                            <td class="fw-semibold text-break"><?= $article->pseudo ?></td>
                                             <td class="fw-semibold text-break">5</td>
                                             <td class="fw-semibold">
                                                 <?php if (isset($article->article_picture)) { ?>
@@ -80,7 +84,7 @@
                                                     </div>
                                                 <?php } ?>
                                             </td>
-                                            <td class="fw-semibold"><?= $article->created_at ?></td>
+                                            <td class="fw-semibold"><?= $article->article_created_at ?></td>
                                             <td>
                                                 <a href="/controllers/dashboard/articles/update-article-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>

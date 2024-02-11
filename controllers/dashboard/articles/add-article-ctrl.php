@@ -12,6 +12,7 @@ $check = CheckPermissions::checkAdmin();
 
 try {
     $listArticles = true;
+    $addArticle = true;
     // Récupération de la liste de tous les jeux
     $games = Game::getAll();
 
@@ -98,6 +99,16 @@ try {
         $gamesId = array_column($games, 'id_game');
         $categoryId = array_column($categories, 'id_category');
 
+        $id_category = intval(filter_input(INPUT_POST, 'id_category', FILTER_SANITIZE_NUMBER_INT));
+
+        if (empty($id_category)) {
+            $error['id_category'] = 'Veuillez sélectionner une catégorie';
+        } else {
+            if (!in_array($id_category, $categoryId)) {
+                $error['id_category'] = 'Ce n\'est pas une catégorie';
+            }
+        }
+
         // Nettoyage du select du jeu et validation
         $id_game = intval(filter_input(INPUT_POST, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
@@ -109,15 +120,7 @@ try {
             }
         }
 
-        $id_category = intval(filter_input(INPUT_POST, 'id_category', FILTER_SANITIZE_NUMBER_INT));
 
-        if (empty($id_category)) {
-            $error['id_category'] = 'Veuillez sélectionner une catégorie';
-        } else {
-            if (!in_array($id_category, $gamesId)) {
-                $error['id_category'] = 'Ce n\'est pas une catégorie';
-            }
-        }
 
         // Nettoyage et validation de la photo de l'article et validation
         try {
@@ -176,9 +179,9 @@ try {
             $article->setArticleDescription($description);
             $article->setFirstSection($firstSection);
             $article->setSecondSection($secondSection);
-            $article->setIdGame($id_game);
             $article->setIdCategory($id_category);
             $article->setIdUser($id_user);
+            $article->setIdGame($id_game);
 
             // Insertion de l'article et validation dans la base de données
             $result = $article->insert();

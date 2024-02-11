@@ -16,12 +16,9 @@ try {
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
     $nbArticles = intval(filter_input(INPUT_GET, 'nbArticles', FILTER_SANITIZE_SPECIAL_CHARS));
-    
+
     // Récupération de la liste de tous les jeux
     $games = Game::getAll();
-
-    var_dump($games);
-    die;
 
     // Si l'ordre n'est pas spécifié dans l'URL, par défaut, il est défini à 'DESC'
     if ($order == null) {
@@ -34,7 +31,6 @@ try {
 
     // Récupération de la liste des articles en fonction des paramètres
     $articles = Article::getAll($id_gameToUse, showDeletedAt: false, limit: $nbArticlesToUse, order: $order);
-
     // Récupération des détails de l'article spécifié par son ID
     $article = Article::get($id_article);
 
@@ -53,7 +49,7 @@ try {
         unset($_SESSION['msg']);
     }
 } catch (PDOException $e) {
-    die('Erreur listing : ' . $e->getMessage());
+    die('Erreur : ' . $e->getMessage());
 }
 
 

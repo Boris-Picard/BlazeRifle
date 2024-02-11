@@ -10,7 +10,7 @@ $listCategories = true;
 
 try {
     $categories = Category::getAll();
-
+    
     // Récupération du message stocké en session (s'il existe)
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
 
