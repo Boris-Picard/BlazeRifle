@@ -35,7 +35,7 @@
                                 <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
                                     <label for="description" class="form-label">Description du jeu <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" name="description" id="description" aria-describedby="description" placeholder="" minlength="150" maxlength="500" required><?= $description ?? '' ?></textarea>
+                                    <textarea class="form-control" name="description" id="description" aria-describedby="description" pattern="<?= REGEX_TEXTAREA ?>" placeholder="" minlength="150" maxlength="500" required><?= $description ?? '' ?></textarea>
                                 </div>
                             </div>
                             <div class="row">

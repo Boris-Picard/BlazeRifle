@@ -18,6 +18,14 @@ try {
     $game = Game::get($id_game);
     $console_id = Game::getConsoleIdsByGameId($id_game);
 
+    // Récupération du message stocké en session
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    // Suppression du message en session s'il existe
+    if (isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
+
     $consoles = Console::getAll(); // Récupère toutes les consoles disponibles dans la base de données.
     // Vérifier si la requête est une soumission de formulaire (POST)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -139,8 +147,8 @@ try {
                 $result = $pdo->commit(); // Valide la transaction.
 
                 if ($result) {
-                $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).'; // Affiche un message de succès si l'insertion est réussie.
-                header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers la liste des jeux.
+                    $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).'; // Affiche un message de succès si l'insertion est réussie.
+                    header('Refresh:3; url=list-games-ctrl.php'); // Redirige vers la liste des jeux.
                 }
             } catch (PDOException $e) {
                 $pdo->rollback(); // Annule la transaction en cas d'erreur.

@@ -9,20 +9,21 @@ require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
 $check = CheckPermissions::checkAdmin(); // Vérifie si l'utilisateur a les droits d'administrateur.
 
-$listGames = true; 
+$listGames = true;
 
 try {
     $consoles = Console::getAll(); // Récupère toutes les consoles disponibles dans la base de données.
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS); // Nettoie et récupère le nom du jeu depuis le formulaire.
 
         if (empty($name)) {
             $error['name'] = 'Veuillez renseigner un nom'; // Vérifie que le nom du jeu n'est pas vide.
         } else {
-            if (strlen($name) > 150 || strlen($name) < 2) {
-                $error['name'] = 'Veuillez renseigner une longueur valable pour le nom du jeu'; // Vérifie la longueur du nom du jeu.
+            $isOk = filter_var($name, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_NAME . '/')));
+            if (!$isOk) {
+                $error['name'] = 'Veuillez renseigner un nom de jeu correct'; 
             }
         }
 
@@ -31,8 +32,9 @@ try {
         if (empty($description)) {
             $error['description'] = 'Veuillez renseigner une description'; // Vérifie que la description n'est pas vide.
         } else {
-            if (strlen($description) > 500 || strlen($description) < 150) {
-                $error['description'] = 'Veuillez renseigner une longueur valable pour la description du jeu'; // Vérifie la longueur de la description.
+            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/')));
+            if (!$isOk) {
+                $error['description'] = 'Veuillez renseigner une description de jeu correct'; 
             }
         }
 

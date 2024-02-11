@@ -9,6 +9,11 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
+                        <?= $msg ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
                         <?php if (isset($alert['success'])) { ?>
                             <div class="alert alert-success">
                                 <?= $alert['success'] ?>
@@ -64,14 +69,8 @@
                                     <label for="">Séléctionnez au moins une console <span class="text-danger">*</span></label>
                                     <?php foreach ($consoles as $key => $console) { ?>
                                         <div class="form-check">
-                                            <input
-                                            class="form-check-input" 
-                                            type="checkbox" 
-                                            value="<?=$console->id_console?>" 
-                                            id="console<?=$key?>"
-                                            name="consoles[]"
-                                            <?= in_array($console->console_name, explode(',', $game->consoles ?? 0)) ? 'checked' : '' ?>>
-                                            <label class="form-check-label" for="console<?=$key?>">
+                                            <input class="form-check-input" type="checkbox" value="<?= $console->id_console ?>" id="console<?= $key ?>" name="consoles[]" <?= in_array($console->console_name, explode(',', $game->consoles ?? 0)) ? 'checked' : '' ?>>
+                                            <label class="form-check-label" for="console<?= $key ?>">
                                                 <?= htmlspecialchars($console->console_name) ?>
                                             </label>
                                         </div>
