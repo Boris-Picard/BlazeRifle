@@ -74,7 +74,7 @@
                                     foreach ($articles as $article) { ?>
                                         <tr>
                                             <td class="fw-semibold"><?= $article->game_name ?></td>
-                                            <td class="fw-semibold"><?= $game->consoles ?></td>
+                                            <td class="fw-semibold"><?= $article->console_names ?></td>
                                             <td class="fw-semibold text-break"><?= $article->pseudo ?></td>
                                             <td class="fw-semibold text-break">5</td>
                                             <td class="fw-semibold">

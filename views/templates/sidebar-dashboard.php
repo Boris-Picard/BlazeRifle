@@ -9,13 +9,26 @@
                         <a href="/controllers/dashboard/dashboard-ctrl.php" class="py-3 nav-link navLink <?= $dashboard ? 'active' : '' ?> text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Dashboard</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-person-circle px-3 fw-bold"></i>Les Comptes</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-chat px-3 fw-bold"></i>Les Commentaires</span></a>
-                        
-                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="<?= $listArticles ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-pen px-3 fw-bold"></i>Les Articles</span></a>
+                        <div class="dropend">
+                            <a class="<?= $listArticles ? 'active' : '' ?> text-start py-3 nav-link navLink text-capitalize sidebarLink btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span><i class="bi bi-pen px-3 fw-bold"></i></span>
+                                écrire/Voir les articles
+                            </a>
+                            <ul class="dropdown-menu w-100 border-0 shadow-lg">
+                                <li>
+                                    <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class=" <?= $listArticles ? 'active' : '' ?> text-start py-3 nav-link navLink text-capitalize sidebarLink" href="#"><span><i class="bi bi-pen px-3 fw-bold"></i></span>Articles par jeux</a>
+                                </li>
+                                <li>
+                                    <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-file-arrow-up px-3 fw-bold"></i>Les Bons plans</span></a>
+                                </li>
+                                <li>
+                                    <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-book px-3 fw-bold"></i>Les Guides</span></a>
+                                </li>
+                            </ul>
+                        </div>
                         <a href="/controllers/dashboard/games/list-games-ctrl.php" class="<?= $listGames ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-controller px-3 fw-bold"></i>Les Jeux</span></a>
                         <a href="/controllers/dashboard/consoles/list-consoles-ctrl.php" class="<?= $listConsoles ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-xbox px-3 fw-bold"></i>Les Consoles</span></a>
-                        <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-book px-3 fw-bold"></i>Les Guides</span></a>
                         <a href="/controllers/dashboard/category/list-categories-ctrl.php" class="<?= $listCategories ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-tag px-3 fw-bold"></i>Category</span></a>
-                        <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-file-arrow-up px-3 fw-bold"></i>Les Bons plans</span></a>
                         <a href="/controllers/dashboard/events/list-events-ctrl.php" class="py-3 <?= $listEvents ? 'active' : '' ?> nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-calendar-date px-3 fw-bold"></i>Calendrier des events</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-patch-question px-3 fw-bold"></i>Le Quiz</span></a>
                         <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-envelope px-3 fw-bold"></i>Nous contacter</span></a>
