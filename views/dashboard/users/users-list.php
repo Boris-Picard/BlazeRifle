@@ -32,7 +32,6 @@
                                         Nom
                                     </th>
                                     <th scope="col">Pseudo</th>
-                                    <th scope="col">Email</th>
                                     <th scope="col">Picture</th>
                                     <th scope="col">Date de création</th>
                                     <th scope="col">Role</th>
@@ -48,7 +47,6 @@
                                         </td>
                                         <td class="fw-semibold"><?= $user->lastname ?></td>
                                         <td class="fw-semibold text-break"><?= $user->pseudo ?></td>
-                                        <td class="fw-semibold text-break"><?= $user->email ?></td>
                                         <td class="fw-semibold">
                                             <?php if (isset($user->user_picture)) { ?>
                                                 <div class="ratio ratio-1x1">
@@ -66,7 +64,7 @@
                                             <?php } ?>
                                         </td>
                                         <td>
-                                            <a href="/controllers/dashboard/users/update-user-ctrl.php?email=<?= $user->email ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <a href="/controllers/dashboard/users/update-user-ctrl.php?id_user=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-pencil-square text-dark fs-4"></i>
                                             </a>
                                             <a href="/controllers/dashboard/users/delete-user-ctrl.php?id=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">

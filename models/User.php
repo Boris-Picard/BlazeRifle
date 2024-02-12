@@ -284,4 +284,29 @@ class User
 
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public static function get(int $id_user): object|false
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT 
+        `users`.`id_user`,
+        `users`.`firstname`,
+        `users`.`lastname`,
+        `users`.`pseudo`,
+        `users`.`user_picture`,
+        `users`.`created_at` AS user_created_at,
+        `users`.`role`,
+        `users`.`confirmed_at` AS user_confirmed_at
+        FROM `users`
+        WHERE `id_user`=:id_user;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->fetch(PDO::FETCH_OBJ);
+    }
 }
