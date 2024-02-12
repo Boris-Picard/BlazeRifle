@@ -39,7 +39,9 @@
                                                 </a>
                                                 <div class="card-text mb-3">
                                                     <small>
-                                                        <?= $article->created_at ?>
+                                                        le <?= $article->formattedDate ?>
+                                                        à
+                                                        <?= $article->formattedHour ?>
                                                         <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                         <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= htmlspecialchars($article->game_name) ?></span>
                                                         <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold"><?= htmlspecialchars($article->console_name) ?></span>
@@ -65,7 +67,7 @@
                                                 <?= htmlspecialchars($article->article_title) ?>
                                             </a>
                                             <div class="card-text mb-3">
-                                                <small class="text-muted"><?= $article->created_at ?>
+                                                <small class="text-muted"><?= $article->article_created_at ?>
                                                     <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
                                                     <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold"><?= htmlspecialchars($article->game_name) ?></span>
                                                 </small>

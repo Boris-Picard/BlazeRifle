@@ -29,9 +29,9 @@ try {
         if (empty($title)) {
             $error['title'] = 'Veuillez rentrer un titre';
         } else {
-            // Validation de la longueur du titre
-            if (strlen($title) < 10 || strlen($title) > 200) {
-                $error['title'] = 'La longueur du titre n\'est pas valide';
+            $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            if (!$isOk) {
+                $error['title'] = 'Veuillez renseigner un titre de jeu correct';
             }
         }
 
@@ -42,8 +42,9 @@ try {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
             // Validation de la longueur de la description
-            if (strlen($description) < 50 || strlen($description) > 1000) {
-                $error["description"] = 'La longueur de la description doit faire minimum 50 caractères et maximum 1000 caractères';
+            $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/')));
+            if (!$isOk) {
+                $error['description'] = 'Veuillez renseigner une description de jeu correct';
             }
         }
 
@@ -53,9 +54,9 @@ try {
         if (empty($secondTitle)) {
             $error['secondTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            // Validation de la longueur du sous-titre
-            if (strlen($secondTitle) < 10 || strlen($secondTitle) > 200) {
-                $error['secondTitle'] = 'La longueur du sous-titre n\'est pas valide';
+            $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            if (!$isOk) {
+                $error['secondTitle'] = 'Veuillez renseigner un titre de jeu correct';
             }
         }
 
@@ -65,9 +66,9 @@ try {
         if (empty($thirdTitle)) {
             $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
         } else {
-            // Validation de la longueur du sous-titre
-            if (strlen($thirdTitle) < 10 || strlen($thirdTitle) > 200) {
-                $error['thirdTitle'] = 'La longueur du sous-titre n\'est pas valide';
+            $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            if (!$isOk) {
+                $error['thirdTitle'] = 'Veuillez renseigner un titre de jeu correct';
             }
         }
 
@@ -77,9 +78,9 @@ try {
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
-            // Validation de la longueur de la première section
-            if (strlen($firstSection) < 250 || strlen($firstSection) > 5000) {
-                $error['firstSection'] = 'La longueur du texte de la première section n\'est pas correcte';
+            $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
+            if (!$isOk) {
+                $error['firstSection'] = 'Veuillez renseigner un titre de jeu correct';
             }
         }
 
@@ -89,9 +90,9 @@ try {
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
-            // Validation de la longueur de la deuxième section
-            if (strlen($secondSection) < 250 || strlen($secondSection) > 5000) {
-                $error['secondSection'] = 'La longueur du texte de la deuxième section n\'est pas correcte';
+            $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
+            if (!$isOk) {
+                $error['secondSection'] = 'Veuillez renseigner un titre de jeu correct';
             }
         }
 
@@ -119,8 +120,6 @@ try {
                 $error['id_game'] = 'Ce n\'est pas un jeu valide';
             }
         }
-
-
 
         // Nettoyage et validation de la photo de l'article et validation
         try {

@@ -256,22 +256,24 @@ class Article
             $offset = ($page - 1) * $limit;
         }
 
-        $sql = 
-        'SELECT `articles`.`id_article`,
-        `articles`.`article_picture`,
-        `articles`.`article_title`,
-        `articles`.`article_description`,
-        `articles`.`created_at` AS article_created_at,
-        `articles`.`deleted_at` AS article_deleted_at,
-        `articles`.`confirmed_at` AS article_confirmed_at,
-        `games`.`game_name`,
-        `games`.`id_game`,
-        `users`.`pseudo`,
-        `users`.`created_at` AS user_created_at
-        FROM `articles`
-        INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
-        INNER JOIN `users` ON `users`.`id_user`=`articles`.`id_user`
-        WHERE 1=1';
+        $sql =
+            'SELECT `articles`.`id_article`,
+            `articles`.`article_picture`,
+            `articles`.`article_title`,
+            `articles`.`article_description`,
+            `articles`.`created_at` AS article_created_at,
+            `articles`.`deleted_at` AS article_deleted_at,
+            `articles`.`confirmed_at` AS article_confirmed_at,
+            `categories`.`label`,
+            `games`.`game_name`,
+            `games`.`id_game`,
+            `users`.`pseudo`,
+            `users`.`created_at` AS user_created_at
+            FROM `articles`
+            INNER JOIN `categories` ON `categories`.`id_category`=`articles`.`id_category`
+            INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
+            INNER JOIN `users` ON `users`.`id_user`=`articles`.`id_user`
+            WHERE 1=1';
 
         $showDeletedAt ? $sql .= ' AND `articles`.`deleted_at` IS NOT NULL ' : $sql .= ' AND `articles`.`deleted_at` IS NULL ';
 
@@ -310,7 +312,9 @@ class Article
         $pdo = Database::connect();
 
         $sql = 'SELECT * FROM `articles`
+        INNER JOIN `categories` ON `categories`.`id_category`=`articles`.`id_category`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
+        INNER JOIN `users` ON `users`.`id_user`=`articles`.`id_user`
         WHERE `id_article`=:id_article';
 
         $sth = $pdo->prepare($sql);
@@ -322,6 +326,47 @@ class Article
         $sth->execute();
 
         $result = $sth->fetch(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
+    public static function getAllConsoles(int $id_game)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT `articles`.`id_article`,
+                `articles`.`article_picture`,
+                `articles`.`article_title`,
+                `articles`.`article_description`,
+                `articles`.`created_at` AS article_created_at,
+                `articles`.`deleted_at` AS article_deleted_at,
+                `articles`.`confirmed_at` AS article_confirmed_at,
+                `categories`.`label`,
+                `games`.`game_name`,
+                `games`.`id_game`,
+                `consoles`.`console_name`,
+                `users`.`pseudo`,
+                `users`.`created_at` AS user_created_at
+                FROM `articles`
+                INNER JOIN 
+                `categories` ON `categories`.`id_category`=`articles`.`id_category`
+                INNER JOIN 
+                `games` ON `games`.`id_game`=`articles`.`id_game`
+                INNER JOIN 
+                `users` ON `users`.`id_user`=`articles`.`id_user`
+                LEFT JOIN 
+                `consoles_games` ON `games`.`id_game` = `consoles_games`.`id_game`
+                LEFT JOIN 
+                `consoles` ON `consoles_games`.`id_console` = `consoles`.`id_console`
+                WHERE `articles`.`id_game`=:id_game;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        $result = $sth->fetchAll(PDO::FETCH_OBJ);
 
         return $result;
     }

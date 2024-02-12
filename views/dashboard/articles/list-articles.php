@@ -4,7 +4,7 @@
         <div class="col-xl-10 mx-auto mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="fw-bold text-uppercase">liste des articles</h1>
+                    <h1 class="fw-bold text-uppercase">liste des articles par jeux</h1>
                 </div>
             </div>
             <div class="row">
@@ -56,15 +56,15 @@
                                         Jeux
                                     </th>
                                     <th scope="col">
-                                        Consoles
+                                        Catégorie
                                     </th>
                                     <th scope="col">Auteur</th>
                                     <th scope="col">Commentaires</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">
                                         Creation
-                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id_game=<?= $id_game ?>&order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
-                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id_game=<?= $id_game ?>&order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
+                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
+                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -74,7 +74,7 @@
                                     foreach ($articles as $article) { ?>
                                         <tr>
                                             <td class="fw-semibold"><?= $article->game_name ?></td>
-                                            <td class="fw-semibold"><?= $article->console_names ?></td>
+                                            <td class="fw-semibold text-break"><?= $article->label ?></td>
                                             <td class="fw-semibold text-break"><?= $article->pseudo ?></td>
                                             <td class="fw-semibold text-break">5</td>
                                             <td class="fw-semibold">

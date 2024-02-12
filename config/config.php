@@ -5,8 +5,8 @@ define('DSN', 'mysql:host=localhost;dbname=blazerifle');
 define('USER', 'BorisRifle');
 define('PASSWORD', 'r.g[WZL_FZkqM0Gs');
 
-define('REGEX_TITLE', '^[a-zA-Z0-9 .,\'éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{10,150}+$');
-define('REGEX_SECTION', "^[a-zA-Z0-9 '.,éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:-]{250,1500}+$");
+define('REGEX_TITLE', "[a-zA-Z0-9 .,éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:'-]{10,150}+$");
+define('REGEX_SECTION', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{2,5000}+$");
 define('REGEX_NAME', '^[A-Za-z-éèêëàâäôöûüç\' ]{2,150}+$');
 define('IMAGE_TYPES',  ['image/jpeg', 'image/png', 'image/avif']);
 define('MAX_FILESIZE', 2 * 1024 * 1024);
@@ -23,7 +23,7 @@ define('REGEX_FIRSTNAME', "^[A-Za-z-éèêëàâäôöûüç' ]+$");
 define('REGEX_PSEUDO', '^[a-zA-Z0-9.-_]{3,20}+$');
 define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}+$');
 define('REGEX_ZIPCODE', '^[0-9]{5}$');
-define('REGEX_TEXTAREA', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{150,500}$");
+define('REGEX_TEXTAREA', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{2,500}$");
 
 
 

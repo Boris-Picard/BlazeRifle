@@ -33,7 +33,6 @@ try {
     $articles = Article::getAll($id_gameToUse, showDeletedAt: false, limit: $nbArticlesToUse, order: $order);
     // Récupération des détails de l'article spécifié par son ID
     $article = Article::get($id_article);
-
     // Si l'article spécifié existe
     if ($article) {
         // Archivage de l'article
