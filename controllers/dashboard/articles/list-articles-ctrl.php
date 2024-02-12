@@ -33,13 +33,21 @@ try {
     $articles = Article::getAll($id_gameToUse, showDeletedAt: false, limit: $nbArticlesToUse, order: $order);
     // Récupération des détails de l'article spécifié par son ID
     $article = Article::get($id_article);
+    var_dump($article);
+    // die;
     // Si l'article spécifié existe
     if ($article) {
         // Archivage de l'article
         Article::archive($id_article, false);
-
         // Redirection vers le contrôleur de gestion de la liste des articles
         header('location: /controllers/dashboard/articles/list-articles-ctrl.php');
+        die;
+    }
+
+    if (is_null($article->article_confirmed_at)) {
+        Article::confirm($id_article);
+        // header('location: /controllers/dashboard/articles/list-articles-ctrl.php');
+        // die;
     }
 
     // Récupération et nettoyage du message de session

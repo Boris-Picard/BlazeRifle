@@ -66,6 +66,7 @@
                                         <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
                                         <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
+                                    <th scope="col">Confirmation</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -85,6 +86,9 @@
                                                 <?php } ?>
                                             </td>
                                             <td class="fw-semibold"><?= $article->article_created_at ?></td>
+                                            <td class="fw-semibold text-break">
+                                                <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id_article=<?= $article->id_article ?>" class="btn btn-secondary btn-sm">En attente</a>
+                                            </td>
                                             <td>
                                                 <a href="/controllers/dashboard/articles/update-article-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>

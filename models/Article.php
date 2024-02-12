@@ -330,45 +330,20 @@ class Article
         return $result;
     }
 
-    public static function getAllConsoles(int $id_game)
+    public static function confirm(int $id_article)
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT `articles`.`id_article`,
-                `articles`.`article_picture`,
-                `articles`.`article_title`,
-                `articles`.`article_description`,
-                `articles`.`created_at` AS article_created_at,
-                `articles`.`deleted_at` AS article_deleted_at,
-                `articles`.`confirmed_at` AS article_confirmed_at,
-                `categories`.`label`,
-                `games`.`game_name`,
-                `games`.`id_game`,
-                `consoles`.`console_name`,
-                `users`.`pseudo`,
-                `users`.`created_at` AS user_created_at
-                FROM `articles`
-                INNER JOIN 
-                `categories` ON `categories`.`id_category`=`articles`.`id_category`
-                INNER JOIN 
-                `games` ON `games`.`id_game`=`articles`.`id_game`
-                INNER JOIN 
-                `users` ON `users`.`id_user`=`articles`.`id_user`
-                LEFT JOIN 
-                `consoles_games` ON `games`.`id_game` = `consoles_games`.`id_game`
-                LEFT JOIN 
-                `consoles` ON `consoles_games`.`id_console` = `consoles`.`id_console`
-                WHERE `articles`.`id_game`=:id_game;';
+        $sql = 'UPDATE `articles` SET `confirmed_at`= NOW()
+        WHERE `id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+        $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT);
 
         $sth->execute();
 
-        $result = $sth->fetchAll(PDO::FETCH_OBJ);
-
-        return $result;
+        return $sth->rowCount() > 0;
     }
 
     /**

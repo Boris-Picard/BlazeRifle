@@ -15,9 +15,7 @@ try {
     $consoleId = $id_console == 0 ? null : $id_console;
 
 
-    $getAllConsoles = Article::getAllConsoles($gameId);
-    var_dump($getAllConsoles);
-    die;
+    
     // Récupérer les 4 premiers articles pour le jeu spécifié, triés par ordre décroissant
     $articles = Article::getAll($gameId, limit: 4, order: 'DESC');
     // Récupérer les 4 articles suivants pour le jeu spécifié, triés par ordre décroissant, en commençant à partir du 5e article
