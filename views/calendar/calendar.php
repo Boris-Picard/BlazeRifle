@@ -64,10 +64,10 @@
                                                         <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase"><?= htmlspecialchars($event->game_name) ?></span>
                                                     </div>
                                                     <a href="<?= $event->event_link ?>" target="_blank" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
-                                                        <?= htmlspecialchars($event->event_title) ?>
+                                                        <?= html_entity_decode($event->event_title) ?>
                                                     </a>
                                                     <p class="aCardBig mt-2">
-                                                        <?= htmlspecialchars($event->event_description) ?>
+                                                        <?= html_entity_decode($event->event_description) ?>
                                                     </p>
                                                     <div class="justify-content-between d-flex">
                                                         <small>
@@ -99,19 +99,19 @@
                                         <div class="col-12">
                                             <div class="card mt-3 p-0 border-0 bg-transparent">
                                                 <div class="card-img-top ratio ratio-16x9">
-                                                    <img src="/public/uploads/article/<?= $articles[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?=$article[0]->game_name?>">
+                                                    <img src="/public/uploads/article/<?= $articles[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articles[0]->game_name ?>">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
                                                     <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articles[0]->id_article ?>&id_game=<?= $articles[0]->id_game ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link"><?= htmlspecialchars($articles[0]->article_description) ?></a>
                                                     <div class="card-text mb-3">
                                                         <small class="text-muted">
-                                                            <?= $articles[0]->created_at ?>
+                                                            <?= $articles[0]->article_created_at ?>
                                                         </small>
                                                     </div>
                                                 </div>
                                             </div>
                                             <?php foreach ($articles as $article) {
-                                                if ($articles[0]->id_article != $article->id_article) { ?>
+                                                if ($articles[0]->id_article !== $article->id_article) { ?>
                                                     <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                                         <div class="row g-0 cardActuGuideRight">
                                                             <div class="col-auto">
@@ -120,11 +120,11 @@
                                                             <div class="col-md-6 p-0 ">
                                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
                                                                     <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                        <?= htmlspecialchars($article->article_title) ?>
+                                                                        <?= html_entity_decode($article->article_title) ?>
                                                                     </a>
                                                                     <p class="card-text">
                                                                         <small class="text-muted">
-                                                                            Le <?= $article->created_at ?>
+                                                                            Le <?= $article->article_created_at ?>
                                                                         </small>
                                                                     </p>
                                                                 </div>

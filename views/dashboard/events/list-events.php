@@ -39,8 +39,8 @@
                                 <?php foreach ($events as $event) { ?>
                                     <tr>
                                         <td class="fw-semibold"><?= $event->game_name ?></td>
-                                        <td class="fw-semibold text-break w-25"><?= $event->event_title ?></td>
-                                        <td class="fw-semibold text-break w-25"><?= $event->event_link ?></td>
+                                        <td class="fw-semibold text-break"><?= $event->event_title ?></td>
+                                        <td class="fw-semibold text-break"><?= $event->event_link ?></td>
                                         <td class="fw-semibold">
                                             <?php if (isset($event->event_picture)) { ?>
                                                 <div class="ratio ratio-1x1">

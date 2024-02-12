@@ -8,19 +8,19 @@ try {
     // Récupérer les ID de l'article et du jeu depuis la requête GET
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
-    $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
+    // $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
     //Récupération des IDs nettoyés. Si l'ID est égal à 0, alors je retourne la valeur null.
     $gameId = $id_game == 0 ? null : $id_game;
-    $consoleId = $id_console == 0 ? null : $id_console;
+    // $consoleId = $id_console == 0 ? null : $id_console;
 
     // Récupérer les détails de l'article
-    $article = Article::get($id_article, $id_console);
+    $article = Article::get($id_article);
 
     // Vérifier si l'article existe
     if (!empty($article)) {
         // Formater la date et l'heure de création de l'article
-        $timestamp = strtotime($article->created_at);
+        $timestamp = strtotime($article->article_created_at);
         $article->formattedHour = date('H:i', $timestamp);
         $article->formattedDate = date('d/m/Y', $timestamp);
     } else {
@@ -30,9 +30,9 @@ try {
     }
     
     // Récupération des articles pour les afficher dans la sidebar
-    $articleSidebar = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 7);
+    $articleSidebar = Article::getAll($gameId, false, 'DESC', limit: 7);
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
-    $articlesBottom = Article::getAll($gameId, $consoleId, false, 'DESC', limit: 3);
+    $articlesBottom = Article::getAll($gameId, false, 'DESC', limit: 3);
     // Gérer le formulaire de commentaire s'il est soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $textAreaComment = filter_input(INPUT_POST, 'textAreaComment', FILTER_SANITIZE_SPECIAL_CHARS);

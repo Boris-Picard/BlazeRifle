@@ -263,4 +263,25 @@ class User
             return true;
         }
     }
+
+    public static function getAll(): array|false
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT 
+        `users`.`id_user`,
+        `users`.`firstname`,
+        `users`.`lastname`,
+        `users`.`pseudo`,
+        `users`.`email`,
+        `users`.`user_picture`,
+        `users`.`created_at` AS user_created_at,
+        `users`.`role`,
+        `users`.`confirmed_at` AS user_confirmed_at
+        FROM `users`;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetchAll(PDO::FETCH_OBJ);
+    }
 }

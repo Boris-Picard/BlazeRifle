@@ -33,9 +33,16 @@ try {
     $articles = Article::getAll($id_gameToUse, showDeletedAt: false, limit: $nbArticlesToUse, order: $order);
     // Récupération des détails de l'article spécifié par son ID
     $article = Article::get($id_article);
-    var_dump($article);
-    // die;
     // Si l'article spécifié existe
+
+    Article::confirm($id_article);
+
+    // Récupération et nettoyage du message de session
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+    if (isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
+
     if ($article) {
         // Archivage de l'article
         Article::archive($id_article, false);
@@ -43,18 +50,7 @@ try {
         header('location: /controllers/dashboard/articles/list-articles-ctrl.php');
         die;
     }
-
-    if (is_null($article->article_confirmed_at)) {
-        Article::confirm($id_article);
-        // header('location: /controllers/dashboard/articles/list-articles-ctrl.php');
-        // die;
-    }
-
-    // Récupération et nettoyage du message de session
-    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
-    if (isset($_SESSION['msg'])) {
-        unset($_SESSION['msg']);
-    }
+    
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

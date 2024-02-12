@@ -49,41 +49,49 @@
                                     <th scope="col">
                                         Jeux
                                     </th>
+                                    <th scope="col">
+                                        Catégorie
+                                    </th>
                                     <th scope="col">Auteur</th>
                                     <th scope="col">Commentaires</th>
                                     <th scope="col">Image</th>
-                                    <th scope="col">Creation
-                                        <a href="/controllers/dashboard/articles/archive-articles-ctrl.php?id_game=<?= $id_game ?>&order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
-                                        <a href="/controllers/dashboard/articles/archive-articles-ctrl.php?id_game=<?= $id_game ?>&order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
+                                    <th scope="col">
+                                        Creation
+                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
+                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
+                                    <th scope="col">Suppression</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($articles as $article) { ?>
-                                    <tr>
-                                        <td class="fw-semibold"><?= $article->game_name ?></td>
-                                        <td class="fw-semibold text-break">Boris</td>
-                                        <td class="fw-semibold text-break">5</td>
-                                        <td class="fw-semibold">
-                                            <?php if (isset($article->article_picture)) { ?>
-                                                <div class="ratio ratio-1x1">
-                                                    <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>" class="object-fit-cover rounded-circle imgVehicles">
-                                                </div>
-                                            <?php } ?>
-                                        </td>
-                                        <td class="fw-semibold"><?= $article->created_at ?></td>
-                                        <td>
-                                            <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
-                                                <i class="bi bi-archive text-dark fs-4"></i>
-                                            </a>
-                                            <a href="/controllers/dashboard/articles/delete-article-ctrl.php?id=<?= $article->id_article ?>" class="formDelete btn btn-sm btn-light">
-                                                <i class="bi bi-trash3-fill fs-4 text-danger"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                <?php if (isset($articles)) {
+                                    foreach ($articles as $article) { ?>
+                                        <tr>
+                                            <td class="fw-semibold"><?= $article->game_name ?></td>
+                                            <td class="fw-semibold text-break"><?= $article->label ?></td>
+                                            <td class="fw-semibold text-break"><?= $article->pseudo ?></td>
+                                            <td class="fw-semibold text-break">5</td>
+                                            <td class="fw-semibold">
+                                                <?php if (isset($article->article_picture)) { ?>
+                                                    <div class="ratio ratio-1x1">
+                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>" class="object-fit-cover rounded-circle ">
+                                                    </div>
+                                                <?php } ?>
+                                            </td>
+                                            <td class="fw-semibold"><?= $article->article_created_at ?></td>
+                                            <td class="fw-semibold"><?= $article->article_deleted_at ?></td>
+                                            <td>
+                                                <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                    <i class="bi bi-archive text-dark fs-4"></i>
+                                                </a>
+                                                <a href="/controllers/dashboard/articles/delete-article-ctrl.php?id=<?= $article->id_article ?>" class="formDelete btn btn-sm btn-light">
+                                                    <i class="bi bi-trash3-fill fs-4 text-danger"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                 <?php }
-                                ?>
+                                } ?>
                             </tbody>
                         </table>
                     </div>

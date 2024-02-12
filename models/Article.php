@@ -265,6 +265,7 @@ class Article
             `articles`.`deleted_at` AS article_deleted_at,
             `articles`.`confirmed_at` AS article_confirmed_at,
             `categories`.`label`,
+            `games`.`game_description`,
             `games`.`game_name`,
             `games`.`id_game`,
             `users`.`pseudo`,
@@ -311,7 +312,24 @@ class Article
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM `articles`
+        $sql = 'SELECT `articles`.`id_article`,
+        `articles`.`article_picture`,
+        `articles`.`article_title`,
+        `articles`.`article_description`,
+        `articles`.`secondtitle`,
+        `articles`.`thirdtitle`,
+        `articles`.`firstsection`,
+        `articles`.`secondsection`,
+        `articles`.`created_at` AS article_created_at,
+        `articles`.`deleted_at` AS article_deleted_at,
+        `articles`.`confirmed_at` AS article_confirmed_at,
+        `categories`.`label`,
+        `games`.`game_description`,
+        `games`.`game_name`,
+        `games`.`id_game`,
+        `users`.`pseudo`,
+        `users`.`created_at` AS user_created_at
+        FROM `articles`
         INNER JOIN `categories` ON `categories`.`id_category`=`articles`.`id_category`
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
         INNER JOIN `users` ON `users`.`id_user`=`articles`.`id_user`
@@ -335,7 +353,7 @@ class Article
         $pdo = Database::connect();
 
         $sql = 'UPDATE `articles` SET `confirmed_at`= NOW()
-        WHERE `id_article`=:id_article;';
+        WHERE `articles`.`id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
 

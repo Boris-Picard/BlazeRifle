@@ -9,7 +9,6 @@
                                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
-                                        <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php">Preview Des Jeux</a></li>
                                         <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php">Preview Des Articles</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Les Articles</li>
                                     </ol>
@@ -19,7 +18,7 @@
                                 <?php if (!empty($articles)) { ?>
                                     <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= isset($gameId) ? htmlspecialchars($articles[0]->game_name) : htmlspecialchars($articles[0]->console_name) ?></span></h2>
                                     <p class="text-center text-break mt-2">
-                                        <?= htmlspecialchars($articles[0]->game_description) ?>
+                                        <?= htmlspecialchars(html_entity_decode($articles[0]->game_description)) ?>
                                     </p>
                                 <?php  } ?>
                             </div>
@@ -42,10 +41,10 @@
                                                     <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
                                                 </div>
                                                 <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?><?= isset($gameId) ? '&id_game=' . $article->id_game : '&id_console=' . $article->id_console ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
-                                                    <?= htmlspecialchars($article->article_title) ?>
+                                                    <?= html_entity_decode($article->article_title) ?>
                                                 </a>
                                                 <p class="aCard mt-2">
-                                                    <?= htmlspecialchars($article->article_description) ?>
+                                                    <?= html_entity_decode($article->article_description) ?>
                                                 </p>
                                                 <div>
                                                     <hr class="hr">

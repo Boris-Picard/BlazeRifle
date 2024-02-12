@@ -87,7 +87,11 @@
                                             </td>
                                             <td class="fw-semibold"><?= $article->article_created_at ?></td>
                                             <td class="fw-semibold text-break">
-                                                <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id_article=<?= $article->id_article ?>" class="btn btn-secondary btn-sm">En attente</a>
+                                                <?php if (!is_null($article->article_confirmed_at)) { ?>
+                                                    <button class="btn btn-small btn-success ">Validé</button>
+                                                <?php  } else { ?>
+                                                    <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id=<?= $article->id_article ?>" class="btn btn-secondary btn-sm">En attente</a>
+                                                <?php } ?>
                                             </td>
                                             <td>
                                                 <a href="/controllers/dashboard/articles/update-article-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">

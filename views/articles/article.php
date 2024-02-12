@@ -26,14 +26,14 @@
                         <!-- TITLE -->
                         <div class="row mt-5">
                             <div class="col-12 d-flex text-center">
-                                <h1 class="fw-bold text-uppercase text-break"><?= htmlspecialchars($article->article_title) ?></h1>
+                                <h1 class="fw-bold text-uppercase text-break"><?= html_entity_decode($article->article_title) ?></h1>
                             </div>
                         </div>
                         <div class="row">
                             <!-- DATE ET AUTEUR -->
                             <div class="col-12 d-flex justify-content-center mt-2">
                                 <small>
-                                    Publié le <?= $article->formattedDate ?> à <?= $article->formattedHour ?> Par <span class="text-danger text-capitalize fw-bold">boris</span>
+                                    Publié le <?= $article->formattedDate ?> à <?= $article->formattedHour ?> Par <span class="text-danger text-capitalize fw-bold"><?= $article->pseudo ?></span>
                                 </small>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                             <!-- DESCRIPTION -->
                             <div class="col-12 py-5">
                                 <h3 class="fw-semibold text-break">
-                                    <?= htmlspecialchars($article->article_description) ?>
+                                    <?= html_entity_decode($article->article_description) ?>
                                 </h3>
                                 <!-- IMG -->
                                 <div class="ratio ratio-16x9 mt-5 shadow-lg rounded-4">
@@ -53,7 +53,7 @@
                             <div class="col-md-12 my-2">
                                 <!-- SECOND TITLE -->
                                 <h3 class="fw-bold text-break">
-                                    <?= htmlspecialchars($article->secondtitle) ?>
+                                    <?= html_entity_decode($article->secondtitle) ?>
                                 </h3>
                             </div>
                             <!-- PREMIERE SECTION -->
@@ -63,7 +63,7 @@
                             <div class="col-md-12 my-2">
                                 <!-- THIRD TITLE-->
                                 <h3 class="fw-bold text-break">
-                                    <?= htmlspecialchars($article->thirdtitle) ?>
+                                    <?= html_entity_decode($article->thirdtitle) ?>
                                 </h3>
                             </div>
                             <!-- DEUXIEME SECTION -->
@@ -92,10 +92,10 @@
                                                 <div class="col-md-10">
                                                     <div class="card-body p-2 mx-2">
                                                         <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
-                                                            <?= htmlspecialchars($article->article_title) ?>
+                                                            <?= html_entity_decode($article->article_title) ?>
                                                         </a>
                                                         <p class="text-card aCard m-0 mt-2">
-                                                            <?= htmlspecialchars($article->article_description) ?>
+                                                            <?= html_entity_decode($article->article_description) ?>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -283,23 +283,25 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="card mt-3 p-0 border-0 bg-transparent">
-                                            <div class="card-img-top ratio ratio-16x9">
-                                                <img src="/public/uploads/article/<?= $articleSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articleSidebar[0]->game_name ?>">
-                                            </div>
-                                            <div class="card-body p-0 mt-1">
-                                                <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
-                                                    <?= htmlspecialchars($articleSidebar[0]->article_title) ?>
-                                                </a>
-                                                <div class="card-text mb-3">
-                                                    <small class="text-muted">
-                                                        <?= $articleSidebar[0]->created_at ?>
-                                                    </small>
+                                        <?php if ($id_article !== $articleSidebar[0]->id_article) { ?>
+                                            <div class="card mt-3 p-0 border-0 bg-transparent">
+                                                <div class="card-img-top ratio ratio-16x9">
+                                                    <img src="/public/uploads/article/<?= $articleSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articleSidebar[0]->game_name ?>">
+                                                </div>
+                                                <div class="card-body p-0 mt-1">
+                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                        <?= html_entity_decode($articleSidebar[0]->article_title) ?>
+                                                    </a>
+                                                    <div class="card-text mb-3">
+                                                        <small class="text-muted">
+                                                            <?= $articleSidebar[0]->article_created_at ?>
+                                                        </small>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        <?php } ?>
                                         <?php foreach ($articleSidebar as $article) {
-                                            if ($articleSidebar[0]->id_article != $article->id_article && $article->id_article != $id_article) { ?>
+                                            if ($articleSidebar[0]->id_article !== $article->id_article && $article->id_article != $id_article) { ?>
                                                 <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                                     <div class="row g-0 cardActuGuideRight">
                                                         <div class="col-auto">

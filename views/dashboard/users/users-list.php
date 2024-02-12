@@ -4,7 +4,7 @@
         <div class="col-xl-10 mx-auto mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="fw-bold text-uppercase">liste des jeux</h1>
+                    <h1 class="fw-bold text-uppercase">liste des utilisateurs</h1>
                 </div>
             </div>
             <div class="row">
@@ -22,40 +22,54 @@
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive shadow-lg p-4 bg-white rounded-4 text-center">
-                        <table class="table table-borderless table-hover table-responsive align-middle">
+                        <table class="table table-borderless table-hover table-responsive align-middle ">
                             <thead>
                                 <tr>
                                     <th scope="col">
-                                        Consoles
+                                        Prénom
                                     </th>
                                     <th scope="col">
-                                        Jeux
+                                        Nom
                                     </th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Image</th>
+                                    <th scope="col">Pseudo</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Picture</th>
+                                    <th scope="col">Date de création</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Confirmation</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($games as $game) { ?>
+                                <?php foreach ($users as $user) { ?>
                                     <tr>
                                         <td class="fw-semibold">
-                                            <?= $game->consoles ?>
+                                            <?= $user->firstname ?>
                                         </td>
-                                        <td class="fw-semibold"><?= $game->game_name ?></td>
-                                        <td class="fw-semibold text-break "><?= $game->game_description ?></td>
+                                        <td class="fw-semibold"><?= $user->lastname ?></td>
+                                        <td class="fw-semibold text-break"><?= $user->pseudo ?></td>
+                                        <td class="fw-semibold text-break"><?= $user->email ?></td>
                                         <td class="fw-semibold">
-                                            <?php if (isset($game->game_picture)) { ?>
+                                            <?php if (isset($user->user_picture)) { ?>
                                                 <div class="ratio ratio-1x1">
                                                     <img src="/public/uploads/games/<?= $game->game_picture ?>" alt="<?= $game->game_picture ?>" class="object-fit-cover rounded-circle">
                                                 </div>
                                             <?php } ?>
                                         </td>
+                                        <td class="fw-semibold text-break"><?= $user->user_created_at ?></td>
+                                        <td class="fw-semibold text-break"><?= $user->role ?></td>
+                                        <td class="fw-semibold text-break">
+                                            <?php if (!is_null($user->user_confirmed_at)) { ?>
+                                                <button class="btn btn-small btn-success ">Validé</button>
+                                            <?php } else { ?>
+                                                <a href="/controllers/dashboard/users/list-users-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-secondary btn-sm">En attente</a>
+                                            <?php } ?>
+                                        </td>
                                         <td>
-                                            <a href="/controllers/dashboard/games/update-game-ctrl.php?id=<?= $game->id_game ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <a href="/controllers/dashboard/users/update-user-ctrl.php?email=<?= $user->email ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-pencil-square text-dark fs-4"></i>
                                             </a>
-                                            <a href="/controllers/dashboard/games/delete-game-ctrl.php?id=<?= $game->id_game ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <a href="/controllers/dashboard/users/delete-user-ctrl.php?id=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                             </a>
                                         </td>
