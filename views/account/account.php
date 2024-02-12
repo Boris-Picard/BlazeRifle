@@ -5,7 +5,7 @@
                 <div class="col-12">
                     <div class="card border-0">
                         <div class="card-body cardProfilBanner rounded-4">
-                            <div class="card child-card border-0 rounded-4" style="background-image: url(/public/uploads/users/<?= !empty($_SESSION['user']->user_picture) ? $_SESSION['user']->user_picture : 'profilpicdefault.avif' ?>)">
+                            <div class="card child-card border-0 rounded-4" style="background-image: url(/public/uploads/users/<?= $_SESSION['user']->user_picture ?>)">
                                 <div class="card-body ">
                                     <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-3 text-uppercase rounded-5"><?= $_SESSION['user']->pseudo ?></p>
                                 </div>

@@ -50,7 +50,7 @@
                                         <td class="fw-semibold">
                                             <?php if (isset($user->user_picture)) { ?>
                                                 <div class="ratio ratio-1x1">
-                                                    <img src="/public/uploads/games/<?= $game->game_picture ?>" alt="<?= $game->game_picture ?>" class="object-fit-cover rounded-circle">
+                                                    <img src="/public/uploads/users/<?= $user->user_picture ?>" alt="<?= $user->user_picture ?>" class="object-fit-cover rounded-circle">
                                                 </div>
                                             <?php } ?>
                                         </td>

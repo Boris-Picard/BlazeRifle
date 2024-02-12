@@ -90,6 +90,8 @@ try {
             $error['checkboxForm'] = "Veuillez accepter";
         }
 
+        $user_picture = 'profilpicdefault.avif';
+
         if (empty($error)) {
             $passwordHash = password_hash($isOk, PASSWORD_DEFAULT);
             $user = new User();
@@ -99,6 +101,7 @@ try {
             $user->setPseudo($pseudo);
             $user->setEmail($email);
             $user->setPassword($passwordHash);
+            $user->setUserPicture($user_picture);
 
             $isInserted = $user->insert();
             if ($isInserted) {
