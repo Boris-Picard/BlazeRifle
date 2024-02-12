@@ -69,8 +69,8 @@ try {
             $filename = uniqid() . '.' . $extension; // Génère un nom unique pour la photo.
 
             $from = $_FILES['picture']['tmp_name'];
-            $to = __DIR__ . '/../../../public/uploads/games/' . $filename; // Définit le chemin de destination pour la photo.
             if (empty($error)) {
+                $to = __DIR__ . '/../../../public/uploads/games/' . $filename; // Définit le chemin de destination pour la photo.
                 $moveFile = move_uploaded_file($from, $to); // Déplace la photo dans le répertoire des uploads si aucune erreur.
             }
         } catch (\Throwable $th) {

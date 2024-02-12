@@ -54,8 +54,8 @@
                                         <div><small id="checkbox" class="form-text text-danger"><?= $error['checkboxForm'] ?? '' ?></small></div>
                                         <input class="form-check-input" id="checkboxForm" name="checkboxForm" type="checkbox" value="checkbox" <?= (isset($checkbox)) ? 'checked' : '' ?> required>
                                         <label class="form-check-label" for="checkboxForm">
-                                            J'accepte les <a href="#">conditions d'utilisation</a>
-                                        </label>
+                                            J'accepte les </label> <a href="/controllers/CDU-ctrl.php" class="text-capitalize">conditions d'utilisation</a>
+                                        
                                     </div>
                                 </div>
                                 <div class="pb-5">

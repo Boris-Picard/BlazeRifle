@@ -52,8 +52,8 @@ try {
 
             // Déplacement du fichier téléchargé vers le répertoire de destination
             $from = $_FILES['picture']['tmp_name'];
-            $to =  __DIR__ . '/../../../public/uploads/consoles/' . $fileName;
             if (empty($error)) {
+                $to =  __DIR__ . '/../../../public/uploads/consoles/' . $fileName;
                 $moveFile = move_uploaded_file($from, $to);
             }
         } catch (\Throwable $e) {

@@ -15,11 +15,11 @@ try {
     $consoleId = $id_console == 0 ? null : $id_console;
 
 
-    
+
     // Récupérer les 4 premiers articles pour le jeu spécifié, triés par ordre décroissant
-    $articles = Article::getAll($gameId, limit: 4, order: 'DESC');
+    $articles = Article::getAll($gameId, limit: 4, showConfirmedAt: true, order: 'DESC');
     // Récupérer les 4 articles suivants pour le jeu spécifié, triés par ordre décroissant, en commençant à partir du 5e article
-    $articlesUnder = Article::getAll($gameId, limit: 4, offset: 4, order: 'DESC');
+    $articlesUnder = Article::getAll($gameId, limit: 4, showConfirmedAt: true, offset: 4, order: 'DESC');
 
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {

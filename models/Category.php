@@ -141,7 +141,6 @@ class Category
 
         $sth->execute();
 
-        // Convertit le booléen en entier pour la cohérence avec la signature de la méthode
         return (int) ($sth->rowCount() > 0);
     }
 }

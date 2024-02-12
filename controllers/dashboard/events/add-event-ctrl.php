@@ -124,11 +124,11 @@ try {
             $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
 
             // Chemin de destination et nom final du fichier
-            $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName . '.' . $extension;
             $namePicture = $fileName . '.' . $extension;
-
+            
             // Déplacement du fichier téléchargé vers le répertoire de destination
             if (empty($error)) {
+                $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName . '.' . $extension;
                 $moveFile = move_uploaded_file($from, $to);
             }
         } catch (\Throwable $th) {

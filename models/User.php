@@ -245,20 +245,20 @@ class User
         return $sth->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function confirm(?string $email): bool
+    public static function confirm(?int $id_user): bool
     {
         $pdo = Database::connect();
 
-        $sql = 'UPDATE `users` set `confirmed_at`= NOW() WHERE `email`= :email;';
+        $sql = 'UPDATE `users` set `confirmed_at`= NOW() WHERE `id_user`= :id_user;';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':email', $email);
+        $sth->bindValue(':id_user', $id_user);
 
         $sth->execute();
 
         if ($sth->rowCount() <= 0) {
-            throw new Exception('erreur mail');
+            throw new Exception('erreur confirmation');
         } else {
             return true;
         }
@@ -308,5 +308,62 @@ class User
         $sth->execute();
 
         return $sth->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function update(): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `users` SET `firstname`=:firstname, `lastname`=:lastname, `pseudo`=:pseudo, `user_picture`=:user_picture, `role`=:role, `id_user`=:id_user
+        WHERE `id_user`=:id_user;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':firstname', $this->getFirstname());
+        $sth->bindValue(':lastname', $this->getLastname());
+        $sth->bindValue(':pseudo', $this->getPseudo());
+        $sth->bindValue(':user_picture', $this->getUserPicture());
+        $sth->bindValue(':role', $this->getRole());
+        $sth->bindValue(':id_user', $this->getIdUser(), PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return (int) ($sth->rowCount() > 0);
+    }
+
+    /**
+     * Méthode spécifique pour mettre a jour l'image d'un article en récupérant son id
+     * @param int $id
+     * 
+     * @return bool
+     */
+    public static function updateImg(int $id_user): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `users` SET `user_picture`= null WHERE `id_user`=:id_user;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+
+        $result = $sth->execute();
+
+        return $result;
+    }
+
+    public static function delete(int $id_user): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `users` WHERE `id_user`=:id_user;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue('id_user', $id_user, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return (int) ($sth->rowCount() > 0);
     }
 }

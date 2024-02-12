@@ -45,30 +45,32 @@ try {
                 </div>
                 <div class="navbar-nav text-center offcanvas-body">
                     <a class="nav-link navlinkHover" href="/controllers/home-ctrl.php">Accueil</a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-uppercase text-dark" href="/controllers/games-preview/games-ctrl.php" role="button">
-                            Les jeux
-                        </a>
-                        <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
-                            <?php foreach ($games as $game) {
-                                if ($game->id_game !== 3) { ?>
-                                    <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $game->id_game ?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $game->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $game->game_name ?>"><?= htmlspecialchars($game->game_name) ?></span></a></li>
-                            <?php }
-                            } ?>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle text-uppercase text-dark" href="" role="button">
-                            Les Consoles
-                        </a>
-                        <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
-                            <?php foreach ($consoles as $console) {
-                                if ($console->id_console !== 4) { ?>
-                                    <li><a href="/controllers/games-preview/games-ctrl.php?id_console=<?= $console->id_console ?>" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><img src="/public/uploads/consoles/<?= $console->console_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $console->console_name ?>"></img><?= htmlspecialchars($console->console_name) ?></span></a></li>
-                            <?php }
-                            } ?>
-                        </ul>
-                    </li>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-uppercase text-dark" href="/controllers/games-preview/games-ctrl.php" role="button">
+                                Les jeux
+                            </a>
+                            <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
+                                <?php foreach ($games as $game) {
+                                    if ($game->id_game !== 3) { ?>
+                                        <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $game->id_game ?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $game->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $game->game_name ?>"><?= htmlspecialchars($game->game_name) ?></span></a></li>
+                                <?php }
+                                } ?>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle text-uppercase text-dark" href="" role="button">
+                                Les Consoles
+                            </a>
+                            <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
+                                <?php foreach ($consoles as $console) {
+                                    if ($console->id_console !== 4) { ?>
+                                        <li><a href="/controllers/games-preview/games-ctrl.php?id_console=<?= $console->id_console ?>" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><img src="/public/uploads/consoles/<?= $console->console_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $console->console_name ?>"><?= htmlspecialchars($console->console_name) ?></span></a></li>
+                                <?php }
+                                } ?>
+                            </ul>
+                        </li>
+                    </ul>
                     <a class="nav-link navlinkHover" href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>
                     <?php if (isset($_SESSION['user'])) { ?>
                         <a class="nav-link navlinkHover" href="/controllers/quiz/quiz-ctrl.php">Le Quiz</a>
@@ -77,6 +79,7 @@ try {
                     <a class="nav-link navlinkHover text-dark" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
                     <a class="nav-link navlinkHover text-dark" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
                 </div>
+
             </div>
         </div>
     </nav>

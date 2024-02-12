@@ -18,7 +18,7 @@
                                     <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= !empty($id_game) ? htmlspecialchars($articles[0]->game_name) : htmlspecialchars(isset($articles[0]->console_name)) ?></span></h2>
                                 </div>
                                 <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
-                                    <a href="/controllers/articles-list/articles-ctrl.php?<?= !empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?><?= empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                    <a href="/controllers/articles-list/articles-ctrl.php?<?= !empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                                         Tous les articles : <?= !empty($id_game) ? htmlspecialchars($articles[0]->game_name) : htmlspecialchars(isset($articles[0]->console_name)) ?>
                                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                     </a>

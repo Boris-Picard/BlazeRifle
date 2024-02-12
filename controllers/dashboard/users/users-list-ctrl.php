@@ -8,13 +8,23 @@ $check = CheckPermissions::checkAdmin();
 $listUsers = true;
 
 try {
-    $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
+    $id_user = filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_SPECIAL_CHARS);
 
     $users = User::getAll();
 
-    if (isset($email)) {
-        User::confirm($email);
+    // Récupération et nettoyage du message de session
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+    if (isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
     }
+
+    
+    if (isset($id_user)) {
+        User::confirm($id_user);
+        header('location: /controllers/dashboard/users/users-list-ctrl.php');
+        die;
+    }
+
 } catch (PDOException $e) {
     die('Erreur ' . $e->getMessage());
 }

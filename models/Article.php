@@ -248,7 +248,7 @@ class Article
      * 
      * @return array
      */
-    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, string $order = 'ASC', int $limit = 7, int $page = null, int $offset = 0): array|false
+    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, bool $showConfirmedAt = false, string $order = 'ASC', int $limit = 7, int $page = null, int $offset = 0): array|false
     {
         $pdo = Database::connect();
 
@@ -277,6 +277,10 @@ class Article
             WHERE 1=1';
 
         $showDeletedAt ? $sql .= ' AND `articles`.`deleted_at` IS NOT NULL ' : $sql .= ' AND `articles`.`deleted_at` IS NULL ';
+
+        if ($showConfirmedAt) {
+            $sql .= ' AND `articles`.`confirmed_at` IS NOT NULL ';
+        }
 
         if (!is_null($id_game)) {
             $sql .= ' AND `games`.`id_game`=:id_game ';

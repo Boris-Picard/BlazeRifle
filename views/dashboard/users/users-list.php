@@ -60,14 +60,14 @@
                                             <?php if (!is_null($user->user_confirmed_at)) { ?>
                                                 <button class="btn btn-small btn-success ">Validé</button>
                                             <?php } else { ?>
-                                                <a href="/controllers/dashboard/users/list-users-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-secondary btn-sm">En attente</a>
+                                                <a href="/controllers/dashboard/users/users-list-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-secondary btn-sm">En attente</a>
                                             <?php } ?>
                                         </td>
                                         <td>
                                             <a href="/controllers/dashboard/users/update-user-ctrl.php?id_user=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-pencil-square text-dark fs-4"></i>
                                             </a>
-                                            <a href="/controllers/dashboard/users/delete-user-ctrl.php?id=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <a href="/controllers/dashboard/users/delete-user-ctrl.php?id_user=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                             </a>
                                         </td>

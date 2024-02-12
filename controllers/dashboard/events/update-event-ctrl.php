@@ -142,9 +142,9 @@ try {
 
                 // Déplacement du fichier téléchargé vers le répertoire des images d'événements
                 $from = $_FILES['picture']['tmp_name'];
-                $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName;
-
+                
                 if (empty($error)) {
+                    $to =  __DIR__ . '/../../../public/uploads/events/' . $fileName;
                     $moveFile = move_uploaded_file($from, $to);
                 }
             } catch (\Throwable $th) {

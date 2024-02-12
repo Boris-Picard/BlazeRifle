@@ -94,9 +94,9 @@ try {
                 $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
                 $filename = uniqid() . '.' . $extension;
                 $from = $_FILES['picture']['tmp_name'];
-                $to = __DIR__ . '/../../../public/uploads/games/' . $filename;
                 // Déplacement du fichier téléchargé vers le répertoire de destination
                 if (empty($error)) {
+                    $to = __DIR__ . '/../../../public/uploads/games/' . $filename;
                     $moveFile = move_uploaded_file($from, $to);
                 }
             } catch (\Throwable $th) {
