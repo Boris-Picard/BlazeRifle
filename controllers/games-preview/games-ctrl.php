@@ -21,6 +21,7 @@ try {
     $articles = Article::getAll($gameId, id_category: $categoryId, limit: 4, showConfirmedAt: true, order: 'DESC');
     // Récupérer les 4 articles suivants pour le jeu spécifié, triés par ordre décroissant, en commençant à partir du 5e article
     $articlesUnder = Article::getAll($gameId, id_category: $categoryId, limit: 4, showConfirmedAt: true, offset: 4, order: 'DESC');
+
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {
         $timestamp = strtotime($article->article_created_at);

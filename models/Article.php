@@ -317,6 +317,13 @@ class Article
         return $result;
     }
 
+    // public static function getByCategoryGame()
+    // {
+    //     $pdo = Database::connect();
+
+    //     $sql = 'SELECT '
+    // }
+
     /**
      * Récupération d'une donnée spécifique via son id 
      * @param int $id

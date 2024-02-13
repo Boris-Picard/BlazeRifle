@@ -13,10 +13,9 @@ try {
 
     // Récupération de l'identifiant de l'article depuis la requête GET
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
-    $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
 
     // Récupération de l'article correspondant à l'identifiant
-    $article = Article::get($id_article, id_category: $id_category);
+    $article = Article::get($id_article);
 
     $id_user = $article->id_user;
 
@@ -211,7 +210,7 @@ try {
         }
 
         // Récupération de l'article après la mise à jour
-        $article = Article::get($id_article, id_category: $id_category);
+        $article = Article::get($id_article);
     }
 } catch (PDOException $e) {
     $error = $e->getMessage();

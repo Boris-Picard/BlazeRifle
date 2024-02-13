@@ -111,7 +111,7 @@
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <a href="/controllers/dashboard/articles/update-article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/articles/update-article-ctrl.php?id_article=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>
                                                 </a>
                                                 <a href="/controllers/dashboard/articles/archive-articles-ctrl.php?id_article=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">

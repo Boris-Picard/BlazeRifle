@@ -28,9 +28,7 @@
                         <!-- CARD ACTU -->
                         <div class="row">
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
-                                <?php foreach ($articles as $article) {
-                                    // if ($article->id_category === $id_category && $article->id_game === $id_game) { 
-                                ?>
+                                <?php foreach ($articles as $article) { ?>
                                     <div class="card bg-transparent rounded-4 shadow-lg text-white p-0 cardActu border-0 cardShadow ">
                                         <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->game_name ?>">
                                         <div class="card-img-overlay ">
@@ -55,7 +53,6 @@
                                         </div>
                                     </div>
                                 <?php  } ?>
-                                <!-- }  -->
                             </div>
                             <!-- CARD UNDER ACTU -->
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
