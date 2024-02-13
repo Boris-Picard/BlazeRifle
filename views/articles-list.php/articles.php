@@ -38,7 +38,7 @@
                                         <div class="col-md-8">
                                             <div class="card-body px-3 d-flex flex-column justify-content-end">
                                                 <div>
-                                                    <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase">battlefield 2042</span>
+                                                    <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase"><?= $article->game_name ?></span>
                                                 </div>
                                                 <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?><?= isset($gameId) ? '&id_game=' . $article->id_game : '&id_console=' . $article->id_console ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
                                                     <?= html_entity_decode($article->article_title) ?>
@@ -51,7 +51,9 @@
                                                 </div>
                                                 <small>
                                                     A <?= $article->formattedHour ?> le <?= $article->formattedDate ?>
-                                                    <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                    <?php if (!empty($countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 text-dark align-middle"></i><?= $countComments ?></span>
+                                                    <?php  } ?>
                                                 </small>
                                             </div>
                                         </div>

@@ -42,7 +42,9 @@
                                                         le <?= $article->formattedDate ?>
                                                         à
                                                         <?= $article->formattedHour ?>
-                                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                        <?php if (!empty($countComments)) { ?>
+                                                            <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i><?= $countComments ?></span>
+                                                        <?php  } ?>
                                                         <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= htmlspecialchars($article->game_name) ?></span>
                                                         <!-- <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold"><?= htmlspecialchars($article->console_name) ?></span> -->
                                                     </small>

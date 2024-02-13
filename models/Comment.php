@@ -242,4 +242,20 @@ class Comment
             return true;
         }
     }
+
+    public static function count(int $id_article)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(*) FROM `comments` WHERE `id_article`=:id_article
+        AND `comments`.`confirmed_at` IS NOT NULL;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->fetchColumn();
+    }
 }

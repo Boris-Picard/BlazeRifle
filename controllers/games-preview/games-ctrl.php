@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../models/Game.php';
+require_once __DIR__ . '/../../models/Comment.php';
 require_once __DIR__ . '/../../models/Article.php';
 
 
@@ -14,8 +15,6 @@ try {
     $gameId = $id_game == 0 ? null : $id_game;
     $consoleId = $id_console == 0 ? null : $id_console;
 
-
-
     // Récupérer les 4 premiers articles pour le jeu spécifié, triés par ordre décroissant
     $articles = Article::getAll($gameId, limit: 4, showConfirmedAt: true, order: 'DESC');
     // Récupérer les 4 articles suivants pour le jeu spécifié, triés par ordre décroissant, en commençant à partir du 5e article
@@ -26,6 +25,8 @@ try {
         $timestamp = strtotime($article->article_created_at);
         $article->formattedHour = date('H:i', $timestamp);
         $article->formattedDate = date('d-m-Y', $timestamp);
+        $id_article = $article->id_article;
+        $countComments = Comment::count($id_article);
     }
 } catch (PDOException $e) {
     $e->getMessage();

@@ -248,7 +248,7 @@ class Article
      * 
      * @return array
      */
-    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, bool $showConfirmedAt = false, string $order = 'ASC', int $limit = 7, int $page = null, int $offset = 0): array|false
+    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, bool $showConfirmedAt = false, ?int $id_category = null, string $order = 'ASC', int $limit = 7, int $page = null, int $offset = 0): array|false
     {
         $pdo = Database::connect();
 
@@ -286,6 +286,10 @@ class Article
             $sql .= ' AND `games`.`id_game`=:id_game ';
         }
 
+        if (!is_null($id_category)) {
+            $sql .= ' AND `categories`.`id_category`=:id_category ';
+        }
+
         $order == 'ASC' ? $sql .= ' ORDER BY `articles`.`created_at` ASC ' : $sql .= ' ORDER BY `articles`.`created_at` DESC ';
 
         $sql .= " LIMIT :limit OFFSET :offset ";
@@ -294,6 +298,10 @@ class Article
 
         if (!is_null($id_game)) {
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+        }
+
+        if (!is_null($id_category)) {
+            $sth->bindValue(':id_category', $id_category, PDO::PARAM_INT);
         }
 
         $sth->bindValue(':limit', $limit, PDO::PARAM_INT);

@@ -73,7 +73,7 @@ class Category
         $sql = 'SELECT `categories`.`id_category`, `categories`.`label`, COUNT(`articles`.`id_article`) AS article_count 
         FROM `categories`
         LEFT JOIN `articles` ON `articles`.`id_category` = `categories`.`id_category`
-        GROUP BY `categories`.`id_category`;';
+        GROUP BY `categories`.`id_category`';
 
         $sth = $pdo->query($sql);
 

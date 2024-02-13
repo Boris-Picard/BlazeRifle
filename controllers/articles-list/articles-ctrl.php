@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Game.php';
+require_once __DIR__ . '/../../models/Comment.php';
 require_once __DIR__ . '/../../models/Console.php';
 
 try {
@@ -32,6 +33,8 @@ try {
         $timestamp = strtotime($article->article_created_at);
         $article->formattedHour = date('H:i', $timestamp);
         $article->formattedDate = date('d-m-Y', $timestamp);
+        $id_article = $article->id_article;
+        $countComments = Comment::count($id_article);
     }
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
