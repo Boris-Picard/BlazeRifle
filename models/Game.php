@@ -112,8 +112,16 @@ class Game
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM `games`
-        -- INNER JOIN `consoles_games` ON `consoles_games`.`id_game`=`games`.`id_game`
+        $sql = 'SELECT DISTINCT
+        `games`.`id_game`,
+        `games`.`game_name`,
+        `games`.`game_description`,
+        `games`.`game_picture`,
+        `categories`.`label`,
+        `categories`.`id_category`
+        FROM `games`
+        INNER JOIN `articles` ON `articles`.`id_game`=`games`.`id_game`
+        INNER JOIN `categories` ON `categories`.`id_category`=`articles`.`id_category`
         WHERE 1=1;';
 
         $sth = $pdo->query($sql);

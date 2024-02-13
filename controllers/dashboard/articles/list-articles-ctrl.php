@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../../models/Article.php';
 require_once __DIR__ . '/../../../models/Game.php';
+require_once __DIR__ . '/../../../models/Comment.php';
 require_once __DIR__ . '/../../../models/Category.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
@@ -20,7 +21,12 @@ try {
     $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
 
 
+
     $categories = Category::getAll();
+
+    $category = Category::get($id_category);
+
+    $game = Game::get($id_game);
 
     // Récupération de la liste de tous les jeux
     $games = Game::getAll();
@@ -39,8 +45,10 @@ try {
     // Récupération des détails de l'article spécifié par son ID
     $article = Article::get($id_article);
     // Si l'article spécifié existe
-
+    
     Article::confirm($id_article);
+
+    $countComments = Comment::count($id_article);
 
     // Récupération et nettoyage du message de session
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);

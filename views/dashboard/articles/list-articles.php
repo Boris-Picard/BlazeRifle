@@ -5,7 +5,9 @@
             <div class="row">
                 <div class="col-12">
                     <h1 class="fw-bold text-uppercase">liste des articles
-                        <!-- <span class="text-danger"><?= isset($article) ? $article->label : '' ?> -->
+                        <span class="text-danger">
+                            <?= isset($id_category) == isset($category->id_category) ? $category->label : '' ?>
+                            <?= isset($id_game) == isset($game->id_game) ? $game->game_name : '' ?>
                         </span>
                     </h1>
                 </div>
@@ -78,8 +80,8 @@
                                     <th scope="col">Image</th>
                                     <th scope="col">
                                         Creation
-                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=ASC" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
-                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=DESC" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
+                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=ASC&id_category=<?= $id_category ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
+                                        <a href="/controllers/dashboard/articles/list-articles-ctrl.php?nbArticles=<?= $nbArticles ?>&id_game=<?= $id_game ?>&order=DESC&id_category=<?= $id_category ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
                                     <th scope="col">Confirmation</th>
                                     <th scope="col">Action</th>
@@ -92,7 +94,7 @@
                                             <td class="fw-semibold"><?= $article->game_name ?></td>
                                             <td class="fw-semibold text-break"><?= $article->label ?></td>
                                             <td class="fw-semibold text-break"><?= $article->pseudo ?></td>
-                                            <td class="fw-semibold text-break">5</td>
+                                            <td class="fw-semibold text-break"><?= $countComments ?></td>
                                             <td class="fw-semibold">
                                                 <?php if (isset($article->article_picture)) { ?>
                                                     <div class="ratio ratio-1x1">

@@ -4,6 +4,8 @@ require_once __DIR__ . '/../../models/Console.php';
 
 try {
     $games = Game::getAll();
+    var_dump($games);
+    die;
     $consoles = Console::getAll();
 } catch (\Throwable $e) {
     $e->getMessage();
