@@ -7,10 +7,11 @@ $check = CheckPermissions::checkAdmin();
 
 try {
     // Récupération de l'ID de l'article à mettre à jour depuis les paramètres de l'URL
-    $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
+    $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
+    $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
 
     // Récupération des détails de l'article à mettre à jour
-    $article = Article::get($id_article);
+    $article = Article::get($id_article, id_category: $id_category);
 
     // Si l'article a une image associée
     if ($article->article_picture) {
@@ -29,7 +30,7 @@ try {
     }
 
     // Redirection vers le contrôleur de mise à jour de l'article avec l'ID de l'article
-    header('Location: /controllers/dashboard/articles/update-article-ctrl.php?id=' . $article->id_article);
+    header('Location: /controllers/dashboard/articles/update-article-ctrl.php?id_article=' . $article->id_article . '&id_category=' . $article->id_category);
     die;
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());

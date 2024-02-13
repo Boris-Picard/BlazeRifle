@@ -8,7 +8,7 @@ $check = CheckPermissions::checkAdmin();
 
 try {
     // Récupération de l'ID de l'article à supprimer depuis les paramètres de l'URL
-    $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
+    $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
 
     // Récupération des détails de l'article à supprimer
     $article = Article::get($id_article);

@@ -99,10 +99,10 @@
                                             <td class="fw-semibold"><?= $article->article_created_at ?></td>
                                             <td class="fw-semibold"><?= $article->article_deleted_at ?></td>
                                             <td>
-                                                <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/articles/list-articles-ctrl.php?id_article=<?= $article->id_article ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-archive text-dark fs-4"></i>
                                                 </a>
-                                                <a href="/controllers/dashboard/articles/delete-article-ctrl.php?id=<?= $article->id_article ?>" class="formDelete btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/articles/delete-article-ctrl.php?id_article=<?= $article->id_article ?>" class="formDelete btn btn-sm btn-light">
                                                     <i class="bi bi-trash3-fill fs-4 text-danger"></i>
                                                 </a>
                                             </td>

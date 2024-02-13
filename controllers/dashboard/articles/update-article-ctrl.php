@@ -12,13 +12,13 @@ try {
     $listArticles = true;
 
     // Récupération de l'identifiant de l'article depuis la requête GET
-    $id_article = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
+    $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
+    $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
 
     // Récupération de l'article correspondant à l'identifiant
-    $article = Article::get($id_article);
+    $article = Article::get($id_article, id_category: $id_category);
 
     $id_user = $article->id_user;
-
 
     $categories = Category::getAll();
 
@@ -198,6 +198,7 @@ try {
             $article->setIdGame($id_game);
             $article->setIdArticle($id_article);
             $article->setIdUser($id_user);
+            $article->setIdCategory($id_category);
 
             // Mise à jour de l'article dans la base de données
             $result = $article->update();
@@ -210,7 +211,7 @@ try {
         }
 
         // Récupération de l'article après la mise à jour
-        $article = Article::get($id_article);
+        $article = Article::get($id_article, id_category: $id_category);
     }
 } catch (PDOException $e) {
     $error = $e->getMessage();

@@ -12,13 +12,6 @@
                     <?= $msg ?>
                 </div>
             </div>
-            <div class="row g-2">
-                <div class="col-6 pt-3">
-                    <div class="d-flex mb-3">
-                        <a href="/controllers/dashboard/games/add-game-ctrl.php" class="btn btn-danger rounded-4 text-uppercase fw-bold mx-2">Ajouter un Jeu</a>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive shadow-lg p-4 bg-white rounded-4 text-center">

@@ -43,7 +43,7 @@
                                                 <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>" class="object-fit-cover rounded-4">
                                             </div>
                                             <div class="mx-2 d-flex align-items-center">
-                                                <a href="/controllers/dashboard/articles/update-img-ctrl.php?id=<?= $article->id_article ?>" class="btn btn-danger fw-bold text-uppercase">
+                                                <a href="/controllers/dashboard/articles/update-img-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="btn btn-danger fw-bold text-uppercase">
                                                     Supprimer
                                                 </a>
                                             </div>

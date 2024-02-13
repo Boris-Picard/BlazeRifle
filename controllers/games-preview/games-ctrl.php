@@ -9,16 +9,18 @@ require_once __DIR__ . '/../../models/Article.php';
 try {
     // Récupérer l'ID du jeu ou de la console depuis la requête GET
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
-    $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
+    // $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
+    $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
 
     //Récupération des IDs nettoyés. Si l'ID est égal à 0, alors je retourne la valeur null.
     $gameId = $id_game == 0 ? null : $id_game;
-    $consoleId = $id_console == 0 ? null : $id_console;
-
+    $categoryId = $id_category == 0 ? null : $id_category;
+    // $consoleId = $id_console == 0 ? null : $id_console;
+    
     // Récupérer les 4 premiers articles pour le jeu spécifié, triés par ordre décroissant
-    $articles = Article::getAll($gameId, limit: 4, showConfirmedAt: true, order: 'DESC');
+    $articles = Article::getAll($gameId, id_category: $categoryId, limit: 4, showConfirmedAt: true, order: 'DESC');
     // Récupérer les 4 articles suivants pour le jeu spécifié, triés par ordre décroissant, en commençant à partir du 5e article
-    $articlesUnder = Article::getAll($gameId, limit: 4, showConfirmedAt: true, offset: 4, order: 'DESC');
+    $articlesUnder = Article::getAll($gameId, id_category: $categoryId, limit: 4, showConfirmedAt: true, offset: 4, order: 'DESC');
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {
         $timestamp = strtotime($article->article_created_at);
@@ -28,8 +30,7 @@ try {
         $countComments = Comment::count($id_article);
     }
 } catch (PDOException $e) {
-    $e->getMessage();
-    die;
+    die('Erreur ctrl games :' . $e->getMessage());
 }
 
 

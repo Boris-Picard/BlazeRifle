@@ -257,7 +257,8 @@ class Article
         }
 
         $sql =
-            'SELECT `articles`.`id_article`,
+            'SELECT 
+            `articles`.`id_article`,
             `articles`.`article_picture`,
             `articles`.`article_title`,
             `articles`.`article_description`,
@@ -265,8 +266,10 @@ class Article
             `articles`.`deleted_at` AS article_deleted_at,
             `articles`.`confirmed_at` AS article_confirmed_at,
             `categories`.`label`,
+            `categories`.`id_category`,
             `games`.`game_description`,
             `games`.`game_name`,
+            `games`.`game_picture`,
             `games`.`id_game`,
             `users`.`pseudo`,
             `users`.`created_at` AS user_created_at
@@ -320,7 +323,7 @@ class Article
      * 
      * @return [type]
      */
-    public static function get(?int $id_article = null, bool $showConfirmedAt = false)
+    public static function get(?int $id_article = null, bool $showConfirmedAt = false, ?int $id_category = null)
     {
         $pdo = Database::connect();
 
@@ -336,10 +339,12 @@ class Article
         `articles`.`deleted_at` AS article_deleted_at,
         `articles`.`confirmed_at` AS article_confirmed_at,
         `categories`.`label`,
+        `categories`.`id_category`,
         `games`.`game_description`,
         `games`.`game_name`,
         `games`.`id_game`,
         `users`.`pseudo`,
+        `users`.`id_user`,
         `users`.`created_at` AS user_created_at
         FROM `articles`
         INNER JOIN `categories` ON `categories`.`id_category`=`articles`.`id_category`
@@ -351,10 +356,16 @@ class Article
             $sql .= ' AND `articles`.`confirmed_at` IS NOT NULL ';
         }
 
+        if (!is_null($id_category)) {
+            $sql .= ' AND `categories`.`id_category`=:id_category ';
+        }
+
         $sth = $pdo->prepare($sql);
 
-        if ($id_article !== null) {
-            $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT);
+        $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT);
+
+        if (!is_null($id_category)) {
+            $sth->bindValue(':id_category', $id_category, PDO::PARAM_INT);
         }
 
         $sth->execute();
@@ -389,7 +400,7 @@ class Article
         $pdo = Database::connect();
 
         $sql = 'UPDATE `articles` 
-        SET `article_title`=:article_title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game, `id_user`=:id_user 
+        SET `article_title`=:article_title, `secondtitle`=:secondtitle, `thirdtitle`=:thirdtitle, `article_picture`=:article_picture, `article_description`=:article_description, `firstsection`=:firstsection, `secondsection`=:secondsection, `id_game`=:id_game, `id_user`=:id_user, `id_category`=:id_category 
         WHERE `id_article`=:id_article;';
 
         $sth = $pdo->prepare($sql);
@@ -404,6 +415,7 @@ class Article
         $sth->bindValue(':id_game', $this->getIdGame(), PDO::PARAM_INT);
         $sth->bindValue(':id_article', $this->getIdArticle(), PDO::PARAM_INT);
         $sth->bindValue(':id_user', $this->getIdUser(), PDO::PARAM_INT);
+        $sth->bindValue(':id_category', $this->getIdCategory(), PDO::PARAM_INT);
 
         $result = $sth->execute();
 
@@ -438,7 +450,7 @@ class Article
      * 
      * @return bool
      */
-    public static function archive(int $id, bool $archive = false): bool
+    public static function archive(int $id_article, bool $archive = false): bool
     {
         $pdo = Database::connect();
 
@@ -448,7 +460,7 @@ class Article
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':id_article', $id, PDO::PARAM_INT);
+        $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT);
 
         $result = $sth->execute();
 
