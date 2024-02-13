@@ -2,6 +2,8 @@
 session_start();
 require_once __DIR__ . '/../../config/config.php';
 require_once __DIR__ . '/../../models/Article.php';
+require_once __DIR__ . '/../../models/Comment.php';
+require_once __DIR__ . '/../../models/User.php';
 
 
 try {
@@ -28,25 +30,39 @@ try {
         header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game);
         die;
     }
-    
+
     // Récupération des articles pour les afficher dans la sidebar
     $articleSidebar = Article::getAll($gameId, false, 'DESC', limit: 7);
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
     $articlesBottom = Article::getAll($gameId, false, 'DESC', limit: 3);
     // Gérer le formulaire de commentaire s'il est soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $textAreaComment = filter_input(INPUT_POST, 'textAreaComment', FILTER_SANITIZE_SPECIAL_CHARS);
 
+        $id_user = $_SESSION['user']->id_user;
+
+        if($id_user !== $_SESSION['user']->id_user) {
+            $error['user'] = 'Problème avec l\'utilisateur';
+        }
+
+        $textAreaComment = filter_input(INPUT_POST, 'textAreaComment', FILTER_SANITIZE_SPECIAL_CHARS);
         // Valider le champ de commentaire
         if (empty($textAreaComment)) {
             $error['textAreaComment'] = 'Veuillez écrire un commentaire';
         } else {
-            if (strlen($textAreaComment) > 1500) {
-                $error['textAreaComment'] = 'Veuillez ne pas dépasser les 1500 caractères';
+            $isOk = filter_var($textAreaComment, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/')));
+            if (!$isOk) {
+                $error['textAreaComment'] = 'Veuillez renseigner une description de jeu correct';
             }
-            if (strlen($textAreaComment) < 20) {
-                $error['textAreaComment'] = 'Veuillez écrire plus de 20 caractères';
-            }
+        }
+
+        if (empty($error)) {
+            $comment = new Comment();
+
+            $comment->setComment($textAreaComment);
+            $comment->setIdArticle($id_article);
+            $comment->setIdUser($id_user);
+
+            $comment->insert();
         }
     }
 } catch (PDOException $e) {
