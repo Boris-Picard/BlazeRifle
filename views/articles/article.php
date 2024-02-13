@@ -130,13 +130,17 @@
                                             <form action="#commentForm" method="POST" id="commentForm" novalidate>
                                                 <div class="card mt-3 rounded-4 bg-transparent border-0 shadow-lg p-3">
                                                     <div class="row g-0">
-                                                        <div class="col-md-2 d-flex">
-                                                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
-                                                        </div>
+                                                        <?php if (isset($_SESSION['user']->user_picture)) { ?>
+                                                            <div class="col-md-2 d-flex">
+                                                                <img src="/public/uploads/users/<?= $_SESSION['user']->user_picture ?>" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="">
+                                                            </div>
+                                                        <?php } ?>
                                                         <div class="col-md-10">
                                                             <div class="card-body p-0 ">
                                                                 <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
-                                                                    Boris
+                                                                    <span class="text-danger">
+                                                                        <?= $_SESSION['user']->pseudo ?>
+                                                                    </span>
                                                                 </p>
                                                                 <small class="form-text text-danger"><?= $error['textAreaComment'] ?? '' ?></small>
                                                                 <small class="form-text text-danger"><?= $error['user'] ?? '' ?></small>
@@ -181,30 +185,36 @@
                                         <?php }
                                         } ?>
                                         <!-- FIN DU FORMULAIRE -->
-                                        <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment">
-                                            <div class="row g-0">
-                                                <div class="col-md-2 d-flex">
-                                                    <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="call of duty">
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="card-title p-0 d-flex flex-wrap align-items-center">
-                                                        <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
-                                                            Boris
-                                                        </p>
-                                                        <small class="text-muted mb-1 mx-2">le 29 déc, à 13h09</small>
+                                        <?php foreach ($comments as $comment) { ?>
+                                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3 cardsComment">
+                                                <div class="row g-0">
+                                                    <div class="col-md-2 d-flex">
+                                                        <?php if (isset($comment->user_picture)) { ?>
+                                                            <img src="/public/uploads/users/" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="<?= $comment->user_picture ?>">
+                                                        <?php } ?>
                                                     </div>
-                                                    <div class="card-body p-0">
-                                                        <p class="text-card">
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur recusandae eum nobis qui consequatur expedita voluptatem earum, voluptates neque repellat nulla suscipit incidunt officia rerum tempore rem, cum totam ab.
-                                                        </p>
-                                                        <div class="d-flex">
-                                                            <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                                    <div class="col-md-10">
+                                                        <div class="card-title p-0 d-flex flex-wrap align-items-center">
+                                                            <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
+                                                                <span class="text-danger">
+                                                                    <?= $comment->pseudo ?>
+                                                                </span>
+                                                            </p>
+                                                            <small class="text-muted mb-1 mx-2">le <?= $comment->comment_created_at ?></small>
+                                                        </div>
+                                                        <div class="card-body p-0">
+                                                            <p class="text-card">
+                                                                <?= $comment->comment ?>
+                                                            </p>
+                                                            <div class="d-flex">
+                                                                <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    <?php } ?>
+                                    <?php }
+                                    } ?>
                                 </div>
                             </div>
                             <!-- <div class="row">

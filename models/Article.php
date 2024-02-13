@@ -312,7 +312,7 @@ class Article
      * 
      * @return [type]
      */
-    public static function get(?int $id_article = null)
+    public static function get(?int $id_article = null, bool $showConfirmedAt = false)
     {
         $pdo = Database::connect();
 
@@ -338,6 +338,10 @@ class Article
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
         INNER JOIN `users` ON `users`.`id_user`=`articles`.`id_user`
         WHERE `id_article`=:id_article';
+
+        if ($showConfirmedAt) {
+            $sql .= ' AND `articles`.`confirmed_at` IS NOT NULL ';
+        }
 
         $sth = $pdo->prepare($sql);
 

@@ -7,6 +7,8 @@ require_once __DIR__ . '/../../models/User.php';
 
 
 try {
+    $comments = Comment::getAll(showConfirmedAt: true);
+    
     // Récupérer les ID de l'article et du jeu depuis la requête GET
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
@@ -17,7 +19,7 @@ try {
     // $consoleId = $id_console == 0 ? null : $id_console;
 
     // Récupérer les détails de l'article
-    $article = Article::get($id_article);
+    $article = Article::get($id_article, true);
 
     // Vérifier si l'article existe
     if (!empty($article)) {
@@ -40,7 +42,7 @@ try {
 
         $id_user = $_SESSION['user']->id_user;
 
-        if($id_user !== $_SESSION['user']->id_user) {
+        if ($id_user !== $_SESSION['user']->id_user) {
             $error['user'] = 'Problème avec l\'utilisateur';
         }
 

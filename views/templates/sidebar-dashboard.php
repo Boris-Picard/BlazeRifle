@@ -8,7 +8,7 @@
                     <div class="col-12 d-flex flex-column p-0 sidebar rounded colSidebar g-5">
                         <a href="/controllers/dashboard/dashboard-ctrl.php" class="py-3 nav-link navLink <?= $dashboard ? 'active' : '' ?> text-capitalize sidebarLink"><span><i class="bi bi-house px-3 fw-bold"></i>Dashboard</span></a>
                         <a href="/controllers/dashboard/users/users-list-ctrl.php" class="<?= $listUsers ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class=" bi bi-person-circle px-3 fw-bold"></i>Les Comptes</span></a>
-                        <a href="" class="py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-chat px-3 fw-bold"></i>Les Commentaires</span></a>
+                        <a href="/controllers/dashboard/comments/list-comments-ctrl.php" class=" <?= $listComments ? 'active' : '' ?> py-3 nav-link navLink text-capitalize sidebarLink"><span><i class="bi bi-chat px-3 fw-bold"></i>Les Commentaires</span></a>
                         <div class="dropend">
                             <a class="<?= $listArticles ? 'active' : '' ?> text-start py-3 nav-link navLink text-capitalize sidebarLink btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span><i class="bi bi-pen px-3 fw-bold"></i></span>
