@@ -16,11 +16,12 @@ try {
     // $consoleId = $id_console == 0 ? null : $id_console;
 
     // Récupérer les 4 premiers articles pour le jeu spécifié, triés par ordre décroissant
-    $articles = Article::getAll($gameId, id_category: REGEX_ARTICLES_JEUX, limit: 4, showConfirmedAt: true, order: 'DESC');
+    $articles = Article::getAll($gameId, id_category: REGEX_ARTICLES_GAMES, limit: 4, showConfirmedAt: true, order: 'DESC');
     // Récupérer les 4 articles suivants pour le jeu spécifié, triés par ordre décroissant, en commençant à partir du 5e article
-    $articlesUnder = Article::getAll($gameId, id_category: REGEX_ARTICLES_JEUX, limit: 4, showConfirmedAt: true, offset: 4, order: 'DESC');
+    $articlesUnder = Article::getAll($gameId, id_category: REGEX_ARTICLES_GAMES, limit: 4, showConfirmedAt: true, offset: 4, order: 'DESC');
 
-    $guides = Article::getAll($gameId, id_category: REGEX_GUIDES, limit: 9, offset: 0, showConfirmedAt: true, order: 'DESC');
+    $guides = Article::getAll($gameId, id_category: REGEX_GUIDES, limit: 5, offset: 0, showConfirmedAt: true, order: 'DESC');
+    $guidesSecondCol = Article::getAll($gameId, id_category: REGEX_GUIDES, limit: 4, offset: 5, showConfirmedAt: true, order: 'DESC');
 
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {
@@ -32,6 +33,12 @@ try {
     }
 
     foreach ($guides as $guide) {
+        $timestamp = strtotime($guide->article_created_at);
+        $guide->formattedHour = date('H:i', $timestamp);
+        $guide->formattedDate = date('d-m-y', $timestamp);
+    }
+
+    foreach ($guidesSecondCol as $guide) {
         $timestamp = strtotime($guide->article_created_at);
         $guide->formattedHour = date('H:i', $timestamp);
         $guide->formattedDate = date('d-m-y', $timestamp);

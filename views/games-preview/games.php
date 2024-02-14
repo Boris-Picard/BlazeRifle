@@ -30,7 +30,7 @@
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <?php foreach ($articles as $article) { ?>
                                     <div class="card bg-transparent rounded-4 shadow-lg text-white p-0 cardActu border-0 cardShadow ">
-                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->game_name ?>">
+                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->game_name ?>">
                                         <div class="card-img-overlay ">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= htmlspecialchars($article->game_name) ?></span>
                                             <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
@@ -59,7 +59,7 @@
                                 <?php foreach ($articlesUnder as $article) { ?>
                                     <div class="card cardActUnder rounded-4 mt-3 p-0 border-0 bg-transparent">
                                         <div class="card-img-top ratio ratio-16x9">
-                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img object-fit-cover rounded-4" alt="<?= $article->game_name ?>">
+                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4" alt="<?= $article->game_name ?>">
                                             <div class="p-3">
                                                 <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= htmlspecialchars($article->game_name) ?></span>
                                             </div>
@@ -85,7 +85,7 @@
             </section>
             <!-- LES GUIDES -->
             <section>
-                <?php if (!empty($guides))  { ?>
+                <?php if (!empty($guides)) { ?>
                     <div class="row">
                         <div class="col-12">
                             <div class="row">
@@ -102,7 +102,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
-                                        <img src="/public/uploads/article/<?= $guides[0]->article_picture ?>" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $guides[0]->game_name ?>">
+                                        <img src="/public/uploads/article/<?= $guides[0]->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $guides[0]->game_name ?>">
                                         <div class="card-img-overlay d-flex flex-column justify-content-end">
                                             <p class="p-0 m-0">
                                                 <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $guides[0]->game_name ?></span>
@@ -129,7 +129,38 @@
                                         <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
                                             <div class="row g-0 cardGuideRight">
                                                 <div class="col-auto">
-                                                    <img src="/public/uploads/article/<?= $guide->article_picture ?>" alt="<?= $guide->game_name ?>" class="imgGuideRight object-fit-cover rounded-4">
+                                                    <img src="/public/uploads/article/<?= $guide->article_picture ?>" loading="lazy" alt="<?= $guide->game_name ?>" class="imgGuideRight object-fit-cover rounded-4">
+                                                </div>
+                                                <div class="col-md-8 p-0 ">
+                                                    <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                                        <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide <?= $guide->game_name ?></small>
+                                                        <div class="mt-1">
+                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                                <?= $guide->article_title ?>
+                                                            </a>
+                                                        </div>
+                                                        <p class="card-text">
+                                                            <small class="text-muted">
+                                                                le <?= $guide->formattedDate ?>
+                                                                a
+                                                                <?= $guide->formattedHour ?>
+                                                                <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                                <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold"></span>
+                                                            </small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
+                                    <?php 
+                                    foreach ($guidesSecondCol as $guide) { ?>
+                                        <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
+                                            <div class="row g-0 cardGuideRight">
+                                                <div class="col-auto">
+                                                    <img src="/public/uploads/article/<?= $guide->article_picture ?>" loading="lazy" alt="<?= $guide->game_name ?>" class="imgGuideRight object-fit-cover rounded-4">
                                                 </div>
                                                 <div class="col-md-8 p-0 ">
                                                     <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">

@@ -18,8 +18,8 @@ define('REGEX_CATEGORY', '^[a-zA-Z é]{5,100}+$');
 
 define('DATE', '^(?:\d{4}-\d{2}-\d{2})$');
 
-define('REGEX_BONS_PLANS', 2);
-define('REGEX_ARTICLES_JEUX', 6);
+define('REGEX_TIPS', 2);
+define('REGEX_ARTICLES_GAMES', 6);
 define('REGEX_GUIDES', 7);
 
 

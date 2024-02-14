@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../models/Game.php';
 require_once __DIR__ . '/../../models/Console.php';
 
 try {
-    $games = Game::getGameCategory(REGEX_ARTICLES_JEUX);
+    $games = Game::getGameCategory(REGEX_ARTICLES_GAMES);
     $consoles = Console::getAll();
 } catch (\Throwable $e) {
     $e->getMessage();

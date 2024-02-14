@@ -501,22 +501,31 @@ class Article
      * 
      * @return int
      */
-    public static function count(?int $id_game = null): int
+    public static function count(?int $id_game = null, ?int $id_category = null): int
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT count(*) as `count` from `articles`
+        $sql = 'SELECT count(*) AS `count` FROM `articles`
                 INNER JOIN `games` ON `games`.`id_game` = `articles`.`id_game`
+                INNER JOIN `categories` ON `categories`.`id_category`= `articles`.`id_category`
                 WHERE 1 = 1';
 
         if (!is_null($id_game)) {
             $sql .= ' AND `articles`.`id_game` = :id_game';
         }
 
+        if (!is_null($id_game)) {
+            $sql .= ' AND `categories`.`id_category` = :id_category';
+        }
+
         $sth = $pdo->prepare($sql);
 
         if (!is_null($id_game)) {
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
+        }
+
+        if (!is_null($id_category)) {
+            $sth->bindValue(':id_category', $id_category, PDO::PARAM_INT);
         }
 
         $sth->execute();
