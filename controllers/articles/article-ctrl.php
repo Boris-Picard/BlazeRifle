@@ -12,14 +12,16 @@ try {
     // Récupérer les ID de l'article et du jeu depuis la requête GET
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
+    $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
     // $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
     //Récupération des IDs nettoyés. Si l'ID est égal à 0, alors je retourne la valeur null.
     $gameId = $id_game == 0 ? null : $id_game;
+    $categoryId = $id_category == 0 ? null : $id_category;
     // $consoleId = $id_console == 0 ? null : $id_console;
 
     // Récupérer les détails de l'article
-    $article = Article::get($id_article, true);
+    $article = Article::get($id_article, true, $categoryId);
 
     // Vérifier si l'article existe
     if (!empty($article)) {
@@ -32,11 +34,12 @@ try {
         header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game);
         die;
     }
+    
 
     // Récupération des articles pour les afficher dans la sidebar
-    $articleSidebar = Article::getAll($gameId, false, 'DESC', limit: 7);
+    $articleSidebar = Article::getAll($gameId, false, 'DESC', limit: 7, id_category: $categoryId);
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
-    $articlesBottom = Article::getAll($gameId, false, 'DESC', limit: 3);
+    $articlesBottom = Article::getAll($gameId, false, true, $categoryId, 'DESC', limit: 3);
     // Gérer le formulaire de commentaire s'il est soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -70,9 +73,6 @@ try {
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
-
-
-
 
 
 include __DIR__ . '/../../views/templates/header.php';

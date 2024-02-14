@@ -7,9 +7,13 @@
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>">Preview <?= !is_null($gameId) ? $article->game_name : $article->console_name ?> </a></li>
+                                <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>">Preview <?= $gameId ?> </a></li>
                                 <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php?">Preview Des Articles</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>">Articles sur <?= !is_null($gameId) ? htmlspecialchars($article->game_name) : htmlspecialchars($article->console_name) ?></a></li>
+                                <?php if (!is_null($categoryId)) { ?>
+                                    <li class="breadcrumb-item"><a href="/controllers/tips-list/tips-ctrl.php">Articles sur <?= $article->game_name ?></a></li>
+                                <?php } else { ?>
+                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $gameId ?>">Articles sur <?= $article->game_name ?></a></li>
+                                <?php } ?>
                                 <li class="breadcrumb-item active" aria-current="page">Article</li>
                             </ol>
                         </nav>
@@ -18,9 +22,15 @@
                         <!-- PRECEDENT SUIVANT -->
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
-                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none fw-bold">Précédent</a></small>
-                                <small><a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= !is_null($gameId) ? htmlspecialchars($article->game_name) : htmlspecialchars($article->console_name) ?></a></small>
-                                <small><a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article + 1 ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none fw-bold">Suivant</a></small>
+                                <?php if (!is_null($id_category)) { ?>
+                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&id_category<?= $categoryId ?>" class="text-decoration-none fw-bold">Précédent</a></small>
+                                    <small><a href="/controllers/tips-list/tips-ctrl.php?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->label ?></a></small>
+                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category<?= $categoryId ?>" class="text-decoration-none fw-bold">Suivant</a></small>
+                                <?php } else { ?>
+                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none fw-bold">Précédent</a></small>
+                                    <small><a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= !is_null($gameId) ? htmlspecialchars($article->game_name) : htmlspecialchars($article->console_name) ?></a></small>
+                                    <small><a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article + 1 ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none fw-bold">Suivant</a></small>
+                                <?php } ?>
                             </div>
                         </div>
                         <!-- TITLE -->
@@ -91,7 +101,7 @@
                                                 </div>
                                                 <div class="col-md-10">
                                                     <div class="card-body p-2 mx-2">
-                                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
+                                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($id_game) ? 'id_game=' . $article->id_game : 'id_category=' . $article->id_category ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
                                                             <?= html_entity_decode($article->article_title) ?>
                                                         </a>
                                                         <p class="text-card aCard m-0 mt-2">
