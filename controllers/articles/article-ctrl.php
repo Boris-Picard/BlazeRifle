@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../models/User.php';
 
 try {
     $comments = Comment::getAll(showConfirmedAt: true);
-    
+
     // Récupérer les ID de l'article et du jeu depuis la requête GET
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
@@ -28,16 +28,20 @@ try {
         // Formater la date et l'heure de création de l'article
         $timestamp = strtotime($article->article_created_at);
         $article->formattedHour = date('H:i', $timestamp);
-        $article->formattedDate = date('d/m/Y', $timestamp);
+        $article->formattedDate = date('d/m/y', $timestamp);
     } else {
         // Rediriger vers la liste des articles si l'article n'existe pas
         header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game);
         die;
     }
-    
 
     // Récupération des articles pour les afficher dans la sidebar
-    $articleSidebar = Article::getAll($gameId, false, 'DESC', limit: 7, id_category: $categoryId);
+    $articlesSidebar = Article::getAll($gameId, false, order: 'DESC', limit: 7, id_category: $categoryId);
+    foreach ($articlesSidebar as $articleSidebar) {
+        $timestamp = strtotime($articleSidebar->article_created_at);
+        $articleSidebar->formattedHour = date('H:i', $timestamp);
+        $articleSidebar->formattedDate = date('d/m/y', $timestamp);
+    }
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
     $articlesBottom = Article::getAll($gameId, false, true, $categoryId, 'DESC', limit: 3);
     // Gérer le formulaire de commentaire s'il est soumis

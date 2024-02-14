@@ -51,8 +51,8 @@
                                                 </div>
                                                 <small>
                                                     A <?= $article->formattedHour ?> le <?= $article->formattedDate ?>
-                                                    <?php if (!empty($countComments)) { ?>
-                                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 text-dark align-middle"></i><?= $countComments ?></span>
+                                                    <?php if (!empty($article->countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase mb-1 bg-danger mx-1 border text-white fw-semibold"><i class="bi bi-chat-right-dots mx-1 text-white align-middle"></i><?= $article->countComments ?></span>
                                                     <?php  } ?>
                                                 </small>
                                             </div>

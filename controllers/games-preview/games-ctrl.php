@@ -28,8 +28,8 @@ try {
         $timestamp = strtotime($article->article_created_at);
         $article->formattedHour = date('H:i', $timestamp);
         $article->formattedDate = date('d-m-y', $timestamp);
-        $id_article = $article->id_article;
-        $countComments = Comment::count($id_article);
+        $countComments = Comment::count($article->id_article);
+        $article->countComments = $countComments;
     }
 
     foreach ($guides as $guide) {

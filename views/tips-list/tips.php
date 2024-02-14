@@ -45,7 +45,7 @@
                                                     <div>
                                                         <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase"><?= $article->game_name ?></span>
                                                     </div>
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
                                                         <?= $article->article_title ?>
                                                     </a>
                                                     <p class="aCard mt-2">

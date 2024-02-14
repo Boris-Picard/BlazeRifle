@@ -42,8 +42,8 @@
                                                         le <?= $article->formattedDate ?>
                                                         a
                                                         <?= $article->formattedHour ?>
-                                                        <?php if (!empty($countComments)) { ?>
-                                                            <span class="badge rounded-pill text-uppercase mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i><?= $countComments ?></span>
+                                                        <?php if (!empty($article->countComments)) { ?>
+                                                            <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $article->countComments ?></span>
                                                         <?php  } ?>
                                                         <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= htmlspecialchars($article->game_name) ?></span>
                                                         <!-- <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold"><?= htmlspecialchars($article->console_name) ?></span> -->
@@ -66,7 +66,7 @@
                                         </div>
                                         <div class="card-body p-0 mt-1">
                                             <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?>" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">
-                                                <?= htmlspecialchars($article->article_title) ?>
+                                                <?= $article->article_title ?>
                                             </a>
                                             <div class="card-text mb-3">
                                                 <small class="text-muted"><?= $article->article_created_at ?>
@@ -155,7 +155,7 @@
                                     <?php } ?>
                                 </div>
                                 <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
-                                    <?php 
+                                    <?php
                                     foreach ($guidesSecondCol as $guide) { ?>
                                         <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
                                             <div class="row g-0 cardGuideRight">

@@ -7,11 +7,11 @@
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>">Preview <?= $gameId ?> </a></li>
                                 <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php?">Preview Des Articles</a></li>
                                 <?php if (!is_null($categoryId)) { ?>
                                     <li class="breadcrumb-item"><a href="/controllers/tips-list/tips-ctrl.php">Articles sur <?= $article->game_name ?></a></li>
                                 <?php } else { ?>
+                                    <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>">Preview <?= $article->game_name ?> </a></li>
                                     <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $gameId ?>">Articles sur <?= $article->game_name ?></a></li>
                                 <?php } ?>
                                 <li class="breadcrumb-item active" aria-current="page">Article</li>
@@ -22,15 +22,9 @@
                         <!-- PRECEDENT SUIVANT -->
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
-                                <?php if (!is_null($id_category)) { ?>
-                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&id_category<?= $categoryId ?>" class="text-decoration-none fw-bold">Précédent</a></small>
+                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + - 1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Précédent</a></small>
                                     <small><a href="/controllers/tips-list/tips-ctrl.php?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->label ?></a></small>
-                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category<?= $categoryId ?>" class="text-decoration-none fw-bold">Suivant</a></small>
-                                <?php } else { ?>
-                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none fw-bold">Précédent</a></small>
-                                    <small><a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= !is_null($gameId) ? htmlspecialchars($article->game_name) : htmlspecialchars($article->console_name) ?></a></small>
-                                    <small><a href="/controllers/articles/article-ctrl.php?id=<?= $article->id_article + 1 ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="text-decoration-none fw-bold">Suivant</a></small>
-                                <?php } ?>
+                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
                         </div>
                         <!-- TITLE -->
@@ -90,28 +84,54 @@
                                 <h4 class="text-capitalize text-danger fw-bold">
                                     Article suivant
                                 </h4>
-                                <?php foreach ($articlesBottom as $article) {
-                                    if ($id_article != $article->id_article) { ?>
-                                        <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
-                                            <div class="row g-0">
-                                                <div class="col-md-2 d-flex">
-                                                    <div class="ratio ratio-16x9">
-                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" class="object-fit-cover img-fluid rounded-4" alt="<?= $article->game_name ?>">
+                                <?php if (isset($gameId)) {
+                                    foreach ($articlesBottom as $article) {
+                                        if ($id_article !== $article->id_article) { ?>
+                                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
+                                                <div class="row g-0">
+                                                    <div class="col-md-2 d-flex">
+                                                        <div class="ratio ratio-16x9">
+                                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" class="object-fit-cover img-fluid rounded-4" alt="<?= $article->game_name ?>">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="card-body p-2 mx-2">
-                                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($id_game) ? 'id_game=' . $article->id_game : 'id_category=' . $article->id_category ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
-                                                            <?= html_entity_decode($article->article_title) ?>
-                                                        </a>
-                                                        <p class="text-card aCard m-0 mt-2">
-                                                            <?= html_entity_decode($article->article_description) ?>
-                                                        </p>
+                                                    <div class="col-md-10">
+                                                        <div class="card-body p-2 mx-2">
+                                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game<?= $article->id_game ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
+                                                                <?= html_entity_decode($article->article_title) ?>
+                                                            </a>
+                                                            <p class="text-card aCard m-0 mt-2">
+                                                                <?= html_entity_decode($article->article_description) ?>
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        <?php }
+                                    }
+                                } else {
+                                    foreach ($articlesBottom as $article) {
+                                        if ($id_article !== $article->id_article) { ?>
+                                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
+                                                <div class="row g-0">
+                                                    <div class="col-md-2 d-flex">
+                                                        <div class="ratio ratio-16x9">
+                                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" class="object-fit-cover img-fluid rounded-4" alt="<?= $article->game_name ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <div class="card-body p-2 mx-2">
+                                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
+                                                                <?= html_entity_decode($article->article_title) ?>
+                                                            </a>
+                                                            <p class="text-card aCard m-0 mt-2">
+                                                                <?= html_entity_decode($article->article_description) ?>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                 <?php }
+                                    }
                                 } ?>
                             </div>
                         </div>
@@ -242,30 +262,50 @@
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row justify-content-center text-center p-3">
-                                        <h5 class="text-uppercase fw-bold">articles sur : <span class="text-danger"><?= !is_null($gameId) ? htmlspecialchars($article->game_name) : htmlspecialchars($article->console_name) ?></span></h5>
+                                        <h5 class="text-uppercase fw-bold">articles sur : <span class="text-danger"><?= $article->game_name ?></span></h5>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <?php if ($id_article !== $articleSidebar[0]->id_article) { ?>
+                                        <?php if ($id_article !== $articlesSidebar[0]->id_article) { ?>
                                             <div class="card mt-3 p-0 border-0 bg-transparent">
                                                 <div class="card-img-top ratio ratio-16x9">
-                                                    <img src="/public/uploads/article/<?= $articleSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articleSidebar[0]->game_name ?>">
+                                                    <img src="/public/uploads/article/<?= $articlesSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articlesSidebar[0]->game_name ?>">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
-                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
-                                                        <?= html_entity_decode($articleSidebar[0]->article_title) ?>
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articlesSidebar[0]->id_article ?>&<?= isset($gameId) ? 'id_game=' . $articlesSidebar[0]->id_game : 'id_category=' . $articlesSidebar[0]->id_category  ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                        <?= html_entity_decode($articlesSidebar[0]->article_title) ?>
                                                     </a>
                                                     <div class="card-text mb-3">
                                                         <small class="text-muted">
-                                                            <?= $articleSidebar[0]->article_created_at ?>
+                                                            le <?= $articlesSidebar[0]->formattedDate ?>
+                                                            a <?= $articlesSidebar[0]->formattedHour ?>
                                                         </small>
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php } ?>
-                                        <?php foreach ($articleSidebar as $article) {
-                                            if ($articleSidebar[0]->id_article !== $article->id_article && $article->id_article != $id_article) { ?>
+                                        <?php } else { ?>
+                                            <div class="card mt-3 p-0 border-0 bg-transparent">
+                                                <div class="card-img-top ratio ratio-16x9">
+                                                    <img src="/public/uploads/article/<?= $articlesSidebar[1]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articlesSidebar[1]->game_name ?>">
+                                                </div>
+                                                <div class="card-body p-0 mt-1">
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articlesSidebar[1]->id_article ?>&<?= isset($gameId) ? 'id_game=' . $articlesSidebar[1]->id_game : 'id_category=' . $articlesSidebar[1]->id_category  ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                        <?= html_entity_decode($articlesSidebar[1]->article_title) ?>
+                                                    </a>
+                                                    <div class="card-text mb-3">
+                                                        <small class="text-muted">
+                                                            le <?= $articlesSidebar[1]->formattedDate ?>
+                                                            a <?= $articlesSidebar[1]->formattedHour ?>
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php  } ?>
+                                        <?php
+                                        array_shift($articlesSidebar);
+                                        foreach ($articlesSidebar as $article) {
+                                            if ($articlesSidebar[0]->id_article !== $article->id_article && $article->id_article != $id_article) { ?>
                                                 <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                                     <div class="row g-0 cardActuGuideRight">
                                                         <div class="col-auto">
@@ -274,13 +314,14 @@
                                                         <div class="col-md-6 p-0 ">
                                                             <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
                                                                 <div class="">
-                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                        <?= htmlspecialchars($article->article_title) ?>
+                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= isset($gameId) ? 'id_game=' . $article->id_game : 'id_category=' . $article->id_category  ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                        <?= $article->article_title ?>
                                                                     </a>
                                                                 </div>
                                                                 <p class="card-text">
                                                                     <small class="text-muted">
-                                                                        Le <?= $article->created_at ?>
+                                                                        le <?= $article->formattedDate ?>
+                                                                        a <?= $article->formattedHour ?>
                                                                     </small>
                                                                 </p>
                                                             </div>
@@ -290,9 +331,13 @@
                                         <?php }
                                         } ?>
                                         <div class="d-flex justify-content-center mt-3 mb-4">
-                                            <a href="/controllers/articles-list/articles-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                les articles <?= !is_null($gameId) ? htmlspecialchars($article->game_name) : htmlspecialchars($article->console_name) ?>
-                                            </a>
+                                            <?php if (isset($gameId)) { ?>
+                                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                <?php } else { ?>
+                                                    <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                    <?php  } ?>
+                                                    les articles <?= $articlesSidebar[0]->game_name ?>
+                                                    </a>
                                         </div>
                                     </div>
                                 </div>
