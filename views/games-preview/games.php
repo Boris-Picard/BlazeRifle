@@ -99,31 +99,31 @@
                             </div>
                         </div>
                         <div class="row">
-                            <?php foreach ($guides as $guide) { ?>
-                                <div class="col-md-6 col-12">
-                                    <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
-                                        <img src="/public/uploads/article/<?= $guide->article_picture ?>" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $guide->game_name ?>">
-                                        <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                            <p class="p-0 m-0">
-                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2">apex legends</span>
-                                            </p>
-                                            <div class="w-50">
-                                                <a href="#" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                                </a>
-                                            </div>
-                                            <div class="card-text mt-2">
-                                                <small>il y a 47 minutes
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold">apex legends</span>
-                                                </small>
-                                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
+                                    <img src="/public/uploads/article/<?= $guides[0]->article_picture ?>" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $guides[0]->game_name ?>">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $guides[0]->game_name ?></span>
+                                        </p>
+                                        <div class="w-50">
+                                            <a href="#" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
+                                                <?= $guides[0]->article_title ?>
+                                            </a>
+                                        </div>
+                                        <div class="card-text mt-2">
+                                            <small>
+                                                le <?= $guides[0]->formattedDate ?>
+                                                a <?= $guides[0]->formattedHour ?>
+                                                <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold"><?= $guides[0]->game_name ?></span>
+                                            </small>
                                         </div>
                                     </div>
                                 </div>
-                            <?php } ?>
+                            </div>
                             <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
-                                <?php foreach ($guidesRightCol as $guide) { ?>
+                                <?php foreach ($shiftedGuides as $guide) { ?>
                                     <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
                                         <div class="row g-0 cardGuideRight">
                                             <div class="col-auto">
@@ -131,7 +131,7 @@
                                             </div>
                                             <div class="col-md-8 p-0 ">
                                                 <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                    <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide GTA 6</small>
+                                                    <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide <?= $guide->game_name ?></small>
                                                     <div class="mt-1">
                                                         <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam hic molestias, consequuntur provident necessitatibus culpa laudantium asperiores, nemo similique quas saepe repudiandae voluptatem, perspiciatis earum animi. Obcaecati, voluptates itaque.
