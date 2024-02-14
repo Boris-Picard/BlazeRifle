@@ -85,73 +85,79 @@
             </section>
             <!-- LES GUIDES -->
             <section>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-md-8 col-12 py-3 mt-5">
-                                <h2 class="h2 text-uppercase fw-bold">Tous les guides</h2>
+                <?php if (!empty($guides))  { ?>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-md-8 col-12 py-3 mt-5">
+                                    <h2 class="h2 text-uppercase fw-bold">Tous les guides <span class="text-danger"><?= $guides[0]->game_name ?></span></h2>
+                                </div>
+                                <div class="col-md-4 col-12 d-flex btnTitle align-items-center justify-content-end mt-5">
+                                    <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                        Tous les guides : <?= $guides[0]->game_name ?>
+                                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="col-md-4 col-12 d-flex btnTitle align-items-center justify-content-end mt-5">
-                                <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                    Tous les guides
-                                    <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-12">
-                                <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
-                                    <img src="/public/uploads/article/<?= $guides[0]->article_picture ?>" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $guides[0]->game_name ?>">
-                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                        <p class="p-0 m-0">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $guides[0]->game_name ?></span>
-                                        </p>
-                                        <div class="w-50">
-                                            <a href="#" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
-                                                <?= $guides[0]->article_title ?>
-                                            </a>
-                                        </div>
-                                        <div class="card-text mt-2">
-                                            <small>
-                                                le <?= $guides[0]->formattedDate ?>
-                                                a <?= $guides[0]->formattedHour ?>
-                                                <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold"><?= $guides[0]->game_name ?></span>
-                                            </small>
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
+                                        <img src="/public/uploads/article/<?= $guides[0]->article_picture ?>" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $guides[0]->game_name ?>">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                            <p class="p-0 m-0">
+                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $guides[0]->game_name ?></span>
+                                            </p>
+                                            <div>
+                                                <a href="#" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
+                                                    <?= $guides[0]->article_description ?>
+                                                </a>
+                                            </div>
+                                            <div class="card-text mt-2">
+                                                <small>
+                                                    le <?= $guides[0]->formattedDate ?>
+                                                    a <?= $guides[0]->formattedHour ?>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold"><?= $guides[0]->game_name ?></span>
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
-                                <?php foreach ($shiftedGuides as $guide) { ?>
-                                    <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
-                                        <div class="row g-0 cardGuideRight">
-                                            <div class="col-auto">
-                                                <img src="/public/uploads/article/<?= $guide->article_picture ?>" alt="<?= $guide->game_name ?>" class="imgGuideRight object-fit-cover rounded-4">
-                                            </div>
-                                            <div class="col-md-8 p-0 ">
-                                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                    <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide <?= $guide->game_name ?></small>
-                                                    <div class="mt-1">
-                                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam hic molestias, consequuntur provident necessitatibus culpa laudantium asperiores, nemo similique quas saepe repudiandae voluptatem, perspiciatis earum animi. Obcaecati, voluptates itaque.
-                                                        </a>
+                                <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
+                                    <?php array_shift($guides);
+                                    foreach ($guides as $guide) { ?>
+                                        <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
+                                            <div class="row g-0 cardGuideRight">
+                                                <div class="col-auto">
+                                                    <img src="/public/uploads/article/<?= $guide->article_picture ?>" alt="<?= $guide->game_name ?>" class="imgGuideRight object-fit-cover rounded-4">
+                                                </div>
+                                                <div class="col-md-8 p-0 ">
+                                                    <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                                        <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide <?= $guide->game_name ?></small>
+                                                        <div class="mt-1">
+                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                                <?= $guide->article_title ?>
+                                                            </a>
+                                                        </div>
+                                                        <p class="card-text">
+                                                            <small class="text-muted">
+                                                                le <?= $guide->formattedDate ?>
+                                                                a
+                                                                <?= $guide->formattedHour ?>
+                                                                <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                                <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold"></span>
+                                                            </small>
+                                                        </p>
                                                     </div>
-                                                    <p class="card-text">
-                                                        <small class="text-muted">Il y a 5 heures
-                                                            <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                            <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                        </small>
-                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                <?php } ?>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </section>
             <!-- LES DERNIERES VIDEOS -->
             <section>
