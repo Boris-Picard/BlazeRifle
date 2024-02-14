@@ -123,6 +123,37 @@ class Game
         return $result;
     }
 
+    public static function getGameCategory(int $id_category): array|false
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT DISTINCT
+        `games`.`id_game`,
+        `games`.`game_name`,
+        `games`.`game_description`,
+        `games`.`game_picture`,
+        `categories`.`id_category`,
+        `categories`.`label` as category_label
+        FROM 
+            `games`
+        INNER JOIN 
+            `articles` ON `games`.`id_game` = `articles`.`id_game`
+        INNER JOIN  
+            `categories` ON `articles`.`id_category` = `categories`.`id_category`
+        WHERE 
+            `categories`.`id_category` = :id_category;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_category', $id_category, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        $result = $sth->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
     /**
      * Méthode pour récuperer une donnée spécifique dans la table games
      * @param int $id_game

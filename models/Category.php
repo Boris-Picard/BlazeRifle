@@ -73,19 +73,7 @@ class Category
         $sql = 'SELECT `categories`.`id_category`, `categories`.`label`, COUNT(`articles`.`id_article`) AS article_count 
         FROM `categories`
         LEFT JOIN `articles` ON `articles`.`id_category` = `categories`.`id_category`
-        GROUP BY `categories`.`id_category`';
-
-        $sth = $pdo->query($sql);
-
-        return $sth->fetchAll(PDO::FETCH_OBJ);
-    }
-
-    public static function getGameCategory()
-    {
-        $pdo = Database::connect();
-
-        $sql = 'SELECT * FROM `categories`
-        LEFT JOIN `games` ON `games`.`id_game`=`articles`.`id_game`;';
+        GROUP BY `categories`.`id_category`;';
 
         $sth = $pdo->query($sql);
 

@@ -99,214 +99,55 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-12">
-                                <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
-                                    <img src="/public/assets/img/apex.jpg" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="Stony Beach">
-                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                        <p class="p-0 m-0">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2">apex legends</span>
-                                        </p>
-                                        <div class="w-50">
-                                            <a href="#" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                            </a>
-                                        </div>
-                                        <div class="card-text mt-2">
-                                            <small>il y a 47 minutes
-                                                <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold">apex legends</span>
-                                            </small>
+                            <?php foreach ($guides as $guide) { ?>
+                                <div class="col-md-6 col-12">
+                                    <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
+                                        <img src="/public/uploads/article/<?= $guide->article_picture ?>" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $guide->game_name ?>">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                            <p class="p-0 m-0">
+                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2">apex legends</span>
+                                            </p>
+                                            <div class="w-50">
+                                                <a href="#" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
+                                                </a>
+                                            </div>
+                                            <div class="card-text mt-2">
+                                                <small>il y a 47 minutes
+                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold">apex legends</span>
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php } ?>
                             <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
-                                <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/assets/img/gta-6-news-visu.jpg" alt="GTA 6" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide GTA 6</small>
-                                                <div class="mt-1">
-                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam hic molestias, consequuntur provident necessitatibus culpa laudantium asperiores, nemo similique quas saepe repudiandae voluptatem, perspiciatis earum animi. Obcaecati, voluptates itaque.
-                                                    </a>
+                                <?php foreach ($guidesRightCol as $guide) { ?>
+                                    <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
+                                        <div class="row g-0 cardGuideRight">
+                                            <div class="col-auto">
+                                                <img src="/public/uploads/article/<?= $guide->article_picture ?>" alt="<?= $guide->game_name ?>" class="imgGuideRight object-fit-cover rounded-4">
+                                            </div>
+                                            <div class="col-md-8 p-0 ">
+                                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                                    <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide GTA 6</small>
+                                                    <div class="mt-1">
+                                                        <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias magnam hic molestias, consequuntur provident necessitatibus culpa laudantium asperiores, nemo similique quas saepe repudiandae voluptatem, perspiciatis earum animi. Obcaecati, voluptates itaque.
+                                                        </a>
+                                                    </div>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">Il y a 5 heures
+                                                            <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                            <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
+                                                        </small>
+                                                    </p>
                                                 </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">Il y a 5 heures
-                                                        <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                    </small>
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/assets/img/1329760.jpeg" alt="Counter Strike 2" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Counter Strike 2</small>
-                                                <div class="mt-1">
-                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Les leaks de GTA 5 révèlent pas mal de choses...
-                                                    </a>
-                                                </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">Il y a 5 heures
-                                                        <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                    </small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/assets/img/valorant.jpg" alt="Valorant" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Valorant</small>
-                                                <div class="mt-1">
-                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Les leaks de GTA 5 révèlent pas mal de choses...
-                                                    </a>
-                                                </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">Il y a 5 heures
-                                                        <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                    </small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" alt="Call Of Duty : MW 3" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Call Of Duty : MW 3</small>
-                                                <div class="mt-1">
-                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Les leaks de GTA 5 révèlent pas mal de choses...
-                                                    </a>
-                                                </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">Il y a 5 heures
-                                                        <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                    </small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-12 d-flex justify-content-between flex-column">
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" alt="Call Of Duty : Warzone 2" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Call Of Duty : Warzone 2</small>
-                                                <div class="mt-1">
-                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Les leaks de GTA 5 révèlent pas mal de choses...
-                                                    </a>
-                                                </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">Il y a 5 heures
-                                                        <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                    </small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/assets/img/overwatch2.jpg" alt="Overwatch 2" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Overwatch 2</small>
-                                                <div class="mt-1">
-                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Les leaks de GTA 5 révèlent pas mal de choses...
-                                                    </a>
-                                                </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">Il y a 5 heures
-                                                        <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                    </small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/assets/img/borderlands3.jpg" alt="Borderlands 3" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Borderlands 3</small>
-                                                <div class="mt-1">
-                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Les leaks de GTA 5 révèlent pas mal de choses...
-                                                    </a>
-                                                </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">Il y a 5 heures
-                                                        <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                    </small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/assets/img/battlefield2042.jpg" alt="Battlefield 2042" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide Battlefield 2042</small>
-                                                <div class="mt-1">
-                                                    <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        Les leaks de GTA 5 révèlent pas mal de choses...
-                                                    </a>
-                                                </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">Il y a 5 heures
-                                                        <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                        <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold">PC</span>
-                                                    </small>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

@@ -107,7 +107,7 @@
                         <div class="row py-4">
                             <div class="col-md-12">
                                 <small>Vous n'avez pas de compte ?</small>
-                                <a href="/controllers/login-ctrl/sign-up-ctrl.php" class="text-danger text-sm fw-semibold text-decoration-none">S'inscrire</a>
+                                <a href="/controllers/login/sign-up-ctrl.php" class="text-danger text-sm fw-semibold text-decoration-none">S'inscrire</a>
                             </div>
                         </div>
                     </div>
@@ -147,4 +147,5 @@
         <?php } ?>
     </div>
 </section>
+<script src="/public/assets/js/checkemail.js"></script>
 </body>

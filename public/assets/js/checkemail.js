@@ -13,7 +13,7 @@ const checkEmail = () => {
         return response.json();
     })
     .then( (isExist) => {
-        if(!isExist) {
+        if(isExist) {
             email.classList.add('border-danger');
         } else {
             email.classList.remove('border-danger');

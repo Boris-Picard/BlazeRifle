@@ -150,7 +150,7 @@
                         <div class="row py-4">
                             <div class="col-md-12">
                                 <small>Vous avez déjà un compte ?</small>
-                                <a href="/controllers/login-ctrl/sign-in-ctrl.php" class="text-danger text-sm fw-semibold text-decoration-none">Se connecter</a>
+                                <a href="/controllers/login/sign-in-ctrl.php" class="text-danger text-sm fw-semibold text-decoration-none">Se connecter</a>
                             </div>
                         </div>
                     </div>
@@ -192,6 +192,5 @@
 </section>
 <script src="/public/assets/js/password.js"></script>
 <script src="/public/assets/js/googlecallback.js"></script>
-<script src="/public/assets/js/checkemail.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
