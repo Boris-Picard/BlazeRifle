@@ -16,7 +16,7 @@ try {
     // $consoleId = $id_console == 0 ? null : $id_console;
 
     // Obtenir le nombre total d'articles pour le jeu ou la console
-    $nbArticles = Article::count(id_game: $gameId, id_category: REGEX_ARTICLES_JEUX);
+    $nbArticles = Article::count(id_game: $gameId, id_category: REGEX_ARTICLES_GAMES);
 
     // Calculer le nombre total de pages nécessaires pour afficher les articles
     $nbPages = ceil($nbArticles / 7);
@@ -26,7 +26,7 @@ try {
     $currentPage = ($currentPage <= 0) ? 1 : $currentPage;
 
     // Récupérer les articles de la page actuelle pour le jeu donné
-    $articles = Article::getAll($gameId, id_category: REGEX_ARTICLES_JEUX, showDeletedAt: false, order: 'DESC', page: $currentPage);
+    $articles = Article::getAll($gameId, id_category: REGEX_ARTICLES_GAMES, order: 'DESC', page: $currentPage);
 
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {

@@ -505,7 +505,7 @@ class Article
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT count(*) AS `count` FROM `articles`
+        $sql = 'SELECT COUNT(*) AS `count` FROM `articles`
                 INNER JOIN `games` ON `games`.`id_game` = `articles`.`id_game`
                 INNER JOIN `categories` ON `categories`.`id_category`= `articles`.`id_category`
                 WHERE 1 = 1';
@@ -514,7 +514,7 @@ class Article
             $sql .= ' AND `articles`.`id_game` = :id_game';
         }
 
-        if (!is_null($id_game)) {
+        if (!is_null($id_category)) {
             $sql .= ' AND `categories`.`id_category` = :id_category';
         }
 

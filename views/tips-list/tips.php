@@ -15,13 +15,15 @@
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
                                 <h2 class="h2 text-uppercase fw-bold text-center"><?= $articles[0]->label ?></h2>
-                                <p class="text-center mt-2">Sur notre site, découvrez une multitude de bons plans soigneusement sélectionnés pour enrichir votre quotidien.
+                                <!-- <p class="text-center mt-2">Sur notre site, découvrez une multitude de bons plans soigneusement sélectionnés pour enrichir votre quotidien.
                                     Chaque semaine, nous explorons de nouvelles offres et tendances pour vous apporter des articles détaillés, pratiques et informatifs.
                                     Que ce soit pour des gadgets technologiques dernier cri, des escapades inoubliables, ou des astuces bien-être,
                                     nous avons ce qu'il vous faut. Nos articles ne se contentent pas de lister des produits ou des services ;
                                     ils vous plongent dans une expérience, en vous fournissant des conseils d'experts, des astuces d'utilisation,
                                     et des avis objectifs. Rejoignez notre communauté de chasseurs de bons plans et économisez tout en découvrant des pépites méconnues.
-                                    Avec nous, chaque clic vous rapproche de la découverte parfaite, adaptée à vos besoins et vos envies.
+                                    Avec nous, chaque clic vous rapproche de la découverte parfaite, adaptée à vos besoins et vos envies. -->
+                                <?= $games[2]->game_description
+                                ?>
                                 </p>
                             </div>
                         </div>
@@ -33,7 +35,9 @@
                                 <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
                                     <div class="row g-0">
                                         <div class="col-md-4">
-                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="<?= $article->game_name ?>">
+                                            <div class="ratio ratio-16x9">
+                                                <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid object-fit-cover w-100 card-img-top cardsActus shadow-lg rounded-start rounded-3" alt="<?= $article->article_picture ?>">
+                                            </div>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body px-3 d-flex flex-column justify-content-end">
@@ -60,33 +64,30 @@
                                         </div>
                                     </div>
                                 </div>
+                            <?php } ?>
+                            <nav aria-label="pagination">
+                                <ul class="pagination justify-content-center mt-5">
+                                    <li class="page-item">
+                                        <a class="page-link text-dark" href="?page=<?= $currentPage - 1 ?>" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <?php
+                                    for ($page = 1; $page <= $nbPages; $page++) {
+                                        $isActive = ($currentPage == $page) ? 'activePagination' : '';
+                                    ?>
+                                        <li class="page-item"><a class="page-link text-dark <?= $isActive ?>" href="?page=<?= $page ?>"><?= $page ?></a></li>
+                                    <?php  } ?>
+                                    <li class="page-item">
+                                        <a class="page-link text-dark" href="?page=<?= $currentPage + 1 ?>" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
-                    <?php } ?>
-                    <nav aria-label="pagination">
-                        <ul class="pagination justify-content-center mt-5">
-                            <li class="page-item">
-                                <a class="page-link text-dark" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link text-dark activePagination" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link text-dark" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link text-dark" href="#">6</a></li>
-                            <li class="page-item"><a class="page-link text-dark" href="#">...</a></li>
-                            <li class="page-item"><a class="page-link text-dark" href="#">20</a></li>
-                            <li class="page-item">
-                                <a class="page-link text-dark" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                     </div>
                 </div>
+            </section>
         </div>
-    </section>
-    </div>
     </section>
