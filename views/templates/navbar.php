@@ -1,9 +1,11 @@
 <?php
-require_once __DIR__ . '/../../models/Article.php';
+require_once __DIR__ . '/../../models/Category.php';
 require_once __DIR__ . '/../../models/Console.php';
 
 try {
-    $articles = Article::getAll();
+    $games = Category::getAll();
+    var_dump($games);
+    die;
     $consoles = Console::getAll();
 } catch (\Throwable $e) {
     $e->getMessage();
@@ -51,9 +53,9 @@ try {
                                 Les jeux
                             </a>
                             <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
-                                <?php foreach ($articles as $article) {
-                                    if ($article->id_game !== 3 && $article->id_category == 6) { ?>
-                                        <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $article->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $article->game_name ?>"><?= htmlspecialchars($article->game_name) ?></span></a></li>
+                                <?php foreach ($games as $game) {
+                                    if ($game->id_game !== 3 && $game->id_category == 6) { ?>
+                                        <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $game->id_game ?>&id_category=<?= $game->id_category ?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $game->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $game->game_name ?>"><?= htmlspecialchars($game->game_name) ?></span></a></li>
                                 <?php }
                                 } ?>
                             </ul>

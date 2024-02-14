@@ -33,7 +33,7 @@
                             </div>
                             <div class="py-3">
                                 <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Modifier le commentaire</button>
-                                <a href="/controllers/dashboard/category/list-categories-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
+                                <a href="/controllers/dashboard/comments/list-comments-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
                             </div>
                         </form>
                     </div>

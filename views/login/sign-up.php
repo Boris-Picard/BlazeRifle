@@ -192,5 +192,6 @@
 </section>
 <script src="/public/assets/js/password.js"></script>
 <script src="/public/assets/js/googlecallback.js"></script>
+<script src="/public/assets/js/checkemail.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>

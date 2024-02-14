@@ -80,6 +80,18 @@ class Category
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public static function getGameCategory()
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT * FROM `categories`
+        LEFT JOIN `games` ON `games`.`id_game`=`articles`.`id_game`;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetchAll(PDO::FETCH_OBJ);
+    }
+
     /**
      * Récupère une catégorie par son identifiant.
      * 
