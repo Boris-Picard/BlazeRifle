@@ -23,7 +23,7 @@
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
                                 <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Précédent</a></small>
-                                <small><a href="/controllers/tips-list/tips-ctrl.php?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->label ?></a></small>
+                                <small><a href="/controllers/tips-list/tips-ctrl.php" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->label ?></a></small>
                                 <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
                         </div>

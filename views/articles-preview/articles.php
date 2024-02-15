@@ -20,7 +20,7 @@
                     <div class="col-md-4">
                         <h2 class="fw-bold text-uppercase py-2 aCardMin"><?= htmlspecialchars($game->game_name) ?></h2>
                         <div class="card rounded-4 border-0 shadow ">
-                            <img src="/public/uploads/games/<?= $game->game_picture ?>" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="GTA 6">
+                            <img src="/public/uploads/games/<?= $game->game_picture ?>" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="$game->game_name">
                             <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
                                 <p class="p-0 m-0 z-3">
                                     <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
@@ -40,7 +40,7 @@
                                 <?php foreach ($allArticles as $articles) {
                                     foreach ($articles as $article) {
                                         // Vérifier si le nom du jeu actuel correspond au nom du jeu de l'article en cours
-                                        if ($game->game_name == $article->game_name) { ?>
+                                        if ($game->id_game == $article->id_game) { ?>
                                             <!-- ARTICLE -->
                                             <p class="card-text d-flex align-items-center my-0">
                                                 <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
@@ -52,14 +52,9 @@
                                 <?php }
                                     }
                                 } ?>
-                                <!-- BUTTON ARTICLE -->
-                                <?php foreach ($games as $game) {
-                                    if ($article->id_game == $game->id_game) { ?>
-                                        <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase aCardMin mt-3 mb-1">
-                                            Tous les articles sur : <?= $game->game_name ?>
-                                        </a>
-                                <?php }
-                                } ?>
+                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>&id_category=<?= $article->id_category ?>" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase aCardMin mt-3 mb-1">
+                                    Tous les articles sur : <?= $game->game_name ?>
+                                </a>
                             </div>
                         </div>
                     </div>

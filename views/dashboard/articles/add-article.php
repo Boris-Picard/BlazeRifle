@@ -43,7 +43,7 @@
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
                                     <label for="description" class="form-label">Description de l'article <span class="text-danger">*</span></label>
-                                    <textarea class="form-control descriptionArea" name="description" pattern="<?= REGEX_TEXTAREA ?>" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="150" maxlength="500" required><?= $description ?? '' ?></textarea>
+                                    <textarea class="form-control descriptionArea" name="description" id="description" placeholder="Créer une description d'article" aria-describedby="description" minlength="150" maxlength="500" required><?= $description ?? '' ?></textarea>
                                 </div>
                             </div>
                             <div class="row">
@@ -62,12 +62,12 @@
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['firstSection'] ?? '' ?></small></div>
                                     <label for="firstSection" class="form-label">Première section de l'article <span class="text-danger">*</span></label>
-                                    <textarea class="form-control articleArea" name="firstSection" id="firstSection" pattern="<?= REGEX_SECTION ?>" placeholder="Première section d'article" aria-describedby="firstSection" minlength="250" maxlength="5000" required><?= $firstSection ?? '' ?></textarea>
+                                    <textarea class="form-control articleArea" name="firstSection" id="firstSection" placeholder="Première section d'article" aria-describedby="firstSection" minlength="250" maxlength="5000" required><?= $firstSection ?? '' ?></textarea>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['secondSection'] ?? '' ?></small></div>
                                     <label for="secondSection" class="form-label">Deuxième section de l'article <span class="text-danger">*</span></label>
-                                    <textarea class="form-control articleArea" name="secondSection" id="secondSection" pattern="<?= REGEX_SECTION ?>" placeholder="Deuxième section d'article" aria-describedby="secondSection" minlength="250" maxlength="5000" required><?= $secondSection ?? '' ?></textarea>
+                                    <textarea class="form-control articleArea" name="secondSection" id="secondSection" placeholder="Deuxième section d'article" aria-describedby="secondSection" minlength="250" maxlength="5000" required><?= $secondSection ?? '' ?></textarea>
                                 </div>
                             </div>
                             <div class="row">

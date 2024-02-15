@@ -52,7 +52,7 @@ try {
                             </a>
                             <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
                                 <?php foreach ($games as $game) {
-                                    if ($game->id_game !== 3) { ?>
+                                    if ($game->id_game !== REGEX_GAME_TIPS) { ?>
                                         <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $game->id_game ?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $game->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $game->game_name ?>"><?= htmlspecialchars($game->game_name) ?></span></a></li>
                                 <?php }
                                 } ?>

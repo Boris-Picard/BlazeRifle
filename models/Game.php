@@ -114,7 +114,7 @@ class Game
 
         $sql = 'SELECT *
         FROM `games`
-        WHERE 1=1;';
+        WHERE 1=1';
 
         $sth = $pdo->query($sql);
 

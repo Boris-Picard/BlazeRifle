@@ -123,7 +123,7 @@ class Event
      */
     public function insert(): int
     {
-        $pdo = Database::connect(DSN, USER, PASSWORD);
+        $pdo = Database::connect();
 
         $sql = 'INSERT INTO `events` (`event_title`, `event_description`, `event_picture`, `event_link`, `place`, `event_date`, `id_game`, `id_user`)
         VALUES (:event_title, :event_description, :event_picture, :event_link, :place, :event_date, :id_game, :id_user)';
@@ -151,23 +151,33 @@ class Event
      * 
      * @return array
      */
-    public static function getAll(?int $id_game = null, string $order = 'ASC'): array|false
+    public static function getAll(?int $id_game = null, string $order = 'ASC', ?int $limit = null, ?int $offset = null): array|false
     {
-        $pdo = Database::connect(DSN, USER, PASSWORD);
+        $pdo = Database::connect();
 
         $sql = 'SELECT * FROM `events`
-        INNER JOIN `games` ON `games`.`id_game`=`events`.`id_game`
-        WHERE 1=1';
-
-        isset($id_game) ? $sql .= ' AND `games`.`id_game`=:id_game ' : '';
-
-        $order == 'ASC' ? $sql .= ' ORDER BY `event_date` ASC ' : ' ORDER BY `event_date` DESC ';
+                INNER JOIN `games` ON `games`.`id_game`=`events`.`id_game`
+                WHERE 1=1';
 
         if (isset($id_game)) {
-            $sth = $pdo->prepare($sql);
+            $sql .= ' AND `games`.`id_game`=:id_game';
+        }
+
+        $sql .= ($order == 'ASC') ? ' ORDER BY `event_date` ASC' : ' ORDER BY `event_date` DESC';
+
+        if (!is_null($limit)) {
+            $sql .= ' LIMIT :limit OFFSET :offset';
+        }
+
+        $sth = $pdo->prepare($sql);
+
+        if (isset($id_game)) {
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
-        } else {
-            $sth = $pdo->query($sql);
+        }
+
+        if (!is_null($limit)) {
+            $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+            $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
         }
 
         $sth->execute();
@@ -177,6 +187,7 @@ class Event
         return $result;
     }
 
+
     /**
      * Méthode pour récuperer un event en particulier avec son id
      * @param int $id_event
@@ -185,7 +196,7 @@ class Event
      */
     public static function get(int $id_event)
     {
-        $pdo = Database::connect(DSN, USER, PASSWORD);
+        $pdo = Database::connect();
 
         $sql = 'SELECT * FROM `events`
         INNER JOIN `games` ON `games`.`id_game`=`events`.`id_game`
@@ -208,7 +219,7 @@ class Event
      */
     public function update(): bool
     {
-        $pdo = Database::connect(DSN, USER, PASSWORD);
+        $pdo = Database::connect();
 
         $sql = 'UPDATE `events`
         SET `event_title`=:event_title, `event_description`=:event_description, `event_picture`=:event_picture, `event_link`=:event_link, `place`=:place, `event_date`=:event_date, `id_game`=:id_game, `id_user`=:id_user

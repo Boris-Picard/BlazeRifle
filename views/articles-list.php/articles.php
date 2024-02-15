@@ -84,125 +84,127 @@
                         </div>
                     </div>
                     <!-- LES GUIDES -->
-                    <div class="col-md-4 col-12 colGuideRight mt-3">
-                        <div class="row mx-4 rounded-4">
-                            <div class="col-12 widthColRightActu shadow-lg rounded-4">
-                                <div class="row">
-                                    <div class="col-12 d-flex flex-row text-center align-items-center p-3">
-                                        <i class="bi bi-book fs-1 px-2"></i>
-                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">les guides :</span> <?= $articles[0]->game_name ?></h5>
+                    <?php if (isset($firstArticleSidebar)) { ?>
+                        <div class="col-md-4 col-12 colGuideRight mt-3">
+                            <div class="row mx-4 rounded-4">
+                                <div class="col-12 widthColRightActu shadow-lg rounded-4">
+                                    <div class="row">
+                                        <div class="col-12 d-flex flex-row text-center align-items-center p-3">
+                                            <i class="bi bi-book fs-1 px-2"></i>
+                                            <h5 class="text-uppercase fw-bold"><span class="text-danger">les guides :</span> <?= $articles[0]->game_name ?></h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card mt-3 p-0 border-0 bg-transparent">
-                                            <div class="card-img-top ratio ratio-16x9">
-                                                <img src="/public/uploads/article/<?= $firstArticleSidebar->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $firstArticleSidebar->game_name ?>">
-                                            </div>
-                                            <div class="card-body p-0 mt-1">
-                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticleSidebar->id_article ?>&id_category=<?= $firstArticleSidebar->id_category ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
-                                                    <?= html_entity_decode($firstArticleSidebar->article_title) ?>
-                                                </a>
-                                                <div class="card-text mb-3">
-                                                    <small class="text-muted">
-                                                        a <?= $firstArticleSidebar->formattedHour ?>
-                                                        le <?= $firstArticleSidebar->formattedDate ?>
-                                                    </small>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card mt-3 p-0 border-0 bg-transparent">
+                                                <div class="card-img-top ratio ratio-16x9">
+                                                    <img src="/public/uploads/article/<?= $firstArticleSidebar->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $firstArticleSidebar->game_name ?>">
+                                                </div>
+                                                <div class="card-body p-0 mt-1">
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticleSidebar->id_article ?>&id_category=<?= $firstArticleSidebar->id_category ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                        <?= html_entity_decode($firstArticleSidebar->article_title) ?>
+                                                    </a>
+                                                    <div class="card-text mb-3">
+                                                        <small class="text-muted">
+                                                            a <?= $firstArticleSidebar->formattedHour ?>
+                                                            le <?= $firstArticleSidebar->formattedDate ?>
+                                                        </small>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <?php foreach ($articlesSidebar as $article) { ?>
-                                            <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                                <div class="row g-0 cardActuGuideRight">
-                                                    <div class="col-auto">
-                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->game_name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                    </div>
-                                                    <div class="col-md-6 p-0 ">
-                                                        <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                            <div class="">
-                                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                    <?= $article->article_title ?>
-                                                                </a>
+                                            <?php foreach ($articlesSidebar as $article) { ?>
+                                                <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
+                                                    <div class="row g-0 cardActuGuideRight">
+                                                        <div class="col-auto">
+                                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->game_name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
+                                                        </div>
+                                                        <div class="col-md-6 p-0 ">
+                                                            <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
+                                                                <div class="">
+                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                        <?= $article->article_title ?>
+                                                                    </a>
+                                                                </div>
+                                                                <p class="card-text">
+                                                                    <small class="text-muted">
+                                                                        a <?= $article->formattedHour ?>
+                                                                        le <?= $article->formattedDate ?>
+                                                                    </small>
+                                                                </p>
                                                             </div>
-                                                            <p class="card-text">
-                                                                <small class="text-muted">
-                                                                    a <?= $article->formattedHour ?>
-                                                                    le <?= $article->formattedDate ?>
-                                                                </small>
-                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            <?php } ?>
+                                            <div class="d-flex justify-content-center mt-3 mb-4">
+                                                <a href="?id_game=<?= $articlesSidebar[0]->id_game . '&id_category=' . $articlesSidebar[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                    les guides <?= $articlesSidebar[0]->game_name ?>
+                                                </a>
                                             </div>
-                                        <?php } ?>
-                                        <div class="d-flex justify-content-center mt-3 mb-4">
-                                            <a href="?id_game=<?= $articlesSidebar[0]->id_game . '&id_category=' . $articlesSidebar[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                les guides <?= $articlesSidebar[0]->game_name ?>
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- LES VIDEOS -->
-                            <div class="mt-4"></div>
-                            <div class="col-12 widthColRightVideo shadow-lg rounded-4">
-                                <div class="row">
-                                    <div class="col-12 d-flex flex-row text-center align-items-center p-3">
-                                        <i class="bi bi-play-circle fs-1 px-2"></i>
-                                        <h5 class="text-uppercase fw-bold"><span class="text-warning">les vidéos :</span> battlefield 2042</h5>
+                                <!-- LES VIDEOS -->
+                                <div class="mt-4"></div>
+                                <div class="col-12 widthColRightVideo shadow-lg rounded-4">
+                                    <div class="row">
+                                        <div class="col-12 d-flex flex-row text-center align-items-center p-3">
+                                            <i class="bi bi-play-circle fs-1 px-2"></i>
+                                            <h5 class="text-uppercase fw-bold"><span class="text-warning">les vidéos :</span> battlefield 2042</h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card mt-3 p-0 border-0 bg-transparent">
-                                            <div class="card-img-top ratio ratio-16x9">
-                                                <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/t8xJpEbAelU?si=dFdL0OE3ZJ4ZajTI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="card-body p-0 mt-1">
-                                                <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
-                                                <div class="card-text mb-3">
-                                                    <small class="text-muted">
-                                                        25 déc, 18:05
-                                                    </small>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card mt-3 p-0 border-0 bg-transparent">
+                                                <div class="card-img-top ratio ratio-16x9">
+                                                    <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/t8xJpEbAelU?si=dFdL0OE3ZJ4ZajTI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="card-body p-0 mt-1">
+                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
+                                                    <div class="card-text mb-3">
+                                                        <small class="text-muted">
+                                                            25 déc, 18:05
+                                                        </small>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card mt-3 p-0 border-0 bg-transparent">
-                                            <div class="card-img-top ratio ratio-16x9">
-                                                <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/0K6KrOm3MaA?si=gd5nUgQ4LwUblNM4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="card-body p-0 mt-1">
-                                                <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
-                                                <div class="card-text mb-3">
-                                                    <small class="text-muted">
-                                                        25 déc, 18:05
-                                                    </small>
+                                            <div class="card mt-3 p-0 border-0 bg-transparent">
+                                                <div class="card-img-top ratio ratio-16x9">
+                                                    <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/0K6KrOm3MaA?si=gd5nUgQ4LwUblNM4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="card-body p-0 mt-1">
+                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
+                                                    <div class="card-text mb-3">
+                                                        <small class="text-muted">
+                                                            25 déc, 18:05
+                                                        </small>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card mt-3 p-0 border-0 bg-transparent">
-                                            <div class="card-img-top ratio ratio-16x9">
-                                                <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/XDPdtQD3dDw?si=8J56_M49Q6DJ7pyY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="card-body p-0 mt-1">
-                                                <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
-                                                <div class="card-text mb-3">
-                                                    <small class="text-muted">
-                                                        25 déc, 18:05
-                                                    </small>
+                                            <div class="card mt-3 p-0 border-0 bg-transparent">
+                                                <div class="card-img-top ratio ratio-16x9">
+                                                    <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/XDPdtQD3dDw?si=8J56_M49Q6DJ7pyY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="card-body p-0 mt-1">
+                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
+                                                    <div class="card-text mb-3">
+                                                        <small class="text-muted">
+                                                            25 déc, 18:05
+                                                        </small>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="d-flex justify-content-center mt-3 mb-4">
-                                            <a href="#" class="btn btn-warning w-50 rounded-4 p-1 fw-bold text-uppercase">
-                                                les vidéos
-                                            </a>
+                                            <div class="d-flex justify-content-center mt-3 mb-4">
+                                                <a href="#" class="btn btn-warning w-50 rounded-4 p-1 fw-bold text-uppercase">
+                                                    les vidéos
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </section>
         </div>

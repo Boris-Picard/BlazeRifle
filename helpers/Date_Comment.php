@@ -2,8 +2,9 @@
 
 class Date_Comment
 {
-    public static function formatDateComment($articles) {
-        
+    public static function formatDateComment($articles)
+    {
+
         foreach ($articles as $article) {
             $timestamp = strtotime($article->article_created_at);
             $article->formattedHour = date('H:i', $timestamp);
@@ -12,5 +13,13 @@ class Date_Comment
             $article->countComments = $countComments;
         }
     }
-}
 
+    public static function eventDate($events)
+    {
+        foreach ($events as $event) {
+            $timestamp = strtotime($event->event_date);
+            $event->formattedHour = date('H:i', $timestamp);
+            $event->formattedDate = date('d-m-Y', $timestamp);
+        }
+    }
+}

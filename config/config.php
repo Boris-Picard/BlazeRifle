@@ -7,7 +7,7 @@ define('PASSWORD', 'r.g[WZL_FZkqM0Gs');
 
 define('REGEX_TITLE', "[a-zA-Z0-9 .,éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:'-]{10,150}+$");
 define('REGEX_SECTION', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{2,5000}+$");
-define('REGEX_NAME', '^[A-Za-z-éèêëàâäôöûüç\' ]{2,150}+$');
+define('REGEX_NAME', '^[A-Za-z0-9-éèêëàâäôöûüç\' ]{2,150}+$');
 define('IMAGE_TYPES',  ['image/jpeg', 'image/png', 'image/avif']);
 define('MAX_FILESIZE', 2 * 1024 * 1024);
 define('REGEX_PLACE', '^[A-Za-zÀ-ÖØ-öø-ÿ\-\s\']{2,}+$');
@@ -21,6 +21,8 @@ define('DATE', '^(?:\d{4}-\d{2}-\d{2})$');
 define('REGEX_TIPS', 2);
 define('REGEX_ARTICLES_GAMES', 6);
 define('REGEX_GUIDES', 7);
+
+define('REGEX_GAME_TIPS', 3);
 
 
 
