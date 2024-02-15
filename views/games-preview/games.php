@@ -34,19 +34,17 @@
                                         <div class="card-img-overlay ">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= htmlspecialchars($article->game_name) ?></span>
                                             <div class="card-body d-flex flex-column justify-content-end h-100 p-0">
-                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="lh-1 card-text fw-bold stretched-link aCard text-wrap text-wrap text-decoration-none text-light mb-1">
                                                     <?= html_entity_decode($article->article_title) ?>
                                                 </a>
                                                 <div class="card-text mb-3">
                                                     <small>
+                                                        a <?= $article->formattedHour ?>
                                                         le <?= $article->formattedDate ?>
-                                                        a
-                                                        <?= $article->formattedHour ?>
                                                         <?php if (!empty($article->countComments)) { ?>
                                                             <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $article->countComments ?></span>
                                                         <?php  } ?>
                                                         <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold"><?= htmlspecialchars($article->game_name) ?></span>
-                                                        <!-- <span class="badge rounded-pill text-uppercase border bg-transparent text-light fw-semibold"><?= htmlspecialchars($article->console_name) ?></span> -->
                                                     </small>
                                                 </div>
                                             </div>
@@ -65,12 +63,16 @@
                                             </div>
                                         </div>
                                         <div class="card-body p-0 mt-1">
-                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= !empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?>" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">
+                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">
                                                 <?= $article->article_title ?>
                                             </a>
                                             <div class="card-text mb-3">
-                                                <small class="text-muted"><?= $article->article_created_at ?>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                <small class="text-muted">
+                                                    a <?= $article->formattedHour ?>
+                                                    le <?= $article->formattedDate ?>
+                                                    <?php if (!empty($article->countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $article->countComments ?></span>
+                                                    <?php  } ?>
                                                     <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold"><?= htmlspecialchars($article->game_name) ?></span>
                                                 </small>
                                             </div>
@@ -108,15 +110,17 @@
                                                 <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $guides[0]->game_name ?></span>
                                             </p>
                                             <div>
-                                                <a href="#" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
-                                                    <?= $guides[0]->article_description ?>
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $guides[0]->id_article ?>&id_category=<?= $guides[0]->id_category ?>" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
+                                                    <?= $guides[0]->article_title ?>
                                                 </a>
                                             </div>
                                             <div class="card-text mt-2">
                                                 <small>
                                                     le <?= $guides[0]->formattedDate ?>
                                                     a <?= $guides[0]->formattedHour ?>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                    <?php if (!empty($guides[0]->countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $guides[0]->countComments ?></span>
+                                                    <?php  } ?>
                                                     <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold"><?= $guides[0]->game_name ?></span>
                                                 </small>
                                             </div>
@@ -135,7 +139,7 @@
                                                     <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
                                                         <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide <?= $guide->game_name ?></small>
                                                         <div class="mt-1">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $guide->id_article ?>&id_category=<?= $guide->id_category ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                                 <?= $guide->article_title ?>
                                                             </a>
                                                         </div>
@@ -144,7 +148,9 @@
                                                                 le <?= $guide->formattedDate ?>
                                                                 a
                                                                 <?= $guide->formattedHour ?>
-                                                                <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                                <?php if (!empty($guide->countComments)) { ?>
+                                                                    <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $guide->countComments ?></span>
+                                                                <?php  } ?>
                                                                 <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold"></span>
                                                             </small>
                                                         </p>
@@ -166,7 +172,7 @@
                                                     <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
                                                         <small class="card-text text-danger titlecardGuideRight text-uppercase fw-semibold m-0 p-0">Guide <?= $guide->game_name ?></small>
                                                         <div class="mt-1">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $guide->id_article ?>&id_category=<?= $guide->id_category ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                                 <?= $guide->article_title ?>
                                                             </a>
                                                         </div>
@@ -175,8 +181,9 @@
                                                                 le <?= $guide->formattedDate ?>
                                                                 a
                                                                 <?= $guide->formattedHour ?>
-                                                                <span class="badge badge-sm rounded-pill text-uppercase mx-1 border bg-dark text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                                <span class="badge rounded-pill text-uppercase border bg-dark text-light fw-semibold"></span>
+                                                                <?php if (!empty($guide->countComments)) { ?>
+                                                                    <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $guide->countComments ?></span>
+                                                                <?php  } ?>
                                                             </small>
                                                         </p>
                                                     </div>

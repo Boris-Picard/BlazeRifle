@@ -100,13 +100,13 @@
                                                 <img src="/public/uploads/article/<?= $articlesSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articlesSidebar[0]->game_name ?>">
                                             </div>
                                             <div class="card-body p-0 mt-1">
-                                                <a href="/controllers/articles/article-ctrl.php?id_article=" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articlesSidebar[0]->id_article ?>&id_category=<?= $articlesSidebar[0]->id_category ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
                                                     <?= html_entity_decode($articlesSidebar[0]->article_title) ?>
                                                 </a>
                                                 <div class="card-text mb-3">
                                                     <small class="text-muted">
-                                                        <!-- le <?= $articlesSidebar[0]->formattedDate ?> -->
-                                                        <!-- a <?= $articlesSidebar[0]->formattedHour ?> -->
+                                                        a <?= $articlesSidebar[0]->formattedHour ?>
+                                                        le <?= $articlesSidebar[0]->formattedDate ?>
                                                     </small>
                                                 </div>
                                             </div>
@@ -122,14 +122,14 @@
                                                     <div class="col-md-6 p-0 ">
                                                         <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
                                                             <div class="">
-                                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= isset($gameId) ? 'id_game=' . $article->id_game : 'id_category=' . $article->id_category  ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
                                                                     <?= $article->article_title ?>
                                                                 </a>
                                                             </div>
                                                             <p class="card-text">
                                                                 <small class="text-muted">
-                                                                    <!-- le <?= $article->formattedDate ?>
-                                                                a <?= $article->formattedHour ?> -->
+                                                                    a <?= $article->formattedHour ?>
+                                                                    le <?= $article->formattedDate ?>
                                                                 </small>
                                                             </p>
                                                         </div>
@@ -138,8 +138,8 @@
                                             </div>
                                         <?php } ?>
                                         <div class="d-flex justify-content-center mt-3 mb-4">
-                                            <a href="#" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                les guides
+                                            <a href="?id_game=<?= $articlesSidebar[0]->id_game . '&id_category=' . $articlesSidebar[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                les guides <?= $articlesSidebar[0]->game_name ?>
                                             </a>
                                         </div>
                                     </div>

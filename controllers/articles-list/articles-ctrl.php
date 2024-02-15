@@ -38,7 +38,12 @@ try {
         $countComments = Comment::count($article->id_article);
         $article->countComments = $countComments;
     }
-    
+
+    foreach ($articlesSidebar as $article) {
+        $timestamp = strtotime($article->article_created_at);
+        $article->formattedHour = date('H:i', $timestamp);
+        $article->formattedDate = date('d-m-Y', $timestamp);
+    }
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

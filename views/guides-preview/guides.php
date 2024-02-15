@@ -40,14 +40,14 @@
                                     <p class="p-0 m-0">
                                         <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2"><?= $article->label ?></span>
                                     </p>
-                                    <a href="" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
                                         <?= $article->article_title ?>
                                     </a>
                                     <div class="mt-1">
                                         <small class="text-muted">
                                             a <?= $article->formattedHour ?>
                                             le <?= $article->formattedDate ?>
-                                            <?php if (!empty($article->countComments > 0 )) { ?>
+                                            <?php if (!empty($article->countComments)) { ?>
                                                 <span class="badge rounded-pill mx-1 border bg-danger text-white fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i><?= $article->countComments ?></span>
                                             <?php } ?>
                                             <span class="badge rounded-pill border bg-transparent text-dark fw-semibold"><?= $article->game_name ?></span>

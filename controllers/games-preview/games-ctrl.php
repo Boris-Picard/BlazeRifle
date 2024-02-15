@@ -36,12 +36,24 @@ try {
         $timestamp = strtotime($guide->article_created_at);
         $guide->formattedHour = date('H:i', $timestamp);
         $guide->formattedDate = date('d-m-y', $timestamp);
+        $countComments = Comment::count($guide->id_article);
+        $guide->countComments = $countComments;
+    }
+
+    foreach ($articlesUnder as $article) {
+        $timestamp = strtotime($article->article_created_at);
+        $article->formattedHour = date('H:i', $timestamp);
+        $article->formattedDate = date('d-m-y', $timestamp);
+        $countComments = Comment::count($article->id_article);
+        $article->countComments = $countComments;
     }
 
     foreach ($guidesSecondCol as $guide) {
         $timestamp = strtotime($guide->article_created_at);
         $guide->formattedHour = date('H:i', $timestamp);
         $guide->formattedDate = date('d-m-y', $timestamp);
+        $countComments = Comment::count($guide->id_article);
+        $guide->countComments = $countComments;
     }
 } catch (PDOException $e) {
     die('Erreur ctrl games :' . $e->getMessage());
