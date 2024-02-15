@@ -97,23 +97,21 @@
                                     <div class="col-12">
                                         <div class="card mt-3 p-0 border-0 bg-transparent">
                                             <div class="card-img-top ratio ratio-16x9">
-                                                <img src="/public/uploads/article/<?= $articlesSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articlesSidebar[0]->game_name ?>">
+                                                <img src="/public/uploads/article/<?= $firstArticleSidebar->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $firstArticleSidebar->game_name ?>">
                                             </div>
                                             <div class="card-body p-0 mt-1">
-                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articlesSidebar[0]->id_article ?>&id_category=<?= $articlesSidebar[0]->id_category ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
-                                                    <?= html_entity_decode($articlesSidebar[0]->article_title) ?>
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticleSidebar->id_article ?>&id_category=<?= $firstArticleSidebar->id_category ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                    <?= html_entity_decode($firstArticleSidebar->article_title) ?>
                                                 </a>
                                                 <div class="card-text mb-3">
                                                     <small class="text-muted">
-                                                        a <?= $articlesSidebar[0]->formattedHour ?>
-                                                        le <?= $articlesSidebar[0]->formattedDate ?>
+                                                        a <?= $firstArticleSidebar->formattedHour ?>
+                                                        le <?= $firstArticleSidebar->formattedDate ?>
                                                     </small>
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php
-                                        array_shift($articlesSidebar);
-                                        foreach ($articlesSidebar as $article) { ?>
+                                        <?php foreach ($articlesSidebar as $article) { ?>
                                             <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                                 <div class="row g-0 cardActuGuideRight">
                                                     <div class="col-auto">

@@ -57,8 +57,8 @@
                                                     <small>
                                                         le <?= $article->formattedDate ?>
                                                         a <?= $article->formattedHour ?>
-                                                        <?php if ($countComments > 0) { ?>
-                                                            <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i><?= $countComments ?></span>
+                                                        <?php if ($article->countComments > 0) { ?>
+                                                            <span class="badge rounded-pill mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i><?= $article->countComments ?></span>
                                                         <?php  } ?>
                                                     </small>
                                                 </div>

@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Comment.php';
+require_once __DIR__ . '/../../helpers/Date_Comment.php';
 
 try {
     $articles = Article::getAll(id_category: REGEX_GUIDES, showConfirmedAt: true, order: 'DESC');
@@ -15,13 +16,7 @@ try {
 
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($allArticles as $game_articles) {
-        foreach ($game_articles as $article) {
-            $timestamp = strtotime($article->article_created_at);
-            $article->formattedHour = date('H:i', $timestamp);
-            $article->formattedDate = date('d-m-y', $timestamp);
-            $countComments = Comment::count($article->id_article);
-            $article->countComments = $countComments;
-        }
+        Date_Comment::formatDateComment($game_articles);
     }
 } catch (PDOException $e) {
     die('Erreur guides : ' . $e->getMessage());

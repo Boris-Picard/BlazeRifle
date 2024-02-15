@@ -22,9 +22,9 @@
                         <!-- PRECEDENT SUIVANT -->
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
-                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + - 1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Précédent</a></small>
-                                    <small><a href="/controllers/tips-list/tips-ctrl.php?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->label ?></a></small>
-                                    <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Suivant</a></small>
+                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Précédent</a></small>
+                                <small><a href="/controllers/tips-list/tips-ctrl.php?>" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->label ?></a></small>
+                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
                         </div>
                         <!-- TITLE -->
@@ -174,7 +174,7 @@
                                                                 </p>
                                                                 <small class="form-text text-danger"><?= $error['textAreaComment'] ?? '' ?></small>
                                                                 <small class="form-text text-danger"><?= $error['user'] ?? '' ?></small>
-                                                                <textarea class="form-control" name="textAreaComment" id="textAreaComment" pattern="<?= REGEX_TEXTAREA ?>" rows="5" minlenght="2" maxlength="500" required><?= $textAreaComment ?? '' ?></textarea>
+                                                                <textarea class="form-control" name="textAreaComment" id="textAreaComment" rows="5" minlength="2" maxlength="500" required><?= $textAreaComment ?? '' ?></textarea>
                                                                 <div class="float-end mt-3">
                                                                     <button type="submit" class="btn btn-primary btn-sm fw-bold rounded-5 text-uppercase p-2 commentButton">Poster</button>
                                                                     <button type="button" class="btn btn-outline-danger fw-bold btn-sm rounded-5 p-2 text-uppercase">Annuler</button>
@@ -267,45 +267,26 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <?php if ($id_article !== $articlesSidebar[0]->id_article) { ?>
+                                        <?php if ($id_article !== $firstArticleSidebar->id_article) { ?>
                                             <div class="card mt-3 p-0 border-0 bg-transparent">
                                                 <div class="card-img-top ratio ratio-16x9">
-                                                    <img src="/public/uploads/article/<?= $articlesSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articlesSidebar[0]->game_name ?>">
+                                                    <img src="/public/uploads/article/<?= $firstArticleSidebar->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $firstArticleSidebar->game_name ?>">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articlesSidebar[0]->id_article ?>&<?= isset($gameId) ? 'id_game=' . $articlesSidebar[0]->id_game : 'id_category=' . $articlesSidebar[0]->id_category  ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
-                                                        <?= html_entity_decode($articlesSidebar[0]->article_title) ?>
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticleSidebar->id_article ?>&<?= isset($gameId) ? 'id_game=' . $firstArticleSidebar->id_game : 'id_category=' . $firstArticleSidebar->id_category  ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                        <?= html_entity_decode($firstArticleSidebar->article_title) ?>
                                                     </a>
                                                     <div class="card-text mb-3">
                                                         <small class="text-muted">
-                                                            le <?= $articlesSidebar[0]->formattedDate ?>
-                                                            a <?= $articlesSidebar[0]->formattedHour ?>
+                                                            le <?= $firstArticleSidebar->formattedDate ?>
+                                                            a <?= $firstArticleSidebar->formattedHour ?>
                                                         </small>
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php } else { ?>
-                                            <div class="card mt-3 p-0 border-0 bg-transparent">
-                                                <div class="card-img-top ratio ratio-16x9">
-                                                    <img src="/public/uploads/article/<?= $articlesSidebar[1]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articlesSidebar[1]->game_name ?>">
-                                                </div>
-                                                <div class="card-body p-0 mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articlesSidebar[1]->id_article ?>&<?= isset($gameId) ? 'id_game=' . $articlesSidebar[1]->id_game : 'id_category=' . $articlesSidebar[1]->id_category  ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
-                                                        <?= html_entity_decode($articlesSidebar[1]->article_title) ?>
-                                                    </a>
-                                                    <div class="card-text mb-3">
-                                                        <small class="text-muted">
-                                                            le <?= $articlesSidebar[1]->formattedDate ?>
-                                                            a <?= $articlesSidebar[1]->formattedHour ?>
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php  } ?>
-                                        <?php
-                                        array_shift($articlesSidebar);
-                                        foreach ($articlesSidebar as $article) {
-                                            if ($articlesSidebar[0]->id_article !== $article->id_article && $article->id_article != $id_article) { ?>
+                                        <?php } ?>
+                                        <?php foreach ($articlesSidebar as $article) {
+                                            if ($firstArticleSidebar->id_article !== $article->id_article && $article->id_article != $id_article) { ?>
                                                 <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
                                                     <div class="row g-0 cardActuGuideRight">
                                                         <div class="col-auto">
@@ -336,7 +317,7 @@
                                                 <?php } else { ?>
                                                     <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
                                                     <?php  } ?>
-                                                    les articles <?= $articlesSidebar[0]->game_name ?>
+                                                    les articles <?= $firstArticleSidebar->game_name ?>
                                                     </a>
                                         </div>
                                     </div>

@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Game.php';
 require_once __DIR__ . '/../../models/Comment.php';
 require_once __DIR__ . '/../../models/Console.php';
+require_once __DIR__ . '/../../helpers/Date_Comment.php';
 
 try {
     // Récupérer l'ID du jeu et le numéro de la page depuis la requête GET
@@ -28,22 +29,11 @@ try {
     // Récupérer les articles de la page actuelle pour le jeu donné
     $articles = Article::getAll($gameId, id_category: $categoryId, order: 'DESC', page: $currentPage);
 
+    Date_Comment::formatDateComment($articles);
+
     $articlesSidebar = Article::getAll($gameId, id_category: REGEX_GUIDES, order: 'DESC');
-
-    // Formater la date et l'heure de chaque article pour affichage
-    foreach ($articles as $article) {
-        $timestamp = strtotime($article->article_created_at);
-        $article->formattedHour = date('H:i', $timestamp);
-        $article->formattedDate = date('d-m-Y', $timestamp);
-        $countComments = Comment::count($article->id_article);
-        $article->countComments = $countComments;
-    }
-
-    foreach ($articlesSidebar as $article) {
-        $timestamp = strtotime($article->article_created_at);
-        $article->formattedHour = date('H:i', $timestamp);
-        $article->formattedDate = date('d-m-Y', $timestamp);
-    }
+    Date_Comment::formatDateComment($articlesSidebar);
+    $firstArticleSidebar = array_shift($articlesSidebar);
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config/config.php';
+require_once __DIR__ . '/../../helpers/Date_Comment.php';
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Comment.php';
 require_once __DIR__ . '/../../models/User.php';
@@ -37,11 +38,9 @@ try {
 
     // Récupération des articles pour les afficher dans la sidebar
     $articlesSidebar = Article::getAll($gameId, false, order: 'DESC', limit: 7, id_category: $categoryId);
-    foreach ($articlesSidebar as $articleSidebar) {
-        $timestamp = strtotime($articleSidebar->article_created_at);
-        $articleSidebar->formattedHour = date('H:i', $timestamp);
-        $articleSidebar->formattedDate = date('d/m/y', $timestamp);
-    }
+    Date_Comment::formatDateComment($articlesSidebar);
+    $firstArticleSidebar = array_shift($articlesSidebar);
+    
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
     $articlesBottom = Article::getAll($gameId, false, true, $categoryId, 'DESC', limit: 3);
     // Gérer le formulaire de commentaire s'il est soumis

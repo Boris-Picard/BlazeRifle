@@ -44,47 +44,55 @@
                 <div class="col-md-6">
                     <div class="card text-bg-dark border-0 rounded-4 cardArticleHome">
                         <div class="ratio ratio-16x9 ">
-                            <img src="/public/uploads/article/<?= $articles[0]->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 cardArticleHome" alt="<?= $articles[0]->game_name ?>">
+                            <img src="/public/uploads/article/<?= $firstArticle->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 cardArticleHome" alt="<?= $firstArticle->game_name ?>">
                         </div>
                         <div class="cardShadow">
                             <div class="card-img-overlay d-flex flex-column justify-content-end">
                                 <p class="p-0 m-0">
-                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 text-uppercase mb-2"><?= $articles[0]->game_name ?></span>
+                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 text-uppercase mb-2"><?= $firstArticle->game_name ?></span>
                                 </p>
                                 <div class="w-100">
-                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articles[0]->id_article ?>&id_category=<?= $articles[0]->id_category ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
-                                        <?= $articles[0]->article_title ?>
+                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticle->id_article ?>&id_category=<?= $firstArticle->id_category ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                        <?= $firstArticle->article_title ?>
                                     </a>
                                 </div>
                                 <div class="card-text mt-2">
-                                    <small>il y a 47 minutes
-                                        <span class="badge rounded-pill mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                        <span class="badge rounded-pill mb-1 border bg-transparent text-light fw-semibold">GTA 6</span>
+                                    <small>
+                                        a <?= $firstArticle->formattedHour ?>
+                                        le <?= $firstArticle->formattedDate ?>
+                                        <?php if (!empty($firstArticle->countComments)) { ?>
+                                            <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $firstArticle->countComments ?></span>
+                                        <?php  } ?>
+                                        <span class="badge rounded-pill mb-1 border bg-transparent text-light text-uppercase fw-semibold"><?= $firstArticle->game_name ?></span>
                                     </small>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- UNDERCARD 1 -->
-                    <?php array_shift($articles);
+                    <?php
                     foreach ($articles as $article) { ?>
                         <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4 mt-3">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="CALL OF DUTY MODERN WARFARE 3">
+                                    <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="<?= $article->game_name ?>">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body py-1">
                                         <p class="p-0 m-0">
                                             <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2"><?= $article->game_name ?></span>
                                         </p>
-                                        <a href="#" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
                                             <?= $article->article_title ?>
                                         </a>
                                         <div class="mt-1">
-                                            <small class="text-muted">il y a 47 minutes
-                                                <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill border bg-transparent text-dark fw-semibold"><?= $article->game_name ?></span>
+                                            <small class="text-muted">
+                                                a <?= $article->formattedHour ?>
+                                                le <?= $article->formattedDate ?>
+                                                <?php if (!empty($article->countComments)) { ?>
+                                                    <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $article->countComments ?></span>
+                                                <?php  } ?>
+                                                <span class="badge rounded-pill border bg-transparent text-dark text-uppercase fw-semibold"><?= $article->game_name ?></span>
                                             </small>
                                         </div>
                                     </div>
@@ -92,33 +100,38 @@
                             </div>
                         </div>
                     <?php  } ?>
-
                 </div>
                 <!-- SIDECARD 1 -->
                 <div class="col-md-6">
-                    <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="CALL OF DUTY MODERN WARFARE 3">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body py-1">
-                                    <p class="p-0 m-0">
-                                        <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2">GTA 6</span>
-                                    </p>
-                                    <a href="#" class="card-text mt-1 fw-bold stretched-link  aCard text-wrap text-decoration-none text-dark">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                    </a>
-                                    <div class="mt-1">
-                                        <small class="text-muted">il y a 47 minutes
-                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                        </small>
+                    <?php foreach ($sideArticles as $sideArticle) { ?>
+                        <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/public/uploads/article/<?= $sideArticle->article_picture ?>" loading="lazy" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="<?= $sideArticle->game_name ?>">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body py-1">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2"><?= $sideArticle->game_name ?></span>
+                                        </p>
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideArticle->id_article ?>&id_category=<?= $sideArticle->id_category ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
+                                            <?= $sideArticle->article_title ?>
+                                        </a>
+                                        <div class="mt-1">
+                                            <small class="text-muted">
+                                                a <?= $sideArticle->formattedHour ?>
+                                                le <?= $sideArticle->formattedDate ?>
+                                                <?php if (!empty($sideArticle->countComments)) { ?>
+                                                    <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $sideArticle->countComments ?></span>
+                                                <?php  } ?>
+                                                <span class="badge rounded-pill border bg-transparent text-dark text-uppercase fw-semibold"><?= $sideArticle->game_name ?></span>
+                                            </small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

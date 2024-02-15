@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../helpers/CheckPermissions.php';
+require_once __DIR__ . '/../../helpers/Date_Comment.php';
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Comment.php';
 
@@ -22,13 +23,8 @@ try {
     // Récupérer les articles de la page actuelle pour le jeu donné
     $articles = Article::getAll(id_game:3, id_category: REGEX_TIPS, showConfirmedAt: true, order: 'DESC', limit: 4, page: $currentPage);
 
-    foreach ($articles as $article) {
-        $timestamp = strtotime($article->article_created_at);
-        $article->formattedHour = date('H:i', $timestamp);
-        $article->formattedDate = date('d-m-y', $timestamp);
-        $id_article = $article->id_article;
-        $countComments = Comment::count($id_article);
-    }
+    Date_Comment::formatDateComment($articles);
+    
 } catch (PDOException $e) {
     die('Erreur tips : ' . $e->getMessage());
 }

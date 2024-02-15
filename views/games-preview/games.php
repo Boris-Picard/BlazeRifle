@@ -87,16 +87,16 @@
             </section>
             <!-- LES GUIDES -->
             <section>
-                <?php if (!empty($guides)) { ?>
+                <?php if (!empty($firstGuide)) { ?>
                     <div class="row">
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-md-8 col-12 py-3 mt-5">
-                                    <h2 class="h2 text-uppercase fw-bold">Tous les guides <span class="text-danger"><?= $guides[0]->game_name ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold">Tous les guides <span class="text-danger"><?= $firstGuide->game_name ?></span></h2>
                                 </div>
                                 <div class="col-md-4 col-12 d-flex btnTitle align-items-center justify-content-end mt-5">
-                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $guides[0]->id_game ?>&id_category=<?= $guides[0]->id_category ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                        Tous les guides : <?= $guides[0]->game_name ?>
+                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $firstGuide->id_game ?>&id_category=<?= $firstGuide->id_category ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                        Tous les guides : <?= $firstGuide->game_name ?>
                                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                     </a>
                                 </div>
@@ -104,32 +104,31 @@
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
-                                        <img src="/public/uploads/article/<?= $guides[0]->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $guides[0]->game_name ?>">
+                                        <img src="/public/uploads/article/<?= $firstGuide->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $firstGuide->game_name ?>">
                                         <div class="card-img-overlay d-flex flex-column justify-content-end">
                                             <p class="p-0 m-0">
-                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $guides[0]->game_name ?></span>
+                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $firstGuide->game_name ?></span>
                                             </p>
                                             <div>
-                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $guides[0]->id_article ?>&id_category=<?= $guides[0]->id_category ?>" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
-                                                    <?= $guides[0]->article_title ?>
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstGuide->id_article ?>&id_category=<?= $firstGuide->id_category ?>" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
+                                                    <?= $firstGuide->article_title ?>
                                                 </a>
                                             </div>
                                             <div class="card-text mt-2">
                                                 <small>
-                                                    le <?= $guides[0]->formattedDate ?>
-                                                    a <?= $guides[0]->formattedHour ?>
-                                                    <?php if (!empty($guides[0]->countComments)) { ?>
-                                                        <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $guides[0]->countComments ?></span>
+                                                    le <?= $firstGuide->formattedDate ?>
+                                                    a <?= $firstGuide->formattedHour ?>
+                                                    <?php if (!empty($firstGuide->countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $firstGuide->countComments ?></span>
                                                     <?php  } ?>
-                                                    <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold"><?= $guides[0]->game_name ?></span>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold"><?= $firstGuide->game_name ?></span>
                                                 </small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
-                                    <?php array_shift($guides);
-                                    foreach ($guides as $guide) { ?>
+                                    <?php foreach ($guides as $guide) { ?>
                                         <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
                                             <div class="row g-0 cardGuideRight">
                                                 <div class="col-auto">

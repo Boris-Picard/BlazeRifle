@@ -3,6 +3,7 @@ session_start();
 require_once __DIR__ . '/../../models/Game.php';
 require_once __DIR__ . '/../../models/Comment.php';
 require_once __DIR__ . '/../../models/Article.php';
+require_once __DIR__ . '/../../helpers/Date_Comment.php';
 
 
 
@@ -17,44 +18,18 @@ try {
 
     // Récupérer les 4 premiers articles pour le jeu spécifié, triés par ordre décroissant
     $articles = Article::getAll($gameId, id_category: REGEX_ARTICLES_GAMES, limit: 4, showConfirmedAt: true, order: 'DESC');
+    Date_Comment::formatDateComment($articles);
+
     // Récupérer les 4 articles suivants pour le jeu spécifié, triés par ordre décroissant, en commençant à partir du 5e article
     $articlesUnder = Article::getAll($gameId, id_category: REGEX_ARTICLES_GAMES, limit: 4, showConfirmedAt: true, offset: 4, order: 'DESC');
+    Date_Comment::formatDateComment($articlesUnder);
 
     $guides = Article::getAll($gameId, id_category: REGEX_GUIDES, limit: 5, offset: 0, showConfirmedAt: true, order: 'DESC');
+    Date_Comment::formatDateComment($guides);
+    $firstGuide = array_shift($guides);
+
     $guidesSecondCol = Article::getAll($gameId, id_category: REGEX_GUIDES, limit: 4, offset: 5, showConfirmedAt: true, order: 'DESC');
-
-    // Formater la date et l'heure de chaque article pour affichage
-    foreach ($articles as $article) {
-        $timestamp = strtotime($article->article_created_at);
-        $article->formattedHour = date('H:i', $timestamp);
-        $article->formattedDate = date('d-m-y', $timestamp);
-        $countComments = Comment::count($article->id_article);
-        $article->countComments = $countComments;
-    }
-
-    foreach ($guides as $guide) {
-        $timestamp = strtotime($guide->article_created_at);
-        $guide->formattedHour = date('H:i', $timestamp);
-        $guide->formattedDate = date('d-m-y', $timestamp);
-        $countComments = Comment::count($guide->id_article);
-        $guide->countComments = $countComments;
-    }
-
-    foreach ($articlesUnder as $article) {
-        $timestamp = strtotime($article->article_created_at);
-        $article->formattedHour = date('H:i', $timestamp);
-        $article->formattedDate = date('d-m-y', $timestamp);
-        $countComments = Comment::count($article->id_article);
-        $article->countComments = $countComments;
-    }
-
-    foreach ($guidesSecondCol as $guide) {
-        $timestamp = strtotime($guide->article_created_at);
-        $guide->formattedHour = date('H:i', $timestamp);
-        $guide->formattedDate = date('d-m-y', $timestamp);
-        $countComments = Comment::count($guide->id_article);
-        $guide->countComments = $countComments;
-    }
+    Date_Comment::formatDateComment($guidesSecondCol);
 } catch (PDOException $e) {
     die('Erreur ctrl games :' . $e->getMessage());
 }
