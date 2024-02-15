@@ -264,7 +264,7 @@ class User
         }
     }
 
-    public static function getAll(): array|false
+    public static function getAll(?bool $showDeletedAt = null): array|false
     {
         $pdo = Database::connect();
 
@@ -278,14 +278,16 @@ class User
         `users`.`created_at` AS user_created_at,
         `users`.`role`,
         `users`.`confirmed_at` AS user_confirmed_at
-        FROM `users`;';
+        FROM `users`';
+
+        $showDeletedAt ? $sql .= ' WHERE `users`.`deleted_at` IS NOT NULL ' : $sql .= ' WHERE `users`.`deleted_at` IS NULL ';
 
         $sth = $pdo->query($sql);
 
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public static function get(int $id_user): object|false
+    public static function get(?int $id_user = null): object|false
     {
         $pdo = Database::connect();
 
@@ -297,6 +299,7 @@ class User
         `users`.`user_picture`,
         `users`.`created_at` AS user_created_at,
         `users`.`role`,
+        `users`.`deleted_at`,
         `users`.`confirmed_at` AS user_confirmed_at
         FROM `users`
         WHERE `id_user`=:id_user;';
@@ -307,7 +310,9 @@ class User
 
         $sth->execute();
 
-        return $sth->fetch(PDO::FETCH_OBJ);
+        $result = $sth->fetch(PDO::FETCH_OBJ);
+
+        return $result;
     }
 
     public function update(): int
@@ -365,5 +370,27 @@ class User
         $sth->execute();
 
         return (int) ($sth->rowCount() > 0);
+    }
+
+    public static function archive(int $id_user, ?bool $archive = false): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `users` SET `deleted_at` =  ';
+
+        if ($archive) {
+            $sql .= 'NOW()';
+        } else {
+            $sql .= 'NULL';
+        }
+
+        $sql .= ' WHERE `id_user` = :id_user';
+
+        // Prépare et exécute la requête
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+        $result = $sth->execute();
+
+        return $result;
     }
 }

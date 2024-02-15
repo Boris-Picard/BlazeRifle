@@ -43,7 +43,7 @@
                                             <?= $game->consoles ?>
                                         </td>
                                         <td class="fw-semibold"><?= $game->game_name ?></td>
-                                        <td class="fw-semibold text-break "><?= $game->game_description ?></td>
+                                        <td class="fw-semibold text-break w-50"><?= $game->game_description ?></td>
                                         <td class="fw-semibold">
                                             <?php if (isset($game->game_picture)) { ?>
                                                 <div class="ratio ratio-1x1">

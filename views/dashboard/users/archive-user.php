@@ -4,17 +4,16 @@
         <div class="col-xl-10 mx-auto mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="fw-bold text-uppercase">liste des utilisateurs</h1>
+                    <h1 class="fw-bold text-uppercase">liste des utilisateurs archivées</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <?= $msg ?>
                 </div>
             </div>
             <div class="col-5 pt-3">
                 <div class="d-flex mb-3">
-                    <a href="/controllers/dashboard/users/archive-user-ctrl.php" class="btn btn-outline-danger rounded-4 text-uppercase fw-bold mx-2">Voir les comptes archivées</a>
+                    <a href="/controllers/dashboard/users/users-list-ctrl.php" class="btn btn-outline-danger rounded-4 text-uppercase fw-bold mx-2">Revenir a la liste des comptes</a>
                 </div>
             </div>
             <div class="row">
@@ -33,7 +32,6 @@
                                     <th scope="col">Picture</th>
                                     <th scope="col">Date de création</th>
                                     <th scope="col">Role</th>
-                                    <th scope="col">Confirmation</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -54,19 +52,12 @@
                                         </td>
                                         <td class="fw-semibold text-break"><?= $user->user_created_at ?></td>
                                         <td class="fw-semibold text-break"><?= $user->role ?></td>
-                                        <td class="fw-semibold text-break">
-                                            <?php if (!is_null($user->user_confirmed_at)) { ?>
-                                                <button class="btn btn-small btn-success ">Validé</button>
-                                            <?php } else { ?>
-                                                <a href="/controllers/dashboard/users/users-list-ctrl.php?confirm=<?= $user->id_user ?>" class="btn btn-secondary btn-sm">En attente</a>
-                                            <?php } ?>
-                                        </td>
                                         <td>
-                                            <a href="/controllers/dashboard/users/update-user-ctrl.php?id_user=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
-                                                <i class="bi bi-pencil-square text-dark fs-4"></i>
-                                            </a>
-                                            <a href="/controllers/dashboard/users/archive-user-ctrl.php?id_user=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
+                                            <a href="/controllers/dashboard/users/users-list-ctrl.php?id_user=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-archive text-dark fs-4"></i>
+                                            </a>
+                                            <a href="/controllers/dashboard/users/delete-user-ctrl.php?id_user=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                             </a>
                                         </td>
                                     </tr>

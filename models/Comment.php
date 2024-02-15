@@ -134,10 +134,12 @@ class Comment
         `users`.`user_picture`,
         `articles`.`id_game`,
         `articles`.`article_title`,
+        `categories`.`label`,
         `games`.`game_name`
         FROM `comments`
         INNER JOIN `users` ON `users`.`id_user`=`comments`.`id_user`
         INNER JOIN `articles` ON `articles`.`id_article`=`comments`.`id_article`
+        INNER JOIN `categories` ON `articles`.`id_category`=`categories`.`id_category`
         LEFT JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
         WHERE 1 = 1';
 

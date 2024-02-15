@@ -16,7 +16,6 @@
                 <!-- CARD 1 -->
                 <div class="col-md-12 col-12 px-2">
                     <div class="row">
-                        <!-- GTA 6 -->
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-8">
@@ -30,82 +29,31 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 px-2 mt-3">
-                            <div class="card rounded-4 border-0 cardGuideMin shadow">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="Grand Theft Auto VI">
-                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                                    <p class="p-0 m-0">
-                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
-                                    </p>
-                                    <a href="/controllers/guides-list//guides-ctrl.php" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                    </a>
-                                    <div class="mt-1">
-                                        <small class="text-muted">il y a 47 minutes
-                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                        </small>
+                        <?php foreach ($articles as $article) { ?>
+                            <div class="col-md-3 px-2 mt-3">
+                                <div class="card rounded-4 border-0 cardGuideMin shadow">
+                                    <img src="/public/uploads/article/<?= $article->article_picture ?>" class="card-img-top rounded-4 h-50 object-fit-cover" alt="<?= $article->game_name ?>">
+                                    <div class="card-body py-1 d-flex flex-column justify-content-center ">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2"><?= $article->label ?></span>
+                                        </p>
+                                        <a href="/controllers/guides-list//guides-ctrl.php" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                            <?= $article->article_title ?>
+                                        </a>
+                                        <div class="mt-1">
+                                            <small class="text-muted">
+                                                le <?= $article->formattedDate ?>
+                                                a <?= $article->formattedHour ?>
+                                                <?php if (!empty($article->countComments = $countComments)) { ?>
+                                                    <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
+                                                <?php } ?>
+                                                <span class="badge rounded-pill border bg-transparent text-dark fw-semibold"><?= $article->game_name ?></span>
+                                            </small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 px-2 mt-3">
-                            <div class="card rounded-4 border-0 cardGuideMin shadow">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="Grand Theft Auto VI">
-                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                                    <p class="p-0 m-0">
-                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
-                                    </p>
-                                    <a href="/controllers/guides-list//guides-ctrl.php" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                    </a>
-                                    <div class="mt-1">
-                                        <small class="text-muted">il y a 47 minutes
-                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 px-2 mt-3">
-                            <div class="card rounded-4 border-0 cardGuideMin shadow">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="Grand Theft Auto VI">
-                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                                    <p class="p-0 m-0">
-                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
-                                    </p>
-                                    <a href="/controllers/guides-list//guides-ctrl.php" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                    </a>
-                                    <div class="mt-1">
-                                        <small class="text-muted">il y a 47 minutes
-                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 px-2 mt-3">
-                            <div class="card rounded-4 border-0 cardGuideMin shadow">
-                                <img src="/public/assets/img/gta-6-news-visu.jpg" class="card-img-top rounded-4 h-50 object-fit-cover" alt="Grand Theft Auto VI">
-                                <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                                    <p class="p-0 m-0">
-                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2">GTA 6</span>
-                                    </p>
-                                    <a href="/controllers/guides-list//guides-ctrl.php" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, iure. Quidem ex repellendus fuga aliquid sapiente facere velit repudiandae, molestiae laboriosam nihil pariatur hic nam iusto id fugiat fugit a.
-                                    </a>
-                                    <div class="mt-1">
-                                        <small class="text-muted">il y a 47 minutes
-                                            <span class="badge rounded-pill mx-1 border bg-transparent text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                            <span class="badge rounded-pill border bg-transparent text-dark fw-semibold">GTA 6</span>
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
                     <div class="row">
                         <!-- CALL OF DUTY MW 3 -->

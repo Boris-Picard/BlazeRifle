@@ -25,6 +25,7 @@
                                         Id de l'article
                                     </th>
                                     <th scope="col">Nom du jeu</th>
+                                    <th scope="col">Catégorie</th>
                                     <th scope="col">Pseudo</th>
                                     <th scope="col">Photo de l'utilisateur</th>
                                     <th scope="col">Date de création</th>
@@ -36,9 +37,10 @@
                                 <?php if (isset($comments)) {
                                     foreach ($comments as $comment) { ?>
                                         <tr>
-                                            <td class="fw-semibold text-break w-25"><?= $comment->comment ?></td>
+                                            <td class="fw-semibold text-break"><?= $comment->comment ?></td>
                                             <td class="fw-semibold"><?= $comment->id_article ?></td>
                                             <td class="fw-semibold"><?= $comment->game_name ?></td>
+                                            <td class="fw-semibold"><?= $comment->label ?></td>
                                             <td class="fw-semibold"><?= $comment->pseudo ?></td>
                                             <td class="fw-semibold">
                                                 <?php if (isset($comment->user_picture)) { ?>

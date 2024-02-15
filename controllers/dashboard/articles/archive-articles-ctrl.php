@@ -49,8 +49,6 @@ try {
     if ($article) {
         // Archiver l'article spécifié
         Article::archive($id_article, true);
-        
-
         // Redirection vers le contrôleur de gestion des articles archivés
         header('location: /controllers/dashboard/articles/archive-articles-ctrl.php');
         die;
