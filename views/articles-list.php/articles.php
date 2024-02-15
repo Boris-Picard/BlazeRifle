@@ -16,11 +16,11 @@
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
                                 <?php if (!empty($articles)) { ?>
-                                    <h2 class="h2 text-uppercase fw-bold text-center">Les articles : <span class="text-danger"><?= isset($gameId) ? htmlspecialchars($articles[0]->game_name) : htmlspecialchars($articles[0]->console_name) ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold text-center"><?= $id_category === REGEX_GUIDES ? 'LES GUIDES : ' : 'LES ARTICLES : ' ?><span class="text-danger"><?= $articles[0]->game_name ?></span></h2>
                                     <p class="text-center text-break mt-2">
                                         <?= htmlspecialchars(html_entity_decode($articles[0]->game_description)) ?>
                                     </p>
-                                <?php  } ?>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="col-12">
@@ -32,13 +32,13 @@
                                     <div class="row g-0">
                                         <div class="col-md-4">
                                             <div class="ratio ratio-16x9">
-                                                <img src="/public/uploads/article/<?= $article->article_picture ?>" class="img-fluid object-fit-cover card-img-top imgActus shadow-lg rounded-start rounded-3" alt="<?= $article->article_picture ?>">
+                                                <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid object-fit-cover card-img-top imgActus shadow-lg rounded-start rounded-3" alt="<?= $article->article_picture ?>">
                                             </div>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body px-3 d-flex flex-column justify-content-end">
                                                 <div>
-                                                    <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase"><?= $article->game_name ?></span>
+                                                    <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase"><?= $article->label ?></span>
                                                 </div>
                                                 <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?><?= isset($gameId) ? '&id_game=' . $article->id_game : '&id_console=' . $article->id_console ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
                                                     <?= html_entity_decode($article->article_title) ?>
@@ -54,6 +54,7 @@
                                                     <?php if (!empty($article->countComments)) { ?>
                                                         <span class="badge rounded-pill text-uppercase mb-1 bg-danger mx-1 border text-white fw-semibold"><i class="bi bi-chat-right-dots mx-1 text-white align-middle"></i><?= $article->countComments ?></span>
                                                     <?php  } ?>
+                                                    <span class="badge rounded-pill text-uppercase mb-1 border fw-semibold text-dark"><?= $article->game_name ?></span>
                                                 </small>
                                             </div>
                                         </div>
@@ -89,152 +90,55 @@
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row text-center align-items-center p-3">
                                         <i class="bi bi-book fs-1 px-2"></i>
-                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">les guides :</span> battlefield 2042</h5>
+                                        <h5 class="text-uppercase fw-bold"><span class="text-danger">les guides :</span> <?= $articles[0]->game_name ?></h5>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="card mt-3 p-0 border-0 bg-transparent">
                                             <div class="card-img-top ratio ratio-16x9">
-                                                <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-3" alt="battlefield 2042">
+                                                <img src="/public/uploads/article/<?= $articlesSidebar[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articlesSidebar[0]->game_name ?>">
                                             </div>
                                             <div class="card-body p-0 mt-1">
-                                                <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                    <?= html_entity_decode($articlesSidebar[0]->article_title) ?>
+                                                </a>
                                                 <div class="card-text mb-3">
                                                     <small class="text-muted">
-                                                        25 déc, 18:05
+                                                        <!-- le <?= $articlesSidebar[0]->formattedDate ?> -->
+                                                        <!-- a <?= $articlesSidebar[0]->formattedHour ?> -->
                                                     </small>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
+                                        <?php
+                                        array_shift($articlesSidebar);
+                                        foreach ($articlesSidebar as $article) { ?>
+                                            <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
+                                                <div class="row g-0 cardActuGuideRight">
+                                                    <div class="col-auto">
+                                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->game_name ?>" class="imgActuGuideRight object-fit-cover rounded-3">
+                                                    </div>
+                                                    <div class="col-md-6 p-0 ">
+                                                        <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
+                                                            <div class="">
+                                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= isset($gameId) ? 'id_game=' . $article->id_game : 'id_category=' . $article->id_category  ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                    <?= $article->article_title ?>
+                                                                </a>
+                                                            </div>
+                                                            <p class="card-text">
+                                                                <small class="text-muted">
+                                                                    <!-- le <?= $article->formattedDate ?>
+                                                                a <?= $article->formattedHour ?> -->
+                                                                </small>
+                                                            </p>
                                                         </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cardActuGuideRight bg-transparent border-0 overflow-hidden mt-2">
-                                            <div class="row g-0 cardActuGuideRight">
-                                                <div class="col-auto">
-                                                    <img src="/public/assets/img/battlefield2042.jpg" alt="battlefield 2042" class="imgActuGuideRight object-fit-cover rounded-3">
-                                                </div>
-                                                <div class="col-md-6 p-0 ">
-                                                    <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                        <div class="">
-                                                            <a href="#" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos rerum fugiat saepe nesciunt iure tenetur, molestiae, fuga similique sunt quia tempore esse non corporis numquam error ullam, inventore mollitia.
-                                                            </a>
-                                                        </div>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">
-                                                                Il y a 5 heures
-                                                            </small>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php } ?>
                                         <div class="d-flex justify-content-center mt-3 mb-4">
-                                            <a href="#" class="btn btn-danger w-50 rounded-4 p-1 fw-bold text-uppercase">
+                                            <a href="#" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
                                                 les guides
                                             </a>
                                         </div>

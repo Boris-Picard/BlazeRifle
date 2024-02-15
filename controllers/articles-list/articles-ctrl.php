@@ -9,14 +9,14 @@ try {
     // Récupérer l'ID du jeu et le numéro de la page depuis la requête GET
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $currentPage = intval(filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT));
-    // $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
+    $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
 
     //Récupération des IDs nettoyés. Si l'ID est égal à 0, alors je retourne la valeur null.
     $gameId = $id_game == 0 ? null : $id_game;
-    // $consoleId = $id_console == 0 ? null : $id_console;
+    $categoryId = $id_category == 0 ? null : $id_category;
 
     // Obtenir le nombre total d'articles pour le jeu ou la console
-    $nbArticles = Article::count(id_game: $gameId, id_category: REGEX_ARTICLES_GAMES);
+    $nbArticles = Article::count(id_game: $gameId, id_category: $categoryId);
 
     // Calculer le nombre total de pages nécessaires pour afficher les articles
     $nbPages = ceil($nbArticles / 7);
@@ -26,7 +26,9 @@ try {
     $currentPage = ($currentPage <= 0) ? 1 : $currentPage;
 
     // Récupérer les articles de la page actuelle pour le jeu donné
-    $articles = Article::getAll($gameId, id_category: REGEX_ARTICLES_GAMES, order: 'DESC', page: $currentPage);
+    $articles = Article::getAll($gameId, id_category: $categoryId, order: 'DESC', page: $currentPage);
+
+    $articlesSidebar = Article::getAll($gameId, id_category: REGEX_GUIDES, order: 'DESC');
 
     // Formater la date et l'heure de chaque article pour affichage
     foreach ($articles as $article) {

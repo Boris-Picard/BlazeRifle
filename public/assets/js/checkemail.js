@@ -14,9 +14,15 @@ const checkEmail = () => {
     })
     .then( (isExist) => {
         if(isExist) {
-            email.classList.add('border-danger');
-        } else {
             email.classList.remove('border-danger');
+            email.classList.add('border-success');
+        } else {
+            email.classList.remove('border-success');
+            email.classList.add('border-danger');
+        }
+        if(email.value == '') {
+            email.classList.remove('border-succes')
+            email.classList.remove('border-danger')
         }
     })
 }

@@ -18,8 +18,8 @@
                                     <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= !empty($id_game) ? htmlspecialchars($articles[0]->game_name) : htmlspecialchars(isset($articles[0]->console_name)) ?></span></h2>
                                 </div>
                                 <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
-                                    <a href="/controllers/articles-list/articles-ctrl.php?<?= !empty($id_game) ? 'id_game=' . $articles[0]->id_game : 'id_console=' . $articles[0]->id_console ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                        Tous les articles : <?= !empty($id_game) ? htmlspecialchars($articles[0]->game_name) : htmlspecialchars(isset($articles[0]->console_name)) ?>
+                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $articles[0]->id_game ?>&id_category=<?= $articles[0]->id_category ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                        Tous les articles : <?= $articles[0]->game_name ?>
                                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                     </a>
                                 </div>
@@ -93,7 +93,7 @@
                                     <h2 class="h2 text-uppercase fw-bold">Tous les guides <span class="text-danger"><?= $guides[0]->game_name ?></span></h2>
                                 </div>
                                 <div class="col-md-4 col-12 d-flex btnTitle align-items-center justify-content-end mt-5">
-                                    <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $guides[0]->id_game ?>&id_category=<?= $guides[0]->id_category ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                                         Tous les guides : <?= $guides[0]->game_name ?>
                                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                     </a>
