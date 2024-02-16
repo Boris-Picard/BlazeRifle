@@ -6,6 +6,7 @@ require_once __DIR__ . '/../../models/Game.php';
 require_once __DIR__ . '/../../models/Article.php';
 
 try {
+    $activeCalendar = true;
     // Récupérer l'ID du jeu depuis la requête GET
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 

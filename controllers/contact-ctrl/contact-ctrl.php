@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../config/config.php';
 
 
 try {
+    $activeContact = true;
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //===================== Firstname : Nettoyage et validation =======================
         $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_SPECIAL_CHARS);

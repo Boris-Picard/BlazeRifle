@@ -146,11 +146,23 @@ try {
 
             // Déplacement du fichier téléchargé vers le répertoire de destination
             $from = $_FILES['picture']['tmp_name'];
+
+            $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
+            $moveFile = move_uploaded_file($from, $to);
+
+            $image = imagecreatefromjpeg($to);
+            $widthOriginal = imagesx($image);
+            $heightOriginal = imagesy($image);
+            $ratio = $widthOriginal / $heightOriginal;
+
+            $width = 300;
+            $height = $width * $ratio;
+
+            $mode = IMG_BICUBIC;
+
+            $resampledObject = imagescale($image, $width, $height, $mode);
+            imagejpeg($resampledObject, $to);
             
-            if (empty($error)) {
-                $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
-                $moveFile = move_uploaded_file($from, $to);
-            }
         } catch (\Throwable $e) {
             $error['picture'] = $e->getMessage();
         }

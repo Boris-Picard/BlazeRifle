@@ -71,13 +71,13 @@ try {
                             </ul>
                         </li>
                     </ul>
-                    <a class="nav-link navlinkHover" href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>
+                    <a class="nav-link navlinkHover <?= $activeGuide ? 'active': '' ?> " href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>
                     <?php if (isset($_SESSION['user'])) { ?>
                         <a class="nav-link navlinkHover" href="/controllers/quiz/quiz-ctrl.php">Le Quiz</a>
-                        <a class="nav-link navlinkHover text-dark" href="/controllers/tips-list/tips-ctrl.php">Les Bons Plans</a>
+                        <a class="nav-link navlinkHover text-dark <?= $activeTips ? 'active': '' ?>" href="/controllers/tips-list/tips-ctrl.php">Les Bons Plans</a>
                     <?php } ?>
-                    <a class="nav-link navlinkHover text-dark" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
-                    <a class="nav-link navlinkHover text-dark" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
+                    <a class="nav-link navlinkHover text-dark <?= $activeCalendar ? 'active': '' ?>" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
+                    <a class="nav-link navlinkHover text-dark <?= $activeContact ? 'active': '' ?>" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
                 </div>
 
             </div>

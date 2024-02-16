@@ -8,6 +8,8 @@ require_once __DIR__ . '/../../models/Comment.php';
 CheckPermissions::checkMember();
 
 try {
+    $activeTips = true;
+
     $currentPage = intval(filter_input(INPUT_GET, 'page', FILTER_SANITIZE_NUMBER_INT));
 
     // Obtenir le nombre total d'articles pour le jeu ou la console
