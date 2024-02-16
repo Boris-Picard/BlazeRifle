@@ -118,7 +118,7 @@ class Comment
         return (int) ($sth->rowCount() > 0);
     }
 
-    public static function getAll(bool $showConfirmedAt = false): array|false
+    public static function getAll(bool $showConfirmedAt = false, ?string $order = 'DESC', ?int $nbComments = 100): array|false
     {
         $pdo = Database::connect();
 
@@ -147,7 +147,17 @@ class Comment
             $sql .= ' AND `comments`.`confirmed_at` IS NOT NULL ';
         }
 
-        $sth = $pdo->query($sql);
+        $order == 'ASC' ? $sql .= ' ORDER BY `comments`.`created_at` ASC ' : $sql .= ' ORDER BY `comments`.`created_at` DESC ';
+
+        if (!is_null($nbComments)) {
+            $sql .= ' LIMIT :nbComments ';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue('nbComments', $nbComments, PDO::PARAM_INT);
+            $sth->execute();
+        } else {
+            $sth = $pdo->query($sql);
+        }
+
 
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
@@ -259,5 +269,20 @@ class Comment
         $sth->execute();
 
         return $sth->fetchColumn();
+    }
+
+    public static function getConfirmed(): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(*)
+        FROM `comments`
+        WHERE `confirmed_at` IS NULL;';
+
+        $sth = $pdo->query($sql);
+
+        $result = $sth->fetchColumn();
+
+        return $result > 0;
     }
 }

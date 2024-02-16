@@ -1,8 +1,5 @@
 <?php 
 
-header('location: /home.php/');
-die;
-
 
 include __DIR__ . '/views/templates/header.php';
 include __DIR__ . '/views/templates/navbar.php';

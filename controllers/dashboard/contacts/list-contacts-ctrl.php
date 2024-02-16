@@ -8,7 +8,12 @@ $check = CheckPermissions::checkAdmin();
 $listContacts = true;
 
 try {
-    $messages = Contact::getAll();
+    $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
+    $nbContacts = intval(filter_input(INPUT_GET, 'nbContacts', FILTER_SANITIZE_NUMBER_INT));
+var_dump($order);
+    $nbContactsToUse = !empty($nbContacts) ? $nbContacts : 100;
+
+    $messages = Contact::getAll($order, $nbContactsToUse);
     // Récupération du message stocké en session (s'il existe)
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
 

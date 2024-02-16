@@ -12,9 +12,19 @@
                     <?= $msg ?>
                 </div>
             </div>
-            <div class="col-5 pt-3">
-                <div class="d-flex mb-3">
+            <div class="col-12 pt-3">
+                <div class="d-flex mb-3 justify-content-between ">
                     <a href="/controllers/dashboard/users/archive-user-ctrl.php" class="btn btn-outline-danger rounded-4 text-uppercase fw-bold mx-2">Voir les comptes archivées</a>
+                    <form action="" class="d-flex">
+                        <select class="form-select fw-bold border-dark" name="nbUsers" id="nbUsers">
+                            <option selected disabled>Nb d'utilisateurs</option>
+                            <option value="">Voir tous les utilisateurs</option>
+                            <?php for ($i = 5; $i <= 100; $i += 5) {  ?>
+                                <option value="<?= $i ?>" <?= (isset($nbUsers) && $nbUsers == $i ? 'selected' : '') ?>><?= $i ?></option>
+                            <?php } ?>
+                        </select>
+                        <button class="btn btn-danger rounded-4 fw-bold mx-2">Valider</button>
+                    </form>
                 </div>
             </div>
             <div class="row">
@@ -31,7 +41,11 @@
                                     </th>
                                     <th scope="col">Pseudo</th>
                                     <th scope="col">Picture</th>
-                                    <th scope="col">Date de création</th>
+                                    <th scope="col">
+                                        Date de création
+                                        <a href="/controllers/dashboard/users/users-list-ctrl.php?order=ASC&nbUsers=<?= $nbUsers ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
+                                        <a href="/controllers/dashboard/users/users-list-ctrl.php?order=DESC&nbUsers=<?= $nbUsers ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
+                                    </th>
                                     <th scope="col">Role</th>
                                     <th scope="col">Confirmation</th>
                                     <th scope="col">Action</th>

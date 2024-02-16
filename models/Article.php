@@ -555,4 +555,19 @@ class Article
 
         return (bool) $result > 0;
     }
+
+    public static function getConfirmed(): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(*)
+        FROM `articles`
+        WHERE `confirmed_at` IS NULL;';
+
+        $sth = $pdo->query($sql);
+
+        $result = $sth->fetchColumn();
+
+        return $result > 0;
+    }
 }

@@ -12,6 +12,20 @@
                     <?= $msg ?>
                 </div>
             </div>
+            <div class="col-12 pt-3">
+                <div class="d-flex mb-3 justify-content-end">
+                    <form action="" class="d-flex">
+                        <select class="form-select fw-bold border-dark" name="nbComments" id="nbComments">
+                            <option selected disabled>Nb Commentaires</option>
+                            <option value="">Voir tous les commentaires</option>
+                            <?php for ($i = 5; $i <= 100; $i += 5) {  ?>
+                                <option value="<?= $i ?>" <?= (isset($nbComments) && $nbComments == $i ? 'selected' : '') ?>><?= $i ?></option>
+                            <?php } ?>
+                        </select>
+                        <button class="btn btn-danger rounded-4 fw-bold mx-2">Valider</button>
+                    </form>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive shadow-lg p-4 bg-white rounded-4 text-center">
@@ -28,7 +42,11 @@
                                     <th scope="col">Catégorie</th>
                                     <th scope="col">Pseudo</th>
                                     <th scope="col">Photo de l'utilisateur</th>
-                                    <th scope="col">Date de création</th>
+                                    <th scope="col">
+                                        Date de création
+                                        <a href="/controllers/dashboard/comments/list-comments-ctrl.php?order=ASC&nbComments=<?= $nbComments ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
+                                        <a href="/controllers/dashboard/comments/list-comments-ctrl.php?order=DESC&nbComments=<?= $nbComments ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
+                                    </th>
                                     <th scope="col">Confirmation</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -49,7 +67,9 @@
                                                     </div>
                                                 <?php } ?>
                                             </td>
-                                            <td class="fw-semibold"><?= $comment->comment_created_at ?></td>
+                                            <td class="fw-semibold">
+                                                <?= $comment->comment_created_at ?>
+                                            </td>
                                             <td class="fw-semibold">
                                                 <?php if (!is_null($comment->comment_confirmed_at)) { ?>
                                                     <button class="btn btn-small btn-success ">Validé</button>

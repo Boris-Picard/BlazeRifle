@@ -13,9 +13,18 @@
                 </div>
             </div>
             <div class="row g-2">
-                <div class="col-6 pt-3">
-                    <div class="d-flex mb-3">
-                        <a href="/controllers/dashboard/category/add-category-ctrl.php" class="btn btn-danger rounded-4 text-uppercase fw-bold mx-2">Ajouter une catégorie</a>
+                <div class="col-12 pt-3">
+                    <div class="d-flex mb-3 justify-content-end">
+                        <form action="" class="d-flex">
+                            <select class="form-select fw-bold border-dark" name="nbContacts" id="nbContacts">
+                                <option selected disabled>Nb de demandes</option>
+                                <option value="">Voir toutes les demandes</option>
+                                <?php for ($i = 5; $i <= 100; $i += 5) {  ?>
+                                    <option value="<?= $i ?>" <?= (isset($nbContacts) && $nbContacts == $i ? 'selected' : '') ?>><?= $i ?></option>
+                                <?php } ?>
+                            </select>
+                            <button class="btn btn-danger rounded-4 fw-bold mx-2">Valider</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -31,8 +40,12 @@
                                     <th scope="col">Nom</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Message</th>
-                                    <th scope="col">Création</th>
-                                    <th scope="col">Répondre</th>
+                                    <th scope="col">
+                                        Date de création
+                                        <a href="/controllers/dashboard/contacts/list-contacts-ctrl.php?order=ASC&nbContacts=<?= $nbContacts ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
+                                        <a href="/controllers/dashboard/contacts/list-contacts-ctrl.php?order=DESC&nbContacts=<?= $nbContacts ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
+                                    </th>
+                                    <th scope="col">Respond</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

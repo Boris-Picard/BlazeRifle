@@ -264,7 +264,7 @@ class User
         }
     }
 
-    public static function getAll(?bool $showDeletedAt = null): array|false
+    public static function getAll(?bool $showDeletedAt = null, ?string $order = 'DESC', ?int $nbMessages = 100): array|false
     {
         $pdo = Database::connect();
 
@@ -282,7 +282,16 @@ class User
 
         $showDeletedAt ? $sql .= ' WHERE `users`.`deleted_at` IS NOT NULL ' : $sql .= ' WHERE `users`.`deleted_at` IS NULL ';
 
-        $sth = $pdo->query($sql);
+        $order == 'ASC' ? $sql .= ' ORDER BY `users`.`created_at` ASC ' : $sql .= ' ORDER BY `users`.`created_at` DESC ';
+
+        if (!is_null($nbMessages)) {
+            $sql .= ' LIMIT :nbMessages ';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue('nbMessages', $nbMessages, PDO::PARAM_INT);
+            $sth->execute();
+        } else {
+            $sth = $pdo->query($sql);
+        }
 
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
@@ -393,4 +402,20 @@ class User
 
         return $result;
     }
+
+    public static function getConfirmed(): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(*)
+        FROM `users`
+        WHERE `confirmed_at` IS NULL;';
+
+        $sth = $pdo->query($sql);
+
+        $result = $sth->fetchColumn();
+
+        return $result > 0;
+    }
+    
 }

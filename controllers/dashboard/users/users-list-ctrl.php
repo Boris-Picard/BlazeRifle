@@ -10,8 +10,12 @@ $listUsers = true;
 try {
     $id_user = filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT);
     $confirm = filter_input(INPUT_GET, 'confirm', FILTER_SANITIZE_NUMBER_INT);
+    $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
+    $nbUsers = intval(filter_input(INPUT_GET, 'nbUsers', FILTER_SANITIZE_NUMBER_INT));
 
-    $users = User::getAll(false);
+    $nbUsersToUse = !empty($nbUsers) ? $nbUsers : 100;
+
+    $users = User::getAll(false, $order, $nbUsersToUse);
 
     $user = User::get($id_user);
 

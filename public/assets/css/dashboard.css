@@ -83,7 +83,7 @@ body::-webkit-scrollbar-thumb {
     background-color: rgba(200, 200, 200, 0.5 );
 }
 
-.sidebarLink.active span {
+.sidebarLink.active span:first-child {
     color: rgb(216, 0, 36)  !important;
     font-weight: bold !important;
 }
@@ -102,7 +102,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
 }
 
-.sidebarLink.active span::before {
+.sidebarLink.active span:first-child:before {
     content: "";
     top: 0;
     bottom: 0;

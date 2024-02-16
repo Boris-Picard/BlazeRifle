@@ -90,14 +90,23 @@ class Contact
         return $sth->rowCount() > 0;
     }
 
-    public static function getAll(): array|false
+    public static function getAll(?string $order = 'DESC', ?int $nbContacts = 100): array|false
     {
         $pdo = Database::connect();
 
         $sql = 'SELECT *
         FROM `contacts`;';
 
-        $sth = $pdo->query($sql);
+        $order == 'ASC' ? $sql .= ' ORDER BY `contacts`.`created_at` ASC ' : $sql .= ' ORDER BY `contacts`.`created_at` DESC ';
+
+        if (!is_null($nbContacts)) {
+            $sql .= ' LIMIT :nbContacts ';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue('nbContacts', $nbContacts, PDO::PARAM_INT);
+            $sth->execute();
+        } else {
+            $sth = $pdo->query($sql);
+        }
 
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }

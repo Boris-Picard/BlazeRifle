@@ -9,9 +9,13 @@ $listUsers = true;
 try {
     // Récupération des paramètres depuis l'URL
     $id_user = filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT);
+    $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
+    $nbUsers = intval(filter_input(INPUT_GET, 'nbUsers', FILTER_SANITIZE_NUMBER_INT));
+
+    $nbUsersToUse = !empty($nbUsers) ? $nbUsers : 100;
 
     // Récupération de la liste des articles en fonction des paramètres
-    $users = User::getAll(true);
+    $users = User::getAll(true, $order, $nbUsersToUse);
 
     $user = User::get($id_user);
     // Si l'article spécifié existe
