@@ -48,7 +48,7 @@
                                 <?php foreach ($events as $event) { ?>
                                     <div class="py-2">
                                         <!-- MONTH -->
-                                        <h2 class="text-uppercase fw-bold">
+                                        <h2 class="text-uppercase fw-bold" id='titleEvent'>
                                             <?= $event->formattedMonth ?>
                                         </h2>
                                     </div>

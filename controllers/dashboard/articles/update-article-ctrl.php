@@ -58,6 +58,9 @@ try {
             if (!$isOk) {
                 $error['description'] = 'Veuillez renseigner une description de jeu correct';
             }
+            if(strlen($description) > 500) {
+                $error['description'] = 'Votre message est trop long';
+            }
         }
 
         // Nettoyage et validation du premier sous-titre de l'article et validation
@@ -94,6 +97,9 @@ try {
             if (!$isOk) {
                 $error['firstSection'] = 'Veuillez renseigner un titre de jeu correct';
             }
+            if(strlen($firstSection) > 5000) {
+                $error['firstSection'] = 'Votre message est trop long';
+            }
         }
 
         // Nettoyage et validation de la deuxième section de l'article et validation
@@ -105,6 +111,9 @@ try {
             $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
             if (!$isOk) {
                 $error['secondSection'] = 'Veuillez renseigner un titre de jeu correct';
+            }
+            if(strlen($secondSection) > 5000) {
+                $error['secondSection'] = 'Votre message est trop long';
             }
         }
 

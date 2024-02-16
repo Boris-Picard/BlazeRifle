@@ -13,9 +13,19 @@
                 </div>
             </div>
             <div class="row g-2">
-                <div class="col-6 pt-3">
-                    <div class="d-flex mb-3">
+                <div class="col-12 pt-3">
+                    <div class="d-flex mb-3 justify-content-between">
                         <a href="/controllers/dashboard/events/add-event-ctrl.php" class="btn btn-danger rounded-4 text-uppercase fw-bold mx-2">Ajouter un événement</a>
+                        <form action="" class="d-flex">
+                            <select class="form-select fw-bold border-dark" name="nbEvents" id="nbEvents">
+                                <option selected disabled>Nb évents'</option>
+                                <option value="">Voir tous les événements</option>
+                                <?php for ($i = 5; $i <= 100; $i += 5) {  ?>
+                                    <option value="<?= $i ?>" <?= (isset($nbEvents) && $nbEvents == $i ? 'selected' : '') ?>><?= $i ?></option>
+                                <?php } ?>
+                            </select>
+                            <button class="btn btn-danger rounded-4 fw-bold mx-2">Valider</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -31,7 +41,11 @@
                                     <th scope="col">Titre</th>
                                     <th scope="col">Lien</th>
                                     <th scope="col">Image</th>
-                                    <th scope="col">Date</th>
+                                    <th scope="col">
+                                        Date
+                                        <a href="/controllers/dashboard/events/list-events-ctrl.php?order=ASC&nbEvents=<?= $nbEvents ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
+                                        <a href="/controllers/dashboard/events/list-events-ctrl.php?order=DESC&nbEvents=<?= $nbEvents ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
+                                    </th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

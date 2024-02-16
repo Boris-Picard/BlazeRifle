@@ -52,6 +52,9 @@ try {
             if (!$isOk) {
                 $error["textArea"] = "Le nom n'est pas au bon format";
             }
+            if(strlen($textArea) > 500) {
+                $error['textArea'] = 'Votre message est trop long';
+            }
         }
         // CHECKBOX
         $checkbox = filter_input(INPUT_POST, 'checkboxForm', FILTER_SANITIZE_SPECIAL_CHARS);

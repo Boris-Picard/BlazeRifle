@@ -47,7 +47,7 @@
                                         <a href="/controllers/dashboard/users/users-list-ctrl.php?order=DESC&nbUsers=<?= $nbUsers ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
                                     <th scope="col">Role</th>
-                                    <th scope="col">Confirmation</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

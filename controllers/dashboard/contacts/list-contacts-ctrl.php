@@ -10,7 +10,7 @@ $listContacts = true;
 try {
     $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
     $nbContacts = intval(filter_input(INPUT_GET, 'nbContacts', FILTER_SANITIZE_NUMBER_INT));
-var_dump($order);
+    
     $nbContactsToUse = !empty($nbContacts) ? $nbContacts : 100;
 
     $messages = Contact::getAll($order, $nbContactsToUse);

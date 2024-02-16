@@ -61,6 +61,9 @@ try {
             if (!$isOk) {
                 $error['textAreaComment'] = 'Veuillez renseigner une description de jeu correct';
             }
+            if(strlen($textAreaComment) > 500) {
+                $error['textAreaComment'] = 'Votre message est trop long';
+            }
         }
 
         if (empty($error)) {

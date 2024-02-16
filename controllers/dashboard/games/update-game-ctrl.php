@@ -51,6 +51,9 @@ try {
             if (!$isOk) {
                 $error['description'] = 'Veuillez renseigner une description de jeu correct';
             }
+            if(strlen($description) > 500) {
+                $error['description'] = 'Votre message est trop long';
+            }
         }
 
         $selectedConsoles = filter_input(INPUT_POST, 'consoles', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY) ?? []; // Nettoie et récupère les consoles sélectionnées depuis le formulaire.

@@ -41,6 +41,9 @@ try {
             if (!$isOk) {
                 $error['description'] = 'Veuillez renseigner une description valide';
             }
+            if(strlen($description) > 500) {
+                $error['description'] = 'Votre message est trop long';
+            }
         }
 
         // Nettoyage et validation du lieu de l'événement

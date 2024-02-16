@@ -151,7 +151,7 @@ class Event
      * 
      * @return array
      */
-    public static function getAll(?int $id_game = null, string $order = 'ASC', ?int $limit = null, ?int $offset = null): array|false
+    public static function getAll(?int $id_game = null, ?string $order = 'ASC', ?int $limit = null, ?int $offset = null): array|false
     {
         $pdo = Database::connect();
 
@@ -163,7 +163,7 @@ class Event
             $sql .= ' AND `games`.`id_game`=:id_game';
         }
 
-        $sql .= ($order == 'ASC') ? ' ORDER BY `event_date` ASC' : ' ORDER BY `event_date` DESC';
+        $sql .= ($order == 'ASC') ? ' ORDER BY `event_date` ASC' : ' ORDER BY `event_date` DESC ';
 
         if (!is_null($limit)) {
             $sql .= ' LIMIT :limit OFFSET :offset';

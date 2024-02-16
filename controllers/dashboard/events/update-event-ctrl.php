@@ -54,6 +54,9 @@ try {
             if (!$isOk) {
                 $error['description'] = 'La description n\'est pas valide';
             }
+            if(strlen($description) > 500) {
+                $error['description'] = 'Votre message est trop long';
+            }
         }
 
         // Lieu de l'événement nettoyage et validation

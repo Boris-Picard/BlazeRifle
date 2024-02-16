@@ -22,11 +22,14 @@ try {
         $textAreaComment = filter_input(INPUT_POST, 'textAreaComment', FILTER_SANITIZE_SPECIAL_CHARS);
         // Validation du nom de catégorie : vérification qu'il n'est pas vide et qu'il respecte une expression régulière.
         if (empty($textAreaComment)) {
-            $error['textAreaComment'] = 'Veuillez entrer un nom de catégorie';
+            $error['textAreaComment'] = 'Veuillez entrer un commentaire';
         } else {
             $isOk = filter_var($textAreaComment, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/')));
             if (!$isOk) {
-                $error['textAreaComment'] = 'Veuillez entrer une catégorie valide !';
+                $error['textAreaComment'] = 'Veuillez entrer un commentaire valide !';
+            }
+            if(strlen($textAreaComment) > 500) {
+                $error['textAreaComment'] = 'Votre message est trop long';
             }
         }
 

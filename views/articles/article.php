@@ -165,7 +165,7 @@
                                         </div>
                                         <!-- FORMULAIRE D'AJOUT D'UN COMMENTAIRE -->
                                         <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
-                                            <form action="#commentForm" method="POST" id="commentForm" novalidate>
+                                            <form action="#commentForm" method="POST" id="commentForm">
                                                 <div class="card mt-3 rounded-4 bg-transparent border-0 shadow-lg p-3">
                                                     <div class="row g-0">
                                                         <?php if (isset($_SESSION['user']->user_picture)) { ?>

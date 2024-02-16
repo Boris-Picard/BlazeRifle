@@ -264,7 +264,7 @@ class User
         }
     }
 
-    public static function getAll(?bool $showDeletedAt = null, ?string $order = 'DESC', ?int $nbMessages = 100): array|false
+    public static function getAll(?bool $showDeletedAt = null, ?string $order = 'DESC', ?int $nbUsers = null): array|false
     {
         $pdo = Database::connect();
 
@@ -284,10 +284,10 @@ class User
 
         $order == 'ASC' ? $sql .= ' ORDER BY `users`.`created_at` ASC ' : $sql .= ' ORDER BY `users`.`created_at` DESC ';
 
-        if (!is_null($nbMessages)) {
-            $sql .= ' LIMIT :nbMessages ';
+        if (!is_null($nbUsers)) {
+            $sql .= ' LIMIT :nbUsers ';
             $sth = $pdo->prepare($sql);
-            $sth->bindValue('nbMessages', $nbMessages, PDO::PARAM_INT);
+            $sth->bindValue('nbUsers', $nbUsers, PDO::PARAM_INT);
             $sth->execute();
         } else {
             $sth = $pdo->query($sql);

@@ -118,7 +118,7 @@ class Comment
         return (int) ($sth->rowCount() > 0);
     }
 
-    public static function getAll(bool $showConfirmedAt = false, ?string $order = 'DESC', ?int $nbComments = 100): array|false
+    public static function getAll(bool $showConfirmedAt = false, ?string $order = 'DESC', ?int $nbComments = null): array|false
     {
         $pdo = Database::connect();
 

@@ -9,8 +9,13 @@ $check = CheckPermissions::checkAdmin();
 try {
     $listEvents = true;
     
+    $order = filter_input(INPUT_GET, 'order', FILTER_SANITIZE_SPECIAL_CHARS);
+    $nbEvents = intval(filter_input(INPUT_GET, 'nbEvents', FILTER_SANITIZE_NUMBER_INT));
+    
+    $nbEventsToUse = !empty($nbEvents) ? $nbEvents : 100;
+    
     // Récupération de tous les événements depuis la base de données
-    $events = Event::getAll();
+    $events = Event::getAll(order: $order, limit: $nbEventsToUse, offset: 0);
 
     // Récupération du message stocké en session (s'il existe) et nettoyage de la session
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);

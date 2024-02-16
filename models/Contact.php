@@ -95,7 +95,8 @@ class Contact
         $pdo = Database::connect();
 
         $sql = 'SELECT *
-        FROM `contacts`;';
+        FROM `contacts`
+        WHERE 1=1';
 
         $order == 'ASC' ? $sql .= ' ORDER BY `contacts`.`created_at` ASC ' : $sql .= ' ORDER BY `contacts`.`created_at` DESC ';
 

@@ -47,7 +47,7 @@
                                         <a href="/controllers/dashboard/comments/list-comments-ctrl.php?order=ASC&nbComments=<?= $nbComments ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
                                         <a href="/controllers/dashboard/comments/list-comments-ctrl.php?order=DESC&nbComments=<?= $nbComments ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
-                                    <th scope="col">Confirmation</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -55,7 +55,11 @@
                                 <?php if (isset($comments)) {
                                     foreach ($comments as $comment) { ?>
                                         <tr>
-                                            <td class="fw-semibold text-break"><?= $comment->comment ?></td>
+                                            <?php if (strlen($comment->comment) > 70) { ?>
+                                                <td class="fw-semibold text-break"><a href="/controllers/dashboard/comments/update-comment-ctrl.php?id_comment=<?= $comment->id_comment ?>" class="btn btn-outline-danger rounded-4 fw-bold">Voir le commentaire</a></td>
+                                            <?php } else { ?>
+                                                <td class="fw-semibold text-break"><?= $comment->comment ?></td>
+                                            <?php } ?>
                                             <td class="fw-semibold"><?= $comment->id_article ?></td>
                                             <td class="fw-semibold"><?= $comment->game_name ?></td>
                                             <td class="fw-semibold"><?= $comment->label ?></td>
