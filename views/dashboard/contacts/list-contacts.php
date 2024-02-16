@@ -4,7 +4,7 @@
         <div class="col-xl-10 mx-auto mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="fw-bold text-uppercase">liste des catégories</h1>
+                    <h1 class="fw-bold text-uppercase">liste des messages</h1>
                 </div>
             </div>
             <div class="row">
@@ -26,23 +26,31 @@
                             <thead>
                                 <tr>
                                     <th scope="col">
-                                        Category
+                                        Prénom
                                     </th>
-                                    <th scope="col">Articles</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Message</th>
+                                    <th scope="col">Création</th>
+                                    <th scope="col">Répondre</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (isset($categories)) {
-                                    foreach ($categories as $category) { ?>
+                                <?php if (isset($messages)) {
+                                    foreach ($messages as $message) { ?>
                                         <tr>
-                                            <td class="fw-semibold"><?= htmlspecialchars($category->label) ?></td>
-                                            <td class="fw-semibold text-break"><?= $category->article_count ?></td>
+                                            <td class="fw-semibold"><?= htmlspecialchars($message->firstname) ?></td>
+                                            <td class="fw-semibold text-break"><?= htmlspecialchars($message->lastname) ?></td>
+                                            <td class="fw-semibold text-break"><?= htmlspecialchars($message->email) ?></td>
+                                            <td class="fw-semibold text-break"><?= htmlspecialchars($message->description) ?></td>
+                                            <td class="fw-semibold text-break"><?= htmlspecialchars($message->created_at) ?></td>
+                                            <!-- <td class="fw-semibold text-break"><?= htmlspecialchars($message->label) ?></td> -->
                                             <td>
-                                                <a href="/controllers/dashboard/category/update-category-ctrl.php?id_category=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/category/update-category-ctrl.php?id_contact=<?= $message->id_contact ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>
                                                 </a>
-                                                <a href="/controllers/dashboard/category/delete-category-ctrl.php?id_category=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/contacts/delete-contact-ctrl.php?id_contact=<?= $message->id_contact ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                                 </a>
                                             </td>

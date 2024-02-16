@@ -1,16 +1,14 @@
 <?php
 session_start();
-require_once __DIR__ . '/../../../config/config.php';
-require_once __DIR__ . '/../../../models/Category.php';
+require_once __DIR__ . '/../../../models/Contact.php';
 require_once __DIR__ . '/../../../helpers/CheckPermissions.php';
 
 $check = CheckPermissions::checkAdmin();
 
-$listCategories = true;
+$listContacts = true;
 
 try {
-    $categories = Category::getAll();
-    
+    $messages = Contact::getAll();
     // Récupération du message stocké en session (s'il existe)
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
 
@@ -24,5 +22,5 @@ try {
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';
 include __DIR__ . '/../../../views/templates/sidebar-dashboard.php';
-include __DIR__ . '/../../../views/dashboard/category/list-categories.php';
+include __DIR__ . '/../../../views/dashboard/contacts/list-contacts.php';
 include __DIR__ . '/../../../views/templates/footer-dashboard.php';

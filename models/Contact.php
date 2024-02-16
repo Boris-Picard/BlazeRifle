@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../helpers/Database.php';
 
 class Contact
 {
@@ -9,67 +10,107 @@ class Contact
     private string $description;
     private ?string $created_at;
 
-    public function __construct(
-        int $id_contact = 0, 
-        string $firstname = '',
-        string $lastname = '',
-        string $email = '',
-        string $description = '',
-        ?string $created_at = '')
+
+    public function setIdContact(int $id_contact): void
     {
         $this->id_contact = $id_contact;
-        $this->firstname = $firstname;
-        $this->lastname = $lastname;
-        $this->email = $email;
-        $this->description = $description;
-        $this->created_at = $created_at;
     }
 
-    public function setIdContact(int $id_contact): void {
-        $this->id_contact = $id_contact;
-    }
-
-    public function getIdContact(): int {
+    public function getIdContact(): int
+    {
         return $this->id_contact;
     }
 
-    public function setFirstname(string $firstname): void {
+    public function setFirstname(string $firstname): void
+    {
         $this->firstname = $firstname;
     }
 
-    public function getFirstname(): string {
+    public function getFirstname(): string
+    {
         return $this->firstname;
     }
 
-    public function setLastname(string $lastname): void {
+    public function setLastname(string $lastname): void
+    {
         $this->lastname = $lastname;
     }
 
-    public function getLastname(): string {
+    public function getLastname(): string
+    {
         return $this->lastname;
     }
 
-    public function setEmail(string $email): void {
+    public function setEmail(string $email): void
+    {
         $this->email = $email;
     }
 
-    public function getEmail(): string {
+    public function getEmail(): string
+    {
         return $this->email;
     }
 
-    public function setDescription(string $description): void {
+    public function setDescription(string $description): void
+    {
         $this->description = $description;
     }
 
-    public function getDescription(): string {
+    public function getDescription(): string
+    {
         return $this->description;
     }
 
-    public function setCreatedAt(?string $created_at): void {
+    public function setCreatedAt(?string $created_at): void
+    {
         $this->created_at = $created_at;
     }
 
-    public function getCreatedAt(): ?string {
+    public function getCreatedAt(): ?string
+    {
         return $this->created_at;
+    }
+
+    public function insert()
+    {
+        $pdo = Database::connect();
+
+        $sql = 'INSERT INTO `contacts` (`firstname`, `lastname`, `email`, `description`)
+        VALUES (:firstname, :lastname, :email, :description);';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':firstname', $this->getFirstname());
+        $sth->bindValue(':lastname', $this->getLastname());
+        $sth->bindValue(':email', $this->getEmail());
+        $sth->bindValue(':description', $this->getDescription());
+
+        $sth->execute();
+
+        return $sth->rowCount() > 0;
+    }
+
+    public static function getAll(): array|false
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT `contacts`.`firstname`, `contacts`.`lastname`, `contacts`.`email`, `contacts`.`description`, `contacts`.`created_at`
+        FROM `contacts`;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public static function getMail(string $email): object|false
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT `contacts`.`firstname`, `contacts`.`lastname`, `contacts`.`email`, `contacts`.`description`, `contacts`.`created_at`
+        FROM `contacts`;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetch(PDO::FETCH_OBJ);
     }
 }

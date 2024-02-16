@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once __DIR__ . '/../../models/Contact.php';
 require_once __DIR__ . '/../../config/config.php';
 
 
@@ -16,13 +17,9 @@ try {
             // Avec une regex (constante déclarée plus haut), on vérifie si c'est le format attendu 
             if (!$isOk) {
                 $error["firstname"] = "Le prénom n'est pas au bon format";
-            } else {
-                // Dans ce cas précis, on vérifie aussi la longueur de chaine (on aurait pu le faire aussi direct dans la regex)
-                if (strlen($firstname) <= 2 || strlen($firstname) >= 70) {
-                    $error["firstname"] = "La longueur du prénom n'est pas bon";
-                }
             }
         }
+
         $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_SPECIAL_CHARS);
         // On vérifie que ce n'est pas vide
         if (empty($lastname)) {
@@ -32,11 +29,6 @@ try {
             // Avec une regex (constante déclarée plus haut), on vérifie si c'est le format attendu 
             if (!$isOk) {
                 $error["lastname"] = "Le nom n'est pas au bon format";
-            } else {
-                // Dans ce cas précis, on vérifie aussi la longueur de chaine (on aurait pu le faire aussi direct dans la regex)
-                if (strlen($lastname) <= 2 || strlen($lastname) >= 70) {
-                    $error["lastname"] = "La longueur du nom n'est pas bon";
-                }
             }
         }
         //===================== email : Nettoyage et validation =======================
@@ -55,8 +47,10 @@ try {
         if (empty($textArea)) {
             $error['textArea'] = 'Veuillez mettre un commentaire';
         } else {
-            if (strlen($textArea) > 2000) {
-                $error['textArea'] = 'Veuillez ne pas dépasser les 2000 caractères';
+            $isOk = filter_var($textArea, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/')));
+            // Avec une regex (constante déclarée plus haut), on vérifie si c'est le format attendu 
+            if (!$isOk) {
+                $error["textArea"] = "Le nom n'est pas au bon format";
             }
         }
         // CHECKBOX
@@ -64,15 +58,24 @@ try {
         if (empty($checkbox)) {
             $error['checkboxForm'] = "Veuillez accepter";
         }
+
+        if (empty($error)) {
+            $message = new Contact();
+
+            $message->setFirstname($firstname);
+            $message->setLastname($lastname);
+            $message->setEmail($email);
+            $message->setDescription($textArea);
+
+            $result = $message->insert();
+        } else {
+            $result = false;
+        }
     }
 } catch (PDOException $e) {
-    die('Erreur : ' .$e->getMessage());
+    $error['global'] = 'Erreur : ' . $e->getMessage();
+    $result = false;
 }
-
-
-
-
-
 
 include __DIR__ . '/../../views/templates/header.php';
 include __DIR__ . '/../../views/templates/navbar.php';
