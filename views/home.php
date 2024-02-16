@@ -18,7 +18,7 @@
                                 <?php  } ?>
                             </div>
                             <div class="col-12 col-md-6 p-0 bgHero">
-                                <img src="/public/assets/img/infinitebg.jpg" loading="lazy" class="h-100 object-fit-cover img-fluid opacity-50" alt="GTA 6 Hero page">
+                                <img src="/public/assets/img/infinitebg.jpg" loading="lazy" class="h-100 object-fit-cover img-fluid" alt="GTA 6 Hero page">
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                 </div>
                 <!-- MAIN CARD ARTICLE -->
                 <div class="col-md-6">
-                    <div class="card text-bg-dark border-0 rounded-4 cardArticleHome">
+                    <div class="card bg-transparent text-bg-dark border-0 rounded-4 cardArticleHome">
                         <div class="ratio ratio-16x9 ">
                             <img src="/public/uploads/article/<?= $firstArticle->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 cardArticleHome" alt="<?= $firstArticle->game_name ?>">
                         </div>
@@ -52,7 +52,7 @@
                                     <span class="badge rounded-pill text-bg-danger p-2 px-4 text-uppercase mb-2 text-uppercase"><?= $firstArticle->label ?></span>
                                 </p>
                                 <div class="w-100">
-                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticle->id_article ?>&id_category=<?= $firstArticle->id_category ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticle->id_article ?>&id_category=<?= $firstArticle->id_category ?>&id_game=<?= $firstArticle->id_game ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
                                         <?= $firstArticle->article_title ?>
                                     </a>
                                 </div>
@@ -82,7 +82,7 @@
                                         <p class="p-0 m-0">
                                             <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2 text-uppercase"><?= $article->label ?></span>
                                         </p>
-                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
                                             <?= $article->article_title ?>
                                         </a>
                                         <div class="mt-1">
@@ -114,7 +114,7 @@
                                         <p class="p-0 m-0">
                                             <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2 text-uppercase"><?= $sideArticle->label ?></span>
                                         </p>
-                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideArticle->id_article ?>&id_category=<?= $sideArticle->id_category ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideArticle->id_article ?>&id_category=<?= $sideArticle->id_category ?>&id_game=<?= $sideArticle->id_game ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
                                             <?= html_entity_decode($sideArticle->article_title) ?>
                                         </a>
                                         <div class="mt-1">
@@ -164,7 +164,7 @@
                                             <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $firstGuide->label ?></span>
                                         </p>
                                         <div class="w-75">
-                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstGuide->id_article ?>&id_category=<?= $firstGuide->id_category ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstGuide->id_article ?>&id_category=<?= $firstGuide->id_category ?>&id_game=<?= $firstGuide->id_game ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
                                                 <?= $firstGuide->article_title ?>
                                             </a>
                                         </div>
@@ -191,7 +191,7 @@
                                         <p class="p-0 m-0">
                                             <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $sideGuide->label ?></span>
                                         </p>
-                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideGuide->id_article ?>&id_category=<?= $sideGuide->id_category ?>" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideGuide->id_article ?>&id_category=<?= $sideGuide->id_category ?>&id_game=<?= $sideGuide->id_game ?>" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
                                             <?= $sideGuide->article_title ?>
                                         </a>
                                         <div class="mt-1">
@@ -299,7 +299,7 @@
                                         <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase"><?= $firstTips->label ?></span>
                                     </p>
                                     <div class="w-100">
-                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstTips->id_article ?>&id_category=<?= $firstTips->id_category ?>" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstTips->id_article ?>&id_category=<?= $firstTips->id_category ?>&id_game=<?= $firstTips->id_game ?>" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
                                             <?= $firstTips->article_title ?>
                                         </a>
                                     </div>
@@ -315,7 +315,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3 justify-content-between d-flex flex-column">
+                        <div class="col-12 col-lg-3 justify-content-between d-flex flex-column">
                             <!-- CARD PREMIERE COL -->
                             <?php foreach ($tips as $tip) { ?>
                                 <div class="card cardGuideRight bg-transparent border-0 overflow-hidden">
@@ -327,7 +327,7 @@
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
                                                 <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase"><?= $tip->label ?></small>
                                                 <div class="mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $tip->id_article ?>&id_category=<?= $tip->id_category ?>" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $tip->id_article ?>&id_category=<?= $tip->id_category ?>&id_game=<?= $tip->id_game ?>" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         <?= $tip->article_title ?>
                                                     </a>
                                                 </div>
@@ -358,7 +358,7 @@
                                             <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
                                                 <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase"><?= $tip->label ?></small>
                                                 <div class="mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $tip->id_article ?>&id_category=<?= $tip->id_category ?>" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $tip->id_article ?>&id_category=<?= $tip->id_category ?>&id_game=<?= $tip->id_game ?>" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
                                                         <?= $tip->article_title ?>
                                                     </a>
                                                 </div>
@@ -443,7 +443,7 @@
                     <div class="row g-3">
                         <?php foreach ($events as $event) { ?>
                             <div class="col-md-6">
-                                <div class="card text-bg-dark border-0 rounded-4">
+                                <div class="card text-bg-dark bg-transparent border-0 rounded-4 mb-3">
                                     <div class="ratio ratio-16x9 ">
                                         <img src="/public/uploads/events/<?= $event->event_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 " alt="<?= $event->game_name ?>">
                                     </div>

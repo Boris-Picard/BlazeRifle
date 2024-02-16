@@ -2,7 +2,7 @@
     <section class="formSection contactContainer d-flex justify-content-center">
         <div class="container-fluid">
             <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
-                <form action="#" method="POST">
+                <form action="#" method="POST" novalidate>
                     <div class="row bg-light">
                         <div class="col-12 col-md-6 imgLogIn">
                         </div>
@@ -71,11 +71,11 @@
                 <div class="container-fluid bg-light validContainer h-100">
                     <div class="row m-0 w-100 h-100">
                         <div class="col-md-12 justify-content-center d-flex align-items-center h-100">
-                            <div class="card shadow border-0 p-5">
+                            <div class="card shadow-lg border-0 p-5 rounded-5">
                                 <div class="card-body d-flex align-items-center flex-column">
                                     <h5 class="mb-2 py-5 text-uppercase fw-bold">Vous avez bien envoyé votre message !</h5>
                                     <div>
-                                        <a href="/controllers/home-ctrl.php" class="btn btn-primary w-100 rounded-3 p-2">
+                                        <a href="/controllers/home-ctrl.php" class="btn btn-danger w-100 rounded-4 fw-bold text-uppercase p-3">
                                             Revenir a l'accueil
                                         </a>
                                     </div>

@@ -117,6 +117,17 @@ html{
     transition: 0.5s;
 }
 
+/* Header scroll effect */
+.header-hide {
+    transition: transform .5s ease, background-color .5s ease;
+    transform: translateY(0);
+    background-color: #fff;
+}
+
+.header-show {
+    transform: translateY(-100%);
+}
+
 .navlinkHover:hover::after {
     width: 100%;
 }

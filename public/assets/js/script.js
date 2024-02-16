@@ -1,17 +1,44 @@
 const navbar = document.querySelector(".navbar");
 
 
-/*============= fonction changement de background color navbar =============*/ 
-const scrollNavbar = () => {
-    if(window.scrollY >= 50) {
-        navbar.classList.add("navbarScroll")
-        navbar.classList.remove("navbarStyle")
-    } else {
-        navbar.classList.add("navbarStyle")
-        navbar.classList.remove("navbarScroll")
-    }
+// Fonction - Masquer le header au scroll
+function hideNavbarOnScroll() {
+    let prevScrollPos = window.scrollY;
+    let header = document.querySelector('.header-hide');
+    let navbar = document.querySelector('.navbar');
+    let scrollThresholdNavbar = 300; // Ajuster la distance de déclenchement pour la navbar
+    let scrollThresholdBackground = 100; // Ajuster la distance de déclenchement pour le background
+
+    window.onscroll = function () {
+        let currentScrollPos = window.scrollY;
+
+        if (currentScrollPos > scrollThresholdNavbar) {
+            if (prevScrollPos > currentScrollPos) {
+                navbar.classList.remove('header-show');
+            } else {
+                navbar.classList.add('header-show');
+            }
+        } else {
+            navbar.classList.remove('header-show');
+        }
+
+        if (currentScrollPos > scrollThresholdBackground) {
+            if (prevScrollPos > currentScrollPos) {
+                header.classList.remove('header-show');
+                header.style.backgroundColor = 'rgba(255, 255, 255)'; // Modifier la couleur de fond
+            } else {
+                header.classList.add('header-show');
+                header.style.backgroundColor = 'transparent'; // Réinitialiser la couleur de fond
+            }
+        } else {
+            header.classList.remove('header-show');
+            header.style.backgroundColor = 'rgba(255, 255, 255)'; // Réinitialiser la couleur de fond
+        }
+
+        prevScrollPos = currentScrollPos;
+    };
 }
 
-window.addEventListener("scroll", scrollNavbar)
-
-
+document.addEventListener("DOMContentLoaded", function () {
+    hideNavbarOnScroll();
+});

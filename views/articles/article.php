@@ -8,11 +8,13 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
                                 <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php?">Preview Des Articles</a></li>
-                                <?php if (!is_null($categoryId)) { ?>
-                                    <li class="breadcrumb-item"><a href="/controllers/tips-list/tips-ctrl.php">Articles sur <?= $article->game_name ?></a></li>
+                                <?php if ($article->id_category === REGEX_TIPS) { ?>
+                                    <li class="breadcrumb-item"><a href="/controllers/tips-list/tips-ctrl.php">Tous les <?= $article->label ?></a></li>
+                                <?php } elseif ($article->id_category === REGEX_GUIDES) { ?>
+                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>">Tous les <?= $article->label ?> sur <?= $article->game_name ?></a></li>
                                 <?php } else { ?>
-                                    <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?<?= !is_null($gameId) ? 'id_game=' . $gameId : 'id_console=' . $consoleId ?>">Preview <?= $article->game_name ?> </a></li>
-                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $gameId ?>">Articles sur <?= $article->game_name ?></a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $article->id_game ?>">Preview <?= $article->game_name ?> </a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>">Articles sur <?= $article->game_name ?></a></li>
                                 <?php } ?>
                                 <li class="breadcrumb-item active" aria-current="page">Article</li>
                             </ol>
@@ -22,9 +24,15 @@
                         <!-- PRECEDENT SUIVANT -->
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
-                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Précédent</a></small>
-                                <small><a href="/controllers/tips-list/tips-ctrl.php" class="text-decoration-none text-capitalize fw-bold">Articles <?= $article->label ?></a></small>
-                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold">Suivant</a></small>
+                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Précédent</a></small>
+                                <?php if ($article->id_category === REGEX_TIPS) {  ?>
+                                    <small><a href="/controllers/tips-list/tips-ctrl.php" class="text-decoration-none text-capitalize fw-bold">Tous les <?= $article->label ?></a></small>
+                                <?php } elseif ($article->id_category === REGEX_GUIDES) { ?>
+                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none text-capitalize fw-bold">Tous les <?= $article->label ?> sur <?= $article->game_name ?></a></small>
+                                <?php } else { ?>
+                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="text-decoration-none text-capitalize fw-bold">Articles sur <?= $article->game_name ?></a></small>
+                                <?php } ?>
+                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
                         </div>
                         <!-- TITLE -->
@@ -312,13 +320,16 @@
                                         <?php }
                                         } ?>
                                         <div class="d-flex justify-content-center mt-3 mb-4">
-                                            <?php if (isset($gameId)) { ?>
+                                            <?php if (isset($article->id_game) && $article->id_category !== REGEX_TIPS) { ?>
                                                 <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                <?php } else { ?>
-                                                    <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    <?php  } ?>
                                                     les articles <?= $firstArticleSidebar->game_name ?>
-                                                    </a>
+                                                </a>
+                                            <?php } else { ?>
+                                                <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                    tous les <?= $firstArticleSidebar->game_name ?>
+                                                <?php  } ?>
+
+                                                </a>
                                         </div>
                                     </div>
                                 </div>

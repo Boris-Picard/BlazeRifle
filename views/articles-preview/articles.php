@@ -29,12 +29,6 @@
                                         </i>
                                     </a>
                                 </p>
-                                <div class="card-text z-3">
-                                    <small class="text-light">
-                                        <!-- <?= $game->created_at ?> -->
-                                        <span class="badge rounded-pill mx-1 border bg-transparent text-light fw-semibold "><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                    </small>
-                                </div>
                             </div>
                             <div class="card-body p-3">
                                 <?php foreach ($allArticles as $articles) {
@@ -44,9 +38,9 @@
                                             <!-- ARTICLE -->
                                             <p class="card-text d-flex align-items-center my-0">
                                                 <i class="bi bi-arrow-right fs-5 text-danger" aria-hidden="true"></i>
-                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $game->id_game ?>" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-dark mx-2 text-decoration-none linkArticleSelectionGame fw-semibold icon-link icon-link-hover aCardMin">
                                                     <!-- Afficher le titre de l'article en utilisant htmlspecialchars pour éviter les problèmes de sécurité -->
-                                                    <?= htmlspecialchars($article->article_title) ?>
+                                                    <?= html_entity_decode($article->article_title) ?>
                                                 </a>
                                             </p>
                                 <?php }

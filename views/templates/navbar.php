@@ -10,7 +10,7 @@ try {
 }
 ?>
 <header>
-    <nav class="navbar navbarStyle navbar-expand-md fixed-top">
+    <nav class="navbar navbarStyle navbar-expand-lg fixed-top header-hide">
         <div class="container-fluid">
             <a class="navbar-brand nameLogoNav" href="/../controllers/home-ctrl.php"><img src="/../../public/assets/img/redlogo.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a>
             <div class="flex-shrink-0 d-flex dropdown order-md-3">

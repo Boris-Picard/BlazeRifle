@@ -40,7 +40,7 @@
                                                 <div>
                                                     <span class="badge rounded-pill text-bg-danger p-2 mb-2 text-uppercase"><?= $article->label ?></span>
                                                 </div>
-                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?><?= isset($gameId) ? '&id_game=' . $article->id_game : '&id_console=' . $article->id_console ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game  ?>" class="stretched-link mt-2 h5 aCard text-decoration-none card-title fw-bold stretchLinkHover">
                                                     <?= html_entity_decode($article->article_title) ?>
                                                 </a>
                                                 <p class="aCard mt-2">
@@ -101,7 +101,7 @@
                                                     <img src="/public/uploads/article/<?= $firstArticleSidebar->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $firstArticleSidebar->game_name ?>">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticleSidebar->id_article ?>&id_category=<?= $firstArticleSidebar->id_category ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticleSidebar->id_article ?>&id_category=<?= $firstArticleSidebar->id_category ?>&id_game=<?= $firstArticleSidebar->id_game  ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
                                                         <?= html_entity_decode($firstArticleSidebar->article_title) ?>
                                                     </a>
                                                     <div class="card-text mb-3">
@@ -121,7 +121,7 @@
                                                         <div class="col-md-6 p-0 ">
                                                             <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
                                                                 <div class="">
-                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game  ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
                                                                         <?= $article->article_title ?>
                                                                     </a>
                                                                 </div>
