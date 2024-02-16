@@ -151,18 +151,15 @@ try {
             $moveFile = move_uploaded_file($from, $to);
 
             $image = imagecreatefromjpeg($to);
-            $widthOriginal = imagesx($image);
-            $heightOriginal = imagesy($image);
-            $ratio = $widthOriginal / $heightOriginal;
 
-            $width = 300;
-            $height = $width * $ratio;
+            $width = 900;
+            $height = -1;
 
             $mode = IMG_BICUBIC;
 
             $resampledObject = imagescale($image, $width, $height, $mode);
             imagejpeg($resampledObject, $to);
-            
+
         } catch (\Throwable $e) {
             $error['picture'] = $e->getMessage();
         }

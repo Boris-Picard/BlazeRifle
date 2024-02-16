@@ -64,7 +64,7 @@
                             <nav aria-label="pagination">
                                 <ul class="pagination justify-content-center mt-5">
                                     <li class="page-item">
-                                        <a class="page-link text-dark" href="?page=<?= $currentPage - 1 ?>&<?= !empty($id_game) ? 'id_game=' . $id_game : 'id_console=' . $id_console ?>" aria-label="Previous">
+                                        <a class="page-link text-dark" href="?page=<?= $currentPage - 1 ?>&id_game=<?= $id_game ?>&id_category=<?= $id_category ?>" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                         </a>
                                     </li>
@@ -72,10 +72,10 @@
                                     for ($page = 1; $page <= $nbPages; $page++) {
                                         $isActive = ($currentPage == $page) ? 'activePagination' : '';
                                     ?>
-                                        <li class="page-item"><a class="page-link text-dark <?= $isActive ?>" href="?page=<?= $page ?>&<?= !empty($id_game) ? 'id_game=' . $id_game : 'id_console=' . $id_console ?>"><?= $page ?></a></li>
+                                        <li class="page-item"><a class="page-link text-dark <?= $isActive ?>" href="?page=<?= $page ?>&id_game=<?= $id_game ?>&id_category=<?= $id_category ?>"><?= $page ?></a></li>
                                     <?php  } ?>
                                     <li class="page-item">
-                                        <a class="page-link text-dark" href="?page=<?= $currentPage + 1 ?>&<?= !empty($id_game) ? 'id_game=' . $id_game : 'id_console=' . $id_console ?>" aria-label="Next">
+                                        <a class="page-link text-dark" href="?page=<?= $currentPage + 1 ?>&id_game=<?= $id_game ?>&id_category=<?= $id_category ?>" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                         </a>
                                     </li>

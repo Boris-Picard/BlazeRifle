@@ -164,7 +164,7 @@
                                             <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $firstGuide->label ?></span>
                                         </p>
                                         <div class="w-75">
-                                            <a href="#" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstGuide->id_article ?>&id_category=<?= $firstGuide->id_category ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
                                                 <?= $firstGuide->article_title ?>
                                             </a>
                                         </div>
@@ -191,7 +191,7 @@
                                         <p class="p-0 m-0">
                                             <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $sideGuide->label ?></span>
                                         </p>
-                                        <a href="#" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideGuide->id_article ?>&id_category=<?= $sideGuide->id_category ?>" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
                                             <?= $sideGuide->article_title ?>
                                         </a>
                                         <div class="mt-1">
