@@ -94,7 +94,7 @@ class Contact
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT `contacts`.`firstname`, `contacts`.`lastname`, `contacts`.`email`, `contacts`.`description`, `contacts`.`created_at`
+        $sql = 'SELECT *
         FROM `contacts`;';
 
         $sth = $pdo->query($sql);
@@ -112,5 +112,37 @@ class Contact
         $sth = $pdo->query($sql);
 
         return $sth->fetch(PDO::FETCH_OBJ);
+    }
+
+    public static function get(int $id_contact): object|false
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT * FROM `contacts`
+            WHERE `id_contact`=:id_contact;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_contact', $id_contact, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->fetch(PDO::FETCH_OBJ);
+    }
+
+    public static function delete(int $id_contact): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `contacts`
+            WHERE `id_contact`=:id_contact;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_contact', $id_contact, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return (int) ($sth->rowCount() > 0);
     }
 }

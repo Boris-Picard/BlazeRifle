@@ -47,9 +47,9 @@
                                             <td class="fw-semibold text-break"><?= htmlspecialchars($message->created_at) ?></td>
                                             <!-- <td class="fw-semibold text-break"><?= htmlspecialchars($message->label) ?></td> -->
                                             <td>
-                                                <a href="/controllers/dashboard/category/update-category-ctrl.php?id_contact=<?= $message->id_contact ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <!-- <a href="/controllers/dashboard/category/update-category-ctrl.php?id_contact=<?= $message->id_contact ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>
-                                                </a>
+                                                </a> -->
                                                 <a href="/controllers/dashboard/contacts/delete-contact-ctrl.php?id_contact=<?= $message->id_contact ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                                 </a>

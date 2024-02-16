@@ -120,7 +120,7 @@ html{
 /* Header scroll effect */
 .header-hide {
     transition: transform .5s ease, background-color .5s ease;
-    transform: translateY(0);
+    transform: translateY();
     background-color: #fff;
 }
 
