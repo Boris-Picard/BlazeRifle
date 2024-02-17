@@ -145,7 +145,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .progress-circle::after {
-    border-color: rgb(216, 0, 36);
+    border-color: rgb(25, 134, 84);
     animation: progress-animation 2s linear forwards;
 }
 

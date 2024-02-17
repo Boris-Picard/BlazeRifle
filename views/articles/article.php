@@ -45,7 +45,12 @@
                             <!-- DATE ET AUTEUR -->
                             <div class="col-12 d-flex justify-content-center mt-2">
                                 <small>
-                                    Publié le <?= $article->formattedDate ?> à <?= $article->formattedHour ?> Par <span class="text-danger text-capitalize fw-bold"><?= $article->pseudo ?></span>
+                                    Publié le <?= $article->formattedDate ?> à <?= $article->formattedHour ?> Par
+                                    <?php if ($article->role == 1) { ?>
+                                        <span class="text-danger text-capitalize fw-bold"><?= $article->pseudo ?></span>
+                                    <?php } else { ?>
+                                        <span class="text-warning text-capitalize fw-bold"><?= $article->pseudo ?></span>
+                                    <?php } ?>
                                 </small>
                             </div>
                         </div>

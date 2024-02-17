@@ -13,7 +13,7 @@
         progressCircle.style.setProperty('--rotation', rotation + 'deg');
 
         // Mettez à jour le texte du pourcentage
-        percentageSpan.textContent = percentage + '%';
+        percentageSpan.textContent = '+' + percentage + '%';
 
         // Animation CSS ajustée via JavaScript
         document.styleSheets[0].addRule('.progress-circle::after', 'transform: rotate(' + rotation + 'deg)');

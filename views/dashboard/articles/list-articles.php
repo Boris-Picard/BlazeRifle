@@ -93,7 +93,11 @@
                                         <tr>
                                             <td class="fw-semibold"><?= $article->game_name ?></td>
                                             <td class="fw-semibold text-break"><?= $article->label ?></td>
-                                            <td class="fw-semibold text-break"><?= $article->pseudo ?></td>
+                                            <?php if ($article->role == 1) { ?>
+                                                <td class="fw-semibold text-break text-danger"><?= $article->pseudo ?></td>
+                                            <?php } else { ?>
+                                                <td class="fw-semibold text-break text-warning"><?= $article->pseudo ?></td>
+                                            <?php } ?>
                                             <td class="fw-semibold text-break"><?= $countComments ?></td>
                                             <td class="fw-semibold">
                                                 <?php if (isset($article->article_picture)) { ?>

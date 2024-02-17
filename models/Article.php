@@ -272,6 +272,7 @@ class Article
             `games`.`game_picture`,
             `games`.`id_game`,
             `users`.`pseudo`,
+            `users`.`role`,
             `users`.`created_at` AS user_created_at
             FROM `articles`
             INNER JOIN `categories` ON `categories`.`id_category`=`articles`.`id_category`
@@ -351,6 +352,7 @@ class Article
         `games`.`game_name`,
         `games`.`id_game`,
         `users`.`pseudo`,
+        `users`.`role`,
         `users`.`id_user`,
         `users`.`created_at` AS user_created_at
         FROM `articles`

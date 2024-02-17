@@ -45,7 +45,7 @@ try {
     // Récupération des détails de l'article spécifié par son ID
     $article = Article::get($id_article);
     // Si l'article spécifié existe
-    
+
     Article::confirm($id_article);
 
     $countComments = Comment::count($id_article);
