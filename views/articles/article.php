@@ -234,7 +234,7 @@
                                                     <div class="row g-0">
                                                         <div class="col-md-2 d-flex">
                                                             <?php if (isset($comment->user_picture)) { ?>
-                                                                <img src="/public/uploads/users/" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="<?= $comment->user_picture ?>">
+                                                                <img src="/public/uploads/users/<?= $comment->user_picture ?>" class="imgProfilComment rounded-circle object-fit-cover img-fluid" alt="<?= $comment->user_picture ?>">
                                                             <?php } ?>
                                                         </div>
                                                         <div class="col-md-10">

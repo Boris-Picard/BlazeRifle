@@ -70,73 +70,58 @@ try {
                 $error["email"] = "L'adresse email n'est pas au bon format";
             }
         }
+        //===================== MOT DE PASSE =====================
+        $password = filter_input(INPUT_POST, 'password');
+        $confirmPassword = filter_input(INPUT_POST, 'confirmPassword');
+        if (empty($password)) {
+            $error['password'] = 'Veuillez entrer un mot de passe';
+        } elseif (empty($confirmPassword)) {
+            $error['confirmPassword'] = 'Veuillez entrer un mot de passe';
+        } else {
+            $isOk = filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_PASSWORD . '/')));
+            $isConfirmOk = filter_var($confirmPassword, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_PASSWORD . '/')));
+            if (!$isOk && !$isConfirmOk) {
+                $error['password'] = "Veuillez entrer un mot de passe valide";
+            } elseif ($isOk != $isConfirmOk) {
+                $error['confirmPassword'] = "Veuillez entrer le même mot de passe";
+            } else {
+                $hash = password_hash($isOk, PASSWORD_DEFAULT);
+            }
+        }
 
-        $fileName = $user->user_picture ?? null;
-        if ($user_picture == null) {
-            try {
-                // Vérification de l'existence de la photo
-                if (empty($_FILES['picture']['name'])) {
-                    throw new Exception("Photo obligatoire");
-                }
-                // Vérification d'éventuelles erreurs lors du téléchargement du fichier
-                if ($_FILES['picture']['error'] != 0) {
-                    throw new Exception("Error");
-                }
-                // Vérification du format de la photo
-                if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
-                    throw new Exception("Format non autorisé");
-                }
-                // Vérification de la taille de la photo
-                if ($_FILES['picture']['size'] > MAX_FILESIZE) {
-                    throw new Exception("Image trop grande");
-                }
+        try {
+            // Vérification de l'existence de la photo
+            if (empty($_FILES['picture']['name'])) {
+                throw new Exception("Photo obligatoire");
+            }
+            // Vérification d'éventuelles erreurs lors du téléchargement du fichier
+            if ($_FILES['picture']['error'] != 0) {
+                throw new Exception("Error");
+            }
+            // Vérification du format de la photo
+            if (!in_array($_FILES['picture']['type'], IMAGE_TYPES)) {
+                throw new Exception("Format non autorisé");
+            }
+            // Vérification de la taille de la photo
+            if ($_FILES['picture']['size'] > MAX_FILESIZE) {
+                throw new Exception("Image trop grande");
+            }
 
-                // Génération d'un nom de fichier unique
-                $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
-                $fileName = uniqid('profil_') . '.' . $extension;
+            // Génération d'un nom de fichier unique
+            $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
+            $fileName = uniqid('profil_') . '.' . $extension;
 
-                // Déplacement du fichier téléchargé vers le répertoire de destination
-                $from = $_FILES['picture']['tmp_name'];
-                $to =  __DIR__ . '/../../public/uploads/users/' . $fileName;
+            // Déplacement du fichier téléchargé vers le répertoire de destination
+            $from = $_FILES['picture']['tmp_name'];
+            $to =  __DIR__ . '/../../../public/uploads/users/' . $fileName;
+
+            if (empty($error)) {
                 $moveFile = move_uploaded_file($from, $to);
-
-                $image = imagecreatefromjpeg($to);
-
-                $width = 500;
-                $height = -1;
-
-                $mode = IMG_BICUBIC;
-
-                $resampledObject = imagescale($image, $width, $height, $mode);
-                imagejpeg($resampledObject, $to);
-            } catch (\Throwable $e) {
-                // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
-                $error['picture'] = $e->getMessage();
             }
+        } catch (\Throwable $e) {
+            // En cas d'erreur, enregistrement du message d'erreur dans le tableau des erreurs
+            $error['picture'] = $e->getMessage();
         }
-
-        if (empty($error)) {
-            $updateUser = new User();
-
-            $updateUser->setFirstname($firstname);
-            $updateUser->setLastname($lastname);
-            $updateUser->setPseudo($pseudo);
-            $updateUser->setEmail($email);
-            $updateUser->setIdUser($id_user);
-            $updateUser->setRole($user->role);
-
-            if ($fileName !== $user->user_picture) {
-                unlink('../../public/uploads/users/' . $user->user_picture);
-                $updateUser->setUserPicture($fileName);
-            }
-
-            $updateUser->update();
-
-            if ($updateUser) {
-                header("Refresh:5;url=/controllers/account/account-ctrl.php?id_user=" . $user->id_user);
-            }
-        }
-        $user = User::get($id_user);
     }
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
@@ -145,6 +130,6 @@ try {
 
 include __DIR__ . '/../../views/templates/header.php';
 include __DIR__ . '/../../views/templates/navbar.php';
-include __DIR__ . '/../../views/account/update-account.php';
+include __DIR__ . '/../../views/account/password-account.php';
 include __DIR__ . '/../../views/templates/socials.php';
 include __DIR__ . '/../../views/templates/footer.php';

@@ -305,6 +305,7 @@ class User
         `users`.`firstname`,
         `users`.`lastname`,
         `users`.`pseudo`,
+        `users`.`email`,
         `users`.`user_picture`,
         `users`.`created_at` AS user_created_at,
         `users`.`role`,

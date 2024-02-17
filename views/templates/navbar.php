@@ -22,13 +22,13 @@ try {
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="/public/uploads/users/<?= !empty($_SESSION['user']->user_picture) ? $_SESSION['user']->user_picture : 'profilpicdefault.avif' ?>" alt="" width="32" height="32" class="rounded-circle">
+                        <img src="/public/uploads/users/<?= !empty($_SESSION['user']->user_picture) ? $_SESSION['user']->user_picture : 'profilpicdefault.avif' ?>" alt="" width="32" height="32" class="object-fit-cover rounded-circle">
                     </a>
                     <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0">
-                        <li><a class="dropdown-item" href="/controllers/account/account-ctrl.php">Profile</a></li>
+                        <li><a class="dropdown-item" href="/controllers/account/account-ctrl.php?id_user=<?= $_SESSION['user']->id_user ?>">Profile</a></li>
                         <?php if (!empty($_SESSION['user']) && $_SESSION['user']->role === 1) { ?>
                             <li><a class="dropdown-item" href="/controllers/dashboard/dashboard-ctrl.php">Dashboard</a></li>
                         <?php } ?>

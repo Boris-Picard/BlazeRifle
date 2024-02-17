@@ -5,6 +5,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Category.php';
 require_once __DIR__ . '/../../models/Game.php';
+require_once __DIR__ . '/../../models/User.php';
 require_once __DIR__ . '/../../helpers/CheckPermissions.php';
 
 CheckPermissions::checkMemberEditor();
@@ -17,7 +18,8 @@ try {
     // Récupération de la liste de toutes les catégories
     $categories = Category::getAll();
 
-    $id_user = $_SESSION['user']->id_user;
+    $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
+    $user = User::get($id_user);
     // Vérification si la requête est de type POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -202,7 +204,7 @@ try {
 
             // Si l'insertion a réussi, affichage d'un message de succès et redirection
             if ($result > 0) {
-                header("Refresh:8;url=/controllers/account/account-ctrl.php");
+                header("Refresh:8;url=/controllers/account/account-ctrl.php?id_user=".$user->id_user);
             }
         }
     }

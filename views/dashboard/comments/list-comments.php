@@ -67,7 +67,7 @@
                                             <td class="fw-semibold">
                                                 <?php if (isset($comment->user_picture)) { ?>
                                                     <div class="ratio ratio-1x1">
-                                                        <img src="/public/uploads/article/<?= $comment->user_picture ?>" alt="<?= $comment->user_picture ?>" class="object-fit-cover rounded-circle ">
+                                                        <img src="/public/uploads/users/<?= $comment->user_picture ?>" alt="<?= $comment->user_picture ?>" class="object-fit-cover rounded-circle ">
                                                     </div>
                                                 <?php } ?>
                                             </td>
