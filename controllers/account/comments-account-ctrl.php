@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../models/User.php';
 require_once __DIR__ . '/../../models/Comment.php';
+require_once __DIR__ . '/../../helpers/Date_Comment.php';
 require_once __DIR__ . '/../../helpers/CheckPermissions.php';
 
 CheckPermissions::checkMember();
@@ -11,6 +12,8 @@ try {
     $user = User::get($id_user);
 
     $comments = Comment::getUserComments($id_user, 'DESC');
+
+    $formatDate = Date_Comment::commentsDate($comments);
 
 } catch (PDOException $e) {
     die('Error comments : ' . $e->getMessage());

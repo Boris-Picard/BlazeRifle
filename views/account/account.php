@@ -31,7 +31,7 @@
                     <p>Nom : <span class="fw-semibold text-capitalize"><?= $user->lastname ?></span></p>
                     <p>Pseudo : <span class="fw-semibold text-capitalize"><?= $user->pseudo ?></span></p>
                     <p>Adresse mail : <span class="fw-semibold"><?= $user->email ?></span></p>
-                    <p>Date de création du compte : <span class="fw-semibold"><?= $user->user_created_at ?></span></p>
+                    <p>Date de création du compte : <span class="fw-semibold">le <?= $user->formattedDate ?> a <?= $user->formattedHour ?></span></p>
                     <div class="py-3">
                         <a href="/controllers/account/update-account-ctrl.php?id_user=<?= $id_user ?>" class="btn btn-danger py-3 rounded-5 fw-bold text-uppercase">Modifier mes informations</a>
                     </div>

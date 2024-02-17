@@ -22,4 +22,13 @@ class Date_Comment
             $event->formattedDate = date('d-m-Y', $timestamp);
         }
     }
+
+    public static function commentsDate($comments)
+    {
+        foreach ($comments as $comment) {
+            $timestamp = strtotime($comment->comment_created_at);
+            $comment->formattedHour = date('H:i:s', $timestamp);
+            $comment->formattedDate = date('d-m-Y', $timestamp);
+        }
+    }
 }

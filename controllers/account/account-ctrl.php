@@ -8,6 +8,11 @@ CheckPermissions::checkMember();
 try {
     $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
     $user = User::get($id_user);
+
+    $timestamp = strtotime($user->user_created_at);
+    $user->formattedHour = date('H:i:s', $timestamp);
+    $user->formattedDate = date('d-m-Y', $timestamp);
+    
 } catch (PDOException $e) {
     die('Erreur account : ' . $e->getMessage());
 }

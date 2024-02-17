@@ -15,12 +15,12 @@
                 </div>
             </div>
             <div class="row g-2 justify-content-between">
-                <div class="col-5 pt-3">
+                <div class="col-8 pt-3">
                     <div class="d-flex mb-3">
-                        <h1 class="fw-bold text-uppercase">Mes commentaires</h1>
+                        <h1 class="fw-bold text-uppercase">Mes <span class="text-danger">10</span> derniers commentaires</h1>
                     </div>
                 </div>
-                <div class="col-6 py-3">
+                <div class="col-4 py-3">
                     <div class="d-flex justify-content-end">
                         <a href="/controllers/account/account-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-secondary py-3 rounded-5 fw-bold text-uppercase">Mon profil</a>
                     </div>
@@ -39,7 +39,7 @@
                                         Commentaire
                                     </th>
                                     <th scope="col">Nom du jeu</th>
-                                    <th scope="col">Pseudo</th>
+                                    <th scope="col">Catégorie</th>
                                     <th scope="col">
                                         Date de création
                                     </th>
@@ -57,11 +57,12 @@
                                                 <td class="fw-semibold"><?= $comment->comment ?></td>
                                             <?php } ?>
                                             <td class="fw-semibold"><?= $comment->game_name ?></td>
-                                            <td class="text-dark fw-semibold">
-                                                <?= $comment->pseudo ?>
-                                            </td>
+                                            <td class="fw-semibold"><?= $comment->label ?></td>
                                             <td class="fw-semibold">
-                                                <?= $comment->comment_created_at ?>
+                                                le
+                                                <?= $comment->formattedDate ?>
+                                                a
+                                                <?= $comment->formattedHour ?>
                                             </td>
                                             <td class="fw-semibold">
                                                 <?php if (!is_null($comment->comment_confirmed_at)) { ?>

@@ -209,6 +209,7 @@ class Comment
         `articles`.`id_game`,
         `articles`.`article_title`,
         `categories`.`id_category`,
+        `categories`.`label`,
         `games`.`game_name`,
         `games`.`id_game`
         FROM `comments`
