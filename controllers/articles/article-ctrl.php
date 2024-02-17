@@ -73,7 +73,11 @@ try {
             $comment->setIdArticle($id_article);
             $comment->setIdUser($id_user);
 
-            $comment->insert();
+            $result = $comment->insert();
+
+            if ($result > 0) {
+                header("Refresh:8;url=/controllers/articles/article-ctrl.php?". $id_article);
+            }
         }
     }
 } catch (PDOException $e) {

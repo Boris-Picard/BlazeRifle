@@ -13,9 +13,21 @@ $dashboard = true;
 try {
     $articles = Article::getAll(order: 'DESC', limit: 100);
     $comments = Comment::getAll();
-    $users = User::getAll();
+    $users = User::getAll(nbUsers: 6);
 
-    $bottomComments = Comment::getAll(order: 'DESC', nbComments: 7);
+    $pastUsers = User::pastUsers();
+    $newUsers = User::newUser();
+
+    $calcNewUsers = $newUsers; 
+    $calcPastUsers = $pastUsers; 
+
+    if ($calcPastUsers > 0) {
+        $growth = (($calcNewUsers - $calcPastUsers) / $calcPastUsers) * 100;
+    } else {
+        $growth = 100; // Si aucune inscription n'a eu lieu la semaine précédente, considérez la croissance comme étant de 100%.
+    }
+
+    $growFromWeek = $growth;
 
 } catch (PDOException $e) {
     'Erreur : ' . $e->getMessage();

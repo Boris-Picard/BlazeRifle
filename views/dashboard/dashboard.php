@@ -15,12 +15,16 @@
                         <div class="card h-100 border-0 shadow-lg rounded-5">
                             <div class="card-header border-0 bg-success rounded-top-5">
                                 <div class="card-text text-center">
-                                    <h5 class="text-white">Nombre d'utilisateurs</h5>
+                                    <h5 class="text-white">Pourcentage de nouveaux compte sur la semaine</h5>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="card-text text-center">
-                                    <h1 class="fw-bold"><?= count($users) ?></h1>
+                                    <div class="d-flex justify-content-center py-3">
+                                        <div class="progress-circle" data-percentage="<?= $growFromWeek ?>">
+                                            <span class="percentage"></span>
+                                        </div>
+                                    </div>
                                     <p class="text-capitalize fw-bold">dernier inscrit : </p>
                                     <p class="text-danger fw-bold text-uppercase"><?= $users[0]->pseudo ?>
                                     </p>
@@ -64,7 +68,6 @@
                                     <p class="text-capitalize fw-bold">dernier commentaire : </p>
                                     <p>de <span class="text-danger fw-bold text-uppercase"><?= $comments[0]->pseudo ?></span>
                                     </p>
-                                    <!-- <p><?= $comments[0]->comment ?></p> -->
                                     <p><?= $comments[0]->comment_created_at ?></p>
                                 </div>
                             </div>
@@ -74,43 +77,41 @@
             </div>
             <div class="row">
                 <div class="col-12 mt-5">
-                    <div class="table-responsive shadow-lg p-4 bg-white rounded-5 text-center">
+                    <div class="table-responsive shadow-lg bg-white rounded-5 text-center">
                         <table class="table table-borderless table-hover table-responsive align-middle">
-                            <thead>
-                                <tr>
-                                    <th scope="col">
-                                        Id de l'article
-                                    </th>
-                                    <th scope="col">Nom du jeu</th>
-                                    <th scope="col">Catégorie</th>
-                                    <th scope="col">Pseudo</th>
-                                    <th scope="col">Photo de l'utilisateur</th>
-                                    <th scope="col">
-                                        Date de création
-                                    </th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (isset($bottomComments)) {
-                                    foreach ($bottomComments as $comment) { ?>
+                            <div class="card">
+                                <div class="card-header border-0 bg-success rounded-top-5">
+                                    <div class="w-100 d-flex justify-content-around">
+                                        <h3 class="fw-bold text-white">Les derniers utilisateurs inscrits</h3>
+                                        <h3 class="fw-bold text-white">
+                                            Total utilisateurs : <?= count($users) ?>
+                                        </h3>
+                                    </div>
+                                    <thead>
                                         <tr>
-                                            <td class="fw-semibold"><?= $comment->id_article ?></td>
-                                            <td class="fw-semibold"><?= $comment->game_name ?></td>
-                                            <td class="fw-semibold"><?= $comment->label ?></td>
-                                            <td class="fw-semibold"><?= $comment->pseudo ?></td>
+                                            <th scope="col">
+                                                Prénom
+                                            </th>
+                                            <th scope="col">Nom</th>
+                                            <th scope="col">Pseudo</th>
+                                            <th scope="col">Date de création</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                </div>
+                            </div>
+                            <tbody>
+                                <?php if (isset($users)) {
+                                    foreach ($users as $user) { ?>
+                                        <tr>
+                                            <td class="fw-semibold"><?= $user->firstname ?></td>
+                                            <td class="fw-semibold"><?= $user->lastname  ?></td>
+                                            <td class="fw-semibold"><?= $user->pseudo ?></td>
                                             <td class="fw-semibold">
-                                                <?php if (isset($comment->user_picture)) { ?>
-                                                    <div class="ratio ratio-1x1">
-                                                        <img src="/public/uploads/article/<?= $comment->user_picture ?>" alt="<?= $comment->user_picture ?>" class="object-fit-cover rounded-circle ">
-                                                    </div>
-                                                <?php } ?>
+                                                <?= $user->user_created_at ?>
                                             </td>
                                             <td class="fw-semibold">
-                                                <?= $comment->comment_created_at ?>
-                                            </td>
-                                            <td class="fw-semibold">
-                                                <?php if (!is_null($comment->comment_confirmed_at)) { ?>
+                                                <?php if (!is_null($user->user_confirmed_at)) { ?>
                                                     <button class="btn btn-small btn-success ">Validé</button>
                                                 <?php  } else { ?>
                                                     <a class="btn btn-secondary btn-sm">En attente</a>

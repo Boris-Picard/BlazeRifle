@@ -26,7 +26,7 @@
                     <div class="col-12">
                         <form action="#" method="POST" class="shadow-lg p-5 rounded-4" novalidate enctype="multipart/form-data">
                             <div class="d-flex justify-content-center">
-                                <p>Auteur : <span class="fw-bold text-uppercase"><?= $article->pseudo ?></span></p>
+                                <p>Auteur : <span class="fw-bold text-uppercase text-danger"><?= $article->pseudo ?></span></p>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-md-12">

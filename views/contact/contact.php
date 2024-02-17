@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-12 py-4">
                                     <h1 class="fw-bold h2 text-uppercase">
-                                        S'inscrire
+                                        Nous contacter
                                     </h1>
                                 </div>
                             </div>

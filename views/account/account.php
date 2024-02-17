@@ -29,7 +29,11 @@
                 </div>
                 <div class="col-md-4 mx-5 shadow-lg rounded-4 rightCardProfil py-3">
                     <div class="d-flex justify-content-center py-3">
-                        <a href="/controllers/account/user-article-ctrl.php" class="btn btn-warning py-3 rounded-5 fw-bold text-uppercase w-100">Rédiger un article</a>
+                        <?php if ($_SESSION['user']->role !== 2) { ?>
+                            <a href="/controllers/contact-ctrl/contact-ctrl.php" class="btn btn-warning py-3 rounded-5 fw-bold text-uppercase w-100">Devenir Rédacteur</a>
+                        <?php } else { ?>
+                            <a href="/controllers/account/user-article-ctrl.php" class="btn btn-warning py-3 rounded-5 fw-bold text-uppercase w-100">Rédiger un article</a>
+                        <?php   } ?>
                     </div>
                     <div class="d-flex justify-content-center ">
                         <a href="" class="btn btn-secondary py-3 rounded-5 fw-bold text-uppercase w-100">Voir mes favoris</a>

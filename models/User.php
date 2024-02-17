@@ -415,7 +415,34 @@ class User
 
         $result = $sth->fetchColumn();
 
-        return $result > 0;
+        return $result;
     }
-    
+
+    public static function newUser()
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(*) AS new_users
+        FROM `users`
+        WHERE `created_at` >= CURDATE() - INTERVAL (WEEKDAY(CURDATE())) DAY
+        AND `created_at` < CURDATE() + INTERVAL 1 DAY;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetchColumn();
+    }
+
+    public static function pastUsers()
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(*) AS past_users
+        FROM `users`
+        WHERE `created_at` >= CURDATE() - INTERVAL (WEEKDAY(CURDATE()) + 7) DAY
+        AND `created_at` < CURDATE() - INTERVAL WEEKDAY(CURDATE()) DAY;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetchColumn();
+    }
 }

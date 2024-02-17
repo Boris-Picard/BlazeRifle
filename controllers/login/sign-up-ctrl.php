@@ -102,6 +102,7 @@ try {
             $user->setEmail($email);
             $user->setPassword($passwordHash);
             $user->setUserPicture($user_picture);
+            $user->setRole(2);
 
             $isInserted = $user->insert();
             if ($isInserted) {
@@ -111,13 +112,13 @@ try {
                 $subject = 'Confirmation de réservation';
                 $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login/confirmed-ctrl.php?jwt=' . $jwt . '">Veuillez cliquer pour confirmer</a>';
                 $mail = Mail::sendMail($adress, $nameAdress, $subject, $body);
+                header("Refresh:7;url=/controllers/home-ctrl.php");
             }
         }
     }
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }
-
 
 
 include __DIR__ . '/../../views/templates/header.php';

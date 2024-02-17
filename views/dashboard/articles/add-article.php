@@ -25,7 +25,7 @@
                     <div class="col-12">
                         <form action="#" method="POST" class="shadow-lg p-5 rounded-4" novalidate enctype="multipart/form-data">
                             <div class="d-flex justify-content-center">
-                                <p>Auteur : <span class="fw-bold text-uppercase"><?= $_SESSION['user']->pseudo ?></span></p>
+                                <p>Auteur : <span class="fw-bold text-uppercase text-danger"><?= $_SESSION['user']->pseudo ?></span></p>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-md-12">
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="py-3">
-                                <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Ajouter un Article</button>
+                                <button type="submit" class="btn btn-danger rounded-4 fw-bold text-uppercase">Créer un Article</button>
                                 <a href="/controllers/dashboard/articles/list-articles-ctrl.php" class="btn btn-outline-danger rounded-4 fw-bold text-uppercase">Annuler</a>
                             </div>
                         </form>

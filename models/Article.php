@@ -568,6 +568,6 @@ class Article
 
         $result = $sth->fetchColumn();
 
-        return $result > 0;
+        return $result;
     }
 }

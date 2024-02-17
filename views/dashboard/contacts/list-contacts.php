@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="table-responsive shadow-lg p-4 bg-white rounded-4 text-center">
+                    <div class="table-responsive shadow-lg bg-white rounded-4 text-center">
                         <table class="table table-borderless table-hover table-responsive align-middle">
                             <thead>
                                 <tr>

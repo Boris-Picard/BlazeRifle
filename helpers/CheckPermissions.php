@@ -10,6 +10,14 @@ class CheckPermissions
         }
     }
 
+    public static function checkMemberEditor()
+    {
+        if (empty($_SESSION['user']) || $_SESSION['user']->role != 2) {
+            header('location: /controllers/account/account-ctrl.php');
+            exit;
+        }
+    }
+
     public static function checkMember()
     {
         if (empty($_SESSION['user'])) {
@@ -17,4 +25,5 @@ class CheckPermissions
             exit;
         }
     }
+    
 }

@@ -328,7 +328,6 @@
                                                 <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
                                                     tous les <?= $firstArticleSidebar->game_name ?>
                                                 <?php  } ?>
-
                                                 </a>
                                         </div>
                                     </div>
