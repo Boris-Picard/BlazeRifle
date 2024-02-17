@@ -34,6 +34,7 @@ try {
     $articlesSidebar = Article::getAll($gameId, id_category: REGEX_GUIDES, order: 'DESC');
     Date_Comment::formatDateComment($articlesSidebar);
     $firstArticleSidebar = array_shift($articlesSidebar);
+
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

@@ -33,7 +33,7 @@
                                 </div>
                                 <?php } else {
                                 foreach ($articles as $article) { ?>
-                                    <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
+                                    <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4" data-aos="fade-up" data-aos-duration="700">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <div class="ratio ratio-16x9">

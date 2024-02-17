@@ -106,7 +106,8 @@ try {
                 $width = 500;
                 $height = -1;
 
-                $mode = IMG_BICUBIC;
+                $mode = IMG_BILINEAR_FIXED
+                ;
 
                 $resampledObject = imagescale($image, $width, $height, $mode);
                 imagejpeg($resampledObject, $to);

@@ -306,6 +306,7 @@ class User
         `users`.`lastname`,
         `users`.`pseudo`,
         `users`.`email`,
+        `users`.`password`,
         `users`.`user_picture`,
         `users`.`created_at` AS user_created_at,
         `users`.`role`,
@@ -371,6 +372,22 @@ class User
         $sth->bindValue(':user_picture', $this->getUserPicture());
         $sth->bindValue(':role', $this->getRole());
         $sth->bindValue(':id_user', $this->getIdUser(), PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return (int) ($sth->rowCount() > 0);
+    }
+
+    public static function updatePassword(string $password, int $id_user)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `users` SET `password`=:password WHERE `id_user`=:id_user;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':password', $password);
+        $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
 
         $sth->execute();
 

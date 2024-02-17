@@ -108,7 +108,7 @@
                                 <?php if (isset($gameId)) {
                                     foreach ($articlesBottom as $article) {
                                         if ($id_article !== $article->id_article) { ?>
-                                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
+                                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3" data-aos="fade-up" data-aos-duration="700">
                                                 <div class="row g-0">
                                                     <div class="col-md-2 d-flex">
                                                         <div class="ratio ratio-16x9">
@@ -118,30 +118,6 @@
                                                     <div class="col-md-10">
                                                         <div class="card-body p-2 mx-2">
                                                             <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game<?= $article->id_game ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
-                                                                <?= html_entity_decode($article->article_title) ?>
-                                                            </a>
-                                                            <p class="text-card aCard m-0 mt-2">
-                                                                <?= html_entity_decode($article->article_description) ?>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php }
-                                    }
-                                } else {
-                                    foreach ($articlesBottom as $article) {
-                                        if ($id_article !== $article->id_article) { ?>
-                                            <div class="card mt-4 rounded-4 bg-transparent border-0 shadow-lg p-3">
-                                                <div class="row g-0">
-                                                    <div class="col-md-2 d-flex">
-                                                        <div class="ratio ratio-16x9">
-                                                            <img src="/public/uploads/article/<?= $article->article_picture ?>" class="object-fit-cover img-fluid rounded-4" alt="<?= $article->game_name ?>">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <div class="card-body p-2 mx-2">
-                                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
                                                                 <?= html_entity_decode($article->article_title) ?>
                                                             </a>
                                                             <p class="text-card aCard m-0 mt-2">
@@ -298,7 +274,7 @@
                         </section>
                     </div>
                     <!-- SIDEBAR -->
-                    <div class="col-md-4 col-12">
+                    <div class="col-md-4 col-12" data-aos="fade-up" data-aos-duration="700">
                         <div class="row mx-4 rounded-4">
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">

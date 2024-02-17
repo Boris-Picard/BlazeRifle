@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <?php foreach ($articles as $article) { ?>
-                                    <div class="card bg-transparent rounded-4 shadow-lg text-white p-0 cardActu border-0 cardShadow ">
+                                    <div class="card bg-transparent rounded-4 shadow-lg text-white p-0 cardActu border-0 cardShadow" data-aos="fade-up" data-aos-duration="700">
                                         <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 h-100 w-100" alt="<?= $article->game_name ?>">
                                         <div class="card-img-overlay ">
                                             <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= htmlspecialchars($article->game_name) ?></span>
@@ -55,7 +55,7 @@
                             <!-- CARD UNDER ACTU -->
                             <div class="col-12 d-flex flex-wrap justify-content-between colActus">
                                 <?php foreach ($articlesUnder as $article) { ?>
-                                    <div class="card cardActUnder rounded-4 mt-3 p-0 border-0 bg-transparent">
+                                    <div class="card cardActUnder rounded-4 mt-3 p-0 border-0 bg-transparent" data-aos="fade-up" data-aos-duration="700">
                                         <div class="card-img-top ratio ratio-16x9">
                                             <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4" alt="<?= $article->game_name ?>">
                                             <div class="p-3">
@@ -103,7 +103,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-12">
-                                    <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow">
+                                    <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow" data-aos="fade-up" data-aos-duration="700">
                                         <img src="/public/uploads/article/<?= $firstGuide->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $firstGuide->game_name ?>">
                                         <div class="card-img-overlay d-flex flex-column justify-content-end">
                                             <p class="p-0 m-0">
@@ -129,7 +129,7 @@
                                 </div>
                                 <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
                                     <?php foreach ($guides as $guide) { ?>
-                                        <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
+                                        <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden" data-aos="fade-up" data-aos-duration="700">
                                             <div class="row g-0 cardGuideRight">
                                                 <div class="col-auto">
                                                     <img src="/public/uploads/article/<?= $guide->article_picture ?>" loading="lazy" alt="<?= $guide->game_name ?>" class="imgGuideRight object-fit-cover rounded-4">
@@ -162,7 +162,7 @@
                                 <div class="col-md-3 col-12 justify-content-between colGuideActus d-flex flex-column">
                                     <?php
                                     foreach ($guidesSecondCol as $guide) { ?>
-                                        <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden">
+                                        <div class="card cardGuideRight  bg-transparent border-0 overflow-hidden" data-aos="fade-up" data-aos-duration="700">
                                             <div class="row g-0 cardGuideRight">
                                                 <div class="col-auto">
                                                     <img src="/public/uploads/article/<?= $guide->article_picture ?>" loading="lazy" alt="<?= $guide->game_name ?>" class="imgGuideRight object-fit-cover rounded-4">

@@ -21,20 +21,20 @@
                     <p>Rôle :
                         <?php if ($user->role === 1) { ?>
                             <span class="fw-semibold text-danger text-capitalize">Admin</span>
+                        <?php  } elseif ($user->role === 2) { ?>
+                            <span class="fw-semibold text-primary text-capitalize">Membre</span>
+                        <?php } else { ?>
+                            <span class="fw-semibold text-warning text-capitalize">Membre Rédacteur</span>
+                        <?php } ?>
                     </p>
-                <?php  } elseif ($user->role === 2) { ?>
-                    <span class="fw-semibold text-primary text-capitalize">Membre</span>
-                <?php } else { ?>
-                    <span class="fw-semibold text-warning text-capitalize">Membre Rédacteur</span>
-                <?php } ?>
-                <p>Prénom : <span class="fw-semibold text-capitalize"><?= $user->firstname ?></span></p>
-                <p>Nom : <span class="fw-semibold text-capitalize"><?= $user->lastname ?></span></p>
-                <p>Pseudo : <span class="fw-semibold text-capitalize"><?= $user->pseudo ?></span></p>
-                <p>Adresse mail : <span class="fw-semibold"><?= $user->email ?></span></p>
-                <p>Date de création du compte : <span class="fw-semibold"><?= $user->user_created_at ?></span></p>
-                <div class="py-3">
-                    <a href="/controllers/account/update-account-ctrl.php?id_user=<?= $id_user ?>" class="btn btn-danger py-3 rounded-5 fw-bold text-uppercase">Modifier mes informations</a>
-                </div>
+                    <p>Prénom : <span class="fw-semibold text-capitalize"><?= $user->firstname ?></span></p>
+                    <p>Nom : <span class="fw-semibold text-capitalize"><?= $user->lastname ?></span></p>
+                    <p>Pseudo : <span class="fw-semibold text-capitalize"><?= $user->pseudo ?></span></p>
+                    <p>Adresse mail : <span class="fw-semibold"><?= $user->email ?></span></p>
+                    <p>Date de création du compte : <span class="fw-semibold"><?= $user->user_created_at ?></span></p>
+                    <div class="py-3">
+                        <a href="/controllers/account/update-account-ctrl.php?id_user=<?= $id_user ?>" class="btn btn-danger py-3 rounded-5 fw-bold text-uppercase">Modifier mes informations</a>
+                    </div>
                 </div>
                 <div class="col-md-4 mx-5 shadow-lg rounded-4 rightCardProfil py-3">
                     <div class="d-flex justify-content-center py-3">

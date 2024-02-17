@@ -19,7 +19,7 @@
                 <?php foreach ($games as $game) { ?>
                     <div class="col-md-4">
                         <h2 class="fw-bold text-uppercase py-2 aCardMin"><?= htmlspecialchars($game->game_name) ?></h2>
-                        <div class="card rounded-4 border-0 shadow ">
+                        <div class="card rounded-4 border-0 shadow" data-aos="fade-up" data-aos-duration="700">
                             <img src="/public/uploads/games/<?= $game->game_picture ?>" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="$game->game_name">
                             <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
                                 <p class="p-0 m-0 z-3">

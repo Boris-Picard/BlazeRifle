@@ -53,7 +53,7 @@
                                         </h2>
                                     </div>
                                     <!-- CARDS -->
-                                    <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
+                                    <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4" data-aos="fade-up" data-aos-duration="700">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="/public/uploads/events/<?= $event->event_picture ?>" class="img-fluid object-fit-cover cardsActus rounded-start rounded-3" alt="<?= $event->game_name ?>">
@@ -87,7 +87,7 @@
                     </div>
                     <!-- SIDEBAR -->
                     <?php if (isset($event)) { ?>
-                        <div class="col-md-4 col-12 mt-5">
+                        <div class="col-md-4 col-12 mt-5" data-aos="fade-up" data-aos-duration="700">
                             <div class="row mx-4 rounded-4">
                                 <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                     <div class="row">

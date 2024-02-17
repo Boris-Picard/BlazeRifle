@@ -58,7 +58,7 @@ try {
             if (!$isOk) {
                 $error['description'] = 'Veuillez renseigner une description de jeu correct';
             }
-            if(strlen($description) > 500) {
+            if (strlen($description) > 500) {
                 $error['description'] = 'Votre message est trop long';
             }
         }
@@ -97,7 +97,7 @@ try {
             if (!$isOk) {
                 $error['firstSection'] = 'Veuillez renseigner un titre de jeu correct';
             }
-            if(strlen($firstSection) > 5000) {
+            if (strlen($firstSection) > 5000) {
                 $error['firstSection'] = 'Votre message est trop long';
             }
         }
@@ -112,7 +112,7 @@ try {
             if (!$isOk) {
                 $error['secondSection'] = 'Veuillez renseigner un titre de jeu correct';
             }
-            if(strlen($secondSection) > 5000) {
+            if (strlen($secondSection) > 5000) {
                 $error['secondSection'] = 'Votre message est trop long';
             }
         }
@@ -170,11 +170,19 @@ try {
 
                 // Déplacement du fichier téléchargé vers le répertoire de destination
                 $from = $_FILES['picture']['tmp_name'];
-                
-                if (empty($error)) {
-                    $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
-                    $moveFile = move_uploaded_file($from, $to);
-                }
+
+                $to =  __DIR__ . '/../../../public/uploads/article/' . $fileName;
+                $moveFile = move_uploaded_file($from, $to);
+
+                $image = imagecreatefromjpeg($to);
+
+                $width = 900;
+                $height = -1;
+
+                $mode = IMG_BILINEAR_FIXED;
+
+                $resampledObject = imagescale($image, $width, $height, $mode);
+                imagejpeg($resampledObject, $to);
             } catch (\Throwable $e) {
                 $error['picture'] = $e->getMessage();
             }

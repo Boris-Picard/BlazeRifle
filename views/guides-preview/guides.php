@@ -34,7 +34,7 @@
                     </div>
                     <?php foreach ($articles as $article) { ?>
                         <div class="col-md-3 px-2 mt-3">
-                            <div class="card rounded-4 border-0 cardGuideMin shadow">
+                            <div class="card rounded-4 border-0 cardGuideMin shadow" data-aos="fade-up" data-aos-duration="700">
                                 <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="card-img-top rounded-4 h-50 object-fit-cover" alt="<?= $article->game_name ?>">
                                 <div class="card-body py-1 d-flex flex-column justify-content-center ">
                                     <p class="p-0 m-0">

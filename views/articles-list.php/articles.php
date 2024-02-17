@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-12 p-0 py-3">
                             <?php foreach ($articles as $article) { ?>
-                                <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4">
+                                <div class="card mb-4 border-0 bg-transparent cardsActus shadow-lg rounded-4" data-aos="fade-up" data-aos-duration="700">
                                     <div class="row g-0">
                                         <div class="col-md-4">
                                             <div class="ratio ratio-16x9">
@@ -85,7 +85,7 @@
                     </div>
                     <!-- LES GUIDES -->
                     <?php if (isset($firstArticleSidebar)) { ?>
-                        <div class="col-md-4 col-12 colGuideRight mt-3">
+                        <div class="col-md-4 col-12 colGuideRight mt-3" data-aos="fade-up" data-aos-duration="700">
                             <div class="row mx-4 rounded-4">
                                 <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                     <div class="row">
@@ -137,8 +137,8 @@
                                                 </div>
                                             <?php } ?>
                                             <div class="d-flex justify-content-center mt-3 mb-4">
-                                                <a href="?id_game=<?= $articlesSidebar[0]->id_game . '&id_category=' . $articlesSidebar[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    les guides <?= $articlesSidebar[0]->game_name ?>
+                                                <a href="?id_game=<?= $firstArticleSidebar->id_game . '&id_category=' . $firstArticleSidebar->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                    les guides <?= $firstArticleSidebar->game_name ?>
                                                 </a>
                                             </div>
                                         </div>
@@ -146,7 +146,7 @@
                                 </div>
                                 <!-- LES VIDEOS -->
                                 <div class="mt-4"></div>
-                                <div class="col-12 widthColRightVideo shadow-lg rounded-4">
+                                <div class="col-12 widthColRightVideo shadow-lg rounded-4" data-aos="fade-up" data-aos-duration="700">
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center align-items-center p-3">
                                             <i class="bi bi-play-circle fs-1 px-2"></i>

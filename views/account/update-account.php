@@ -1,5 +1,5 @@
 <main>
-    <section class="profilSection py-5 bg-light">
+    <section class="profilSection py-5 bg-light vh-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -55,12 +55,12 @@
                                     <input class="form-control" type="file" id="picture" value="<?= $user->user_picture ?>" name="picture" accept="image/png, image/jpeg, image/avif">
                                 </div>
                             </div>
-                            <div class="mt-3 py-3 d-flex justify-content-between">
-                                <div class="d-flex">
-                                    <button type="submit" class="btn btn-danger rounded-5 p-3 text-uppercase fw-bold">
+                            <div class="mt-3 py-3 d-flex justify-content-between flex-wrap">
+                                <div class="d-flex flex-wrap">
+                                    <button type="submit" class="btn btn-danger rounded-5 p-3 text-uppercase fw-bold mb-2 mb-md-0">
                                         Modifier
                                     </button>
-                                    <a href="/controllers/account/account-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-outline-danger mx-2 p-3 text-uppercase fw-bold rounded-5">
+                                    <a href="/controllers/account/account-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-outline-danger mx-2 p-3 text-uppercase fw-bold rounded-5 mb-2 mb-md-0">
                                         Annuler
                                     </a>
                                 </div>
@@ -68,6 +68,7 @@
                                     Modifier mon mot de passe
                                 </a>
                             </div>
+
                         </form>
                     <?php } else { ?>
                         <div class="card shadow border-0 p-5">

@@ -7,7 +7,9 @@
                             <div class="card-body cardProfilBanner rounded-4 ">
                                 <div class="card child-card border-0 rounded-4" style="background-image: url(/public/uploads/users/<?= !empty($user->user_picture) ? $user->user_picture : 'profilpicdefault.avif' ?>)">
                                     <div class="card-body ">
-                                        <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-3 text-uppercase rounded-5"><?= $user->pseudo ?></p>
+                                        <p class="card-text profilName text-light w-100 fs-4 fw-bold bg-danger text-center py-3 text-uppercase rounded-5">
+                                            <?= $user->pseudo ?>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +38,13 @@
                                 <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
                                     <form action="#" method="POST" class="shadow-lg p-5 rounded-4" novalidate enctype="multipart/form-data">
                                         <div class="d-flex justify-content-center">
-                                            <p>Auteur : <span class="fw-bold text-uppercase text-warning"><?= $user->pseudo ?></span></p>
+                                            <p>Auteur :
+                                                <?php if ($user->role === 1) { ?>
+                                                    <span class="fw-bold text-uppercase text-danger"><?= $user->pseudo ?></span>
+                                                <?php } else { ?>
+                                                    <span class="fw-bold text-uppercase text-warning"><?= $user->pseudo ?></span>
+                                                <?php } ?>
+                                            </p>
                                         </div>
                                         <div class="row">
                                             <div class="mb-3 col-md-12">
