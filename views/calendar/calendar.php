@@ -22,8 +22,9 @@
                                 <div class="row">
                                     <div class="col-12 d-flex flex-column justify-content-center">
                                         <form action="">
+                                            <label for="id_game">Sélectionner un jeu : </label>
                                             <select class="form-select" name="id_game" id="id_game" required>
-                                                <option value="" selected disabled>Séléctionnez un jeu</option>
+                                                <option value="" selected disabled></option>
                                                 <?php foreach ($games as $game) { ?>
                                                     <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= htmlspecialchars($game->game_name) ?></option>
                                                 <?php } ?>
@@ -92,7 +93,7 @@
                                 <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center justify-content-center p-3">
-                                            <h5 class="text-uppercase fw-bold"><span class="text-danger">articles sur :</span> <?= htmlspecialchars($event->game_name) ?></h5>
+                                            <h1 class="text-uppercase fs-5 fw-bold"><span class="text-danger">articles sur :</span> <?= htmlspecialchars($event->game_name) ?></h1>
                                         </div>
                                     </div>
                                     <div class="row">

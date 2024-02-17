@@ -18,7 +18,7 @@
                                 <?php  } ?>
                             </div>
                             <div class="col-12 col-md-6 p-0 bgHero">
-                                <img src="/public/assets/img/infinitebg.jpg" loading="lazy" class="h-100 object-fit-cover img-fluid" alt="GTA 6 Hero page">
+                                <img src="/public/assets/img/infinite2.jpg" loading="lazy" class="h-100 object-fit-cover img-fluid" alt="Call of duty hero page">
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                     <h1 class="text-dark text-uppercase articleTitle fw-bold">Les derniers articles</h1>
                 </div>
                 <div class="col-md-2 d-flex  align-items-center justify-content-end">
-                    <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les articles
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
@@ -72,7 +72,7 @@
                     <!-- UNDERCARD 1 -->
                     <?php
                     foreach ($articles as $article) { ?>
-                        <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4 mt-3" data-aos="fade-up"  data-aos-duration="700">
+                        <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4 mt-3" data-aos="fade-up" data-aos-duration="700">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="<?= $article->game_name ?>">
@@ -104,7 +104,7 @@
                 <!-- SIDECARD 1 -->
                 <div class="col-md-6">
                     <?php foreach ($sideArticles as $sideArticle) { ?>
-                        <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4" data-aos="fade-up"  data-aos-duration="700">
+                        <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4" data-aos="fade-up" data-aos-duration="700">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="/public/uploads/article/<?= $sideArticle->article_picture ?>" loading="lazy" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="<?= $sideArticle->game_name ?>">
@@ -145,7 +145,7 @@
                     <h1 class="text-dark text-uppercase fw-bold">Les derniers guides</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les guides
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
@@ -154,7 +154,7 @@
                     <div class="row g-3">
                         <!-- MAIN CARD GUIDE -->
                         <div class="col-md-6 col-12 px-2">
-                            <div class="card text-bg-dark border-0 rounded-4 bg-white cardGuideBig" data-aos="fade-up"  data-aos-duration="700">
+                            <div class="card text-bg-dark border-0 rounded-4 bg-white cardGuideBig" data-aos="fade-up" data-aos-duration="700">
                                 <div class="ratio ratio-16x9 ">
                                     <img src="/public/uploads/article/<?= $firstGuide->article_picture ?>" loading="lazy" class="card-img object-fit-cover cardGuideBig rounded-4 " alt="<?= $firstGuide->game_name ?>">
                                 </div>
@@ -185,7 +185,7 @@
                         <!-- SIDECARD 1 -->
                         <?php foreach ($sideGuides as $sideGuide) { ?>
                             <div class="col-md-3 px-2">
-                                <div class="card rounded-4 border-0 cardGuideMin shadow" data-aos="fade-up"  data-aos-duration="700">
+                                <div class="card rounded-4 border-0 cardGuideMin shadow" data-aos="fade-up" data-aos-duration="700">
                                     <img src="/public/uploads/article/<?= $sideGuide->article_picture ?>" loading="lazy" class="card-img-top rounded-4 h-50 object-fit-cover" alt="<?= $sideGuide->game_name ?>">
                                     <div class="card-body py-1 d-flex flex-column justify-content-center ">
                                         <p class="p-0 m-0">
@@ -222,7 +222,7 @@
                     <h1 class="articleTitle text-uppercase fw-bold">Les jeux du moment</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="/controllers/games-preview/games-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/games-preview/games-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         Tous les jeux
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
@@ -234,7 +234,7 @@
                         foreach ($firstThreeGames as $game) {
                             if ($game->id_game !== REGEX_GAME_TIPS) { ?>
                                 <div class="col-md-4 col-12">
-                                    <div class="card p-0 border-0 bg-transparent rounded-4" data-aos="fade-up"  data-aos-duration="700">
+                                    <div class="card p-0 border-0 bg-transparent rounded-4" data-aos="fade-up" data-aos-duration="700">
                                         <div class="ratio ratio-1x1 ">
                                             <img src="/public/uploads/games/<?= $game->game_picture ?>" loading="lazy" class="object-fit-cover rounded-4" alt="<?= $game->game_name ?>">
                                         </div>
@@ -255,7 +255,7 @@
                         <div class="col-12 flex-wrap d-flex justify-content-between">
                             <?php $counter = 4;
                             foreach ($gamesUnder as $game) { ?>
-                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent" data-aos="fade-up"  data-aos-duration="700">
+                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent" data-aos="fade-up" data-aos-duration="700">
                                     <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
                                         <img src="/public/uploads/games/<?= $game->game_picture ?>" loading="lazy" class="object-fit-cover rounded-4" alt="<?= $game->game_name ?>">
                                         <div class="p-3">
@@ -283,7 +283,7 @@
                     <h1 class="articleTitle text-uppercase fw-bold">Les bons plans</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         les bons plans
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
@@ -390,7 +390,7 @@
                 <?php foreach ($games as $game) { ?>
                     <div class="col-md-4">
                         <h2 class="fw-bold text-uppercase py-2 aCardMin text-danger"><?= $game->game_name ?></h2>
-                        <div class="card rounded-4 border-0 shadow-lg" data-aos="fade-up"  data-aos-duration="700">
+                        <div class="card rounded-4 border-0 shadow-lg" data-aos="fade-up" data-aos-duration="700">
                             <img src="/public/uploads/games/<?= $game->game_picture ?>" loading="lazy" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
                             <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
                                 <p class="p-0 m-0 z-3">
@@ -423,6 +423,7 @@
                 <?php
                 } ?>
             </div>
+        </div>
     </section>
     <!-- FIN TOP JEUX SELECTION -->
     <!-- DEBUT SECTION EVENTS -->
@@ -433,7 +434,7 @@
                     <h1 class="articleTitle text-uppercase fw-bold">les événements à venir</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                    <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                         les événements
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
@@ -443,7 +444,7 @@
                     <div class="row g-3">
                         <?php foreach ($events as $event) { ?>
                             <div class="col-md-6">
-                                <div class="card text-bg-dark bg-transparent border-0 rounded-4 mb-3" data-aos="fade-up"  data-aos-duration="700">
+                                <div class="card text-bg-dark bg-transparent border-0 rounded-4 mb-3" data-aos="fade-up" data-aos-duration="700">
                                     <div class="ratio ratio-16x9 ">
                                         <img src="/public/uploads/events/<?= $event->event_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 " alt="<?= $event->game_name ?>">
                                     </div>

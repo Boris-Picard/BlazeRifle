@@ -16,7 +16,7 @@
                 <h1 class="fw-bold text-uppercase py-3">Mon Profil</h1>
                 <div class="col-md-8 shadow-lg p-4 rounded-4 ">
                     <div class="pb-2 d-flex justify-content-center">
-                        <h3 class="fw-bold">Mes informations </h3>
+                        <h2 class="fw-bold fs-3">Mes informations </h2>
                     </div>
                     <p>Rôle :
                         <?php if ($user->role === 1) { ?>

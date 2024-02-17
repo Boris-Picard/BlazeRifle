@@ -7,7 +7,7 @@
             <div class="col-6 col-md-2 mb-3 text-center">
             </div>
             <div class="col-6 col-md-2 mb-3 text-center">
-                <h5 class="fw-bold">Section</h5>
+                <p class="fw-bold">Section</p>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="#" class="nav-link footerLink p-0">Home</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link footerLink p-0">Features</a></li>
@@ -17,7 +17,7 @@
                 </ul>
             </div>
             <div class="col-6 col-md-2 mb-3 text-center">
-                <h5 class="fw-bold">Section</h5>
+                <p class="fw-bold">Section</p>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="#" class="nav-link footerLink p-0">Home</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link footerLink p-0">Features</a></li>

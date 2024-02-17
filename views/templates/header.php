@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plongez au cœur de l'action avec BlazeRifle, 
+    votre destination ultime pour tout ce qui concerne les jeux vidéo FPS. Découvrez des articles approfondis, 
+    des guides stratégiques et les meilleurs bons plans pour améliorer votre expérience de jeu. 
+    Que vous soyez un débutant cherchant à comprendre les bases ou un vétéran désireux de peaufiner vos compétences, 
+    BlazeRifle est la ressource incontournable pour les fans de FPS. Rejoignez notre communauté passionnée et prenez une 
+    longueur d'avance dans le monde palpitant des jeux de tir à la première personne.">
     <!-- <meta name="google-signin-client_id" content="277138796158-d2fp626m8vpjbk803agp0gd50m1h4r2h.apps.googleusercontent.com"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

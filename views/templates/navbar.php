@@ -21,7 +21,7 @@ try {
                     </div>
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="#" class="d-block text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="profil picture">
                         <img src="/public/uploads/users/<?= !empty($_SESSION['user']->user_picture) ? $_SESSION['user']->user_picture : 'profilpicdefault.avif' ?>" alt="" width="32" height="32" class="object-fit-cover rounded-circle">
                     </a>
                     <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">

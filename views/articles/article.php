@@ -65,9 +65,9 @@
                         <div class="row">
                             <!-- DESCRIPTION -->
                             <div class="col-12 py-5">
-                                <h3 class="fw-semibold text-break">
+                                <h2 class="fw-semibold text-break">
                                     <?= html_entity_decode($article->article_description) ?>
-                                </h3>
+                                </h2>
                                 <!-- IMG -->
                                 <div class="ratio ratio-16x9 mt-5 shadow-lg rounded-4">
                                     <img class="rounded-4 object-fit-cover" src="/public/uploads/article/<?= $article->article_picture ?>" alt="<?= $article->article_picture ?>">
@@ -77,9 +77,9 @@
                         <div class="row">
                             <div class="col-md-12 my-2">
                                 <!-- SECOND TITLE -->
-                                <h3 class="fw-bold text-break">
+                                <h2 class="fw-bold text-break">
                                     <?= html_entity_decode($article->secondtitle) ?>
-                                </h3>
+                                </h2>
                             </div>
                             <!-- PREMIERE SECTION -->
                             <div class="col-md-12 my-2 text-break">
@@ -87,9 +87,9 @@
                             </div>
                             <div class="col-md-12 my-2">
                                 <!-- THIRD TITLE-->
-                                <h3 class="fw-bold text-break">
+                                <h2 class="fw-bold text-break">
                                     <?= html_entity_decode($article->thirdtitle) ?>
-                                </h3>
+                                </h2>
                             </div>
                             <!-- DEUXIEME SECTION -->
                             <div class="col-md-12 my-2 text-break">
@@ -102,9 +102,9 @@
                         <!-- ARTICLE SUIVANT -->
                         <div class="row">
                             <div class="col-md-12 my-2">
-                                <h4 class="text-capitalize text-danger fw-bold">
+                                <h3 class="text-capitalize text-danger fw-bold">
                                     Article suivant
-                                </h4>
+                                </h3>
                                 <?php if (isset($gameId)) {
                                     foreach ($articlesBottom as $article) {
                                         if ($id_article !== $article->id_article) { ?>
@@ -181,6 +181,7 @@
                                                                 </p>
                                                                 <small class="form-text text-danger"><?= $error['textAreaComment'] ?? '' ?></small>
                                                                 <small class="form-text text-danger"><?= $error['user'] ?? '' ?></small>
+                                                                <label for="textAreaComment">Laisser un commentaire</label>
                                                                 <textarea class="form-control" name="textAreaComment" id="textAreaComment" rows="5" minlength="2" maxlength="500" required><?= $textAreaComment ?? '' ?></textarea>
                                                                 <div class="float-end mt-3">
                                                                     <button type="submit" class="btn btn-primary btn-sm fw-bold rounded-5 text-uppercase p-2 commentButton">Poster</button>
