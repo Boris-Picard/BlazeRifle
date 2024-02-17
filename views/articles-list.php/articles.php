@@ -150,7 +150,7 @@
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center align-items-center p-3">
                                             <i class="bi bi-play-circle fs-1 px-2"></i>
-                                            <h1 class="text-uppercase fw-bold"><span class="text-warning">les vidéos :</span> battlefield 2042</h1>
+                                            <h1 class="text-uppercase fw-bold fs-5"><span class="text-warning">les vidéos :</span> battlefield 2042</h1>
                                         </div>
                                     </div>
                                     <div class="row">

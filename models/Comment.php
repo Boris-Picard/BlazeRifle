@@ -195,6 +195,48 @@ class Comment
         return $sth->fetch(PDO::FETCH_OBJ);
     }
 
+    public static function getUserComments(int $id_user, ?string $order = null, ?int $limit = 10)
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT 
+        `comments`.`comment`,
+        `comments`.`created_at` AS comment_created_at,
+        `comments`.`confirmed_at` AS comment_confirmed_at,
+        `comments`.`id_article`,
+        `comments`.`id_user`,
+        `users`.`pseudo`,
+        `articles`.`id_game`,
+        `articles`.`article_title`,
+        `categories`.`id_category`,
+        `games`.`game_name`,
+        `games`.`id_game`
+        FROM `comments`
+        INNER JOIN `users` ON `users`.`id_user`=`comments`.`id_user`
+        INNER JOIN `articles` ON `articles`.`id_article`=`comments`.`id_article`
+        INNER JOIN `categories` ON `categories`.`id_category`=`articles`.`id_category`
+        LEFT JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
+        WHERE `users`.`id_user`=:id_user';
+
+        $order == 'ASC' ? $sql .= ' ORDER BY `comments`.`created_at` ASC ' : $sql .= ' ORDER BY `comments`.`created_at` DESC ';
+
+        if (!is_null($limit)) {
+            $sql .= ' LIMIT :limit ';
+        }
+
+        $sth = $pdo->prepare($sql);
+
+        if (!is_null($limit)) {
+            $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+        }
+
+        $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->fetchAll(PDO::FETCH_OBJ);
+    }
+
     /**
      * Met à jour une catégorie dans la base de données.
      * 

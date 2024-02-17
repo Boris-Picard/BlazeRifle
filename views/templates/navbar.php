@@ -16,8 +16,8 @@ try {
             <div class="flex-shrink-0 d-flex dropdown order-md-3">
                 <?php if (!isset($_SESSION['user'])) { ?>
                     <div class="mx-2">
-                        <a href="/controllers/login/sign-up-ctrl.php" class="btn btn-danger rounded-5 text-uppercase p-2">S'inscrire</a>
-                        <a href="/controllers/login/sign-in-ctrl.php" class="btn btn-danger rounded-5 text-uppercase p-2">Se connecter</a>
+                        <a href="/controllers/login/sign-up-ctrl.php" class="btn fw-bold btn-danger rounded-5 text-uppercase p-2">S'inscrire</a>
+                        <a href="/controllers/login/sign-in-ctrl.php" class="btn fw-bold btn-danger rounded-5 text-uppercase p-2">Se connecter</a>
                     </div>
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>
@@ -58,26 +58,17 @@ try {
                                 } ?>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle text-uppercase text-dark" href="" role="button">
-                                Les Consoles
-                            </a>
-                            <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
-                                <?php foreach ($consoles as $console) {
-                                    if ($console->id_console !== 4) { ?>
-                                        <li><a href="/controllers/games-preview/games-ctrl.php?id_console=<?= $console->id_console ?>" class="dropdown-item navGamesHover text-decoration-none text-uppercase px-2 text-truncate p-2"><span><img src="/public/uploads/consoles/<?= $console->console_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $console->console_name ?>"><?= htmlspecialchars($console->console_name) ?></span></a></li>
-                                <?php }
-                                } ?>
-                            </ul>
-                        </li>
                     </ul>
-                    <a class="nav-link navlinkHover <?= $activeGuide ? 'active': '' ?> " href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>
+                    <a class="nav-link navlinkHover <?= $activeArticles ? 'active' : '' ?>" href="/controllers/articles-preview/articles-ctrl.php">Les articles</a>
+                    <a class="nav-link navlinkHover <?= $activeGuide ? 'active' : '' ?> " href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <a class="nav-link navlinkHover text-dark <?= $activeTips ? 'active' : '' ?>" href="/controllers/tips-list/tips-ctrl.php">Les Bons Plans</a>
+                    <?php } ?>
+                    <a class="nav-link navlinkHover text-dark <?= $activeCalendar ? 'active' : '' ?>" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
                     <?php if (isset($_SESSION['user'])) { ?>
                         <a class="nav-link navlinkHover" href="/controllers/quiz/quiz-ctrl.php">Le Quiz</a>
-                        <a class="nav-link navlinkHover text-dark <?= $activeTips ? 'active': '' ?>" href="/controllers/tips-list/tips-ctrl.php">Les Bons Plans</a>
                     <?php } ?>
-                    <a class="nav-link navlinkHover text-dark <?= $activeCalendar ? 'active': '' ?>" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
-                    <a class="nav-link navlinkHover text-dark <?= $activeContact ? 'active': '' ?>" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
+                    <a class="nav-link navlinkHover text-dark <?= $activeContact ? 'active' : '' ?>" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
                 </div>
 
             </div>

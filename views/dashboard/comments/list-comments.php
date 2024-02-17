@@ -41,7 +41,6 @@
                                     <th scope="col">Nom du jeu</th>
                                     <th scope="col">Catégorie</th>
                                     <th scope="col">Pseudo</th>
-                                    <th scope="col">Photo de l'utilisateur</th>
                                     <th scope="col">
                                         Date de création
                                         <a href="/controllers/dashboard/comments/list-comments-ctrl.php?order=ASC&nbComments=<?= $nbComments ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
@@ -76,13 +75,6 @@
                                                     <?= $comment->pseudo ?>
                                                 </td>
                                             <?php } ?>
-                                            <td class="fw-semibold">
-                                                <?php if (isset($comment->user_picture)) { ?>
-                                                    <div class="ratio ratio-1x1">
-                                                        <img src="/public/uploads/users/<?= $comment->user_picture ?>" alt="<?= $comment->user_picture ?>" class="object-fit-cover rounded-circle ">
-                                                    </div>
-                                                <?php } ?>
-                                            </td>
                                             <td class="fw-semibold">
                                                 <?= $comment->comment_created_at ?>
                                             </td>

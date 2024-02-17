@@ -9,7 +9,12 @@
                             <div class="col-12 col-md-6 p-5">
                                 <h1 class="text-center text-dark fw-bold lh-base">
                                     Plongez au cœur de l'action avec les dernières actualités FPS!
-                                    Découvrez, jouez, et dominez dans l'univers des jeux de tir. Votre aventure commence ici !
+                                </h1>
+                                <h1 class="text-center text-dark fw-bold lh-base">
+                                    Découvrez, jouez, et dominez dans l'univers des jeux de tir.
+                                </h1>
+                                <h1 class="text-center text-dark fw-bold lh-base">
+                                    Votre aventure commence ici !
                                 </h1>
                                 <?php if (empty($_SESSION['user'])) { ?>
                                     <div class="justify-content-center d-flex py-5">

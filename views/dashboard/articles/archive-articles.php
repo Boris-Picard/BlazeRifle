@@ -87,7 +87,19 @@
                                         <tr>
                                             <td class="fw-semibold"><?= $article->game_name ?></td>
                                             <td class="fw-semibold text-break"><?= $article->label ?></td>
-                                            <td class="fw-semibold text-break"><?= $article->pseudo ?></td>
+                                            <?php if ($article->role === 1) { ?>
+                                                <td class="text-danger fw-semibold">
+                                                    <?= $article->pseudo ?>
+                                                </td>
+                                            <?php } elseif ($article->role === 2) { ?>
+                                                <td class="text-primary fw-semibold">
+                                                    <?= $article->pseudo ?>
+                                                </td>
+                                            <?php  } else { ?>
+                                                <td class="text-warning fw-semibold">
+                                                    <?= $article->pseudo ?>
+                                                </td>
+                                            <?php } ?>
                                             <td class="fw-semibold text-break">5</td>
                                             <td class="fw-semibold">
                                                 <?php if (isset($article->article_picture)) { ?>

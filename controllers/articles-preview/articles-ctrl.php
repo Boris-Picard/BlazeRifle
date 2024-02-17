@@ -3,6 +3,7 @@ session_start();
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Game.php';
 
+$activeArticles = true;
 try {
     // Récupérer tous les jeux à partir de la classe Game
     $games = Game::getAll();

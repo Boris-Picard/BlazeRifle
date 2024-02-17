@@ -45,7 +45,10 @@
                         <?php   } ?>
                     </div>
                     <div class="d-flex justify-content-center ">
-                        <a href="" class="btn btn-secondary py-3 rounded-5 fw-bold text-uppercase w-100">Voir mes commentaires</a>
+                        <a href="/controllers/account/comments-account-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-secondary py-3 rounded-5 fw-bold text-uppercase w-100">Voir mes commentaires</a>
+                    </div>
+                    <div class="d-flex justify-content-center py-3">
+                        <a href="/controllers/account/comments-account-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-danger py-3 rounded-5 fw-bold text-uppercase w-100">Supprimer mon compte</a>
                     </div>
                 </div>
             </div>
