@@ -156,6 +156,11 @@ try {
             }
         }
 
+        if (Event::isExist($link) && $link != $event->event_link) {
+            $error['link'] = 'Event déjà existant';
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
         if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';

@@ -119,6 +119,11 @@ try {
             }
         }
 
+        if (User::isExist(null, $pseudo) && $pseudo != $user->pseudo) {
+            $error['pseudo'] = 'Pseudo déjà existant';
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
         if (empty($error)) {
             $user = new User();
 

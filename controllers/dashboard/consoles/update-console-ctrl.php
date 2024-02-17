@@ -80,6 +80,11 @@ try {
             }
         }
 
+        if (Console::isExist($name) && $name != $console->console_name) {
+            $error['name'] = 'Catégorie déjà existante';
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
         //Si le tableau d'erreurs n'est pas vide alors message d'erreur
         if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';

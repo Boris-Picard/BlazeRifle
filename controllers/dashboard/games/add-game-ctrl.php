@@ -85,7 +85,7 @@ try {
         }
 
         if (Game::isExist($name)) {
-            $error['isExist'] = 'Jeu déjà existant'; // Vérifie si le nom du jeu existe déjà dans la base de données.
+            $error['name'] = 'Jeu déjà existant'; // Vérifie si le nom du jeu existe déjà dans la base de données.
             $alert['error'] = 'Jeu déjà existant';
         }
 

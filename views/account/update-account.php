@@ -13,6 +13,15 @@
                         </div>
                     </div>
                     <h1 class="fw-bold text-uppercase py-3">Modifier mon profil</h1>
+                    <div class="row">
+                        <div class="col-12">
+                            <?php if (isset($alert['error'])) { ?>
+                                <div class="alert alert-danger">
+                                    <?= $alert['error'] ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
                     <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
                         <form action="#" method="post" enctype="multipart/form-data" class="p-3 rounded-4 shadow-lg">
                             <div class="row w-100 mb-3">

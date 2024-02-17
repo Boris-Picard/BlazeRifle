@@ -31,6 +31,11 @@ try {
             }
         }
 
+        if (Category::isExist($name) && $name != $category->label) {
+            $error['name'] = 'Catégorie déjà existante';
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
         // Gestion des erreurs et affichage des alertes si nécessaire.
         if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';

@@ -143,4 +143,19 @@ class Category
 
         return (int) ($sth->rowCount() > 0);
     }
+
+    public static function isExist(string $label): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(`label`) AS label FROM `categories` WHERE `label`=:label;';
+
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':label', $label);
+        $sth->execute();
+
+        $result = $sth->fetchColumn();
+
+        return (bool) $result > 0;
+    }
 }

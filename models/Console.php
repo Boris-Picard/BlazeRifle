@@ -164,4 +164,19 @@ class Console
 
         return $sth->rowCount() > 0;
     }
+
+    public static function isExist(string $console_name): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(`console_name`) AS "console" FROM `consoles` WHERE `console_name`=:console_name;';
+
+        $sth = $pdo->prepare($sql);
+        $sth->bindValue(':console_name', $console_name);
+        $sth->execute();
+
+        $result = $sth->fetchColumn();
+
+        return (bool) $result > 0;
+    }
 }

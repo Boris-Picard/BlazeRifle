@@ -114,12 +114,12 @@ class User
         return $this->role;
     }
 
-    public function setUserPicture(?string $user_picture)
+    public function setUserPicture(string $user_picture)
     {
         $this->user_picture = $user_picture;
     }
 
-    public function getUserPicture(): ?string
+    public function getUserPicture(): string
     {
         return $this->user_picture;
     }
@@ -323,6 +323,37 @@ class User
         $result = $sth->fetch(PDO::FETCH_OBJ);
 
         return $result;
+    }
+
+    public static function isExist(?string $email, ?string $pseudo): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT COUNT(*) FROM `users` WHERE 1=1';
+
+        if (!is_null($email)) {
+            $sql .= ' AND `email`=:email ';
+        }
+
+        if (!is_null($pseudo)) {
+            $sql .= ' AND `pseudo`=:pseudo ';
+        }
+
+        $sth = $pdo->prepare($sql);
+
+        if (!is_null($email)) {
+            $sth->bindValue(':email', $email);
+        }
+
+        if (!is_null($pseudo)) {
+            $sth->bindValue(':pseudo', $pseudo);
+        }
+
+        $sth->execute();
+
+        $result = $sth->fetchColumn();
+
+        return (bool) $result > 0;
     }
 
     public function update(): int

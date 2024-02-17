@@ -71,8 +71,8 @@ try {
             }
         }
 
-        $fileName = $user->user_picture ?? null;
-        if ($user_picture == null) {
+        $fileName = $user->user_picture;
+        if ($fileName != 'profilpicdefault.avif' || $fileName != $user->picture) {
             try {
                 // Vérification de l'existence de la photo
                 if (empty($_FILES['picture']['name'])) {
@@ -115,6 +115,16 @@ try {
             }
         }
 
+        if (User::isExist($email, null) && $email != $user->email) {
+            $error['email'] = 'Email déjà existant';
+            $alert['error'] = 'Email déjà existant';
+        }
+
+        if (User::isExist(null, $pseudo) && $pseudo != $user->pseudo) {
+            $error['pseudo'] = 'Pseudo déjà existant';
+            $alert['error'] = 'Pseudo déjà existant';
+        }
+
         if (empty($error)) {
             $updateUser = new User();
 
@@ -125,15 +135,17 @@ try {
             $updateUser->setIdUser($id_user);
             $updateUser->setRole($user->role);
 
-            if ($fileName !== $user->user_picture) {
-                unlink('../../public/uploads/users/' . $user->user_picture);
+            if ($fileName != $user->user_picture) {
+                $updateUser->setUserPicture($fileName);
+                unlink('../../public/uploads/users/' . $fileName);
+            } else {
                 $updateUser->setUserPicture($fileName);
             }
 
             $updateUser->update();
 
             if ($updateUser) {
-                header("Refresh:5;url=/controllers/account/account-ctrl.php?id_user=" . $user->id_user);
+                header('Refresh:5;url=/controllers/account/account-ctrl.php?id_user=' . $user->id_user);
             }
         }
         $user = User::get($id_user);

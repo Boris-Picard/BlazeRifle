@@ -31,6 +31,11 @@ try {
             $alert['error'] = 'Les données n\'ont pas été insérées !';
         }
 
+        if (Category::isExist($name)) {
+            $error['name'] = 'Catégorie déjà existante';
+            $alert['error'] = 'Les données n\'ont pas été insérées !';
+        }
+
         // Si pas d'erreur, procédure d'insertion de la catégorie
         if (empty($error)) {
             $category = new Category();

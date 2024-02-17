@@ -115,7 +115,7 @@ try {
         // Vérification de l'existence d'un jeu avec le même nom.
         // Si le nom existe déjà dans la base de données et n'est pas celui du jeu actuel, déclencher une erreur.
         if (Game::isExist($name) && $name != $game->game_name) {
-            $error['isExist'] = 'Jeu déjà existant';
+            $error['name'] = 'Jeu déjà existant';
             $alert['error'] = 'Jeu déjà existant';
         }
         // Si aucune erreur, mettre à jour les données du jeu
