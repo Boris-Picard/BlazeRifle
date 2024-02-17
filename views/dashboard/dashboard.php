@@ -26,8 +26,19 @@
                                         </div>
                                     </div>
                                     <p class="text-capitalize fw-bold">dernier inscrit : </p>
-                                    <p class="text-danger fw-bold text-uppercase"><?= $users[0]->pseudo ?>
-                                    </p>
+                                    <?php if ($users[0]->role === 1) { ?>
+                                        <p class="text-danger fw-semibold">
+                                            <?= $users[0]->pseudo ?>
+                                        </p>
+                                    <?php } elseif ($users[0]->role === 2) { ?>
+                                        <p class="text-primary fw-semibold">
+                                            <?= $users[0]->pseudo ?>
+                                        </p>
+                                    <?php  } else { ?>
+                                        <p class="text-warning fw-semibold">
+                                            <?= $users[0]->pseudo ?>
+                                        </p>
+                                    <?php } ?>
                                     <p><?= $users[0]->user_created_at ?></p>
                                 </div>
                             </div>
@@ -66,9 +77,22 @@
                                 <div class="card-text text-center">
                                     <h1 class="fw-bold"><?= count($comments) ?></h1>
                                     <p class="text-capitalize fw-bold">dernier commentaire : </p>
-                                    <p>de <span class="text-danger fw-bold text-uppercase"><?= $comments[0]->pseudo ?></span>
+                                    <p>de
+                                        <?php if ($comments[0]->role === 1) { ?>
+                                    <span class="text-danger fw-semibold">
+                                        <?= $comments[0]->pseudo ?>
                                     </p>
-                                    <p><?= $comments[0]->comment_created_at ?></p>
+                                <?php } elseif ($comments[0]->role === 2) { ?>
+                                    <span class="text-primary fw-semibold">
+                                        <?= $comments[0]->pseudo ?>
+                                    </p>
+                                <?php  } else { ?>
+                                    <span class="text-warning fw-semibold">
+                                        <?= $comments[0]->pseudo ?>
+                                    </p>
+                                <?php } ?>
+                                </p>
+                                <p><?= $comments[0]->comment_created_at ?></p>
                                 </div>
                             </div>
                         <?php } ?>
@@ -106,7 +130,19 @@
                                         <tr>
                                             <td class="fw-semibold"><?= $user->firstname ?></td>
                                             <td class="fw-semibold"><?= $user->lastname  ?></td>
-                                            <td class="fw-semibold"><?= $user->pseudo ?></td>
+                                            <?php if ($user->role === 1) { ?>
+                                                <td class="text-danger fw-semibold">
+                                                    <?= $user->pseudo ?>
+                                                </td>
+                                            <?php } elseif ($user->role === 2) { ?>
+                                                <td class="text-primary fw-semibold">
+                                                    <?= $user->pseudo ?>
+                                                </td>
+                                            <?php  } else { ?>
+                                                <td class="text-warning fw-semibold">
+                                                    <?= $user->pseudo ?>
+                                                </td>
+                                            <?php } ?>
                                             <td class="fw-semibold">
                                                 <?= $user->user_created_at ?>
                                             </td>

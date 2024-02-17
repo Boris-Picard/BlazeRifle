@@ -131,6 +131,7 @@ class Comment
         `comments`.`id_article`,
         `comments`.`id_user`,
         `users`.`pseudo`,
+        `users`.`role`,
         `users`.`user_picture`,
         `articles`.`id_game`,
         `articles`.`article_title`,

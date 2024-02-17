@@ -23,9 +23,9 @@
                             <span class="fw-semibold text-danger text-capitalize">Admin</span>
                     </p>
                 <?php  } elseif ($user->role === 2) { ?>
-                    <span class="fw-semibold text-warning text-capitalize">Membre rédacteur</span>
-                <?php } else { ?>
                     <span class="fw-semibold text-primary text-capitalize">Membre</span>
+                <?php } else { ?>
+                    <span class="fw-semibold text-warning text-capitalize">Membre Rédacteur</span>
                 <?php } ?>
                 <p>Prénom : <span class="fw-semibold text-capitalize"><?= $user->firstname ?></span></p>
                 <p>Nom : <span class="fw-semibold text-capitalize"><?= $user->lastname ?></span></p>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-md-4 mx-5 shadow-lg rounded-4 rightCardProfil py-3">
                     <div class="d-flex justify-content-center py-3">
-                        <?php if ($user->role !== 2) { ?>
+                        <?php if ($user->role !== 3 && $user->role !== 1) { ?>
                             <a href="/controllers/contact-ctrl/contact-ctrl.php" class="btn btn-warning py-3 rounded-5 fw-bold text-uppercase w-100">Devenir Rédacteur</a>
                         <?php } else { ?>
                             <a href="/controllers/account/user-article-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-warning py-3 rounded-5 fw-bold text-uppercase w-100">Rédiger un article</a>

@@ -58,7 +58,19 @@
                                             <?= $user->firstname ?>
                                         </td>
                                         <td class="fw-semibold"><?= $user->lastname ?></td>
-                                        <td class="fw-semibold text-break"><?= $user->pseudo ?></td>
+                                        <?php if ($user->role === 1) { ?>
+                                            <td class="text-danger fw-semibold">
+                                                <?= $user->pseudo ?>
+                                            </td>
+                                        <?php } elseif ($user->role === 2) { ?>
+                                            <td class="text-primary fw-semibold">
+                                                <?= $user->pseudo ?>
+                                            </td>
+                                        <?php  } else { ?>
+                                            <td class="text-warning fw-semibold">
+                                                <?= $user->pseudo ?>
+                                            </td>
+                                        <?php } ?>
                                         <td class="fw-semibold">
                                             <?php if (isset($user->user_picture)) { ?>
                                                 <div class="ratio ratio-1x1">

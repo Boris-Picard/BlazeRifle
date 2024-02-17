@@ -72,7 +72,8 @@ try {
         }
 
         $fileName = $user->user_picture;
-        if ($fileName != 'profilpicdefault.avif' || $fileName != $user->picture) {
+
+        if (!empty($_FILES['picture']['name']) || empty($fileName)) {
             try {
                 // Vérification de l'existence de la photo
                 if (empty($_FILES['picture']['name'])) {
@@ -117,12 +118,12 @@ try {
 
         if (User::isExist($email, null) && $email != $user->email) {
             $error['email'] = 'Email déjà existant';
-            $alert['error'] = 'Email déjà existant';
+            $alert['error'] = 'Les données que vous avez fournies n\'ont pas été modifiées.';
         }
 
         if (User::isExist(null, $pseudo) && $pseudo != $user->pseudo) {
             $error['pseudo'] = 'Pseudo déjà existant';
-            $alert['error'] = 'Pseudo déjà existant';
+            $alert['error'] = 'Les données que vous avez fournies n\'ont pas été modifiées.';
         }
 
         if (empty($error)) {
@@ -135,11 +136,13 @@ try {
             $updateUser->setIdUser($id_user);
             $updateUser->setRole($user->role);
 
-            if ($fileName != $user->user_picture) {
+            if ($fileName !== $user->user_picture) {
+                if ($user->user_picture !== 'profilpicdefault.avif') {
+                    unlink('../../public/uploads/users/' . $user->user_picture);
+                }
                 $updateUser->setUserPicture($fileName);
-                unlink('../../public/uploads/users/' . $fileName);
             } else {
-                $updateUser->setUserPicture($fileName);
+                $updateUser->setUserPicture($user->user_picture);
             }
 
             $updateUser->update();

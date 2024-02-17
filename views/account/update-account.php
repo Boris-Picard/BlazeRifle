@@ -52,7 +52,7 @@
                                 <div class="col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['picture'] ?? '' ?></small></div>
                                     <label for="picture" class="form-label">Changer ma photo de profil <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="file" id="picture" name="picture" accept="image/png, image/jpeg, image/avif">
+                                    <input class="form-control" type="file" id="picture" value="<?= $user->user_picture ?>" name="picture" accept="image/png, image/jpeg, image/avif">
                                 </div>
                             </div>
                             <div class="mt-3 py-3 d-flex justify-content-between">

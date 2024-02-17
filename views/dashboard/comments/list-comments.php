@@ -63,7 +63,19 @@
                                             <td class="fw-semibold"><?= $comment->id_article ?></td>
                                             <td class="fw-semibold"><?= $comment->game_name ?></td>
                                             <td class="fw-semibold"><?= $comment->label ?></td>
-                                            <td class="fw-semibold"><?= $comment->pseudo ?></td>
+                                            <?php if ($comment->role === 1) { ?>
+                                                <td class="text-danger fw-semibold">
+                                                    <?= $comment->pseudo ?>
+                                                </td>
+                                            <?php } elseif ($comment->role === 2) { ?>
+                                                <td class="text-primary fw-semibold">
+                                                    <?= $comment->pseudo ?>
+                                                </td>
+                                            <?php  } else { ?>
+                                                <td class="text-warning fw-semibold">
+                                                    <?= $comment->pseudo ?>
+                                                </td>
+                                            <?php } ?>
                                             <td class="fw-semibold">
                                                 <?php if (isset($comment->user_picture)) { ?>
                                                     <div class="ratio ratio-1x1">

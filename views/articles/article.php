@@ -46,10 +46,18 @@
                             <div class="col-12 d-flex justify-content-center mt-2">
                                 <small>
                                     Publié le <?= $article->formattedDate ?> à <?= $article->formattedHour ?> Par
-                                    <?php if ($article->role == 1) { ?>
-                                        <span class="text-danger text-capitalize fw-bold"><?= $article->pseudo ?></span>
-                                    <?php } else { ?>
-                                        <span class="text-warning text-capitalize fw-bold"><?= $article->pseudo ?></span>
+                                    <?php if ($article->role === 1) { ?>
+                                        <span class="text-danger text-capitalize fw-semibold">
+                                            <?= $article->pseudo ?>
+                                        </span>
+                                    <?php } elseif ($article->role === 2) { ?>
+                                        <span class="text-primary text-capitalize fw-semibold">
+                                            <?= $article->pseudo ?>
+                                        </span>
+                                    <?php  } else { ?>
+                                        <span class="text-warning text-capitalize fw-semibold">
+                                            <?= $article->pseudo ?>
+                                        </span>
                                     <?php } ?>
                                 </small>
                             </div>
@@ -181,9 +189,19 @@
                                                         <div class="col-md-10">
                                                             <div class="card-body p-0 ">
                                                                 <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
-                                                                    <span class="text-danger">
-                                                                        <?= $_SESSION['user']->pseudo ?>
-                                                                    </span>
+                                                                    <?php if ($_SESSION['user']->role === 1) { ?>
+                                                                        <span class="text-danger">
+                                                                            <?= $_SESSION['user']->pseudo ?>
+                                                                        </span>
+                                                                    <?php } elseif ($_SESSION['user']->role === 2) { ?>
+                                                                        <span class="text-warning">
+                                                                            <?= $_SESSION['user']->pseudo ?>
+                                                                        </span>
+                                                                    <?php  } else { ?>
+                                                                        <span class="text-primary">
+                                                                            <?= $_SESSION['user']->pseudo ?>
+                                                                        </span>
+                                                                    <?php } ?>
                                                                 </p>
                                                                 <small class="form-text text-danger"><?= $error['textAreaComment'] ?? '' ?></small>
                                                                 <small class="form-text text-danger"><?= $error['user'] ?? '' ?></small>
@@ -240,9 +258,19 @@
                                                         <div class="col-md-10">
                                                             <div class="card-title p-0 d-flex flex-wrap align-items-center">
                                                                 <p class="text-card aCard m-0 text-capitalize fw-bold mb-1">
-                                                                    <span class="text-danger">
-                                                                        <?= $comment->pseudo ?>
-                                                                    </span>
+                                                                    <?php if ($comment->role === 1) { ?>
+                                                                        <span class="text-danger">
+                                                                            <?= $comment->pseudo ?>
+                                                                        </span>
+                                                                    <?php } elseif ($comment->role === 2) { ?>
+                                                                        <span class="text-warning">
+                                                                            <?= $comment->pseudo ?>
+                                                                        </span>
+                                                                    <?php  } else { ?>
+                                                                        <span class="text-primary">
+                                                                            <?= $comment->pseudo ?>
+                                                                        </span>
+                                                                    <?php } ?>
                                                                 </p>
                                                                 <small class="text-muted mb-1 mx-2">le <?= $comment->comment_created_at ?></small>
                                                             </div>
