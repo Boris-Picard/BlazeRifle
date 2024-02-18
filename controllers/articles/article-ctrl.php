@@ -33,12 +33,12 @@ try {
         $article->formattedDate = date('d/m/y', $timestamp);
     } else {
         // Rediriger vers la liste des articles si l'article n'existe pas
-        header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game);
+        header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game . '&id_category=' . $id_category);
         die;
     }
 
     // Récupération des articles pour les afficher dans la sidebar
-    $articlesSidebar = Article::getAll($gameId, false, order: 'DESC', limit: 7, id_category: $categoryId);
+    $articlesSidebar = Article::getAll($gameId, false, order: 'DESC', limit: 7, id_category: $categoryId, showConfirmedAt: true);
     Date_Comment::formatDateComment($articlesSidebar);
     $firstArticleSidebar = array_shift($articlesSidebar);
 

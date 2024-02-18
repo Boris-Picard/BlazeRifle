@@ -1,6 +1,6 @@
 <main>
     <!-- début hero page  -->
-    <section class="heroPage bg-light">
+    <section class="heroPage bg-white">
         <div class="h-100 d-flex align-items-center text-light">
             <div class="container-fluid p-0">
                 <div class="row m-0 py-5">

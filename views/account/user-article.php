@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
-                                    <form action="#" method="POST" class="shadow-lg p-5 rounded-4" novalidate enctype="multipart/form-data">
+                                    <form action="#" method="POST" class="shadow-lg p-5 rounded-4" enctype="multipart/form-data" novalidate>
                                         <div class="d-flex justify-content-center">
                                             <p>Auteur :
                                                 <?php if ($user->role === 1) { ?>

@@ -85,8 +85,8 @@ try {
             if (!$isOk) {
                 $error['firstSection'] = 'Veuillez renseigner un titre de jeu correct';
             }
-            if(strlen($firstSection) > 5000) {
-                $error['firstSection'] = 'Votre message est trop long';
+            if(strlen($firstSection) > 5000 || strlen($firstSection) < 250) {
+                $error['firstSection'] = 'Erreur dans la longueur du message';
             }
         }
 
@@ -100,8 +100,8 @@ try {
             if (!$isOk) {
                 $error['secondSection'] = 'Veuillez renseigner un titre de jeu correct';
             }
-            if(strlen($secondSection) > 5000) {
-                $error['secondSection'] = 'Votre message est trop long';
+            if(strlen($secondSection) > 5000 || strlen($secondSection) < 250) {
+                $error['secondSection'] = 'Erreur dans la longueur du message';
             }
         }
 

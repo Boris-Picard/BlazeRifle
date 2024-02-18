@@ -28,7 +28,7 @@ try {
     $currentPage = ($currentPage <= 0) ? 1 : $currentPage;
 
     // Récupérer les articles de la page actuelle pour le jeu donné
-    $articles = Article::getAll($gameId, id_category: $categoryId, order: 'DESC', page: $currentPage);
+    $articles = Article::getAll($gameId, id_category: $categoryId, order: 'DESC', page: $currentPage, showConfirmedAt: true);
 
     Date_Comment::formatDateComment($articles);
 

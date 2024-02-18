@@ -23,7 +23,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <form action="#" method="POST" class="shadow-lg p-5 rounded-4" enctype="multipart/form-data">
+                        <form action="#" method="POST" class="shadow-lg p-5 rounded-4" id="formArticle" enctype="multipart/form-data" novalidate>
                             <div class="d-flex justify-content-center">
                                 <p>Auteur : <span class="fw-bold text-uppercase text-danger"><?= $_SESSION['user']->pseudo ?></span></p>
                             </div>
@@ -38,7 +38,7 @@
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['picture'] ?? '' ?></small></div>
                                     <label for="picture" class="form-label">Ajouter une photo d'article <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="file" id="picture" name="picture" accept="image/png, image/jpeg, image/avif">
+                                    <input class="form-control" type="file" id="picture" name="picture" accept="image/png, image/jpeg, image/avif" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div><small class="form-text text-danger"><?= $error['description'] ?? '' ?></small></div>
@@ -60,12 +60,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <div><small class="form-text text-danger"><?= $error['firstSection'] ?? '' ?></small></div>
+                                    <div><small id="errorFirstSection" class="form-text text-danger"><?= $error['firstSection'] ?? '' ?></small></div>
                                     <label for="firstSection" class="form-label">Première section de l'article <span class="text-danger">*</span></label>
                                     <textarea class="form-control articleArea" name="firstSection" id="firstSection" placeholder="Première section d'article" aria-describedby="firstSection" minlength="250" maxlength="5000" required><?= $firstSection ?? '' ?></textarea>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <div><small class="form-text text-danger"><?= $error['secondSection'] ?? '' ?></small></div>
+                                    <div><small id="errorSecondSection" class="form-text text-danger"><?= $error['secondSection'] ?? '' ?></small></div>
                                     <label for="secondSection" class="form-label">Deuxième section de l'article <span class="text-danger">*</span></label>
                                     <textarea class="form-control articleArea" name="secondSection" id="secondSection" placeholder="Deuxième section d'article" aria-describedby="secondSection" minlength="250" maxlength="5000" required><?= $secondSection ?? '' ?></textarea>
                                 </div>
@@ -74,7 +74,7 @@
                                 <div class="col-md-6 mb-3" id="id_game">
                                     <div><small class="form-text text-danger"><?= $error['id_game'] ?? '' ?></small></div>
                                     <label for="id_game" class="mb-2">Jeux de l'article <span class="text-danger">*</span></label>
-                                    <select class="form-select" name="id_game">
+                                    <select class="form-select" name="id_game" required>
                                         <option selected disabled></option>
                                         <?php foreach ($games as $game) { ?>
                                             <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= htmlspecialchars($game->game_name) ?></option>
@@ -84,7 +84,7 @@
                                 <div class="mb-3 col-md-6">
                                     <div><small class="form-text text-danger"><?= $error['id_category'] ?? '' ?></small></div>
                                     <label for="id_category" class="mb-2">Categorie de l'article <span class="text-danger">*</span></label>
-                                    <select class="form-select" name="id_category" id="id_category">
+                                    <select class="form-select" name="id_category" id="id_category" required>
                                         <option selected disabled></option>
                                         <?php foreach ($categories as $category) { ?>
                                             <option value="<?= $category->id_category ?>" <?= (isset($id_category) && $id_category == $category->id_category) ? 'selected' : '' ?>><?= htmlspecialchars($category->label) ?></option>

@@ -43,7 +43,7 @@ try {
         // Récupérer l'identifiant du jeu en cours
         $id_game = $game->id_game;
         // Récupérer les 10 premiers articles associés à ce jeu depuis la classe Article
-        $articles = Article::getAll($id_game, id_category: REGEX_ARTICLES_GAMES, limit: 10, order: 'DESC');
+        $articles = Article::getAll($id_game, id_category: REGEX_ARTICLES_GAMES, showConfirmedAt: true, limit: 10, order: 'DESC');
         // Stocker les articles dans un tableau associatif en utilisant l'identifiant du jeu comme clé
         $allArticles[$id_game] = $articles;
     }
