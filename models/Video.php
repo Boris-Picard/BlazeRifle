@@ -78,7 +78,8 @@ class Video
     {
         $pdo = Database::connect();
 
-        $sql = 'SELECT * FROM `video`
+        $sql = 'SELECT `videos`.`game_video`, `videos`.`id_video`, `games`.`game_name`, `videos`.`id_game`
+        FROM `videos`
         INNER JOIN `games` ON `games`.`id_game` = `videos`.`id_game`
         WHERE `id_video`=:id_video;';
 
@@ -106,6 +107,22 @@ class Video
         $sth->execute();
 
         return (int) $sth->rowCount() > 0;
+    }
+
+    public static function delete(int $id_video): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `videos`
+            WHERE `id_video`=:id_video;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_video', $id_video, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return (int) ($sth->rowCount() > 0);
     }
 
     public static function isExist(string $url): bool

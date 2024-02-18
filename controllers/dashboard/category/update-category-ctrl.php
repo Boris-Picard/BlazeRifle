@@ -62,7 +62,7 @@ try {
         $category = Category::get($id_category);
     }
 } catch (PDOException $e) {
-    $error['database'] = $e->getMessage();
+    die('Erreur update ' . $e->getMessage());
 }
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';

@@ -50,9 +50,9 @@ try {
             $alert['error'] = 'Les données n\'ont pas été insérées !';
         }
 
-        if (Video::isExist($url)) {
+        if (Video::isExist($url) && $url != $video->game_video) {
             $error['url'] = 'Vidéo déjà existante';
-            $alert['error'] = 'Les données n\'ont pas été insérées !';
+            $alert['error'] = 'Vidéo déjà existante';
         }
 
         // Si pas d'erreur, procédure d'insertion de la catégorie
@@ -71,7 +71,7 @@ try {
         }
     }
 } catch (PDOException $e) {
-    $error['database'] = $e->getMessage();
+    die('Erreur update ' . $e->getMessage());
 }
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';

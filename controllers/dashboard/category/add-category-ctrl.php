@@ -50,7 +50,7 @@ try {
         }
     }
 } catch (PDOException $e) {
-    $error['database'] = $e->getMessage();
+    die('Erreur add ' . $e->getMessage());
 }
 
 include __DIR__ . '/../../../views/templates/header-dashboard.php';

@@ -34,7 +34,7 @@
                             <div class="row">
                                 <div class="col-md-12 mb-3" id="id_game">
                                     <div><small class="form-text text-danger"><?= $error['id_game'] ?? '' ?></small></div>
-                                    <label for="id_game" class="mb-2">Jeux de la vidéo <span class="text-danger">*</span></label>
+                                    <label for="id_game" class="mb-2">Jeu de la vidéo <span class="text-danger">*</span></label>
                                     <select class="form-select" name="id_game">
                                         <option selected disabled></option>
                                         <?php foreach ($games as $game) { ?>
