@@ -14,7 +14,7 @@
                                     <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>">Tous les <?= $article->label ?> sur <?= $article->game_name ?></a></li>
                                 <?php } else { ?>
                                     <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $article->id_game ?>">Preview <?= $article->game_name ?> </a></li>
-                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>">Articles sur <?= $article->game_name ?></a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>">Articles sur <?= $article->game_name ?></a></li>
                                 <?php } ?>
                                 <li class="breadcrumb-item active" aria-current="page">Article</li>
                             </ol>
@@ -30,7 +30,7 @@
                                 <?php } elseif ($article->id_category === REGEX_GUIDES) { ?>
                                     <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none text-capitalize fw-bold">Tous les <?= $article->label ?> sur <?= $article->game_name ?></a></small>
                                 <?php } else { ?>
-                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="text-decoration-none text-capitalize fw-bold">Articles sur <?= $article->game_name ?></a></small>
+                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none text-capitalize fw-bold">Articles sur <?= $article->game_name ?></a></small>
                                 <?php } ?>
                                 <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
@@ -117,7 +117,7 @@
                                                     </div>
                                                     <div class="col-md-10">
                                                         <div class="card-body p-2 mx-2">
-                                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game<?= $article->id_game ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
+                                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game<?= $article->id_game ?>" class="card-text text-dark stetchedLinkArticleUnder stretched-link text-decoration-none aCardMin fw-bold">
                                                                 <?= html_entity_decode($article->article_title) ?>
                                                             </a>
                                                             <p class="text-card aCard m-0 mt-2">
@@ -283,7 +283,7 @@
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row justify-content-center text-center p-3">
-                                        <h5 class="text-uppercase fw-bold">articles sur : <span class="text-danger"><?= $article->game_name ?></span></h5>
+                                        <h5 class="text-uppercase fw-bold"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les Articles :  </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les Guides : </span>" . $firstArticleSidebar->game_name ?></h5>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -294,7 +294,7 @@
                                                     <img src="/public/uploads/article/<?= $firstArticleSidebar->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $firstArticleSidebar->game_name ?>">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticleSidebar->id_article ?>&<?= isset($gameId) ? 'id_game=' . $firstArticleSidebar->id_game : 'id_category=' . $firstArticleSidebar->id_category  ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticleSidebar->id_article ?>&id_category=<?= $firstArticleSidebar->id_category ?>&id_game=<?= $firstArticleSidebar->id_game ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
                                                         <?= html_entity_decode($firstArticleSidebar->article_title) ?>
                                                     </a>
                                                     <div class="card-text mb-3">
@@ -316,7 +316,7 @@
                                                         <div class="col-md-6 p-0 ">
                                                             <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
                                                                 <div class="">
-                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&<?= isset($gameId) ? 'id_game=' . $article->id_game : 'id_category=' . $article->id_category  ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
                                                                         <?= $article->article_title ?>
                                                                     </a>
                                                                 </div>
@@ -334,8 +334,8 @@
                                         } ?>
                                         <div class="d-flex justify-content-center mt-3 mb-4">
                                             <?php if (isset($article->id_game) && $article->id_category !== REGEX_TIPS) { ?>
-                                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    les articles <?= $firstArticleSidebar->game_name ?>
+                                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                    <?= $id_category == REGEX_ARTICLES_GAMES ? 'Les articles : ' . $firstArticleSidebar->game_name  : ' Les guides : ' . $firstArticleSidebar->game_name ?>
                                                 </a>
                                             <?php } else { ?>
                                                 <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">

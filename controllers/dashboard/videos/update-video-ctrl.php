@@ -29,6 +29,24 @@ try {
             $isOk = filter_var($url, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_YOUTUBE . '/')));
             if (!$isOk) {
                 $error['url'] = 'Veuillez entrer un lien valide !';
+            } else {
+                if (preg_match('/' . REGEX_YOUTUBE . '/', $isOk, $matches)) {
+                    $videoId = $matches[1];
+                    $embedUrl = 'https://www.youtube.com/embed/' . $videoId;
+                } else {
+                    $error['url'] = 'Erreur lors de l\'extraction de l\'ID de la vidéo';
+                }
+            }
+        }
+
+        $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        if (empty($title)) {
+            $error['title'] = 'Veuillez rentrer un titre';
+        } else {
+            $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE_VIDEO . '/')));
+            if (!$isOk) {
+                $error['title'] = 'Veuillez renseigner un titre de vidéo correct';
             }
         }
 
@@ -57,9 +75,12 @@ try {
 
         // Si pas d'erreur, procédure d'insertion de la catégorie
         if (empty($error)) {
+
             $newVideo = new Video();
-            $newVideo->setGameVideo($url);
+            $newVideo->setGameVideo($embedUrl);
+            $newVideo->setTitleVideo($title);
             $newVideo->setIdGame($id_game);
+            $newVideo->setIdVideo($id_video);
 
             $result = $newVideo->update();
 
@@ -69,6 +90,7 @@ try {
                 header('Refresh:3; url=list-videos-ctrl.php');
             }
         }
+        $video = Video::get($id_video);
     }
 } catch (PDOException $e) {
     die('Erreur update ' . $e->getMessage());

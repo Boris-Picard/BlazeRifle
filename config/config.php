@@ -6,6 +6,7 @@ define('USER', 'BorisRifle');
 define('PASSWORD', 'r.g[WZL_FZkqM0Gs');
 
 define('REGEX_TITLE', "[a-zA-Z0-9 .,éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:'-]{10,150}+$");
+define('REGEX_TITLE_VIDEO', "[a-zA-Z0-9 .,éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:'-]{10,100}+$");
 define('REGEX_SECTION', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{2,5000}+$");
 define('REGEX_NAME', '^[A-Za-z0-9-éèêëàâäôöûüç\' ]{2,150}+$');
 define('IMAGE_TYPES',  ['image/jpeg', 'image/png', 'image/avif']);
@@ -15,7 +16,8 @@ define('REGEX_DATE', '^([0-9]{4})[\/\-]?([0-9]{2})[\/\-]?([0-9]{2})+$');
 define('REGEX_CONSOLE', "^[a-zA-Z0-9 ]{2,20}+$");
 
 define('REGEX_CATEGORY', '^[a-zA-Z é]{5,100}+$');
-define('REGEX_YOUTUBE', 'youtube\.com.*(\?v=|\/embed\/)(.{11})');
+define('REGEX_YOUTUBE', 'youtube\.com\/watch\?v=([^\&\?\/]{11})');
+
 
 define('DATE', '^(?:\d{4}-\d{2}-\d{2})$');
 

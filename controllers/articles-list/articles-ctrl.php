@@ -3,6 +3,7 @@ session_start();
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Game.php';
 require_once __DIR__ . '/../../models/Comment.php';
+require_once __DIR__ . '/../../models/Video.php';
 require_once __DIR__ . '/../../models/Console.php';
 require_once __DIR__ . '/../../helpers/Date_Comment.php';
 
@@ -31,10 +32,15 @@ try {
 
     Date_Comment::formatDateComment($articles);
 
-    $articlesSidebar = Article::getAll($gameId, id_category: REGEX_GUIDES, order: 'DESC');
+    if ($id_category === REGEX_GUIDES) {
+        $articlesSidebar = Article::getAll($gameId, id_category: REGEX_ARTICLES_GAMES, order: 'DESC');
+    } else {
+        $articlesSidebar = Article::getAll($gameId, id_category: REGEX_GUIDES, order: 'DESC');
+    }
     Date_Comment::formatDateComment($articlesSidebar);
     $firstArticleSidebar = array_shift($articlesSidebar);
 
+    $videos = Video::getAll($id_game, true, 4, 'DESC');
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

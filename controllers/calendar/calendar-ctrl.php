@@ -14,7 +14,7 @@ try {
     $games = Game::getAll();
 
     // Récupérer tous les articles pour le jeu spécifié, triés par ordre décroissant
-    $articles = Article::getAll($id_game, order: 'DESC');
+    $articles = Article::getAll($id_game, order: 'DESC', id_category: REGEX_ARTICLES_GAMES);
     // Récupérer tous les événements associés au jeu spécifié
     $events = Event::getAll($id_game);
 

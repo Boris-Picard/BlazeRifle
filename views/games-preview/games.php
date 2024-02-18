@@ -15,13 +15,20 @@
                             </div>
                             <?php if (!empty($articles[0])) { ?>
                                 <div class="col-md-8 col-12 py-3">
-                                    <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= !empty($id_game) ? htmlspecialchars($articles[0]->game_name) : htmlspecialchars(isset($articles[0]->console_name)) ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= !empty($id_game) ? $articles[0]->game_name : '' ?></span></h2>
                                 </div>
                                 <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
-                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $articles[0]->id_game ?>&id_category=<?= $articles[0]->id_category ?>&id_game=<?= $articles[0]->id_game ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                        Tous les articles : <?= $articles[0]->game_name ?>
-                                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                                    </a>
+                                    <?php if (!empty($id_game)) { ?>
+                                        <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $articles[0]->id_game ?>&id_category=<?= $articles[0]->id_category ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                            Tous les articles : <?= $articles[0]->game_name ?>
+                                            <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                        </a>
+                                    <?php } else {  ?>
+                                        <a href="/controllers/articles-list/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                            Tous les articles
+                                            <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                        </a>
+                                    <?php } ?>
                                 </div>
                             <?php  } ?>
                         </div>
@@ -92,13 +99,20 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-md-8 col-12 py-3 mt-5">
-                                    <h2 class="h2 text-uppercase fw-bold">Tous les guides <span class="text-danger"><?= $firstGuide->game_name ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold">Tous les guides <span class="text-danger"><?= !empty($id_game) ? $firstGuide->game_name : '' ?></span></h2>
                                 </div>
                                 <div class="col-md-4 col-12 d-flex btnTitle align-items-center justify-content-end mt-5">
-                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $firstGuide->id_game ?>&id_category=<?= $firstGuide->id_category ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                        Tous les guides : <?= $firstGuide->game_name ?>
-                                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                                    </a>
+                                    <?php if (!empty($id_game)) { ?>
+                                        <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $firstGuide->id_game ?>&id_category=<?= $firstGuide->id_category ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                            Tous les guides : <?= $firstGuide->game_name ?>
+                                            <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                        </a>
+                                    <?php } else { ?>
+                                        <a href="/controllers/articles-list/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                            Tous les guides
+                                            <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                        </a>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="row">
@@ -107,7 +121,7 @@
                                         <img src="/public/uploads/article/<?= $firstGuide->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $firstGuide->game_name ?>">
                                         <div class="card-img-overlay d-flex flex-column justify-content-end">
                                             <p class="p-0 m-0">
-                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $firstGuide->game_name ?></span>
+                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $firstGuide->label ?></span>
                                             </p>
                                             <div>
                                                 <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstGuide->id_article ?>&id_category=<?= $firstGuide->id_category ?>&id_game=<?= $firstGuide->id_game  ?>" class="card-text fw-bold stretched-link w-75 aCard text-wrap text-decoration-none text-light">
@@ -197,247 +211,101 @@
                 <?php } ?>
             </section>
             <!-- LES DERNIERES VIDEOS -->
-            <section>
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-md-8 col-12 py-3 mt-5">
-                                <h2 class="h2 text-uppercase fw-bold">Toutes les vidéos</h2>
-                            </div>
-                            <div class="col-md-4 col-12 d-flex btnTitle align-items-center justify-content-end mt-5">
-                                <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                    Toutes les vidéos
-                                    <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                                </a>
+            <?php if (!empty($firstVideo)) { ?>
+                <section>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-md-8 col-12 py-3 mt-5">
+                                    <h2 class="h2 text-uppercase fw-bold">Toutes les vidéos <span class="text-danger"><?= !empty($id_game) ? $firstVideo->game_name : '' ?></span></h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card bg-dark text-white p-0 cardVideoPlayer rounded-4 border-0">
-                                    <div class="ratio ratio-16x9">
-                                        <iframe class="cardVideoPlayer rounded-4" src="https://www.youtube.com/embed/QdBZY2fkU-0?si=1uhHYUak6A-F-lid" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="card-img-overlay d-flex flex-column justify-content-end py-0 cardShadow">
-                                        <p class="m-0 p-0 z-1">
-                                            <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2">apex legends</span>
-                                        </p>
-                                        <div class="z-1 1h-1">
-                                            <a href="https://www.youtube.com/embed/QdBZY2fkU-0?si=1uhHYUak6A-F-lid" class="card-text fw-bold text-wrap stretched-link aCard w-50 text-decoration-none text-light">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officia similique vero eligendi, repellendus aut. Consequuntur reiciendis quos accusamus. Repellat nihil porro dolorem sed ullam totam obcaecati beatae a quam!
-                                            </a>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card bg-dark text-white p-0 cardVideoPlayer rounded-4 border-0" data-aos="fade-up" data-aos-duration="700">
+                                        <div class="ratio ratio-16x9">
+                                            <iframe class="cardVideoPlayer rounded-4" src="<?= $firstVideo->game_video ?>" title="<?= $firstVideo->game_name ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                         </div>
-                                        <div class="card-text mt-2 z-1 mb-3">
-                                            <small>il y a 47 minutes
-                                                <span class="badge rounded-pill text-uppercase mb-1 mx-1 border bg-transparent text-light fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                                <span class="badge rounded-pill text-uppercase mb-1 border bg-transparent text-light fw-semibold">HALO</span>
-                                            </small>
+                                        <div class="card-img-overlay d-flex flex-column justify-content-end py-0 cardShadow video-card">
+                                            <p class="m-0 p-0 z-1">
+                                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2 px-4 mb-2"><?= $firstVideo->game_name ?></span>
+                                            </p>
+                                            <div class="z-1 1h-1 mb-3">
+                                                <span class="card-text fw-bold text-wrap aCard text-decoration-none text-light">
+                                                    <?= $firstVideo->title_video ?>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 d-flex flex-wrap justify-content-between ">
-                        <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/f2zcVxNtk7U?si=tHeC53lUtFvCkPKr" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            <div class="p-3 card-img-overlay">
-                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Battlefield 2042</span>
-                            </div>
-                            <div class="card-body p-0 mt-1">
-                                <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maxime delectus mollitia obcaecati nobis temporibus sequi error molestiae quae debitis vitae odit dolores, veniam consectetur deleniti. Praesentium iure repudiandae dolore.</a>
-                                <div class="card-text mb-3">
-                                    <small class="text-muted">25 déc, 18:05
-                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                        <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Battlefield 2042</span>
-                                    </small>
+                        <div class="col-12 d-flex flex-wrap justify-content-between ">
+                            <?php foreach ($videos as $video) { ?>
+                                <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent" data-aos="fade-up" data-aos-duration="700">
+                                    <iframe class="rounded-4 opacity-75" src="<?= $video->game_video ?>" title="<?= $video->game_name ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <div class="p-3 card-img-overlay video-card">
+                                        <span class="badge rounded-pill text-uppercase text-bg-danger p-2"><?= $video->game_name ?></span>
+                                    </div>
+                                    <div class="card-body p-0 mt-1 video-card">
+                                        <span class="card-text fw-bold text-decoration-none text-dark stretched-link aCard">
+                                            <?= $video->title_video ?>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/NMWkEt_KF6g?si=U7Nq1It4NCgIGQhY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            <div class="p-3 card-img-overlay">
-                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Counter Strike 2</span>
-                            </div>
-                            <div class="card-body p-0 mt-1">
-                                <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">Some quick example text to build on the card title and make up the...</a>
-                                <div class="card-text mb-3">
-                                    <small class="text-muted">25 déc, 18:05
-                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                        <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Counter Strike 2</span>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/B_JsHq9f0pE?si=vrF7i7_8BGYwugwC" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            <div class="p-3 card-img-overlay">
-                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Overwatch 2</span>
-                            </div>
-                            <div class="card-body p-0 mt-1">
-                                <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">Some quick example text to build on the card title and make up the...</a>
-                                <div class="card-text mb-3">
-                                    <small class="text-muted">25 déc, 18:05
-                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                        <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Overwatch 2</span>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card cardActUnder mt-3 p-0 border-0 bg-transparent">
-                            <iframe class="rounded-4 opacity-75" src="https://www.youtube.com/embed/texF0VVePl8?si=nmfXaQG8ZQIuIzcs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            <div class="p-3 card-img-overlay">
-                                <span class="badge rounded-pill text-uppercase text-bg-danger p-2">Borderlands 3</span>
-                            </div>
-                            <div class="card-body p-0 mt-1">
-                                <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCard">Some quick example text to build on the card title and make up the...</a>
-                                <div class="card-text mb-3">
-                                    <small class="text-muted">25 déc, 18:05
-                                        <span class="badge rounded-pill text-uppercase mb-1 mx-1 border text-dark fw-semibold"><i class="bi bi-chat-right-dots mx-1 align-middle"></i>5</span>
-                                        <span class="badge rounded-pill text-uppercase mb-1 border text-dark fw-semibold">Borderlands 3</span>
-                                    </small>
-                                </div>
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            <?php } ?>
             <!-- GAMES DISCOVER -->
-            <section>
-                <div class="row pb-5">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-md-10 col-12 py-3 mt-5">
-                                <h2 class="h2 text-uppercase fw-bold">Les jeux à découvrir</h2>
-                            </div>
-                            <div class="col-md-2 col-12 d-flex btnTitle align-items-center justify-content-end mt-5">
-                                <a href="#" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                    Tous les jeux
-                                    <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                                </a>
-                            </div>
+            <section class="sectionContainer">
+                <div class="container">
+                    <div class="row g-3 mt-3">
+                        <div class="col-12 col-md-9">
+                            <h1 class="articleTitle text-uppercase fw-bold">les événements à venir sur <span class="text-danger"><?= $events[0]->game_name ?></span></h1>
                         </div>
-                        <div class="row g-3">
-                            <div class="col-md-4 col-12">
-                                <div class="card p-0 border-0 bg-transparent rounded-4">
-                                    <div class="ratio ratio-1x1 ">
-                                        <img src="/public/assets/img/toutes-infos-gta-vi.webp" class="object-fit-cover rounded-4" alt="Grand Theft Auto VI">
-                                    </div>
-                                    <div class="card-img-overlay ">
-                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">1</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
-                                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Grand Theft Auto VI</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-12">
-                                <div class="card p-0 border-0 bg-transparent rounded-4">
-                                    <div class="ratio ratio-1x1">
-                                        <img src="/public/assets/img/MWIII-REVEAL-FULL-TOUT.jpg" class="object-fit-cover rounded-4" alt="Call of Duty : MW 3">
-                                    </div>
-                                    <div class="card-img-overlay">
-                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">2</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
-                                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Call of Duty : MW 3</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-12">
-                                <div class="card p-0 border-0 bg-transparent rounded-4">
-                                    <div class="ratio ratio-1x1">
-                                        <img src="/public/assets/img/1329760.jpeg" class="object-fit-cover rounded-4" alt="Counter Strike 2">
-                                    </div>
-                                    <div class="card-img-overlay">
-                                        <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">3</span>
-                                        <div class="card-body d-flex flex-column justify-content-end h-100 px-0 cardShadow">
-                                            <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-light text-capitalize z-3 mb-3 stretched-link aCardMin">Counter Strike 2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-3 d-flex align-items-center justify-content-end">
+                            <a href="/controllers/calendar/calendar-ctrl.php?id_game=<?= $events[0]->id_game ?>" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                les événements : <?= $events[0]->game_name ?>
+                                <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                            </a>
                         </div>
-                        <div class="row">
-                            <div class="col-12 flex-wrap d-flex justify-content-between">
-                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                                    <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/apex.jpg" class="object-fit-cover rounded-4" alt="Apex Legends">
-                                        <div class="p-3">
-                                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">4</span>
+                        <!-- CARD EVENT 1 -->
+                        <div class="col-12">
+                            <div class="row g-3">
+                                <?php foreach ($events as $event) { ?>
+                                    <div class="col-md-6">
+                                        <div class="card text-bg-dark bg-transparent border-0 rounded-4 mb-3" data-aos="fade-up" data-aos-duration="700">
+                                            <div class="ratio ratio-16x9 ">
+                                                <img src="/public/uploads/events/<?= $event->event_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 " alt="<?= $event->game_name ?>">
+                                            </div>
+                                            <div class="cardShadow">
+                                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                                    <p class="p-0 m-0">
+                                                        <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $event->game_name ?></span>
+                                                    </p>
+                                                    <div class="w-75">
+                                                        <a href="<?= $event->event_link ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                                            <?= $event->event_title ?>
+                                                        </a>
+                                                    </div>
+                                                    <div class="card-text d-flex justify-content-between mt-2">
+                                                        <small>
+                                                            le <?= $event->formattedDate ?>
+                                                        </small>
+                                                        <small class="text-uppercase">
+                                                            A <?= $event->place ?>
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-text p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Apex Legends</a>
-                                    </div>
-                                </div>
-                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent overflow-hidden">
-                                    <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/MWII-SEASON-01-ROADMAP-004.jpg" class="object-fit-cover rounded-4" alt="Call of duty : Warzone 2.0">
-                                        <div class="p-3">
-                                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">5</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-text p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark stretched-link aCardMin text-capitalize">Call of duty : Warzone 2.0</a>
-                                    </div>
-                                </div>
-                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                                    <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/valorant.jpg" class="object-fit-cover rounded-4" alt="Valorant">
-                                        <div class="p-3">
-                                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">6</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-text p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Valorant</a>
-                                    </div>
-                                </div>
-                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                                    <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/infinitebg.jpg" class="object-fit-cover rounded-4" alt="Halo Infinite">
-                                        <div class="p-3">
-                                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">7</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-text p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Halo Infinite</a>
-                                    </div>
-                                </div>
-                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                                    <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/overwatch2.jpg" class="object-fit-cover rounded-4" alt="Overwatch 2">
-                                        <div class="p-3">
-                                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">8</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-text p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Overwatch 2</a>
-                                    </div>
-                                </div>
-                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                                    <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/battlefield2042.jpg" class="object-fit-cover rounded-4" alt="Battlefield 2042">
-                                        <div class="p-3">
-                                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">9</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-text p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Battlefield 2042</a>
-                                    </div>
-                                </div>
-                                <div class="card cardGameDiscoverUnder mt-3 p-0 border-0 bg-transparent">
-                                    <div class="card-img-top ratio ratio-1x1 cardGameDiscoverUnder">
-                                        <img src="/public/assets/img/borderlands3.jpg" class="object-fit-cover rounded-4" alt="Borderlands 3">
-                                        <div class="p-3">
-                                            <span class="badge pillsGamesDiscover text-bg-dark bg-dark px-0">10</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-text p-0 mt-1">
-                                        <a href="" class="card-text stretchLinkHover fw-bold text-decoration-none text-dark text-capitalize stretched-link aCardMin">Borderlands 3</a>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

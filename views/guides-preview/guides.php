@@ -40,7 +40,7 @@
                                     <p class="p-0 m-0">
                                         <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2"><?= $article->label ?></span>
                                     </p>
-                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
                                         <?= $article->article_title ?>
                                     </a>
                                     <div class="mt-1">

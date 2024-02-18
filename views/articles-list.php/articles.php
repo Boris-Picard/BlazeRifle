@@ -91,7 +91,7 @@
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center align-items-center p-3">
                                             <i class="bi bi-book fs-1 px-2"></i>
-                                            <h1 class="text-uppercase fw-bold fs-5"><span class="text-danger">les guides :</span> <?= $articles[0]->game_name ?></h1>
+                                            <h1 class="text-uppercase fw-bold fs-5"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les guides :  </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les articles : </span>" . $firstArticleSidebar->game_name ?></h1>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -138,73 +138,43 @@
                                             <?php } ?>
                                             <div class="d-flex justify-content-center mt-3 mb-4">
                                                 <a href="?id_game=<?= $firstArticleSidebar->id_game . '&id_category=' . $firstArticleSidebar->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    les guides <?= $firstArticleSidebar->game_name ?>
+                                                    <?= $id_category == REGEX_ARTICLES_GAMES ? 'Les guides : ' . $firstArticleSidebar->game_name  : 'Les articles : ' . $firstArticleSidebar->game_name ?>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- LES VIDEOS -->
+                            <?php } ?>
+                            <!-- LES VIDEOS -->
+                            <?php if (!empty($videos)) { ?>
                                 <div class="mt-4"></div>
                                 <div class="col-12 widthColRightVideo shadow-lg rounded-4" data-aos="fade-up" data-aos-duration="700">
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center align-items-center p-3">
                                             <i class="bi bi-play-circle fs-1 px-2"></i>
-                                            <h1 class="text-uppercase fw-bold fs-5"><span class="text-warning">les vidéos :</span> battlefield 2042</h1>
+                                            <h1 class="text-uppercase fw-bold fs-5"><span class="text-warning">les vidéos : </span> <?= $videos[0]->game_name ?></h1>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
-                                            <div class="card mt-3 p-0 border-0 bg-transparent">
-                                                <div class="card-img-top ratio ratio-16x9">
-                                                    <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/t8xJpEbAelU?si=dFdL0OE3ZJ4ZajTI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="card-body p-0 mt-1">
-                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
-                                                    <div class="card-text mb-3">
-                                                        <small class="text-muted">
-                                                            25 déc, 18:05
-                                                        </small>
+                                            <?php foreach ($videos as $video) { ?>
+                                                <div class="card mt-3 p-0 border-0 bg-transparent">
+                                                    <div class="card-img-top ratio ratio-16x9">
+                                                        <iframe class="object-fit-cover rounded-3" src="<?= $video->game_video ?>" title="<?= $video->game_name ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                    </div>
+                                                    <div class="card-body p-0 mt-1 video-card">
+                                                        <span class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">
+                                                            <?= $video->title_video ?>
+                                                        </span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="card mt-3 p-0 border-0 bg-transparent">
-                                                <div class="card-img-top ratio ratio-16x9">
-                                                    <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/0K6KrOm3MaA?si=gd5nUgQ4LwUblNM4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="card-body p-0 mt-1">
-                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
-                                                    <div class="card-text mb-3">
-                                                        <small class="text-muted">
-                                                            25 déc, 18:05
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card mt-3 p-0 border-0 bg-transparent">
-                                                <div class="card-img-top ratio ratio-16x9">
-                                                    <iframe class="object-fit-cover rounded-3" src="https://www.youtube.com/embed/XDPdtQD3dDw?si=8J56_M49Q6DJ7pyY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="card-body p-0 mt-1">
-                                                    <a href="" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias enim perspiciatis non esse voluptates vero officia! Perferendis adipisci recusandae dignissimos quis est, autem voluptatum aliquid saepe. Quas quam tempora impedit.</a>
-                                                    <div class="card-text mb-3">
-                                                        <small class="text-muted">
-                                                            25 déc, 18:05
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-center mt-3 mb-4">
-                                                <a href="#" class="btn btn-warning w-50 rounded-4 p-1 fw-bold text-uppercase">
-                                                    les vidéos
-                                                </a>
-                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
+                            <?php } ?>
                             </div>
                         </div>
-                    <?php } ?>
                 </div>
             </section>
         </div>

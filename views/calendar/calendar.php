@@ -103,7 +103,7 @@
                                                     <img src="/public/uploads/article/<?= $articles[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articles[0]->game_name ?>">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articles[0]->id_article ?>&id_game=<?= $articles[0]->id_game ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link"><?= htmlspecialchars($articles[0]->article_description) ?></a>
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articles[0]->id_article ?>&id_category=<?= $articles[0]->id_category ?>&id_game=<?= $articles[0]->id_game ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link"><?= htmlspecialchars($articles[0]->article_description) ?></a>
                                                     <div class="card-text mb-3">
                                                         <small class="text-muted">
                                                             <?= $articles[0]->article_created_at ?>
@@ -120,7 +120,7 @@
                                                             </div>
                                                             <div class="col-md-6 p-0 ">
                                                                 <div class="card-body w-100 cardActuGuideRight p-0 mx-2 d-flex flex-column">
-                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
+                                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="card-text bodycardGuideRight stretchLinkHover fw-semibold text-decoration-none text-dark stretched-link aCardBig">
                                                                         <?= html_entity_decode($article->article_title) ?>
                                                                     </a>
                                                                     <p class="card-text">
@@ -136,8 +136,8 @@
                                                 }
                                             } ?>
                                             <div class="d-flex justify-content-center mt-3 mb-4">
-                                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?? $articles[0]->id_game ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    les articles
+                                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?? $articles[0]->id_game ?>&id_category=<?= $article->id_category ?? $articles[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                    les articles : <?= $articles[0]->game_name ?>
                                                 </a>
                                             </div>
                                         </div>
@@ -146,7 +146,6 @@
                             </div>
                         </div>
                     <?php } ?>
-
                 </div>
             </section>
         </div>

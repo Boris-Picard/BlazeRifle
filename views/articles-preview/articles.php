@@ -23,7 +23,7 @@
                             <img src="/public/uploads/games/<?= $game->game_picture ?>" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="$game->game_name">
                             <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
                                 <p class="p-0 m-0 z-3">
-                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
+                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>&id_category=<?=$game->id_category ?>" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
                                         <?= htmlspecialchars($game->game_name) ?>
                                         <i class="bi bi-arrow-right fs-5 d-flex" aria-hidden="true">
                                         </i>

@@ -26,9 +26,16 @@
                         <form action="#" method="POST" class="shadow-lg p-5 rounded-4" novalidate enctype="multipart/form-data">
                             <div class="row">
                                 <div class="mb-3 col-md-12">
+                                    <div><small class="form-text text-danger"><?= $error['title'] ?? '' ?></small></div>
+                                    <label for="title" class="form-label">Titre de la vidéo <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="title" id="title" value="<?= $title ?? '' ?>" pattern="<?= REGEX_TITLE_VIDEO ?>" aria-describedby="title" placeholder="Nouveau trailer sur Halo" minlength="10" maxlength="100" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['url'] ?? '' ?></small></div>
                                     <label for="url" class="form-label">Lien de la video <span class="text-danger">*</span></label>
-                                    <input type="url" class="form-control" name="url" id="url" value="<?= $url ?? '' ?>" pattern="<?= REGEX_YOUTUBE ?>" aria-describedby="url"  placeholder="https://www.youtube.com/" required>
+                                    <input type="url" class="form-control" name="url" id="url" value="<?= $url ?? '' ?>" pattern="<?= REGEX_YOUTUBE ?>" aria-describedby="url" placeholder="https://www.youtube.com/" required>
                                 </div>
                             </div>
                             <div class="row">

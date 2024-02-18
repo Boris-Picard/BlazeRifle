@@ -219,6 +219,10 @@ html{
 }
 
 /* LES ARTICLES SECTION */
+.video-card {
+    pointer-events: none;
+}
+
 .articlesSection {
     margin: 4.688rem 0 0 0;
 }
@@ -402,7 +406,7 @@ small {
 
 .widthColRightVideo {
     width: 22.813rem;
-    height: 67rem;
+    height: 75rem;
 }
 
 
