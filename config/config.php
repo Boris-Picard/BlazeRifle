@@ -15,6 +15,7 @@ define('REGEX_DATE', '^([0-9]{4})[\/\-]?([0-9]{2})[\/\-]?([0-9]{2})+$');
 define('REGEX_CONSOLE', "^[a-zA-Z0-9 ]{2,20}+$");
 
 define('REGEX_CATEGORY', '^[a-zA-Z é]{5,100}+$');
+define('REGEX_YOUTUBE', 'youtube\.com.*(\?v=|\/embed\/)(.{11})');
 
 define('DATE', '^(?:\d{4}-\d{2}-\d{2})$');
 

@@ -9,6 +9,7 @@ require_once __DIR__ . '/../../models/User.php';
 
 try {
     $comments = Comment::getAll(showConfirmedAt: true);
+    Date_Comment::commentsDate($comments);
 
     // Récupérer les ID de l'article et du jeu depuis la requête GET
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
@@ -40,7 +41,7 @@ try {
     $articlesSidebar = Article::getAll($gameId, false, order: 'DESC', limit: 7, id_category: $categoryId);
     Date_Comment::formatDateComment($articlesSidebar);
     $firstArticleSidebar = array_shift($articlesSidebar);
-    
+
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
     $articlesBottom = Article::getAll($gameId, false, true, $categoryId, 'DESC', limit: 3);
     // Gérer le formulaire de commentaire s'il est soumis
@@ -61,7 +62,7 @@ try {
             if (!$isOk) {
                 $error['textAreaComment'] = 'Veuillez renseigner une description de jeu correct';
             }
-            if(strlen($textAreaComment) > 500) {
+            if (strlen($textAreaComment) > 500) {
                 $error['textAreaComment'] = 'Votre message est trop long';
             }
         }
@@ -76,7 +77,7 @@ try {
             $result = $comment->insert();
 
             if ($result > 0) {
-                header("Refresh:8;url=/controllers/articles/article-ctrl.php?". $id_article);
+                header("Refresh:8;url=/controllers/articles/article-ctrl.php?" . $id_article);
             }
         }
     }

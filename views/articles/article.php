@@ -170,11 +170,11 @@
                                                                             <?= $_SESSION['user']->pseudo ?>
                                                                         </span>
                                                                     <?php } elseif ($_SESSION['user']->role === 2) { ?>
-                                                                        <span class="text-warning">
+                                                                        <span class="text-primary">
                                                                             <?= $_SESSION['user']->pseudo ?>
                                                                         </span>
                                                                     <?php  } else { ?>
-                                                                        <span class="text-primary">
+                                                                        <span class="text-warning">
                                                                             <?= $_SESSION['user']->pseudo ?>
                                                                         </span>
                                                                     <?php } ?>
@@ -240,16 +240,19 @@
                                                                             <?= $comment->pseudo ?>
                                                                         </span>
                                                                     <?php } elseif ($comment->role === 2) { ?>
-                                                                        <span class="text-warning">
+                                                                        <span class="text-primary">
                                                                             <?= $comment->pseudo ?>
                                                                         </span>
                                                                     <?php  } else { ?>
-                                                                        <span class="text-primary">
+                                                                        <span class="text-warning">
                                                                             <?= $comment->pseudo ?>
                                                                         </span>
                                                                     <?php } ?>
                                                                 </p>
-                                                                <small class="text-muted mb-1 mx-2">le <?= $comment->comment_created_at ?></small>
+                                                                <small class="text-muted mb-1 mx-2">
+                                                                    le <?= $comment->formattedDate ?>
+                                                                    a <?= $comment->formattedHour ?>
+                                                                </small>
                                                             </div>
                                                             <div class="card-body p-0">
                                                                 <p class="text-card">
