@@ -55,7 +55,6 @@
                                         <input class="form-check-input" id="checkboxForm" name="checkboxForm" type="checkbox" value="checkbox" <?= (isset($checkbox)) ? 'checked' : '' ?> required>
                                         <label class="form-check-label" for="checkboxForm">
                                             J'accepte les </label> <a href="/controllers/CDU-ctrl.php" class="text-capitalize">conditions d'utilisation</a>
-
                                     </div>
                                 </div>
                                 <div class="pb-5">
@@ -76,7 +75,7 @@
                                     <div class="card-body d-flex align-items-center flex-column">
                                         <h5 class="mb-2 py-5 text-uppercase fw-bold">Vous avez bien envoyé votre message !</h5>
                                         <div>
-                                            <a href="/controllers/home-ctrl.php" class="btn btn-danger w-100 rounded-4 fw-bold text-uppercase p-3">
+                                            <a href="/controllers/home-ctrl.php" class="btn btn-danger w-100 rounded-5 fw-bold text-uppercase p-3">
                                                 Revenir a l'accueil
                                             </a>
                                         </div>
@@ -93,7 +92,7 @@
                                     <div class="card-body d-flex align-items-center flex-column">
                                         <h5 class="mb-2 py-5 text-uppercase fw-bold text-danger">Un problème est survenu</h5>
                                         <div>
-                                            <a href="/controllers/contact-ctrl/contact-ctrl.php" class="btn btn-danger w-100 rounded-4 fw-bold text-uppercase p-3">
+                                            <a href="/controllers/contact-ctrl/contact-ctrl.php" class="btn btn-danger w-100 rounded-5 fw-bold text-uppercase p-3">
                                                 Revenir au formulaire
                                             </a>
                                         </div>

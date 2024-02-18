@@ -265,13 +265,20 @@
                 <div class="container">
                     <div class="row g-3 mt-3">
                         <div class="col-12 col-md-9">
-                            <h1 class="articleTitle text-uppercase fw-bold">les événements à venir sur <span class="text-danger"><?= $events[0]->game_name ?></span></h1>
+                            <h1 class="articleTitle text-uppercase fw-bold">les événements à venir <span class="text-danger"><?= !empty($id_game) ? 'sur ' . $events[0]->game_name : '' ?></span></h1>
                         </div>
                         <div class="col-md-3 d-flex align-items-center justify-content-end">
-                            <a href="/controllers/calendar/calendar-ctrl.php?id_game=<?= $events[0]->id_game ?>" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                les événements : <?= $events[0]->game_name ?>
-                                <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                            </a>
+                            <?php if (!empty($id_game)) { ?>
+                                <a href="/controllers/calendar/calendar-ctrl.php?id_game=<?= $events[0]->id_game ?>" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                    les événements : <?= $events[0]->game_name ?>
+                                    <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                </a>
+                            <?php } else { ?>
+                                <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                    les événements
+                                    <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                </a>
+                            <?php } ?>
                         </div>
                         <!-- CARD EVENT 1 -->
                         <div class="col-12">
