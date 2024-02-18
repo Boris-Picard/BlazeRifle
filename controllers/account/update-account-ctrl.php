@@ -7,6 +7,11 @@ require_once __DIR__ . '/../../helpers/CheckPermissions.php';
 CheckPermissions::checkMember();
 
 try {
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+    if (isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
+    
     $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
     $user = User::get($id_user);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {

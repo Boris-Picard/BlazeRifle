@@ -12,6 +12,11 @@ CheckPermissions::checkMemberEditor();
 
 
 try {
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+    if (isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
+    
     $userArticle = true;
     // Récupération de la liste de tous les jeux
     $gamesArticle = Game::getAll();

@@ -8,7 +8,7 @@ require_once __DIR__ . '/../helpers/Date_Comment.php';
 
 try {
     $articles = Article::getAll(id_category: REGEX_ARTICLES_GAMES, limit: 4, showConfirmedAt: true, order: 'DESC');
-
+    
     Date_Comment::formatDateComment($articles);
 
     $firstArticle = array_shift($articles);
@@ -50,7 +50,6 @@ try {
 
     $events = Event::getAll(limit: 4, offset: 0);
     Date_Comment::eventDate($events);
-
 } catch (PDOException $e) {
     die('Erreur articles home : ' . $e->getMessage());
 }

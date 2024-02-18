@@ -61,16 +61,13 @@ try {
                     </ul>
                     <a class="nav-link navlinkHover <?= $activeArticles ? 'active' : '' ?>" href="/controllers/articles-preview/articles-ctrl.php">Les articles</a>
                     <a class="nav-link navlinkHover <?= $activeGuide ? 'active' : '' ?> " href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>
-                    <?php if (isset($_SESSION['user'])) { ?>
-                        <a class="nav-link navlinkHover text-dark <?= $activeTips ? 'active' : '' ?>" href="/controllers/tips-list/tips-ctrl.php">Les Bons Plans</a>
-                    <?php } ?>
+                    <a class="nav-link navlinkHover text-dark <?= $activeTips ? 'active' : '' ?>" href="/controllers/tips-list/tips-ctrl.php">Les Bons Plans</a>
                     <a class="nav-link navlinkHover text-dark <?= $activeCalendar ? 'active' : '' ?>" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>
                     <?php if (isset($_SESSION['user'])) { ?>
                         <a class="nav-link navlinkHover" href="/controllers/quiz/quiz-ctrl.php">Le Quiz</a>
                     <?php } ?>
                     <a class="nav-link navlinkHover text-dark <?= $activeContact ? 'active' : '' ?>" href="/controllers/contact-ctrl/contact-ctrl.php">Nous Contacter</a>
                 </div>
-
             </div>
         </div>
     </nav>

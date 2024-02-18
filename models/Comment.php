@@ -205,6 +205,7 @@ class Comment
         `comments`.`confirmed_at` AS comment_confirmed_at,
         `comments`.`id_article`,
         `comments`.`id_user`,
+        `comments`.`id_comment`,
         `users`.`pseudo`,
         `articles`.`id_game`,
         `articles`.`article_title`,
@@ -274,6 +275,22 @@ class Comment
         $sth = $pdo->prepare($sql);
 
         $sth->bindValue(':id_comment', $id_comment, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return (int) ($sth->rowCount() > 0);
+    }
+
+    public static function deleteCommentsUser(int $id_user): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `comments`
+            WHERE `id_user`=:id_user;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
 
         $sth->execute();
 
