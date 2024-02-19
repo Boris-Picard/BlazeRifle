@@ -117,4 +117,19 @@ class Quiz
 
         return $sth->rowCount() > 0;
     }
+
+    public static function getAll()
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT 
+        `quiz`.`quiz_title`,
+        `quiz`.`quiz_picture`,
+        `quiz`.``quiz_description
+        FROM quiz;';
+
+        $sth = $pdo->query($sql);
+
+        return $sth->fetchAll();
+    }
 }
