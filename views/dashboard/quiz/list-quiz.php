@@ -31,7 +31,8 @@
                                     <th scope="col">Picture</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Questions</th>
+                                    <th scope="col">Number of Questions</th>
+                                    <th scope="col">Add Questions</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -54,6 +55,12 @@
                                                 <?php  } else { ?>
                                                     <a href="/controllers/dashboard/quiz/list-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="btn btn-secondary btn-sm">Pas actif</a>
                                                 <?php } ?>
+                                            </td>
+                                            <td class="fw-semibold text-break">10</td>
+                                            <td class="fw-semibold text-break">
+                                                <a href="/controllers/dashboard/questions/add-questions-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                    <i class="bi bi-plus-circle-fill"></i>
+                                                </a>
                                             </td>
                                             <td>
                                                 <a href="/controllers/dashboard/quiz/update-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="text-decoration-none btn btn-sm btn-light">

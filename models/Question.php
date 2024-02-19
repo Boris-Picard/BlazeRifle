@@ -9,7 +9,7 @@ class Question
     private string $firstanswer;
     private string $secondanswer;
     private string $thirdanswer;
-    private string $goodanswer;
+    private int $goodanswer;
     private int $id_quiz;
 
     public function __construct(
@@ -18,7 +18,7 @@ class Question
         string $firstanswer = '',
         string $secondanswer = '',
         string $thirdanswer = '',
-        string $goodanswer = '',
+        int $goodanswer = 0,
         int $id_quiz = 0
     ) {
         $this->id_question = $id_question;
@@ -80,12 +80,12 @@ class Question
         return $this->thirdanswer;
     }
 
-    public function setGoodAnswer(string $goodanswer)
+    public function setGoodAnswer(int $goodanswer)
     {
         $this->goodanswer = $goodanswer;
     }
 
-    public function getGoodAnswer(): string
+    public function getGoodAnswer(): int
     {
         return $this->goodanswer;
     }
@@ -98,5 +98,26 @@ class Question
     public function getIdQuiz(): int
     {
         return $this->id_quiz;
+    }
+
+    public function insert()
+    {
+        $pdo = Database::connect();
+
+        $sql = 'INSERT INTO `questions` (`text_question`, `firstanswer`, `secondanswer`, `thirdanswer`, `goodanswer`, `id_quiz`)
+        VALUES (:text_question, :firstanswer, :secondanswer, :thirdanswer, :goodanswer, :id_quiz);';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':text_question', $this->getTextQuestion());
+        $sth->bindValue(':firstanswer', $this->getFirstAnswer());
+        $sth->bindValue(':secondanswer', $this->getSecondAnswer());
+        $sth->bindValue(':thirdanswer', $this->getThirdAnswer());
+        $sth->bindValue(':goodanswer', $this->getGoodAnswer(), PDO::PARAM_INT);
+        $sth->bindValue(':id_quiz', $this->getIdQuiz(), PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->rowCount() > 0;
     }
 }
