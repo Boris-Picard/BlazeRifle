@@ -45,7 +45,7 @@
                                         <a href="/controllers/dashboard/contacts/list-contacts-ctrl.php?order=ASC&nbContacts=<?= $nbContacts ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
                                         <a href="/controllers/dashboard/contacts/list-contacts-ctrl.php?order=DESC&nbContacts=<?= $nbContacts ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
-                                    <th scope="col">Respond</th>
+                                    <th scope="col">Répondre</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>

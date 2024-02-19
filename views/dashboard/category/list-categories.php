@@ -26,7 +26,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">
-                                        Category
+                                        Catégorie
                                     </th>
                                     <th scope="col">Articles</th>
                                     <th scope="col">Action</th>

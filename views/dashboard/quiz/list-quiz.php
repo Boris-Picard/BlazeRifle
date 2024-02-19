@@ -28,11 +28,11 @@
                                     <th scope="col">
                                         Titre
                                     </th>
-                                    <th scope="col">Picture</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Number of Questions</th>
-                                    <th scope="col">Add Questions</th>
+                                    <th scope="col">Nb de questions</th>
+                                    <th scope="col">Ajouter des questions</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
