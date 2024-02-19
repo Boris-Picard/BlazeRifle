@@ -12,7 +12,7 @@
                     </nav>
                 </div>
                 <div class="col-12 py-5 articlesTitle">
-                    <h1 class="text-uppercase fw-bold">Tous les articles par jeux</h1>
+                    <h1 class="text-uppercase fw-bold">Toutes les news par jeux</h1>
                 </div>
             </div>
             <div class="row g-3 mt-3">

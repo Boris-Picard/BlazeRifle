@@ -15,9 +15,9 @@
     <div class="container">
         <div class="row">
             <!-- QUIZ START -->
-            <div class="col-md-8 shadow-lg rounded-4 quizStartWindow active position-absolute">
-                <div class="row justify-content-center p-4 rounded-4">
-                    <div class="col-md-12 justify-content-center d-flex flex-column align-items-center">
+            <!-- <div class="col-md-8 shadow-lg rounded-4 active" id="startQuizCol">
+                <div class="row">
+                    <div class="col-md-12 justify-content-center flex-column align-items-center justify-content-center text-center p-4">
                         <h1 class="text-danger fw-bold display-4">Règle du quiz</h1>
                         <hr class="hr text-danger w-100 border-3">
                         <p class="text-dark fw-semibold fs-5 mt-3">
@@ -41,76 +41,46 @@
                         <a href="/controllers/home-ctrl.php" class="btn btn-outline-danger rounded-5 p-3 text-uppercase fw-bold">
                             Accueil
                         </a>
-                        <button type="button" class="btn btn-danger startQuizBtn rounded-5 p-3 text-uppercase fw-bold">
+                        <button type="button" class="btn btn-danger rounded-5 p-3 text-uppercase fw-bold" id="startQuiz">
                             Commencer
                         </button>
                     </div>
                 </div>
-            </div>
-            <!-- QUIZ TIMER -->
-            <div class="col-md-8 shadow-lg rounded-4 quizTimerWindow position-relative">
-                <div class="row justify-content-center p-4 rounded-4">
-                    <div class="col-md-12 justify-content-center d-flex flex-column align-items-center text-center">
-                        <h1 class="text-danger fw-bold display-4">Préparez-vous le quiz va démarrer dans :</h1>
-                    </div>
-                    <div class="col-md-12 text-center mt-5">
-                        <h5 class="fw-semibold text-dark">
-                            <span class="counter text-danger mx-2">10</span>secondes
-                        </h5>
-                        <div class="progress mb-4" role="progressbar" aria-label="progress" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated w-0 bg-danger"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 d-flex flex-column justify-content-center text-center">
-                        <hr class="hr border-3 text-danger mt-5">
-                        <h5 class="fw-bold display-5 mt-3">Thème de la semaine : </h5>
-                        <span class="text-danger fw-bold text-capitalize mt-5 display-5 ">Call of duty</span>
-                    </div>
-                    <div class="col-md-12 mt-5">
-                        <hr class="hr border-3 text-danger mt-5">
-                    </div>
-                </div>
-            </div>
+            </div> -->
             <!-- QUIZ QUESTIONS -->
-            <div class="col-md-8 shadow-lg rounded-4 quizBg position-absolute quizQuestion">
-                <div class="row justify-content-center opacityBannerQuiz p-4 rounded-4">
-                    <div class="col-md-12 justify-content-center d-flex flex-column align-items-center">
-                        <h1 class="text-danger display-3 fw-bold">1/15</h1>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <h5 class="fw-semibold pt-2 text-light">
-                            <span class="counterQuestion text-light mx-2">10</span>secondes
-                        </h5>
-                        <div class="progress" role="progressbar" aria-label="progress" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progressQuestion progress-bar-animated bg-danger"></div>
+            <div class="col-md-8 shadow-lg rounded-4 quizBg">
+                <form action="" method="POST">
+                    <div class="row justify-content-center opacityBannerQuiz p-4 rounded-4 ">
+                        <div class="col-md-12 justify-content-center d-flex flex-column align-items-center">
+                            <h1 class="text-danger display-3 fw-bold">1/15</h1>
+                        </div>
+                        <div class="col-md-12 shadow-lg p-5 rounded-4 bg-white mt-4">
+                            <h5 class="fw-semibold fs-4  text-center text-dark">
+                                Dans quel jeu Call of Duty la carte multijoueur "Nuketown" a-t-elle été introduite pour la première fois ?
+                            </h5>
+                        </div>
+                        <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
+                            Call of Duty: World at War
+                        </div>
+                        <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
+                            Call of Duty: 2
+                        </div>
+                        <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
+                            Call of Duty: 3
+                        </div>
+                        <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
+                            Call of Duty: 4
+                        </div>
+                        <div class="py-5 col-md-12 w-75">
+                            <button type="submit" class="btn btn-danger w-100 rounded-5 p-3 text-uppercase fw-bold">
+                                Valider
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-12 shadow-lg p-5 rounded-4 bg-white mt-4">
-                        <h5 class="fw-semibold fs-4  text-center text-dark">
-                            Dans quel jeu Call of Duty la carte multijoueur "Nuketown" a-t-elle été introduite pour la première fois ?
-                        </h5>
-                    </div>
-                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
-                        Call of Duty: World at War
-                    </div>
-                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
-                        Call of Duty: 2
-                    </div>
-                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
-                        Call of Duty: 3
-                    </div>
-                    <div class="col-md-12 bg-white shadow-lg rounded-4 response p-4 w-75 mt-4 fw-bold fs-5 text-center m-0 text-dark">
-                        Call of Duty: 4
-                    </div>
-                    <div class="py-5 col-md-12 w-75">
-                        <button type="submit" class="btn btn-danger w-100 rounded-5 p-3 text-uppercase fw-bold">
-                            Valider
-                        </button>
-                    </div>
-                </div>
+                </form>
             </div>
             <!-- QUIZ RESULT -->
-            <div class="col-md-8 shadow-lg rounded-4 quizResult position-absolute">
+            <!-- <div class="col-md-8 shadow-lg rounded-4 quizResult position-absolute">
                 <div class="row justify-content-center p-4 rounded-4">
                     <div class="col-md-12 justify-content-center d-flex flex-column align-items-center text-center">
                         <h1 class="text-danger fw-bold display-4">Quiz terminé</h1>
@@ -131,9 +101,9 @@
                         Revenir a l'accueil
                     </a>
                 </div>
-            </div>
+            </div> -->
             <!-- SIDEBAR -->
-            <div class="col-md-4 col-12 ">
+            <div class="col-md-4 col-12">
                 <div class="row mx-4 rounded-4">
                     <div class="col-12 widthColClassement shadow-lg rounded-4">
                         <div class="row">
@@ -226,7 +196,6 @@
         </div>
     </div>
 </section>
-<script src="/public/assets/js/quiz.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 

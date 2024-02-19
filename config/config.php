@@ -34,6 +34,7 @@ define('REGEX_PSEUDO', '^[a-zA-Z0-9.-_]{2,50}+$');
 define('REGEX_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,}+$');
 define('REGEX_ZIPCODE', '^[0-9]{5}$');
 define('REGEX_TEXTAREA', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{2,500}$");
+define('REGEX_QUIZ_DESCRIPTION', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{20,255}$");
 
 
 

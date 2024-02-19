@@ -12,7 +12,7 @@ try {
 <header>
     <nav class="navbar navbarStyle navbar-expand-lg fixed-top header-hide">
         <div class="container-fluid">
-            <a class="navbar-brand nameLogoNav" href="/../controllers/home-ctrl.php"><img src="/../../public/assets/img/redlogo.png" class="img-fluid logoNav" alt="logoBrand">blaze rifle</a>
+            <a class="navbar-brand nameLogoNav" href="/../controllers/home-ctrl.php"><img src="/../../public/assets/img/redlogo.png" class="img-fluid logoNav" alt="logoBrand">blazerifle</a>
             <div class="flex-shrink-0 d-flex dropdown order-md-3">
                 <?php if (!isset($_SESSION['user'])) { ?>
                     <div class="mx-2">

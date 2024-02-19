@@ -477,48 +477,6 @@ small {
     background-color: rgba( 255, 255, 255, 0.8 );
 }
 
-.quizStartWindow {
-    opacity: 0;
-    pointer-events: none;
-    width: 55rem;
-    height: 46.074rem;
-}
-
-.quizStartWindow.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.quizTimerWindow {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .3s ease;
-    width: 55rem;
-    height: 46.074rem;
-}
-
-.quizTimerWindow.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.quizQuestion {
-    opacity: 0;
-    transition: 1s ease;
-    pointer-events: none;
-    width: 55rem;
-    height: 61.024rem;
-}
-
-.quizQuestion.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.response {
-    cursor: pointer;
-}
-
 .opacityBannerQuiz {
     background-color: rgba( 0, 0, 0, 0.6);
     width: 55rem;
