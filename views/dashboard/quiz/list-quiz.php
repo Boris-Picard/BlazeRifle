@@ -30,6 +30,7 @@
                                     </th>
                                     <th scope="col">Picture</th>
                                     <th scope="col">Description</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Questions</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -39,12 +40,26 @@
                                     foreach ($allQuiz as $quiz) { ?>
                                         <tr>
                                             <td class="fw-semibold"><?= htmlspecialchars($quiz->quiz_title) ?></td>
-                                            <td class="fw-semibold text-break"><?= $quiz->quiz_picture ?></td>
+                                            <?php if (isset($quiz->quiz_picture)) { ?>
+                                                <td>
+                                                    <div class="ratio ratio-1x1">
+                                                        <img src="/public/uploads/quiz/<?= $quiz->quiz_picture ?>" alt="<?= $quiz->quiz_title ?>" class="object-fit-cover rounded-circle ">
+                                                    </div>
+                                                </td>
+                                            <?php } ?>
+                                            <td class="fw-semibold text-break"><?= $quiz->quiz_description ?></td>
+                                            <td class="fw-semibold text-break">
+                                                <?php if (is_null($quiz->deleted_at)) { ?>
+                                                    <a href="/controllers/dashboard/quiz/list-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="btn btn-small btn-success">Actif</a>
+                                                <?php  } else { ?>
+                                                    <a href="/controllers/dashboard/quiz/list-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="btn btn-secondary btn-sm">Pas actif</a>
+                                                <?php } ?>
+                                            </td>
                                             <td>
-                                                <a href="/controllers/dashboard/category/update-category-ctrl.php?id_category=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/quiz/update-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>
                                                 </a>
-                                                <a href="/controllers/dashboard/category/delete-category-ctrl.php?id_category=<?= $category->id_category ?>" class="text-decoration-none btn btn-sm btn-light">
+                                                <a href="/controllers/dashboard/quiz/delete-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-trash3-fill text-danger fs-4"></i>
                                                 </a>
                                             </td>

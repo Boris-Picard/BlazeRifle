@@ -123,13 +123,93 @@ class Quiz
         $pdo = Database::connect();
 
         $sql = 'SELECT 
-        `quiz`.`quiz_title`,
-        `quiz`.`quiz_picture`,
-        `quiz`.``quiz_description
+        *
         FROM quiz;';
 
         $sth = $pdo->query($sql);
 
         return $sth->fetchAll();
+    }
+
+    public static function get(?int $id_quiz): object|false
+    {
+        $pdo = Database::connect();
+
+        $sql = 'SELECT `quiz`.`id_quiz`, `quiz`.`quiz_title`, `quiz`.`quiz_picture`, `quiz_description`, `quiz`.`deleted_at`
+        FROM `quiz`
+        WHERE `id_quiz`=:id_quiz;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_quiz', $id_quiz, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function update(): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `quiz` SET `quiz_title`=:quiz_title, `quiz_picture`=:quiz_picture, `quiz_description`=:quiz_description
+            WHERE `id_quiz`=:id_quiz;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':quiz_title', $this->getQuizTitle());
+        $sth->bindValue(':quiz_picture', $this->getQuizPicture());
+        $sth->bindValue(':quiz_description', $this->getQuizDescription());
+        $sth->bindValue(':id_quiz', $this->getIdQuiz(), PDO::PARAM_INT);
+
+        return $sth->execute();
+    }
+
+    public static function updateImg(int $id_quiz): bool
+    {
+        $pdo = Database::connect();
+
+        $sql = 'UPDATE `quiz` SET `quiz_picture`= null WHERE `id_quiz`=:id_quiz;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_quiz', $id_quiz, PDO::PARAM_INT);
+
+        $result = $sth->execute();
+
+        return $result;
+    }
+
+    public static function delete(int $id_quiz): int
+    {
+        $pdo = Database::connect();
+
+        $sql = 'DELETE FROM `quiz` WHERE `id_quiz`=:id_quiz;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_quiz', $id_quiz, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->rowCount() > 0;
+    }
+
+    public static function active(int $id_quiz, bool $active = true)
+    {
+        $pdo = Database::connect();
+
+        $active ? $active = 'NULL ' : $active = 'NOW() ';
+
+        $sql = 'UPDATE `quiz` SET `deleted_at`=' . $active .
+            ' WHERE `quiz`.`id_quiz`=:id_quiz;';
+
+        $sth = $pdo->prepare($sql);
+
+        $sth->bindValue(':id_quiz', $id_quiz, PDO::PARAM_INT);
+
+        $sth->execute();
+
+        return $sth->rowCount() > 0;
     }
 }

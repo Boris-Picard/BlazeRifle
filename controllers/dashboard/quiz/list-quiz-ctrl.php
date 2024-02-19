@@ -9,17 +9,35 @@ $check = CheckPermissions::checkAdmin();
 $listQuiz = true;
 
 try {
+    $id_quiz = intval(filter_input(INPUT_GET, 'id_quiz', FILTER_SANITIZE_NUMBER_INT));
+
+    $idQuizToUse = !empty($id_quiz) ? $id_quiz : null;
+    $quiz = Quiz::get($idQuizToUse);
+
     $allQuiz = Quiz::getAll();
-    var_dump($allQuiz);
-    die;
-    
+
     // Récupération du message stocké en session (s'il existe)
-    // $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
+    $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
 
     // Suppression du message en session après l'avoir récupéré
-    // if (isset($_SESSION['msg'])) {
-    //     unset($_SESSION['msg']);
-    // }
+    if (isset($_SESSION['msg'])) {
+        unset($_SESSION['msg']);
+    }
+
+    if ($quiz) {
+        $deleted_at = $quiz->deleted_at;
+
+        if ($deleted_at !== NULL) {
+            $bool = true;
+        } else {
+            $bool = false;
+        }
+
+        Quiz::active($id_quiz, $bool);
+
+        header('location: /controllers/dashboard/quiz/list-quiz-ctrl.php');
+        die;
+    }
 } catch (PDOException $e) {
     $error['database'] = $e->getMessage();
 }
