@@ -48,8 +48,6 @@ try {
 
     Article::confirm($id_article);
 
-    $countComments = Comment::count($id_article);
-
     // Récupération et nettoyage du message de session
     $msg = filter_var($_SESSION['msg'] ?? '', FILTER_SANITIZE_SPECIAL_CHARS);
     if (isset($_SESSION['msg'])) {

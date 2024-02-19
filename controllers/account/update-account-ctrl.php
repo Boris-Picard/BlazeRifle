@@ -11,7 +11,7 @@ try {
     if (isset($_SESSION['msg'])) {
         unset($_SESSION['msg']);
     }
-    
+
     $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
     $user = User::get($id_user);
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -106,13 +106,18 @@ try {
                 $to =  __DIR__ . '/../../public/uploads/users/' . $fileName;
                 $moveFile = move_uploaded_file($from, $to);
 
-                $image = imagecreatefromjpeg($to);
+                if ($extension == 'jpeg' || $extension == 'jpg') {
+                    $image = imagecreatefromjpeg($to);
+                } elseif ($extension == 'jpg') {
+                    $image = imagecreatefrompng($to);
+                } else {
+                    $image = imagecreatefromavif($to);
+                }
 
                 $width = 500;
                 $height = -1;
 
-                $mode = IMG_BILINEAR_FIXED
-                ;
+                $mode = IMG_BILINEAR_FIXED;
 
                 $resampledObject = imagescale($image, $width, $height, $mode);
                 imagejpeg($resampledObject, $to);

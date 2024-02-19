@@ -16,7 +16,7 @@ try {
     if (isset($_SESSION['msg'])) {
         unset($_SESSION['msg']);
     }
-    
+
     $userArticle = true;
     // Récupération de la liste de tous les jeux
     $gamesArticle = Game::getAll();
@@ -164,7 +164,13 @@ try {
             $to =  __DIR__ . '/../../public/uploads/article/' . $fileName;
             $moveFile = move_uploaded_file($from, $to);
 
-            $image = imagecreatefromjpeg($to);
+            if ($extension == 'jpeg' || $extension == 'jpg') {
+                $image = imagecreatefromjpeg($to);
+            } elseif ($extension == 'jpg') {
+                $image = imagecreatefrompng($to);
+            } else {
+                $image = imagecreatefromavif($to);
+            }
 
             $width = 900;
             $height = -1;
@@ -209,7 +215,7 @@ try {
 
             // Si l'insertion a réussi, affichage d'un message de succès et redirection
             if ($result > 0) {
-                header("Refresh:8;url=/controllers/account/account-ctrl.php?id_user=".$user->id_user);
+                header("Refresh:8;url=/controllers/account/account-ctrl.php?id_user=" . $user->id_user);
             }
         }
     }

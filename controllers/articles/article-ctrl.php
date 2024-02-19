@@ -6,6 +6,7 @@ require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Comment.php';
 require_once __DIR__ . '/../../models/User.php';
 
+$articleView = true;
 
 try {
     $comments = Comment::getAll(showConfirmedAt: true);

@@ -436,7 +436,7 @@
         <div class="container">
             <div class="row g-3 mt-3">
                 <div class="col-12 col-md-10">
-                    <h1 class="articleTitle text-uppercase fw-bold">les événements à venir sur <span class="text-danger"><?= $events[0]->game_name ?></span></h1>
+                    <h1 class="articleTitle text-uppercase fw-bold">les événements à venir</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
                     <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">

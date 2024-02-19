@@ -154,7 +154,7 @@
                                         </div>
                                         <!-- FORMULAIRE D'AJOUT D'UN COMMENTAIRE -->
                                         <?php if ($_SERVER['REQUEST_METHOD'] != 'POST' || !empty($error)) { ?>
-                                            <form action="#commentForm" method="POST" id="commentForm">
+                                            <form action="#commentForm" method="POST" id="commentForm" class="d-none">
                                                 <div class="card mt-3 rounded-4 bg-transparent border-0 shadow-lg p-3">
                                                     <div class="row g-0">
                                                         <?php if (isset($_SESSION['user']->user_picture)) { ?>
@@ -219,7 +219,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <meta http-equiv="refresh" content="7;url=/controllers/articles/article-ctrl.php?id_article=<?= $id_article ?>&id_game=<?= $id_game ?>">
+                                                <meta http-equiv="refresh" content="7;url=/controllers/articles/article-ctrl.php?id_article=<?= $id_article ?>&id_game=<?= $id_game ?>&id_category=<?= $id_category ?>">
                                         <?php }
                                         } ?>
                                         <!-- FIN DU FORMULAIRE -->
@@ -258,9 +258,9 @@
                                                                 <p class="text-card">
                                                                     <?= $comment->comment ?>
                                                                 </p>
-                                                                <div class="d-flex">
+                                                                <!-- <div class="d-flex">
                                                                     <button type="button" class="replyButton btn btn-outline-secondary btn-sm fw-bold rounded-5 text-uppercase p-2">Répondre</button>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -270,11 +270,11 @@
                                     } ?>
                                 </div>
                             </div>
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="col-12 d-flex justify-content-center mt-5">
                                     <button type="button" class="btn btn-danger w-50 fw-bold p-2 rounded-5 text-uppercase p-2 showMoreComments">plus de commentaires</button>
                                 </div>
-                            </div> -->
+                            </div>
                         </section>
                     </div>
                     <!-- SIDEBAR -->
@@ -352,4 +352,3 @@
             </section>
         </div>
     </section>
-    <script src="/public/assets/js/comments.js"></script>

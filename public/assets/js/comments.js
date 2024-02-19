@@ -51,7 +51,7 @@
 //     }
 //     // Gestion de la soumission du formulaire
 //     form.onsubmit = (event) => {
-//         // event.preventDefault(); 
+//         event.preventDefault(); 
 
 //         const replyText = textarea.value.trim();
 //         if (replyText) {
@@ -129,7 +129,7 @@
 
 //     // Gestionnaire d'événements pour le formulaire principal de commentaire
 //     document.getElementById('commentForm').addEventListener('submit', (event) => {
-//         // event.preventDefault();
+//         event.preventDefault();
 
 //         const textarea = document.getElementById('textArea');
 //         const commentText = textarea.value.trim();
@@ -208,7 +208,7 @@
 //     return replyDiv;
 // };
 
-// // Ajouter un écouteur d'événements à tous les boutons "Répondre"
+// Ajouter un écouteur d'événements à tous les boutons "Répondre"
 // let replyButtons = document.querySelectorAll(".replyButton");
 // replyButtons.forEach((button) => {
 //     button.addEventListener("click", () => {

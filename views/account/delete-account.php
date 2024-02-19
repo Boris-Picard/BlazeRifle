@@ -24,7 +24,8 @@
                                     <input type="password" name="password" id="password" value="<?= htmlentities($password ?? '') ?>" class="form-control passwordSignIn " placeholder="Mot de passe" pattern="<?= REGEX_PASSWORD ?>" required>
                                 </div>
                             </div>
-                            <div class="mt-3 py-3">
+                            <p>Veuillez noter que la suppression de votre compte sur notre site web entraînera la suppression permanente de toutes vos données associées.</p>
+                            <div class="mt-3 pb-3">
                                 <button type="submit" class="btn btn-danger rounded-5 p-3 text-uppercase fw-bold">
                                     Supprimer définitivement
                                 </button>

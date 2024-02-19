@@ -76,7 +76,6 @@
                                         Catégorie
                                     </th>
                                     <th scope="col">Auteur</th>
-                                    <th scope="col">Commentaires</th>
                                     <th scope="col">Image</th>
                                     <th scope="col">
                                         Creation
@@ -106,7 +105,6 @@
                                                     <?= $article->pseudo ?>
                                                 </td>
                                             <?php } ?>
-                                            <td class="fw-semibold text-break"><?= $countComments ?></td>
                                             <td class="fw-semibold">
                                                 <?php if (isset($article->article_picture)) { ?>
                                                     <div class="ratio ratio-1x1">
