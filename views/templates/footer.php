@@ -20,7 +20,9 @@
                 <p class="fw-bold">Information</p>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="/controllers/contact-ctrl/contact-ctrl.php" class="nav-link footerLink p-0">Nous contacter</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link footerLink p-0">Mentions Légales</a></li>
+                    <li class="nav-item mb-2"><a href="/controllers/legalnotice-ctrl.php" class="nav-link footerLink p-0">Mentions Légales</a></li>
+                    <li class="nav-item mb-2"><a href="/controllers/CDU-ctrl.php" class="nav-link footerLink p-0">Conditions D'utilisation</a></li>
+                    <li class="nav-item mb-2"><a href="/controllers/RGPD-ctrl.php" class="nav-link footerLink p-0">Politique de confidentialité</a></li>
                 </ul>
             </div>
             <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 text-center">

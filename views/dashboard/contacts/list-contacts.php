@@ -58,7 +58,7 @@
                                             <td class="fw-semibold text-break"><?= htmlspecialchars($message->email) ?></td>
                                             <td class="fw-semibold text-break"><?= htmlspecialchars($message->description) ?></td>
                                             <td class="fw-semibold text-break"><?= htmlspecialchars($message->created_at) ?></td>
-                                            <!-- <td class="fw-semibold text-break"><?= htmlspecialchars($message->label) ?></td> -->
+                                            <td class="fw-semibold text-break"><a href="mailto:<?= $message->email ?>" class="text-decoration-none btn btn-sm btn-light"><i class="bi bi-envelope"></i></a></td>
                                             <td>
                                                 <!-- <a href="/controllers/dashboard/category/update-category-ctrl.php?id_contact=<?= $message->id_contact ?>" class="text-decoration-none btn btn-sm btn-light">
                                                     <i class="bi bi-pencil-square text-dark fs-4"></i>

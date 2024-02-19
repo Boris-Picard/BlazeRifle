@@ -11,7 +11,7 @@
                         Avant d'utiliser notre formulaire de contact, veuillez lire attentivement les conditions d'utilisation suivantes. En utilisant ce formulaire, vous acceptez d'être lié par ces conditions. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser notre formulaire de contact.
                     </p>
                     <h3 class="mt-3">
-                        Utilisation du formulaire de contact :
+                        Utilisation du formulaire de contact
                     </h3>
                     <p class="mt-3">
                         Le formulaire de contact sur le site BlazeRifle est destiné à permettre aux utilisateurs de nous contacter pour toute question, commentaire ou préoccupation concernant nos jeux vidéo ou notre site web.
@@ -20,7 +20,7 @@
                         Tout usage abusif, y compris mais sans s'y limiter, l'envoi de spam, de contenu inapproprié ou de toute communication frauduleuse, est strictement interdit.
                     </p>
                     <h3 class="mt-3">
-                        Exactitude des informations fournies :
+                        Exactitude des informations fournies
                     </h3>
                     <p class="mt-3">
                         Nous nous réservons le droit de ne pas répondre aux demandes qui contiennent des informations fausses, trompeuses ou incomplètes.
@@ -29,13 +29,13 @@
                         En utilisant notre formulaire de contact, vous vous engagez à fournir des informations exactes, complètes et à jour.
                     </p>
                     <h3 class="mt-3">
-                        Respect des droits de propriété intellectuelle :
+                        Respect des droits de propriété intellectuelle
                     </h3>
                     <p class="mt-3">
                         En soumettant un message via notre formulaire de contact, vous garantissez que vous détenez tous les droits nécessaires sur le contenu soumis et que celui-ci ne viole aucun droit de propriété intellectuelle de tiers, y compris mais sans s'y limiter, les droits d'auteur, les marques déposées ou les droits de confidentialité.
                     </p>
                     <h3 class="mt-3">
-                        Confidentialité :
+                        Confidentialité
                     </h3>
                     <p class="mt-3">
                         Les informations fournies via le formulaire de contact seront traitées conformément à notre politique de confidentialité.
@@ -44,7 +44,7 @@
                         Nous nous engageons à protéger vos informations personnelles et à ne les utiliser que dans le but de répondre à vos demandes ou de vous fournir des services.
                     </p>
                     <h3 class="mt-3">
-                        Modification des conditions d'utilisation :
+                        Modification des conditions d'utilisation
                     </h3>
                     <p class="mt-3">
                         Nous nous réservons le droit de modifier ces conditions d'utilisation à tout moment.

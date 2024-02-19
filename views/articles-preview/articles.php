@@ -17,7 +17,7 @@
             </div>
             <div class="row g-3 mt-3">
                 <?php foreach ($games as $game) { ?>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3">
                         <h2 class="fw-bold text-uppercase py-2 aCardMin"><?= htmlspecialchars($game->game_name) ?></h2>
                         <div class="card rounded-4 border-0 shadow" data-aos="fade-up" data-aos-duration="700">
                             <img src="/public/uploads/games/<?= $game->game_picture ?>" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="$game->game_name">

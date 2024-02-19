@@ -74,8 +74,9 @@
                                     <div><small class="form-text text-danger"><?= $error['checkboxForm'] ?? '' ?></small></div>
                                     <input class="form-check-input" id="checkboxForm" name="checkboxForm" type="checkbox" value="checkbox" <?= (isset($checkbox)) ? 'checked' : '' ?> required>
                                     <label class="form-check-label" for="checkboxForm">
-                                        J'accepte que mes données soient utilisées conformément à la <a href="#">politique de confidentialité.</a>
+                                        J'accepte que mes données soient utilisées conformément à la
                                     </label>
+                                    <a href="/controllers/RGPD-ctrl.php">politique de confidentialité.</a>
                                 </div>
                             </div>
                             <div>
