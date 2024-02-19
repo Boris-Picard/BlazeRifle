@@ -59,7 +59,7 @@ try {
                             </ul>
                         </li>
                     </ul>
-                    <a class="nav-link navlinkHover <?= $activeArticles ? 'active' : '' ?>" href="/controllers/articles-preview/articles-ctrl.php">Les articles</a>
+                    <a class="nav-link navlinkHover <?= $activeArticles ? 'active' : '' ?>" href="/controllers/articles-preview/articles-ctrl.php">Les news</a>
                     <a class="nav-link navlinkHover <?= $activeGuide ? 'active' : '' ?> " href="/controllers/guides-preview/guides-ctrl.php">Les Guides</a>
                     <a class="nav-link navlinkHover text-dark <?= $activeTips ? 'active' : '' ?>" href="/controllers/tips-list/tips-ctrl.php">Les Bons Plans</a>
                     <a class="nav-link navlinkHover text-dark <?= $activeCalendar ? 'active' : '' ?>" href="/controllers/calendar/calendar-ctrl.php">Calendrier des Events</a>

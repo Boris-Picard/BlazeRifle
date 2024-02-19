@@ -93,7 +93,7 @@
                                 <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center justify-content-center p-3">
-                                            <h1 class="text-uppercase fs-5 fw-bold"><span class="text-danger">articles sur :</span> <?= htmlspecialchars($event->game_name) ?></h1>
+                                            <h1 class="text-uppercase fs-5 fw-bold"><span class="text-danger">News sur :</span> <?= htmlspecialchars($event->game_name) ?></h1>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -137,7 +137,7 @@
                                             } ?>
                                             <div class="d-flex justify-content-center mt-3 mb-4">
                                                 <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?? $articles[0]->id_game ?>&id_category=<?= $article->id_category ?? $articles[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    les articles : <?= $articles[0]->game_name ?>
+                                                    les News : <?= $articles[0]->game_name ?>
                                                 </a>
                                             </div>
                                         </div>

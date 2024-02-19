@@ -7,16 +7,16 @@
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/controllers/home-ctrl.php">Accueil</a></li>
-                                <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php?">Preview Des Articles</a></li>
+                                <li class="breadcrumb-item"><a href="/controllers/articles-preview/articles-ctrl.php?">Preview des News</a></li>
                                 <?php if ($article->id_category === REGEX_TIPS) { ?>
                                     <li class="breadcrumb-item"><a href="/controllers/tips-list/tips-ctrl.php">Tous les <?= $article->label ?></a></li>
                                 <?php } elseif ($article->id_category === REGEX_GUIDES) { ?>
                                     <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>">Tous les <?= $article->label ?> sur <?= $article->game_name ?></a></li>
                                 <?php } else { ?>
                                     <li class="breadcrumb-item"><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $article->id_game ?>">Preview <?= $article->game_name ?> </a></li>
-                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>">Articles sur <?= $article->game_name ?></a></li>
+                                    <li class="breadcrumb-item"><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>">News sur <?= $article->game_name ?></a></li>
                                 <?php } ?>
-                                <li class="breadcrumb-item active" aria-current="page">Article</li>
+                                <li class="breadcrumb-item active" aria-current="page">News</li>
                             </ol>
                         </nav>
                     </div>
@@ -30,7 +30,7 @@
                                 <?php } elseif ($article->id_category === REGEX_GUIDES) { ?>
                                     <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none text-capitalize fw-bold">Tous les <?= $article->label ?> sur <?= $article->game_name ?></a></small>
                                 <?php } else { ?>
-                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none text-capitalize fw-bold">Articles sur <?= $article->game_name ?></a></small>
+                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none text-capitalize fw-bold">News sur <?= $article->game_name ?></a></small>
                                 <?php } ?>
                                 <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Suivant</a></small>
                             </div>
@@ -283,7 +283,7 @@
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row justify-content-center text-center p-3">
-                                        <h5 class="text-uppercase fw-bold"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les Articles :  </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les Guides : </span>" . $firstArticleSidebar->game_name ?></h5>
+                                        <h5 class="text-uppercase fw-bold"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les News :  </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les Guides : </span>" . $firstArticleSidebar->game_name ?></h5>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -335,7 +335,7 @@
                                         <div class="d-flex justify-content-center mt-3 mb-4">
                                             <?php if (isset($article->id_game) && $article->id_category !== REGEX_TIPS) { ?>
                                                 <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    <?= $id_category == REGEX_ARTICLES_GAMES ? 'Les articles : ' . $firstArticleSidebar->game_name  : ' Les guides : ' . $firstArticleSidebar->game_name ?>
+                                                    <?= $id_category == REGEX_ARTICLES_GAMES ? 'Les News : ' . $firstArticleSidebar->game_name  : ' Les guides : ' . $firstArticleSidebar->game_name ?>
                                                 </a>
                                             <?php } else { ?>
                                                 <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">

@@ -15,22 +15,21 @@
                             </div>
                             <?php if (!empty($articles[0])) { ?>
                                 <div class="col-md-8 col-12 py-3">
-                                    <h2 class="h2 text-uppercase fw-bold">Tous les articles <span class="text-danger"><?= !empty($id_game) ? $articles[0]->game_name : '' ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold">Toutes les news <span class="text-danger"><?= !empty($id_game) ? $articles[0]->game_name : '' ?></span></h2>
                                 </div>
                                 <div class="col-md-4 col-12 btnTitle d-flex align-items-center justify-content-end">
                                     <?php if (!empty($id_game)) { ?>
                                         <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $articles[0]->id_game ?>&id_category=<?= $articles[0]->id_category ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                            Tous les articles : <?= $articles[0]->game_name ?>
+                                            Toutes les news : <?= $articles[0]->game_name ?>
                                             <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                         </a>
                                     <?php } else {  ?>
                                         <a href="/controllers/articles-list/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                            Tous les articles
+                                            Toutes les news
                                             <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                         </a>
                                     <?php } ?>
                                 </div>
-                            <?php  } ?>
                         </div>
                         <!-- CARD ACTU -->
                         <div class="row">
@@ -86,7 +85,13 @@
                                         </div>
                                     </div>
                                 <?php }
-                                ?>
+                            } else { ?>
+                                <div class="sectionContainer">
+                                    <div class="col-12 col-md-9">
+                                        <h1 class="articleTitle text-uppercase fw-bold">Pas de news en cours</span></h1>
+                                    </div>
+                                </div>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -208,6 +213,12 @@
                             </div>
                         </div>
                     </div>
+                <?php } else { ?>
+                    <div class="sectionContainer">
+                        <div class="col-12 col-md-9">
+                            <h1 class="articleTitle text-uppercase fw-bold">Pas de guides en cours</span></h1>
+                        </div>
+                    </div>
                 <?php } ?>
             </section>
             <!-- LES DERNIERES VIDEOS -->
@@ -259,64 +270,78 @@
                         </div>
                     </div>
                 </section>
+            <?php } else { ?>
+                <div class="sectionContainer">
+                    <div class="col-12 col-md-9">
+                        <h1 class="articleTitle text-uppercase fw-bold">Pas de vidéos disponible</span></h1>
+                    </div>
+                </div>
             <?php } ?>
             <!-- GAMES DISCOVER -->
-            <section class="sectionContainer">
-                <div class="container">
-                    <div class="row g-3 mt-3">
-                        <div class="col-12 col-md-9">
-                            <h1 class="articleTitle text-uppercase fw-bold">les événements à venir <span class="text-danger"><?= !empty($id_game) ? 'sur ' . $events[0]->game_name : '' ?></span></h1>
-                        </div>
-                        <div class="col-md-3 d-flex align-items-center justify-content-end">
-                            <?php if (!empty($id_game)) { ?>
-                                <a href="/controllers/calendar/calendar-ctrl.php?id_game=<?= $events[0]->id_game ?>" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                    les événements : <?= $events[0]->game_name ?>
-                                    <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                                </a>
-                            <?php } else { ?>
-                                <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                                    les événements
-                                    <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                                </a>
-                            <?php } ?>
-                        </div>
-                        <!-- CARD EVENT 1 -->
-                        <div class="col-12">
-                            <div class="row g-3">
-                                <?php foreach ($events as $event) { ?>
-                                    <div class="col-md-6">
-                                        <div class="card text-bg-dark bg-transparent border-0 rounded-4 mb-3" data-aos="fade-up" data-aos-duration="700">
-                                            <div class="ratio ratio-16x9 ">
-                                                <img src="/public/uploads/events/<?= $event->event_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 " alt="<?= $event->game_name ?>">
-                                            </div>
-                                            <div class="cardShadow">
-                                                <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                                    <p class="p-0 m-0">
-                                                        <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
-                                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $event->game_name ?></span>
-                                                    </p>
-                                                    <div class="w-75">
-                                                        <a href="<?= $event->event_link ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
-                                                            <?= $event->event_title ?>
-                                                        </a>
-                                                    </div>
-                                                    <div class="card-text d-flex justify-content-between mt-2">
-                                                        <small>
-                                                            le <?= $event->formattedDate ?>
-                                                        </small>
-                                                        <small class="text-uppercase">
-                                                            A <?= $event->place ?>
-                                                        </small>
+            <?php if (!empty($events[0])) { ?>
+                <section class="sectionContainer">
+                    <div class="container">
+                        <div class="row g-3 mt-3">
+                            <div class="col-12 col-md-9">
+                                <h1 class="articleTitle text-uppercase fw-bold">les événements à venir <span class="text-danger"><?= !empty($id_game) ? 'sur ' . $events[0]->game_name : '' ?></span></h1>
+                            </div>
+                            <div class="col-md-3 d-flex align-items-center justify-content-end">
+                                <?php if (!empty($id_game)) { ?>
+                                    <a href="/controllers/calendar/calendar-ctrl.php?id_game=<?= $events[0]->id_game ?>" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                        les événements : <?= $events[0]->game_name ?>
+                                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                    </a>
+                                <?php } else { ?>
+                                    <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                        les événements
+                                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                                    </a>
+                                <?php } ?>
+                            </div>
+                            <!-- CARD EVENT 1 -->
+                            <div class="col-12">
+                                <div class="row g-3">
+                                    <?php foreach ($events as $event) { ?>
+                                        <div class="col-md-6">
+                                            <div class="card text-bg-dark bg-transparent border-0 rounded-4 mb-3" data-aos="fade-up" data-aos-duration="700">
+                                                <div class="ratio ratio-16x9 ">
+                                                    <img src="/public/uploads/events/<?= $event->event_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 " alt="<?= $event->game_name ?>">
+                                                </div>
+                                                <div class="cardShadow">
+                                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                                        <p class="p-0 m-0">
+                                                            <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                                            <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $event->game_name ?></span>
+                                                        </p>
+                                                        <div class="w-75">
+                                                            <a href="<?= $event->event_link ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                                                <?= $event->event_title ?>
+                                                            </a>
+                                                        </div>
+                                                        <div class="card-text d-flex justify-content-between mt-2">
+                                                            <small>
+                                                                le <?= $event->formattedDate ?>
+                                                            </small>
+                                                            <small class="text-uppercase">
+                                                                A <?= $event->place ?>
+                                                            </small>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                <?php } ?>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
+            <?php } else { ?>
+                <div class="sectionContainer">
+                    <div class="col-12 col-md-9">
+                        <h1 class="articleTitle text-uppercase fw-bold">Pas d'événements en cours</span></h1>
+                    </div>
                 </div>
-            </section>
+            <?php } ?>
         </div>
     </section>
