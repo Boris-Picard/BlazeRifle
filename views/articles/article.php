@@ -65,7 +65,7 @@
                         <div class="row">
                             <!-- DESCRIPTION -->
                             <div class="col-12 py-5">
-                                <h2 class="fw-semibold text-break">
+                                <h2 class="fw-semibold text-break fs-3">
                                     <?= html_entity_decode($article->article_description) ?>
                                 </h2>
                                 <!-- IMG -->

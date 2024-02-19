@@ -53,13 +53,13 @@
                                                 <?php if (is_null($quiz->deleted_at)) { ?>
                                                     <a href="/controllers/dashboard/quiz/list-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="btn btn-small btn-success">Actif</a>
                                                 <?php  } else { ?>
-                                                    <a href="/controllers/dashboard/quiz/list-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="btn btn-secondary btn-sm">Pas actif</a>
+                                                    <a href="/controllers/dashboard/quiz/list-quiz-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="btn btn-secondary btn-sm">Inactif</a>
                                                 <?php } ?>
                                             </td>
                                             <td class="fw-semibold text-break">10</td>
                                             <td class="fw-semibold text-break">
                                                 <a href="/controllers/dashboard/questions/add-questions-ctrl.php?id_quiz=<?= $quiz->id_quiz ?>" class="text-decoration-none btn btn-sm btn-light">
-                                                    <i class="bi bi-plus-circle-fill"></i>
+                                                    <i class="bi bi-plus-circle-fill fs-4"></i>
                                                 </a>
                                             </td>
                                             <td>

@@ -47,7 +47,7 @@
                                     }
                                 } ?>
                                 <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>&id_category=<?= $article->id_category ?>" class="btn btn-danger text-light w-100 rounded-4 buttonArticleSelectionGame p-1 fw-bold text-uppercase aCardMin mt-3 mb-1">
-                                    Tous les articles sur : <?= $game->game_name ?>
+                                    Toutes les news sur : <?= $game->game_name ?>
                                 </a>
                             </div>
                         </div>
