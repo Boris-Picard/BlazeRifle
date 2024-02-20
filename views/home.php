@@ -33,181 +33,106 @@
     </section>
     <!-- fin hero page  -->
     <!-- DEBUT DES DERNIERS ARTICLES  -->
-    <section class="sectionContainer bg-light">
-        <div class="container">
-            <div class="row g-3 mt-3">
-                <div class="col-md-10">
-                    <h1 class="text-dark text-uppercase articleTitle fw-bold">Les derniers articles</h1>
-                </div>
-                <div class="col-md-2 d-flex  align-items-center justify-content-end">
-                    <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                        Toutes les news
-                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                    </a>
-                </div>
-                <!-- MAIN CARD ARTICLE -->
-                <div class="col-md-6">
-                    <div class="card bg-transparent text-bg-dark border-0 rounded-4 cardArticleHome" data-aos="fade-up" data-aos-duration="700">
-                        <div class="ratio ratio-16x9 ">
-                            <img src="/public/uploads/article/<?= $firstArticle->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 cardArticleHome" alt="<?= $firstArticle->game_name ?>">
-                        </div>
-                        <div class="cardShadow">
-                            <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                <p class="p-0 m-0">
-                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 text-uppercase mb-2 text-uppercase"><?= $firstArticle->label ?></span>
-                                </p>
-                                <div class="w-100">
-                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticle->id_article ?>&id_category=<?= $firstArticle->id_category ?>&id_game=<?= $firstArticle->id_game ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
-                                        <?= $firstArticle->article_title ?>
-                                    </a>
-                                </div>
-                                <div class="card-text mt-2">
-                                    <small>
-                                        A <?= $firstArticle->formattedHour ?>
-                                        le <?= $firstArticle->formattedDate ?>
-                                        <?php if (!empty($firstArticle->countComments)) { ?>
-                                            <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $firstArticle->countComments ?></span>
-                                        <?php  } ?>
-                                        <span class="badge rounded-pill mb-1 border bg-transparent text-light text-uppercase fw-semibold"><?= $firstArticle->game_name ?></span>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
+    <?php if (isset($firstArticle)) { ?>
+        <section class="sectionContainer bg-light">
+            <div class="container">
+                <div class="row g-3 mt-3">
+                    <div class="col-md-10">
+                        <h1 class="text-dark text-uppercase articleTitle fw-bold">Les derniers articles</h1>
                     </div>
-                    <!-- UNDERCARD 1 -->
-                    <?php
-                    foreach ($articles as $article) { ?>
-                        <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4 mt-3" data-aos="fade-up" data-aos-duration="700">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="<?= $article->game_name ?>">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body py-1">
-                                        <p class="p-0 m-0">
-                                            <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2 text-uppercase"><?= $article->label ?></span>
-                                        </p>
-                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
-                                            <?= $article->article_title ?>
+                    <div class="col-md-2 d-flex  align-items-center justify-content-end">
+                        <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                            Toutes les news
+                            <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <!-- MAIN CARD ARTICLE -->
+                    <div class="col-md-6">
+                        <div class="card bg-transparent text-bg-dark border-0 rounded-4 cardArticleHome" data-aos="fade-up" data-aos-duration="700">
+                            <div class="ratio ratio-16x9 ">
+                                <img src="/public/uploads/article/<?= $firstArticle->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 cardArticleHome" alt="<?= $firstArticle->game_name ?>">
+                            </div>
+                            <div class="cardShadow">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <p class="p-0 m-0">
+                                        <span class="badge rounded-pill text-bg-danger p-2 px-4 text-uppercase mb-2 text-uppercase"><?= $firstArticle->label ?></span>
+                                    </p>
+                                    <div class="w-100">
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstArticle->id_article ?>&id_category=<?= $firstArticle->id_category ?>&id_game=<?= $firstArticle->id_game ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                            <?= $firstArticle->article_title ?>
                                         </a>
-                                        <div class="mt-1">
-                                            <small class="text-muted">
-                                                A <?= $article->formattedHour ?>
-                                                le <?= $article->formattedDate ?>
-                                                <?php if (!empty($article->countComments)) { ?>
-                                                    <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $article->countComments ?></span>
-                                                <?php  } ?>
-                                                <span class="badge rounded-pill border bg-transparent text-dark text-uppercase fw-semibold"><?= $article->game_name ?></span>
-                                            </small>
-                                        </div>
+                                    </div>
+                                    <div class="card-text mt-2">
+                                        <small>
+                                            A <?= $firstArticle->formattedHour ?>
+                                            le <?= $firstArticle->formattedDate ?>
+                                            <?php if (!empty($firstArticle->countComments)) { ?>
+                                                <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $firstArticle->countComments ?></span>
+                                            <?php  } ?>
+                                            <span class="badge rounded-pill mb-1 border bg-transparent text-light text-uppercase fw-semibold"><?= $firstArticle->game_name ?></span>
+                                        </small>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php  } ?>
-                </div>
-                <!-- SIDECARD 1 -->
-                <div class="col-md-6">
-                    <?php foreach ($sideArticles as $sideArticle) { ?>
-                        <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4" data-aos="fade-up" data-aos-duration="700">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="/public/uploads/article/<?= $sideArticle->article_picture ?>" loading="lazy" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="<?= $sideArticle->game_name ?>">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body py-1">
-                                        <p class="p-0 m-0">
-                                            <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2 text-uppercase"><?= $sideArticle->label ?></span>
-                                        </p>
-                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideArticle->id_article ?>&id_category=<?= $sideArticle->id_category ?>&id_game=<?= $sideArticle->id_game ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
-                                            <?= html_entity_decode($sideArticle->article_title) ?>
-                                        </a>
-                                        <div class="mt-1">
-                                            <small class="text-muted">
-                                                A <?= $sideArticle->formattedHour ?>
-                                                le <?= $sideArticle->formattedDate ?>
-                                                <?php if (!empty($sideArticle->countComments)) { ?>
-                                                    <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $sideArticle->countComments ?></span>
-                                                <?php  } ?>
-                                                <span class="badge rounded-pill border bg-transparent text-dark text-uppercase fw-semibold"><?= $sideArticle->game_name ?></span>
-                                            </small>
-                                        </div>
+                        <!-- UNDERCARD 1 -->
+                        <?php
+                        foreach ($articles as $article) { ?>
+                            <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4 mt-3" data-aos="fade-up" data-aos-duration="700">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="<?= $article->game_name ?>">
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- FIN DES ARTICLES -->
-    <!-- LES DERNIERS GUIDES  -->
-    <section class="sectionContainer bg-light">
-        <div class="container">
-            <div class="row g-3 mt-3">
-                <div class="col-10">
-                    <h1 class="text-dark text-uppercase fw-bold">Les derniers guides</h1>
-                </div>
-                <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                        Tous les guides
-                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                    </a>
-                </div>
-                <div class="col-12">
-                    <div class="row g-3">
-                        <!-- MAIN CARD GUIDE -->
-                        <div class="col-md-6 col-12 px-2">
-                            <div class="card text-bg-dark border-0 rounded-4 bg-white cardGuideBig" data-aos="fade-up" data-aos-duration="700">
-                                <div class="ratio ratio-16x9 ">
-                                    <img src="/public/uploads/article/<?= $firstGuide->article_picture ?>" loading="lazy" class="card-img object-fit-cover cardGuideBig rounded-4 " alt="<?= $firstGuide->game_name ?>">
-                                </div>
-                                <div class="cardShadow">
-                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                        <p class="p-0 m-0">
-                                            <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $firstGuide->label ?></span>
-                                        </p>
-                                        <div class="w-75">
-                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstGuide->id_article ?>&id_category=<?= $firstGuide->id_category ?>&id_game=<?= $firstGuide->id_game ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
-                                                <?= $firstGuide->article_title ?>
+                                    <div class="col-md-8">
+                                        <div class="card-body py-1">
+                                            <p class="p-0 m-0">
+                                                <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2 text-uppercase"><?= $article->label ?></span>
+                                            </p>
+                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
+                                                <?= $article->article_title ?>
                                             </a>
-                                        </div>
-                                        <div class="card-text mt-2">
-                                            <small>
-                                                A <?= $firstGuide->formattedHour ?>
-                                                le <?= $firstGuide->formattedDate ?>
-                                                <?php if (!empty($firstGuide->countComments)) { ?>
-                                                    <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $firstGuide->countComments ?></span>
-                                                <?php  } ?>
-                                                <span class="badge rounded-pill mb-1 border bg-transparent text-light fw-semibold text-uppercase"><?= $firstGuide->game_name ?></span>
-                                            </small>
+                                            <div class="mt-1">
+                                                <small class="text-muted">
+                                                    A <?= $article->formattedHour ?>
+                                                    le <?= $article->formattedDate ?>
+                                                    <?php if (!empty($article->countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $article->countComments ?></span>
+                                                    <?php  } ?>
+                                                    <span class="badge rounded-pill border bg-transparent text-dark text-uppercase fw-semibold"><?= $article->game_name ?></span>
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- SIDECARD 1 -->
-                        <?php foreach ($sideGuides as $sideGuide) { ?>
-                            <div class="col-md-3 px-2">
-                                <div class="card rounded-4 border-0 cardGuideMin shadow" data-aos="fade-up" data-aos-duration="700">
-                                    <img src="/public/uploads/article/<?= $sideGuide->article_picture ?>" loading="lazy" class="card-img-top rounded-4 h-50 object-fit-cover" alt="<?= $sideGuide->game_name ?>">
-                                    <div class="card-body py-1 d-flex flex-column justify-content-center ">
-                                        <p class="p-0 m-0">
-                                            <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $sideGuide->label ?></span>
-                                        </p>
-                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideGuide->id_article ?>&id_category=<?= $sideGuide->id_category ?>&id_game=<?= $sideGuide->id_game ?>" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
-                                            <?= $sideGuide->article_title ?>
-                                        </a>
-                                        <div class="mt-1">
-                                            <small class="text-muted">
-                                                A <?= $sideGuide->formattedHour ?>
-                                                le <?= $sideGuide->formattedDate ?>
-                                                <?php if (!empty($sideGuide->countComments)) { ?>
-                                                    <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $sideGuide->countComments ?></span>
-                                                <?php  } ?>
-                                                <span class="badge rounded-pill border bg-transparent text-dark fw-semibold text-uppercase "><?= $sideGuide->game_name ?></span>
-                                            </small>
+                        <?php  } ?>
+                    </div>
+                    <!-- SIDECARD 1 -->
+                    <div class="col-md-6">
+                        <?php foreach ($sideArticles as $sideArticle) { ?>
+                            <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4" data-aos="fade-up" data-aos-duration="700">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="/public/uploads/article/<?= $sideArticle->article_picture ?>" loading="lazy" class="img-fluid rounded-4 object-fit-cover cardArticleHomeMin" alt="<?= $sideArticle->game_name ?>">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body py-1">
+                                            <p class="p-0 m-0">
+                                                <span class="badge rounded-pill text-bg-danger p-2 mt-1 px-4 mb-2 text-uppercase"><?= $sideArticle->label ?></span>
+                                            </p>
+                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideArticle->id_article ?>&id_category=<?= $sideArticle->id_category ?>&id_game=<?= $sideArticle->id_game ?>" class="card-text mt-1 fw-bold stretched-link aCard text-wrap text-decoration-none text-dark">
+                                                <?= html_entity_decode($sideArticle->article_title) ?>
+                                            </a>
+                                            <div class="mt-1">
+                                                <small class="text-muted">
+                                                    A <?= $sideArticle->formattedHour ?>
+                                                    le <?= $sideArticle->formattedDate ?>
+                                                    <?php if (!empty($sideArticle->countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $sideArticle->countComments ?></span>
+                                                    <?php  } ?>
+                                                    <span class="badge rounded-pill border bg-transparent text-dark text-uppercase fw-semibold"><?= $sideArticle->game_name ?></span>
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -216,8 +141,87 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php } ?>
+    <!-- FIN DES ARTICLES -->
+    <!-- LES DERNIERS GUIDES  -->
+    <?php if (isset($firstGuide)) { ?>
+        <section class="sectionContainer bg-light">
+            <div class="container">
+                <div class="row g-3 mt-3">
+                    <div class="col-10">
+                        <h1 class="text-dark text-uppercase fw-bold">Les derniers guides</h1>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center justify-content-end">
+                        <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                            Tous les guides
+                            <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div class="row g-3">
+                            <!-- MAIN CARD GUIDE -->
+                            <div class="col-md-6 col-12 px-2">
+                                <div class="card text-bg-dark border-0 rounded-4 bg-white cardGuideBig" data-aos="fade-up" data-aos-duration="700">
+                                    <div class="ratio ratio-16x9 ">
+                                        <img src="/public/uploads/article/<?= $firstGuide->article_picture ?>" loading="lazy" class="card-img object-fit-cover cardGuideBig rounded-4 " alt="<?= $firstGuide->game_name ?>">
+                                    </div>
+                                    <div class="cardShadow">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                            <p class="p-0 m-0">
+                                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $firstGuide->label ?></span>
+                                            </p>
+                                            <div class="w-75">
+                                                <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstGuide->id_article ?>&id_category=<?= $firstGuide->id_category ?>&id_game=<?= $firstGuide->id_game ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                                    <?= $firstGuide->article_title ?>
+                                                </a>
+                                            </div>
+                                            <div class="card-text mt-2">
+                                                <small>
+                                                    A <?= $firstGuide->formattedHour ?>
+                                                    le <?= $firstGuide->formattedDate ?>
+                                                    <?php if (!empty($firstGuide->countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $firstGuide->countComments ?></span>
+                                                    <?php  } ?>
+                                                    <span class="badge rounded-pill mb-1 border bg-transparent text-light fw-semibold text-uppercase"><?= $firstGuide->game_name ?></span>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SIDECARD 1 -->
+                            <?php foreach ($sideGuides as $sideGuide) { ?>
+                                <div class="col-md-3 px-2">
+                                    <div class="card rounded-4 border-0 cardGuideMin shadow" data-aos="fade-up" data-aos-duration="700">
+                                        <img src="/public/uploads/article/<?= $sideGuide->article_picture ?>" loading="lazy" class="card-img-top rounded-4 h-50 object-fit-cover" alt="<?= $sideGuide->game_name ?>">
+                                        <div class="card-body py-1 d-flex flex-column justify-content-center ">
+                                            <p class="p-0 m-0">
+                                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $sideGuide->label ?></span>
+                                            </p>
+                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $sideGuide->id_article ?>&id_category=<?= $sideGuide->id_category ?>&id_game=<?= $sideGuide->id_game ?>" class="card-text mt-1 fw-bold stretched-link  aCardBig text-wrap text-decoration-none text-dark">
+                                                <?= $sideGuide->article_title ?>
+                                            </a>
+                                            <div class="mt-1">
+                                                <small class="text-muted">
+                                                    A <?= $sideGuide->formattedHour ?>
+                                                    le <?= $sideGuide->formattedDate ?>
+                                                    <?php if (!empty($sideGuide->countComments)) { ?>
+                                                        <span class="badge rounded-pill text-uppercase bg-danger text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $sideGuide->countComments ?></span>
+                                                    <?php  } ?>
+                                                    <span class="badge rounded-pill border bg-transparent text-dark fw-semibold text-uppercase "><?= $sideGuide->game_name ?></span>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <?php } ?>
     <!-- FIN DES GUIDES  -->
     <!-- DEBUT DES JEUX DU MOMENT -->
     <section class="sectionContainer">
@@ -281,112 +285,114 @@
     </section>
     <!-- FIN DES JEUX DU MOMENT  -->
     <!-- DEBUT LES BONS PLANS -->
-    <section class="sectionContainer">
-        <div class="container">
-            <div class="row g-3 mt-3">
-                <div class="col-md-10 col-12">
-                    <h1 class="articleTitle text-uppercase fw-bold">Les bons plans</h1>
-                </div>
-                <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                        les bons plans
-                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                    </a>
-                </div>
-                <div class="col-12">
-                    <div class="row g-3">
-                        <!-- MAIN CARD LEFT -->
-                        <div class="col-12 col-md-6">
-                            <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow" data-aos="fade-up" data-aos-duration="700">
-                                <img src="/public/uploads/article/<?= $firstTips->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $firstTips->label ?>">
-                                <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                    <p class="p-0 m-0">
-                                        <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase"><?= $firstTips->label ?></span>
-                                    </p>
-                                    <div class="w-100">
-                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstTips->id_article ?>&id_category=<?= $firstTips->id_category ?>&id_game=<?= $firstTips->id_game ?>" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
-                                            <?= $firstTips->article_title ?>
-                                        </a>
-                                    </div>
-                                    <div class="card-text mt-2">
-                                        <small>
-                                            A <?= $firstTips->formattedHour ?>
-                                            le <?= $firstTips->formattedDate ?>
-                                            <?php if (!empty($firstTips->countComments)) { ?>
-                                                <span class="badge rounded-pill text-uppercase bg-primary text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $firstTips->countComments ?></span>
-                                            <?php  } ?>
-                                        </small>
+    <?php if (isset($firstTips)) { ?>
+        <section class="sectionContainer">
+            <div class="container">
+                <div class="row g-3 mt-3">
+                    <div class="col-md-10 col-12">
+                        <h1 class="articleTitle text-uppercase fw-bold">Les bons plans</h1>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center justify-content-end">
+                        <a href="/controllers/tips-list/tips-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                            les bons plans
+                            <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div class="row g-3">
+                            <!-- MAIN CARD LEFT -->
+                            <div class="col-12 col-md-6">
+                                <div class="card bg-dark text-white p-0 cardGuideLeft border-0 rounded-4 cardShadow" data-aos="fade-up" data-aos-duration="700">
+                                    <img src="/public/uploads/article/<?= $firstTips->article_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 w-100 h-100" alt="<?= $firstTips->label ?>">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                        <p class="p-0 m-0">
+                                            <span class="badge rounded-pill text-bg-primary p-2 px-4 mb-2 text-uppercase"><?= $firstTips->label ?></span>
+                                        </p>
+                                        <div class="w-100">
+                                            <a href="/controllers/articles/article-ctrl.php?id_article=<?= $firstTips->id_article ?>&id_category=<?= $firstTips->id_category ?>&id_game=<?= $firstTips->id_game ?>" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
+                                                <?= $firstTips->article_title ?>
+                                            </a>
+                                        </div>
+                                        <div class="card-text mt-2">
+                                            <small>
+                                                A <?= $firstTips->formattedHour ?>
+                                                le <?= $firstTips->formattedDate ?>
+                                                <?php if (!empty($firstTips->countComments)) { ?>
+                                                    <span class="badge rounded-pill text-uppercase bg-primary text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $firstTips->countComments ?></span>
+                                                <?php  } ?>
+                                            </small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-lg-3 justify-content-between d-flex flex-column">
-                            <!-- CARD PREMIERE COL -->
-                            <?php foreach ($tips as $tip) { ?>
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden" data-aos="fade-up" data-aos-duration="700">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/uploads/article/<?= $tip->article_picture ?>" loading="lazy" alt="<?= $tip->label ?>" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase"><?= $tip->label ?></small>
-                                                <div class="mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $tip->id_article ?>&id_category=<?= $tip->id_category ?>&id_game=<?= $tip->id_game ?>" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        <?= $tip->article_title ?>
-                                                    </a>
+                            <div class="col-12 col-lg-3 justify-content-between d-flex flex-column">
+                                <!-- CARD PREMIERE COL -->
+                                <?php foreach ($tips as $tip) { ?>
+                                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden" data-aos="fade-up" data-aos-duration="700">
+                                        <div class="row g-0 cardGuideRight">
+                                            <div class="col-auto">
+                                                <img src="/public/uploads/article/<?= $tip->article_picture ?>" loading="lazy" alt="<?= $tip->label ?>" class="imgGuideRight object-fit-cover rounded-4">
+                                            </div>
+                                            <div class="col-md-8 p-0 ">
+                                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase"><?= $tip->label ?></small>
+                                                    <div class="mt-1">
+                                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $tip->id_article ?>&id_category=<?= $tip->id_category ?>&id_game=<?= $tip->id_game ?>" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                            <?= $tip->article_title ?>
+                                                        </a>
+                                                    </div>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">
+                                                            A <?= $tip->formattedHour ?>
+                                                            le <?= $tip->formattedDate ?>
+                                                            <?php if (!empty($tip->countComments)) { ?>
+                                                                <span class="badge rounded-pill text-uppercase bg-primary text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $tip->countComments ?></span>
+                                                            <?php  } ?>
+                                                        </small>
+                                                    </p>
                                                 </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">
-                                                        A <?= $tip->formattedHour ?>
-                                                        le <?= $tip->formattedDate ?>
-                                                        <?php if (!empty($tip->countComments)) { ?>
-                                                            <span class="badge rounded-pill text-uppercase bg-primary text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $tip->countComments ?></span>
-                                                        <?php  } ?>
-                                                    </small>
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                        <!-- CARD DEUXIEME COL -->
-                        <div class="col-3 d-flex justify-content-between flex-column">
-                            <?php foreach ($tipsSecondCol as $tip) { ?>
-                                <div class="card cardGuideRight bg-transparent border-0 overflow-hidden" data-aos="fade-up" data-aos-duration="700">
-                                    <div class="row g-0 cardGuideRight">
-                                        <div class="col-auto">
-                                            <img src="/public/uploads/article/<?= $tip->article_picture ?>" loading="lazy" alt="<?= $tip->label ?>" class="imgGuideRight object-fit-cover rounded-4">
-                                        </div>
-                                        <div class="col-md-8 col-12 p-0 ">
-                                            <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
-                                                <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase"><?= $tip->label ?></small>
-                                                <div class="mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $tip->id_article ?>&id_category=<?= $tip->id_category ?>&id_game=<?= $tip->id_game ?>" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
-                                                        <?= $tip->article_title ?>
-                                                    </a>
+                                <?php } ?>
+                            </div>
+                            <!-- CARD DEUXIEME COL -->
+                            <div class="col-3 d-flex justify-content-between flex-column">
+                                <?php foreach ($tipsSecondCol as $tip) { ?>
+                                    <div class="card cardGuideRight bg-transparent border-0 overflow-hidden" data-aos="fade-up" data-aos-duration="700">
+                                        <div class="row g-0 cardGuideRight">
+                                            <div class="col-auto">
+                                                <img src="/public/uploads/article/<?= $tip->article_picture ?>" loading="lazy" alt="<?= $tip->label ?>" class="imgGuideRight object-fit-cover rounded-4">
+                                            </div>
+                                            <div class="col-md-8 col-12 p-0 ">
+                                                <div class="card-body w-100 cardGuideRight p-0 mx-2 d-flex flex-column">
+                                                    <small class="card-text text-primary titlecardGuideRight fw-semibold m-0 p-0 text-uppercase"><?= $tip->label ?></small>
+                                                    <div class="mt-1">
+                                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $tip->id_article ?>&id_category=<?= $tip->id_category ?>&id_game=<?= $tip->id_game ?>" class="card-text bodycardGuideRight stretchLinkHoverHome fw-semibold text-decoration-none text-dark stretched-link aCard">
+                                                            <?= $tip->article_title ?>
+                                                        </a>
+                                                    </div>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">
+                                                            A <?= $tip->formattedHour ?>
+                                                            le <?= $tip->formattedDate ?>
+                                                            <?php if (!empty($tip->countComments)) { ?>
+                                                                <span class="badge rounded-pill text-uppercase bg-primary text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $tip->countComments ?></span>
+                                                            <?php  } ?>
+                                                        </small>
+                                                    </p>
                                                 </div>
-                                                <p class="card-text">
-                                                    <small class="text-muted">
-                                                        A <?= $tip->formattedHour ?>
-                                                        le <?= $tip->formattedDate ?>
-                                                        <?php if (!empty($tip->countComments)) { ?>
-                                                            <span class="badge rounded-pill text-uppercase bg-primary text-white mb-1 mx-1 border fw-semibold"><i class="bi bi-chat-right-dots text-white mx-1 align-middle"></i><?= $tip->countComments ?></span>
-                                                        <?php  } ?>
-                                                    </small>
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            <?php } ?>
+                                <?php } ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php } ?>
     <!-- FIN LES BONS PLANS -->
     <!-- DEBUT TOP JEUX SELECTION -->
     <section class="sectionContainer">
@@ -432,54 +438,56 @@
     </section>
     <!-- FIN TOP JEUX SELECTION -->
     <!-- DEBUT SECTION EVENTS -->
-    <section class="sectionContainer">
-        <div class="container">
-            <div class="row g-3 mt-3">
-                <div class="col-12 col-md-10">
-                    <h1 class="articleTitle text-uppercase fw-bold">les événements à venir</h1>
-                </div>
-                <div class="col-md-2 d-flex align-items-center justify-content-end">
-                    <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                        les événements
-                        <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
-                    </a>
-                </div>
-                <!-- CARD EVENT 1 -->
-                <div class="col-12">
-                    <div class="row g-3">
-                        <?php foreach ($events as $event) { ?>
-                            <div class="col-md-6">
-                                <div class="card text-bg-dark bg-transparent border-0 rounded-4 mb-3" data-aos="fade-up" data-aos-duration="700">
-                                    <div class="ratio ratio-16x9 ">
-                                        <img src="/public/uploads/events/<?= $event->event_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 " alt="<?= $event->game_name ?>">
-                                    </div>
-                                    <div class="cardShadow">
-                                        <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                            <p class="p-0 m-0">
-                                                <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
-                                                <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $event->game_name ?></span>
-                                            </p>
-                                            <div class="w-75">
-                                                <a href="<?= $event->event_link ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
-                                                    <?= $event->event_title ?>
-                                                </a>
-                                            </div>
-                                            <div class="card-text d-flex justify-content-between mt-2">
-                                                <small>
-                                                    le <?= $event->formattedDate ?>
-                                                </small>
-                                                <small class="text-uppercase">
-                                                    A <?= $event->place ?>
-                                                </small>
+    <?php if (!empty($events)) { ?>
+        <section class="sectionContainer">
+            <div class="container">
+                <div class="row g-3 mt-3">
+                    <div class="col-12 col-md-10">
+                        <h1 class="articleTitle text-uppercase fw-bold">les événements à venir</h1>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-center justify-content-end">
+                        <a href="/controllers/calendar/calendar-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                            les événements
+                            <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <!-- CARD EVENT 1 -->
+                    <div class="col-12">
+                        <div class="row g-3">
+                            <?php foreach ($events as $event) { ?>
+                                <div class="col-md-6">
+                                    <div class="card text-bg-dark bg-transparent border-0 rounded-4 mb-3" data-aos="fade-up" data-aos-duration="700">
+                                        <div class="ratio ratio-16x9 ">
+                                            <img src="/public/uploads/events/<?= $event->event_picture ?>" loading="lazy" class="card-img object-fit-cover rounded-4 " alt="<?= $event->game_name ?>">
+                                        </div>
+                                        <div class="cardShadow">
+                                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                                <p class="p-0 m-0">
+                                                    <span class="badge rounded-pill pillsEvents text-bg-primary p-2 px-4 mb-2 text-uppercase">les événements</span>
+                                                    <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $event->game_name ?></span>
+                                                </p>
+                                                <div class="w-75">
+                                                    <a href="<?= $event->event_link ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                                        <?= $event->event_title ?>
+                                                    </a>
+                                                </div>
+                                                <div class="card-text d-flex justify-content-between mt-2">
+                                                    <small>
+                                                        le <?= $event->formattedDate ?>
+                                                    </small>
+                                                    <small class="text-uppercase">
+                                                        A <?= $event->place ?>
+                                                    </small>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php } ?>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php } ?>
     <!-- FIN SECTION EVENTS -->

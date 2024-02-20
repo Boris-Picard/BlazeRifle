@@ -17,8 +17,10 @@ try {
     }
 
     // Formater la date et l'heure de chaque article pour affichage
-    foreach ($allArticles as $game_articles) {
-        Date_Comment::formatDateComment($game_articles);
+    if (isset($allArticles)) {
+        foreach ($allArticles as $game_articles) {
+            Date_Comment::formatDateComment($game_articles);
+        }
     }
 } catch (PDOException $e) {
     die('Erreur guides : ' . $e->getMessage());

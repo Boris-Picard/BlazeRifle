@@ -223,13 +223,13 @@ document.querySelector('.letComment').addEventListener('click', () => {
 });
 
 // Gestion affichage des commentaires suivant
-document.querySelector('.showMoreComments').addEventListener('click', () => {
-    let comments = document.querySelectorAll('.commentNotShow')
-    comments.forEach(comment => {
-        comment.classList.toggle('d-none')
-    });
+// document.querySelector('.showMoreComments').addEventListener('click', () => {
+//     let comments = document.querySelectorAll('.commentNotShow')
+//     comments.forEach(comment => {
+//         comment.classList.toggle('d-none')
+//     });
     
-})
+// })
 
 // Gestionnaire d'événements pour le bouton d'annulation dans le formulaire principal de commentaire
     const cancelButton = document.querySelector('#commentForm .btn-outline-danger');

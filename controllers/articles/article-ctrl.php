@@ -16,12 +16,10 @@ try {
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
-    // $id_console = intval(filter_input(INPUT_GET, 'id_console', FILTER_SANITIZE_NUMBER_INT));
 
     //Récupération des IDs nettoyés. Si l'ID est égal à 0, alors je retourne la valeur null.
     $gameId = $id_game == 0 ? null : $id_game;
     $categoryId = $id_category == 0 ? null : $id_category;
-    // $consoleId = $id_console == 0 ? null : $id_console;
 
     // Récupérer les détails de l'article
     $article = Article::get($id_article, true, $categoryId);
@@ -32,9 +30,12 @@ try {
         $timestamp = strtotime($article->article_created_at);
         $article->formattedHour = date('H:i', $timestamp);
         $article->formattedDate = date('d/m/y', $timestamp);
-    } else {
+    } elseif($categoryId == REGEX_ARTICLES_GAMES || $categoryId == REGEX_GUIDES) {
         // Rediriger vers la liste des articles si l'article n'existe pas
         header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game . '&id_category=' . $id_category);
+        die;
+    } else {
+        header('location: /controllers/tips-list/tips-ctrl.php');
         die;
     }
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"" href="/favicon.png">
     <!-- <meta name="google-signin-client_id" content="277138796158-d2fp626m8vpjbk803agp0gd50m1h4r2h.apps.googleusercontent.com"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -270,11 +270,11 @@
                                     } ?>
                                 </div>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-12 d-flex justify-content-center mt-5">
                                     <button type="button" class="btn btn-danger w-50 fw-bold p-2 rounded-5 text-uppercase p-2 showMoreComments">plus de commentaires</button>
                                 </div>
-                            </div>
+                            </div> -->
                         </section>
                     </div>
                     <!-- SIDEBAR -->
