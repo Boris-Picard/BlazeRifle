@@ -24,16 +24,21 @@ try {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Nettoyage et validation du titre de l'article et validation
-        $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+        $title = filter_input(INPUT_POST, 'title'); // Récupère la donnée sans sanitisation
 
         if (empty($title)) {
             $error['title'] = 'Veuillez rentrer un titre';
         } else {
+            // Valide la donnée brute
             $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
             if (!$isOk) {
                 $error['title'] = 'Veuillez renseigner un titre de jeu correct';
+            } else {
+                // Sanitise la donnée après validation
+                $titleSanitised = htmlspecialchars($title, ENT_QUOTES, 'UTF-8');
             }
         }
+
 
         // Nettoyage et validation de la description de l'article et validation
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -52,28 +57,47 @@ try {
         }
 
         // Nettoyage et validation du premier sous-titre de l'article et validation
-        $secondTitle = filter_input(INPUT_POST, 'secondTitle', FILTER_SANITIZE_SPECIAL_CHARS);
+        $secondTitle = filter_input(INPUT_POST, 'secondTitle'); // Récupère la donnée sans sanitisation
 
         if (empty($secondTitle)) {
-            $error['secondTitle'] = 'Veuillez rentrer un sous-titre';
+            $error['secondTitle'] = 'Veuillez rentrer un titre';
         } else {
+            // Valide la donnée brute
             $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
             if (!$isOk) {
                 $error['secondTitle'] = 'Veuillez renseigner un titre de jeu correct';
+            } else {
+                // Sanitise la donnée après validation
+                $secondTitleSanitised = htmlspecialchars($secondTitle, ENT_QUOTES, 'UTF-8');
+            }
+        }
+
+        $thirdTitle = filter_input(INPUT_POST, 'thirdTitle'); // Récupère la donnée sans sanitisation
+
+        if (empty($thirdTitle)) {
+            $error['thirdTitle'] = 'Veuillez rentrer un titre';
+        } else {
+            // Valide la donnée brute
+            $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+            if (!$isOk) {
+                $error['thirdTitle'] = 'Veuillez renseigner un titre de jeu correct';
+            } else {
+                // Sanitise la donnée après validation
+                $thirdTitleSanitised = htmlspecialchars($thirdTitle, ENT_QUOTES, 'UTF-8');
             }
         }
 
         // Nettoyage et validation du deuxième sous-titre de l'article et validation
-        $thirdTitle = filter_input(INPUT_POST, 'thirdTitle', FILTER_SANITIZE_SPECIAL_CHARS);
+        // $thirdTitle = filter_input(INPUT_POST, 'thirdTitle', FILTER_SANITIZE_SPECIAL_CHARS);
 
-        if (empty($thirdTitle)) {
-            $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
-        } else {
-            $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
-            if (!$isOk) {
-                $error['thirdTitle'] = 'Veuillez renseigner un titre de jeu correct';
-            }
-        }
+        // if (empty($thirdTitle)) {
+        //     $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
+        // } else {
+        //     $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
+        //     if (!$isOk) {
+        //         $error['thirdTitle'] = 'Veuillez renseigner un titre de jeu correct';
+        //     }
+        // }
 
         // Nettoyage et validation de la première section de l'article et validation
         $firstSection = filter_input(INPUT_POST, 'firstSection', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -194,7 +218,7 @@ try {
 
             $article = new Article();
 
-            $article->setArticleTitle($title);
+            $article->setArticleTitle($titleSanitised);
             $article->setSecondTitle($secondTitle);
             $article->setThirdTitle($thirdTitle);
             $article->setArticlePicture($fileName);

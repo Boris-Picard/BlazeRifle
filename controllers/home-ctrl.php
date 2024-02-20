@@ -8,7 +8,7 @@ require_once __DIR__ . '/../helpers/Date_Comment.php';
 
 try {
     $articles = Article::getAll(id_category: REGEX_ARTICLES_GAMES, limit: 4, showConfirmedAt: true, order: 'DESC');
-    
+
     Date_Comment::formatDateComment($articles);
 
     $firstArticle = array_shift($articles);
@@ -34,18 +34,15 @@ try {
 
     $tipsSecondCol = Article::getAll(id_category: REGEX_TIPS, limit: 4, offset: 5, showConfirmedAt: true, order: 'DESC');
     Date_Comment::formatDateComment($tipsSecondCol);
-
-    // Récupérer tous les jeux à partir de la classe Game
-    $games = Game::getAll();
-
+    
     // Parcourir la liste des jeux
     foreach ($games as $game) {
         // Récupérer l'identifiant du jeu en cours
         $id_game = $game->id_game;
         // Récupérer les 10 premiers articles associés à ce jeu depuis la classe Article
-        $articles = Article::getAll($id_game, id_category: REGEX_ARTICLES_GAMES, showConfirmedAt: true, limit: 10, order: 'DESC');
+        $articlesList = Article::getAll($id_game, id_category: REGEX_ARTICLES_GAMES, showConfirmedAt: true, limit: 10, order: 'DESC');
         // Stocker les articles dans un tableau associatif en utilisant l'identifiant du jeu comme clé
-        $allArticles[$id_game] = $articles;
+        $allArticles[$id_game] = $articlesList;
     }
 
     $events = Event::getAll(limit: 4, offset: 0);

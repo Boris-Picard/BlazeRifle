@@ -31,7 +31,7 @@
                                 <div class="mb-3 col-md-12">
                                     <div><small class="form-text text-danger"><?= $error['title'] ?? '' ?></small></div>
                                     <label for="title" class="form-label">Titre de l'article <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="title" id="title" value="<?= $title ?? '' ?>"  aria-describedby="title" placeholder="Call of Duty 2025, une suite de Black Ops 2 ?" minlength="10" maxlength="150" required>
+                                    <input type="text" class="form-control" name="title" id="title" value="<?= $title ?? '' ?>" pattern=" <?= REGEX_TITLE ?> " aria-describedby="title" placeholder="Call of Duty 2025, une suite de Black Ops 2 ?" minlength="10" maxlength="150" required>
                                 </div>
                             </div>
                             <div class="row">

@@ -283,7 +283,11 @@
                             <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                 <div class="row">
                                     <div class="col-12 d-flex flex-row justify-content-center text-center p-3">
-                                        <h5 class="text-uppercase fw-bold"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les News :  </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les Guides : </span>" . $firstArticleSidebar->game_name ?></h5>
+                                        <?php if ($id_category == REGEX_ARTICLES_GAMES || $id_category == REGEX_GUIDES) { ?>
+                                            <h5 class="text-uppercase fw-bold"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les News :  </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les Guides : </span>" . $firstArticleSidebar->game_name ?></h5>
+                                        <?php } else { ?>
+                                            <h5 class="text-uppercase fw-bold">Les Bons Plans</h5>
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 <div class="row">

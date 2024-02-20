@@ -40,7 +40,7 @@ try {
     Date_Comment::formatDateComment($articlesSidebar);
     $firstArticleSidebar = array_shift($articlesSidebar);
 
-    $videos = Video::getAll($id_game, true, 4, 'DESC');
+    $videos = Video::getAll($gameId, true, 4, 'DESC');
 } catch (PDOException $e) {
     die('Erreur : ' . $e->getMessage());
 }

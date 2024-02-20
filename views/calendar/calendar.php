@@ -103,7 +103,7 @@
                                                     <img src="/public/uploads/article/<?= $articles[0]->article_picture ?>" class="object-fit-cover rounded-3" alt="<?= $articles[0]->game_name ?>">
                                                 </div>
                                                 <div class="card-body p-0 mt-1">
-                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articles[0]->id_article ?>&id_category=<?= $articles[0]->id_category ?>&id_game=<?= $articles[0]->id_game ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link"><?= htmlspecialchars($articles[0]->article_description) ?></a>
+                                                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $articles[0]->id_article ?>&id_category=<?= $articles[0]->id_category ?>&id_game=<?= $articles[0]->id_game ?>" class="card-text stretchLinkHover aCard fw-bold text-decoration-none text-dark stretched-link"><?= $articles[0]->article_description ?></a>
                                                     <div class="card-text mb-3">
                                                         <small class="text-muted">
                                                             <?= $articles[0]->article_created_at ?>

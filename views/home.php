@@ -38,10 +38,10 @@
             <div class="container">
                 <div class="row g-3 mt-3">
                     <div class="col-md-10">
-                        <h1 class="text-dark text-uppercase articleTitle fw-bold">Les derniers articles</h1>
+                        <h1 class="text-dark text-uppercase articleTitle fw-bold">Les dernières news</h1>
                     </div>
                     <div class="col-md-2 d-flex  align-items-center justify-content-end">
-                        <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                        <a href="/controllers/articles-list/articles-ctrl.php?id_category=<?= $firstArticle->id_category ?>" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                             Toutes les news
                             <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                         </a>
@@ -76,8 +76,7 @@
                             </div>
                         </div>
                         <!-- UNDERCARD 1 -->
-                        <?php
-                        foreach ($articles as $article) { ?>
+                        <?php foreach ($articles as $article) { ?>
                             <div class="card mb-3 shadow border-0 cardArticleHomeMin rounded-4 mt-3" data-aos="fade-up" data-aos-duration="700">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -105,7 +104,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php  } ?>
+                        <?php } ?>
                     </div>
                     <!-- SIDECARD 1 -->
                     <div class="col-md-6">
@@ -153,7 +152,7 @@
                         <h1 class="text-dark text-uppercase fw-bold">Les derniers guides</h1>
                     </div>
                     <div class="col-md-2 d-flex align-items-center justify-content-end">
-                        <a href="/controllers/guides-preview/guides-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                        <a href="/controllers/articles-list/articles-ctrl.php?id_category=<?= $firstGuide->id_category ?>" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                             Tous les guides
                             <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                         </a>
@@ -402,7 +401,7 @@
                     <div class="col-md-4">
                         <h2 class="fw-bold text-uppercase py-2 aCardMin text-danger"><?= $game->game_name ?></h2>
                         <div class="card rounded-4 border-0 shadow-lg" data-aos="fade-up" data-aos-duration="700">
-                            <img src="/public/uploads/games/<?= $game->game_picture ?>" loading="lazy" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="CALL OF DUTY SAISON 6">
+                            <img src="/public/uploads/games/<?= $game->game_picture ?>" loading="lazy" class="card-img object-fit-cover cardSelection w-100 rounded-4" alt="<?= $game->game_name ?>">
                             <div class="card-img-overlay cardSelection d-flex flex-column justify-content-end cardShadow">
                                 <p class="p-0 m-0 z-3">
                                     <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $game->id_game ?>&id_category=<?= $game->id_category ?>" class="text-uppercase text-decoration-none fw-bold text-light z-3 stretched-link icon-link icon-link-hover">
@@ -413,7 +412,7 @@
                             </div>
                             <div class="card-body p-3">
                                 <!-- ARTICLE -->
-                                <?php foreach ($allArticles as $articles) {
+                                <?php foreach ($allArticles as $key => $articles) {
                                     foreach ($articles as $article) {
                                         if ($game->id_game == $article->id_game) { ?>
                                             <p class="card-text d-flex align-items-center my-0">
@@ -467,7 +466,7 @@
                                                     <span class="badge rounded-pill text-bg-danger p-2 px-4 mb-2 text-uppercase"><?= $event->game_name ?></span>
                                                 </p>
                                                 <div class="w-75">
-                                                    <a href="<?= $event->event_link ?>" class="card-text fw-bold stretched-link  aCard text-wrap text-decoration-none text-light">
+                                                    <a href="<?= $event->event_link ?>" target="_blank" class="card-text fw-bold stretched-link aCard text-wrap text-decoration-none text-light">
                                                         <?= $event->event_title ?>
                                                     </a>
                                                 </div>

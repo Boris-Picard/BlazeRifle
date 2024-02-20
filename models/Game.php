@@ -108,7 +108,7 @@ class Game
      * Méthode pour récuperer toutes les données dans la table games
      * @return [type]
      */
-    public static function getAll(): array|false
+    public static function getAll(?int $limit = null): array|false
     {
         $pdo = Database::connect();
 
@@ -116,7 +116,14 @@ class Game
         FROM `games`
         WHERE 1=1';
 
-        $sth = $pdo->query($sql);
+        if (!is_null($limit)) {
+            $sql .= ' LIMIT :limit';
+            $sth = $pdo->prepare($sql);
+            $sth->bindValue(':limit', $limit, PDO::PARAM_INT);
+            $sth->execute();
+        } else {
+            $sth = $pdo->query($sql);
+        }
 
         $result = $sth->fetchAll(PDO::FETCH_OBJ);
 

@@ -8,7 +8,7 @@ define('PASSWORD', 'r.g[WZL_FZkqM0Gs');
 define('REGEX_TITLE', "[a-zA-Z0-9 .,éèêëàâäôöûüç:'-]{10,150}$");
 define('REGEX_TITLE_VIDEO', "[a-zA-Z0-9 .,éèêëàâäôöûüçÉÈÊËÀÂÄÔÖÛÜÇ:'-]{10,100}+$");
 define('REGEX_SECTION', "[a-zA-Z0-9 .,\'!?()-éèàêîôûäëïöùüç\n\r]{2,5000}+$");
-define('REGEX_NAME', '^[A-Za-z0-9-éèêëàâäôöûüç\' ]{2,150}+$');
+define('REGEX_NAME', '^[A-Za-z0-9-éèêëàâäôöûüç:\' ]{2,150}+$');
 define('IMAGE_TYPES',  ['image/jpeg', 'image/png', 'image/avif']);
 define('MAX_FILESIZE', 2 * 1024 * 1024);
 define('REGEX_PLACE', '^[A-Za-zÀ-ÖØ-öø-ÿ\-\s\']{2,}+$');
