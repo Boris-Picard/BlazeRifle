@@ -245,15 +245,15 @@ class User
         return $sth->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function confirm(?int $id_user): bool
+    public static function confirm(?string $email): bool
     {
         $pdo = Database::connect();
 
-        $sql = 'UPDATE `users` set `confirmed_at`= NOW() WHERE `id_user`= :id_user;';
+        $sql = 'UPDATE `users` set `confirmed_at`= NOW() WHERE `email`= :email;';
 
         $sth = $pdo->prepare($sql);
 
-        $sth->bindValue(':id_user', $id_user);
+        $sth->bindValue(':email', $email);
 
         $sth->execute();
 

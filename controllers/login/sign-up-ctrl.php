@@ -90,9 +90,9 @@ try {
             $error['checkboxForm'] = "Veuillez accepter";
         }
 
-        // if (User::isExist($email, null)) {
-        //     $error['email'] = 'Email déjà existant';
-        // }
+        if (User::isExist($email, null)) {
+            $error['email'] = 'Email déjà existant';
+        }
         
         if (User::isExist(null, $pseudo)) {
             $error['pseudo'] = 'Pseudo déjà existant';

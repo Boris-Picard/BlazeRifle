@@ -65,7 +65,19 @@
                                             <?php } ?>
                                         </td>
                                         <td class="fw-semibold text-break"><?= $user->user_created_at ?></td>
-                                        <td class="fw-semibold text-break"><?= $user->role ?></td>
+                                        <?php if ($user->role === 1) { ?>
+                                            <td class="text-danger fw-semibold">
+                                                Admin
+                                            </td>
+                                        <?php } elseif ($user->role === 2) { ?>
+                                            <td class="text-primary fw-semibold">
+                                                Membre
+                                            </td>
+                                        <?php  } else { ?>
+                                            <td class="text-warning fw-semibold">
+                                                Rédacteur
+                                            </td>
+                                        <?php } ?>
                                         <td>
                                             <a href="/controllers/dashboard/users/users-list-ctrl.php?id_user=<?= $user->id_user ?>" class="text-decoration-none btn btn-sm btn-light">
                                                 <i class="bi bi-archive text-dark fs-4"></i>

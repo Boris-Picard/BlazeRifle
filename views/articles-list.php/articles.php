@@ -143,13 +143,21 @@
                                                 </div>
                                             <?php } ?>
                                             <div class="d-flex justify-content-center mt-3 mb-4">
-                                                <?php if ($id_category == REGEX_GUIDES && $id_game == $firstArticleSidebar->id_game) { ?>
-                                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= REGEX_ARTICLES_GAMES ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                <?php if (empty($id_game) && $id_category == REGEX_ARTICLES_GAMES) { ?>
+                                                    <a href="/controllers/articles-list/articles-ctrl.php?id_category=<?= REGEX_GUIDES ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                        Les Guides
+                                                    </a>
+                                                <?php } elseif (empty($id_game) && $id_category == REGEX_GUIDES) { ?>
+                                                    <a href="/controllers/articles-list/articles-ctrl.php?id_category=<?= REGEX_ARTICLES_GAMES ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
                                                         Les News
                                                     </a>
-                                                <?php } else { ?>
-                                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= REGEX_GUIDES ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                        Les Guides
+                                                <?php } elseif (!empty($id_game) && $id_category == REGEX_ARTICLES_GAMES) { ?>
+                                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $id_game ?>&id_category=<?= REGEX_GUIDES ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                        Les Guides <?= $article->game_name ?>
+                                                    </a>
+                                                <?php } elseif (!empty($id_game) && $id_category == REGEX_GUIDES) { ?>
+                                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $id_game ?>&id_category=<?= REGEX_ARTICLES_GAMES ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                        Les News <?= $article->game_name ?>
                                                     </a>
                                                 <?php } ?>
                                             </div>

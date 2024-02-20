@@ -11,6 +11,7 @@
     BlazeRifle est la ressource incontournable pour les fans de FPS. Rejoignez notre communauté passionnée et prenez une 
     longueur d'avance dans le monde palpitant des jeux de tir à la première personne.">
     <!-- <meta name="google-signin-client_id" content="277138796158-d2fp626m8vpjbk803agp0gd50m1h4r2h.apps.googleusercontent.com"> -->
+    <link rel="icon" type="image/png"" href="/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
