@@ -24,7 +24,7 @@
                                             <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                         </a>
                                     <?php } else {  ?>
-                                        <a href="/controllers/articles-list/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                        <a href="/controllers/articles-list/articles-ctrl.php?id_category=<?= REGEX_ARTICLES_GAMES ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                                             Toutes les news
                                             <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                         </a>
@@ -113,7 +113,7 @@
                                             <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                         </a>
                                     <?php } else { ?>
-                                        <a href="/controllers/articles-list/articles-ctrl.php" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
+                                        <a href="/controllers/articles-list/articles-ctrl.php?id_category=<?= REGEX_GUIDES ?>" class="btn btn-danger btn-sm text-light rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
                                             Tous les guides
                                             <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                                         </a>
