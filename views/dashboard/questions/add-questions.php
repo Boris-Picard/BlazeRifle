@@ -28,9 +28,9 @@
                                 <div id="questionWrapper">
                                     <div id="questionBlock">
                                         <div class="mb-3 col-md-12 mt-2">
-                                            <div><small class="form-text text-danger"><?= $error['question'] ?? '' ?></small></div>
-                                            <label for="questions[]" class="form-label">Votre question <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="questions[]" id="questions" value="<?= $question ?? '' ?>" pattern="<?= REGEX_QUESTIONS ?>" aria-describedby="name" placeholder="Votre question" minlength="5" maxlength="255" required>
+                                            <div><small class="form-text text-danger"><?= $error['questions'][0] ?? '' ?></small></div>
+                                            <label for="questions_0" class="form-label">Votre question <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="questions[]" id="questions_0" value="<?= $sanitizeQuestions['questions'][0] ?? '' ?>" pattern="<?= REGEX_QUESTIONS ?>" aria-describedby="name" placeholder="Votre question" minlength="5" maxlength="255" required>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
@@ -56,7 +56,7 @@
                                                 <select class="form-select" name="correct_answer[]" required>
                                                     <option selected disabled></option>
                                                     <?php for ($i = 1; $i < 4; $i++) { ?>
-                                                        <option value="<?= $i ?>" <?=  $correct_answer == $i ? 'selected' : '' ?>><?= $i ?></option>
+                                                        <option value="<?= $i ?>" <?= $correct_answer == $i ? 'selected' : '' ?>><?= $i ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>

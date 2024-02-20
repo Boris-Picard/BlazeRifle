@@ -74,7 +74,7 @@ class Game
         $sth->bindValue(':game_description', $this->getGameDescription());
         $sth->bindValue(':game_picture', $this->getGamePicture());
 
-        $result = $sth->execute();
+        $sth->execute();
 
         if ($sth->rowCount() <= 0) {
             throw new Exception('Erreur dans consoles_games');

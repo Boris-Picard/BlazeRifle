@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
                                 <?php if (!empty($articles)) { ?>
-                                    <h2 class="h2 text-uppercase fw-bold text-center"><?= $id_category === REGEX_GUIDES ? 'LES GUIDES : ' : 'LES NEWS : ' ?><span class="text-danger"><?= $articles[0]->game_name ?></span></h2>
+                                    <h2 class="h2 text-uppercase fw-bold text-center"><?= $id_category === REGEX_GUIDES ? 'LES GUIDES  ' : 'LES NEWS  ' ?><span class="text-danger"><?= !empty($id_game) ? $articles[0]->game_name : '' ?></span></h2>
                                     <p class="text-center text-break mt-2">
                                         <?= htmlspecialchars(html_entity_decode($articles[0]->game_description)) ?>
                                     </p>
@@ -91,7 +91,11 @@
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center align-items-center p-3">
                                             <i class="bi bi-book fs-1 px-2"></i>
-                                            <h1 class="text-uppercase fw-bold fs-5"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les guides :  </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les news : </span>" . $firstArticleSidebar->game_name ?></h1>
+                                            <?php if (!empty($id_game)) { ?>
+                                                <h1 class="text-uppercase fw-bold fs-5"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les guides   </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les news  </span>" . $firstArticleSidebar->game_name ?></h1>
+                                            <?php } else { ?>
+                                                <h1 class="text-uppercase fw-bold fs-5">Les guides</h1>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -137,9 +141,15 @@
                                                 </div>
                                             <?php } ?>
                                             <div class="d-flex justify-content-center mt-3 mb-4">
-                                                <a href="?id_game=<?= $firstArticleSidebar->id_game . '&id_category=' . $firstArticleSidebar->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    <?= $id_category == REGEX_ARTICLES_GAMES ? 'Les guides : ' . $firstArticleSidebar->game_name  : 'Les news : ' . $firstArticleSidebar->game_name ?>
-                                                </a>
+                                                <?php if (!empty($id_game)) { ?>
+                                                    <a href="?id_game=<?= $firstArticleSidebar->id_game . '&id_category=' . $firstArticleSidebar->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                        <?= $id_category == REGEX_ARTICLES_GAMES ? 'Les guides : ' . $firstArticleSidebar->game_name  : 'Les news : ' . $firstArticleSidebar->game_name ?>
+                                                    </a>
+                                                <?php } else { ?>
+                                                    <a href="<?= '?id_category=' . $firstArticleSidebar->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                        <?= $id_category == 6 ? 'Les News'  : 'Les guides'  ?>
+                                                    </a>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>

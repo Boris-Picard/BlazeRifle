@@ -27,7 +27,7 @@ try {
         // Nettoyage et récupération du nom de la catégorie depuis le formulaire
         $sanitizeQuestions = filter_input_array(INPUT_POST, $questions);
 
-        foreach ($sanitizeQuestions as $key => $question) {
+        foreach ($sanitizeQuestions['questions'] as $key => $question) {
             if (empty($question)) {
                 $error['questions'][$key] = 'Veuillez entrer une question';
             } else {
@@ -37,6 +37,8 @@ try {
                 }
             }
         }
+var_dump($error);
+// die;
         // Gestion des erreurs et affichage des messages d'alerte
         if (!empty($error)) {
             $alert['error'] = 'Les données n\'ont pas été insérées !';
@@ -51,10 +53,10 @@ try {
         if (empty($error)) {
 
             // Vérification du succès de l'insertion et redirection
-            if ($result > 0) {
-                $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
-                header('Refresh:3; url=list-quiz-ctrl.php');
-            }
+            // if ($result > 0) {
+            //     $alert['success'] = 'La donnée a bien été insérée ! Vous allez être redirigé(e).';
+            //     header('Refresh:3; url=list-quiz-ctrl.php');
+            // }
         }
     }
 } catch (PDOException $e) {

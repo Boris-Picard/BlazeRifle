@@ -78,7 +78,7 @@ try {
             $result = $comment->insert();
 
             if ($result > 0) {
-                header("Refresh:8;url=/controllers/articles/article-ctrl.php?" . $id_article);
+                header("Refresh:8;url=/controllers/articles/article-ctrl.php?id_article=" . $id_article . '&id__game=' . $id_game . '&id_category=' . $id_category);
             }
         }
     }

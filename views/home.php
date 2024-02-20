@@ -23,7 +23,7 @@
                                 <?php  } ?>
                             </div>
                             <div class="col-12 col-md-6 p-0 bgHero">
-                                <img src="/public/assets/img/infinite2.jpg" loading="lazy" class="h-100 object-fit-cover img-fluid" alt="Call of duty hero page">
+                                <img src="/public/assets/img/infinite2_copie.webp" loading="lazy" class="h-100 object-fit-cover img-fluid" alt="Call of duty hero page">
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-md-2 d-flex  align-items-center justify-content-end">
                     <a href="/controllers/articles-preview/articles-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
-                        Tous les articles
+                        Toutes les news
                         <i class="bi bi-arrow-right mx-2" aria-hidden="true"></i>
                     </a>
                 </div>

@@ -40,7 +40,7 @@
                                         Nom
                                     </th>
                                     <th scope="col">Pseudo</th>
-                                    <th scope="col">Picture</th>
+                                    <th scope="col">Image</th>
                                     <th scope="col">
                                         Date de création
                                         <a href="/controllers/dashboard/users/users-list-ctrl.php?order=ASC&nbUsers=<?= $nbUsers ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
@@ -79,7 +79,19 @@
                                             <?php } ?>
                                         </td>
                                         <td class="fw-semibold text-break"><?= $user->user_created_at ?></td>
-                                        <td class="fw-semibold text-break"><?= $user->role ?></td>
+                                        <?php if ($user->role === 1) { ?>
+                                            <td class="text-danger fw-semibold">
+                                                Admin
+                                            </td>
+                                        <?php } elseif ($user->role === 2) { ?>
+                                            <td class="text-primary fw-semibold">
+                                                Membre
+                                            </td>
+                                        <?php  } else { ?>
+                                            <td class="text-warning fw-semibold">
+                                                Rédacteur
+                                            </td>
+                                        <?php } ?>
                                         <td class="fw-semibold text-break">
                                             <?php if (!is_null($user->user_confirmed_at)) { ?>
                                                 <button class="btn btn-small btn-success ">Validé</button>
