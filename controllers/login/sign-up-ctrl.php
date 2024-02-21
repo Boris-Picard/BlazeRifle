@@ -117,8 +117,10 @@ try {
                 $jwt = JWT::generateToken($email);
                 $adress = $email;
                 $nameAdress = $pseudo;
-                $subject = 'Confirmation de réservation';
-                $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login/confirmed-ctrl.php?jwt=' . $jwt . '">Veuillez cliquer pour confirmer</a>';
+                $subject = 'Confirmation d\'inscription';
+                $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login/confirmed-ctrl.php?jwt=' . $jwt . '">
+                Veuillez cliquer sur le lien pour confirmer votre inscription
+                </a>';
                 $mail = Mail::sendMail($adress, $nameAdress, $subject, $body);
                 header("Refresh:6;url=/controllers/home-ctrl.php");
             }

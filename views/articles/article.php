@@ -42,12 +42,12 @@
                                 <?php if (!empty($_SESSION['user'])) {
                                     if (isset($userFavorite) && $userFavorite) { ?>
                                         <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>&fav=2" class="btn btn-light"><i class="bi bi-star-fill fs-5 text-warning"></i><span class="text-decoration-underline mx-2 fw-bold">Retirer de mes favoris</span></a>
-                                        
                                     <?php } else { ?>
                                         <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>&fav=1" class="btn btn-light"><i class="bi bi-star fs-5 text-warning"></i><span class="text-decoration-underline mx-2 fw-bold">Ajouter a mes favoris</span></a>
-                                        
-                                <?php }
-                                } ?>
+                                    <?php }
+                                } else { ?>
+                                    <a href="/controllers/login/sign-up-ctrl.php" class="fw-bold">Devenir membre pour ajouter en favoris</a>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="row mt-5">
@@ -157,7 +157,7 @@
                                     <?php if (empty($_SESSION['user'])) { ?>
                                         <div class="d-flex">
                                             <a href="/controllers/login/sign-up-ctrl.php" class="btn btn-danger rounded-5 btnAddComment btn-sm p-2 fw-bold text-uppercase mt-2 letComment">
-                                                S'inscrire pour laisser un commentaire
+                                                Devenir membre pour laisser un commentaire
                                             </a>
                                         </div>
                                     <?php } else { ?>
