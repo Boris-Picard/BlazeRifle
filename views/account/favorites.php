@@ -34,6 +34,12 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">
+                                            Les Catégories
+                                        </th>
+                                        <th scope="col">
+                                            Les Jeux
+                                        </th>
+                                        <th scope="col">
                                             Titre
                                         </th>
                                     </tr>
@@ -41,7 +47,9 @@
                                 <tbody>
                                     <?php foreach ($favorites as $favorite) { ?>
                                         <tr>
-                                            <td class="fw-semibold"><a href="/controllers/articles/article-ctrl.php?id_article=<?= $favorite->id_article ?>&id_category=<?= $favorite->id_category?>&id_game=<?= $favorite->id_game ?>"><?= $favorite->article_title ?></a></td>
+                                            <td class="fw-semibold"><?= $favorite->label ?></td>
+                                            <td class="fw-semibold"><?= $favorite->game_name ?></td>
+                                            <td class="fw-semibold"><a href="/controllers/articles/article-ctrl.php?id_article=<?= $favorite->id_article ?>&id_category=<?= $favorite->id_category ?>&id_game=<?= $favorite->id_game ?>"><?= $favorite->article_title ?></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

@@ -16,6 +16,7 @@ try {
 
     $favorites = Favorite::getAll($id_user);
 
+
 } catch (PDOException $e) {
     die('Error comments : ' . $e->getMessage());
 }

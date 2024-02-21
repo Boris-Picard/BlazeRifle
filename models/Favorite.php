@@ -60,10 +60,14 @@ class Favorite
         `articles`.`id_article`,
         `articles`.`id_category`,
         `articles`.`id_game`,
-        `articles`.`article_title`
+        `articles`.`article_title`,
+        `categories`.`label`,
+        `games`.`game_name`
         FROM `favorites`
         INNER JOIN `users` ON `users`.`id_user`=`favorites`.`id_user`
         INNER JOIN `articles` ON `articles`.`id_article`= `favorites`.`id_article`
+        INNER JOIN `categories` ON `articles`.`id_category`=`categories`.`id_category`
+        INNER JOIN `games` ON `articles`.`id_game`= `games`.`id_game`
         WHERE `favorites`.`id_user`=:id_user;';
 
         $sth = $pdo->prepare($sql);
