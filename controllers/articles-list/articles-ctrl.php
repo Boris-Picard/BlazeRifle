@@ -21,7 +21,7 @@ try {
     $nbArticles = Article::count(id_game: $gameId, id_category: $categoryId);
 
     // Calculer le nombre total de pages nécessaires pour afficher les articles
-    $nbPages = ceil($nbArticles / 7);
+    $nbPages = ceil($nbArticles / 4);
 
     // S'assurer que la page actuelle est dans une plage valide
     $currentPage = ($currentPage > $nbPages) ? $nbPages : $currentPage;

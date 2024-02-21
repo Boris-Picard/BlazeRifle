@@ -248,7 +248,7 @@ class Article
      * 
      * @return array
      */
-    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, bool $showConfirmedAt = false, ?int $id_category = null, string $order = 'ASC', int $limit = 7, int $page = null, int $offset = 0): array|false
+    public static function getAll(?int $id_game = null, bool $showDeletedAt = false, bool $showConfirmedAt = false, ?int $id_category = null, string $order = 'ASC', int $limit = 4, int $page = null, int $offset = 0): array|false
     {
         $pdo = Database::connect();
 
