@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../config/config.php';
 require_once __DIR__ . '/../../helpers/Date_Comment.php';
 require_once __DIR__ . '/../../models/Article.php';
 require_once __DIR__ . '/../../models/Comment.php';
+require_once __DIR__ . '/../../models/Favorite.php';
 require_once __DIR__ . '/../../models/User.php';
 
 $articleView = true;
@@ -16,13 +17,14 @@ try {
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
+    $favorite = filter_input(INPUT_GET,'favorite',FILTER_SANITIZE_SPECIAL_CHARS);
 
     //Récupération des IDs nettoyés. Si l'ID est égal à 0, alors je retourne la valeur null.
     $gameId = $id_game == 0 ? null : $id_game;
     $categoryId = $id_category == 0 ? null : $id_category;
 
     // Récupérer les détails de l'article
-    $article = Article::get($id_article, true, $categoryId);
+    $article = Article::get($id_article, true, $categoryId, archived: false);
 
     // Vérifier si l'article existe
     if (!empty($article)) {
@@ -46,6 +48,22 @@ try {
 
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
     $articlesBottom = Article::getAll($gameId, false, true, $categoryId, 'DESC', limit: 3);
+
+    if(isset($favorite)) {
+        $newFavorite = new Favorite();
+        $newFavorite->setIdUser($article->id_user);
+        $newFavorite->setIdArticle($id_article);
+
+        $result = $newFavorite->insert();
+
+        if($result > 0) {
+            header('location: /controllers/articles/article-ctrl.php?id_article='. $id_article .'&id_game=' . $id_game.'&id_category=' . $id_category);
+        }
+    }
+
+    $userFavorite = Favorite::get($article->id_user);
+
+
     // Gérer le formulaire de commentaire s'il est soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -79,7 +97,7 @@ try {
             $result = $comment->insert();
 
             if ($result > 0) {
-                header("Refresh:8;url=/controllers/articles/article-ctrl.php?id_article=" . $id_article . '&id__game=' . $id_game . '&id_category=' . $id_category);
+                header("Refresh:6;url=/controllers/articles/article-ctrl.php?id_article=" . $id_article . '&id__game=' . $id_game . '&id_category=' . $id_category);
             }
         }
     }

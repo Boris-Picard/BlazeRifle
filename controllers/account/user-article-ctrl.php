@@ -29,84 +29,102 @@ try {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Nettoyage et validation du titre de l'article et validation
-        $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
+        $title = filter_input(INPUT_POST, 'title'); // Récupère la donnée sans sanitisation
 
         if (empty($title)) {
             $error['title'] = 'Veuillez rentrer un titre';
         } else {
+            // Valide la donnée brute
             $isOk = filter_var($title, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
             if (!$isOk) {
                 $error['title'] = 'Veuillez renseigner un titre de jeu correct';
+            } else {
+                // Sanitise la donnée après validation
+                $titleSanitised = filter_var($isOk, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
 
+
         // Nettoyage et validation de la description de l'article et validation
-        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+        $description = filter_input(INPUT_POST, 'description');
 
         if (empty($description)) {
             $error['description'] = 'Veuillez rentrer une description';
         } else {
             // Validation de la longueur de la description
             $isOk = filter_var($description, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TEXTAREA . '/')));
-            if (!$isOk) {
-                $error['description'] = 'Veuillez renseigner une description de jeu correct';
-            }
             if (strlen($description) > 500) {
                 $error['description'] = 'Votre message est trop long';
+            }
+            if (!$isOk) {
+                $error['description'] = 'Veuillez renseigner une description de jeu correct';
+            } else {
+                $descriptionSanitised = filter_var($isOk, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
 
         // Nettoyage et validation du premier sous-titre de l'article et validation
-        $secondTitle = filter_input(INPUT_POST, 'secondTitle', FILTER_SANITIZE_SPECIAL_CHARS);
+        $secondTitle = filter_input(INPUT_POST, 'secondTitle'); // Récupère la donnée sans sanitisation
 
         if (empty($secondTitle)) {
-            $error['secondTitle'] = 'Veuillez rentrer un sous-titre';
+            $error['secondTitle'] = 'Veuillez rentrer un titre';
         } else {
+            // Valide la donnée brute
             $isOk = filter_var($secondTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
             if (!$isOk) {
                 $error['secondTitle'] = 'Veuillez renseigner un titre de jeu correct';
+            } else {
+                // Sanitise la donnée après validation
+                $secondTitleSanitised = filter_var($isOk, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
 
-        // Nettoyage et validation du deuxième sous-titre de l'article et validation
-        $thirdTitle = filter_input(INPUT_POST, 'thirdTitle', FILTER_SANITIZE_SPECIAL_CHARS);
+        $thirdTitle = filter_input(INPUT_POST, 'thirdTitle'); // Récupère la donnée sans sanitisation
 
         if (empty($thirdTitle)) {
-            $error['thirdTitle'] = 'Veuillez rentrer un sous-titre';
+            $error['thirdTitle'] = 'Veuillez rentrer un titre';
         } else {
+            // Valide la donnée brute
             $isOk = filter_var($thirdTitle, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_TITLE . '/')));
             if (!$isOk) {
                 $error['thirdTitle'] = 'Veuillez renseigner un titre de jeu correct';
+            } else {
+                // Sanitise la donnée après validation
+                $thirdTitleSanitised = filter_var($isOk, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
 
         // Nettoyage et validation de la première section de l'article et validation
-        $firstSection = filter_input(INPUT_POST, 'firstSection', FILTER_SANITIZE_SPECIAL_CHARS);
+        $firstSection = filter_input(INPUT_POST, 'firstSection');
 
         if (empty($firstSection)) {
             $error['firstSection'] = 'Veuillez rentrer une section d\'article';
         } else {
             $isOk = filter_var($firstSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
-            if (!$isOk) {
-                $error['firstSection'] = 'Veuillez renseigner un titre de jeu correct';
-            }
             if (strlen($firstSection) > 5000 || strlen($firstSection) < 250) {
                 $error['firstSection'] = 'Erreur dans la longueur du message';
+            }
+            if (!$isOk) {
+                $error['firstSection'] = 'Veuillez renseigner un titre de jeu correct';
+            } else {
+                $firstSectionSanitised = filter_var($isOk, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
 
         // Nettoyage et validation de la deuxième section de l'article et validation
-        $secondSection = filter_input(INPUT_POST, 'secondSection', FILTER_SANITIZE_SPECIAL_CHARS);
+        $secondSection = filter_input(INPUT_POST, 'secondSection');
 
         if (empty($secondSection)) {
             $error['secondSection'] = 'Veuillez rentrer une deuxième section d\'article';
         } else {
             $isOk = filter_var($secondSection, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEX_SECTION . '/')));
-            if (!$isOk) {
-                $error['secondSection'] = 'Veuillez renseigner un titre de jeu correct';
-            }
             if (strlen($secondSection) > 5000 || strlen($secondSection) < 250) {
                 $error['secondSection'] = 'Erreur dans la longueur du message';
+            }
+            if (!$isOk) {
+                $error['secondSection'] = 'Veuillez renseigner un titre de jeu correct';
+            } else {
+                $secondSectionSanitised = filter_var($isOk, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
 
@@ -199,13 +217,13 @@ try {
 
             $article = new Article();
 
-            $article->setArticleTitle($title);
-            $article->setSecondTitle($secondTitle);
-            $article->setThirdTitle($thirdTitle);
+            $article->setArticleTitle($titleSanitised);
+            $article->setSecondTitle($secondTitleSanitised);
+            $article->setThirdTitle($thirdTitleSanitised);
             $article->setArticlePicture($fileName);
-            $article->setArticleDescription($description);
-            $article->setFirstSection($firstSection);
-            $article->setSecondSection($secondSection);
+            $article->setArticleDescription($descriptionSanitised);
+            $article->setFirstSection($firstSectionSanitised);
+            $article->setSecondSection($secondSectionSanitised);
             $article->setIdCategory($id_category);
             $article->setIdUser($id_user);
             $article->setIdGame($id_game);
@@ -215,7 +233,7 @@ try {
 
             // Si l'insertion a réussi, affichage d'un message de succès et redirection
             if ($result > 0) {
-                header("Refresh:8;url=/controllers/account/account-ctrl.php?id_user=" . $user->id_user);
+                header("Refresh:6;url=/controllers/account/account-ctrl.php?id_user=" . $user->id_user);
             }
         }
     }

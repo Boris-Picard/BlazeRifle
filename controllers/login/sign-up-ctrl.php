@@ -120,7 +120,7 @@ try {
                 $subject = 'Confirmation de réservation';
                 $body = '<a href="' . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/controllers/login/confirmed-ctrl.php?jwt=' . $jwt . '">Veuillez cliquer pour confirmer</a>';
                 $mail = Mail::sendMail($adress, $nameAdress, $subject, $body);
-                header("Refresh:7;url=/controllers/home-ctrl.php");
+                header("Refresh:6;url=/controllers/home-ctrl.php");
             }
         }
     }

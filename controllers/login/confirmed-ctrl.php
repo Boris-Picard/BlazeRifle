@@ -11,7 +11,7 @@ try {
 
         $isConfirmed = User::confirm($mail);
         if ($isConfirmed) {
-            header("Refresh:7;url=/controllers/login/sign-in-ctrl.php");
+            header("Refresh:6;url=/controllers/login/sign-in-ctrl.php");
         } else {
             header("Refresh:3;url=/controllers/home-ctrl.php");
         }

@@ -52,7 +52,7 @@ try {
 
                     // Met à jour le mot de passe de l'utilisateur
                     User::updatePassword($newPasswordHash, $id_user);
-                    header("Refresh:7;url=/controllers/account/account-ctrl.php?id_user=".$user->id_user);
+                    header("Refresh:6;url=/controllers/account/account-ctrl.php?id_user=".$user->id_user);
                 } else {
                     $error['oldPassword'] = 'L\'ancien mot de passe n\'est pas correct';
                 }

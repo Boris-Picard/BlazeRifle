@@ -2,6 +2,11 @@
     <section class="articlesSection py-5">
         <div class="container">
             <section>
+                <?php if (isset($article->id_user) && $article->id_user == $userFavorite->id_user) { ?>
+                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>&favorite" class="btn btn-small btn-light"><i class="bi bi-star-fill"></i></a>
+                <?php } else { ?>
+                    <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>&favorite" class="btn btn-small btn-light"><i class="bi bi-star"></i></a>
+                <?php } ?>
                 <div class="row">
                     <div class="col-12 py-3 breadArticles">
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -103,7 +108,7 @@
                         <div class="row">
                             <div class="col-md-12 my-2">
                                 <h3 class="text-capitalize text-danger fw-bold">
-                                    Article suivant
+                                    Articles suivant
                                 </h3>
                                 <?php if (isset($gameId)) {
                                     foreach ($articlesBottom as $article) {
@@ -219,7 +224,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <meta http-equiv="refresh" content="7;url=/controllers/articles/article-ctrl.php?id_article=<?= $id_article ?>&id_game=<?= $id_game ?>&id_category=<?= $id_category ?>">
+                                                <!-- <meta http-equiv="refresh" content="7;url=/controllers/articles/article-ctrl.php?id_article=<?= $id_article ?>&id_game=<?= $id_game ?>&id_category=<?= $id_category ?>"> -->
                                         <?php }
                                         } ?>
                                         <!-- FIN DU FORMULAIRE -->

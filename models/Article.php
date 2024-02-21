@@ -324,7 +324,7 @@ class Article
      * 
      * @return [type]
      */
-    public static function get(?int $id_article = null, bool $showConfirmedAt = false, ?int $id_category = null)
+    public static function get(?int $id_article = null, bool $showConfirmedAt = false, ?int $id_category = null, ?bool $archived = null)
     {
         $pdo = Database::connect();
 
@@ -353,6 +353,10 @@ class Article
         INNER JOIN `games` ON `games`.`id_game`=`articles`.`id_game`
         INNER JOIN `users` ON `users`.`id_user`=`articles`.`id_user`
         WHERE `id_article`=:id_article';
+
+        if (!is_null($archived)) {
+            $archived === true ? $sql .= ' AND `articles`.`deleted_at` IS NOT NULL ' : $sql .= ' AND `articles`.`deleted_at` IS NULL ';
+        }
 
         if ($showConfirmedAt) {
             $sql .= ' AND `articles`.`confirmed_at` IS NOT NULL ';
