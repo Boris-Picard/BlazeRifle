@@ -47,10 +47,11 @@ try {
                     <a class="nav-link navlinkHover" href="/controllers/home-ctrl.php">Accueil</a>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-uppercase text-dark" href="/controllers/games-preview/games-ctrl.php" role="button">
+                            <a class="nav-link dropdown-toggle text-uppercase text-dark"role="button">
                                 Les jeux
                             </a>
                             <ul class="dropdown-menu shadow-lg dropdownMenu py-0 rounded-4">
+                                <li><a href="/controllers/games-preview/games-ctrl.php" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/assets/img/redlogo.png" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="logo tous les jeux">Tous les jeux</span></a></li>
                                 <?php foreach ($games as $game) {
                                     if ($game->id_game !== REGEX_GAME_TIPS) { ?>
                                         <li><a href="/controllers/games-preview/games-ctrl.php?id_game=<?= $game->id_game ?>" class="dropdown-item navGamesHover text-decoration-none text-capitalize px-2 text-truncate p-2"><span><img src="/public/uploads/games/<?= $game->game_picture ?>" class="rounded-circle object-fit-cover roundedImgNav mx-2" alt="<?= $game->game_name ?>"><?= htmlspecialchars($game->game_name) ?></span></a></li>
