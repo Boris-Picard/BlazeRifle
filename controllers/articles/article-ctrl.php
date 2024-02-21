@@ -49,8 +49,9 @@ try {
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
     $articlesBottom = Article::getAll($gameId, false, true, $categoryId, 'DESC', limit: 3);
 
-    
-    $id_user = $_SESSION['user']->id_user;
+    if (isset($_SESSION['user'])) {
+        $id_user = $_SESSION['user']->id_user;
+    }
 
     $userFavorite = Favorite::get($id_user, $id_article);
 

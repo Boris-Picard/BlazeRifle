@@ -41,7 +41,7 @@
                                 <tbody>
                                     <?php foreach ($favorites as $favorite) { ?>
                                         <tr>
-                                            <td class="fw-semibold"><a href="/controllers/articles/article-ctrl.php?id_article=<?= $favorite->id_article ?>&id_category=<?= $favorite->id_category?>&id_game<?= $favorite->id_game ?>"><?= $favorite->article_title ?></a></td>
+                                            <td class="fw-semibold"><a href="/controllers/articles/article-ctrl.php?id_article=<?= $favorite->id_article ?>&id_category=<?= $favorite->id_category?>&id_game=<?= $favorite->id_game ?>"><?= $favorite->article_title ?></a></td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

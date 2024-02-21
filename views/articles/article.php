@@ -2,13 +2,7 @@
     <section class="articlesSection py-5">
         <div class="container">
             <section>
-                <?php if (!empty($_SESSION['user'])) {
-                    if (isset($userFavorite) && $userFavorite) { ?>
-                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>&fav=2" class="btn btn-small btn-light"><i class="bi bi-star-fill text-warning"></i></a>
-                    <?php } else { ?>
-                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>&fav=1" class="btn btn-small btn-light"><i class="bi bi-star text-warning"></i></a>
-                <?php }
-                } ?>
+
                 <div class="row">
                     <div class="col-12 py-3 breadArticles">
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -43,6 +37,19 @@
                             </div>
                         </div>
                         <!-- TITLE -->
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <?php if (!empty($_SESSION['user'])) {
+                                    if (isset($userFavorite) && $userFavorite) { ?>
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>&fav=2" class="btn btn-light"><i class="bi bi-star-fill fs-5 text-warning"></i><span class="text-decoration-underline mx-2 fw-bold">Retirer de mes favoris</span></a>
+                                        
+                                    <?php } else { ?>
+                                        <a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article ?>&id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>&fav=1" class="btn btn-light"><i class="bi bi-star fs-5 text-warning"></i><span class="text-decoration-underline mx-2 fw-bold">Ajouter a mes favoris</span></a>
+                                        
+                                <?php }
+                                } ?>
+                            </div>
+                        </div>
                         <div class="row mt-5">
                             <div class="col-12 d-flex text-center">
                                 <h1 class="fw-bold text-uppercase text-break"><?= html_entity_decode($article->article_title) ?></h1>
