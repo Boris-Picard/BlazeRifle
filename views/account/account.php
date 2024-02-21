@@ -45,11 +45,14 @@
                                 <?php if ($user->role !== 3 && $user->role !== 1) { ?>
                                     <a href="/controllers/contact-ctrl/contact-ctrl.php" class="btn btn-warning py-3 rounded-5 fw-bold text-uppercase w-100">Devenir Rédacteur</a>
                                 <?php } else { ?>
-                                    <a href="/controllers/account/user-article-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-warning py-3 rounded-5 fw-bold text-uppercase w-100">Rédiger un article</a>
+                                    <a href="/controllers/account/user-article-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-primary py-3 rounded-5 fw-bold text-uppercase w-100">Rédiger un article</a>
                                 <?php   } ?>
                             </div>
                             <div class="d-flex justify-content-center ">
-                                <a href="/controllers/account/comments-account-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-secondary py-3 rounded-5 fw-bold text-uppercase w-100">Voir mes commentaires</a>
+                                <a href="/controllers/account/comments-account-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-dark py-3 rounded-5 fw-bold text-uppercase w-100">Voir mes commentaires</a>
+                            </div>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a href="/controllers/account/favorites-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-warning py-3 rounded-5 fw-bold text-uppercase w-100">Voir mes Favoris</a>
                             </div>
                             <div class="d-flex justify-content-center py-3">
                                 <a href="/controllers/account/delete-account-ctrl.php?id_user=<?= $user->id_user ?>" class="btn btn-danger py-3 rounded-5 fw-bold text-uppercase w-100">Supprimer mon compte</a>

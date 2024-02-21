@@ -10,7 +10,6 @@ CheckPermissions::checkMember();
 $commentsAccount = true;
 
 try {
-    $alert = [];
 
     $id_user = intval(filter_input(INPUT_GET, 'id_user', FILTER_SANITIZE_NUMBER_INT));
     $id_comment = intval(filter_input(INPUT_GET, 'id_comment', FILTER_SANITIZE_NUMBER_INT));

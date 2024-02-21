@@ -17,7 +17,7 @@ try {
     $id_article = intval(filter_input(INPUT_GET, 'id_article', FILTER_SANITIZE_NUMBER_INT));
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
     $id_category = intval(filter_input(INPUT_GET, 'id_category', FILTER_SANITIZE_NUMBER_INT));
-    $favorite = filter_input(INPUT_GET,'favorite',FILTER_SANITIZE_SPECIAL_CHARS);
+    $fav = filter_input(INPUT_GET, 'fav', FILTER_SANITIZE_NUMBER_INT);
 
     //Récupération des IDs nettoyés. Si l'ID est égal à 0, alors je retourne la valeur null.
     $gameId = $id_game == 0 ? null : $id_game;
@@ -32,7 +32,7 @@ try {
         $timestamp = strtotime($article->article_created_at);
         $article->formattedHour = date('H:i', $timestamp);
         $article->formattedDate = date('d/m/y', $timestamp);
-    } elseif($categoryId == REGEX_ARTICLES_GAMES || $categoryId == REGEX_GUIDES) {
+    } elseif ($categoryId == REGEX_ARTICLES_GAMES || $categoryId == REGEX_GUIDES) {
         // Rediriger vers la liste des articles si l'article n'existe pas
         header('Location: /controllers/articles-list/articles-ctrl.php?id_game=' . $id_game . '&id_category=' . $id_category);
         die;
@@ -49,20 +49,27 @@ try {
     // Récupération des trois derniers articles du même jeu pour afficher en bas de page
     $articlesBottom = Article::getAll($gameId, false, true, $categoryId, 'DESC', limit: 3);
 
-    if(isset($favorite)) {
-        $newFavorite = new Favorite();
-        $newFavorite->setIdUser($article->id_user);
-        $newFavorite->setIdArticle($id_article);
+    
+    $id_user = $_SESSION['user']->id_user;
 
-        $result = $newFavorite->insert();
+    $userFavorite = Favorite::get($id_user, $id_article);
 
-        if($result > 0) {
-            header('location: /controllers/articles/article-ctrl.php?id_article='. $id_article .'&id_game=' . $id_game.'&id_category=' . $id_category);
+    if (isset($fav)) {
+        if ($fav == 1) {
+            $newFavorite = new Favorite();
+            $newFavorite->setIdUser($id_user);
+            $newFavorite->setIdArticle($id_article);
+
+            $result = $newFavorite->insert();
+        }
+        if ($fav == 2) {
+            $result = Favorite::delete($id_user);
+        }
+        if ($result > 0) {
+            header('location: /controllers/articles/article-ctrl.php?id_article=' . $id_article . '&id_game=' . $id_game . '&id_category=' . $id_category);
+            die;
         }
     }
-
-    $userFavorite = Favorite::get($article->id_user);
-
 
     // Gérer le formulaire de commentaire s'il est soumis
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
