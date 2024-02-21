@@ -32,7 +32,7 @@
                                     <div class="row g-0">
                                         <div class="col-md-4">
                                             <div class="ratio ratio-16x9">
-                                                <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid object-fit-cover card-img-top imgActus shadow-lg rounded-start rounded-3" alt="<?= $article->article_picture ?>">
+                                                <img src="/public/uploads/article/<?= $article->article_picture ?>" loading="lazy" class="img-fluid object-fit-cover card-img-top w-100 imgActus shadow-lg rounded-start rounded-3" alt="<?= $article->article_picture ?>">
                                             </div>
                                         </div>
                                         <div class="col-md-8">
