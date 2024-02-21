@@ -64,7 +64,7 @@ try {
             $result = $newFavorite->insert();
         }
         if ($fav == 2) {
-            $result = Favorite::delete($id_user);
+            $result = Favorite::delete($id_user, $id_article);
         }
         if ($result > 0) {
             header('location: /controllers/articles/article-ctrl.php?id_article=' . $id_article . '&id_game=' . $id_game . '&id_category=' . $id_category);

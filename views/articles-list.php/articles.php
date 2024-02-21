@@ -17,9 +17,11 @@
                             <div class="col-12 mt-3 justify-content-center d-flex flex-column align-items-center">
                                 <?php if (!empty($articles)) { ?>
                                     <h2 class="h2 text-uppercase fw-bold text-center"><?= $id_category === REGEX_GUIDES ? 'LES GUIDES  ' : 'LES NEWS  ' ?><span class="text-danger"><?= !empty($id_game) ? $articles[0]->game_name : '' ?></span></h2>
-                                    <p class="text-center text-break mt-2">
-                                        <?= htmlspecialchars(html_entity_decode($articles[0]->game_description)) ?>
-                                    </p>
+                                    <?php if (!empty($id_game)) { ?>
+                                        <p class="text-center text-break mt-2">
+                                            <?= html_entity_decode($articles[0]->game_description) ?>
+                                        </p>
+                                    <?php } ?>
                                 <?php } ?>
                             </div>
                         </div>
@@ -94,9 +96,13 @@
                                             <?php if (!empty($id_game)) { ?>
                                                 <h1 class="text-uppercase fw-bold fs-5"><?= $id_category == REGEX_ARTICLES_GAMES ? "<span class='text-danger'> Les guides   </span>" . $firstArticleSidebar->game_name  : "<span class='text-danger'> Les news  </span>" . $firstArticleSidebar->game_name ?></h1>
                                             <?php } elseif ($id_category == REGEX_ARTICLES_GAMES) { ?>
-                                                <h1 class="text-uppercase fw-bold fs-5">Les guides</h1>
+                                                <div class="text-center col-8">
+                                                    <h1 class="text-uppercase fw-bold fs-5">Les guides</h1>
+                                                </div>
                                             <?php } elseif ($id_category == REGEX_GUIDES) { ?>
-                                                <h1 class="text-uppercase fw-bold fs-5">Les News</h1>
+                                                <div class="text-center col-8">
+                                                    <h1 class="text-uppercase fw-bold fs-5">Les News</h1>
+                                                </div>
                                             <?php } ?>
                                         </div>
                                     </div>

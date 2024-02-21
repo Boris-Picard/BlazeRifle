@@ -222,12 +222,12 @@
         </section>
     <?php } ?>
     <!-- FIN DES GUIDES  -->
-    <!-- DEBUT DES JEUX DU MOMENT -->
+    <!-- DEBUT DE TOUS LES JEUX -->
     <section class="sectionContainer">
         <div class="container">
             <div class="row g-3 mt-3">
                 <div class="col-10">
-                    <h1 class="articleTitle text-uppercase fw-bold">Les jeux du moment</h1>
+                    <h1 class="articleTitle text-uppercase fw-bold">Tous les jeux</h1>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-end">
                     <a href="/controllers/games-preview/games-ctrl.php" class="btn btn-danger btn-sm text-white rounded-4 buttonArticleSelectionGame fw-bold text-uppercase">
@@ -282,7 +282,7 @@
             </div>
         </div>
     </section>
-    <!-- FIN DES JEUX DU MOMENT  -->
+    <!-- FIN DE TOUS LES JEUX  -->
     <!-- DEBUT LES BONS PLANS -->
     <?php if (isset($firstTips)) { ?>
         <section class="sectionContainer">

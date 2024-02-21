@@ -97,15 +97,17 @@ class Favorite
         return $sth->fetch();
     }
 
-    public static function delete(int $id_user)
+    public static function delete(int $id_user, int $id_article)
     {
         $pdo = Database::connect();
 
-        $sql = ' DELETE FROM `favorites` WHERE `id_user`=:id_user;';
+        $sql = ' DELETE FROM `favorites` WHERE `id_user`=:id_user
+        AND id_article =:id_article;';
 
         $sth = $pdo->prepare($sql);
 
         $sth->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+        $sth->bindValue(':id_article', $id_article, PDO::PARAM_INT);
 
         $sth->execute();
 
