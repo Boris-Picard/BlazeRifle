@@ -33,9 +33,9 @@ try {
     Date_Comment::formatDateComment($articles);
 
     if ($id_category === REGEX_GUIDES) {
-        $articlesSidebar = Article::getAll($gameId, id_category: REGEX_ARTICLES_GAMES, order: 'DESC');
+        $articlesSidebar = Article::getAll($gameId, limit:7, id_category: REGEX_ARTICLES_GAMES, order: 'DESC');
     } else {
-        $articlesSidebar = Article::getAll($gameId, id_category: REGEX_GUIDES, order: 'DESC');
+        $articlesSidebar = Article::getAll($gameId, limit:7, id_category: REGEX_GUIDES, order: 'DESC');
     }
     Date_Comment::formatDateComment($articlesSidebar);
     $firstArticleSidebar = array_shift($articlesSidebar);
