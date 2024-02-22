@@ -51,7 +51,7 @@
                                         <a href="/controllers/dashboard/videos/list-videos-ctrl.php?order=DESC&nbVideos=<?= $nbVideos ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
                                     <th scope="col">
-                                        Status
+                                        Statut
                                     </th>
                                     <th scope="col">Action</th>
                                 </tr>

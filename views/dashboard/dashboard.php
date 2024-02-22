@@ -119,7 +119,7 @@
                                             <th scope="col">Nom</th>
                                             <th scope="col">Pseudo</th>
                                             <th scope="col">Date de création</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Statut</th>
                                         </tr>
                                     </thead>
                                 </div>

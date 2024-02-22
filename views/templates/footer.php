@@ -7,8 +7,8 @@
             <div class="col-6 col-md-2 mb-3 text-center">
             </div>
             <div class="col-6 col-md-2 mb-3 text-center">
-                <p class="fw-bold">Navigation principale</p>
-                <ul class="nav flex-column">
+                <p class="fw-bold text-start">Navigation principale</p>
+                <ul class="nav flex-column text-start">
                     <li class="nav-item mb-2"><a href="/controllers/home-ctrl.php" class="nav-link footerLink p-0">Accueil</a></li>
                     <li class="nav-item mb-2"><a href="/controllers/articles-preview/articles-ctrl.php" class="nav-link footerLink p-0">Les News</a></li>
                     <li class="nav-item mb-2"><a href="/controllers/guides-preview/guides-ctrl.php" class="nav-link footerLink p-0">Les Guides</a></li>
@@ -17,8 +17,8 @@
                 </ul>
             </div>
             <div class="col-6 col-md-2 mb-3 text-center">
-                <p class="fw-bold">Information</p>
-                <ul class="nav flex-column">
+                <p class="fw-bold text-start">Information</p>
+                <ul class="nav flex-column text-start">
                     <li class="nav-item mb-2"><a href="/controllers/contact-ctrl/contact-ctrl.php" class="nav-link footerLink p-0">Nous contacter</a></li>
                     <li class="nav-item mb-2"><a href="/controllers/legalnotice-ctrl.php" class="nav-link footerLink p-0">Mentions Légales</a></li>
                     <li class="nav-item mb-2"><a href="/controllers/CDU-ctrl.php" class="nav-link footerLink p-0">Conditions D'utilisation</a></li>

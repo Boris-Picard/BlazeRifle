@@ -30,7 +30,7 @@
                                     </th>
                                     <th scope="col">Image</th>
                                     <th scope="col">Description</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Statut</th>
                                     <th scope="col">Nb de questions</th>
                                     <th scope="col">Ajouter des questions</th>
                                     <th scope="col">Action</th>

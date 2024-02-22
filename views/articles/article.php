@@ -25,15 +25,15 @@
                         <!-- PRECEDENT SUIVANT -->
                         <div class="row">
                             <div class="col-12 justify-content-between d-flex">
-                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Précédent</a></small>
+                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + -1 ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold text-danger">Précédent</a></small>
                                 <?php if ($article->id_category === REGEX_TIPS) {  ?>
-                                    <small><a href="/controllers/tips-list/tips-ctrl.php" class="text-decoration-none text-capitalize fw-bold">Tous les <?= $article->label ?></a></small>
+                                    <small><a href="/controllers/tips-list/tips-ctrl.php" class="text-decoration-none text-capitalize fw-bold text-danger">Tous les <?= $article->label ?></a></small>
                                 <?php } elseif ($article->id_category === REGEX_GUIDES) { ?>
-                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none text-capitalize fw-bold">Tous les <?= $article->label ?> sur <?= $article->game_name ?></a></small>
+                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold text-danger">Tous les <?= $article->label ?> sur <?= $article->game_name ?></a></small>
                                 <?php } else { ?>
-                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none text-capitalize fw-bold">News sur <?= $article->game_name ?></a></small>
+                                    <small><a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?>&id_category=<?= $article->id_category ?>" class="text-decoration-none fw-bold text-danger">News sur <?= $article->game_name ?></a></small>
                                 <?php } ?>
-                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold">Suivant</a></small>
+                                <small><a href="/controllers/articles/article-ctrl.php?id_article=<?= $article->id_article + 1 ?>&id_category=<?= $article->id_category ?>&id_game=<?= $article->id_game ?>" class="text-decoration-none fw-bold text-danger">Suivant</a></small>
                             </div>
                         </div>
                         <!-- TITLE -->

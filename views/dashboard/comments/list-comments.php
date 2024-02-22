@@ -46,7 +46,7 @@
                                         <a href="/controllers/dashboard/comments/list-comments-ctrl.php?order=ASC&nbComments=<?= $nbComments ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-up-fill mx-1 text-dark"></i></a>
                                         <a href="/controllers/dashboard/comments/list-comments-ctrl.php?order=DESC&nbComments=<?= $nbComments ?>" class="btn btn-sm btn-light"><i class="bi bi-caret-down-fill text-dark"></i></a>
                                     </th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Statut</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
