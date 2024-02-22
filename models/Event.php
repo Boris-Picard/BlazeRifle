@@ -159,7 +159,7 @@ class Event
                 INNER JOIN `games` ON `games`.`id_game`=`events`.`id_game`
                 WHERE 1=1';
 
-        if (isset($id_game)) {
+        if (!is_null($id_game)) {
             $sql .= ' AND `games`.`id_game`=:id_game';
         }
 
@@ -171,7 +171,7 @@ class Event
 
         $sth = $pdo->prepare($sql);
 
-        if (isset($id_game)) {
+        if (!is_null($id_game)) {
             $sth->bindValue(':id_game', $id_game, PDO::PARAM_INT);
         }
 

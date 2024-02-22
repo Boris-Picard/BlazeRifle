@@ -10,13 +10,16 @@ try {
     // Récupérer l'ID du jeu depuis la requête GET
     $id_game = intval(filter_input(INPUT_GET, 'id_game', FILTER_SANITIZE_NUMBER_INT));
 
+    $gameId = $id_game == 0 ? null : $id_game;
+
     // Récupérer tous les jeux disponibles
     $games = Game::getAll();
 
     // Récupérer tous les articles pour le jeu spécifié, triés par ordre décroissant
-    $articles = Article::getAll($id_game, order: 'DESC', id_category: REGEX_ARTICLES_GAMES, showConfirmedAt: true);
+    $articles = Article::getAll($gameId, order: 'DESC', id_category: REGEX_ARTICLES_GAMES, limit:7, showConfirmedAt: true);
     // Récupérer tous les événements associés au jeu spécifié
-    $events = Event::getAll($id_game);
+
+    $events = Event::getAll($gameId);
 
     // Créer un formateur de date pour formater la date en français
     $formatter = new IntlDateFormatter('fr_FR');

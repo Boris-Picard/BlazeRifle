@@ -25,6 +25,7 @@
                                             <label for="id_game">Sélectionner un jeu : </label>
                                             <select class="form-select" name="id_game" id="id_game" required>
                                                 <option value="" selected disabled></option>
+                                                <option value="">Voir tous les events</option>
                                                 <?php foreach ($games as $game) { ?>
                                                     <option value="<?= $game->id_game ?>" <?= (isset($id_game) && $id_game == $game->id_game) ? 'selected' : '' ?>><?= htmlspecialchars($game->game_name) ?></option>
                                                 <?php } ?>
@@ -93,7 +94,11 @@
                                 <div class="col-12 widthColRightActu shadow-lg rounded-4">
                                     <div class="row">
                                         <div class="col-12 d-flex flex-row text-center justify-content-center p-3">
-                                            <h1 class="text-uppercase fs-5 fw-bold"><span class="text-danger">News sur :</span> <?= htmlspecialchars($event->game_name) ?></h1>
+                                            <?php if (!empty($id_game)) { ?>
+                                                <h1 class="text-uppercase fs-5 fw-bold"><span class="text-danger">News sur :</span> <?= htmlspecialchars($event->game_name) ?></h1>
+                                            <?php } else { ?>
+                                                <h1 class="text-uppercase fs-5 fw-bold"><span class="text-danger">Les News</span></h1>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -136,9 +141,15 @@
                                                 }
                                             } ?>
                                             <div class="d-flex justify-content-center mt-3 mb-4">
-                                                <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?? $articles[0]->id_game ?>&id_category=<?= $article->id_category ?? $articles[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
-                                                    les News : <?= $articles[0]->game_name ?>
-                                                </a>
+                                                <?php if (!empty($id_game)) { ?>
+                                                    <a href="/controllers/articles-list/articles-ctrl.php?id_game=<?= $article->id_game ?? $articles[0]->id_game ?>&id_category=<?= $article->id_category ?? $articles[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                        les News : <?= $articles[0]->game_name ?>
+                                                    </a>
+                                                <?php } else { ?>
+                                                    <a href="/controllers/articles-list/articles-ctrl.php?id_category=<?= $article->id_category ?? $articles[0]->id_category ?>" class="btn btn-danger w-100 rounded-4 p-1 fw-bold text-uppercase">
+                                                        les News
+                                                    </a>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
