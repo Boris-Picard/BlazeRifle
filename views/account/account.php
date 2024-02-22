@@ -1,5 +1,5 @@
 <main>
-    <section class="profilSection py-5 bg-light vh-100">
+    <section class="profilSection py-5 bg-light ">
         <div class="container">
             <div class="row ">
                 <div class="col-12">
