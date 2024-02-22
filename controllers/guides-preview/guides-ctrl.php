@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../helpers/Date_Comment.php';
 try {
     $activeGuide = true;
 
-    $articles = Article::getAll(id_category: REGEX_GUIDES, showConfirmedAt: true, order: 'DESC');
+    $articles = Article::getAll(id_category: REGEX_GUIDES, limit:100, showConfirmedAt: true, order: 'DESC');
 
     foreach ($articles as $article) {
         // Récupérer les 10 premiers articles associés à ce jeu depuis la classe Article
