@@ -57,9 +57,24 @@
                                 <div class="card-text text-center">
                                     <h1 class="fw-bold"><?= count($articles) ?></h1>
                                     <p class="text-capitalize fw-bold">dernier article ajouté : </p>
-                                    <p><?= $articles[0]->game_name ?></p>
-                                    <p><?= $articles[0]->article_title ?></p>
-                                    <p><?= $articles[0]->article_created_at ?></p>
+                                    <p>de
+                                        <?php if ($articles[0]->role === 1) { ?>
+                                            <span class="text-danger fw-semibold">
+                                                <?= $articles[0]->pseudo ?>
+                                    </p>
+                                <?php } elseif ($articles[0]->role === 2) { ?>
+                                    <span class="text-primary fw-semibold">
+                                        <?= $articles[0]->pseudo ?>
+                                        </p>
+                                    <?php  } else { ?>
+                                        <span class="text-warning fw-semibold">
+                                            <?= $articles[0]->pseudo ?>
+                                            </p>
+                                        <?php } ?>
+                                        </p>
+                                        <p><?= $articles[0]->game_name ?></p>
+                                        <p><?= $articles[0]->article_title ?></p>
+                                        <p><?= $articles[0]->article_created_at ?></p>
                                 </div>
                             </div>
                         <?php } ?>
@@ -79,20 +94,21 @@
                                     <p class="text-capitalize fw-bold">dernier commentaire : </p>
                                     <p>de
                                         <?php if ($comments[0]->role === 1) { ?>
-                                    <span class="text-danger fw-semibold">
-                                        <?= $comments[0]->pseudo ?>
+                                            <span class="text-danger fw-semibold">
+                                                <?= $comments[0]->pseudo ?>
                                     </p>
                                 <?php } elseif ($comments[0]->role === 2) { ?>
                                     <span class="text-primary fw-semibold">
                                         <?= $comments[0]->pseudo ?>
-                                    </p>
-                                <?php  } else { ?>
-                                    <span class="text-warning fw-semibold">
-                                        <?= $comments[0]->pseudo ?>
-                                    </p>
-                                <?php } ?>
-                                </p>
-                                <p><?= $comments[0]->comment_created_at ?></p>
+                                        </p>
+                                    <?php  } else { ?>
+                                        <span class="text-warning fw-semibold">
+                                            <?= $comments[0]->pseudo ?>
+                                            </p>
+                                        <?php } ?>
+                                        </p>
+                                        <p><?= $comments[0]->comment ?></p>
+                                        <p><?= $comments[0]->comment_created_at ?></p>
                                 </div>
                             </div>
                         <?php } ?>
