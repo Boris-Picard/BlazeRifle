@@ -1,5 +1,8 @@
+config/
+helpers/
 uploads/
 vendor/
 dml.sql
 ddl.sql
-config/
+
+
